@@ -34,3 +34,42 @@ CleanTriangulation = function (xPoints, yPoints, Triangles, Boundaries)
     }
     return(TNew)
 }
+
+DuplicatedTriangulation = function (Triangles)
+{
+    newvalue=1
+    Subsets=0
+    for(t in 2:dim(Triangles)[1])
+    {
+        #Devo ancora processare questo triangolo?
+        process=TRUE
+        for(j in 1:(t-1))
+        {
+            if(process)
+            {
+                if(Triangles[t,1]==Triangles[j,1] && Triangles[t,2]==Triangles[j,2] && Triangles[t,3]==Triangles[j,3])
+                {
+                    #Devo assegnare il nuovo elemento in t
+                    if(Subsets[j]==0)
+                    {
+                        Subsets[j]=newvalue
+                        Subsets<-rbind(Subsets,newvalue)
+                        newvalue=newvalue+1
+                    } else
+                    {
+                        Subsets<-rbind(Subsets,Subsets[j])
+                    }
+                }
+            }
+            
+        }
+        if(process)
+        {
+            #Se non ha uguali a lui, è zero
+            Subsets<-rbind(Subsets,0)
+            process=FALSE
+        }    
+    }
+    return(Subsets)
+}
+    

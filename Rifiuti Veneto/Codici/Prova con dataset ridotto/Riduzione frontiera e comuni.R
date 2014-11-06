@@ -17,7 +17,7 @@ ybound_rid<-NULL
 dist=0
 xbound_rid<-c(xbound_rid,xbound[1])
 ybound_rid<-c(ybound_rid,ybound[1])
-tol<-0.4
+tol<-0.01
 
 for(i in 2:34690)
 {
@@ -86,5 +86,25 @@ xcom_rid<-xcom[-ROWdelete]
 ycom_rid<-ycom[-ROWdelete]
 IDcom_rid<-IDcom[-ROWdelete]
 TotC_rid<-TotC[-ROWdelete]
+
+#Ci sono dei punti che si replicano?
+library(deldir)
+if(sum(duplicatedxy(c(xcom_rid,xbound_rid),c(ycom_rid,ybound_rid)))==0)
+{
+    print("Nessun punto duplicato tra frontiera e comuni")
+} else
+{
+    print("Punti duplicati!!!")
+}
+
+library(SDMTools)
+PolyPoints<-cbind(xbound_rid,ybound_rid)
+if(sum(pnt.in.poly(cbind(xcom_rid,ycom_rid),PolyPoints)$pip)==length(xcom_rid))
+{
+    print("Tutti i comuni stanno dentro")
+} else
+{
+    print("Esistono comuni esterni alla frontiera")
+}
 
 save(file="Ridotto.RData",xbound_rid,ybound_rid,xcom_rid,ycom_rid,IDcom_rid,TotC_rid)
