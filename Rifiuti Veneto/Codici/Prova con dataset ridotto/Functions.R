@@ -15,13 +15,11 @@ CleanTriangulation = function (xPoints, yPoints, Triangles, Boundaries)
     {
         PolyPoints<-rbind(PolyPoints,c(xPoints[Boundaries[i,1]],yPoints[Boundaries[i,1]]))
     }
-        
     for (t in 1:dim(Triangles)[1])
     {
         #Calcolo il baricentro
         xG=(xPoints[Triangles[t,1]]+xPoints[Triangles[t,2]]+xPoints[Triangles[t,3]])/3
         yG=(yPoints[Triangles[t,1]]+yPoints[Triangles[t,2]]+yPoints[Triangles[t,3]])/3
-        
         #Il punto è interno al poligono definito da Boundaries? Come semiretta
         #scelgo quella che sale verso l'alto verticale
         

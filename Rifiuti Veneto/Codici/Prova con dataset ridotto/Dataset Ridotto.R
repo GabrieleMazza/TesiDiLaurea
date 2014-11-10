@@ -58,7 +58,6 @@ for (ne in 1:dim(T_rid)[1])
 {
     polygon(c(x_rid[T_rid[ne,1]],x_rid[T_rid[ne,2]],x_rid[T_rid[ne,3]]),c(y_rid[T_rid[ne,1]],y_rid[T_rid[ne,2]],y_rid[T_rid[ne,3]]))
 }
-
 #Controllo dei triangoli duplicati 
 if(sum(DuplicatedTriangulation(T_rid)==0))
 {
@@ -67,7 +66,12 @@ if(sum(DuplicatedTriangulation(T_rid)==0))
 {
     print("Triangoli duplicati!!!")
 }
-
+PolyPoints<-NULL
+for(i in 1:dim(Boundaries)[1])
+{
+    PolyPoints<-rbind(PolyPoints,c(xPoints[Boundaries[i,1]],yPoints[Boundaries[i,1]]))
+}
+points(PolyPoints,type='l',col="red")
 
 
 save(file="T_RidBoundaries.RData",T_rid)
@@ -134,11 +138,18 @@ for (ne in 1:dim(T_rid)[1])
 
 e = NULL
 
+#Matrice disegno
+load("Covar.RData")
+desmat = matrix(1,nrow=length(Alb_rid),ncol=2)
+desmat[,1] = Alb_rid
+desmat[,2] = Comp_rid
+
+
 #Ordine
 
 order=1
 
-basisobj = create.FEM.basis(cbind(x_rid,y_rid), e, T_rid, order)
+basisobj = create.FEM.basis(cbind(x_rid,y_rid),  e, T_rid, order)
 
 #Creo l'oggetto fd
 
@@ -153,8 +164,8 @@ data[,2] = TotC_rid
 
 #Applico il modello
 
-lambda = 10^(3)
-Rifiuti = smooth.FEM.fd(data,Rifiutifd,lambda)
+lambda = 10^(5)
+Rifiuti = smooth.FEM.fd.Covar(data,desmat,Rifiutifd,lambda)
 
 #Stima nei punti
 

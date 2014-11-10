@@ -43,10 +43,13 @@ length(xbound_rid)
 #Venezia---->425
 
 Data<-read.table("Rifiuti.txt",header=T)
+Covar<-read.table("Covariate.txt",header=T)
 
 #Devo affiancare ai punti di comune gli id e la risposta
 
 TotC<-NULL
+Alb<-NULL
+Comp<-NULL
 
 for (i in 1:length(IDcom))
 {
@@ -62,13 +65,29 @@ for (i in 1:length(IDcom))
     j<-j+1;
   }
 }
-
+for (i in 1:length(IDcom))
+{
+    control<-FALSE
+    j<-1
+    while (control==FALSE)
+    {
+        if(Data$IDans[j]==IDcom[i])
+        {
+            Alb<-c(Alb,Covar$Alb[j])
+            Comp<-c(Comp,Covar$Comp[j])
+            control<-TRUE
+        }
+        j<-j+1;
+    }
+}
 
 #Ora devo trovare gli indici di riga corrispondenti agli ID da eliminare, che sono
 #Chioggia--->391
 #Venezia---->425
 
 IDdelete<-c(391,425)
+
+#Comuni
 ROWdelete<-NULL
 
 for (i in 1:length(IDcom))
@@ -86,6 +105,24 @@ xcom_rid<-xcom[-ROWdelete]
 ycom_rid<-ycom[-ROWdelete]
 IDcom_rid<-IDcom[-ROWdelete]
 TotC_rid<-TotC[-ROWdelete]
+
+#Covariate
+
+ROWdelete<-NULL
+
+for (i in 1:length(IDcom))
+{
+    for (j in 1:length(IDdelete))
+    {
+        if (IDcom[i]==IDdelete[j])
+        {
+            ROWdelete<-c(ROWdelete,i)
+        }
+    }
+}
+
+Alb_rid<-Alb[-ROWdelete]
+Comp_rid<-Comp[-ROWdelete]
 
 #Ci sono dei punti che si replicano?
 library(deldir)
@@ -108,3 +145,4 @@ if(sum(pnt.in.poly(cbind(xcom_rid,ycom_rid),PolyPoints)$pip)==length(xcom_rid))
 }
 
 save(file="Ridotto.RData",xbound_rid,ybound_rid,xcom_rid,ycom_rid,IDcom_rid,TotC_rid)
+save(file="Covar.RData",Alb_rid,Comp_rid)
