@@ -1,3 +1,0 @@
-Possible Datasets Spatial Data Analysis
-
-scotland {SpatialEpi} in R

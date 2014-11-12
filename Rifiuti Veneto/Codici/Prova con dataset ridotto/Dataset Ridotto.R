@@ -14,8 +14,6 @@ source("Functions.R")
 
 
 
-
-
 ##### TRIANGOLAZIONE CON I PUNTI DI BORDO #####
 
 ncom<-length(xcom_rid)
