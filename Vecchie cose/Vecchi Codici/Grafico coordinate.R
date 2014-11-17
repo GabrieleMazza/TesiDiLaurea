@@ -5,9 +5,9 @@
 ##### ESTRAZIONE DEI VERTICI DEL CONFINE #####
 
 #Da Internet:
-#require(raster)
-#veneto =  subset(getData('GADM', country='ITA', level=1), NAME_1=="Veneto")
-#plot(veneto)
+require(raster)
+veneto =  subset(getData('GADM', country='ITA', level=1), NAME_1=="Veneto")
+plot(veneto)
 
 #Da RData
 load("Veneto.RData")
@@ -18,7 +18,6 @@ load("Veneto.RData")
 #str(veneto)
 
 tmp<- slot(veneto, 'polygons')
-
 sub.tmp <- slot(tmp[[1]],'Polygons') 
 order<-slot(tmp[[1]],'plotOrder')
 
