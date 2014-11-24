@@ -202,6 +202,14 @@ plot(xBoundaries,yBoundaries,type="l",xlim=c(12.24,12.27),ylim=c(45.18,45.19))
 
 
 ##### CONTROLLI INTERSEZIONI E COMUNI #####
+
+#Ci sono punti ripetuti?
+D<-Duplicated(xBoundaries,yBoundaries)
+D
+#Se li tolgo non dovrebbero esserci dei problemi, poichè sono sempre tra loro consecutivi
+xBoundaries<-xBoundaries[-c(1595,1638)]
+yBoundaries<-yBoundaries[-c(1595,1638)]
+
 #Ho generato intersezioni?
 #Intersect<-Intersections(xBoundaries,yBoundaries)
 #Intersect
@@ -225,7 +233,6 @@ if(sum(pnt.in.poly(cbind(Coord$Longitudine,Coord$Latitudine),PolyPoints)$pip)==l
     print("Esistono comuni esterni alla frontiera")
 }
 #Ottimo
-
 
 ##### SALVATAGGIO DEI RISULTATI #####
 save(file="Frontiera (Veneto fine, isole fini).RData",xBoundaries,yBoundaries)

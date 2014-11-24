@@ -33,42 +33,24 @@ CleanTriangulation = function (xPoints, yPoints, Triangles, Boundaries)
     return(TNew)
 }
 
-DuplicatedTriangulation = function (Triangles)
+Duplicated = function (x,y)
 {
-    newvalue=1
-    Subsets=0
-    for(t in 2:dim(Triangles)[1])
+    Output<-NULL
+    Row<-NULL
+    for(i in 1:(length(x)-1))
     {
-        #Devo ancora processare questo triangolo?
-        process=TRUE
-        for(j in 1:(t-1))
+        for(j in (i+1):length(x))
         {
-            if(process)
+            if((x[i]==x[j])&&(y[i]==y[j]))
             {
-                if(Triangles[t,1]==Triangles[j,1] && Triangles[t,2]==Triangles[j,2] && Triangles[t,3]==Triangles[j,3])
-                {
-                    #Devo assegnare il nuovo elemento in t
-                    if(Subsets[j]==0)
-                    {
-                        Subsets[j]=newvalue
-                        Subsets<-rbind(Subsets,newvalue)
-                        newvalue=newvalue+1
-                    } else
-                    {
-                        Subsets<-rbind(Subsets,Subsets[j])
-                    }
-                }
+                Output<-rbind(Output,c(x[i],y[i]))
+                Row<-rbind(Row,c(i,j))
             }
-            
         }
-        if(process)
-        {
-            #Se non ha uguali a lui, è zero
-            Subsets<-rbind(Subsets,0)
-            process=FALSE
-        }    
     }
-    return(Subsets)
+    Out<-list(Output,Row)
+    names(Out)<-c("Points","Rows")
+    return(Out)
 }
 
 Intersections = function(x,y)
@@ -86,7 +68,6 @@ Intersections = function(x,y)
     }
     for(i in 1:(length(x)-2))
     {
-        print(i)
         if(i==1)
         {
             #Non vado fino all'ultimo segmento..

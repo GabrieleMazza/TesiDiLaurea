@@ -234,6 +234,12 @@ plot(xBoundaries,yBoundaries,type="l",xlim=c(12.25,12.27),ylim=c(45.18,45.19))
 
 
 ##### CONTROLLI INTERSEZIONI E COMUNI #####
+
+#Ci sono punti ripetuti?
+D<-Duplicated(xBoundaries,yBoundaries)
+D
+#No
+
 #Ho generato intersezioni?
 #Intersect<-Intersections(xBoundaries,yBoundaries)
 #Intersect
