@@ -1,4 +1,5 @@
 # FUNZIONI DI APPOGGIO
+source("2013_SSR_AllFunctions.R")
 
 CleanTriangulation = function (xPoints, yPoints, Triangles, Boundaries)
 {
@@ -332,4 +333,238 @@ Intersections = function(x,y)
         }
     }
     return(Intersect)
+}
+
+
+smooth.FEM.fd.CovarCI = function (data,desmat,fdobj,lambda,CI_level)
+{
+    # SMOOTH.FEM.FD.Covar Compute a solution for a FELspline problem 
+    #
+    #     Arguments:
+    # FELSPLOBJ a FELspline object, constructed by SOLVE_FELSPLINE.
+    # LAMBDA    a scalar smoothing parameter
+    # DATA      (optional) a n-by-2 new set of observations.  DATA(:,1)
+    #           indexes the points (FELSPLOBJ.POINTS) at which the 
+    #           values in DATA(:,2) were observed.
+    # DESMAT    a n-by-q design matrix
+    #
+    #     Output:
+    # FELSPLOBJ  ...  A FD object of the FEM type defined by the coefficient
+    #                 vector resulting from smoothing
+    # LAPLACEFD  ...  A FD object of the FEM type for the value of the 
+    #                 Laplace operator if order == 2, or empty if order == 1
+    #
+    #
+    #  Last modified 8 February 2011 by Laura Sangalli
+    
+    
+    
+    #  check arguments
+    
+    if (!is.fd(fdobj))
+    {   stop('FDOBJ is not a FD object')
+    }
+    
+    if (!is.numeric(lambda))
+    {  
+        stop('LAMBDA is not numeric')
+    }  else if (length(lambda) != 1)
+    {   
+        stop('LAMBDA is not a scalar')
+    }
+    
+    #  check data argument
+    
+    if (is.null(data))
+    {   data=getdata(fdobj)
+    } else 
+    {if (length(dim(data))>0)
+    {if (dim(data)[[2]]!=2)
+    {if (dim(data)[[1]]!=2)
+    {stop('DATA is not a n-by-2 array')}   else
+    {data=t(data)}
+    }
+    } else {stop('DATA is not a n-by-2 array')}
+    }
+    
+    
+    
+    #  Construct penalty matrix and 'b' vector for Ax=b.
+    
+    
+    basisobj = fdobj$basis
+    
+    numnodes = dim(basisobj$params$nodes)[[1]]
+    
+    nodeStruct = basisobj$params
+    
+    #Numero di covariate
+    q=dim(desmat)[[2]]
+    #Numero di dati
+    np = length(data[,1])
+    
+    #  ---------------------------------------------------------------
+    # construct mass matrix K0 
+    #  ---------------------------------------------------------------
+    
+    K0 = mass(nodeStruct)
+    
+    #  ---------------------------------------------------------------
+    # construct stiffness matrix K0 and K1.
+    #  ---------------------------------------------------------------
+    
+    K1 = stiff1(nodeStruct)
+    
+    #  ---------------------------------------------------------------
+    # construct the penalty matrix P with ones on diagonal at data points
+    #  ---------------------------------------------------------------
+    # Projection matrix
+    # ATTENZIONE: get the projection matrix without computing it as below here, via decomposition
+    
+    desmatprod = ( solve( t(desmat) %*% desmat ) ) %*% t(desmat)
+    
+    H= desmat %*% desmatprod
+    
+    L=matrix(0,numnodes,numnodes)
+    L[data[,1],data[,1]]=diag(1,length(data[,1]))-H
+    
+    
+    #  ---------------------------------------------------------------
+    # construct vector b for system Ax=b
+    #  ---------------------------------------------------------------
+    
+    b            = matrix(numeric(numnodes*2),ncol=1)
+    b[data[,1],] = L[data[,1],data[,1]] %*% data[,2]
+    
+    
+    #  ---------------------------------------------------------------
+    # construct matrix A for system Ax=b.
+    #  ---------------------------------------------------------------
+    
+    A  = rbind(cbind(L, -lambda*K1), cbind(K1, K0))
+    
+    
+    # solve system
+    bigsol = solve(A,b)
+    u = bigsol[1:numnodes,]
+    s = bigsol[(numnodes+1):(2*numnodes),]
+    
+    
+    #Costruzione degli intervalli di confidenza
+    #prima ricavo fhat
+    fnhat    = bigsol[1:np]
+    betahat  = desmatprod %*% (data[,2]-fnhat)
+    zhat     = desmat %*% betahat + fnhat
+    #Ottimo, ricavato fhat e quindi betahat e zhat
+    
+    #Ora devo modificare A
+    A = solve( L + lambda * K1 %*% solve(K0) %*% K1)
+    
+    EDF = q + sum(diag(( A[data[,1],data[,1]] %*% L[data[,1],data[,1]] )))
+    
+    sigmahat2 = t(data[,2] - zhat) %*% (data[,2] - zhat) / ( np - EDF)
+    
+    varhatbetahat= sigmahat2 * ( solve( t(desmat) %*% desmat )  +  desmatprod %*% ( A[data[,1],data[,1]] %*% L[data[,1],data[,1]] %*% A[data[,1],data[,1]] %*% t(desmatprod)))
+    
+    approxCIbeta=matrix(0,nrow=length(CI_level),ncol=3)
+    
+    for(i in 1:length(CI_level))
+    {
+        CI_l = betahat - qnorm(1-(1-CI_level[i])/2) * sqrt(diag(varhatbetahat))
+        CI_u = betahat + qnorm(1-(1-CI_level[i])/2) * sqrt(diag(varhatbetahat))
+        approxCIbeta[i,] = cbind(CI_l, betahat, CI_u)
+    }
+    colnames(approxCIbeta)=c("low","betahat","up")
+    rownames(approxCIbeta)=CI_level
+    
+    # Make FELspline object
+    
+    felsplobj  = fd(u, basisobj)
+    laplacefd = fd(s, basisobj)
+    
+    reslist=list(felsplobj=felsplobj,laplacefd=laplacefd,approxCIbeta=approxCIbeta)
+    
+    
+    return(reslist)
+}
+
+plot.FEM.2D = function(fdobj, zlimits ,X=NULL, Y=NULL)  
+{
+    # PLOT  Plots a FEM object FDOBJ over a rectangular grid defined by 
+    # vectors X and Y;
+    #
+    
+    #  Last modified 4 February 2011 by Laura Sangalli.
+    
+    
+    if (!is.fd(fdobj))
+    {
+        stop('FDOBJ is not an FD object')
+    }
+    
+    coefmat = fdobj$coef
+    
+    basisobj = fdobj$basis
+    
+    params = basisobj$params
+    
+    p = params$p
+    t = params$t
+    t = t[,1:3]
+    
+    
+    
+    if (is.null(X))
+    {
+        xmin = min(p[,1])
+        xmax = max(p[,1])
+        nx   = 201
+        X    = matrix(seq(xmin, xmax, len=nx),ncol=1)
+    } else
+    {
+        xmin = min(X)
+        xmax = max(X)
+        nx   = length(X)
+    }
+    
+    if (is.null(Y))
+    {
+        ymin = min(p[,2])
+        ymax = max(p[,2])
+        ny   = 201
+        Y    = matrix(seq(ymin, ymax, len=ny),ncol=1)    
+    } else
+    {
+        ymin = min(Y)
+        ymax = max(Y)
+        ny   = length(Y)
+    }
+    
+    
+    
+    
+    Xmat = X %*% matrix(1,nrow=1,ncol=ny)
+    Ymat = matrix(1,nrow=nx,ncol=1) %*% t(Y)
+    Xvec = NULL
+    for (numc in 1:nx)
+    {Xvec=c(Xvec,Xmat[,numc])}
+    Yvec = NULL
+    for (numc in 1:ny)
+    {Yvec=c(Yvec,Ymat[,numc])}
+    
+    
+    
+    evalmat = eval.FEM.fd(Xvec, Yvec, fdobj)
+    
+    nsurf = dim(coefmat)[[2]]
+    for (isurf in 1:nsurf)
+    {
+        evalmati = matrix(evalmat[,isurf],nrow=nx, ncol=ny, byrow=F)
+        image(X,Y,evalmati,col=heat.colors(100), xlab="", ylab="", asp=1,zlim=zlimits)
+        contour(X,Y,evalmati,add=T)
+        if (nsurf > 1)
+        {pause}
+    }
+    
+    
 }
