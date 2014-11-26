@@ -1,0 +1,1 @@
+Programma per l'associazione del comune al suo codice
