@@ -2,6 +2,7 @@
 source("Functions.R")
 source("2013_SSR_AllFunctions.R")
 load("Frontiera.RData")
+load("MapVeneto.RData")
 library(fda)
 library(rgl)
 library(RTriangle)
@@ -39,36 +40,36 @@ CIsim<-matrix(0,nrow=length(Years),ncol=3)
 
 for (yearindex in 1:length(Years))
 {
-  year<-Years[yearindex]
-  print(paste("Sto calcolando l'anno ",year,sep=""))
-  #Prendo solo i dati che mi servono
-  #DataYear<-Data$TotalePC[Data$Anno==year]
-  #CodiciYear<-Data$Codice[Data$Anno==year]
-  #Nel caso dovessi eliminare il comune di Ariano nel Polesine
-  DataYear<-Data$TotalePC[Data$Anno==year & Data$Codice!=533]
-  CodiciYear<-Data$Codice[Data$Anno==year & Data$Codice!=533]
+    year<-Years[yearindex]
+    print(paste("Sto calcolando l'anno ",year,sep=""))
+    #Prendo solo i dati che mi servono
+    #DataYear<-Data$TotalePC[Data$Anno==year]
+    #CodiciYear<-Data$Codice[Data$Anno==year]
+    #Nel caso dovessi eliminare il comune di Ariano nel Polesine
+    DataYear<-Data$TotalePC[Data$Anno==year & Data$Codice!=533]
+    CodiciYear<-Data$Codice[Data$Anno==year & Data$Codice!=533]
   
-  if(year%%100<10)
-  {
-    name<-paste("PL0",year%%100,sep="")
-  } else
-  {
-    name<-paste("PL",year%%100,sep="")
-  }
+    if(year%%100<10)
+    {
+        name<-paste("PL0",year%%100,sep="")
+    } else
+    {
+        name<-paste("PL",year%%100,sep="")
+    }
   
-  #Ora creo il vettore delle coordinate e della covariata corrispondenti
-  ComuniLat<-NULL
-  ComuniLon<-NULL
-  PL<-NULL
-  attach(PostiLetto)
-  for(i in 1:length(CodiciYear))
-  {
-    ComuniLat<-c(ComuniLat,Coord$Latitudine[Coord$Codice==CodiciYear[i]])
-    ComuniLon<-c(ComuniLon,Coord$Longitudine[Coord$Codice==CodiciYear[i]])
-    #Devo estrarre anche la covariata
-    PL<-c(PL,get(name)[Coord$Codice==CodiciYear[i]])
-  }
-  detach(PostiLetto)
+    #Ora creo il vettore delle coordinate e della covariata corrispondenti
+    ComuniLat<-NULL
+    ComuniLon<-NULL
+    PL<-NULL
+    attach(PostiLetto)
+    for(i in 1:length(CodiciYear))
+    {
+        ComuniLat<-c(ComuniLat,Coord$Latitudine[Coord$Codice==CodiciYear[i]])
+        ComuniLon<-c(ComuniLon,Coord$Longitudine[Coord$Codice==CodiciYear[i]])
+        #Devo estrarre anche la covariata
+        PL<-c(PL,get(name)[Coord$Codice==CodiciYear[i]])
+    }
+    detach(PostiLetto)
     #Latitudine è la y, Longitudine la x
     #Ora creo la triangolazione
     #Mi servono i punti
@@ -112,7 +113,7 @@ for (yearindex in 1:length(Years))
     Z[,1] = 1:length(PL)[1]
     Z[,2] = PL
     #Applico il modello
-    lambda = 10^0
+    lambda = 10^2
     PLsmooth = smooth.FEM.fd(Z,PLfd,lambda)
     
     #Massimi e minimi
@@ -120,63 +121,52 @@ for (yearindex in 1:length(Years))
     m<-c(m,min(fhat))
     M<-c(M,max(fhat))
     #Ora ho bisogno del plot della soluzione
-    png(filename = paste("Funzione",year,".png",sep=""))
-    #Per lambda=10^2
-    #plot.FEM.2D(PLsmooth$felsplobj,zlimits=c(781,2430))
-    #Per lambda=10^1
-    #plot.FEM.2D(PLsmooth$felsplobj,zlimits=c(379,10947))
-    #Per lambda=10^0
-    plot.FEM.2D(PLsmooth$felsplobj,zlimits=c(-58,51339))
+    if (lambda==10^2)
+    {
+      limits=c(781,2430)
+    } else
+    {
+      if (lambda==10^1)
+      {
+        limits=c(379,10947)
+      } else
+      {
+        if (lambda==10^0)
+        {
+          limits=c(-58,51339)
+        } else
+        {
+          limits=c(max(Z[,2]),min(Z[,2]))
+        }
+      }
+    }
+    png(filename = paste("Risposta",year,".png",sep=""))
+    plot.FEM.2D(PLsmooth$felsplobj,zlimits=limits,title=paste("Funzione ",Years[yearindex],sep=""))
     dev.off()
     
-    #Per il googlemaps plot
-    #L <- list()
-    #for(i in 1:dim(mesh$T)[1])
-    #{
-    #    Point<-NULL
-    #Creo l'oggetto con i poligoni
-    #    for (j in 1:3)
-    #    {
-    #        Point<-rbind(Point,mesh$P[mesh$T[i,j],])
-    #    }
-    #    Point<-rbind(Point,mesh$P[mesh$T[i,1],])
-    #    str<-paste("TR",i,sep="")
-    #    tmp<-Polygon(Point)
-    #    Ps = Polygons(list(tmp), ID = str)
-    #    L[[paste0("TR", i)]]<-Ps
-    #}
-    #Oggetto di tipo SpatialPolygons
-    #SPs = SpatialPolygons(L)
-    #Ora dovrei creare l'oggetto con la valutazione della funzione nei baricentri dei triangoli.
-    #Ogni triangolo ha la funzione dipendente dal colore del suo baricentro.
-    #Creo un oggetto contenente i punti dei baricentri dei triangoli
-    #Barx<-NULL
-    #Bary<-NULL
-    #for(i in 1:dim(mesh$T)[1])
-    #{
-    #    xG=(mesh$P[mesh$T[i,1],1]+mesh$P[mesh$T[i,2],1]+mesh$P[mesh$T[i,3],1])/3
-    #    yG=(mesh$P[mesh$T[i,1],2]+mesh$P[mesh$T[i,2],2]+mesh$P[mesh$T[i,3],2])/3
-    #    Barx<-rbind(Barx,xG)
-    #    Bary<-rbind(Bary,yG)
-    #}
-    #Ora che ho tutti i baricentri, valuto la funzione nei baricentri
-    #zBar<-eval.FEM.fd(Barx,Bary,PLsmooth$felsplobj)
-    #Devo normalizzare questo vettore per creare dei color
-    #zCol<-(zBar-min(zBar))/(max(zBar)-min(zBar))
-    #from_col <- "yellow"
-    #to_col <- "red"
-    #val_col <- colorRampPalette(c(from_col,to_col))(length(zCol))
-    #Scarico la mappa
-    #rawdata <- data.frame(as.numeric(ComuniLon), as.numeric(ComuniLat))
-    #names(rawdata) <- c("lon", "lat")
-    #comuni <- as.matrix(rawdata)
-    #center <- rev(sapply(rawdata, mean))
-    #map <- GetMap(center=center, zoom=8)
-    #Plot dei poligoni
-    #png(filename = paste("Map",year,".png",sep=""))
-    #PlotOnStaticMap(map)
-    #PlotPolysOnStaticMap(map, SPs, val_col)
-    #dev.off()
+    zBar<-eval.FEM.fd(ComuniLon,ComuniLat,PLsmooth$felsplobj)
+    ScaledzBar<-NULL
+    maximum<-max(zBar)
+    minimum<-min(zBar)
+    for (i in 1:length(zBar))
+    {
+      ScaledzBar<-c(ScaledzBar,(zBar[i]-minimum)/(maximum-minimum))
+    }
+    Colors = rgb(ScaledzBar,0,0)
+    png(filename = paste("FunzioneMaps",year,".png",sep=""))
+    PlotOnStaticMap(MapVeneto,lon=ComuniLon,lat=ComuniLat,fun="points",pch=16,col=Colors)
+    dev.off()
+    ScaledPL<-NULL
+    maximum<-max(PL)
+    minimum<-min(PL)
+    for (i in 1:length(PL))
+    {
+      ScaledPL<-c(ScaledPL,(PL[i]-minimum)/(maximum-minimum))
+    }
+    Colors = rgb(ScaledPL,0,0)
+    png(filename = paste("PLMaps",year,".png",sep=""))
+    PlotOnStaticMap(MapVeneto,lon=ComuniLon,lat=ComuniLat,fun="points",pch=16,col=Colors)
+    dev.off()
 }
 
 #Plot dei massimi e dei minimi

@@ -488,7 +488,7 @@ smooth.FEM.fd.CovarCI = function (data,desmat,fdobj,lambda,CI_level)
     return(reslist)
 }
 
-plot.FEM.2D = function(fdobj, zlimits ,X=NULL, Y=NULL)  
+plot.FEM.2D = function(fdobj, zlimits, title, X=NULL, Y=NULL)  
 {
     # PLOT  Plots a FEM object FDOBJ over a rectangular grid defined by 
     # vectors X and Y;
@@ -560,7 +560,7 @@ plot.FEM.2D = function(fdobj, zlimits ,X=NULL, Y=NULL)
     for (isurf in 1:nsurf)
     {
         evalmati = matrix(evalmat[,isurf],nrow=nx, ncol=ny, byrow=F)
-        image(X,Y,evalmati,col=heat.colors(100), xlab="", ylab="", asp=1,zlim=zlimits)
+        image(X,Y,evalmati,col=heat.colors(100), xlab="", ylab="", asp=1,zlim=zlimits,main=title)
         contour(X,Y,evalmati,add=T)
         if (nsurf > 1)
         {pause}

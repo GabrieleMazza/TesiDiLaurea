@@ -2,6 +2,7 @@
 source("Functions.R")
 source("2013_SSR_AllFunctions.R")
 load("Frontiera.RData")
+load("MapVeneto.RData")
 library(fda)
 library(rgl)
 library(RTriangle)
@@ -137,63 +138,53 @@ for (yearindex in 1:length(Years))
     m<-c(m,min(fhat))
     M<-c(M,max(fhat))
     #Ora ho bisogno del plot della soluzione
-    png(filename = paste("Funzione",year,".png",sep=""))
-    #Per lambda=10^2
-    plot.FEM.2D(Rifiuti$felsplobj,zlimits=c(326,413))
-    #Per lambda=10^1
-    #plot.FEM.2D(Rifiuti$felsplobj,zlimits=c(281,436))
-    #Per lambda=10^0
-    #plot.FEM.2D(Rifiuti$felsplobj,zlimits=c(280,575))
+    if (lambda==10^2)
+    {
+      limits=c(326,413)
+    } else
+    {
+      if (lambda==10^1)
+      {
+        limits=c(281,436)
+      } else
+      {
+        if (lambda==10^0)
+        {
+          limits=c(280,575)
+        } else
+        {
+          limits=c(max(Z[,2]),min(Z[,2]))
+        }
+      }
+    }
+    png(filename = paste("Risposta",year,".png",sep=""))
+    plot.FEM.2D(Rifiuti$felsplobj,zlimits=limits,title=paste("Funzione ",Years[yearindex],sep=""))
     dev.off()
     
     #Per il googlemaps plot
-    #L <- list()
-    #for(i in 1:dim(mesh$T)[1])
-    #{
-    #    Point<-NULL
-    #Creo l'oggetto con i poligoni
-    #    for (j in 1:3)
-    #    {
-    #        Point<-rbind(Point,mesh$P[mesh$T[i,j],])
-    #    }
-    #    Point<-rbind(Point,mesh$P[mesh$T[i,1],])
-    #    str<-paste("TR",i,sep="")
-    #    tmp<-Polygon(Point)
-    #    Ps = Polygons(list(tmp), ID = str)
-    #    L[[paste0("TR", i)]]<-Ps
-    #}
-    #Oggetto di tipo SpatialPolygons
-    #SPs = SpatialPolygons(L)
-    #Ora dovrei creare l'oggetto con la valutazione della funzione nei baricentri dei triangoli.
-    #Ogni triangolo ha la funzione dipendente dal colore del suo baricentro.
-    #Creo un oggetto contenente i punti dei baricentri dei triangoli
-    #Barx<-NULL
-    #Bary<-NULL
-    #for(i in 1:dim(mesh$T)[1])
-    #{
-    #    xG=(mesh$P[mesh$T[i,1],1]+mesh$P[mesh$T[i,2],1]+mesh$P[mesh$T[i,3],1])/3
-    #    yG=(mesh$P[mesh$T[i,1],2]+mesh$P[mesh$T[i,2],2]+mesh$P[mesh$T[i,3],2])/3
-    #    Barx<-rbind(Barx,xG)
-    #    Bary<-rbind(Bary,yG)
-    #}
-    #Ora che ho tutti i baricentri, valuto la funzione nei baricentri
-    #zBar<-eval.FEM.fd(Barx,Bary,Rifiuti$felsplobj)
-    #Devo normalizzare questo vettore per creare dei color
-    #zCol<-(zBar-min(zBar))/(max(zBar)-min(zBar))
-    #from_col <- "yellow"
-    #to_col <- "red"
-    #val_col <- colorRampPalette(c(from_col,to_col))(length(zCol))
-    #Scarico la mappa
-    #rawdata <- data.frame(as.numeric(ComuniLon), as.numeric(ComuniLat))
-    #names(rawdata) <- c("lon", "lat")
-    #comuni <- as.matrix(rawdata)
-    #center <- rev(sapply(rawdata, mean))
-    #map <- GetMap(center=center, zoom=8)
-    #Plot dei poligoni
-    #png(filename = paste("Map",year,".png",sep=""))
-    #PlotOnStaticMap(map)
-    #PlotPolysOnStaticMap(map, SPs, val_col)
-    #dev.off()
+    zBar<-eval.FEM.fd(ComuniLon,ComuniLat,Rifiuti$felsplobj)
+    ScaledzBar<-NULL
+    maximum<-max(zBar)
+    minimum<-min(zBar)
+    for (i in 1:length(zBar))
+    {
+      ScaledzBar<-c(ScaledzBar,(zBar[i]-minimum)/(maximum-minimum))
+    }
+    Colors = rgb(ScaledzBar,0,0)
+    png(filename = paste("FunzioneMaps",year,".png",sep=""))
+    PlotOnStaticMap(MapVeneto,lon=ComuniLon,lat=ComuniLat,fun="points",pch=16,col=Colors)
+    dev.off()
+    ScaledDataYear<-NULL
+    maximum<-max(DataYear)
+    minimum<-min(DataYear)
+    for (i in 1:length(DataYear))
+    {
+      ScaledDataYear<-c(ScaledDataYear,(DataYear[i]-minimum)/(maximum-minimum))
+    }
+    Colors = rgb(ScaledDataYear,0,0)
+    png(filename = paste("RifiutiMaps",year,".png",sep=""))
+    PlotOnStaticMap(MapVeneto,lon=ComuniLon,lat=ComuniLat,fun="points",pch=16,col=Colors)
+    dev.off()
 }
 
 #Plot degli intervalli di confidenza negli anni
