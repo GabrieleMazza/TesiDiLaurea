@@ -38,8 +38,9 @@ betahat<-NULL
 CI<-matrix(0,nrow=length(Years),ncol=3)
 CIsim<-matrix(0,nrow=length(Years),ncol=3)
 
-for (yearindex in 1:length(Years))
-{
+#for (yearindex in 1:length(Years))
+#{
+    yearindex<-1
     year<-Years[yearindex]
     print(paste("Sto calcolando l'anno ",year,sep=""))
     #Prendo solo i dati che mi servono
@@ -92,13 +93,13 @@ for (yearindex in 1:length(Years))
     #Estrazione dei triangoli
     Triang<-mesh$T
     #Plot della triangolazione
-    #png(filename = paste("Triangolazione",year,".png",sep=""))
-    #plot(x,y,type="n")
-    #for (ne in 1:dim(Triang)[1])
-    #{
-    #    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]))
-    #}
-    #dev.off()
+    png(filename = paste("Triangolazione",year,".png",sep=""))
+    plot(x,y,type="n",xlim=c(12.1,12.7),ylim=c(45.2,45.6))
+    for (ne in 1:dim(Triang)[1])
+    {
+        polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]))
+    }
+    dev.off()
     
     #Creo la matrice disegno
     X = matrix(1,nrow=length(PL),ncol=1)
