@@ -6,6 +6,63 @@ SquareEuclideanDistance = function (p1,p2)
     return(dist)
 }
 
+CleanPoints = function (Triang_old, IDDelete, x_old, y_old)
+{
+    Triang<-Triang_old[-IDDelete,]
+    N=length(x_old)
+    #Creo un vettore di FALSE
+    #Se un punto è ritrovato nella triangolazione, ci metto TRUE
+    ID<-NULL
+    for(i in 1:N)
+    {
+        ID<-c(ID,FALSE)
+    }
+    for(i in 1:dim(Triang)[1])
+    {
+        for(j in 1:3)
+        {
+            ID[Triang[i,j]]=TRUE
+        }
+    }
+    Corrispondenze<-NULL
+    x<-NULL
+    y<-NULL
+    count=0
+    for(i in 1:length(x_old))
+    {
+        if(ID[i]==FALSE)
+        {
+            Corrispondenze<-c(Corrispondenze,NA)
+        } else
+        {
+            count=count+1
+            x<-c(x,x_old[i])
+            y<-c(y,y_old[i])
+            Corrispondenze<-c(Corrispondenze,count)
+        }
+        
+    }
+    #Ora devo far passare tutta la vecchia triangolazione e riscriverla con tutto quello
+    #che serve
+    rangei=1:dim(Triang_old)[1]
+    rangei<-rangei[-IDDelete]
+    Triang<-NULL
+    points<-cbind(x,y)
+    for (i in rangei)
+    {
+        newtriangle<-c(0,0,0)
+        for (j in 1:3)
+        {
+            newtriangle[j]=Corrispondenze[Triang_old[i,j]]            
+        }
+        Triang<-rbind(Triang,newtriangle)
+    }
+    row.names(Triang)<-NULL
+    #Ora dovrebbe essere tutto ok
+    L<-list(x,y,Triang)
+    return(L)
+}
+
 Intersections = function(x,y)
 {
     # Studio se un poligono è semplice o complesso

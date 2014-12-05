@@ -77,6 +77,8 @@ m<-4
 
 ##### REGRESSION SPLINES #####
 
+do_cycles=FALSE
+
 ##### ANALISI DEL MIGLIOR nbasis #####
 
 #Scelgo come upper bound il numero di punti della valutazione per il numero di basi con
@@ -84,6 +86,8 @@ m<-4
 #Come scelgo l'ottimo del numero di basi?
 #Mi interessa che sia minimizzata la distanza totale quadratica euclidea
 #poligono reale del Veneto
+if(do_cycles==TRUE)
+{
 bestsum<-9999999999999
 best<-0
 sum_vect<-NULL
@@ -173,6 +177,7 @@ dev.off()
 png(filename = "Best.png")
 plot(best_vect,type='l')
 dev.off()
+}
 
 ##### RISULTATI #####
 
@@ -227,7 +232,6 @@ mesh<-triangulate(pslg_obj,Y=TRUE,D=TRUE)
 #Estrazione dei triangoli
 Triang<-mesh$T
 #Plot della triangolazione
-png(filename = "Triangolazione nella laguna.png")
 plot(x,y,col="white",xlim=c(12.1,12.6),ylim=c(45,45.6))
 for (ne in 1:dim(Triang)[1])
 {
@@ -251,7 +255,6 @@ if(sum(pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip)=
     print("Esistono comuni esterni alla frontiera")
 }
 points(Comuni$Longitudine[pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip==0],Comuni$Latitudine[pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip==0],col="red",pch=16)
-dev.off()
 
 ##### COMUNI RIMASTI FUORI #####
 
@@ -344,13 +347,6 @@ for (ne in BorderTR)
 }
 #Ci sono comuni esterni alla frontiera?
 PolyPoints<-cbind(xVeneto,yVeneto)
-if(sum(pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip)==length(Comuni$Longitudine))
-{
-    print("Tutti i comuni stanno dentro")
-} else
-{
-    print("Esistono comuni esterni alla frontiera")
-}
 points(Comuni$Longitudine[pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip==0],Comuni$Latitudine[pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip==0],col="red",pch=16)
 dev.off()
 
@@ -417,6 +413,8 @@ m<-3
 #Come scelgo l'ottimo del numero di basi?
 #Mi interessa che sia minimizzata la distanza totale quadratica euclidea
 #poligono reale di Venezia
+if(do_cycles==TRUE)
+{
 bestsum<-9999999999999
 best<-0
 sum_vect<-NULL
@@ -502,7 +500,7 @@ dev.off()
 png(filename = "Best.png")
 plot(best_vect,type='l')
 dev.off()
-
+}
 #Troppi punti fanno in modo che si crei sempre un elevato numero di triangoli da eliminare
 #Quindi devo fare qualcosa di più semmplice
 #Scelgo nbasis 11
@@ -620,19 +618,340 @@ points(Comuni$Longitudine[Comuni$Codice==425],Comuni$Latitudine[Comuni$Codice==4
 #Ora è bene unire venezia al resto della regione
 
 
+#Unisco venezia alla regione totale
+plot(xVeneto,yVeneto,type='l',xlim=c(12.29,12.33),ylim=c(45.42,45.49))
+points(xVenezia,yVenezia,type='l')
+#In pratica questi punti vanno inseriti tra il 54 e 55 punto del veneto
+#Si inseriscono i punti di venezia dal primo al settimo
+#Troppo largo il settimo punto di Venezia
+xVenezia[7]=12.3139
+yVenezia[7]=45.4465
+points(xVenezia[7],yVenezia[7])
+points(c(xVenezia[1],12.3),c(yVenezia[1],45.474),type='l')
+points(c(xVenezia[7],12.299),c(yVenezia[7],45.4735),type='l')
+#Così va bene
+
+#Ora devo unire le zone
+
+xVeneto=c(xVeneto[1:54],12.3,xVenezia,12.299,xVeneto[55:length(xVeneto)])
+yVeneto=c(yVeneto[1:54],45.474,yVenezia,45.4735,yVeneto[55:length(yVeneto)])
+
+plot(xVeneto,yVeneto,type='l',xlim=c(12.29,12.33),ylim=c(45.42,45.49))
+#Perfettamente unite
+
+##### CHIOGGIA #####
+
+#Ora studio l'isola di venezia.
+#Anche qui devo cercare di ridurre al minimo i triangoli con vertici tutti di frontiera
+
+plot(xVeneto,yVeneto,type='l',xlim=c(12.24,12.32),ylim=c(45.1,45.3))
+
+xChioggia1=xbound[labels==16]
+yChioggia1=ybound[labels==16]
+
+points(xChioggia1,yChioggia1,type='l')
+
+xChioggia2=xbound[labels==4]
+yChioggia2=ybound[labels==4]
+
+points(xChioggia2,yChioggia2,type='l')
+
+#In pratica occorre modificare il confine tra i punt 79 e 81 perchè
+#il punto 80 è finito dentro chioggia
+
+points(12.26,45.19)
+points(12.27,45.23)
+points(12.31,45.235)
+points(12.31,45.16)
+
+xVeneto=c(xVeneto[1:79],12.26,12.27,12.31,12.31,xVeneto[81:length(xVeneto)])
+yVeneto=c(yVeneto[1:79],45.19,45.23,45.235,45.16,yVeneto[81:length(yVeneto)])
 
 
+##### CONTROLLI FINALI DELLA REGIONE #####
+
+x<-c(Comuni$Longitudine,xVeneto)
+y<-c(Comuni$Latitudine,yVeneto)
+#Creo i Boundaries
+Boundaries<-NULL
+for(i in (length(Comuni$Longitudine)+1):(length(x)-1))
+{
+    Boundaries<-rbind(Boundaries, c(i,i+1))
+}
+Boundaries<-rbind(Boundaries, c(length(x),length(Comuni$Longitudine)+1))
+#Ora triangolazione
+#Oggetto pslg
+pslg_obj<-pslg(cbind(x,y),S=Boundaries)
+#Creo la mesh
+#Y dice di non aggiungere Steiner Points
+#D dice di triangolare con Delaunay
+mesh<-triangulate(pslg_obj,Y=TRUE,D=TRUE)
+#Estrazione dei triangoli
+Triang<-mesh$T
+#Plot della triangolazione
+png(filename = "Triangolazione nella laguna.png")
+plot(x,y,col="white",xlim=c(12.1,12.6),ylim=c(45,45.6))
+for (ne in 1:dim(Triang)[1])
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]))
+}
+#Controllo se la triangolazione ha triangoli con solo punti di bordo
+BorderTR<-BorderTriangles(mesh$T,Boundaries)
+BorderTR
+#Li coloro
+for (ne in BorderTR)
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]),col="green")
+}
+#Ci sono comuni esterni alla frontiera?
+PolyPoints<-cbind(xVeneto,yVeneto)
+if(sum(pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip)==length(Comuni$Longitudine))
+{
+    print("Tutti i comuni stanno dentro")
+} else
+{
+    print("Esistono comuni esterni alla frontiera")
+}
+points(Comuni$Longitudine[pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip==0],Comuni$Latitudine[pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip==0],col="red",pch=16)
+dev.off()
 
 
+#Devo eliminare i triangoli composti solo da punti di bordo
+plot(x,y,col="white",xlim=c(12.1,12.6),ylim=c(45,45.6))
+for (ne in 1:dim(Triang)[1])
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]))
+}
+#Controllo se la triangolazione ha triangoli con solo punti di bordo
+#Li coloro
+for (ne in BorderTR)
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]),col="green")
+}
+#Controllo i baricentri dei triangoli
+xG<-NULL
+yG<-NULL
+for (i in 1:length(BorderTR))
+{
+    xG<-c(xG,(x[Triang[BorderTR[i],1]]+x[Triang[BorderTR[i],2]]+x[Triang[BorderTR[i],3]])/3)
+    yG<-c(yG,(y[Triang[BorderTR[i],1]]+y[Triang[BorderTR[i],2]]+y[Triang[BorderTR[i],3]])/3)
+}
+points(xG,yG,pch=16,col="red")
+#Ci sono in totale 39 triangoli che non vanno. Quali devo eliminare?
+#identify(xG,yG)
+IDtriang<-c(17,18,20,21,22,23,24,7,8,1,2,3,4,5,10,13,27,28)
+IDkeep<-c(6,9,11,12)
+#Siamo a 22,17 mancanti
+
+#Devo eliminare i triangoli composti solo da punti di bordo
+plot(x,y,col="white",xlim=c(12.4,12.8),ylim=c(45.4,45.7))
+for (ne in 1:dim(Triang)[1])
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]))
+}
+#Controllo se la triangolazione ha triangoli con solo punti di bordo
+#Li coloro
+BorderTR<-BorderTriangles(mesh$T,Boundaries)
+BorderTR
+for (ne in BorderTR)
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]),col="green")
+}
+#Controllo i baricentri dei triangoli
+xG<-NULL
+yG<-NULL
+for (i in 1:length(BorderTR))
+{
+    xG<-c(xG,(x[Triang[BorderTR[i],1]]+x[Triang[BorderTR[i],2]]+x[Triang[BorderTR[i],3]])/3)
+    yG<-c(yG,(y[Triang[BorderTR[i],1]]+y[Triang[BorderTR[i],2]]+y[Triang[BorderTR[i],3]])/3)
+}
+points(xG,yG,pch=16,col="red")
+#Ci sono in totale 39 triangoli che non vanno. Quali devo eliminare?
+#identify(xG,yG)
+IDtriang<-c(17,18,20,21,22,23,24,7,8,1,2,3,4,5,10,13,27,28,32,33)
+IDCT<-c(31,34,35,26,30,25,29,37)
+IDkeep<-c(6,9,11,12)
+points(xG[IDtriang],yG[IDtriang],pch=16,col="blue")
+#Siamo ad un totale di 32 punti, ne mancano 7
+
+#Devo eliminare i triangoli composti solo da punti di bordo
+plot(x,y,col="white",xlim=c(12.3,12.5),ylim=c(44.8,45.2))
+for (ne in 1:dim(Triang)[1])
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]))
+}
+#Controllo se la triangolazione ha triangoli con solo punti di bordo
+#Li coloro
+for (ne in BorderTR)
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]),col="green")
+}
+#Controllo i baricentri dei triangoli
+xG<-NULL
+yG<-NULL
+for (i in 1:length(BorderTR))
+{
+    xG<-c(xG,(x[Triang[BorderTR[i],1]]+x[Triang[BorderTR[i],2]]+x[Triang[BorderTR[i],3]])/3)
+    yG<-c(yG,(y[Triang[BorderTR[i],1]]+y[Triang[BorderTR[i],2]]+y[Triang[BorderTR[i],3]])/3)
+}
+points(xG,yG,pch=16,col="red")
+#Ci sono in totale 39 triangoli che non vanno. Quali devo eliminare?
+#identify(xG,yG)
+IDtriang<-c(1,2,3,4,5,7,8,10,13:24,27,28,32,33,36,38,39)
+IDCT<-c(25,26,29,30,31,34,35,37)
+IDkeep<-c(6,9,11,12)
+#Ma questi sono di BorderTR
+IDtriang<-BorderTR[IDtriang]
+IDCT<-BorderTR[IDCT]
+IDkeep<-BorderTR[IDkeep]
+#Sono tutti qui
+#Ora devo sicuramente togliere quelli di IDtriang, e poi salvarli in un RData
 
 
+##### SALVATAGGIO DEGLI OGGETTI DEFINITIVI CON LA PENISOLA DI CT #####
+
+#Creo i Boundaries
+x<-c(Comuni$Longitudine,xVeneto)
+y<-c(Comuni$Latitudine,yVeneto)
+Boundaries<-NULL
+for(i in (length(Comuni$Longitudine)+1):(length(x)-1))
+{
+    Boundaries<-rbind(Boundaries, c(i,i+1))
+}
+Boundaries<-rbind(Boundaries, c(length(x),length(Comuni$Longitudine)+1))
+#Ora triangolazione
+#Oggetto pslg
+pslg_obj<-pslg(cbind(x,y),S=Boundaries)
+#Creo la mesh
+#Y dice di non aggiungere Steiner Points
+#D dice di triangolare con Delaunay
+mesh<-triangulate(pslg_obj,Y=TRUE,D=TRUE)
+#Estrazione dei triangoli
+Triang<-mesh$T
+
+L<-CleanPoints(Triang,IDtriang,x,y)
+x<-L[[1]]
+y<-L[[2]]
+Triang<-L[[3]]
+#Controllo che il nuovo bordo non abbia intersezioni
+Intersect<-Intersections(x[581:length(x)],y[581:length(x)])
+Intersect
+#Creo anche un vettore di codici di comune
+Codici<-Comuni$Codice
+for (i in (length(Codici)+1):length(x))
+{
+    Codici<-c(Codici,NA)
+}
+#Ora mi salvo il nuovo contorno
+Boundaries<-NULL
+for(i in (length(Comuni$Longitudine)+1):(length(x)-1))
+{
+    Boundaries<-rbind(Boundaries, c(i,i+1))
+}
+Boundaries<-rbind(Boundaries, c(length(x),length(Comuni$Longitudine)+1))
+#Ora triangolazione, devo rifarla? No
+plot(x,y,col="white")
+for (ne in 1:dim(Triang)[1])
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]))
+}
+
+#Controllo i punti di bordo
+points(x[is.na(Codici)],y[is.na(Codici)],pch=16,col="red")
+points(x[!(is.na(Codici))],y[!(is.na(Codici))],pch=16,col="blue")
+BorderTR<-BorderTriangles(Triang,Boundaries)
+BorderTR
+#Li coloro
+for (ne in BorderTR)
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]),col="green")
+}
+#Come mi aspettavo
+#Controllo che tutti i comuni siano dentro
+
+PolyPoints<-cbind(xVeneto,yVeneto)
+if(sum(pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip)==length(Comuni$Longitudine))
+{
+    print("Tutti i comuni stanno dentro")
+} else
+{
+    print("Esistono comuni esterni alla frontiera")
+}
+#Salvo tutto
+save(file="ConCT.RData",x,y,Codici,Triang)
 
 
+##### SALVATAGGIO DEGLI OGGETTI DEFINITIVI SENZA LA PENISOLA DI CT #####
 
+#Creo i Boundaries
+x<-c(Comuni$Longitudine,xVeneto)
+y<-c(Comuni$Latitudine,yVeneto)
+Boundaries<-NULL
+for(i in (length(Comuni$Longitudine)+1):(length(x)-1))
+{
+    Boundaries<-rbind(Boundaries, c(i,i+1))
+}
+Boundaries<-rbind(Boundaries, c(length(x),length(Comuni$Longitudine)+1))
+#Ora triangolazione
+#Oggetto pslg
+pslg_obj<-pslg(cbind(x,y),S=Boundaries)
+#Creo la mesh
+#Y dice di non aggiungere Steiner Points
+#D dice di triangolare con Delaunay
+mesh<-triangulate(pslg_obj,Y=TRUE,D=TRUE)
+#Estrazione dei triangoli
+Triang<-mesh$T
 
+L<-CleanPoints(Triang,c(IDtriang,IDCT),x,y)
+x<-L[[1]]
+y<-L[[2]]
+Triang<-L[[3]]
+#Controllo che il nuovo bordo non abbia intersezioni
+Intersect<-Intersections(x[581:length(x)],y[581:length(x)])
+Intersect
+#Creo anche un vettore di codici di comune
+Codici<-Comuni$Codice
+for (i in (length(Codici)+1):length(x))
+{
+    Codici<-c(Codici,NA)
+}
+#Ora mi salvo il nuovo contorno
+Boundaries<-NULL
+for(i in (length(Comuni$Longitudine)+1):(length(x)-1))
+{
+    Boundaries<-rbind(Boundaries, c(i,i+1))
+}
+Boundaries<-rbind(Boundaries, c(length(x),length(Comuni$Longitudine)+1))
+#Ora triangolazione, devo rifarla? No
+plot(x,y,col="white")
+for (ne in 1:dim(Triang)[1])
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]))
+}
 
+#Controllo i punti di bordo
+points(x[is.na(Codici)],y[is.na(Codici)],pch=16,col="red")
+points(x[!(is.na(Codici))],y[!(is.na(Codici))],pch=16,col="blue")
+BorderTR<-BorderTriangles(Triang,Boundaries)
+BorderTR
+#Li coloro
+for (ne in BorderTR)
+{
+    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]),col="green")
+}
+#Come mi aspettavo
+#Controllo che tutti i comuni siano dentro
 
-
+PolyPoints<-cbind(xVeneto,yVeneto)
+if(sum(pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip)==length(Comuni$Longitudine))
+{
+    print("Tutti i comuni stanno dentro")
+} else
+{
+    print("Esistono comuni esterni alla frontiera")
+}
+#Salvo tutto
+save(file="SenzaCT.RData",x,y,Codici,Triang)
 
 
 ##### SMOOTHING SPLINES CON PENALIZZAZIONE DELLA DERIVATA SECONDA #####
@@ -792,235 +1111,3 @@ if(sum(pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip)=
     print("Esistono comuni esterni alla frontiera")
 }
 points(Comuni$Longitudine[pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip==0],Comuni$Latitudine[pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip==0],col="red",pch=16)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## VENEZIA ##
-#Ora devo studiare il caso di Venezia
-#Venezia è nel poligono 6
-
-dist=0
-tol<-0.01
-
-xVenezia_tot=xbound[labels==6]
-yVenezia_tot=ybound[labels==6]
-
-xVenezia=xVenezia_tot[1]
-yVenezia=yVenezia_tot[1]
-
-for(i in 2:length(xVenezia_tot))
-{
-    #Aggiorno la distanza
-    dist<-dist+sqrt((xVenezia_tot[i]-xVenezia_tot[i-1])^2+(yVenezia_tot[i]-yVenezia_tot[i-1])^2)
-    if(dist>tol)
-    {
-        xVenezia<-c(xVenezia,xVenezia_tot[i])
-        yVenezia<-c(yVenezia,yVenezia_tot[i])
-        dist<-0
-    }
-}
-points(xVenezia,yVenezia,type="l")
-
-#Controllo se ci sono intersezioni
-#Intersect<-Intersections(xVenezia,yVenezia)
-#Intersect
-
-## CHIOGGIA ##
-#Ora devo studiare il caso di Chioggia
-#Chioggia è nel poligono 16 che va unito al poligono 4
-
-dist=0
-tol<-0.01
-
-#POLIGONO 16
-xChioggia_tot=xbound[labels==16]
-yChioggia_tot=ybound[labels==16]
-
-xChioggia1=xChioggia_tot[1]
-yChioggia1=yChioggia_tot[1]
-
-for(i in 2:length(xChioggia_tot))
-{
-    #Aggiorno la distanza
-    dist<-dist+sqrt((xChioggia_tot[i]-xChioggia_tot[i-1])^2+(yChioggia_tot[i]-yChioggia_tot[i-1])^2)
-    if(dist>tol)
-    {
-        xChioggia1<-c(xChioggia1,xChioggia_tot[i])
-        yChioggia1<-c(yChioggia1,yChioggia_tot[i])
-        dist<-0
-    }
-}
-points(xChioggia1,yChioggia1,type="l")
-
-#POLIGONO 4
-xChioggia_tot=xbound[labels==4]
-yChioggia_tot=ybound[labels==4]
-
-xChioggia2=xChioggia_tot[1]
-yChioggia2=yChioggia_tot[1]
-
-for(i in 2:length(xChioggia_tot))
-{
-    #Aggiorno la distanza
-    dist<-dist+sqrt((xChioggia_tot[i]-xChioggia_tot[i-1])^2+(yChioggia_tot[i]-yChioggia_tot[i-1])^2)
-    if(dist>tol)
-    {
-        xChioggia2<-c(xChioggia2,xChioggia_tot[i])
-        yChioggia2<-c(yChioggia2,yChioggia_tot[i])
-        dist<-0
-    }
-}
-points(xChioggia2,yChioggia2,type="l")
-
-#Iniziamo ad intersecare questi due
-plot(xChioggia1,yChioggia1,type="l",xlim=c(12.28,12.29),ylim=c(45.215,45.230))
-points(xChioggia2,yChioggia2,type="l")
-
-#identify(xChioggia1,yChioggia1)
-#identify(xChioggia2,yChioggia2)
-
-xChioggia<-c(xChioggia2[1:31],12.2875,12.2865,12.286,12.2841,12.284,12.283,xChioggia1[4:length(xChioggia1)],xChioggia1[1:2],12.2832,12.2877,xChioggia2[32:length(xChioggia2)])
-yChioggia<-c(yChioggia2[1:31],45.217,45.217,45.2160,45.215,45.217,45.217,yChioggia1[4:length(yChioggia1)],yChioggia1[1:2],45.2175,45.2175,yChioggia2[32:length(yChioggia2)])
-plot(xChioggia,yChioggia,type='l',xlim=c(12.28,12.29),ylim=c(45.215,45.230))
-
-#Controllo se ci sono intersezioni
-#Intersect<-Intersections(xChioggia,yChioggia)
-#Intersect
-
-
-##### UNIONE DELLE REGIONI #####
-#Cerco di unire Venezia e CHioggia e di fare un poligono unico.
-#Inizio da Venezia
-
-#Ingrandisco nella zona di Venezia
-plot(xVeneto,yVeneto,type="l",xlim=c(12.27,12.31),ylim=c(45.44,45.48))
-points(xVenezia,yVenezia,type='l')
-
-#identify(xVeneto,yVeneto)
-#identify(xVenezia,yVenezia)
-
-xBoundaries<-c(xVeneto[1:121],12.280411,xVenezia,12.2795,xVeneto[122:length(xVeneto)])
-yBoundaries<-c(yVeneto[1:121],45.465299,yVenezia,45.464772,yVeneto[122:length(yVeneto)])
-
-plot(xBoundaries,yBoundaries,type="l",xlim=c(12.27,12.31),ylim=c(45.44,45.48))
-
-#Ingrandisco nella zona di Chioggia
-plot(xBoundaries,yBoundaries,type="l",xlim=c(12.25,12.27),ylim=c(45.18,45.19))
-points(xChioggia,yChioggia,type='l')
-
-#identify(xBoundaries,yBoundaries)
-#identify(xChioggia,yChioggia)
-
-# I due poligoni si toccano, devo smussare in due punti
-#Smusso nel primo punto
-xBoundaries2<-c(xBoundaries[1:187],12.250,xBoundaries[188:length(xBoundaries)])
-yBoundaries2<-c(yBoundaries[1:187],45.1818,yBoundaries[188:length(yBoundaries)])
-    
-plot(xBoundaries2,yBoundaries2,type="l",xlim=c(12.25,12.27),ylim=c(45.18,45.19))
-points(xChioggia,yChioggia,type='l')
-
-#Smusso di nuovo nel secondo punto
-plot(xBoundaries2,yBoundaries2,type="l",xlim=c(12.26,12.32),ylim=c(45.176,45.184))
-points(xChioggia,yChioggia,type='l')
-
-#identify(xBoundaries2,yBoundaries2)
-#identify(xChioggia,yChioggia)
-
-xBoundaries3<-c(xBoundaries2[1:189],12.280,xBoundaries2[190:length(xBoundaries2)])
-yBoundaries3<-c(yBoundaries2[1:189],45.177,yBoundaries2[190:length(yBoundaries2)])
-
-plot(xBoundaries3,yBoundaries3,type="l",xlim=c(12.26,12.32),ylim=c(45.176,45.184))
-points(xChioggia,yChioggia,type='l')
-
-#Ora che ho smussato, sostituisco
-xBoundaries<-xBoundaries3
-yBoundaries<-yBoundaries3
-
-#Ora devo unire a Chioggia
-#Ingrandisco nella zona di Chioggia
-plot(xBoundaries,yBoundaries,type="l",xlim=c(12.25,12.27),ylim=c(45.18,45.19))
-points(xChioggia,yChioggia,type='l')
-
-#identify(xBoundaries,yBoundaries)
-#identify(xChioggia,yChioggia)
-
-xBoundaries<-c(xBoundaries[1:188],12.251,xChioggia[19:length(xChioggia)],xChioggia[1:18],12.25203,12.2515,xBoundaries[189:length(xBoundaries)])
-yBoundaries<-c(yBoundaries[1:188],45.182,yChioggia[19:length(yChioggia)],yChioggia[1:18],45.18244,45.182,yBoundaries[189:length(yBoundaries)])
-
-plot(xBoundaries,yBoundaries,type="l",xlim=c(12.25,12.27),ylim=c(45.18,45.19))
-
-
-##### CONTROLLI INTERSEZIONI E COMUNI #####
-
-#Ci sono punti ripetuti?
-D<-Duplicated(xBoundaries,yBoundaries)
-D
-#No
-
-#Ho generato intersezioni?
-#Intersect<-Intersections(xBoundaries,yBoundaries)
-#Intersect
-#Si, le ho generate
-#Devo toglierle
-plot(xBoundaries,yBoundaries,type="l",xlim=c(12.41,12.43),ylim=c(45.01,45.025))
-#identify(xBoundaries,yBoundaries)
-#Si risolve se tolgo il 267
-plot(xBoundaries,yBoundaries,type="l",xlim=c(12.46,12.5),ylim=c(44.9,45))
-#identify(xBoundaries,yBoundaries)
-#Si risolve se tolgo il 273
-xBoundaries<-xBoundaries[-c(267,273)]
-yBoundaries<-yBoundaries[-c(267,273)]
-Intersect<-Intersections(xBoundaries,yBoundaries)
-Intersect
-#Nessuna intersezione
-plot(xBoundaries,yBoundaries,type="l")
-
-
-#Tutti i comuni ora stanno all'interno della regione?
-#Leggo i punti di comune
-Coord<-read.table(file="Coordinate.txt",header=TRUE)
-names(Coord)
-
-#LA FRONTIERA RIDOTTA DESCRIVE UN POLIGONO CHE RACCHIUDE TUTTI I COMUNI?
-library(SDMTools)
-PolyPoints<-cbind(xBoundaries,yBoundaries)
-if(sum(pnt.in.poly(cbind(Coord$Longitudine,Coord$Latitudine),PolyPoints)$pip)==length(Coord$Longitudine))
-{
-    print("Tutti i comuni stanno dentro")
-} else
-{
-    print("Esistono comuni esterni alla frontiera")
-}
-#Ci sono comuni esterni. Quali?
-
-row<-pnt.in.poly(cbind(Coord$Longitudine,Coord$Latitudine),PolyPoints)$pip==0
-Coord$Comune[row]
-Coord$Codice[row]
-
-##### SALVATAGGIO DEI RISULTATI #####
-save(file="Frontiera (Veneto grossolano, isole grossolane).RData",xBoundaries,yBoundaries)
