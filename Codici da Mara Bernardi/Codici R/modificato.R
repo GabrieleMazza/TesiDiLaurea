@@ -5,28 +5,14 @@
 
 #  Last modified 04 December 2011 by Laura Sangalli
 
-install.packages("C:\\Users\\Gabriele\\Desktop\\Università\\LAUREA MAGISTRALE\\TESI DI LAUREA\\Codici da Mara Bernardi\\Codici R\\RgoogleMaps_1.0.tar.gz", repos = NULL, type="source")
-
 #setwd("E:/Dati/canada/fdaR") 
-source("SFDA_AllFunctions.R")
+source("2013_SSR_AllFunctions.R")
 
 
 library(RgoogleMaps)
 library(rgl)
 library(fda)
 
-
-windows()
-PlotOnStaticMap(Map, add = FALSE, TrueProj=F,  FUN = points)    # plot the background google image
-
-# and add whatever we like:
-
-# add external boundary
-
-for (nb in 1:100)
-{
-    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=3,col="yellow")
-}
 
 # Upload Montreal_tractcenter and go back to real longitude and latitude:
 
@@ -109,7 +95,7 @@ Map <- GetMap.bbox(bb$lonR, bb$latR, centrale, destfile = 'Montreal_google-map.p
 ### Now use this to create our figure
 
 windows()
-PlotOnStaticMap(Map, add = FALSE, TrueProj=F,  FUN = points)    # plot the background google image
+PlotOnStaticMap(Map, add = FALSE, TrueProj=F,  FUN =lines)    # plot the background google image
 
 # and add whatever we like:
 
@@ -723,6 +709,7 @@ evalmatiNOCovar = matrix(evalmatNOCovar[,1],nrow=nx, ncol=ny, byrow=F)
 
 par(mfrow=c(2,2))
 zlimit=c(min(c(evalmatiCovar1[which.min(evalmatiCovar1)],evalmatiNOCovar[which.min(evalmatiNOCovar)])),max(c(evalmatiCovar1[which.max(evalmatiCovar1)],evalmatiNOCovar[which.max(evalmatiNOCovar)])))
+
 
 image(X,Y,evalmatiCovar1,col=heat.colors(100, alpha=1), zlim=zlimit,main="Covar1")
 contour(X,Y,evalmatiCovar1,add=T, zlim=zlimit)

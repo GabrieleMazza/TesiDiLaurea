@@ -143,6 +143,37 @@ for (yearindex in 1:length(Years))
     png(filename = paste("PLMaps",year,".png",sep=""))
     PlotOnStaticMap(MapVeneto,lon=x[1:580],lat=y[1:580],fun="points",pch=16,col=Colors)
     dev.off()
+    
+    #Ora provo a stampare su RgoogleMaps
+    
+    xmin = min(x)
+    xmax = max(x)
+    nx   = 201
+    X    = matrix(seq(xmin, xmax, len=nx),ncol=1)
+    
+    ymin = min(y)
+    ymax = max(y)
+    ny   = 201
+    Y    = matrix(seq(ymin, ymax, len=ny),ncol=1)    
+
+    Xmat = X %*% matrix(1,nrow=1,ncol=ny)
+    Ymat = matrix(1,nrow=nx,ncol=1) %*% t(Y)
+    Xvec = NULL
+    for (numc in 1:nx)
+    {Xvec=c(Xvec,Xmat[,numc])}
+    Yvec = NULL
+    for (numc in 1:ny)
+    {Yvec=c(Yvec,Ymat[,numc])}
+    
+    evalmat  = eval.FEM.fd(Xvec, Yvec, PLfd)
+    evalmat  = matrix(evalmat[,1] ,nrow=nx, ncol=ny, byrow=F)
+    
+    png(filename = paste("EDDAI",year,".png",sep=""))
+    PlotOnStaticMap(MapVeneto, add = FALSE, TrueProj=F,  FUN = points)  # background plot
+    
+    image(X,Y,evalmat,col=heat.colors(100, alpha=0.7), add = TRUE)
+    contour(X,Y,evalmat,add=T)
+    dev.off()
 }
 
 #Plot dei massimi e dei minimi
