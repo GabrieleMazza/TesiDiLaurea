@@ -5,28 +5,16 @@
 
 #  Last modified 04 December 2011 by Laura Sangalli
 
-install.packages("C:\\Users\\Gabriele\\Desktop\\Università\\LAUREA MAGISTRALE\\TESI DI LAUREA\\Codici da Mara Bernardi\\Codici R\\RgoogleMaps_1.0.tar.gz", repos = NULL, type="source")
 
-#setwd("E:/Dati/canada/fdaR") 
-source("SFDA_AllFunctions.R")
+
+setwd("E:/Dati/canada/fdaR") 
+source("2013_SSR_AllFunctions.R")
 
 
 library(RgoogleMaps)
 library(rgl)
 library(fda)
 
-
-windows()
-PlotOnStaticMap(Map, add = FALSE, TrueProj=F,  FUN = points)    # plot the background google image
-
-# and add whatever we like:
-
-# add external boundary
-
-for (nb in 1:100)
-{
-    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=3,col="yellow")
-}
 
 # Upload Montreal_tractcenter and go back to real longitude and latitude:
 
@@ -37,8 +25,8 @@ Montreal_Tri_abconstrtot =
     as.matrix(read.table('Montreal_Tri_abconstrtot.txt', header=FALSE))
 Montreal_bound_diric = 
     as.matrix(read.table('laura_Montreal_Boundary.txt', header=FALSE))
-    
-    
+
+
 # in Montreal_Tri_abconstrtot:
 # the first 100 edges are for external boundary
 # from 101 to 118 are for Dorval
@@ -58,7 +46,7 @@ p = p + cbind(rep(-73.6939,(dim(p)[[1]])),rep(45.5100,(dim(p)[[1]])))
 t = as.matrix(read.table('Montreal_Tri.txt', header=F))
 
 nt = dim(t)[[1]]
- 
+
 
 # Upload Isle of Montreal income and density data
 
@@ -97,10 +85,10 @@ mappa <- cbind.data.frame(lat = c( 45.4071, centrale[1], 45.6931),
 # save google images
 
 bb <- qbbox(lat = mappa[,'lat'], lon = mappa[,'lon'], 
-        margin=list(m=c(0,0,0,0), TYPE='perc'))
+            margin=list(m=c(0,0,0,0), TYPE='perc'))
 
 GetMap(center = centrale, maptype = 'satellite', 
-format = 'png32', destfile = 'Montreal_google-satellite.png', zoom=10)
+       format = 'png32', destfile = 'Montreal_google-satellite.png', zoom=10)
 
 Map <- GetMap.bbox(bb$lonR, bb$latR, centrale, destfile = 'Montreal_google-map.png',  maptype = 'satellite',NEWMAP = FALSE, GRAYSCALE  = T)
 
@@ -117,7 +105,7 @@ PlotOnStaticMap(Map, add = FALSE, TrueProj=F,  FUN = points)    # plot the backg
 
 for (nb in 1:100)
 {
-points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=3,col="yellow")
+    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=3,col="yellow")
 }
 
 
@@ -129,12 +117,12 @@ points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],
 
 for (nb in 101:118)
 {
-points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2,col="yellow")
+    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2,col="yellow")
 }
 
 for (nb in 119:133)
 {
-points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2,col="yellow")
+    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2,col="yellow")
 }
 
 
@@ -204,10 +192,10 @@ mappazoom <- cbind.data.frame(lat = c(centralezoom[1]-0.02, centralezoom[1], cen
                               lon = c(centralezoom[2]-0.02, centralezoom[2], centralezoom[2]+0.02))
 
 bbzoom <- qbbox(lat = mappazoom[,'lat'], lon = mappazoom[,'lon'], 
-        margin=list(m=c(0,0,0,0), TYPE='perc'))
+                margin=list(m=c(0,0,0,0), TYPE='perc'))
 
 GetMap(center = centralezoom, maptype = 'satellite', 
-format = 'png32', destfile = 'Montreal_google-satellite-zoom.png', zoom=10)
+       format = 'png32', destfile = 'Montreal_google-satellite-zoom.png', zoom=10)
 
 Mapzoom <- GetMap.bbox(bbzoom$lonR, bbzoom$latR, centralezoom, destfile = 'Montreal_google-mapzoom.png', NEWMAP = FALSE)
 
@@ -249,10 +237,10 @@ mappazoom <- cbind.data.frame(lat = c(centralezoom[1]-0.03, centralezoom[1], cen
                               lon = c(centralezoom[2]-0.03, centralezoom[2], centralezoom[2]+0.03))
 
 bbzoom <- qbbox(lat = mappazoom[,'lat'], lon = mappazoom[,'lon'], 
-        margin=list(m=c(0,0,0,0), TYPE='perc'))
+                margin=list(m=c(0,0,0,0), TYPE='perc'))
 
 GetMap(center = centralezoom, maptype = 'satellite', 
-format = 'png32', destfile = 'Montreal_google-satellite-zoom.png', zoom=10)
+       format = 'png32', destfile = 'Montreal_google-satellite-zoom.png', zoom=10)
 
 Mapzoom <- GetMap.bbox(bbzoom$lonR, bbzoom$latR, centralezoom, destfile = 'Montreal_google-mapzoom.png', NEWMAP = FALSE)
 
@@ -310,10 +298,10 @@ mappazoom <- cbind.data.frame(lat = c( centrale[1]-0.10, centrale[1],  centrale[
                               lon = c( centrale[2]-0.10, centrale[2],  centrale[2]+0.10))
 
 bbzoom <- qbbox(lat = mappazoom[,'lat'], lon = mappazoom[,'lon'], 
-        margin=list(m=c(0,0,0,0), TYPE='perc'))
+                margin=list(m=c(0,0,0,0), TYPE='perc'))
 
 GetMap(center = centrale, maptype = 'satellite', 
-format = 'png32', destfile = 'Montreal_google-satellite-zoom.png', zoom=10)
+       format = 'png32', destfile = 'Montreal_google-satellite-zoom.png', zoom=10)
 
 Mapzoom <- GetMap.bbox(bbzoom$lonR, bbzoom$latR, centrale, destfile = 'Montreal_google-map-zoom.png',NEWMAP = FALSE, GRAYSCALE  = T)
 
@@ -339,7 +327,7 @@ windows()
 boxplot(Montreal_popden[which(Montreal_ind==1)],
         Montreal_popden[which(Montreal_ind==0)], names=c("res","NO res"))
 wilcox.test(Montreal_popden[which(Montreal_ind==1)],
-        Montreal_popden[which(Montreal_ind==0)])
+            Montreal_popden[which(Montreal_ind==0)])
 
 
 max(Montreal_popden)
@@ -362,7 +350,7 @@ points(tractcenter[which(Montreal_popden==0),1],tractcenter[which(Montreal_popde
 Montreal_ind[which(Montreal_popden==0)]
 
 # Since a census tract with 0 population density cannot be a residential tract, I'll set these to NON residential
- 
+
 Montreal_ind[which(Montreal_popden==0)] = 0
 
 
@@ -370,7 +358,7 @@ Montreal_ind[which(Montreal_popden==0)] = 0
 boxplot(Montreal_popden[which(Montreal_ind==1)],
         Montreal_popden[which(Montreal_ind==0)], names=c("residential","NON residential"))
 wilcox.test(Montreal_popden[which(Montreal_ind==1)],
-        Montreal_popden[which(Montreal_ind==0)])
+            Montreal_popden[which(Montreal_ind==0)])
 
 
 
@@ -384,7 +372,7 @@ graphics.off()
 boxplot(Montreal_popden[which(Montreal_ind==1)],
         Montreal_popden[which(Montreal_ind==0)], names=c("residential","NON residential"))
 wilcox.test(Montreal_popden[which(Montreal_ind==1)],
-        Montreal_popden[which(Montreal_ind==0)])
+            Montreal_popden[which(Montreal_ind==0)])
 
 
 breaks = (0:24)*1000
@@ -634,15 +622,15 @@ rvecNOCovar = dvec
 
 m = 0
 for (i in 2:np)
- {   
-   for (j in 1:(i-1))
-     {  m = m + 1
-        dvec[m] = sum((p[i,]-p[j,])^2)
-        rvecCovar1[m] = MontrealResCovar1[i,2] * MontrealResCovar1[j,2]
-        rvecCovar2[m] = MontrealResCovar2[i,2] * MontrealResCovar2[j,2]
-        rvecNOCovar[m] = MontrealResNOCovar[i,2] * MontrealResNOCovar[j,2]
-     }
- }
+{   
+    for (j in 1:(i-1))
+    {  m = m + 1
+       dvec[m] = sum((p[i,]-p[j,])^2)
+       rvecCovar1[m] = MontrealResCovar1[i,2] * MontrealResCovar1[j,2]
+       rvecCovar2[m] = MontrealResCovar2[i,2] * MontrealResCovar2[j,2]
+       rvecNOCovar[m] = MontrealResNOCovar[i,2] * MontrealResNOCovar[j,2]
+    }
+}
 
 
 windows()
@@ -674,30 +662,30 @@ X=NULL
 Y=NULL
 
 if (is.null(X))
-  {
+{
     xmin = min(p[,1])
     xmax = max(p[,1])
     nx   = 201
     X    = matrix(seq(xmin, xmax, len=nx),ncol=1)
-  } else
-  {
+} else
+{
     xmin = min(X)
     xmax = max(X)
     nx   = length(X)
-  }
+}
 
 if (is.null(Y))
-  {
+{
     ymin = min(p[,2])
     ymax = max(p[,2])
     ny   = 201
     Y    = matrix(seq(ymin, ymax, len=ny),ncol=1)    
-  } else
-  {
+} else
+{
     ymin = min(Y)
     ymax = max(Y)
     ny   = length(Y)
-  }
+}
 
 
 
@@ -706,10 +694,10 @@ Xmat = X %*% matrix(1,nrow=1,ncol=ny)
 Ymat = matrix(1,nrow=nx,ncol=1) %*% t(Y)
 Xvec = NULL
 for (numc in 1:nx)
- {Xvec=c(Xvec,Xmat[,numc])}
+{Xvec=c(Xvec,Xmat[,numc])}
 Yvec = NULL
 for (numc in 1:ny)
- {Yvec=c(Yvec,Ymat[,numc])}
+{Yvec=c(Yvec,Ymat[,numc])}
 
 
 
@@ -733,7 +721,7 @@ contour(X,Y,evalmatiNOCovar,add=T, zlim=zlimit)
 
 
 # Now look at this!
-        
+
 
 Map <- GetMap.bbox(bb$lonR, bb$latR, centrale, destfile = 'Montreal_google-map.png',NEWMAP = FALSE, GRAYSCALE  = T)
 
@@ -747,24 +735,24 @@ contour(X,Y,evalmatiCovar1,add=T)
 
 for (nb in 1:100)
 {
-points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
+    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
 }
 
 for (nb in 101:118)
 {
-points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
+    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
 }
 
 for (nb in 119:133)
 {
-points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
+    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
 }
 
 
 
 
 persp3d(as.vector(X),as.vector(Y),evalmati, xlab="", ylab="", zlab="", col='red', alpha=1)
-    
+
 
 
 plot(p[,1],p[,2],type="n",xlab="longitude",ylab="latidute")
@@ -816,7 +804,7 @@ fconstrvalues=numeric(length(inodeconstr))
 
 fbar=numeric(numnodes)
 fbar[inodeconstr]=fconstrvalues
-    
+
 
 numnodefree=length(inodefree)
 
@@ -844,40 +832,40 @@ X=NULL
 Y=NULL
 
 if (is.null(X))
-  {
+{
     xmin = min(p[,1])
     xmax = max(p[,1])
     nx   = 201
     X    = matrix(seq(xmin, xmax, len=nx),ncol=1)
-  } else
-  {
+} else
+{
     xmin = min(X)
     xmax = max(X)
     nx   = length(X)
-  }
+}
 
 if (is.null(Y))
-  {
+{
     ymin = min(p[,2])
     ymax = max(p[,2])
     ny   = 201
     Y    = matrix(seq(ymin, ymax, len=ny),ncol=1)    
-  } else
-  {
+} else
+{
     ymin = min(Y)
     ymax = max(Y)
     ny   = length(Y)
-  }
+}
 
 
 Xmat = X %*% matrix(1,nrow=1,ncol=ny)
 Ymat = matrix(1,nrow=nx,ncol=1) %*% t(Y)
 Xvec = NULL
 for (numc in 1:nx)
- {Xvec=c(Xvec,Xmat[,numc])}
+{Xvec=c(Xvec,Xmat[,numc])}
 Yvec = NULL
 for (numc in 1:ny)
- {Yvec=c(Yvec,Ymat[,numc])}
+{Yvec=c(Yvec,Ymat[,numc])}
 
 evalmatCovar1  = eval.FEM.fd(Xvec, Yvec, fdobjCovar1)
 
@@ -897,24 +885,24 @@ contour(X,Y,evalmatiCovar1,add=T)
 
 for (nb in 1:100)
 {
-points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
+    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
 }
 
 for (nb in 101:118)
 {
-points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
+    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
 }
 
 for (nb in 119:133)
 {
-points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
+    points(p[Montreal_Tri_abconstrtot[nb,1:2],1],p[Montreal_Tri_abconstrtot[nb,1:2],2],type="l",lwd=2)
 }
 
 
 
 
 persp3d(as.vector(X),as.vector(Y),evalmatiCovar1, xlab="", ylab="", zlab="", col='red', alpha=1)
-    
+
 
 
 
