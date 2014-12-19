@@ -1,4 +1,7 @@
 #Creazione della frontiera in poligono unico usamdo una tecnica di smoothing
+#La provincia di 
+
+
 
 #Funzioni di appoggio
 source("Functions.R")
@@ -8,12 +11,13 @@ library(geosphere)
 library(RTriangle)
 library(SDMTools)
 
-install.packages("F://RgoogleMaps_1.1.9.15.tar.gz", repos = NULL, type="source")
+
+
 
 ##### DOWNLOAD DELLA FRONTIERA #####
 
 #Scarico la frontiera
-require(raster)
+#require(raster)
 #venezia =  subset(getData('GADM', country='ITA', level=2), NAME_2=="Venezia")
 #plot(venezia)
 #save(file="Venezia.RData",venezia)
@@ -43,8 +47,10 @@ length(xbound)
 length(ybound)
 length(labels)
 
-#Leggo anche i comuni
+#Leggo anche i comuni (solo della provincia di venezia)
 Comuni<-read.table(file="Coordinate.txt",header=T)
+
+
 
 ##### VENETO #####
 
