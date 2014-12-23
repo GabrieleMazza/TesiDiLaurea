@@ -923,79 +923,8 @@ if(sum(pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip)=
     print("Esistono comuni esterni alla frontiera")
 }
 #Salvo tutto
-save(file="ConMenoTriangoli.RData",x,y,Codici,Triang)
-
-##### SALVATAGGIO DEGLI OGGETTI DEFINITIVI SENZA LA PENISOLA DI CT #####
-
-#Creo i Boundaries
-x<-c(Comuni$Longitudine,xVeneto)
-y<-c(Comuni$Latitudine,yVeneto)
-Boundaries<-NULL
-for(i in (length(Comuni$Longitudine)+1):(length(x)-1))
-{
-    Boundaries<-rbind(Boundaries, c(i,i+1))
-}
-Boundaries<-rbind(Boundaries, c(length(x),length(Comuni$Longitudine)+1))
-#Ora triangolazione
-#Oggetto pslg
-pslg_obj<-pslg(cbind(x,y),S=Boundaries)
-#Creo la mesh
-#Y dice di non aggiungere Steiner Points
-#D dice di triangolare con Delaunay
-mesh<-triangulate(pslg_obj,Y=TRUE,D=TRUE)
-#Estrazione dei triangoli
-Triang<-mesh$T
-
-L<-CleanPoints(Triang,c(IDtriang,IDCT),x,y)
-x<-L[[1]]
-y<-L[[2]]
-Triang<-L[[3]]
-#Controllo che il nuovo bordo non abbia intersezioni
-Intersect<-Intersections(x[581:length(x)],y[581:length(x)])
-Intersect
-#Creo anche un vettore di codici di comune
-Codici<-Comuni$Codice
-for (i in (length(Codici)+1):length(x))
-{
-    Codici<-c(Codici,NA)
-}
-#Ora mi salvo il nuovo contorno
-Boundaries<-NULL
-for(i in (length(Comuni$Longitudine)+1):(length(x)-1))
-{
-    Boundaries<-rbind(Boundaries, c(i,i+1))
-}
-Boundaries<-rbind(Boundaries, c(length(x),length(Comuni$Longitudine)+1))
-#Ora triangolazione, devo rifarla? No
-plot(x,y,col="white")
-for (ne in 1:dim(Triang)[1])
-{
-    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]))
-}
-
-#Controllo i punti di bordo
-points(x[is.na(Codici)],y[is.na(Codici)],pch=16,col="red")
-points(x[!(is.na(Codici))],y[!(is.na(Codici))],pch=16,col="blue")
-BorderTR<-BorderTriangles(Triang,Boundaries)
-BorderTR
-#Li coloro
-for (ne in BorderTR)
-{
-    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]),col="green")
-}
-#Come mi aspettavo
-#Controllo che tutti i comuni siano dentro
-
-PolyPoints<-cbind(xVeneto,yVeneto)
-if(sum(pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints)$pip)==length(Comuni$Longitudine))
-{
-    print("Tutti i comuni stanno dentro")
-} else
-{
-    print("Esistono comuni esterni alla frontiera")
-}
-#Salvo tutto
 save(file="SenzaTriangoli.RData",x,y,Codici,Triang)
+
 
 
 
