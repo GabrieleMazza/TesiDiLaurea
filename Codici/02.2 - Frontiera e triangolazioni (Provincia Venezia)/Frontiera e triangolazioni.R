@@ -232,7 +232,6 @@ Comuni$Comune[pnt.in.poly(cbind(Comuni$Longitudine,Comuni$Latitudine),PolyPoints
 
 
 
-
 ##### COMUNI RIMASTI FUORI #####
 
 #Provo ad inserire Quartod'Altino
@@ -461,9 +460,9 @@ for (ne in BorderTR)
 }
 points(xG,yG,pch=16,col="red")
 #identify(xG,yG)
-IDKeep<-c(IDKeep,31,33,35,36,38,39)
-IDDelete<-c(IDDelete,14,15,18,19,20,23,25,26,27,28,29,30,32,34,37)
-IDChoose<-c(IDChoose,24,21,16)
+IDKeep<-c(IDKeep,19,20,21,28,31,33,35,36,38,39)
+IDDelete<-c(IDDelete,14,15,18,23,25,26,27,29,30,32,34,37)
+IDChoose<-c(IDChoose,24,16)
 #Siamo a 39, 6 mancanti
 
 plot(x,y,col="white",xlim=c(12.9,13.1),ylim=c(45.6,45.9))

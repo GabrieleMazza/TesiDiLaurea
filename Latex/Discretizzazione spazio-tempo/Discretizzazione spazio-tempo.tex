@@ -1,0 +1,314 @@
+\documentclass[a4paper,12pt]{report}							% COMANDI INIZIALI
+\usepackage[italian]{babel}							% sillabazione italiana
+\usepackage[utf8]{inputenc}							% Per le lettere accentate IN UNIX E IN WINDOWS
+\usepackage{ragged2e}				 				% giustifica
+\usepackage{amsmath}								% Per allineare le equazioni
+\usepackage{amssymb}								% Per le lettere dell'indicatrice (mathbb)
+\usepackage{bm}										% Per le lettere matematiche in grassetto (vettori)
+\usepackage{graphicx}								% Per le figure
+\usepackage{subfigure}								% Per affiancare le figure
+\usepackage{array}									% Per centrare il testo delle celle
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}	% Per centrare il testo delle celle
+
+\usepackage{listings} 									%Per inserire codice
+\usepackage[usenames]{color}							%Per permettere la colorazione dei caratteri 
+
+
+\lstnewenvironment{code}[1][]
+{\lstset{basicstyle=\small\ttfamily, columns=fullflexible,
+keywordstyle=\color{red}\bfseries, commentstyle=\color{blue},
+language=C++, basicstyle=\small,
+%numbers=left, numberstyle=\tiny,
+%stepnumber=2, numbersep=5pt, frame=shadowbox, 
+%float=*,
+#1}}{}
+
+
+\justifying 										% giustifica
+
+\date{28 Luglio 2014}
+\author{Marc Lamblin, Gabriele Mazza}
+\title{Tutorial per l'uso del codice}
+
+\begin{document}
+
+%Pagina del titolo
+\maketitle
+%Indice e numerazione
+\pagenumbering{arabic}
+
+%\setcounter{page}{2}
+\tableofcontents
+
+\chapter{Introduzione}
+
+In questo codice è implementato uno degli algoritmi proposti nel rapporto tecnico di 
+J. Chang, J. W. Fisher III \textit{``Parallel Sampling of DP Mixture Models using Sub-Cluster Splits'', NIPS, 2013}. 
+
+Un elemento di novità è la suddivisione di ogni cluster in due sub-cluster grazie alla quale vengono proposte delle mosse 
+di Split. Si tratta di un campionatore a pesi istanziati composto da più algoritmi MCMC di tipo Gibbs Sampler della 
+stessa forma e da un algoritmo MCMC di tipo Metropolis-Hastings per le proposte di Split.
+
+Per quanto riguarda l'inferenza 
+sui parametri latenti è stato trattato solo il caso di modelli coniugati. 
+
+\chapter{Prerequisiti}
+È stata usato il C++11. L'analisi dell'output (analisi della distribuzione a posteriori e grafici) è stato svolta tramite R. 
+A causa dell'integrazione con R è necessario installare:
+\begin{itemize}
+ \item Versione di R superiore o uguale alla 3.0
+ \item Installazione dei pacchetti R \textit{Rcpp}, \textit{RInside}, \textit{coda}
+\end{itemize}
+Nel caso in cui sia necessario ricordiamo che per installare un pacchetto R è sufficiente aprire la sessione di R 
+da terminale, e digitare il comando \textit{install.packages(``nome\_pacchetto'')}.
+
+Inoltre, R richiede che sia impostato correttamente il workspace per l'esecuzione dei suoi script. 
+Abbiamo fatto in modo che il codice sia funzionante se la cartella \textit{PACS\_MazzaLamblin} viene posta nella 
+home directory di Linux. 
+Nel caso in cui non sia così, è necessario modificare la variabile globale \textit{wd} in 
+\textit{/src/include/PosteriorAnalysis.hpp} e nei due script di R presenti in \textit{src/Rscripts}. In particolare
+segnaliamo che negli script è necessario porre il path della cartella \textit{results}.
+
+A causa dell'interfaccia di R, i \textit{makefile} sono costruiti in modo da poter caricare le opportune librerie.
+
+\section{Parallelizzazione}
+Per la parallelizzazione del codice abbiamo scelto OpenMP.
+L'utente può controllare il numero di thread esternamente all'esecuzione degli eseguibili.
+Per fissare il numero di thread occorre impostare al valore voluto la variabile d'ambiente \textit{OMP\_NUM\_THREADS}. 
+Il programma si occuperà in automatico della sua lettura negli eseguibili parallelizzati.
+Se non viene specificato alcun valore di \textit{OMP\_NUM\_THREADS} il valore di default è 1 e quindi l'algoritmo
+viene eseguito in seriale.
+
+\chapter{Suddivisione in cartelle}
+Il codice è suddiviso nelle seguenti cartelle:
+\begin{itemize}
+ \item nella cartella \textit{src} sono contenuti tutti gli header con le relative implementazioni dell'algoritmo,
+ gli script di R e la libreria \textit{Eigen} 3.2.1
+ \item nella cartella \textit{results} saranno collocati in automatico i file generati durante l'esecuzione
+ \item nelle cartelle il cui nome comincia per \textit{Main} sono contenuti tutti i sorgenti degli eseguibili
+ \item nella cartella \textit{Documentazione del codice} è possibile trovare la relazione del nostro lavoro e le documentazioni generate da
+ \textit{Doxygen}
+\end{itemize}
+
+\chapter{Uso degli eseguibili}
+Abbiamo lasciato a disposizione quattro eseguibili per ogni applicazione proposta: clustering con modello 
+Normale-InverseWishart (NIW), clustering con modello Exponential-Gamma (EG), dataset Galaxy ed analisi della 
+distribuzione a posteriori.
+
+\section{\textit{MainNIW2D}, \textit{MainEG}}
+In questi esempi viene applicato l'algoritmo proposto usando due modelli bayesiani differenti 
+(rispettivamente NIW ed EG) con dataset generati da opportuni eseguibili. 
+Le cartelle contengono i sorgenti necessari alla creazione degli eseguibili per generare il dataset ed
+eseguire l'algoritmo. Ovviamente il secondo può funzionare solamente se è stato generato in precedenza il dataset.
+
+Elenchiamo ora le regole disponibili nei \textit{makefile}:
+\begin{itemize}
+ \item \textit{all}: compila entrambi i sorgenti
+ \item \textit{build}: compila solo il sorgente per l'esecuzione dell'algoritmo
+ \item \textit{build\_dataset}: compila solo il sorgente per la generazione del dataset
+ \item \textit{main}: compila ed esegue solo il sorgente per l'esecuzione dell'algoritmo
+ \item \textit{dataset}: compila ed esegue solo il sorgente per la generazione del dataset; l'eseguibile è chiamato 
+ \textit{DatasetGenerator}
+ \item \textit{clean}: cancella gli eseguibili
+ \item \textit{distclean}: cancella gli eseguibili, i dataset generati e gli \textit{object files}
+\end{itemize}
+
+\subsection{Gli eseguibili \textit{DatasetGenerator}}
+L'eseguibile \textit{DatasetGenerator} non chiede nessun parametro in input, ma legge i valori relativi al
+dataset da un file esterno chiamato \textit{DatasetParameters.txt}.
+
+Ogni dataset è composto da un insieme di $N$ gruppi dove la numerosità di ogni gruppo è la stessa $n$.
+Tutti i gruppi sono generati dalla stessa famiglia di distribuzioni (rispettivamente
+Normale ed Esponenziale) ma con parametri diversi. In particolare:
+\begin{itemize}
+ \item per il modello Normal-InverseWishart, per ogni gruppo occorre specificare un vettore bidimensionale per la media 
+ (\textit{Mu0}) ed una matrice
+ 2$\times$2 di varianza-covarianza (\textit{Sigma0})
+ \item per il modello Exponential-Gamma, per ogni gruppo occorre specificare un parametro di decadimento esponenziale \textit{Lambda}
+\end{itemize}
+Queste informazioni andranno elencate in \textit{DatasetParameters.txt}. Riportiamo il formato che questi file devono 
+avere rispettivamente per il modello Normal-Inverse Wishart:
+\begin{center}
+ -----
+\end{center}
+\begin{code}
+N
+2
+n
+20
+n
+20
+Mu
+0
+0
+Mu
+100
+100
+Sigma
+1 0
+0 1
+Sigma
+1 0
+0 1
+\end{code}
+\begin{center}
+ -----
+\end{center}
+e per il modello Exponential-Gamma:
+\begin{center}
+ -----
+\end{center}
+\begin{code}
+N
+3
+n
+300
+n
+300
+n
+300
+Lambda
+1
+Lambda
+100
+Lambda
+10000
+\end{code}
+\begin{center}
+ -----
+\end{center}
+Se queste informazioni sono inserite come indicato, il dataset sarà automaticamente generato.
+
+\subsection{Gli eseguibili dell'algoritmo (\textit{Main})}
+Analogamente ai generatori di dataset, anche i Main leggono alcune informazioni da un file esterno chiamato 
+\textit{Hyperparameters.txt}. 
+Abbiamo voluto isolare questi parametri in quanto rappresentano una ``configurazione'' della distribuzione a priori dei 
+modelli bayesiani, e pertanto può essere necessario mantenerla in memoria. In questo modo abbiamo potuto fare più tentativi, 
+salvando ogni volta in locale le ``configurazioni'' ritenute interessanti.
+
+Non entriamo nel dettaglio della scelta di questi valori ma abbiamo lasciato a disposizione una scelta ragionevole per ogni
+modello. Il modo con cui si fissano gli iperparametri non è univoco. 
+Segnaliamo che, analogamente ai parametri di dataset, i file per gli iperparametri dovranno essere strutturati 
+rispettivamente per i modelli NIW e EG nel seguente modo:
+\begin{center}
+ -----
+\end{center}
+\begin{code}
+V0
+5
+K0
+0.1
+Mu0
+0
+0
+Lambda0
+1 0
+0 1
+\end{code}
+\begin{center}
+ -----
+\end{center}
+\begin{code}
+A0
+1
+B0
+0.1
+\end{code}
+\begin{center}
+ -----
+\end{center}
+Si rimanda al capitolo 2.1 per le istruzioni riguardanti la
+parallelizzazione.
+
+All'avvio dell'algoritmo, in entrambi i casi è necessario effettuare le seguenti scelte:
+\begin{itemize}
+ \item il seed per il generatore di numeri casuali (se non impostato, sarà generato casualmente)
+ \item la scelta sui parametri iniziali di esecuzione. Viene chiesto se impostare un valore di $\alpha$ fisso o se porre 
+ una prior (\textit{Gamma(a,b)}) ed in tal caso bisogna inserire gli iperparametri (\textit{a} parametro di forma, \textit{b} parametro di rate). 
+ Viene chiesto se porre una guess iniziale sul numero di cluster $K$. In generale indichiamo con $K$ il numero corrente di cluster 
+ non vuoti.
+ Come discusso nel paragrafo 3.1.1 della relazione, è necessario
+ che sia inserita almeno una di queste informazioni a priori. È concessa molta libertà all'utente. Nella relazione sono disponibili
+ le scelte che abbiamo effettuato per gli esempi riportati
+ \item il numero di iterazioni
+\end{itemize}
+Saranno visualizzati i seguenti risultati:
+\begin{itemize}
+ \item il valore atteso a priori del numero di cluster
+ \item lo stato dell'esecuzione dell'algoritmo
+ \item il tempo di esecuzione dell'algoritmo
+ \item le frequenze relative dei valori del numero di cluster $K$ raccolti nel corso delle iterazioni (\textit{Discrete Density Estimator}). Infatti, per l'inferenza bayesiana sul numero di cluster
+ non siamo interessati all'ultimo valore assunto, ma a tutti i valori raccolti. I risultati potranno essere analizzati da un eseguibile autonomo
+ (si veda il  paragrafo 4.3) tramite le funzioni specifiche di R 
+ \item gli indici di valutazione del clustering: \textit{Rand index}, \textit{Adjusted Rand index}, \textit{Silhouette index}
+ \item saranno indicate le operazioni in corso dopo l'esecuzione dell'algoritmo. In particolare, saranno salvati nella 
+ cartella \textit{results} i file contenenti tutti i valori di $K$ raccolti (\textit{AllK.txt}), gli assegnamenti dei dati 
+ ai cluster (\textit{Clustering.txt}) e un grafico che visualizza l'ultimo clustering prodotto (\textit{Clustering.png}). 
+ In quest'ultimo grafico, in base ai cluster stimati dall'algoritmo, se i dati sono bidimensionali
+ vengono rappresentati con diversi colori, se sono monodimensionali sono rappresentati su righe diverse.
+\end{itemize}
+
+\section{\textit{MainGalaxy}}
+In questa analisi è stato testato l'algoritmo su un dataset molto noto il letteratura (\textit{galaxy}) contenente misurazioni di velocità di 
+spostamento di 82 galassie, provenienti da sei gruppi diversi.
+È stato scelto il modello Normal-InverseWishart.
+L'esecuzione è totalmente analoga a quella 
+di \textit{MainNIW2D} con le seguenti eccezioni:
+\begin{itemize}
+ \item non è necessario generare un dataset poichè già presente (\textit{Galaxy.txt})
+ \item i dati sono monodimensionali e pertanto nel file degli iperparametri \textit{Mu0} e \textit{Lambda0} sono scalari. Anche in questo
+ caso abbiamo lasciato valori di esempio
+\end{itemize}
+
+Valgono le stesse considerazioni viste in precedenza per l'esecuzione dell'algoritmo. 
+Si consulti la relazione (paragrafo 5.4) per possibili valori di riferimento degli iperparametri della prior di $\alpha$. 
+
+\section{\textit{MainPosteriorAnalysis}}
+Una volta generati i valori di $K$, occorre eseguirne l'analisi bayesiana. 
+Abbiamo separato questa analisi dall'algoritmo per poterla eseguire più volte con le stesse realizzazioni di $K$ 
+senza dover lanciare l'algoritmo ogni volta. I parametri che si possono scegliere sono il burnin ed il thinning.
+
+Il \textit{makefile} ha le seguenti regole:
+\begin{itemize}
+ \item \textit{all}: compila il sorgente
+ \item \textit{main}: compila ed esegue
+ \item \textit{clean}: cancella l'eseguibile
+ \item \textit{distclean}: cancella eseguibile e \textit{object files}
+\end{itemize}
+Per questo eseguibile è stato necessario ricorrere all'uso di R. Non sono analizzati tutti i $K$, ma solo alcuni, 
+secondo i seguenti parametri:
+\begin{itemize}
+ \item \textit{burnin}: numero di realizzazioni iniziali da scartare 
+ \item \textit{thinning}: per ridurre l'autocorrelazione della catena dei $K$ generata, dopo il burnin vengono selezionate 
+ alcune iterazioni per l'analisi statistica secondo un passo costante che è il \textit{thinning} 
+ (se unitario, non sono scartate realizzazioni al netto del burnin)
+\end{itemize}
+Infatti, l'obiettivo è che le realizzazioni raccolte siano generate dalla vera distribuzione a posteriori di $K$.
+Pertanto occorre che siano scartate le prime iterazioni che in genere non possiedono tali proprietà di approssimazione, 
+e che non ci sia correlazione marcata tra le iterazioni successive. In seguito è eseguita una analisi Monte Carlo finalizzata
+al computo del valore atteso a posteriori del numero di cluster.
+
+In prima battuta solitamente si impostano \textit{burnin} e \textit{thinning} a 0 e 1, 
+e si guardano gli output prodotti
+da R (reperibili nella cartella \textit{results}):
+\begin{itemize}
+ \item \textit{AllK.png}: valori assunti da $K$
+ \item \textit{Traceplot.png}: rappresentazione degli stati visitati dalla catena di Markov simulata; tale grafico è 
+ affiancato alla stima di densità di $K$ tramite istogramma
+ \item \textit{Acf.png}: funzione di autocorrelazione al variare del \textit{lag}, cioè della distanza tra valori consecutivi
+ della catena markoviana
+\end{itemize}
+
+Successivamente il \textit{burnin} è fissato in base al numero delle prime iterazioni anomale dai primi due grafici ed 
+il \textit{thinning} viene scelto in base al massimo \textit{lag} per cui la funzione
+di autocorrelazione non è nella banda azzurra evidenziata.
+
+Una volta scelti i valori corretti, è possibile studiare il contenuto del file \textit{Routput.txt} contenente le principali 
+inferenze tra cui la principale quantità di interesse è la media a posteriori di $K$. Sono presenti altri indici statistici per i quali non entriamo 
+nel dettaglio.
+
+L'eseguibile generato lascia la possibilità di analizzare più volte questa operazione per poter interfacciare continuamente
+la scelta di \textit{burnin/thinning} con i grafici prodotti.
+
+
+\end{document}
