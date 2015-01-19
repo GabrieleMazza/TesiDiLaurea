@@ -260,8 +260,10 @@ nbasis[which.min(gcv)]
 
 breaks=abscissa[((0:50)*2)+1]
 #breaks=abscissa
-basis = create.bspline.basis(breaks, norder=m)
-functionalPar = fdPar(fdobj=basis, Lfdobj=3, lambda=10e-8)  # functional parameter, da dare in pasto alla funzione smooth.basis
+basis = create.bspline.basis(breaks, norder=3)
+
+#Qui si crea solo un oggetto, non la matrice che mi interessa
+functionalPar = fdPar(fdobj=basis, Lfdobj=2, lambda=10e-8)  # functional parameter, da dare in pasto alla funzione smooth.basis
                                       # ha per argomenti: la base, l'ordine di derivata che si vuole penalizzare, 
                                       # il parametro di smoothing 
 
@@ -269,6 +271,7 @@ functionalPar = fdPar(fdobj=basis, Lfdobj=3, lambda=10e-8)  # functional paramet
 #GLI DO GIA' LA BASE E IL LAMBDA
 #SE VOGLIO POSSO PENALIZZARE ANCHE CON OPERATORI DIFFERENZIALI
 
+#Da qui estrarrò la matrice di penalizzazione...
 Xss=smooth.basis(abscissa, Xobs0, functionalPar)
 
 Xss0 = eval.fd(abscissa, Xss$fd, Lfd=0)
