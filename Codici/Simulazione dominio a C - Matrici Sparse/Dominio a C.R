@@ -9,11 +9,15 @@ source("SpazioTempo.R")
 ######################   DATA GENERATION   ###########################
 ######################################################################
 
+##
+# aggiungo rumore?
+noise<-TRUE
+##
 
 # Plot the function, and its boundary
 fsb <- list(fs.boundary())
-nx<-30
-ny<-10
+nx<-20
+ny<-50
 #Sequenza delle x e delle y
 xvec <- seq(-1,4,length=nx)
 yvec<-seq(-1,1,length=ny)
@@ -120,7 +124,14 @@ TimePoints<-0:5
 Data<-NULL
 for(i in TimePoints)
 {
-    Data<-cbind(Data,data*cos(i))
+    if(noise)
+    {
+        Data<-cbind(Data,(data*cos(i)+rnorm(length(data),0,0.20)))
+    }
+    else
+    {
+        Data<-cbind(Data,data*cos(i))
+    }
 }
 max=max(Data)
 min=min(Data)
@@ -128,7 +139,6 @@ min=min(Data)
 #Creo le basi in spazio e tempo
 TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,3,T)
 SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,1)
-
 
 C<-smooth.ST.fd(Data,SpaceBasisObj,TimeBasisObj,10^-3,10^-3)
 

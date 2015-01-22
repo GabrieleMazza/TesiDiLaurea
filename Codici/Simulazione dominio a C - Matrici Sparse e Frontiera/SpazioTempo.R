@@ -36,7 +36,7 @@ Create.Bspline.Time.Basis = function(TimePoints, TimeOrder, PlotIt=FALSE)
 
 
 
-Create.FEM.Space.Basis = function(Points, Triang, SpaceOrder, E=NULL, Dl=NULL)
+Create.FEM.Space.Basis = function(Points, Triang, Internal, SpaceOrder, E=NULL, Dl=NULL)
 {
     # CREATE.FEM.SPACE.BASIS
     # sets up a finite element basis for the analysis
@@ -64,6 +64,8 @@ Create.FEM.Space.Basis = function(Points, Triang, SpaceOrder, E=NULL, Dl=NULL)
     #               T may also be provided with 3 columns, in which case the
     #               final column is set to ones.  It may also be provided as
     #               either a 3 or 4 by number of triangles matrix.
+    #   INTERNAL    For every point, is TRUE if the point is internal (so data
+    #               is available on the point), FALSE if it is on the boundary
     #   SPACEORDER  Order of elements, which may be either 1 or 2 (2 is default)
     #   E           The number of edges by 7 matrix defining the segments of the 
     #               boundary of the region which are also edges of the triangles
@@ -149,6 +151,7 @@ Create.FEM.Space.Basis = function(Points, Triang, SpaceOrder, E=NULL, Dl=NULL)
     #  The params argument is a struct object
     params=NULL
     params$Points    = Points
+    params$Internal  = Internal
     params$E         = E
     params$Triang    = Triang
     params$SpaceOrder= SpaceOrder
@@ -565,7 +568,7 @@ smooth.ST.fd = function(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
     }
     
     # C is a matrix with rows containing time coefficients for a fixed space point,
-    # columns containig space coefficients for a fixed time istant
+    # columns cuontainig space coefficients for a fixed time istant
     C<-NULL
     for(j in 1:Timenbasis)
     {
@@ -1046,7 +1049,7 @@ insideIndex = function (X, Y, p, t, tricoef)
     ind
 }
 
-
+### SPARSE MATRIX ###
 MakePi = function(SpaceBasisObj,TimeBasisObj)
 {
 
@@ -1070,7 +1073,6 @@ MakePi = function(SpaceBasisObj,TimeBasisObj)
         stop('Time basis are not bspline')
     }
     
-    
     ### PHI MATRIX - SPACE ###
     
     # Now i build an fdobj for each basis function
@@ -1079,6 +1081,19 @@ MakePi = function(SpaceBasisObj,TimeBasisObj)
     #Trovo i punti
     X<-SpaceBasisObj$params$Points[,1]
     Y<-SpaceBasisObj$params$Points[,2]
+    
+    #I want only points with data available
+    X<-X[SpaceBasisObj$params$Internal]
+    Y<-Y[SpaceBasisObj$params$Internal]
+    
+    #I build Phi as indentity matrix
+#     Phi<-matrix(data=0,nrow=length(X),ncol=length(SpaceBasisObj$params$Points[,1]))
+#     for(i in 1:length(X))
+#     {
+#         Phi[i,i]=1
+#     }
+#     
+    
     for(i in 1:SpaceBasisObj$nbasis)
     {
         # basis function i
@@ -1090,14 +1105,46 @@ MakePi = function(SpaceBasisObj,TimeBasisObj)
         
         Phi<-cbind(Phi,eval)
     }
-    
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Phi)[1]))
+    {
+        for(j in 1:(dim(Phi)[2]))
+        {
+            if(Phi[i,j]!=0)
+            {
+                row<-c(row,i)
+                col<-c(col,j)
+                val<-c(val,Phi[i,j])
+            }
+        }
+    }
+    dim<-dim(Phi)
+    Phi<-sparseMatrix(i=row,j=col,x=val,dims=dim)
     
     ### PSI MATRIX - TIME ###
     
     Psi=eval.basis(TimeBasisObj$TimePoints,TimeBasisObj$BasisObj)
-    
-    # I don't want basis names...
-    dimnames(Psi)[[2]]<-NULL
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Psi)[1]))
+    {
+        for(j in 1:(dim(Psi)[2]))
+        {
+            if(Psi[i,j]!=0)
+            {
+                row<-c(row,i)
+                col<-c(col,j)
+                val<-c(val,Psi[i,j])
+            }
+        }
+    }
+    dim<-dim(Psi)
+    Psi<-sparseMatrix(i=row,j=col,x=val,dims=dim)
     
     
     ### PI MATRIX - SPACE+TIME ###
@@ -1108,7 +1155,7 @@ MakePi = function(SpaceBasisObj,TimeBasisObj)
 
 
 
-
+### SPARSE MATRIX ###
 MakeS = function(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT,DerivativeOrder=1)
 {
     # Check arguments
@@ -1142,16 +1189,80 @@ MakeS = function(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT,DerivativeOrder=1)
     
     Sspace = K1%*%solve(K0)%*%K1
     
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Sspace)[1]))
+    {
+        for(j in 1:(dim(Sspace)[2]))
+        {
+            if(Sspace[i,j]!=0)
+            {
+                row<-c(row,i)
+                col<-c(col,j)
+                val<-c(val,Sspace[i,j])
+            }
+        }
+    }
+    dim<-dim(Sspace)
+    Sspace<-sparseMatrix(i=row,j=col,x=val,dims=dim)
     
     ### STIME ###
     
     Stime=eval.penalty(TimeBasisObj$BasisObj, 1)
     
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Stime)[1]))
+    {
+        for(j in 1:(dim(Stime)[2]))
+        {
+            if(Stime[i,j]!=0)
+            {
+                row<-c(row,i)
+                col<-c(col,j)
+                val<-c(val,Stime[i,j])
+            }
+        }
+    }
+    dim<-dim(Stime)
+    Stime<-sparseMatrix(i=row,j=col,x=val,dims=dim)
     
     ### S=SSPACE+STIME ###
     
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Stime)[1]))
+    {
+        row<-c(row,i)
+        col<-c(col,i)
+        val<-c(val,1)
+    }
+    dim<-dim(Stime)
+    A<-sparseMatrix(i=row,j=col,x=val,dims=dim)
+    
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Sspace)[1]))
+    {
+        row<-c(row,i)
+        col<-c(col,i)
+        val<-c(val,1)
+    }
+    dim<-dim(Sspace)
+    B<-sparseMatrix(i=row,j=col,x=val,dims=dim)
+    
+    
+    
     # S is created using kronaker product
-    S=LambdaS*kronecker(diag(dim(Stime)[1]),Sspace) + LambdaT*kronecker(Stime,diag(dim(Sspace)[1]))
+    S=LambdaS*kronecker(A,Sspace) + LambdaT*kronecker(Stime,B)
     
     return(S)
 }
@@ -1211,7 +1322,7 @@ eval.ST.fd = function(X,Y,Time,C,SpaceBasisObj,TimeBasisObj)
     # I Want to use the old function eval.FEM.fd
     N = length(X)
     
-    # I need Phi matrix in used time points
+    # I need Psi matrix in used time points
     Psi=eval.basis(Time,TimeBasisObj$BasisObj)
     if ((dim(Psi)[2])!=(dim(C)[2]))
     {  

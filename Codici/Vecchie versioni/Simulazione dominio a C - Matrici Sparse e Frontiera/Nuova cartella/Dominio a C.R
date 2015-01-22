@@ -129,7 +129,6 @@ min=min(Data)
 TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,3,T)
 SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,1)
 
-
 C<-smooth.ST.fd(Data,SpaceBasisObj,TimeBasisObj,10^-3,10^-3)
 
 

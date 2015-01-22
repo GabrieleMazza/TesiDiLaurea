@@ -1,6 +1,23 @@
 # Creo le funzioni per l'analisi spazio-temporale
 
 
+bwsubs=function(Q,b)
+{
+    N=dim(Q)[1]
+    Sol=numeric(N)
+    Sol[N]=b[N]/Q[N,N]
+    for(i in (N-1):1)
+    {
+        temp=b[i]
+        for(j in N:(i+1))
+        {
+            temp=temp-Sol[j]*Q[i,j]
+        }
+        Sol[i]=temp/Q[i,i]
+    }
+    return(as.matrix(Sol))
+}
+
 Create.Bspline.Time.Basis = function(TimePoints, TimeOrder, PlotIt=FALSE)
 {
     # CREATE.BsPLINE.TIME.BASIS 
@@ -36,7 +53,7 @@ Create.Bspline.Time.Basis = function(TimePoints, TimeOrder, PlotIt=FALSE)
 
 
 
-Create.FEM.Space.Basis = function(Points, Triang, SpaceOrder, E=NULL, Dl=NULL)
+Create.FEM.Space.Basis = function(Points, Triang, Internal, SpaceOrder, E=NULL, Dl=NULL)
 {
     # CREATE.FEM.SPACE.BASIS
     # sets up a finite element basis for the analysis
@@ -64,6 +81,8 @@ Create.FEM.Space.Basis = function(Points, Triang, SpaceOrder, E=NULL, Dl=NULL)
     #               T may also be provided with 3 columns, in which case the
     #               final column is set to ones.  It may also be provided as
     #               either a 3 or 4 by number of triangles matrix.
+    #   INTERNAL    For every point, is TRUE if the point is internal (so data
+    #               is available on the point), FALSE if it is on the boundary
     #   SPACEORDER  Order of elements, which may be either 1 or 2 (2 is default)
     #   E           The number of edges by 7 matrix defining the segments of the 
     #               boundary of the region which are also edges of the triangles
@@ -149,6 +168,7 @@ Create.FEM.Space.Basis = function(Points, Triang, SpaceOrder, E=NULL, Dl=NULL)
     #  The params argument is a struct object
     params=NULL
     params$Points    = Points
+    params$Internal  = Internal
     params$E         = E
     params$Triang    = Triang
     params$SpaceOrder= SpaceOrder
@@ -552,7 +572,13 @@ smooth.ST.fd = function(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
         z<-c(z,Data[,j])
     }
     z<-as.matrix(z)
-    Sol=solve(t(Pi)%*%Pi+S)%*%t(Pi)%*%z
+    #Sol=solve(t(Pi)%*%Pi+S)%*%t(Pi)%*%z
+    QR=qr((t(Pi)%*%Pi+S))
+    Q=qr.Q(QR)
+    R=qr.R(QR)
+    
+    b=t(Q)%*%t(Pi)%*%z
+    Sol<-bwsubs(R,b)
     
     # Now that I've found the solution, i create an object with coefficients
     Timenbasis=TimeBasisObj$BasisObj$nbasis
@@ -1079,6 +1105,19 @@ MakePi = function(SpaceBasisObj,TimeBasisObj)
     #Trovo i punti
     X<-SpaceBasisObj$params$Points[,1]
     Y<-SpaceBasisObj$params$Points[,2]
+    
+    #I want only points with data available
+    X<-X[SpaceBasisObj$params$Internal]
+    Y<-Y[SpaceBasisObj$params$Internal]
+    
+    #I build Phi as indentity matrix
+    #     Phi<-matrix(data=0,nrow=length(X),ncol=length(SpaceBasisObj$params$Points[,1]))
+    #     for(i in 1:length(X))
+    #     {
+    #         Phi[i,i]=1
+    #     }
+    #     
+    
     for(i in 1:SpaceBasisObj$nbasis)
     {
         # basis function i

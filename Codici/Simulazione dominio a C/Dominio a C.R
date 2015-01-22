@@ -9,11 +9,15 @@ source("SpazioTempo.R")
 ######################   DATA GENERATION   ###########################
 ######################################################################
 
+##
+# aggiungo rumore?
+noise<-TRUE
+##
 
 # Plot the function, and its boundary
 fsb <- list(fs.boundary())
 nx<-30
-ny<-10
+ny<-5
 #Sequenza delle x e delle y
 xvec <- seq(-1,4,length=nx)
 yvec<-seq(-1,1,length=ny)
@@ -120,7 +124,14 @@ TimePoints<-0:5
 Data<-NULL
 for(i in TimePoints)
 {
-    Data<-cbind(Data,data*cos(i))
+    if(noise)
+    {
+        Data<-cbind(Data,(data*cos(i)+rnorm(length(data),0,0.5)))
+    }
+    else
+    {
+        Data<-cbind(Data,data*cos(i))
+    }
 }
 max=max(Data)
 min=min(Data)
@@ -128,9 +139,6 @@ min=min(Data)
 #Creo le basi in spazio e tempo
 TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,3,T)
 SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,1)
-
-Pi=MakePi(SpaceBasisObj,TimeBasisObj)
-S=MakeS(SpaceBasisObj,TimeBasisObj,10^-3,10^-3,)
 
 C<-smooth.ST.fd(Data,SpaceBasisObj,TimeBasisObj,10^-3,10^-3)
 
@@ -163,7 +171,6 @@ for(j in TimePoints)
     {
         newtru[Pos[k,1],Pos[k,2]]<-Result[k]
     }
-    png(filename=paste(j,"stimata.png",sep=""))
     if(max<max(newtru,na.rm=TRUE))
     {
         max=max(newtru,na.rm=TRUE)
@@ -172,7 +179,6 @@ for(j in TimePoints)
     {
         min=min(newtru,na.rm=TRUE)
     }
-    dev.off()
 }
 
 zlim<-c(min,max)
@@ -180,7 +186,7 @@ zlim<-c(min,max)
 for(i in TimePoints)
 {
     png(filename=paste(i,".png",sep=""))
-    image(tru*cos(i),zlim=zlim)
+    image(tru*cos(i),zlim=zlim,main=paste("Tempo",i,"reale",sep=" "))
     dev.off()
 }
 
@@ -195,6 +201,6 @@ for(j in TimePoints)
         newtru[Pos[k,1],Pos[k,2]]<-Result[k]
     }
     png(filename=paste(j,"stimata.png",sep=""))
-    image(newtru,zlim=zlim)
+    image(newtru,zlim=zlim,main=paste("Tempo",j,"stima",sep=" "))
     dev.off()
 }

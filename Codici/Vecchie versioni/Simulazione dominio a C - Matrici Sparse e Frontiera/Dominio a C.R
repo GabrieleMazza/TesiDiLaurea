@@ -9,11 +9,12 @@ source("SpazioTempo.R")
 ######################   DATA GENERATION   ###########################
 ######################################################################
 
+noise=TRUE
 
 # Plot the function, and its boundary
 fsb <- list(fs.boundary())
 nx<-30
-ny<-10
+ny<-8
 #Sequenza delle x e delle y
 xvec <- seq(-1,4,length=nx)
 yvec<-seq(-1,1,length=ny)
@@ -54,51 +55,51 @@ for(i in 1:(dim(tru)[1]))
     }
 }
 
-# xbound<-fsb[[1]]$x
-# ybound<-fsb[[1]]$y
-# 
-# #Ci sono punti esterni alla frontiera?
-# PolyPoints<-cbind(xbound,ybound)
-# if(sum(pnt.in.poly(cbind(x,y),PolyPoints)$pip)==length(x))
-# {
-#     print("Tutti i punti stanno dentro")
-# } else
-# {
-#     n<-length(x)-sum(pnt.in.poly(cbind(x,y),PolyPoints)$pip)
-#     paste("Esistono",n,"punti esterni alla frontiera",sep="")
-# }
-# 
-# ID<-pnt.in.poly(cbind(x,y),PolyPoints)$pip==1
-# #Li tolgo
-# x<-x[ID]
-# y<-y[ID]
-# data<-data[ID]
-# 
-# #Ora riprovo
-# PolyPoints<-cbind(xbound,ybound)
-# if(sum(pnt.in.poly(cbind(x,y),PolyPoints)$pip)==length(x))
-# {
-#     print("Tutti i punti stanno dentro")
-# } else
-# {
-#     print("Esistono punti esterni alla frontiera")
-# }
-# 
-# #Creo la triangolazione spaziale
-# #Oggetti completi
-# xtot<-c(x,xbound)
-# ytot<-c(y,ybound)
-# #Creo i Boundaries
-# Boundaries<-NULL
-# for(i in (length(x)+1):(length(xtot)-1))
-# {
-#     Boundaries<-rbind(Boundaries, c(i,i+1))
-# }
-# Boundaries<-rbind(Boundaries, c(length(xtot),length(x)+1))
+xbound<-fsb[[1]]$x
+ybound<-fsb[[1]]$y
+
+#Ci sono punti esterni alla frontiera?
+PolyPoints<-cbind(xbound,ybound)
+if(sum(pnt.in.poly(cbind(x,y),PolyPoints)$pip)==length(x))
+{
+    print("Tutti i punti stanno dentro")
+} else
+{
+    n<-length(x)-sum(pnt.in.poly(cbind(x,y),PolyPoints)$pip)
+    paste("Esistono",n,"punti esterni alla frontiera",sep="")
+}
+
+ID<-pnt.in.poly(cbind(x,y),PolyPoints)$pip==1
+#Li tolgo
+x<-x[ID]
+y<-y[ID]
+data<-data[ID]
+
+#Ora riprovo
+PolyPoints<-cbind(xbound,ybound)
+if(sum(pnt.in.poly(cbind(x,y),PolyPoints)$pip)==length(x))
+{
+    print("Tutti i punti stanno dentro")
+} else
+{
+    print("Esistono punti esterni alla frontiera")
+}
+
+#Creo la triangolazione spaziale
+#Oggetti completi
+xtot<-c(x,xbound)
+ytot<-c(y,ybound)
+#Creo i Boundaries
+Boundaries<-NULL
+for(i in (length(x)+1):(length(xtot)-1))
+{
+    Boundaries<-rbind(Boundaries, c(i,i+1))
+}
+Boundaries<-rbind(Boundaries, c(length(xtot),length(x)+1))
 
 #Ora triangolazione
 #Oggetto pslg
-pslg_obj<-pslg(cbind(x,y))
+pslg_obj<-pslg(cbind(xtot,ytot),S=Boundaries)
 #Creo la mesh
 #Y dice di non aggiungere Steiner Points
 #D dice di triangolare con Delaunay
@@ -106,10 +107,10 @@ mesh<-triangulate(pslg_obj,Y=TRUE,D=TRUE)
 #Estrazione dei triangoli
 Triang<-mesh$T
 #Plot della triangolazione
-plot(x,y,col="white")
+plot(xtot,ytot,col="white")
 for (ne in 1:dim(Triang)[1])
 {
-    polygon(c(x[Triang[ne,1]],x[Triang[ne,2]],x[Triang[ne,3]]),c(y[Triang[ne,1]],y[Triang[ne,2]],y[Triang[ne,3]]))
+    polygon(c(xtot[Triang[ne,1]],xtot[Triang[ne,2]],xtot[Triang[ne,3]]),c(ytot[Triang[ne,1]],ytot[Triang[ne,2]],ytot[Triang[ne,3]]))
 }
 
 
@@ -118,17 +119,27 @@ for (ne in 1:dim(Triang)[1])
 #Ora introduco una variazione temporale. Creo 5 istanti di tempo
 TimePoints<-0:5
 Data<-NULL
-for(i in TimePoints)
+for(t in TimePoints)
 {
-    Data<-cbind(Data,data*cos(i))
+    if(noise==TRUE)
+    {
+        Data<-cbind(Data,(data*cos(t)+rnorm(length(data),0,0.1)))
+    } else
+    {
+        Data<-cbind(Data,data*cos(t))
+    }
+    
 }
 max=max(Data)
 min=min(Data)
 
+#Definisco i punti interni
+Internal=c(rep(TRUE,length(x)),rep(FALSE,length(xbound)))
+
+
 #Creo le basi in spazio e tempo
 TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,3,T)
-SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,1)
-
+SpaceBasisObj<-Create.FEM.Space.Basis(cbind(xtot,ytot),Triang,Internal,1)
 
 C<-smooth.ST.fd(Data,SpaceBasisObj,TimeBasisObj,10^-3,10^-3)
 
@@ -178,7 +189,7 @@ zlim<-c(min,max)
 for(i in TimePoints)
 {
     png(filename=paste(i,".png",sep=""))
-    image(tru*cos(i),zlim=zlim)
+    image(tru*cos(i),zlim=zlim,main=paste("Tempo",j,"reale",sep=" "))
     dev.off()
 }
 
@@ -193,6 +204,6 @@ for(j in TimePoints)
         newtru[Pos[k,1],Pos[k,2]]<-Result[k]
     }
     png(filename=paste(j,"stimata.png",sep=""))
-    image(newtru,zlim=zlim)
+    image(newtru,zlim=zlim,main=paste("Tempo",j,"stima",sep=" "))
     dev.off()
 }

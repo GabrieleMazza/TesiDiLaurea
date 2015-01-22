@@ -565,7 +565,7 @@ smooth.ST.fd = function(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
     }
     
     # C is a matrix with rows containing time coefficients for a fixed space point,
-    # columns containig space coefficients for a fixed time istant
+    # columns cuontainig space coefficients for a fixed time istant
     C<-NULL
     for(j in 1:Timenbasis)
     {
@@ -1046,7 +1046,7 @@ insideIndex = function (X, Y, p, t, tricoef)
     ind
 }
 
-
+### SPARSE MATRIX ###
 MakePi = function(SpaceBasisObj,TimeBasisObj)
 {
 
@@ -1090,14 +1090,46 @@ MakePi = function(SpaceBasisObj,TimeBasisObj)
         
         Phi<-cbind(Phi,eval)
     }
-    
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Phi)[1]))
+    {
+        for(j in 1:(dim(Phi)[2]))
+        {
+            if(Phi[i,j]!=0)
+            {
+                row<-c(row,i)
+                col<-c(col,j)
+                val<-c(val,Phi[i,j])
+            }
+        }
+    }
+    dim<-dim(Phi)
+    Phi<-sparseMatrix(i=row,j=col,x=val,dims=dim)
     
     ### PSI MATRIX - TIME ###
     
     Psi=eval.basis(TimeBasisObj$TimePoints,TimeBasisObj$BasisObj)
-    
-    # I don't want basis names...
-    dimnames(Psi)[[2]]<-NULL
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Psi)[1]))
+    {
+        for(j in 1:(dim(Psi)[2]))
+        {
+            if(Psi[i,j]!=0)
+            {
+                row<-c(row,i)
+                col<-c(col,j)
+                val<-c(val,Psi[i,j])
+            }
+        }
+    }
+    dim<-dim(Psi)
+    Psi<-sparseMatrix(i=row,j=col,x=val,dims=dim)
     
     
     ### PI MATRIX - SPACE+TIME ###
@@ -1108,7 +1140,7 @@ MakePi = function(SpaceBasisObj,TimeBasisObj)
 
 
 
-
+### SPARSE MATRIX ###
 MakeS = function(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT,DerivativeOrder=1)
 {
     # Check arguments
@@ -1142,16 +1174,80 @@ MakeS = function(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT,DerivativeOrder=1)
     
     Sspace = K1%*%solve(K0)%*%K1
     
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Sspace)[1]))
+    {
+        for(j in 1:(dim(Sspace)[2]))
+        {
+            if(Sspace[i,j]!=0)
+            {
+                row<-c(row,i)
+                col<-c(col,j)
+                val<-c(val,Sspace[i,j])
+            }
+        }
+    }
+    dim<-dim(Sspace)
+    Sspace<-sparseMatrix(i=row,j=col,x=val,dims=dim)
     
     ### STIME ###
     
     Stime=eval.penalty(TimeBasisObj$BasisObj, 1)
     
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Stime)[1]))
+    {
+        for(j in 1:(dim(Stime)[2]))
+        {
+            if(Stime[i,j]!=0)
+            {
+                row<-c(row,i)
+                col<-c(col,j)
+                val<-c(val,Stime[i,j])
+            }
+        }
+    }
+    dim<-dim(Stime)
+    Stime<-sparseMatrix(i=row,j=col,x=val,dims=dim)
     
     ### S=SSPACE+STIME ###
     
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Stime)[1]))
+    {
+        row<-c(row,i)
+        col<-c(col,i)
+        val<-c(val,1)
+    }
+    dim<-dim(Stime)
+    A<-sparseMatrix(i=row,j=col,x=val,dims=dim)
+    
+    #Scompongo la matrice
+    row<-NULL
+    col<-NULL
+    val<-NULL
+    for(i in 1:(dim(Sspace)[1]))
+    {
+        row<-c(row,i)
+        col<-c(col,i)
+        val<-c(val,1)
+    }
+    dim<-dim(Sspace)
+    B<-sparseMatrix(i=row,j=col,x=val,dims=dim)
+    
+    
+    
     # S is created using kronaker product
-    S=LambdaS*kronecker(diag(dim(Stime)[1]),Sspace) + LambdaT*kronecker(Stime,diag(dim(Sspace)[1]))
+    S=LambdaS*kronecker(A,Sspace) + LambdaT*kronecker(Stime,B)
     
     return(S)
 }
