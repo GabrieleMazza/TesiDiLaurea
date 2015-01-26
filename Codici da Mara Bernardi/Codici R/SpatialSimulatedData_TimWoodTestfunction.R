@@ -5,7 +5,7 @@
 setwd("E:/Dati/canada/fdaR")
 library(rgl)
 library(soap)
-
+library(mgcv)
 
 
 nrep=50
