@@ -12,12 +12,6 @@ noise<-TRUE
 # Per quanti istanti di tempo eseguire la stima?
 TimePoints<-0:5
 
-# Lambda
-# LambdaS=10^-3
-# LambdaT=10^-5
-# logS=-3
-# logT=-5
-
 # Function for perturbation
 fun=function(x,y,t,xbound,ybound)
 {
@@ -31,7 +25,7 @@ fun=function(x,y,t,xbound,ybound)
             Result[i]=NA
         } else
         {
-            Result[i]=(x[i]+y[i]+t[i])^2 + log(t[i]+1)
+            Result[i]=(x[i]+y[i]+t[i])^2
         }
     }
     
@@ -89,12 +83,15 @@ MinD=min(ResultMatrix,na.rm=TRUE)
 ##### RISOLVO IL SISTEMA #####
 
 #Creo le basi in spazio e tempo
-TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,TimeOrder=4,DerivativeOrder=2,PlotIt=F)
+TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,4,PlotIt=F)
 SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,TypePoint,1)
 
-LogS<--6:-5
-LogT<--6:-5
-GCVResult = ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
+
+##### GCV #####
+
+LogS<--8:+1
+LogT<--8:+1
+GCVResult<-ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
 
 png(filename="GCV Matrix.png")
 image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
@@ -103,33 +100,50 @@ dev.off()
 LambdaS=10^GCVResult$Best[1]
 LambdaT=10^GCVResult$Best[2]
 
-SolutionObj<-ST.Smooth(DataMatrix,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
-        
-write.table(SolutionObj$C,file=paste("MatriceC.txt",sep=" "),row.names=FALSE,col.names=FALSE)
+save(file="GCVResult.RData",GCVResult)
 
-# STAMPA DEI RISULTATI
+
+
+##### RISOLUZIONE DEL SISTEMA #####
+
+SolutionObj<-ST.Smooth(DataMatrix,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
+
+# Ora salvo i risultati
+write.table(SolutionObj$C,file="MatriceC.txt",row.names=FALSE,col.names=FALSE)
+
+
+
+
+##### GRAFICI ANNO PER ANNO #####
+
 PlotMatrix=matrix(ncol=length(yvec),nrow=length(xvec))
+           
+# Voglio ricreare perfettamente le posizioni della image matrix tru
+
+# RICERCA DEL MASSIMO
+#PER AVERE UNA SCALA DI COLORI PER IL GRAFICO UNIFORME IN TUTTI GLI ISTANTI DI TEMPO
 
 ResultFitted<-NULL
         
 for(j in TimePoints)
 {
     Time<-rep(j,length(xValid))
-    Result<-eval.ST.fd(xValid,yValid,Time,SolutionObj)
+    Result<-ST.Eval(xValid,yValid,Time,SolutionObj)
             
     ResultFitted<-cbind(ResultFitted,Result)
 }
-
+        
 MaxF=max(ResultFitted,na.rm=TRUE)
 MinF=min(ResultFitted,na.rm=TRUE)
         
 zlim<-c(min(MinD,MinF),max(MaxD,MaxF))
         
+
 # GRAFICI
 
 # Ora salvo tutti i grafici
 # Voglio ricreare perfettamente le posizioni della image matrix tru
-    
+        
 # Prima ricavo il grafico della funzione reale
 for(j in 1:length(TimePoints))
 {
@@ -137,11 +151,11 @@ for(j in 1:length(TimePoints))
     Mat <- matrix(ResultMatrix[,j],nrow=nx,ncol=ny,byrow=F)
     # Plot
     png(filename=paste("Tempo",TimePoints[j],"reale.png",sep=" "))
-    image(xvec,yvec,Mat,zlim=zlim,main=paste("Funzione reale tempo ",TimePoints[j],", LambdaS=10^",GCVResult$Best[1],", LambdaT=10^",GCVResult$Best[2],sep=""))
+    image(xvec,yvec,Mat,zlim=zlim,main=paste("Funzione reale tempo ",TimePoints[j],sep=""))
     lines(x[TypePoint==FALSE],y[TypePoint==FALSE],lwd=3)
     contour(xvec,yvec,Mat,nlevels=10,add=TRUE)
     dev.off()
-        
+            
             
     # Matrice con la stimata
     for(i in 1:(dim(PosMatrix)[1]))
@@ -150,7 +164,7 @@ for(j in 1:length(TimePoints))
     }
     # Plot
     png(filename=paste("Tempo",TimePoints[j],"stimata.png",sep=" "))
-    image(xvec,yvec,PlotMatrix,zlim=zlim,main=paste("Funzione stimata tempo ",TimePoints[j],", LambdaS=10^",GCVResult$Best[1],", LambdaT=10^",GCVResult$Best[2],sep=""))
+    image(xvec,yvec,PlotMatrix,zlim=zlim,main=paste("Funzione stimata tempo ",TimePoints[j],sep=""))
     lines(x[TypePoint==FALSE],y[TypePoint==FALSE],lwd=3)
     contour(xvec,yvec,PlotMatrix,nlevels=10,add=TRUE)
     dev.off()

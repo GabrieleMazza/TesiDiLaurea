@@ -3,6 +3,9 @@
 # AGGIUNTO GCV
 # CAMBIATI NOMI
 # SPOSTATO DERIVATIVE ORDER
+# MODIFICHE AL 09/02
+# AGGIUNTA LA LETTURA DA FILE
+# aggiunto il nome della location nel plot a punto fissato
 
 BackwardSubs=function(Q,b)
 {
@@ -1195,21 +1198,29 @@ MakeS = function(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
 }
 
 
-FixedPointPlot=function(x,y,SolutionObj,N=100)
+FixedPointPlot=function(x,y,SolutionObj,N=100,NameLocation=NA)
 {
     if (class(SolutionObj)!="SolutionObj")
     {  
         stop('Not valid SolutionObj in FixedPointPlot')
     }
     
-    # Create vectors for eval.ST.fd function
+    # For the title
+    if(is.na(NameLocation))
+    {
+        title=paste("(",x,",",y,")",sep="")
+    } else
+    {
+        title=NameLocation
+    }
+    # Create vectors for ST.Eval function
     xvec<-rep(x,N)
     yvec<-rep(y,N)
     Time<-seq(min(TimeBasisObj$TimePoints),max(TimeBasisObj$TimePoints),length.out=N)
 
     # Plot
-    eval<-eval.ST.fd(xvec,yvec,Time,SolutionObj)
-    plot(Time,eval,type='l',xlab="Time",ylab=" ",main=paste("Time evolution in (",x,",",y,")",sep=""))
+    eval<-ST.Eval(xvec,yvec,Time,SolutionObj)
+    plot(Time,eval,type='l',xlab="Time",ylab=" ",main=paste("Time evolution in ",title,sep=""))
 }
 
 
@@ -1241,15 +1252,32 @@ FixedTimePlot=function(t,SolutionObj,Nx=100,Ny=100)
         Yvec=c(Yvec,Ymat[,numc])
     }
     
-    evalmat = eval.ST.fd(Xvec, Yvec, rep(t,length(Xvec)),SolutionObj)
+    evalmat = ST.Eval(Xvec, Yvec, rep(t,length(Xvec)),SolutionObj)
     evalmat = matrix(evalmat, nrow=Nx, ncol=Ny, byrow=F)
     
     image(X,Y,evalmat,col=heat.colors(100), xlab="", ylab="", asp=1,main=paste("Function at t=",t,sep=""))
     contour(X,Y,evalmat,add=T)
 }    
 
+ReadSolutionObj = function(SpaceBasisObj,TimeBasisObj,FileName)
+{
+    C<-read.table(file=paste(FileName),header=F)
+    C<-as.matrix(C)
+    
+    if((dim(C)[1])!=SpaceBasisObj$nbasis)
+        stop("Number of space basis different from matrix C")
+    if((dim(C)[2])!=TimeBasisObj$BasisObj$nbasis)
+        stop("Number of space basis different from matrix C")
+    
+    SolutionObj<-list(SpaceBasisObj=SpaceBasisObj,TimeBasisObj=TimeBasisObj,C=C)
+    class(SolutionObj)<-"SolutionObj"
+    
+    
+    
+    return(SolutionObj)
+}
 
-eval.ST.fd = function(X,Y,Time,SolutionObj)
+ST.Eval = function(X,Y,Time,SolutionObj)
 {
 
     # Check arguments
