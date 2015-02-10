@@ -1,0 +1,9 @@
+Errori di previsione riportati:
+
+> ErrorGAM=(PredictionGAM-RealValues)^2
+> ErrorST=(PredictionST-RealValues)^2
+
+> sum(ErrorGAM)
+[1] 92.96424
+> sum(ErrorST)
+[1] 478.9395
