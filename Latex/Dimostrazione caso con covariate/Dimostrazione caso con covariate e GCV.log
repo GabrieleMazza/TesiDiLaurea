@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  9 FEB 2015 15:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  10 FEB 2015 18:09
 entering extended mode
-**Dimostrazione*caso*con*covariate.tex
+**Dimostrazione*caso*con*covariate*e*GCV.tex
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
-Dimostrazione caso con covariate\Dimostrazione caso con covariate.tex"
+Dimostrazione caso con covariate\Dimostrazione caso con covariate e GCV.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -719,7 +719,7 @@ LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
 LaTeX Info: Redefining \bm on input line 204.
 )
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
-Dimostrazione caso con covariate\Dimostrazione caso con covariate.aux")
+Dimostrazione caso con covariate\Dimostrazione caso con covariate e GCV.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
@@ -752,51 +752,49 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 24.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 10000) in paragraph at lines 50--56
-
- []
-
-[1
+) [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 81--84
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+Capitolo 2.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 104.
 
- []
-
-[2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 111.
-
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 111.
- [3] [4]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 104.
+ [3
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 134--139
+
+ []
+
+[4]
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
-Dimostrazione caso con covariate\Dimostrazione caso con covariate.aux") ) 
+Dimostrazione caso con covariate\Dimostrazione caso con covariate e GCV.aux") )
+ 
 Here is how much of TeX's memory you used:
- 2372 strings out of 493921
- 27924 string characters out of 3144868
- 78682 words of memory out of 3000000
- 5645 multiletter control sequences out of 15000+200000
- 15802 words of font info for 58 fonts, out of 3000000 for 9000
+ 2357 strings out of 493921
+ 27768 string characters out of 3144868
+ 77682 words of memory out of 3000000
+ 5632 multiletter control sequences out of 15000+200000
+ 12266 words of font info for 45 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,5n,26p,563b,173s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (
+ 27i,5n,26p,494b,144s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "Dimostrazione caso con covariate.pdf" (4 pages, 114602 bytes
-).
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on "Dimostrazione caso con covariate e GCV.pdf" (4 pages, 108684
+ bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
