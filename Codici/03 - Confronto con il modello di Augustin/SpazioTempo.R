@@ -1425,23 +1425,23 @@ ST.GCV = function(Data,SpaceBasisObj,TimeBasisObj,LogS,LogT)
         }
     }
     
-    
-    for(i in 1:length(logS))
-    {
-        dimnames(GCVMatrix)[[1]][i]=paste("S",LogS[i],sep="")
-        dimnames(EDFMatrix)[[1]][i]=paste("S",LogS[i],sep="")
-    }
-    for(i in 1:length(logT))
-    {
-        dimnames(GCVMatrix)[[2]][i]=paste("T",LogT[i],sep="")
-        dimnames(EDFMatrix)[[2]][i]=paste("T",LogT[i],sep="")
-    }
-    
+#     NameS<-list()
+#     NameT<-list()
+#     for(i in 1:length(LogS))
+#     {
+#         NameS<-list(NameS,paste("S",LogS[i],sep=""))
+#     }
+#     for(i in 1:length(LogT))
+#     {
+#         dimnames(GCVMatrix)[[2]][i]=paste("T",LogT[i],sep="")
+#         dimnames(EDFMatrix)[[2]][i]=paste("T",LogT[i],sep="")
+#     }
+#     
     if((Best[1]-LogS[1])*(Best[1]-LogS[length(LogS)])*(Best[2]-LogT[1])*(Best[2]-LogT[length(LogT)])==0)
     {
         print("WARNING: GCV optimum on grid extremes")
     }
-    
+    dimnames(GCVMatrix)[[1]]<-l[[1]]
     
     Result<-list(Best=Best,GCVMatrix=GCVMatrix,EDFMatrix=EDFMatrix)
     

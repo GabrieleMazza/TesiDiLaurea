@@ -1,9 +1,13 @@
-Errori di previsione riportati:
+Errori di previsione riportati in base alla scelta per GAM:
 
-> ErrorGAM=(PredictionGAM-RealValues)^2
-> ErrorST=(PredictionST-RealValues)^2
+1) Con Thin Plate Spline in spazio e Cubic Regression Splines in tempo
+	> sum(ErrorGAM)
+	[1] 92.96424
+	> sum(ErrorST)
+	[1] 478.9395
 
-> sum(ErrorGAM)
-[1] 92.96424
-> sum(ErrorST)
-[1] 478.9395
+2) Con Cubic Regression Splines sia in spazio che in tempo
+	> sum(ErrorGAM)
+	[1] 92.15658
+	> sum(ErrorST)
+	[1] 487.1295

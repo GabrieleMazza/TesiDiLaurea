@@ -100,14 +100,18 @@ SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,TypePoint,1)
 # Il valore ottimo dei lambda era -6 e -6
 DataMatrix<-matrix(data=Data,nrow=length(xknot),ncol=length(TimePoints),byrow=F)
 
-LogS<-seq(-7,-5,length.out=5)
-LogT<-seq(-7,-5,length.out=5)
-GCVResult<-ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
+# LogS<-seq(-7,-5,length.out=10)
+# LogT<-seq(-7,-5,length.out=10)
+# GCVResult<-ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
+# png(filename="GCV Matrix.png")
+# image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
+# dev.off()
 
+load("GCVResult.RData")
 LambdaS=10^GCVResult$Best[1]
 LambdaT=10^GCVResult$Best[2]
 
-save(file="GCVResult.RData",GCVResult)
+#save(file="GCVResult.RData",GCVResult)
 
 # Migliore (finora) LogLambdaS =
 # Migliore (finora) LogLambdaT =
@@ -124,7 +128,7 @@ PredictionST<-ST.Eval(xValid,yValid,rep(TimePrevision,length(xValid)),SolutionOb
 # Studio il valore reale della funzione visto che posso conoscerlo...
 RealValues<-fun(xValid,yValid,rep(TimePrevision,length(xValid)),xbound,ybound)
 
-
+save.image()
 
 
 
