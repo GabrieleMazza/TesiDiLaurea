@@ -1,0 +1,9 @@
+1) Ho posto:
+	LogS = seq(-15,0,length.out=20)
+	LogT = seq(-15,0,length.out=20)
+	Best -> (-12.63158,-14.21053) 
+
+2) Ho posto:
+	LogS = seq(-13,-12,length.out=10)
+	LogT = seq(-15,-14,length.out=10)
+	Best -> (-12.88889,-14.22222)

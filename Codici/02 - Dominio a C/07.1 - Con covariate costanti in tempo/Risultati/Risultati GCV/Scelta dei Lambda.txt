@@ -1,0 +1,6 @@
+Con covariate generate da una normale (2,1)
+
+1) Ho posto:
+	LogS = -8:+1
+	LogT = -8:+1
+	Best -> (-6,1) 

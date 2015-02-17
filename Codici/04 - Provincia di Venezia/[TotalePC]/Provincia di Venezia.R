@@ -2,7 +2,6 @@
 
 source("SpazioTempo.R")
 load("Territorio.RData")
-load("Maps.RData")
 library(rgl)
 library(mgcv)
 library(SDMTools)
@@ -38,20 +37,22 @@ for(j in TimePoints)
 
 
 ##### GCV #####
+# 
+# LogS<-seq(-11,-9,length.out=10)
+# LogT<-seq(-1,1,length.out=10)
+# GCVResult = ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
+# 
+# png(filename="GCV Matrix.png")
+# image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
+# dev.off()
+# 
+# LambdaS=10^GCVResult$Best[1]
+# LambdaT=10^GCVResult$Best[2]
+# 
+# save(file="GCVResult.RData",GCVResult,LogS,LogT)
 
-LogS<--10:0
-LogT<--10:0
-GCVResult = ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
-
-png(filename="GCV Matrix.png")
-image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
-dev.off()
-
-LambdaS=10^GCVResult$Best[1]
-LambdaT=10^GCVResult$Best[2]
-
-save(file="GCVResult.RData",GCVResult)
-
+LambdaS=10^-9.6666667
+LambdaT=10^-0.1111111
 
 ##### RISOLUZIONE DEL SISTEMA #####
 
@@ -78,7 +79,7 @@ ResultFitted<-NULL
 for(j in TimePoints)
 {
     Time<-rep(j,length(xx))
-    Result<-ST:Eval(xx,yy,Time,SolutionObj)
+    Result<-ST.Eval(xx,yy,Time,SolutionObj)
     
     ResultFitted<-cbind(ResultFitted,Result)
 }

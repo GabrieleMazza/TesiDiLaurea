@@ -1,0 +1,9 @@
+1) Ho posto:
+	LogS = -11:-5
+	LogT = -3:3
+	Best -> (-10,0)
+
+2) Ho posto:
+	LogS = seq(-11,-9,length.out=10)
+	LogT = seq(-1,1,length.out=10)
+	Best -> (-9.6666667,-0.1111111)

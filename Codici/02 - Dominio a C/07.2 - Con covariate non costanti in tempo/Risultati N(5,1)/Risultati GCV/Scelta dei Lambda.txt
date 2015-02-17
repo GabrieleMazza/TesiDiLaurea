@@ -1,0 +1,6 @@
+Con covariate generate da N(5,1)
+
+1) Ho posto:
+	LogS = -8:+1
+	LogT = -8:+1
+	Best -> (-4,1) 
