@@ -22,14 +22,14 @@ SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,InternalPoints,1)
 
 # Matrici di Dati
 DataMatrix<-NULL
-for(j in TimePoints)
+for(i in 1:length(Codici[1:nint]))
 {
-    Data<-numeric(nint)
-    for(i in 1:length(Codici[1:nint]))
+    Data<-numeric(length(TimePoints))
+    for(j in 1:length(TimePoints))
     {
-        Data[i]=Risposta$TotalePC[(Risposta$Codice==Codici[i]) & (Risposta$Anno==j)]
+        Data[j]=Risposta$TotalePC[(Risposta$Codice==Codici[i]) & (Risposta$Anno==TimePoints[j])]
     }
-    DataMatrix<-cbind(DataMatrix,Data)
+    DataMatrix<-c(DataMatrix,Data)
 }
 
 
@@ -37,9 +37,9 @@ for(j in TimePoints)
 
 
 ##### GCV #####
-# 
-# LogS<-seq(-11,-9,length.out=10)
-# LogT<-seq(-1,1,length.out=10)
+
+# LogS = seq(-8,-6,length.out=10)
+# LogT = -8:-2
 # GCVResult = ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
 # 
 # png(filename="GCV Matrix.png")
@@ -51,8 +51,8 @@ for(j in TimePoints)
 # 
 # save(file="GCVResult.RData",GCVResult,LogS,LogT)
 
-LambdaS=10^-9.6666667
-LambdaT=10^-0.1111111
+LambdaS=10^-8
+LambdaT=10^-6
 
 ##### RISOLUZIONE DEL SISTEMA #####
 
@@ -67,8 +67,8 @@ write.table(SolutionObj$C,file="MatriceC.txt",row.names=FALSE,col.names=FALSE)
 ##### GRAFICI ANNO PER ANNO #####
 
 
-nx<-100
-ny<-100
+nx<-200
+ny<-200
 xvec<-seq(min(x),max(x),length.out=nx)
 yvec<-seq(min(y),max(y),length.out=ny)
 xx <- rep(xvec,ny)
@@ -113,7 +113,7 @@ dev.off()
 png(filename="San Michele al Tagliamento.png")
 FixedPointPlot(12.994722,45.767222,SolutionObj,NameLocation="San Michele al Tagliamento")
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="SanMichelealTagliamento"],col="red")
-dev.off()
+dev.off() 
 
 # Vediamo come va a Lido
 png(filename="Lido(A).png")

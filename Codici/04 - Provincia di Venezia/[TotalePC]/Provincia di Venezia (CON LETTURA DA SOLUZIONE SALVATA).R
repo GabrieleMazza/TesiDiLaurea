@@ -2,11 +2,10 @@
 
 source("SpazioTempo.R")
 load("Territorio.RData")
-load("Maps.RData")
 library(rgl)
 library(mgcv)
 library(SDMTools)
-library(fda)
+library(loa)
 
 # Leggo i dati
 CoordinateCovariate<-read.table("CoordinateCovariate.txt",header=T)
@@ -27,8 +26,8 @@ SolutionObj=ReadSolutionObj(SpaceBasisObj,TimeBasisObj,"MatriceC.txt")
 
 ##### GRAFICI ANNO PER ANNO #####
 
-nx<-100
-ny<-100
+nx<-200
+ny<-200
 xvec<-seq(min(x),max(x),length.out=nx)
 yvec<-seq(min(y),max(y),length.out=ny)
 xx <- rep(xvec,ny)
@@ -51,12 +50,40 @@ for(j in 1:length(TimePoints))
     # Matrice
     Mat <- matrix(ResultFitted[,j],nrow=nx,ncol=ny,byrow=F)
     # Plot
-    png(filename=paste("Anno",TimePoints[j],".png",sep=" "))
+    png(filename=paste("Anno ",TimePoints[j],".png",sep=""))
     image(xvec,yvec,Mat,zlim=zlim,main=paste("Funzione stimata tempo ",TimePoints[j],sep=""))
     lines(x[!InternalPoints],y[!InternalPoints],lwd=1)
     contour(xvec,yvec,Mat,nlevels=10,add=TRUE)
     dev.off()
 }
+
+
+
+
+##### GRAFICO SU GOOGLE MAPS #####
+
+for(j in 1:length(TimePoints))
+{
+    zfit<-NULL
+    lon<-NULL
+    lat<-NULL
+    for(i in 1:length(xx))
+    {
+        if(!is.na(ResultFitted[i,j]))
+        {
+            lon<-c(lon,xx[i])
+            lat<-c(lat,yy[i])
+            zfit<-c(zfit,ResultFitted[i,j])
+        }
+    }
+    #png(filename=paste("Maps ",TimePoints[j],".png",sep=""))
+    GoogleMap(zfit ~ lat*lon,main=paste("Funzione stimata tempo ",TimePoints[j],sep=""),panel= function(...) panel.contourplot(...,labels=T,label.style="align",at=c(trunc(min(zfit)),seq(200,2200,by=200),(trunc(max(zfit))+1)),col.regions=rgb(1,seq(0,1,length.out=1000),0,alpha=0.5),regions=FALSE,contour=TRUE))
+    #dev.off()
+}
+
+# PRECISO, con linee
+# ncol=1000
+# GoogleMap(z ~ lat*lon,panel= function(...) panel.contourplot(...,at=pretty(z),labels=T,label.style="align",col.regions=rgb(1,seq(0,1,length.out=ncol),0,alpha=0.5),regions=FALSE,contour=T))
 
 
 

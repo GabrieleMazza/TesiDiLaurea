@@ -498,108 +498,6 @@ makenodes=function(p,t,order=2)
 
 
 
-ST.Smooth = function(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
-{
-    # SMOOTH.ST.FD Compute a solution for a Spatial-Time Spline problem 
-    #
-    # Arguments:
-    # FELSPLOBJ     a FELspline object.
-    # LAMBDAS       a scalar smoothing parameter for space term.
-    # LAMBDAT       a scalar smoothing parameter for time term.
-    # DATA          a (n+1)-by-(m+1) set of noisy observations of the surface values.  
-    #               DATA(:,1) indexes the points at which the 
-    #               values in DATA(:,2:end) were observed.
-    #               DATA(1,:) indexes the times at which the values of
-    #               DATA(2:end,:) are observed
-    #
-    # Output:
-    # FELSPLOBJ  ...  A FD object of the FEM type defined by the coefficient
-    #                 vector resulting from smoothing
-    # LAPLACEFD  ...  A FD object of the FEM type for the value of the 
-    #                 Laplace operator if order == 2, or empty if order == 1
-    #
-    #
-    # Last modified on 8 February 2011 by Laura Sangalli
-    
-    #  check arguments
-    
-    # Check arguments
-    # Space
-    if (class(SpaceBasisObj)!="basisfd")
-    {  
-        stop('Space basis object not valid')
-    }
-    if (SpaceBasisObj$type!="FEM")
-    {  
-        stop('Space basis are not FE')
-    }
-    if (!is.numeric(LambdaS))
-    {  
-        stop('LAMBDAS is not numeric')
-    }
-    if (length(LambdaS) != 1)
-    {   
-        stop('LAMBDAS is not a scalar')
-    }
-    # Time
-    if(class(TimeBasisObj)!="TimeBasisObj")
-    {  
-        stop('Time basis object not valid')
-    }
-    if(TimeBasisObj$BasisObj$type!="bspline")
-    {  
-        stop('Time basis are not bspline')
-    }
-    if (!is.numeric(LambdaT))
-    {  
-        stop('LAMBDAT is not numeric')
-    }
-    if (length(LambdaT) != 1)
-    {   
-        stop('LAMBDAT is not a scalar')
-    }
-    
-    # Create Pi matrix
-    Pi=MakePi(SpaceBasisObj,TimeBasisObj)
-    
-    # Create S matrix
-    S=MakeS(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
-    
-    # From data matrix, build z vector
-    z<-NULL
-    for(i in 1:(dim(Data)[1]))
-    {
-        z<-c(z,Data[i,])
-    }
-    z<-as.matrix(z)
-    Sol=solve(t(Pi)%*%Pi+S)%*%t(Pi)%*%z
-    
-    # Now that I've found the solution, i create an object with coefficients
-    Timenbasis=TimeBasisObj$BasisObj$nbasis
-    Spacenbasis=SpaceBasisObj$nbasis
-    
-    # Check for the sistem solution
-    if(dim(Sol)[1]!=Timenbasis*Spacenbasis)
-    {
-        stop('Something wrong with solution dimensions')
-    }
-    
-    # C is a vector. I want to make it a matrix
-    
-    C<-NULL
-    for(j in 1:Spacenbasis)
-    {
-        C<-rbind(C,Sol[((j-1)*Timenbasis+1):(j*Timenbasis),1])
-    }
-    
-    # I create a Solution Object
-    SolutionObj<-list(SpaceBasisObj=SpaceBasisObj,TimeBasisObj=TimeBasisObj,C=C)
-    class(SolutionObj)<-"SolutionObj"
-    
-    return(SolutionObj)
-}
-
-
 
 
 mass=function(nodeStruct)
@@ -1264,6 +1162,8 @@ ReadSolutionObj = function(SpaceBasisObj,TimeBasisObj,FileName)
     return(SolutionObj)
 }
 
+
+
 ReadSolutionObjCovar = function(SpaceBasisObj,TimeBasisObj,FileNameC,FileNameBeta)
 {
     C<-read.table(file=paste(FileNameC),header=F)
@@ -1285,9 +1185,120 @@ ReadSolutionObjCovar = function(SpaceBasisObj,TimeBasisObj,FileNameC,FileNameBet
     return(SolutionObj)
 }
 
+
+ST.Smooth = function(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
+{
+    # SMOOTH.ST.FD Compute a solution for a Spatial-Time Spline problem 
+    #
+    # Arguments:
+    # FELSPLOBJ     a FELspline object.
+    # LAMBDAS       a scalar smoothing parameter for space term.
+    # LAMBDAT       a scalar smoothing parameter for time term.
+    # DATA          a (n+1)-by-(m+1) set of noisy observations of the surface values.  
+    #               DATA(:,1) indexes the points at which the 
+    #               values in DATA(:,2:end) were observed.
+    #               DATA(1,:) indexes the times at which the values of
+    #               DATA(2:end,:) are observed
+    #
+    # Output:
+    # FELSPLOBJ  ...  A FD object of the FEM type defined by the coefficient
+    #                 vector resulting from smoothing
+    # LAPLACEFD  ...  A FD object of the FEM type for the value of the 
+    #                 Laplace operator if order == 2, or empty if order == 1
+    #
+    #
+    # Last modified on 8 February 2011 by Laura Sangalli
+    
+    #  check arguments
+    
+    # Check arguments
+    # Space
+    if (class(SpaceBasisObj)!="basisfd")
+    {  
+        stop('Space basis object not valid')
+    }
+    if (SpaceBasisObj$type!="FEM")
+    {  
+        stop('Space basis are not FE')
+    }
+    if (!is.numeric(LambdaS))
+    {  
+        stop('LAMBDAS is not numeric')
+    }
+    if (length(LambdaS) != 1)
+    {   
+        stop('LAMBDAS is not a scalar')
+    }
+    # Time
+    if(class(TimeBasisObj)!="TimeBasisObj")
+    {  
+        stop('Time basis object not valid')
+    }
+    if(TimeBasisObj$BasisObj$type!="bspline")
+    {  
+        stop('Time basis are not bspline')
+    }
+    if (!is.numeric(LambdaT))
+    {  
+        stop('LAMBDAT is not numeric')
+    }
+    if (length(LambdaT) != 1)
+    {   
+        stop('LAMBDAT is not a scalar')
+    }
+    
+    # Create Pi matrix
+    Pi=MakePi(SpaceBasisObj,TimeBasisObj)
+    
+    # Create S matrix
+    S=MakeS(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
+    
+    # z must be a vector
+    # z must contain points ordered like this:
+    # For each point, every istant in time
+    # So z is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
+    z<-as.matrix(Data)
+    # Check dimensions
+    if ((dim(z)[2]) != 1)
+    {   
+        stop('Data must be a vector')
+    }
+    if ((dim(z)[1]) != (dim(Pi)[1]))
+    {   
+        stop('Incorrect number of data')
+    }
+    
+    Sol=solve(t(Pi)%*%Pi+S)%*%t(Pi)%*%z
+    
+    # Now that I've found the solution, i create an object with coefficients
+    Timenbasis=TimeBasisObj$BasisObj$nbasis
+    Spacenbasis=SpaceBasisObj$nbasis
+    
+    # Check for the sistem solution
+    if(dim(Sol)[1]!=Timenbasis*Spacenbasis)
+    {
+        stop('Something wrong with solution dimensions')
+    }
+    
+    # C is a vector. I want to make it a matrix
+    
+    C<-NULL
+    for(j in 1:Spacenbasis)
+    {
+        C<-rbind(C,Sol[((j-1)*Timenbasis+1):(j*Timenbasis),1])
+    }
+    
+    # I create a Solution Object
+    SolutionObj<-list(SpaceBasisObj=SpaceBasisObj,TimeBasisObj=TimeBasisObj,C=C)
+    class(SolutionObj)<-"SolutionObj"
+    
+    return(SolutionObj)
+}
+
+
+
 ST.Eval = function(X,Y,Time,SolutionObj)
 {
-
     # Check arguments
     if (class(SolutionObj)!="SolutionObj")
     {  
@@ -1381,13 +1392,20 @@ ST.GCV = function(Data,SpaceBasisObj,TimeBasisObj,LogS,LogT)
     KronSpace=kronecker(Sspace,diag(dim(Stime)[1]))
     KronTime=kronecker(diag(dim(Sspace)[1]),Stime)
     
-    # From data matrix, build z vector
-    z<-NULL
-    for(i in 1:(dim(Data)[1]))
-    {
-        z<-c(z,Data[i,])
+    # z must be a vector
+    # z must contain points ordered like this:
+    # For each point, every istant in time
+    # So z is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
+    z<-as.matrix(Data)
+    # Check dimensions
+    if ((dim(z)[2]) != 1)
+    {   
+        stop('Data must be a vector')
     }
-    z<-as.matrix(z)
+    if ((dim(z)[1]) != (dim(Pi)[1]))
+    {   
+        stop('Incorrect number of data')
+    }
     
     n=dim(z)[1]
     
@@ -1511,21 +1529,29 @@ ST.GCV.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
     KronSpace=kronecker(Sspace,diag(dim(Stime)[1]))
     KronTime=kronecker(diag(dim(Sspace)[1]),Stime)
     
-    # From data matrix, build z vector
-    z<-NULL
-    for(i in 1:(dim(Data)[1]))
-    {
-        z<-c(z,Data[i,])
+    # z must be a vector
+    # z must contain points ordered like this:
+    # For each point, every istant in time
+    # So z is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
+    z<-as.matrix(Data)
+    # Check dimensions
+    if ((dim(z)[2]) != 1)
+    {   
+        stop('Data must be a vector')
     }
-    z<-as.matrix(z)
+    if ((dim(z)[1]) != (dim(Pi)[1]))
+    {   
+        stop('Incorrect number of data')
+    }
     
-    # From DesignMatrix, build z vector
-    tmp<-NULL
-    for(i in 1:(dim(DesMat)[1]))
-    {
-        tmp<-c(tmp,DesMat[i,])
+    # DesMat must be a matrix, with correct tumber of dimensions...
+    DesMat<-as.matrix(DesMat)
+    # Check dimensions
+    if ((dim(DesMat)[1]) != (dim(Pi)[1]))
+    {   
+        stop('Incorrect number dimensions for Design Matrix. Number of rows
+             must be equal to number of data')
     }
-    DesMat<-as.matrix(tmp)
     
     n=dim(z)[1]
     
@@ -1692,20 +1718,29 @@ ST.Smooth.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,Lambda
     # Create S matrix
     S=MakeS(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
     
-    # From data matrix, build z vector
-    z<-NULL
-    for(i in 1:(dim(Data)[1]))
-    {
-        z<-c(z,Data[i,])
+    # z must be a vector
+    # z must contain points ordered like this:
+    # For each point, every istant in time
+    # So z is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
+    z<-as.matrix(Data)
+    # Check dimensions
+    if ((dim(z)[2]) != 1)
+    {   
+        stop('Data must be a vector')
     }
-    z<-as.matrix(z)
+    if ((dim(z)[1]) != (dim(Pi)[1]))
+    {   
+        stop('Incorrect number of data')
+    }
     
-    tmp<-NULL
-    for(i in 1:(dim(DesMat)[1]))
-    {
-        tmp<-c(tmp,DesMat[i,])
+    # DesMat must be a matrix, with correct tumber of dimensions...
+    DesMat<-as.matrix(DesMat)
+    # Check dimensions
+    if ((dim(DesMat)[1]) != (dim(Pi)[1]))
+    {   
+        stop('Incorrect number dimensions for Design Matrix. Number of rows
+             must be equal to number of data')
     }
-    DesMat<-as.matrix(tmp)
     
     Temp1<-DesMat%*%solve(t(DesMat)%*%DesMat)%*%t(DesMat)
     
