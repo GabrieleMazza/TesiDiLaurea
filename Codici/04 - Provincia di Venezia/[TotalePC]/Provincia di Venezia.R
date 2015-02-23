@@ -38,28 +38,29 @@ for(i in 1:length(Codici[1:nint]))
 
 ##### GCV #####
 
-# LogS = seq(-8,-6,length.out=10)
-# LogT = -8:-2
-# GCVResult = ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
-# 
-# png(filename="GCV Matrix.png")
-# image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
-# dev.off()
-# 
-# LambdaS=10^GCVResult$Best[1]
-# LambdaT=10^GCVResult$Best[2]
-# 
-# save(file="GCVResult.RData",GCVResult,LogS,LogT)
+LogS = -15:-5
+LogT = -15:-5
+GCVResult = ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
 
-LambdaS=10^-8
-LambdaT=10^-6
+png(filename="GCV Matrix.png")
+image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
+dev.off()
+
+LambdaS=10^GCVResult$Best[1]
+LambdaT=10^GCVResult$Best[2]
+
+save(file="GCVResult.RData",GCVResult,LogS,LogT)
+
+# LambdaS=10^-8
+# LambdaT=10^-6
 
 ##### RISOLUZIONE DEL SISTEMA #####
 
 SolutionObj<-ST.Smooth(DataMatrix,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
 
 # Ora salvo i risultati
-write.table(SolutionObj$C,file="MatriceC.txt",row.names=FALSE,col.names=FALSE)
+write.table(SolutionObj$C,file="Matric
+            eC.txt",row.names=FALSE,col.names=FALSE)
 
 
 

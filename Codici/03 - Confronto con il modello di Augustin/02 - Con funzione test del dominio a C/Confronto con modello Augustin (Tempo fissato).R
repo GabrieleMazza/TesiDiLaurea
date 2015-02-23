@@ -35,6 +35,7 @@ sum(pnt.in.poly(cbind(xValid,yValid),Bound)$pip)==length(xValid)
 
 # Quante volte eseguire il ciclo?
 NTIMES=10
+NGEN=1000
 
 
 ##### GCV #####
@@ -45,27 +46,41 @@ TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,TimeOrder=4,DerivativeOrder=2
 SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,TypePoint,1)
 
 DataMatrix<-NULL
-TimeData<-NULL
-xData<-NULL
-yData<-NULL
+TimeDataMatrix<-NULL
+xDataMatrix<-NULL
+yDataMatrix<-NULL
 for(j in TimePoints)
 {
     DataMatrix<-cbind(DataMatrix,Data*fun(j))
     
     #Per dopo..
-    TimeData<-c(TimeData,rep(j,length(x[TypePoint])))
-    xData<-c(xData,xknot)
-    yData<-c(yData,yknot)
+    TimeDataMatrix<-cbind(TimeDataMatrix,rep(j,length(x[TypePoint])))
+    xDataMatrix<-cbind(xDataMatrix,xknot)
+    yDataMatrix<-cbind(yDataMatrix,yknot)
 }
+TimeData<-NULL
+xData<-NULL
+yData<-NULL
+for(i in 1:(dim(TimeDataMatrix)[1]))
+{
+    TimeData<-c(TimeData,TimeDataMatrix[i,])
+    xData<-c(xData,xDataMatrix[i,])
+    yData<-c(yData,yDataMatrix[i,])
+}
+# LogS<-seq(-13,-12,length.out=10)
+# LogT<-seq(-15,-14,length.out=10)
+# GCVResult<-ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
+# png(filename="GCV Matrix.png")
+# image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
+# dev.off()
+# 
+# save(file="GCVResult.RData",GCVResult,LogS,LogT)
 
-LogS<-seq(-20,-10,length.out=20)
-LogT<-seq(-20,-10,length.out=20)
-GCVResult<-ST.GCV(DataMatrix,SpaceBasisObj,TimeBasisObj,LogS,LogT)
-png(filename="GCV Matrix.png")
-image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
-dev.off()
+# LambdaS=10^GCVResult$Best[1]
+# LambdaT=10^GCVResult$Best[2]
 
-save(file="GCVResult.RData",GCVResult,LogS,LogT)
+LambdaS=10^-12.88889
+LambdaT=10^-14.22222
 
 
 
@@ -81,16 +96,21 @@ RealValues<-fs.test(xValid,yValid)*fun(TimePrevision)
 for(ntimes in 1:NTIMES)
 {
     #Ricavo i dati
-    DataVec<-NULL
+    DataMatrix<-NULL
     for(i in TimePoints)
     {
         if(noise)
         {
-            DataVec<-c(DataVec,Data*fun(i)+rnorm(length(xknot),0,0.05))
+            DataMatrix<-cbind(DataMatrix,Data*fun(i)+rnorm(length(xknot),0,0.05))
         } else
         {
-            DataVec<-c(DataVec,Data*fun(i))
+            DataMatrix<-cbind(DataMatrix,Data*fun(i))
         }
+    }
+    DataVec<-NULL
+    for(i in 1:(dim(DataMatrix)[1]))
+    {
+        DataVec<-c(DataVec,DataMatrix[i,])
     }
     
     ## MODELLO AUGUSTIN ##
@@ -106,10 +126,9 @@ for(ntimes in 1:NTIMES)
     
     ## MODELLO SPAZIOTEMPO ##
     DataMatrix<-matrix(data=DataVec,nrow=length(xknot),ncol=length(TimePoints),byrow=F)
-    LambdaS=10^GCVResult$Best[1]
-    LambdaT=10^GCVResult$Best[2]
+    
     # Risolvo
-    SolutionObj<-ST.Smooth(DataMatrix,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
+    SolutionObj<-ST.Smooth(DataVec,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
     # Previsione
     PredictionST<-ST.Eval(xValid,yValid,rep(TimePrevision,length(xValid)),SolutionObj)
     PredictionSTMat<-cbind(PredictionSTMat,PredictionST)

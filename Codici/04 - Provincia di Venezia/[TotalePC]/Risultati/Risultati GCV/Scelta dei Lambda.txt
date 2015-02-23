@@ -1,9 +1,19 @@
 1) Ho posto:
-	LogS = -11:-5
-	LogT = -3:3
-	Best -> (-7,-3)
+	LogS = -10:0
+	LogT = -10:0
+	Best -> (-10,-8)
 
 2) Ho posto:
-	LogS = seq(-8,-6,length.out=10)
-	LogT = -8:-2
-	Best -> (-8,-6)
+	LogS = -12:-9
+	LogT = seq(-9,-7,length.out=10)
+	Best -> (-12,-9)
+
+3) Ho posto:
+	LogS = -15:-11
+	LogT = -12:-8
+	Best -> (-15,-12)
+
+4) Ho posto:
+	LogS = -15:-5
+	LogT = -15:-5
+	Best -> (-15,-13)

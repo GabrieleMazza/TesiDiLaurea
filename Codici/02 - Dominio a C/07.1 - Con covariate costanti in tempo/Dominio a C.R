@@ -1,7 +1,6 @@
 library(rgl)
 library(mgcv)
 library(SDMTools)
-library(fda)
 source("SpazioTempo.R")
 load("FrontieraC.RData")
 load("Validazione.RData")
@@ -44,17 +43,22 @@ for(i in TimePoints)
     }
 }
 
+DataVec=NULL
+for(i in 1:(dim(DataMatrix)[1]))
+{
+    DataVec<-c(DataVec,DataMatrix[i,])
+}
 
 
 ##### MATRICE DISEGNO #####
 
 # Voglio la covariata fissa nel tempo
 # Genero la covariata da una normale
-tmp<-rnorm(length(Data),Mu,Sigma)
 DesMat<-NULL
-for(j in 1:length(TimePoints))
+for(i in 1:length(Data))
 {
-    DesMat<-cbind(DesMat,tmp)
+    tmp<-rnorm(1,Mu,Sigma)
+    DesMat<-c(DesMat,rep(tmp,length(TimePoints)))
 }
 
 
@@ -66,25 +70,28 @@ for(j in 1:length(TimePoints))
 TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,TimeOrder=4,DerivativeOrder=2,PlotIt=F)
 SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,TypePoint,1)
 
-LogS<--8:+1
-LogT<--8:+1
-GCVResult<-ST.GCV.Covar(DataMatrix,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
+# LogS<--8:+1
+# LogT<--8:+1
+# GCVResult<-ST.GCV.Covar(DataVec,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
+# 
+# png(filename="GCV Matrix.png")
+# image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
+# dev.off()
+# 
+# LambdaS=10^GCVResult$Best[1]
+# LambdaT=10^GCVResult$Best[2]
+# 
+# save(file="GCVResult.RData",GCVResult,LogS,LogT)
 
-png(filename="GCV Matrix.png")
-image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
-dev.off()
-
-LambdaS=10^GCVResult$Best[1]
-LambdaT=10^GCVResult$Best[2]
-
-save(file="GCVResult.RData",GCVResult,LogS,LogT)
+LambdaS=10^-6
+LambdaT=10^1
 
 
 
 
 ##### RISOLUZIONE DEL SISTEMA #####
 
-SolutionObj<-ST.Smooth.Covar(DataMatrix,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
+SolutionObj<-ST.Smooth.Covar(DataVec,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
 
 # Ora salvo i risultati
 write.table(SolutionObj$C,file="MatriceC.txt",row.names=FALSE,col.names=FALSE)
@@ -146,3 +153,9 @@ for(j in 1:length(TimePoints))
 png(filename=paste("Plot per un punto fissato.png",sep=" "))
 FixedPointPlot(xp,yp,SolutionObj)
 dev.off()
+
+
+
+##### INTERVALLO DI CONFIDENZA #####
+ICResult<-ST.IC(DataVec,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
+save(file="ICResult.RData",ICResult)

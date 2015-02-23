@@ -5,7 +5,6 @@ load("Territorio.RData")
 library(rgl)
 library(mgcv)
 library(SDMTools)
-library(fda)
 
 # Leggo i dati
 CoordinateCovariate<-read.table("CoordinateCovariate.txt",header=T)
@@ -22,36 +21,36 @@ SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,InternalPoints,1)
 
 # Matrici di Dati
 DataMatrix<-NULL
-for(j in TimePoints)
+for(i in 1:length(Codici[1:nint]))
 {
-    Data<-numeric(nint)
-    for(i in 1:length(Codici[1:nint]))
+    Data<-numeric(length(TimePoints))
+    for(j in 1:length(TimePoints))
     {
-        Data[i]=Risposta$TotalePC[(Risposta$Codice==Codici[i]) & (Risposta$Anno==j)]
+        Data[j]=Risposta$TotalePC[(Risposta$Codice==Codici[i]) & (Risposta$Anno==TimePoints[j])]
     }
-    DataMatrix<-cbind(DataMatrix,Data)
+    DataMatrix<-c(DataMatrix,Data)
 }
 
 # Matrice Disegno
 
 DesMat<-NULL
 attach(CoordinateCovariate)
-for(j in TimePoints)
+for(i in Codici[!is.na(Codici)])
 {
-    #Scelgo la covariata dell'anno j
-    if(j%%100<10)
-    {
-        name<-paste("PL0",j%%100,sep="")
-    } else
-    {
-        name<-paste("PL",j%%100,sep="")
-    }
     PL<-NULL
-    for (i in Codici[!is.na(Codici)])
+    for (j in TimePoints)
     {
+        #Scelgo la covariata dell'anno j
+        if(j%%100<10)
+        {
+            name<-paste("PL0",j%%100,sep="")
+        } else
+        {
+            name<-paste("PL",j%%100,sep="")
+        }
         PL<-c(PL,(get(name)[CoordinateCovariate$Codice==i]))
     }
-    DesMat<-cbind(DesMat,PL)
+    DesMat<-c(DesMat,PL)
 }
 detach(CoordinateCovariate)
 dimnames(DesMat)[[2]]<-NULL
@@ -60,7 +59,7 @@ dimnames(DesMat)[[2]]<-NULL
 ##### GCV #####
 
 # LogS<-seq(-9,-7,length.out=10)
-# LogT<-seq(-1,2,length.out=10)
+# LogT<-seq(-1,1,length.out=10)
 # GCVResult = ST.GCV.Covar(DataMatrix,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
 # 
 # png(filename="GCV Matrix.png")
@@ -73,7 +72,7 @@ dimnames(DesMat)[[2]]<-NULL
 # save(file="GCVResult.RData",GCVResult,LogS,LogT)
 
 LambdaS=10^-7.888889
-LambdaT=10^0
+LambdaT=10^-0.1111111
 
 ##### RISOLUZIONE DEL SISTEMA #####
 
@@ -83,8 +82,8 @@ SolutionObj<-ST.Smooth.Covar(DataMatrix,DesMat,SpaceBasisObj,TimeBasisObj,Lambda
 write.table(SolutionObj$C,file="MatriceC.txt",row.names=FALSE,col.names=FALSE)
 write.table(SolutionObj$BetaHat,file="BetaHat.txt",row.names=FALSE,col.names=FALSE)
 
-nx<-100
-ny<-100
+nx<-200
+ny<-200
 xvec<-seq(min(x),max(x),length.out=nx)
 yvec<-seq(min(y),max(y),length.out=ny)
 xx <- rep(xvec,ny)
@@ -107,7 +106,7 @@ for(j in 1:length(TimePoints))
     # Matrice con la reale
     Mat <- matrix(ResultFitted[,j],nrow=nx,ncol=ny,byrow=F)
     # Plot
-    png(filename=paste("Anno",TimePoints[j],".png",sep=" "))
+    png(filename=paste("Anno ",TimePoints[j],".png",sep=""))
     image(xvec,yvec,Mat,zlim=zlim,main=paste("Funzione stimata tempo ",TimePoints[j],sep=""))
     lines(x[!InternalPoints],y[!InternalPoints],lwd=1)
     contour(xvec,yvec,Mat,nlevels=10,add=TRUE)
@@ -163,3 +162,10 @@ png(filename="Lido(A).png")
 FixedPointPlot(12.348115,45.384122,SolutionObj,NameLocation = "Lido")
 points(1997:2011,(Risposta$TotalePC[Risposta$Comune=="Lido(A)"]-SolutionObj$BetaHat*LidoCovar),col="red")
 dev.off()
+
+
+
+
+##### INTERVALLI DI CONFIDENZA #####
+
+ICResult = ST.IC(DataMatrix,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
