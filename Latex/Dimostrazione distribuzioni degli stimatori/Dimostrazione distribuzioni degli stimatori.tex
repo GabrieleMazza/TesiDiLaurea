@@ -1,0 +1,129 @@
+\documentclass[a4paper,12pt]{report}				% COMANDI INIZIALI
+\usepackage[italian]{babel}							% sillabazione italiana
+\usepackage[utf8]{inputenc}							% Per le lettere accentate IN UNIX E IN WINDOWS
+\usepackage{ragged2e}					 			% giustifica
+\usepackage{amsmath}								% Per allineare le equazioni
+\usepackage{amssymb}								% Per le lettere dell'indicatrice (mathbb)
+\usepackage{bm}										% Per le lettere matematiche in grassetto (vettori)
+
+\justifying 										% giustifica
+
+\date{28 Luglio 2014}
+\author{Gabriele Mazza}
+\title{Dimostrazione caso con covariate}
+
+\begin{document}
+
+%Indice e numerazione
+\pagenumbering{arabic}
+
+\chapter{Distribuzione degli stimatori}
+Il modello di riferimento per questo studio resta
+$$
+\underline{z}=\Pi\underline{c}+W\underline{\beta}+\underline{\epsilon}
+$$
+con
+$$
+\underline{\epsilon}\sim N(\underline{0},\sigma^2I)
+$$
+Di conseguenza, si avrà che
+$$
+\underline{z}\sim N(\Pi\underline{c}+W\underline{\beta}, \sigma^2I)
+$$
+
+\section{$\underline{\hat{c}}$}
+Studio la distribuzione delle stime dei coefficienti dello sviluppo spazio-temporale della funzione.
+Si ha, dalle stime ricavate nel caso con le covariate:
+$$
+\underline{\hat{c}}=[\Pi^T\Pi+S+\Pi^TW(W^TW)^{-1}W^T\Pi]^{-1}\Pi^T[I-W(W^TW)^{-1}W^T]\underline{z}
+$$
+Preferisco però identificare alcune delle matrici di questo sviluppo:
+$$
+A_{smooth}=[\Pi^T\Pi+S+\Pi^TW(W^TW)^{-1}W^T\Pi]^{-1}\Pi^T
+$$
+$$
+Q=[I-W(W^TW)^{-1}W^T]
+$$
+In questo modo:
+$$
+\underline{\hat{c}}=A_{smooth}Q\underline{z}
+$$
+In particolare la matrice $Q$ è una matrice di proiezione. Infatti, proietta sul complemento ortogonale dello spazio generato dalle colonne di $W$, matrice disegno delle covariate. Ne segue quindi che:
+\begin{itemize}
+\item ogni volta in cui si avrà il prodotto $QW$, questo varrà la matrice nulla di opportune dimensioni
+\item $Q$ è idempotente
+\item in questo caso $Q$ è simmetrica
+\end{itemize} 
+
+La distribuzione di $\hat{c}$ è ovviamente multivariata, e quindi occorre ricavarne la media e la matrice di varianza-covarianza. Tuttavia, conoscendo la distribuzione di $z$, si avrà che
+\begin{eqnarray*}
+\mathbb{E}[\underline{\hat{c}}] &=& A_{smooth}Q\mathbb{E}[\underline{z}] \\
+								&=& A_{smooth}Q(\Pi\underline{c}+W\underline{\beta}) \\
+								&=& A_{smooth}Q\Pi\underline{c}								
+\end{eqnarray*}
+\begin{eqnarray*}
+\mathrm{Var}[\underline{\hat{c}}] &=& A_{smooth}Q\mathrm{Var}[\underline{z}]Q^T A_{smooth}^T \\
+								&=& \sigma^2 A_{smooth}Q Q^T A_{smooth}^T \\
+								&=&  \sigma^2 A_{smooth}Q Q A_{smooth}^T \\
+								&=&  \sigma^2 A_{smooth}Q A_{smooth}^T \\						
+\end{eqnarray*}
+
+
+\section{$\underline{\hat{\beta}}$}
+Molto interessante è lo studio della distribuzione di $\underline{\hat{\beta}}$, perchè sarà usato per la creazione di intervalli di confidenza con cui verificare la significatività delle covariate. Si ha
+\begin{eqnarray*}
+\underline{\hat{\beta}} &=& (W^TW)^{-1}W^T(\underline{z}-\Pi\underline{\hat{c}}) \\
+						&=& (W^TW)^{-1}W^T(\underline{z}-\Pi A_{smooth}Q\underline{z}) \\
+						&=& (W^TW)^{-1}W^T(I-\Pi A_{smooth}Q)\underline{z} 
+\end{eqnarray*}
+
+Quindi si avrà
+
+
+\begin{eqnarray*}
+\mathbb{E}[\underline{\hat{\beta}}] &=& (W^TW)^{-1}W^T(I-\Pi A_{smooth}Q)\mathbb{E} [\underline{z}] \\
+					&=& (W^TW)^{-1}W^T(I-\Pi A_{smooth}Q)(\Pi\underline{c} +W\underline{\beta}) \\
+\end{eqnarray*}
+Ma si ha:
+\begin{eqnarray*}
+(W^TW)^{-1}W^T(I-\Pi A_{smooth}Q)W\underline{\beta} &=& (W^TW)^{-1}W^T(W\underline{\beta}-\Pi A_{smooth}QW\underline{\beta}) \\
+													&=& (W^TW)^{-1}W^T(W\underline{\beta}) \\
+													&=& \underline{\beta}
+\end{eqnarray*}
+Da cui:
+$$
+\mathbb{E}[\underline{\hat{\beta}}] = \underline{\beta} + (W^TW)^{-1}W^T(I-\Pi A_{smooth}Q)\Pi\underline{c}
+$$
+Invece, per quanto riguarda la varianza:
+\begin{eqnarray*}
+\mathrm{Var}[\underline{\hat{\beta}}] &=&(W^TW)^{-1}W^T(I-\Pi A_{smooth}Q)\mathrm{Var}[\underline{z}]((W^TW)^{-1}W^T(I-\Pi A_{smooth}Q))^T \\
+					&=&\sigma^2 (W^TW)^{-1}W^T(I-\Pi A_{smooth}Q)((W^TW)^{-1}W^T(I-\Pi A_{smooth}Q))^T \\
+					&=&\sigma^2 (W^TW)^{-1}W^T(I-\Pi A_{smooth}Q)(I-\Pi A_{smooth}Q)^T W(W^TW)^{-T} \\
+					&=&\sigma^2 (W^TW)^{-1}W^T(I-\Pi A_{smooth}Q)(I-\Pi A_{smooth}Q)^T W(W^TW)^{-1} \\
+\end{eqnarray*}
+Studio un termine alla volta nella moltiplicazione tra le parentesi
+\begin{eqnarray*}
+\sigma^2 (W^TW)^{-1}W^T I I W(W^TW)^{-1} = \sigma^2 (W^TW)^{-1}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\sigma^2 (W^TW)^{-1}W^T \Pi A_{smooth}Q I W(W^TW)^{-1} &=& \sigma^2 (W^TW)^{-1}W^T \Pi A_{smooth}Q W(W^TW)^{-1} \\
+	&=& \mathbb{O}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\sigma^2 (W^TW)^{-1}W^T I Q A_{smooth}^T \Pi^T W(W^TW)^{-1} &=& \sigma^2 (W^TW)^{-1}W^T Q^T A_{smooth}^T \Pi^T W(W^TW)^{-1} \\
+	&=& \sigma^2 (W^TW)^{-1}(QW)^T A_{smooth}^T \Pi^T W(W^TW)^{-1}\\
+	&=& \mathbb{O}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\sigma^2 (W^TW)^{-1}W^T \Pi A_{smooth} Q Q A_{smooth}^T \Pi^T W(W^TW)^{-1} &=& \\
+\sigma^2 (W^TW)^{-1}W^T \Pi A_{smooth} Q A_{smooth}^T \Pi^T W(W^TW)^{-1}
+\end{eqnarray*}
+
+Concludendo
+$$
+\mathrm{Var}[\underline{\hat{\beta}}] = \sigma^2 (W^TW)^{-1} + \sigma^2 (W^TW)^{-1}W^T \Pi A_{smooth} Q A_{smooth}^T \Pi^T W(W^TW)^{-1}
+$$
+\end{document}
