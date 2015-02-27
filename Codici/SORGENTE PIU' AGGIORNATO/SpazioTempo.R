@@ -1527,6 +1527,7 @@ ST.GCV.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
     NodeStruct = SpaceBasisObj$params
     K0 = mass(NodeStruct)
     K1 = stiff1(NodeStruct)
+    Sspace = K1%*%solve(K0)%*%K1
     rm(K0,K1)           #Free memory (useless object from now...)
     
     Stime=eval.penalty(TimeBasisObj$BasisObj, TimeBasisObj$DerivativeOrder)
@@ -1931,6 +1932,6 @@ ST.IC = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT,Alpha=0.
     rownames(ApproxCIBeta)=rows
     
     # Now I can build the result..
-    Result=list(ApproxCIBeta=ApproxCIBeta,Alpha=Alpha,Correct=Correct,CorrectedAlpha=CorrectedAlpha)
+    Result=list(ApproxCIBeta=ApproxCIBeta,Alpha=Alpha,Correct=Correct,CorrectedAlpha=CorrectedAlpha,Sigma2Hat=Sigma2Hat)
     return(Result)
 }
