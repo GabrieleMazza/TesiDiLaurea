@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  28 FEB 2015 15:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  2 MAR 2015 18:27
 entering extended mode
 **Dimostrazione.tex
 
@@ -978,99 +978,63 @@ Report\Dimostrazione.out")
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 Report\Dimostrazione.out")
 \@outlinefile=\write3
- [1{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] [2
-
-]
 Capitolo 1.
-LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3] [4]
-[5] [6] <immagini/Maps2011.pdf, id=72, 722.7pt x 722.7pt>
-File: immagini/Maps2011.pdf Graphic file (type pdf)
+) [1
 
-<use immagini/Maps2011.pdf>
-Package pdftex.def Info: immagini/Maps2011.pdf used on input line 229.
-(pdftex.def)             Requested size: 288.0011pt x 237.68878pt.
- [7]
-<immagini/Venezia.png, id=82, 481.8pt x 481.8pt>
-File: immagini/Venezia.png Graphic file (type png)
- <use immagini/Venezia.png>
-Package pdftex.def Info: immagini/Venezia.png used on input line 235.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
 
-<immagini/Lido(A).png, id=83, 481.8pt x 481.8pt>
-File: immagini/Lido(A).png Graphic file (type png)
- <use immagini/Lido(A).png>
-Package pdftex.def Info: immagini/Lido(A).png used on input line 236.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-<immagini/SanMicheleTagliamento.png, id=84, 481.8pt x 481.8pt>
-File: immagini/SanMicheleTagliamento.png Graphic file (type png)
-
-<use immagini/SanMicheleTagliamento.png>
-Package pdftex.def Info: immagini/SanMicheleTagliamento.png used on input line 
-237.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/Report/immagini/Maps2011.pdf>] [9 <C:/Users/Gabriele/Desktop/Università/LAU
-REA MAGISTRALE/TESI DI LAUREA/Latex/Report/immagini/Venezia.png> <C:/Users/Gabr
-iele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Report/immagini
-/Lido(A).png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI 
-LAUREA/Latex/Report/immagini/SanMicheleTagliamento.png>] [10
+{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] 
+[4] [5]
+[6] [7] [8
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 271.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 271.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 294.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 294.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 Report\Dimostrazione.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 271.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 271.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 294.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 294.
 Package rerunfilecheck Info: File `Dimostrazione.out' has not changed.
-(rerunfilecheck)             Checksum: 9219FE86C4AEB82EEBD17DA8ACF53C87;126.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 271.
+(rerunfilecheck)             Checksum: 6055AB489430D2E2D2C6270C086DD9CE;191.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 294.
  ) 
 Here is how much of TeX's memory you used:
- 8602 strings out of 493921
- 126273 string characters out of 3144868
- 215710 words of memory out of 3000000
- 11753 multiletter control sequences out of 15000+200000
+ 8569 strings out of 493921
+ 125590 string characters out of 3144868
+ 218389 words of memory out of 3000000
+ 11731 multiletter control sequences out of 15000+200000
  12964 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,11n,38p,602b,363s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,11n,38p,635b,352s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Dimostrazione.pdf (11 pages, 390024 bytes).
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Dimostrazione.pdf (9 pages, 210055 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 155 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

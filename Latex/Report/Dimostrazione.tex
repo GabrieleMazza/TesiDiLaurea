@@ -19,14 +19,6 @@
 
 \begin{document}
 
-\begin{center} 
-\section*{Spatio-temporal spline regression models}
-Mara Bernardi, Gabriele Mazza, Laura Sangalli
-\end{center}
-
-We extend the spatial spline regression model described in (\cite{art:sangalli}) to time dependent data and we implement an algorithm to compute the solution to the estimation problem.
-
-
 \chapter{Descrizione del modello}
 
 \section{Caso senza covariate}
@@ -64,25 +56,10 @@ Sia $\{\varphi_i(\underline p); i=1, ... , N\}$ un insieme di $N$ basi spaziali 
 \label{eq:basisexp}
 f(\underline p,t)=\sum_{i=1}^n \sum_{j=1}^m c_{ij}\ \varphi_i(\underline p)\ \psi_j(t) .
 \end{equation}
-La funzione $f(\underline p,t)$ può essere identificata con i valori dei coefficienti $\{c_{ij}; i=1, ... , N\ j=1, ... , M\}$.
+Nel codice implementato sono disponibili elementi finiti in spazio e splines in tempo, perciò il dominio $\Omega$ sarà sostituito dalla sua triangolazione $\Omega_T$.
 
-\subsection*{Rappresentazione matriciale del funzionale $J$}
-Una volta che è stato ottenuto lo svliluppo in funzioni di base della funzione, è possibile riscrivere il funzionale $J_\lambda (f)$ in forma matriciale.
-
-Definiamo il vettore $\underline z$ con i valori osservati e il vettore $\underline c$ con i coefficienti dell'espansione di base di $f$:
+La funzione $f(\underline p,t)$ può essere identificata semplicemente con i valori dei coefficienti $\{c_{ij}; i=1, ... , N\ j=1, ... , M\}$. Quindi l'obiettivo della stima sarà il vettore contenente questi coefficienti:
 \begin{equation}
-\underline z =
-\begin{bmatrix}
-z_{11}  \\
-\vdots\\
-z_{1M}  \\
-z_{21}  \\
-\vdots\\
-z_{2M}  \\
-\vdots\\
-z_{NM}
-\end{bmatrix}
-\qquad
 \underline c =
 \begin{bmatrix}
 c_{11}  \\
@@ -95,53 +72,49 @@ c_{2M}  \\
 c_{NM}
 \end{bmatrix}.
 \end{equation}
-Come si può notare, i due vettori non hanno le stesse dimensioni in generale.
+e si dimostrerà che sarà soluzione di un sistema lineare.
 
-Inoltre definiamo la matrice $\Phi$, con le valutazioni delle basi spaziali nei punti $\{\underline p_i; i = 1,...,n\}$, e la matrice $\Psi$, con le valutazioni delle basi temporali $\{t_j; j = 1,...,m\}$:
-$$
-\Phi =
-\begin{bmatrix}
-\varphi_{1}(\underline p_1) & \varphi_{2}(\underline p_1) & \hdots & \varphi_{N}(\underline p_1)  \\
-\varphi_{1}(\underline p_2) & \varphi_{2}(\underline p_2) & \hdots & \varphi_{N}(\underline p_2)  \\
-\vdots & \vdots & \hdots & \vdots \\
-\varphi_{1}(\underline p_n) & \varphi_{2}(\underline p_n) & \hdots & \varphi_{N}(\underline p_n)  \\
-\end{bmatrix}
-$$
-$$
-\Psi = 
-\begin{bmatrix}
-\psi_{1}( t_1) & \psi_{2}( t_1) & \hdots & \psi_{M}( t_1)  \\
-\psi_{1}( t_2) & \psi_{2}( t_2) & \hdots & \psi_{M}( t_2)  \\
-\vdots & \vdots & \hdots & \vdots \\
-\psi_{1}( t_n) & \psi_{2}( t_m) & \hdots & \psi_{M}( t_m)  \\
-\end{bmatrix}
-$$
-
-Sia $\Pi$ il prodotto di Kronecker $\Phi$ e $\Psi$:
-$$ \Pi = \Phi \otimes \Psi .$$
-Grazie a questi elementi si può riscrivere il funzionale $J$ in (\ref{eq:Jfunc}) come segue:
-\begin{equation} 
-\label{eq:Jmatr}
-J = (\underline z - \Pi \underline c)^T (\underline z - \Pi \underline c) + \underline c^t S \underline c 
-\end{equation}
-dove $S$ contiene i termini di penalizzazione. Per ottenerla, occorre discretizzare i termini di penalizzazione di $J$ in (\ref{eq:Jfunc}) nel seguente modo:
+\subsection*{Discretizzazione dei termini di penalizzazione di $J$}
+Dopo aver fissato le basi dello sviluppo di $f$, è necessario riscrivere in forma discreta anche il funzionale $J$ in (\ref{eq:Jfunc}). La parte più complessa da trattare di $J$ è rappresentata dai due termini di penalizzazione in spazio e tempo, che si semplifica considerando la seguente discretizzazione:
 \begin{equation}
 \label{eq:penalizzdisc}
-\lambda_S  \sum_{j=1}^m \int_{\Omega_T} \Bigl( \triangle f(\underline p,t_j)  \Bigr)^2 d \underline p+ \lambda_T \sum_{i=1}^n\int_0^T \Bigl( \frac{\partial^2 f(\underline p_i,t) }{\partial t ^2} \Bigr)^2 dt ,
+\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} \Bigr)^2 dt ,
 \end{equation}
-where $\Omega_T$ is a triangulation of the domain $\Omega$.\\
-This last expression can in turn be written as follows:
-$$ \lambda_S\   \underline c^T (I_m \otimes S_S)\  \underline c   \ +\  \lambda_T\  \underline c^T ( S_T \otimes I_n)\  \underline c  ,$$
-where $I_n$ and $I_m$ are the identity matrices of dimension $n \times n$ and $m \times m$ respectively and $S_S$ and $S_T$ are the discretizations of the integrals in (\ref{eq:penalizzdisc}). This leads to the definition of $S$ as:
-$$ S = \lambda_S\    (S_S \otimes I_m)   \ +\  \lambda_T\   (I_n \otimes S_T)  .$$
-The expressions for matrices $S_S$ and $S_T$ are obtained substituting the basis expansion of $f$ (\ref{eq:basisexp}) in equation (\ref{eq:penalizzdisc}).
-The first term in equation (\ref{eq:penalizzdisc}) leads to the computation of the following expression for the (k,l)-th element of the matrix $S_S$:
+La scelta di questa discretizzazione è giustificata dalla separabilità delle due penalizzazioni in $J$ e dalla forma di $f$ nell'espressione in funzioni di base in \ref{eq:basisexp}. Infatti $f$ è ricavata combinando le basi dei modelli marginali in spazio e in tempo, e si può ricavare che:
+$$
+f(\underline p,t)=\sum_{j=1}^Mm_{S_j}(\underline p)\psi(t)=\sum_{i=0}^N\varphi_i(\underline p)m_{T_i}(t)
+$$
+dove
+$$
+m_{S_j}(\underline p)=\sum_{i=0}^Nc_{ij}\varphi_i(\underline p) \qquad \forall j=1...M
+$$
+$$
+m_{T_i}(t)=\sum_{j=0}^Mc{ij}\psi_j(t) \qquad \forall i=1...N
+$$
+cioè da $f$ si possono ricavare due insiemi di funzioni marginali fissando rispettivamente l'indice in tempo o in spazio.
+
+Inoltre lo smoothing marginale spaziale ha il suo termine di penalizzazione (l'integrale su $\Omega_T$ del laplaciano, che indicheremo con $J_S$) così come lo smoothing in tempo (l'integrale su $[0,T]$ della derivata seconda, che indicheremo con $J_T$). Tali modelli marginali sono già stati trattati con le stesse basi dei casi che saranno analizzati in seguito (elementi finiti in spazio e B-spline in tempo) e sono validi, quindi per discretizzare $J$ secondo quanto indicato in \ref{eq:penalizzdisc} basta applicare $J_S$ e $J_T$ alle restrizioni marginali risultanti dallo sviluppo di $f$:
+\begin{multline*}
+\lambda_S  \sum_{j=1}^M J_S(m_{S_j}(\underline p)) +
+\lambda_T \sum_{i=1}^N J_T(m_{T_i}(t)) =\\
+=\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} \Bigr)^2 dt
+\end{multline*}
+Dopo questa costruzione (analoga a quella riportata in \cite{art:marra}) non resta che calcolare i due termini con gli integrali in \ref{eq:penalizzdisc}.
+
+L'integrale $\int_{\Omega_T} ( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) )^2 d \Omega$ implica la creazione della matrice $S_S$, il cui (k,l)-mo elemento è:
 $$S_{S_{k,l}} = \int_\Omega \triangle \varphi_k \triangle \varphi_l \ \ \ k = 1, ... , n\ \ l = 1, ... , n.$$
-Defining $ g = \triangle\varphi_l ,$ we obtain
-$$ S_{S_{k,l}} = \int_\Omega \triangle \varphi_k g \ , \ \ \ \ \ \int_\Omega g v = \int_\Omega \triangle \varphi_l v.$$
-Using the Green formula and exploiting the Neumann boundary conditions we can write:
+Per avere una forma utile a livello computazionale di questa espressione è necessario considerare $ g = \triangle\varphi_l $ e un insieme di funzioni test $v$, discretizzate in spazio con le stesse funzioni di base di $f$:
+$$
+g=\sum_{i=1}^N  g_i\varphi_i
+$$
+$$
+v=\sum_{i=1}^N  v_i\varphi_i \qquad v \in \mathbb{R}^N
+$$
+e si ha:
+$$ S_{S_{k,l}} = \int_\Omega \triangle \varphi_k g \ , \ \ \ \ \ \int_\Omega g v = \int_\Omega \triangle \varphi_l v \qquad \forall v \in \mathbb{R}^N$$
+Usando la formula di Green ed eliminando gli integrali di bordo grazie alle condizioni di Neumann, si ricava:
 $$S_{S_{k,l}} = -\int_\Omega \nabla \varphi_k \nabla g \ , \ \ \ \ \ \int_\Omega g v = -\int_\Omega \nabla \varphi_l \nabla v.$$
-We define the vector of basis functions and the vectors of partial derivatives of the basis functions
+Di conseguenza, se si definiscono i vettori con le funzioni di base in spazio e i vettori con le loro derivate parziali
 $$
 \underline \varphi =
 \begin{bmatrix}
@@ -164,22 +137,104 @@ $$
 \vdots\\
 \partial \varphi_{n}/\partial y\end{bmatrix} 
 \end{equation}
-and the matrices
+e le matrici
 $$ R_0 = \int_\Omega \underline \varphi \underline \varphi^T $$
 $$ R_1 = \int_\Omega (\underline \varphi_x \underline \varphi_x^T + \underline \varphi_y \underline \varphi_y^T). $$
-Letting $v$ be a basis element and $\underline g$ be the coefficients of the expansion of the function $g$ on the basis, we obtain
+si ha, per l'arbitrarietà di $v$: 
 $$ S_S= - R_1 \underline g \ , \ \ \ \ \ R_0 \underline g = - R_1  $$
-and finally
+dove $\underline g$ contiene i coefficienti dell'espansione in base di $g$. Quindi in conclusione
 $$ S_S = R_1 R_0^{-1} R_1 .$$
-The second term in equation (\ref{eq:penalizzdisc}) leads to the following definition of matrix $S_T$:
-$$ S_T = \begin{bmatrix}
-\int_0^T \psi_1''(t) \psi_1''(t) dt  & \int_0^T \psi_1''(t) \psi_2''(t) dt & \hdots & \int_0^T \psi_1''(t) \psi_m''(t) dt  \\
-\int_0^T \psi_2''(t) \psi_1''(t) dt  & \int_0^T \psi_2''(t) \psi_2''(t) dt & \hdots & \int_0^T \psi_2''(t) \psi_m''(t) dt  \\
+Per passare all'integrale, però, occorre considerare anche i coefficienti del vettore $\underline c_j =
+\begin{bmatrix}
+c_{1j} & c_{2j} & \hdots & c_{Nj}
+\end{bmatrix}^T$
+e si ha:
+$$
+\int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) \Bigr)^2 d \Omega =\underline c^T_j S_S \underline c_j .
+$$
+
+Riguardo al termine $\int_0^T (\frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} )^2 dt$, la semplificazione è molto più semplice, poichè se si considera la matrice
+ $$ S_T = \begin{bmatrix}
+\int_0^T \psi_1''(t) \psi_1''(t) dt  & \int_0^T \psi_1''(t) \psi_2''(t) dt & \hdots & \int_0^T \psi_1''(t) \psi_M''(t) dt  \\
+\int_0^T \psi_2''(t) \psi_1''(t) dt  & \int_0^T \psi_2''(t) \psi_2''(t) dt & \hdots & \int_0^T \psi_2''(t) \psi_M''(t) dt  \\
 \vdots & \vdots & \hdots & \vdots \\
-\int_0^T \psi_m''(t) \psi_1''(t) dt  & \int_0^T \psi_m''(t) \psi_2''(t) dt & \hdots & \int_0^T \psi_m''(t) \psi_m''(t) dt  \\
+\int_0^T \psi_M''(t) \psi_1''(t) dt  & \int_0^T \psi_M''(t) \psi_2''(t) dt & \hdots & \int_0^T \psi_M''(t) \psi_M''(t) dt  \\
 \end{bmatrix} .$$
-In order to obtain an estimate of the coefficients vector $\underline c$, we have to minimize the functional $J$ in (\ref{eq:Jmatr}). Imposing that the first derivative of $J$ equals zero, we obtain the following estimate for $\underline c$:
+e il vettore $
+\underline c_i =
+\begin{bmatrix}
+c_{i1} & c_{i2} & \hdots & c_{iM}
+\end{bmatrix}^T$ allora si ha:
+$$
+\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} \Bigr)^2 dt =\underline c_i^T  S_T \underline c_i
+$$
+
+Ora che sono state ricavate le forme quadratiche associate ai due integrali, per completare lo studio di \ref{eq:penalizzdisc} è necessario solamente introdurre opportuni prodotti di Kronacker e l'uso del vettore $\underline c$:
+\begin{multline*}
+\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} \Bigr)^2 dt= \\
+= \lambda_S\   \underline c^T (I_M \otimes S_S)\  \underline c   \ +\  \lambda_T\  \underline c^T ( S_T \otimes I_N)\  \underline c
+\end{multline*}
+dove $I_M$ and $I_N$ sono matrici identità di dimensioni $M \times M$ e $N \times N$ rispettivamente.
+Di conseguenza se
+$$ S = \lambda_S\    (S_S \otimes I_M)   \ +\  \lambda_T\   (I_N \otimes S_T)  .$$
+allora
+$$
+\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} \Bigr)^2 dt=\underline c^T S \underline c
+$$
+
+\subsection*{Soluzione}
+Per avere una forma matriciale della versione discreta di $J_{\underline \lambda }(f)$, cioè di 
+\begin{multline*}
+J_{\underline \lambda }^D(f)= \sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 + \\
++ \lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} \Bigr)^2 dt
+\end{multline*}
+ occorre definire il vettore $\underline z$ dei valori osservati 
+\begin{equation}
+\underline z =
+\begin{bmatrix}
+z_{11}  \\
+\vdots\\
+z_{1m}  \\
+z_{21}  \\
+\vdots\\
+z_{2m}  \\
+\vdots\\
+z_{nm}
+\end{bmatrix}
+\end{equation}
+e le matrici $\Phi$ (con le valutazioni delle basi spaziali nei punti $\{\underline p_i; i = 1,...,n\}$) e $\Psi$ (con le valutazioni delle basi temporali $\{t_j; j = 1,...,m\}$):
+$$
+\Phi =
+\begin{bmatrix}
+\varphi_{1}(\underline p_1) & \varphi_{2}(\underline p_1) & \hdots & \varphi_{N}(\underline p_1)  \\
+\varphi_{1}(\underline p_2) & \varphi_{2}(\underline p_2) & \hdots & \varphi_{N}(\underline p_2)  \\
+\vdots & \vdots & \hdots & \vdots \\
+\varphi_{1}(\underline p_n) & \varphi_{2}(\underline p_n) & \hdots & \varphi_{N}(\underline p_n)  \\
+\end{bmatrix}
+$$
+$$
+\Psi = 
+\begin{bmatrix}
+\psi_{1}( t_1) & \psi_{2}( t_1) & \hdots & \psi_{M}( t_1)  \\
+\psi_{1}( t_2) & \psi_{2}( t_2) & \hdots & \psi_{M}( t_2)  \\
+\vdots & \vdots & \hdots & \vdots \\
+\psi_{1}( t_n) & \psi_{2}( t_m) & \hdots & \psi_{M}( t_m)  \\
+\end{bmatrix}
+$$
+Sia $\Pi$ il prodotto di Kronecker $\Phi$ e $\Psi$:
+$$ \Pi = \Phi \otimes \Psi .$$
+Allora
+$$
+f(\underline p,t)=\sum_{i=1}^n \sum_{j=1}^m c_{ij}\ \varphi_i(\underline p)\ \psi_j(t) = \Pi \underline c .
+$$
+Quindi si avrà:
+\begin{equation} 
+\label{eq:Jmatr}
+J_{\underline \lambda }^D(f) = (\underline z - \Pi \underline c)^T (\underline z - \Pi \underline c) + \underline c^t S \underline c 
+\end{equation}
+Una volta che è stata ricavata questa forma, per risolvere il problema di minimo è sufficiente derivare questa espressione, e si ritrova:
 $$ \hat  {\underline c} = (\Pi^T \Pi + S)^{-1}\Pi^T \underline z$$
+
 
 
 \subsubsection*{Choosing the smoothing parameters}
@@ -192,61 +247,29 @@ and $D$ is the deviance of the model:
 $$  D(\hat  {\underline c}) = (\underline z - \hat  {\underline z})^T(\underline z - \hat  {\underline z}) = (\underline z - H \hat  {\underline c})^T(\underline z - H \hat  {\underline c}).$$
 
 
-\subsubsection*{Model with covariates}
+\section{Caso con covariate}
 
-The model described above can be easily extended to the case when covariates are available.
-In this case, the model (\ref{eq:modellobase}) becomes:
+Il modello si estende facilmente se si prevede che il dato possa essere influenzato da covariate. Il modello di (\ref{eq:modellobase}) diventa:
 $$ z_{ij}= \underline w_{ij}^T\  \underline \beta   \ + \  f(\underline p_i,t_j)\ +\ \epsilon_{ij}\ \ \ \ i = 1,...,n\ \ j=1,...,m \ \ ,$$
-where $\underline w_{ij}$ is a vector of $p$ covariates associated to the observation $z_{ij}$ and $\underline \beta$ is a vector of regression coefficients.
-Consequently, the functional $J$ in equation (\ref{eq:Jmatr}) becomes:
+dove $\underline w_{ij}$ è il vettore delle $p$ covariate associate a $z_{ij}$ e $\underline \beta$ è il vettore dei coefficienti di regressione. Di conseguenza, il funzionale discreto di (\ref{eq:Jmatr}) diventa:
 $$ J = (\underline z - W \underline \beta - \Pi \underline c)^T (\underline z - W \underline \beta - \Pi \underline c) + \underline c^t S \underline c  \ ,$$
-where $W$ is the $nm \times p$ matrix containing the vectors $ \{\underline w_{ij}; i=1,...,n;j=1,...,m\}$.
-We want to estimate the vector of regression coefficients $\underline \beta$ and the vector $\underline c$ of coefficients of the basis expansion of the spatio-temporal field $f$. Therefore, we compute the first partial derivatives of the functional $J$ with respect to $\underline \beta$ and $\underline c$:
+dove $W$ è la matrice $nm \times p$ con i vettori $ \{\underline w_{ij}; i=1,...,n;j=1,...,m\}$.
+
+Per ricavare la soluzione occorre derivare questa espressione rispetto a $\underline \beta$ e $\underline c$:
 $$
 \frac{\partial}{\partial \underline \beta}J= -2W^T \underline z + 2W^T \Pi \underline c + 2 W^TW \underline \beta \ \ ,
 $$
 $$
 \frac{\partial}{\partial \underline c}J= -2 \Pi^T \underline z + 2 \Pi^T W \underline \beta + 2(\Pi^T \Pi + S) \underline c \ \ .
 $$
-Imposing that the two expressions above equals zero we obtain the two following equations:
+Imponendo che le derivate siano uguali a zero si hanno le seguenti equazioni:
 $$
 \begin{cases}
 W^TW \hat{\underline \beta} = W^T(\underline z - \Pi \hat{\underline c})  \\
 (\Pi^T \Pi + S) \hat{\underline c}=\Pi^T(\underline z -W \hat{\underline \beta})
 \end{cases}.
 $$
-Solving this system of two equations leads to explicit solution of the estimation problem.
-
-
-\subsubsection*{Application to Venice waste data}
-
-We apply the method described to a dataset of measurements of the annual amount of waste produced per capita in 720 cities in the province of Venice. The measurements cover the period from 1997 to 2011.\\
-For the spatial basis functions, we use linear finite elements on a triangulation of the domain. For the temporal basis functions, we use spline functions of order three.\\
-The analysis has been performed with the software R.\\
-The following figures shows the estimated spatio-temporal field at a fixed time instant and at three spatial points. 
-\begin{figure}[H]
-\centering
-\includegraphics[trim=0cm 3cm 2.5cm 3.5cm,clip=true,width=0.8\textwidth]{immagini/Maps2011.pdf}
-\caption{Estimated spatio-temporal field of the Venice waste data at a fixed time instant: year 2011.}
-\label{fig:venezia_previsione}
-\end{figure}
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.32\textwidth]{immagini/Venezia.png}
-\includegraphics[width=0.32\textwidth]{immagini/Lido(A).png}
-\includegraphics[width=0.32\textwidth]{immagini/SanMicheleTagliamento.png}
-\caption{Estimated spatio-temporal field of the Venice waste data at three fixed spatial points: Venice, Lido and San Michele al Tagliamento.}
-\label{fig:venezia_tempo}
-\end{figure}
-
-
-\subsubsection*{Comparison with other spatio-temporal prediction methods}
-
-We compare our method with two other approaches to spatio-temporal fields estimation. The first method consists of a generalized additive mixed model with a tensor product of two smoothers in space and time; this algorithm is presented by Marra et al. in (\cite{art:marra}) and by Augustin et al. in (\cite{art:augustin}). The second method is spatio-temporal kriging with a separable variogram marginally exponential both in time and space, whose parameters are estimated from the empirical variogram.\\
-We apply the three methods to simulated data on a C-shaped domain. We use the spatial test function $f$ that was used in (\cite{art:wood}) and we construct a spatio-temporal test function $g$ in the following way:
-$$ g(\underline p,t)= f(\underline p) \cos(t) .$$
-
-
+che ricordano le equazioni usate per la regressione e per il modello senza covariate, con la differenza che in questo caso a $\underline z$ è sottratto in entrambi i casi la parte spiegata dal termine di modello a cui non si riferiscono $\hat{\underline \beta}$ e $\hat{\underline c}$ rispettivamente.
 
 \begin{thebibliography}{9}
 
