@@ -53,72 +53,78 @@ Il termine della penalizzazione in spazio comprende l'integrale sull'intervallo 
 
 I due termini $\lambda_S$ e $\lambda_T$ sono rispettivamente i pesi della penalizzazione in spazio e in tempo. La scelta di $\underline \lambda$, vettore $ (\lambda_S,\lambda_T) $ deve essere molto accurata. Infatti, valori troppo bassi per i due termini causerebbero una stima vicina all'interpolazione dei dati (poiché darebbero più peso al termine con gli scarti quadratici), mentre valori troppo elevati porterebbero ad avere una funzione $f$ fin troppo liscia e quindi distante dai dati. Per questo motivo sarà dato ampio spazio alla scelta di $\underline \lambda$.
 
-DESCRIZIONE DI DOVE VIVE LA FUNZIONE F
+\subsection*{Spazio funzionale per $f$}
 
-\subsubsection*{Riduzione finito-dimensionale del problema}
+\subsection*{Sviluppo in funzioni di base della funzione $f$}
 
 Per poter risolvere il problema numericamente è necessaria una riduzione finito-dimensionale della funzione $f$. Rappresentiamo quindi $f$ con un opportuno sviluppo di basi separate in spazio e tempo.
 
-Siano $\{\varphi_i(\underline p); i=1, ... , N\}$ un insieme di $N$ basi spaziali definite sul dominio $\Omega$. Non è necessario che le basi siano esattamente $n$, è possibile averne anche un numero maggiore be a set of $n$ spatial basis functions and $\{\psi_j(t); j=1, ... , m\}$ be a set of $m$ temporal basis functions. The spatio-temporal field $f(\underline p, t)$ we want to estimate can be written as follows:
+Sia $\{\varphi_i(\underline p); i=1, ... , N\}$ un insieme di $N$ basi spaziali definite sul dominio $\Omega$ e $\{\psi_j(t); j=1, ... , M\}$ un insieme di basi temporali definite sull'intervallo $[0,T]$. Da questi due insiemi di basi marginali in spazio e tempo si costruisce la funzione $f$, con tutti i prodotti incrociati disponibili tra spazio e tempo:
 \begin{equation} 
 \label{eq:basisexp}
 f(\underline p,t)=\sum_{i=1}^n \sum_{j=1}^m c_{ij}\ \varphi_i(\underline p)\ \psi_j(t) .
 \end{equation}
-We can then rewrite the functional $J_\lambda (f)$ in a matricial form.\\ 
-We define the vector $\underline z$ of observed values and the vector $\underline c$ containing the coefficients of the basis expansion of the spatio-temporal field $f$:
+La funzione $f(\underline p,t)$ può essere identificata con i valori dei coefficienti $\{c_{ij}; i=1, ... , N\ j=1, ... , M\}$.
+
+\subsection*{Rappresentazione matriciale del funzionale $J$}
+Una volta che è stato ottenuto lo svliluppo in funzioni di base della funzione, è possibile riscrivere il funzionale $J_\lambda (f)$ in forma matriciale.
+
+Definiamo il vettore $\underline z$ con i valori osservati e il vettore $\underline c$ con i coefficienti dell'espansione di base di $f$:
 \begin{equation}
 \underline z =
 \begin{bmatrix}
 z_{11}  \\
 \vdots\\
-z_{1m}  \\
+z_{1M}  \\
 z_{21}  \\
 \vdots\\
-z_{2m}  \\
+z_{2M}  \\
 \vdots\\
-z_{nm}
+z_{NM}
 \end{bmatrix}
 \qquad
 \underline c =
 \begin{bmatrix}
 c_{11}  \\
 \vdots\\
-c_{1m}  \\
+c_{1M}  \\
 c_{21}  \\
 \vdots\\
-c_{2m}  \\
+c_{2M}  \\
 \vdots\\
-c_{nm}
+c_{NM}
 \end{bmatrix}.
 \end{equation}
-We define the matrix $\Phi$ of the evaluations of the spatial basis functions in the spatial points $\{\underline p_i; i = 1,...,n\}$ and the matrix $\Psi$ of the evaluations of the temporal basis functions in the temporal instants $\{t_j; j = 1,...,m\}$:
+Come si può notare, i due vettori non hanno le stesse dimensioni in generale.
+
+Inoltre definiamo la matrice $\Phi$, con le valutazioni delle basi spaziali nei punti $\{\underline p_i; i = 1,...,n\}$, e la matrice $\Psi$, con le valutazioni delle basi temporali $\{t_j; j = 1,...,m\}$:
 $$
 \Phi =
 \begin{bmatrix}
-\varphi_{1}(\underline p_1) & \varphi_{2}(\underline p_1) & \hdots & \varphi_{n}(\underline p_1)  \\
-\varphi_{1}(\underline p_2) & \varphi_{2}(\underline p_2) & \hdots & \varphi_{n}(\underline p_2)  \\
+\varphi_{1}(\underline p_1) & \varphi_{2}(\underline p_1) & \hdots & \varphi_{N}(\underline p_1)  \\
+\varphi_{1}(\underline p_2) & \varphi_{2}(\underline p_2) & \hdots & \varphi_{N}(\underline p_2)  \\
 \vdots & \vdots & \hdots & \vdots \\
-\varphi_{1}(\underline p_n) & \varphi_{2}(\underline p_n) & \hdots & \varphi_{n}(\underline p_n)  \\
+\varphi_{1}(\underline p_n) & \varphi_{2}(\underline p_n) & \hdots & \varphi_{N}(\underline p_n)  \\
 \end{bmatrix}
 $$
 $$
 \Psi = 
 \begin{bmatrix}
-\psi_{1}( t_1) & \psi_{2}( t_1) & \hdots & \psi_{m}( t_1)  \\
-\psi_{1}( t_2) & \psi_{2}( t_2) & \hdots & \psi_{m}( t_2)  \\
+\psi_{1}( t_1) & \psi_{2}( t_1) & \hdots & \psi_{M}( t_1)  \\
+\psi_{1}( t_2) & \psi_{2}( t_2) & \hdots & \psi_{M}( t_2)  \\
 \vdots & \vdots & \hdots & \vdots \\
-\psi_{1}( t_n) & \psi_{2}( t_n) & \hdots & \psi_{m}( t_m)  \\
+\psi_{1}( t_n) & \psi_{2}( t_m) & \hdots & \psi_{M}( t_m)  \\
 \end{bmatrix}
 $$
-Let $\Pi$ be the Kronecker product of $ \Phi $ and $\Psi$:
+
+Sia $\Pi$ il prodotto di Kronecker $\Phi$ e $\Psi$:
 $$ \Pi = \Phi \otimes \Psi .$$
-Finally, we can write the functional $J$ in (\ref{eq:Jfunc}) in the following way:
+Grazie a questi elementi si può riscrivere il funzionale $J$ in (\ref{eq:Jfunc}) come segue:
 \begin{equation} 
 \label{eq:Jmatr}
 J = (\underline z - \Pi \underline c)^T (\underline z - \Pi \underline c) + \underline c^t S \underline c 
 \end{equation}
-where $S$ is the matrix containing the penalty term.
-We obtain the matrix $S$ by discretizing the penalty term of $J$ in (\ref{eq:Jfunc}) in the following way:
+dove $S$ contiene i termini di penalizzazione. Per ottenerla, occorre discretizzare i termini di penalizzazione di $J$ in (\ref{eq:Jfunc}) nel seguente modo:
 \begin{equation}
 \label{eq:penalizzdisc}
 \lambda_S  \sum_{j=1}^m \int_{\Omega_T} \Bigl( \triangle f(\underline p,t_j)  \Bigr)^2 d \underline p+ \lambda_T \sum_{i=1}^n\int_0^T \Bigl( \frac{\partial^2 f(\underline p_i,t) }{\partial t ^2} \Bigr)^2 dt ,
@@ -266,3 +272,8 @@ Simon N. Wood, Mark W. Bravington, Sharon L. Hedley, \emph{Soap film smoothing},
 
 
 
+%\[ 
+%\underset{\scriptscriptstyle (m\times 1)}{Y}= 
+%\underset{\scriptscriptstyle (m\times n)}{X} 
+%\underset{\scriptscriptstyle (n\times 1)}{B} 
+%\]

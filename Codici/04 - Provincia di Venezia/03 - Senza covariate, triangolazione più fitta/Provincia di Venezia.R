@@ -51,7 +51,7 @@ for(i in 1:length(Codici[1:nint]))
 # save(file="GCVResult.RData",GCVResult,LogS,LogT)
 
 LambdaS=10^-8
-LambdaT=10^0
+LambdaT=10^-1
 
 
 
@@ -63,7 +63,7 @@ SolutionObj<-ST.Smooth(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
 
 
 # Ora salvo i risultati
-write.table(SolutionObj$C,file="MatriceC.txt",row.names=FALSE,col.names=FALSE)
+write.table(SolutionObj$C,file="VettoreC.txt",row.names=FALSE,col.names=FALSE)
 
 
 ##### GRAFICI ANNO PER ANNO #####

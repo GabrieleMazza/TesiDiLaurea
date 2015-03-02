@@ -16,10 +16,10 @@ library(SDMTools)
 ##### DOWNLOAD DELLA FRONTIERA #####
 
 #Scarico la frontiera
-#require(raster)
-#venezia =  subset(getData('GADM', country='ITA', level=2), NAME_2=="Venezia")
-#plot(venezia)
-#save(file="Venezia.RData",venezia)
+# library(raster)
+# venezia =  subset(getData('GADM', country='ITA', level=2), NAME_2=="Venezia")
+# plot(venezia)
+# save(file="Venezia.RData",venezia)
 load("Venezia.RData")
 
 #La frontiera è memorizzata come una unione di 130 poligoni (a causa delle isole della)
@@ -35,7 +35,7 @@ order<-slot(tmp[[1]],'plotOrder')
 xbound<-NULL
 ybound<-NULL
 labels<-NULL
-for(i in 1:131)
+for(i in 1:101)
 {
     xbound<-c(xbound,sub.tmp[[order[i]]]@coords[,1])
     ybound<-c(ybound,sub.tmp[[order[i]]]@coords[,2])
@@ -202,19 +202,19 @@ xVenezia  = eval.fd(Val, xsmooth$fd)
 yVenezia  = eval.fd(Val, ysmooth$fd)
 # Traccio ora i risultati
 png(filename = "Provincia di Venezia - Smoothing x (regression splines).png")
-plot(s,xVenezia_tot,main="Smoothing in x",xlab="Ascissa curvilinea",ylab="xVenezia")
-points(Val,xVenezia,col="blue",type='l')
-legend("bottomleft", legend=c("Reale","Smmothing"), col=c("black","blue"), lty=1)
+plot(s,xVenezia_tot,main="Smoothing Longitudine",xlab="Ascissa curvilinea",ylab="Longitudine")
+points(Val,xVenezia,col="red",type='l')
+legend("bottomleft", legend=c("Reale","Smmothing"), col=c("black","red"), lty=1)
 dev.off()
 png(filename = "Provincia di Venezia - Smoothing y (regression splines).png")
-plot(s,yVenezia_tot,main="Smoothing in y",xlab="Ascissa curvilinea",ylab="yVenezia")
-points(Val,yVenezia,col="blue",type='l')
-legend("bottomleft", legend=c("Reale","Smmothing"), col=c("black","blue"), lty=1)
+plot(s,yVenezia_tot,main="Smoothing Latitudine",xlab="Ascissa curvilinea",ylab="Latitudine")
+points(Val,yVenezia,col="red",type='l')
+legend("bottomleft", legend=c("Reale","Smmothing"), col=c("black","red"), lty=1)
 dev.off()
 png(filename = "Provincia di Venezia - Smoothing regione (regression splines).png")
-plot(xVenezia_tot,yVenezia_tot,type='l',main="Nuova definizione della regione",xlab="xVenezia",ylab="yVenezia")
-points(xVenezia,yVenezia,col="blue",type='l')
-legend("bottomleft", legend=c("Reale","Smmothing"), col=c("black","blue"), lty=1)
+plot(xVenezia_tot,yVenezia_tot,type='l',main="Entroterra Poligono 1",xlab="Longitudine",ylab="Latitudine")
+points(xVenezia,yVenezia,col="red",type='l')
+legend("bottomright", legend=c("Reale","Smmothing"), col=c("black","red"), lty=1)
 dev.off()
 
 

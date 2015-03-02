@@ -1,0 +1,38 @@
+LEGENDA DEI METODI PER IL CONFRONTO
+TPS - Thin Plate Splines
+CR - Tempo
+SF - Soap Film Smoothing (secondo sf)
+SO - Soap Film Smoothing (secondo so)
+
+AUG1
+Modello con un unico termine:
+	Prodotto tensoriale TPS (spazio) e CR (tempo)
+
+AUG2
+Modello con un unico termine:
+	Prodotto tensoriale SF (spazio) e CR (tempo)
+
+AUG3
+Modello additivo con due termini:
+	TPS (spazio)
+	CR (tempo)
+
+AUG4
+Modello additivo con due termini:
+	SO (spazio)
+	CR (tempo)
+
+AUG5
+Modello additivo con tre termini:
+	Prodotto tensoriale TPS (spazio) e CR (tempo)
+	TPS (spazio)
+	CR (tempo)
+
+AUG6
+Modello additivo con tre termini:
+	Prodotto tensoriale SO (spazio) e CR (tempo)
+	SO (spazio)
+	CR (tempo)
+
+ST
+Codice SpazioTempo

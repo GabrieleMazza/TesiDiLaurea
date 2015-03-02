@@ -5,6 +5,17 @@
 \usepackage{amsmath}									% Per allineare le equazioni
 \usepackage{amssymb}									% Per le lettere dell'indicatrice (mathbb)
 
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{float}
+
+
 \justifying 										% giustifica
 
 \date{28 Luglio 2014}
@@ -19,40 +30,61 @@
 \chapter{I dati dei rifiuti nel Veneto}
 
 
-L'applicazione scelta per lo studio del modello riguarda i dati di analisi di produzione di rifiuti urbani nel periodo di anni dal 1997 al 2011 in Veneto. Per rifiuti urbani si intendono rifiuti domestici, prodotti in locali, aree pubbliche, parchi o giardini, spiagge o provenienti dalla pulitura delle strade o di altri luoghi pubblici. Non sono conteggiati i rifiuti speciali (tra cui ad esempio gli industriali, agricoli o provenienti da attività commerciali o di costruzione) o pericolosi (per i quali esistono programmi di smaltimento particolari).
+L'applicazione scelta per lo studio del modello riguarda i dati di analisi di produzione di rifiuti urbani nel periodo di anni dal 1997 al 2011 nella provincia di Venezia. Per rifiuti urbani si intendono rifiuti domestici, prodotti in locali, aree pubbliche, parchi o giardini, spiagge o provenienti dalla pulitura delle strade o di altri luoghi pubblici. Non sono conteggiati i rifiuti speciali (tra cui ad esempio gli industriali, agricoli o provenienti da attività commerciali o di costruzione) o pericolosi (per i quali esistono programmi di smaltimento particolari).
 
 I dati sono stati raccolti e pubblicati dall'Agenzia regionale per la prevenzione e protezione ambientale del Veneto (Arpav) e sono disponibili alla consultazione e al trattamento.
 
-Per ogni comune del Veneto e per ogni anno è disponibile il numero di rifiuti totali raccolti in tonnellate. Inoltre, per ogni anno è indicata la popolazione di ogni comune del Veneto. Perciò la quantità di riferimento non sarà il valore dei rifiuti totali raccolti in ogni anno per comune, ma il valore pro capite, in quanto la popolazione influenza in maniera considerevole la produzione di rifiuti.
+Per ogni comune della provincia di Venezia e per ogni anno è disponibile il numero di rifiuti totali raccolti in tonnellate e la popolazione residente. La popolazione è certamente un valore fortemente influente per la produzione di rifiuti, perciò la quantità di riferimento non sarà il valore dei rifiuti totali raccolti in ogni anno per comune, ma il valore pro capite.
 
 Le coordinate spaziali dei comuni sono la longitudine e la latitudine.
 
+
 \section{La scelta delle covariate}
 
-La produzione annua di rifiuti nei comuni può essere influenzata da alcuni fattori, e il più importante di tutti è certamente la popolazione. Una parte molto importante è rappresentata dalla popolazione residente, che è già stata inclusa nella risposta, poiché per uniformità i rifiuti sono studiati come valore pro capite nel comune. Tuttavia anche i turisti sono una componente non trascurabile di produzione di rifiuti urbani.
+La produzione annua di rifiuti nei comuni può essere condizionata da alcuni fattori, e il più importante di tutti è certamente la popolazione. La parte residente è già stata inclusa nella risposta, poiché per uniformità i rifiuti sono studiati come valore pro capite nel comune. Tuttavia anche i turisti sono una componente non trascurabile di produzione di rifiuti urbani.
 
-Il Veneto ha molte zone di elevata attrazione turistica. La più importante di queste è Venezia, ma si hanno anche zone balneari (come... AGGIUNGI). L'informazione scelta per sintetizzare l'attività turistica è il numero di posti letto presente sul territorio, valore disponibile grazie all'applicativo dell'Istat \textit{Atlante Statistico dei Comuni} ad ogni anno a livello comunale. Il totale dei posti letto per comune è la somma di vari tipi di attività, non solamente alberghiere (ad esempio sono conteggiati anche esercizi complementari, bed \& breakfast, campeggi) e saranno considerati normalizzati per la popolazione residente per uniformità con la risposta.
+Sul territorio studiato sono presenti molte zone di elevata attrazione turistica. La più rilevante di queste è Venezia, ma si hanno anche zone balneari (come Lido di Venezia, Cavallino-Treporti, Jesolo, San Michele al Tagliamento, Bibione, ecc...). L'informazione scelta per sintetizzare l'attività turistica è il numero di posti letto presente sul territorio, valore disponibile grazie all'applicativo dell'Istat \textit{Atlante Statistico dei Comuni} ad ogni anno a livello comunale. Il totale dei posti letto per comune è la somma di vari tipi di attività, non solamente alberghiere (ad esempio sono conteggiati anche esercizi complementari, bed \& breakfast, campeggi) e saranno considerati normalizzati per la popolazione residente per uniformità con la risposta.
+
 
 \section{Il trattamento del territorio}
 
-Per poter studiare il problema a livello computazionale occorre avere una buona approssimazione della frontiera della regione. Questa è disponibile nel pacchetto di R (SPECIFICARE...) che descrive la regione come unione di N poligoni distinti (a causa delle numerose isole di cui è composta la laguna) composti da un alto numero di vertici. Non è possibile analizzare il problema su un territorio così descritto, perciò è stata necessaria una analisi iniziale della frontiera per ridurne la complessità.
+Per poter studiare il problema a livello computazionale occorre avere una buona approssimazione della frontiera della regione. Questa è disponibile nel pacchetto di R \textit{raster} che descrive dati geografici di moltissime zone del mondo sia a livello di nazioni che a livelli più locali (nel caso italiano, province e comuni) tramite poligoni molto precisi.
 
-Inanzitutto sono stati scelti solo alcuni poligoni della regione, corrispondenti al Veneto e alle isole di Venezia, Murano, Lido e Pellestrina (più rilevanti a livello di popolazione e turismo). Di queste isole occorreva una buona tecnica di riduzione del numero di punti di frontiera, per avere una trattazione computazionale più efficiente.
+Una volta scaricata la provincia di Venezia si è riscontrato subito un problema di trattazione: la regione è composta da un insieme di 101 poligoni distinti (a causa delle numerose isole di cui è composta la laguna di Venezia), e ogni poligono è descritto da un alto numero di vertici (ad esempio, la prima delle due regioni corrispondenti all'entroterra aveva 10538 vertici). Non è possibile analizzare il problema su un territorio così descritto, perciò è stata necessaria una analisi iniziale della frontiera per ridurne la complessità.
 
-Per risolvere questo problema si è scelto di ricorrere ad un'analisi di smoothing della frontiera di ogni poligono. Una volta ricavata l'ascissa curvilinea dei poligoni, tramite \textit{Regression Splines} cubiche sono state analizzate due funzioni: ascissa cuSono state considerate due di dati funzio
+Oltre all'entroterra (composto da due poligoni) stati scelte solo le più importanti isole della laguna veneta: Venezia, Murano, Lido di Venezia e Pellestrina (più rilevanti a livello di popolazione e turismo). I poligoni sono stati semplificati in tutti i casi e uniti tra loro con ponti dove era possibile. Tra le isole collegate solamente via mare con il resto del territorio sono state simulati ponti in corrispondenza delle trafficate linee di trasporto pubblico con traghetto.
+
+\subsection*{Regression splines}
+
+Per ridurre l'elevato numero di vertici di ognuno dei poligoni considerati si è scelto di ricorrere ad un'analisi di smoothing di dati funzionali. Ad ogni poligono è associata una coppia di funzioni: la latitudine e la longitudine rispetto all'ascissa curvilinea (disponibili per punti, corrispondenti ai vertici).
+
+Per ridurre queste funzioni sono state provate più tecniche, ma la scelta definitiva è ricaduta sulle \textit{Regression Splines} cubiche senza penalizzazione della derivata seconda. Infatti i risultati non sono stati migliori negli altri casi a causa della zona interna alla laguna di Venezia, fortemente frastagliata: penalizzare la derivata seconda eliminava troppe asperità presenti sulle coste del territorio, mentre con \textit{Kernel Smoothing} sono state ricavate regioni che, dopo la triangolazione, presentavano troppi triangoli composti solamente da punti di frontiera (e quindi senza dati) rispetto agli altri metodi.
+
+Una volta fissato un numero di punti ragionevole con cui descrivere la regione, sono stati eseguiti più tentativi per decidere il miglior numero di basi necessario per l'analisi. Il criterio di scelta è stato complesso, poichè sono stati esclusi i valori che generavano intersezioni nella nuova descrizione della regione e comuni esterni alla frontiera. Ma la scelta del miglior numero di basi per \textit{Regression Splines} è ricaduta sul valore che, una volta eseguito lo smoothing della regione, causava la minor distanza tra i nuovi punti della regione e il poligono iniziale. In figura \ref{fig:smooth_ent_1} è riportato il risultato dello smoothing sul primo poligono che descrive l'entroterra della provincia di Venezia (descritta con 100 punti, molto meno dei 10538 iniziali).  
+
+\begin{figure}[!t]
+\centering
+\begin{minipage}{.32\textwidth}
+\includegraphics[width=\textwidth]{Immagini/Longitudine.png}
+\includegraphics[width=\textwidth]{Immagini/Latitudine.png}
+\end{minipage}%
+\begin{minipage}{.64\textwidth}
+\includegraphics[width=\textwidth]{Immagini/Regione.png}
+\end{minipage}
+\caption{Smoothing con \textit{Regression Splines} cubiche per il primo poligono dell'entroterra della provincia di Venezia}
+\label{fig:smooth_ent_1}
+\end{figure}
+
+Dopo aver ripetuto l'analisi per ognuna delle isole scelte inizialmente, la descrizione finale è stata ricavata unendo tra loro i nuovi poligoni. Prima però, è stata eliminata una zona costiera dell'entroterra della laguna di Venezia che, sebbene presente sia in \textit{raster} che nei grafici di Google Maps, corrisponde ad una parte fangosa e paludosa. Non essendo possibile che su di essa siano prodotti rifiuti, è stata tagliata dalla regione. Per questo motivo si troverà sempre una zona non analizzata sui grafici con mappe da Google Maps.
+
+La triangolazione è stata prodotta tramite il pacchetto R \textit{RTriangle}
 
 
+\section{Scelte particolari tra i comuni}
 
+L'uso di valori pro capite per rifiuti e posti letto consente di replicare del comune anche su altri punti in cui risulta necessario. Ad esempio, le isole di Murano, Lido di Venezia e Pellestrina non sono sedi di comune, ma si riferiscono a Venezia. Quindi il dato di Venezia è stato replicato nelle in queste isole ad ogni anno, per avere un valore di riferimento in quanto zone distaccate.
 
-
-
-
-
-
-
-
-
-
+Un caso particolare riguarda il comune di Cavallino-Treporti, che è stato istituito nel 1999 da una parte dei territori del comune di Venezia. La separazione all'interno dei dati, però, è presente dal 2002. Di conseguenza prima di questo anno il dato in Cavallino-Treporti è una replica del dato di Venezia.
 
 
 
