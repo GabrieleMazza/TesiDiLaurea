@@ -43,7 +43,9 @@ Il primo termine di $J_{\underline \lambda }(f)$ considera la minimizzazione del
 
 Il termine della penalizzazione in spazio comprende l'integrale sull'intervallo $[0,T]$ dell'integrale sul dominio spaziale $\Omega$ del quadrato del laplaciano della funzione $f$. Come è noto, il laplaciano esprime la curvatura della funzione, ed è quindi una misura di quanto la funzione è liscia in spazio. L'analogo significato in tempo è rappresentato dalla derivata seconda in $t$, che nell'ultimo termine della penalizzazione è integrata prima sull'intervallo temporale $[0,T]$, e in seguito sul dominio spaziale $\Omega$.
 
-I due termini $\lambda_S$ e $\lambda_T$ sono rispettivamente i pesi della penalizzazione in spazio e in tempo. La scelta di $\underline \lambda$, vettore $ (\lambda_S,\lambda_T) $ deve essere molto accurata. Infatti, valori troppo bassi per i due termini causerebbero una stima vicina all'interpolazione dei dati (poiché darebbero più peso al termine con gli scarti quadratici), mentre valori troppo elevati porterebbero ad avere una funzione $f$ fin troppo liscia e quindi distante dai dati. Per questo motivo sarà dato ampio spazio alla scelta di $\underline \lambda$.
+I due termini $\lambda_S$ e $\lambda_T$ sono rispettivamente i pesi della penalizzazione in spazio e in tempo. La scelta di $\underline \lambda$, vettore $ \begin{bmatrix}
+\lambda_S \\ \lambda_T
+\end{bmatrix}$ deve essere molto accurata. Infatti, valori troppo bassi per i due termini causerebbero una stima vicina all'interpolazione dei dati (poiché darebbero più peso al termine con gli scarti quadratici), mentre valori troppo elevati porterebbero ad avere una funzione $f$ fin troppo liscia e quindi distante dai dati. Per questo motivo sarà dato ampio spazio alla scelta di $\underline \lambda$.
 
 \subsection*{Spazio funzionale per $f$}
 
@@ -232,26 +234,52 @@ Quindi si avrà:
 \label{eq:Jmatr}
 J_{\underline \lambda }^D(f) = (\underline z - \Pi \underline c)^T (\underline z - \Pi \underline c) + \underline c^t S \underline c 
 \end{equation}
-Una volta che è stata ricavata questa forma, per risolvere il problema di minimo è sufficiente derivare questa espressione, e si ritrova:
-$$ \hat  {\underline c} = (\Pi^T \Pi + S)^{-1}\Pi^T \underline z$$
+Una volta che è stata ricavata questa forma, per risolvere il problema di minimo è sufficiente derivare questa espressione
+$$
+\frac{\partial}{\partial \underline c}J= -2 \Pi^T \underline z + 2(\Pi^T \Pi + S) \underline c \ \ ,
+$$
+porre uguale a zero
+$$
+(\Pi^T \Pi + S) \hat{\underline c}=\Pi^T\underline z
+$$
+e si ha in conclusione
+$$ \hat  {\underline c} = (\Pi^T \Pi + S)^{-1}\Pi^T \underline z .$$
+Grazie a questo risultato, è anche possibile ricavare i valori stimati della funzione $f$ nei punti dati:
+$$
+\hat  {\underline z} =\Pi\hat  {\underline c} = \Pi(\Pi^T \Pi + S)^{-1}\Pi^T \underline z = H\underline{z}
+$$
+dove $H$ rappresenta l'analogo della \textit{hat matrix} del classico modello di regressione in questo caso.
 
 
-
-\subsubsection*{Choosing the smoothing parameters}
-
-The values of the smoothing parameters $\lambda_S$ and $\lambda_T$ can be chosen via the minimization of the generalized cross-validation (GCV):
-$$ GCV(\underline \lambda) =\frac{nm}{nm-\text{tr}(H)}  D(\hat  {\underline c}) $$
-where $\underline \lambda$ is the vector $ (\lambda_S,\lambda_T) $, $nm$ is the number of data, $H$ is the hat matrix that maps the vector of observed values $\underline z$ to the vector of fitted values $\hat  {\underline z}$:
-$$ H = \Pi (\Pi^T \Pi + S)^{-1}\Pi^T ,$$
-and $D$ is the deviance of the model:
-$$  D(\hat  {\underline c}) = (\underline z - \hat  {\underline z})^T(\underline z - \hat  {\underline z}) = (\underline z - H \hat  {\underline c})^T(\underline z - H \hat  {\underline c}).$$
+\subsection*{Proprietà statistiche di $\hat  {\underline c}$}
+Il modello di partenza indicato in \ref{eq:modellobase} può essere scritto anche in forma matriciale
+\begin{equation}
+\label{eq:modellobasematric}
+\underline z=\Pi \underline c + \underline \epsilon .
+\end{equation}
+A causa delle proprietà statistiche di $\underline \epsilon$
+$$
+\mathbb{E}[\underline \epsilon] = \underline 0 \qquad \mathrm{Var}[\underline \epsilon] = \sigma^2 I_{nm}
+$$
+sia ha
+$$
+\mathbb{E}[\underline z] = \Pi \underline c \qquad \mathrm{Var}[\hat  {\underline c}] = \sigma^2 I_{nm}
+$$
+e quindi è immediato ricavare per lo stimatore $\hat  {\underline c}$ (grazie alle proprietà simmetria di $S$):
+$$
+\mathbb{E}[\hat  {\underline c}] = (\Pi^T \Pi + S)^{-1}\Pi^T\Pi \underline c \qquad \mathrm{Var}[\underline z] = \sigma^2 (\Pi^T \Pi + S)^{-1}\Pi^T\Pi(\Pi^T \Pi + S)^{-1} .
+$$
+Non è stata ipotizzata la gaussianità per $\underline \epsilon$, ma se fosse ipotizzata anche $\hat  {\underline c}$ sarebbe gaussiano. Grazie a questa ulteriore ipotesi sarebbe possibile elaborare (con una data significatività) una regione di confidenza per $\hat  {\underline c}$ e quindi una banda di confidenza per la funzione stimata $f$.
 
 
 \section{Caso con covariate}
 
 Il modello si estende facilmente se si prevede che il dato possa essere influenzato da covariate. Il modello di (\ref{eq:modellobase}) diventa:
-$$ z_{ij}= \underline w_{ij}^T\  \underline \beta   \ + \  f(\underline p_i,t_j)\ +\ \epsilon_{ij}\ \ \ \ i = 1,...,n\ \ j=1,...,m \ \ ,$$
-dove $\underline w_{ij}$ è il vettore delle $p$ covariate associate a $z_{ij}$ e $\underline \beta$ è il vettore dei coefficienti di regressione. Di conseguenza, il funzionale discreto di (\ref{eq:Jmatr}) diventa:
+\begin{equation}
+\label{eq:modellobasecovar}
+z_{ij}= \underline w_{ij}^T\  \underline \beta   \ + \  f(\underline p_i,t_j)\ +\ \epsilon_{ij}\ \ \ \ i = 1,...,n\ \ j=1,...,m \ \ ,
+\end{equation}
+dove $\underline w_{ij}$ è il vettore delle $p$ covariate associate a $z_{ij}$ e $\underline \beta$ è il vettore dei coefficienti di regressione. Di conseguenza, il funzionale discreto di \ref{eq:Jmatr} diventa:
 $$ J = (\underline z - W \underline \beta - \Pi \underline c)^T (\underline z - W \underline \beta - \Pi \underline c) + \underline c^t S \underline c  \ ,$$
 dove $W$ è la matrice $nm \times p$ con i vettori $ \{\underline w_{ij}; i=1,...,n;j=1,...,m\}$.
 
@@ -270,6 +298,75 @@ W^TW \hat{\underline \beta} = W^T(\underline z - \Pi \hat{\underline c})  \\
 \end{cases}.
 $$
 che ricordano le equazioni usate per la regressione e per il modello senza covariate, con la differenza che in questo caso a $\underline z$ è sottratto in entrambi i casi la parte spiegata dal termine di modello a cui non si riferiscono $\hat{\underline \beta}$ e $\hat{\underline c}$ rispettivamente.
+
+A questo punto si possono ricavare le soluzioni. Si ha:
+$$
+\hat  {\underline c}=[\Pi^T\Pi+S+\Pi^TW(W^TW)^{-1}W^T\Pi]^{-1}\Pi^T[I-W(W^TW)^{-1}W^T]\underline z=AQ \underline z
+$$
+con $A=[\Pi^T\Pi+S+\Pi^TW(W^TW)^{-1}W^T\Pi]^{-1}\Pi^T$ e $Q=[I-W(W^TW)^{-1}W^T]$, matrice molto importante nel caso di regressione lineare, poiché proietta il vettore dei dati nel sottospazio ortogonale allo spazio generato dalle colonne della matrice disegno, ricavando così il vettore dei residui. Questa matrice si ritrova anche in questo caso, ed è ancora valide le sue proprietà:
+\begin{itemize}
+\item $Q$ è idempotente, cioè $QQ=Q$;
+\item $Q$ è simmetrica;
+\item a causa del fatto che proietta nel sottospazio ortogonale di $\mathrm{Col}(W)$, $QW$ risulta essere la matrice nulla di opportune dimensioni. 
+\end{itemize}
+
+Infine, la stima di $\hat  {\underline \beta}$ si ricava dalla stima ottenuta per $\hat  {\underline c}$:
+$$
+(W^TW)^{-1}W^T(I-\Pi AQ)\underline z
+$$
+
+In modo analogo al caso senza covariate, è necessario ricavare anche per questo caso la \textit{hat matrix}:
+$$
+\hat  {\underline z} =\Pi\hat  {\underline c} + W \hat  {\underline \beta} = [\Pi AQ + W(W^TW)^{-1}W^T(I-\Pi AQ)]\underline z = H\underline z .
+$$
+
+\subsection*{Proprietà statistiche di $\hat  {\underline c}$ e $\hat  {\underline \beta}$}
+Anche in questo caso è possibile ricavare valore atteso e varianza degli stimatori ottenuti, ed è utile in quanto consente di verificare la significatività delle covariate. Per farlo però, è necessario avere la forma matriciale del modello indicato in \ref{eq:modellobasecovar}:
+
+\begin{equation}
+\label{eq:modellobasecovarmatric}
+\underline z=\Pi \underline c + W \underline \beta + \underline \epsilon .
+\end{equation}
+
+Di nuovo si ha 
+$$
+\mathbb{E}[\underline \epsilon] = \underline 0 \qquad \mathrm{Var}[\underline \epsilon] = \sigma^2 I_{nm}
+$$
+e di conseguenza
+$$
+\mathbb{E}[\underline z] = \Pi \underline c + W \underline \beta \qquad \mathrm{Var}[\underline z] = \sigma^2 I_{nm} .
+$$
+
+Grazie a ciò e alle proprietà ricavate per la matrice $Q$ è possibile ricavare che:
+$$
+\mathbb{E}[\hat  {\underline c}] = AQ\Pi \underline c \qquad \mathrm{Var}[\hat  {\underline c}] = \sigma^2 AQA^T .
+$$
+Per $\hat  {\underline \beta}$ i calcoli sono più complessi, ma si semplificano grazie alle proprietà indicate in precedenza per la matrice $Q$. Si ritrova:
+$$
+\mathbb{E}[\hat  {\underline \beta}] = \underline \beta + (W^TW)^{-1}W^T(I-\Pi A\Pi)\underline c
+$$
+$$ \mathrm{Var}[\hat  {\underline \beta}] = \sigma^2 (W^TW)^{-1} + \sigma^2 (W^TW)^{-1}W^T \Pi A Q A^T \Pi^T W(W^TW)^{-1}.
+$$
+
+Come nel caso senza covariate, anche ora si potrebbe stimare la gaussianità degli stimatori se fosse ipotizzata per $\underline \epsilon$. Questo permette di elaborare intervalli di confidenza per le componenti di $\underline \beta$ e di verificare la signiificatività delle covariate.
+
+
+\section{Scelta di e stima di $\sigma^2$}
+
+
+\subsection*{Parametri di smoothing}
+I parametri $\lambda_S$ e $\lambda_T$ hanno un ruolo rilevante nella stima della soluzione, poichè scelgono quanto peso dare allo smoothing della funzione in spazio e tempo. Quindi è necessario che siano fissati accuratamente prima della stima della soluzione.
+
+Secondo quanto indicato in \cite{art:marra}, è indicato il valore di $\underline \lambda$ che realizza
+il minimo dell'indice 
+
+$$ GCV(\underline \lambda) =\frac{nm}{nm-\text{tr}(H)}  D(\hat  {\underline c}) $$
+
+dove $H$ è la \textit{hat matrix}, ovvero la matrice che is the hat matrix that maps the vector of observed values $\underline z$ to the vector of fitted values $\hat  {\underline z}$:
+$$ H = \Pi (\Pi^T \Pi + S)^{-1}\Pi^T ,$$
+and $D$ is the deviance of the model:
+$$  D(\hat  {\underline c}) = (\underline z - \hat  {\underline z})^T(\underline z - \hat  {\underline z}) = (\underline z - H \hat  {\underline c})^T(\underline z - H \hat  {\underline c}).$$
+
 
 \begin{thebibliography}{9}
 

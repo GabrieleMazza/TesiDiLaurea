@@ -1,2 +1,0 @@
-Funzione scelta:
-(x+y+t)^2
