@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  3 MAR 2015 17:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  4 MAR 2015 18:20
 entering extended mode
 **Descrizione*del*modello.tex
 
@@ -980,31 +980,31 @@ Descrizione del modello\Descrizione del modello.out")
 \@outlinefile=\write3
 
 Capitolo 1.
-LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+LaTeX Font Info:    Try loading font information for U+msa on input line 31.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
-[3]
-Overfull \hbox (5.91379pt too wide) detected at line 104
+{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
+Overfull \hbox (5.91379pt too wide) detected at line 124
  []$[] \OT1/cmr/m/n/10.95 = +\OML/cmm/m/it/10.95 [] [] [][][]\OMS/cmsy/m/n/10.
 95 4\OT1/cmr/m/n/10.95 ([] \OML/cmm/m/it/10.95 c[]'[]\OT1/cmr/m/n/10.95 ([]))[]
 []\OML/cmm/m/it/10.95 d\OT1/cmr/m/n/10.95 
  + \OML/cmm/m/it/10.95 [] [] [][][][][][]dt :  $ 
  []
 
-[4] [5] [6] [7] [8]
-Overfull \hbox (1.92203pt too wide) in paragraph at lines 328--330
+[4] [5] [6]
+Underfull \vbox (badness 3098) has occurred while \output is active []
+
+ [7]
+[8]
+Overfull \hbox (1.92203pt too wide) in paragraph at lines 352--354
 \OT1/cmr/m/n/10.95 con $\OML/cmm/m/it/10.95 A \OT1/cmr/m/n/10.95 = [[] + \OML
 /cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 + []\OML/cmm/m/it/10.95 W\OT1/cmr/m/n/10.
 95 (\OML/cmm/m/it/10.95 W[]W\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 W[]\OT1/c
@@ -1014,86 +1014,86 @@ mr/m/n/10.95 ][][]$ e $\OML/cmm/m/it/10.95 Q \OT1/cmr/m/n/10.95 = [\OML/cmm/m
 0.95 ]$,
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 331.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 355.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 331.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 355.
  [9]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 377.
+(hyperref)                removing `math shift' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sigma' on input line 377.
+(hyperref)                removing `\sigma' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 377.
+(hyperref)                removing `superscript' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 377.
+(hyperref)                removing `math shift' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 377.
+(hyperref)                removing `math shift' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 377.
+(hyperref)                removing `\lambda' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 377.
+(hyperref)                removing `subscript' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 377.
+(hyperref)                removing `math shift' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 377.
+(hyperref)                removing `math shift' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 377.
+(hyperref)                removing `\lambda' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 377.
+(hyperref)                removing `subscript' on input line 401.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 377.
+(hyperref)                removing `math shift' on input line 401.
 
 [10] [11] [12
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 433.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 457.
  [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 433.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 457.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 Descrizione del modello\Descrizione del modello.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 433.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 433.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 457.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 457.
 Package rerunfilecheck Info: File `Descrizione*del*modello.out' has not changed
 .
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 433.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 457.
  ) 
 Here is how much of TeX's memory you used:
  8612 strings out of 493921
  126571 string characters out of 3144868
- 218689 words of memory out of 3000000
+ 217690 words of memory out of 3000000
  11759 multiletter control sequences out of 15000+200000
  14957 words of font info for 57 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,11n,38p,716b,350s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,11n,38p,717b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb>
@@ -1110,9 +1110,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.
 9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Descrizione del modello.pdf" (13 pages, 224319 bytes).
+Output written on "Descrizione del modello.pdf" (13 pages, 228360 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
+ 194 PDF objects out of 1000 (max. 8388607)
  45 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
