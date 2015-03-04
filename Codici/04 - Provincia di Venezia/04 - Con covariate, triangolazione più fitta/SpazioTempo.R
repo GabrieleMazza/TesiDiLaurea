@@ -1152,11 +1152,15 @@ ReadSolutionObj = function(SpaceBasisObj,TimeBasisObj,FileName)
     C<-read.table(file=paste(FileName),header=F)
     C<-as.matrix(C)
     
-    if((dim(C)[1])!=SpaceBasisObj$nbasis*TimeBasisObj$BasisObj$nbasis)
-        stop("Number of elements in C not correct")
+    if((dim(C)[1])!=SpaceBasisObj$nbasis)
+        stop("Number of space basis different from matrix C")
+    if((dim(C)[2])!=TimeBasisObj$BasisObj$nbasis)
+        stop("Number of space basis different from matrix C")
     
     SolutionObj<-list(SpaceBasisObj=SpaceBasisObj,TimeBasisObj=TimeBasisObj,C=C)
     class(SolutionObj)<-"SolutionObj"
+    
+    
     
     return(SolutionObj)
 }
@@ -1171,11 +1175,15 @@ ReadSolutionObjCovar = function(SpaceBasisObj,TimeBasisObj,FileNameC,FileNameBet
     BetaHat<-read.table(file=paste(FileNameBeta),header=F)
     BetaHat<-as.matrix(BetaHat)
     
-    if((dim(C)[1])!=SpaceBasisObj$nbasis*TimeBasisObj$BasisObj$nbasis)
-        stop("Number of elements in C not correct")
+    if((dim(C)[1])!=SpaceBasisObj$nbasis)
+        stop("Number of space basis different from matrix C")
+    if((dim(C)[2])!=TimeBasisObj$BasisObj$nbasis)
+        stop("Number of space basis different from matrix C")
     
     SolutionObj<-list(SpaceBasisObj=SpaceBasisObj,TimeBasisObj=TimeBasisObj,C=C,BetaHat=BetaHat)
     class(SolutionObj)<-"SolutionObj"
+    
+    
     
     return(SolutionObj)
 }
@@ -1263,19 +1271,25 @@ ST.Smooth = function(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
         stop('Incorrect number of data')
     }
     
-    C=solve(t(Pi)%*%Pi+S)%*%t(Pi)%*%Data
+    Sol=solve(t(Pi)%*%Pi+S)%*%t(Pi)%*%Data
     
     # Now that I've found the solution, i create an object with coefficients
     Timenbasis=TimeBasisObj$BasisObj$nbasis
     Spacenbasis=SpaceBasisObj$nbasis
     
     # Check for the sistem solution
-    if(dim(C)[1]!=Timenbasis*Spacenbasis)
+    if(dim(Sol)[1]!=Timenbasis*Spacenbasis)
     {
         stop('Something wrong with solution dimensions')
     }
     
-    # C is a vector
+    # C is a vector. I want to make it a matrix
+    
+    C<-NULL
+    for(j in 1:Spacenbasis)
+    {
+        C<-rbind(C,Sol[((j-1)*Timenbasis+1):(j*Timenbasis),1])
+    }
     
     # I create a Solution Object
     SolutionObj<-list(SpaceBasisObj=SpaceBasisObj,TimeBasisObj=TimeBasisObj,C=C)
@@ -1327,15 +1341,16 @@ ST.Eval = function(X,Y,Time,SolutionObj)
     
     # I need Phi matrix in used time points
     Psi=eval.basis(Time,TimeBasisObj$BasisObj)
+    if ((dim(Psi)[2])!=(dim(SolutionObj$C)[2]))
+    {  
+        stop('Something wrong with dimensions')
+    }
     
     Result<-numeric(N)
     
-    #Creo la matrice di appoggio...
-    Cmat<-matrix(data=SolutionObj$C,nrow=SolutionObj$SpaceBasisObj$nbasis,ncol=SolutionObj$TimeBasisObj$BasisObj$nbasis,byrow=T)
-    
-    for (j in 1:SolutionObj$TimeBasisObj$BasisObj$nbasis)
+    for (j in 1:(dim(SolutionObj$C)[2]))
     {
-        fdObj=fd(Cmat[,j],SolutionObj$SpaceBasisObj)
+        fdObj=fd(SolutionObj$C[,j],SolutionObj$SpaceBasisObj)
         temp<-eval.FEM.fd(X,Y,fdObj)
         Result=Result+temp*Psi[,j]
     }
@@ -1435,7 +1450,7 @@ ST.GCV = function(Data,SpaceBasisObj,TimeBasisObj,LogS,LogT)
             tmp=t((Data-DataHat))%*%(Data-DataHat)
             
             # Generalized Cross Validation
-            GCVMatrix[i,j]=(1/(n-EDFMatrix[i,j]))*tmp
+            GCVMatrix[i,j]=(n/((n-EDFMatrix[i,j])^2))*tmp
             
             # Sigma2Hat
             Sigma2HatMatrix[i,j]=(1/(n-EDFMatrix[i,j]))*tmp
@@ -1464,12 +1479,12 @@ ST.GCV = function(Data,SpaceBasisObj,TimeBasisObj,LogS,LogT)
     List<-list(NameS,NameT)
     
     # Aggiungo i nomi
-    dimnames(GCVMatrix)[[1]]<-as.list(List[[1]])
-    dimnames(GCVMatrix)[[2]]<-as.list(List[[2]])
-    dimnames(EDFMatrix)[[1]]<-as.list(List[[1]])
-    dimnames(EDFMatrix)[[2]]<-as.list(List[[2]])
-    dimnames(Sigma2HatMatrix)[[1]]<-as.list(List[[1]])
-    dimnames(Sigma2HatMatrix)[[2]]<-as.list(List[[2]])
+    dimnames(GCVMatrix)[[1]]<-List[[1]]
+    dimnames(GCVMatrix)[[2]]<-List[[2]]
+    dimnames(EDFMatrix)[[1]]<-List[[1]]
+    dimnames(EDFMatrix)[[2]]<-List[[2]]
+    dimnames(Sigma2HatMatrix)[[1]]<-List[[1]]
+    dimnames(Sigma2HatMatrix)[[2]]<-List[[2]]
     names(Best)<-c("S","T")
     
     if((Best[1]-LogS[1])*(Best[1]-LogS[length(LogS)])*(Best[2]-LogT[1])*(Best[2]-LogT[length(LogT)])==0)
@@ -1623,13 +1638,12 @@ ST.GCV.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
     List<-list(NameS,NameT)
     
     # Aggiungo i nomi
-    # Aggiungo i nomi
-    dimnames(GCVMatrix)[[1]]<-as.list(List[[1]])
-    dimnames(GCVMatrix)[[2]]<-as.list(List[[2]])
-    dimnames(EDFMatrix)[[1]]<-as.list(List[[1]])
-    dimnames(EDFMatrix)[[2]]<-as.list(List[[2]])
-    dimnames(Sigma2HatMatrix)[[1]]<-as.list(List[[1]])
-    dimnames(Sigma2HatMatrix)[[2]]<-as.list(List[[2]])
+    dimnames(GCVMatrix)[[1]]<-List[[1]]
+    dimnames(GCVMatrix)[[2]]<-List[[2]]
+    dimnames(EDFMatrix)[[1]]<-List[[1]]
+    dimnames(EDFMatrix)[[2]]<-List[[2]]
+    dimnames(Sigma2HatMatrix)[[1]]<-List[[1]]
+    dimnames(Sigma2HatMatrix)[[2]]<-List[[2]]
     names(Best)<-c("S","T")
     
     if((Best[1]-LogS[1])*(Best[1]-LogS[length(LogS)])*(Best[2]-LogT[1])*(Best[2]-LogT[length(LogT)])==0)
@@ -1737,22 +1751,28 @@ ST.Smooth.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,Lambda
     
     Temp1<-DesMat%*%solve(t(DesMat)%*%DesMat)%*%t(DesMat)
     
-    C=solve(t(Pi)%*%Pi+S+t(Pi)%*%Temp1%*%Pi)%*%t(Pi)%*%(diag(dim(Temp1)[1])-Temp1)%*%Data
+    Sol=solve(t(Pi)%*%Pi+S+t(Pi)%*%Temp1%*%Pi)%*%t(Pi)%*%(diag(dim(Temp1)[1])-Temp1)%*%Data
     rm(Temp1)       #Free memory (useless object from now...)
 
-    BetaHat=solve(t(DesMat)%*%DesMat)%*%t(DesMat)%*%(Data-Pi%*%C)
+    BetaHat=solve(t(DesMat)%*%DesMat)%*%t(DesMat)%*%(Data-Pi%*%Sol)
     
     # Now that I've found the solution, i create an object with coefficients
     Timenbasis=TimeBasisObj$BasisObj$nbasis
     Spacenbasis=SpaceBasisObj$nbasis
     
     # Check for the sistem solution
-    if(dim(C)[1]!=Timenbasis*Spacenbasis)
+    if(dim(Sol)[1]!=Timenbasis*Spacenbasis)
     {
         stop('Something wrong with solution dimensions')
     }
     
-    # C is a vector.
+    # C is a vector. I want to make it a matrix
+    
+    C<-NULL
+    for(j in 1:Spacenbasis)
+    {
+        C<-rbind(C,Sol[((j-1)*Timenbasis+1):(j*Timenbasis),1])
+    }
     
     # I create a Solution Object
     SolutionObj<-list(SpaceBasisObj=SpaceBasisObj,TimeBasisObj=TimeBasisObj,C=C,BetaHat=BetaHat)

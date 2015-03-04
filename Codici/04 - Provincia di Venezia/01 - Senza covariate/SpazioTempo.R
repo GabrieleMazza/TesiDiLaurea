@@ -3,7 +3,10 @@
 # 16/02
 # Aggiunto i nomi alle righe e alle colonne della matrice GCV
 # 17/02
-#Aggiunta la stima della varianza
+# Aggiunta la stima della varianza
+# 19/02
+# Modificati alcuni punti per risparmio di memoria...
+# AGGIUNTI GLI INTERVALLI DI CONFIDENZA APPROSSIMATI!
 
 ###########################
 ##### PACCHETTI UTILI #####
@@ -1257,18 +1260,18 @@ ST.Smooth = function(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
     # z must contain points ordered like this:
     # For each point, every istant in time
     # So z is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
-    z<-as.matrix(Data)
+    Data<-as.matrix(Data)
     # Check dimensions
-    if ((dim(z)[2]) != 1)
+    if ((dim(Data)[2]) != 1)
     {   
         stop('Data must be a vector')
     }
-    if ((dim(z)[1]) != (dim(Pi)[1]))
+    if ((dim(Data)[1]) != (dim(Pi)[1]))
     {   
         stop('Incorrect number of data')
     }
     
-    Sol=solve(t(Pi)%*%Pi+S)%*%t(Pi)%*%z
+    Sol=solve(t(Pi)%*%Pi+S)%*%t(Pi)%*%Data
     
     # Now that I've found the solution, i create an object with coefficients
     Timenbasis=TimeBasisObj$BasisObj$nbasis
@@ -1386,28 +1389,30 @@ ST.GCV = function(Data,SpaceBasisObj,TimeBasisObj,LogS,LogT)
     K0 = mass(NodeStruct)
     K1 = stiff1(NodeStruct)
     Sspace = K1%*%solve(K0)%*%K1
+    rm(K0,K1)           #Free memory (useless object from now...)
     
     Stime=eval.penalty(TimeBasisObj$BasisObj, TimeBasisObj$DerivativeOrder)
     
     KronSpace=kronecker(Sspace,diag(dim(Stime)[1]))
     KronTime=kronecker(diag(dim(Sspace)[1]),Stime)
+    rm(Sspace,Stime)    #Free memory (useless object from now...)
     
-    # z must be a vector
-    # z must contain points ordered like this:
+    # Data must be a vector
+    # Data must contain points ordered like this:
     # For each point, every istant in time
-    # So z is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
-    z<-as.matrix(Data)
+    # So Data is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
+    Data<-as.matrix(Data)
     # Check dimensions
-    if ((dim(z)[2]) != 1)
+    if ((dim(Data)[2]) != 1)
     {   
         stop('Data must be a vector')
     }
-    if ((dim(z)[1]) != (dim(Pi)[1]))
+    if ((dim(Data)[1]) != (dim(Pi)[1]))
     {   
         stop('Incorrect number of data')
     }
     
-    n=dim(z)[1]
+    n=dim(Data)[1]
     
     # Create the matrix with GCVvalues
     
@@ -1440,12 +1445,12 @@ ST.GCV = function(Data,SpaceBasisObj,TimeBasisObj,LogS,LogT)
                 EDFMatrix[i,j]<-EDFMatrix[i,j]+H[k,k]
             }
             
-            zHat<-H%*%z
+            DataHat<-H%*%Data
             
-            tmp=t((z-zHat))%*%(z-zHat)
+            tmp=t((Data-DataHat))%*%(Data-DataHat)
             
             # Generalized Cross Validation
-            GCVMatrix[i,j]=(1/(n-EDFMatrix[i,j]))*tmp
+            GCVMatrix[i,j]=(n/((n-EDFMatrix[i,j])^2))*tmp
             
             # Sigma2Hat
             Sigma2HatMatrix[i,j]=(1/(n-EDFMatrix[i,j]))*tmp
@@ -1523,23 +1528,25 @@ ST.GCV.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
     K0 = mass(NodeStruct)
     K1 = stiff1(NodeStruct)
     Sspace = K1%*%solve(K0)%*%K1
+    rm(K0,K1)           #Free memory (useless object from now...)
     
     Stime=eval.penalty(TimeBasisObj$BasisObj, TimeBasisObj$DerivativeOrder)
     
     KronSpace=kronecker(Sspace,diag(dim(Stime)[1]))
     KronTime=kronecker(diag(dim(Sspace)[1]),Stime)
+    rm(Sspace,Stime)    #Free memory (useless object from now...)
     
-    # z must be a vector
-    # z must contain points ordered like this:
+    # Data must be a vector
+    # Data must contain points ordered like this:
     # For each point, every istant in time
-    # So z is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
-    z<-as.matrix(Data)
+    # So Data is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
+    Data<-as.matrix(Data)
     # Check dimensions
-    if ((dim(z)[2]) != 1)
+    if ((dim(Data)[2]) != 1)
     {   
         stop('Data must be a vector')
     }
-    if ((dim(z)[1]) != (dim(Pi)[1]))
+    if ((dim(Data)[1]) != (dim(Pi)[1]))
     {   
         stop('Incorrect number of data')
     }
@@ -1553,7 +1560,7 @@ ST.GCV.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
              must be equal to number of data')
     }
     
-    n=dim(z)[1]
+    n=dim(Data)[1]
     
     # Temporary matrix
     Temp0<-t(Pi)%*%Pi
@@ -1597,9 +1604,9 @@ ST.GCV.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
                 EDFMatrix[i,j]<-EDFMatrix[i,j]+HSm[k,k]+HCovar[k,k]
             }
             
-            zHat<-(HSm+HCovar)%*%z
+            DataHat<-(HSm+HCovar)%*%Data
             
-            tmp=t((z-zHat))%*%(z-zHat)
+            tmp=t((Data-DataHat))%*%(Data-DataHat)
                 
             # Generalized Cross Validation
             GCVMatrix[i,j]=(n/((n-EDFMatrix[i,j])^2))*tmp
@@ -1718,17 +1725,17 @@ ST.Smooth.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,Lambda
     # Create S matrix
     S=MakeS(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
     
-    # z must be a vector
-    # z must contain points ordered like this:
+    # Data must be a vector
+    # Data must contain points ordered like this:
     # For each point, every istant in time
-    # So z is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
-    z<-as.matrix(Data)
+    # So Data is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
+    Data<-as.matrix(Data)
     # Check dimensions
-    if ((dim(z)[2]) != 1)
+    if ((dim(Data)[2]) != 1)
     {   
         stop('Data must be a vector')
     }
-    if ((dim(z)[1]) != (dim(Pi)[1]))
+    if ((dim(Data)[1]) != (dim(Pi)[1]))
     {   
         stop('Incorrect number of data')
     }
@@ -1744,9 +1751,10 @@ ST.Smooth.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,Lambda
     
     Temp1<-DesMat%*%solve(t(DesMat)%*%DesMat)%*%t(DesMat)
     
-    Sol=solve(t(Pi)%*%Pi+S+t(Pi)%*%Temp1%*%Pi)%*%t(Pi)%*%(diag(dim(Temp1)[1])-Temp1)%*%z
-    
-    BetaHat=solve(t(DesMat)%*%DesMat)%*%t(DesMat)%*%(z-Pi%*%Sol)
+    Sol=solve(t(Pi)%*%Pi+S+t(Pi)%*%Temp1%*%Pi)%*%t(Pi)%*%(diag(dim(Temp1)[1])-Temp1)%*%Data
+    rm(Temp1)       #Free memory (useless object from now...)
+
+    BetaHat=solve(t(DesMat)%*%DesMat)%*%t(DesMat)%*%(Data-Pi%*%Sol)
     
     # Now that I've found the solution, i create an object with coefficients
     Timenbasis=TimeBasisObj$BasisObj$nbasis
@@ -1771,4 +1779,159 @@ ST.Smooth.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,Lambda
     class(SolutionObj)<-"SolutionObj"
     
     return(SolutionObj)
+}
+
+
+
+
+
+
+
+
+ST.IC = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT,Alpha=0.05,Correct=TRUE)
+{
+    # SMOOTH.ST.FD Compute a solution for a Spatial-Time Spline problem 
+    #
+    # Arguments:
+    # FELSPLOBJ     a FELspline object.
+    # LAMBDAS       a scalar smoothing parameter for space term.
+    # LAMBDAT       a scalar smoothing parameter for time term.
+    # DATA          a (n+1)-by-(m+1) set of noisy observations of the surface values.  
+    #               DATA(:,1) indexes the points at which the 
+    #               values in DATA(:,2:end) were observed.
+    #               DATA(1,:) indexes the times at which the values of
+    #               DATA(2:end,:) are observed
+    #
+    # Output:
+    # FELSPLOBJ  ...  A FD object of the FEM type defined by the coefficient
+    #                 vector resulting from smoothing
+    # LAPLACEFD  ...  A FD object of the FEM type for the value of the 
+    #                 Laplace operator if order == 2, or empty if order == 1
+    #
+    #
+    # Last modified on 8 February 2011 by Laura Sangalli
+    
+    #  check arguments
+    
+    # Check arguments
+    # Space
+    if (class(SpaceBasisObj)!="basisfd")
+    {  
+        stop('Space basis object not valid')
+    }
+    if (SpaceBasisObj$type!="FEM")
+    {  
+        stop('Space basis are not FE')
+    }
+    if (!is.numeric(LambdaS))
+    {  
+        stop('LAMBDAS is not numeric')
+    }
+    if (length(LambdaS) != 1)
+    {   
+        stop('LAMBDAS is not a scalar')
+    }
+    # Time
+    if(class(TimeBasisObj)!="TimeBasisObj")
+    {  
+        stop('Time basis object not valid')
+    }
+    if(TimeBasisObj$BasisObj$type!="bspline")
+    {  
+        stop('Time basis are not bspline')
+    }
+    if (!is.numeric(LambdaT))
+    {  
+        stop('LAMBDAT is not numeric')
+    }
+    if (length(LambdaT) != 1)
+    {   
+        stop('LAMBDAT is not a scalar')
+    }
+    
+    # Create Pi matrix
+    Pi=MakePi(SpaceBasisObj,TimeBasisObj)
+    
+    # Create S matrix
+    S=MakeS(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
+    
+    # Data must be a vector
+    # Data must contain points ordered like this:
+    # For each point, every istant in time
+    # So Data is the concatenation on z11,z12,...,z1m,z21,z22,...,z2m,...,znm
+    Data<-as.matrix(Data)
+    # Check dimensions
+    if ((dim(Data)[2]) != 1)
+    {   
+        stop('Data must be a vector')
+    }
+    if ((dim(Data)[1]) != (dim(Pi)[1]))
+    {   
+        stop('Incorrect number of data')
+    }
+    
+    # DesMat must be a matrix, with correct number of dimensions...
+    DesMat<-as.matrix(DesMat)
+    # Check dimensions
+    if ((dim(DesMat)[1]) != (dim(Pi)[1]))
+    {   
+        stop('Incorrect number dimensions for Design Matrix. Number of rows
+             must be equal to number of data')
+    }
+    
+    n=dim(Data)[1]
+    
+    # Temporary matrix
+    Temp1<-solve(t(DesMat)%*%DesMat)
+    TempDM<-DesMat%*%Temp1%*%t(DesMat)
+    
+    # First of all: I need BetaHat
+    PSm=solve(t(Pi)%*%Pi+S+t(Pi)%*%TempDM%*%Pi)%*%t(Pi)%*%(diag(dim(TempDM)[1])-TempDM)
+    rm(TempDM, S)       # Free memory (useless object from now)...
+    PCovar=Temp1%*%t(DesMat)%*%(diag(dim(Pi)[1])-Pi%*%PSm)
+    BetaHat=PCovar%*%Data
+    
+    
+    # Then, I need Sigma2Hat
+    HatMatrix=Pi%*%PSm+DesMat%*%PCovar
+    DataHat=HatMatrix%*%Data
+    
+    Sigma2Hat=(1/(n-sum(diag(HatMatrix))))*t(Data-DataHat)%*%(Data-DataHat)
+    rm(PCovar,HatMatrix,DataHat,Data)   #Free temporary objects (useless from now...)
+    
+    # Then, I need Variance Matrix
+    VarMatrix=
+        Sigma2Hat*(
+        Temp1+
+        Temp1%*%t(DesMat)%*%Pi%*%PSm%*%t(PSm)%*%t(Pi)%*%DesMat%*%Temp1
+        )
+    
+    if(Correct)
+    {
+        CorrectedAlpha=Alpha/(dim(BetaHat)[1])
+        
+        CI_l = BetaHat - qnorm(1-CorrectedAlpha/2) * sqrt(diag(VarMatrix))
+        CI_u = BetaHat + qnorm(1-CorrectedAlpha/2) * sqrt(diag(VarMatrix))
+        ApproxCIBeta = cbind(CI_l, BetaHat, CI_u)
+    } else
+    {
+        CorrectedAlpha=NULL
+        
+        CI_l = BetaHat - qnorm(1-Alpha/2) * sqrt(diag(VarMatrix))
+        CI_u = BetaHat + qnorm(1-Alpha/2) * sqrt(diag(VarMatrix))
+        ApproxCIBeta = cbind(CI_l, BetaHat, CI_u)
+    }
+    
+    # Now I create names for rows and colums... 
+    colnames(ApproxCIBeta)=c("Low","BetaHat","Up")
+    rows<-NULL
+    for(i in 1:(dim(BetaHat)[1]))
+    {
+        rows<-c(rows,paste("Beta",i,sep=""))
+    }
+    rownames(ApproxCIBeta)=rows
+    
+    # Now I can build the result..
+    Result=list(ApproxCIBeta=ApproxCIBeta,Alpha=Alpha,Correct=Correct,CorrectedAlpha=CorrectedAlpha,Sigma2Hat=Sigma2Hat)
+    return(Result)
 }

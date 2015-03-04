@@ -67,6 +67,7 @@ for(j in 1:length(TimePoints))
 
 for(j in 1:length(TimePoints))
 {
+
     j<-j+1
     zfit<-NULL
     lon<-NULL
@@ -80,9 +81,8 @@ for(j in 1:length(TimePoints))
             zfit<-c(zfit,ResultFitted[i,j])
         }
     }
-    #png(filename=paste("Maps ",TimePoints[j],".png",sep=""))
-    GoogleMap(zfit ~ lat*lon,main=paste("Funzione stimata tempo ",TimePoints[j],sep=""),panel= function(...) panel.contourplot(...,labels=T,label.style="align",at=c((trunc(min(zfit))-1),seq(-700,600,by=100),(trunc(max(zfit))+1)),col.regions=rgb(1,seq(0,1,length.out=1000),0,alpha=0.5),regions=FALSE,contour=TRUE))
-    #dev.off()
+    GoogleMap(zfit ~ lat*lon,main=paste("Funzione stimata anno ",TimePoints[j],sep=""),panel= function(...) panel.contourplot(...,labels=T,label.style="align",at=c((trunc(min(zfit))-1),seq(-700,600,by=100),(trunc(max(zfit))+1)),col.regions=rgb(1,seq(0,1,length.out=1000),0,alpha=0.5),regions=FALSE,contour=TRUE))
+    
 }
 
 

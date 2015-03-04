@@ -1,0 +1,441 @@
+\documentclass[a4paper,11pt,twoside,openright]{book}							% COMANDI INIZIALI
+
+
+\usepackage[italian]{babel}								% sillabazione italiana
+\usepackage[utf8]{inputenc}								% Per le lettere accentate IN UNIX E IN WINDOWS
+
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{float}
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norma}{\lVert}{\rVert}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+
+\chapter{Descrizione del modello}
+
+\section{Caso senza covariate}
+
+\subsection*{Dati e modello}
+
+Siano $\{\underline p_i = (x_i,y_i); i=1, ... , n\}$ un insieme di $n$ punti spaziali in un dominio limitato $\Omega \subset \mathbb R^2$ e siano $\{t_j ; j=1, ... , m\}$ un insieme di $m$ istanti temporali in un intervallo $[0,T]\subset \mathbb R$. In questi punti ed istanti osserviamo i dati: siano quindi $z_{ij}$ i valori della variabile reale nel punto $\underline p_i$ al tempo $t_j$.
+
+Supponiamo che le osservazioni $\{ z_{ij};i=1, ... , n; j=1, ... , m \}$ provengano da una funzione $f(\underline p, t)$, con l'aggiunta di un rumore:
+\begin{equation}
+\label{eq:modellobase}
+z_{ij}=f(\underline p_i,t_j)+\epsilon_{ij}\ \ \ \ i = 1,...,n\ \ j=1,...,m \ \ ,
+\end{equation}
+dove $\{\epsilon_{ij}; i = 1,...,n; j=1,...m\}$ sono residui indipendenti identicamente distribuiti di media nulla e varianza $\sigma^2$.
+
+L'obiettivo del modello è stimare la funzione spazio-temporale $f(\underline p, t)$ dai dati, minimizzando il seguente funzionale:
+\begin{multline}
+\label{eq:Jfunc}
+J_{\underline \lambda }(f) = \sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 \ + \\+\   \lambda_S \int_0^T \int_\Omega \Bigl( \triangle f  \Bigr)^2 d\Omega\ dt \ +\  \lambda_T \int_\Omega \int_0^T \Bigl( \frac{\partial^2 f }{\partial t ^2} \Bigr)^2 dt\ d\Omega .
+\end{multline}
+Il primo termine $J_{\underline \lambda }(f)$ tende a minimizzazione dello scarto quadratico tra i dati e la funzione $f$ calcolata nei corrispondenti punti spaziali e istanti temporali. Tuttavia non è l'unico, in quanto in aggiunta il funzionale presenta due termini di smoothing il cui obiettivo nel processo di minimizzazione è di rendere liscia la funzione rispettivamente in spazio e tempo.
+
+Il termine della penalizzazione in spazio comprende l'integrale sull'intervallo $[0,T]$ dell'integrale sul dominio spaziale $\Omega$ del quadrato del laplaciano di $f$ in spazio. Notoriamente il laplaciano esprime la curvatura locale della funzione, quindi il suo integrale è un ottimo modo per avere una misura di quanto la funzione è liscia in spazio. L'analogo significato in tempo è rappresentato dalla derivata seconda in $t$, che nell'ultimo termine della penalizzazione è integrata prima sull'intervallo temporale $[0,T]$, e in seguito sul dominio spaziale $\Omega$.
+
+I due termini $\lambda_S$ e $\lambda_T$ sono rispettivamente i pesi della penalizzazione in spazio e in tempo. La scelta di $\underline \lambda$, vettore $ \begin{bmatrix}
+\lambda_S \\ \lambda_T
+\end{bmatrix}$ deve essere molto accurata. Infatti, valori troppo bassi per i due termini causerebbero una stima vicina all'interpolazione dei dati (poiché darebbero più peso al termine con gli scarti quadratici), mentre valori troppo elevati porterebbero ad avere una funzione $f$ fin troppo liscia e quindi distante dai dati. Per questo motivo sarà dato ampio spazio alla scelta di $\underline \lambda$ (sez. \ref{sez:GCV}).
+
+\subsection*{Spazio funzionale per $f$}
+
+\subsection*{Sviluppo in funzioni di base di $f(\underline p,t)$}
+
+Per poter risolvere il problema numericamente è necessaria una riduzione finito-dimensionale di $f$ con un opportuno sviluppo di basi separate in spazio e tempo.
+
+Sia $\{\varphi_i(\underline p); i=1, ... , N\}$ un insieme di $N$ basi spaziali definite sul dominio $\Omega$ e $\{\psi_j(t); j=1, ... , M\}$ un insieme di basi temporali definite sull'intervallo $[0,T]$. Da questi due insiemi di basi marginali in spazio e tempo si costruisce la funzione $f$, con tutti i prodotti incrociati disponibili tra i due insiemi:
+\begin{equation} 
+\label{eq:basisexp}
+f(\underline p,t)=\sum_{i=1}^N \sum_{j=1}^M c_{ij}\ \varphi_i(\underline p)\ \psi_j(t) .
+\end{equation}
+Nel codice implementato sono disponibili basi per elementi finiti in spazio e B-splines in tempo. Per coerenza con queste scelte da questo punto in avanti il dominio spaziale non sarà più insicato con $\Omega$, ma con la sua triangolazione $\Omega_T$.
+
+La prima conseguenza dello sviluppo in basi di $f(\underline p,t)$ è che risulta possibile identificarla semplicemente con i valori dei coefficienti $\{c_{ij}; i=1, ... , N\ j=1, ... , M\}$. Quindi l'obiettivo della stima sarà il vettore contenente questi coefficienti:
+\begin{equation}
+\underline c =
+\begin{bmatrix}
+c_{11}  \\
+\vdots\\
+c_{1M}  \\
+c_{21}  \\
+\vdots\\
+c_{2M}  \\
+\vdots\\
+c_{NM}
+\end{bmatrix}
+\end{equation}
+e si dimostrerà che sarà soluzione di un sistema lineare.
+
+\subsection*{Discretizzazione dei termini di smoothing del funzionale $J_{\underline \lambda }(f)$}
+Dopo aver fissato le basi dello sviluppo di $f$ e identificato la funzione con il vettore $\underline c$, è necessario riscrivere in forma matriciale anche il funzionale $J_{\underline \lambda }(f)$ in \ref{eq:Jfunc} per poter risolvere il problema. La parte più complessa da trattare di $J_{\underline \lambda }(f)$ è rappresentata dai due termini di smoothing in spazio e tempo, che si semplifica considerando la seguente discretizzazione:
+\begin{multline}
+\label{eq:penalizzdisc}
+J_{\underline \lambda }^D(f)=\sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 \ + \\
++\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i (\underline p)) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j(t)) }{\partial t ^2} \Bigr)^2 dt \ .
+\end{multline}
+La scelta di questa discretizzazione è giustificata dalla separabilità dei termini di smoothing in spazio e tempo di $J_{\underline \lambda }(f)$ e dalla forma di $f$ nell'espressione in funzioni di base in \ref{eq:basisexp}. Infatti $f$ è ricavata combinando le basi dei modelli marginali in spazio e in tempo, e si può anche scrivere nelle seguenti forme:
+$$
+f(\underline p,t)=\sum_{i=1}^N \sum_{j=1}^M c_{ij}\ \varphi_i(\underline p)\ \psi_j(t)=\sum_{j=1}^Mm_{S_j}(\underline p)\psi(t)=\sum_{i=0}^N\varphi_i(\underline p)m_{T_i}(t)
+$$
+dove
+$$
+m_{S_j}(\underline p)=\sum_{i=0}^Nc_{ij}\varphi_i(\underline p) \qquad \forall j=1...M
+$$
+$$
+m_{T_i}(t)=\sum_{j=0}^Mc{ij}\psi_j(t) \qquad \forall i=1...N \ ,
+$$
+cioè da $f$ si possono ricavare due insiemi di funzioni marginali fissando rispettivamente l'indice in tempo o in spazio.
+
+Inoltre lo smoothing marginale spaziale ha il suo termine di penalizzazione (l'integrale su $\Omega_T$ del laplaciano in spazio, che indicheremo con $J_S$) così come lo smoothing in tempo (l'integrale su $[0,T]$ della derivata seconda in tempo, che indicheremo con $J_T$). Tali modelli marginali sono già stati trattati in letteratura con le stesse basi dei casi che saranno analizzati in seguito (elementi finiti in spazio e B-spline in tempo), quindi per discretizzare gli ultimi due termini di $J_{\underline \lambda }(f)$ secondo quanto indicato in \ref{eq:penalizzdisc} basta applicare $J_S$ e $J_T$ alle restrizioni marginali risultanti dallo sviluppo di $f$:
+\begin{multline*}
+\lambda_S  \sum_{j=1}^M J_S(m_{S_j}(\underline p)) +
+\lambda_T \sum_{i=1}^N J_T(m_{T_i}(t)) =\\
+=+\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i (\underline p)) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j(t)) }{\partial t ^2} \Bigr)^2 dt \ .
+\end{multline*}
+Dopo questa costruzione (analoga a quella riportata in \cite{art:marra}) non resta che calcolare gli integrali in \ref{eq:penalizzdisc}.
+
+L'integrale $\int_{\Omega_T} ( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) )^2 d \Omega$ si può calcolare ricorrendo nuovamente alle funzioni marginali in spazio $m_{S_j}$. Fissato $j$, si ha:
+$$
+\int_{\Omega_T} ( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) )^2 d \Omega = \int_{\Omega_T} (\triangle m_{S_j}(\underline p))^2 d \Omega \ .
+$$
+Saranno omessi per semplicità gli argomenti delle funzioni. Per avere una forma utile a livello computazionale di questa espressione è necessario considerare $ g = \triangle m_{S_j} $ e approssimarla esprimendola con le basi in spazio:
+$$
+g=\sum_{i=1}^N  g_i\varphi_i \ .
+$$
+Inoltre, occorre definire un insieme di funzioni test $v$, secondo l'espansione di basi in spazio e al variare dei coefficienti delle basi:
+$$
+v=\sum_{i=1}^N  v_i\varphi_i \qquad v \in \mathbb{R}^N \ .
+$$
+Fatto ciò, si potrà considerare la seguente quantità:
+$$
+\int_\Omega \triangle m_{S_j} g d \Omega
+$$
+con
+$$
+\int_\Omega g v d \Omega= \int_\Omega \triangle m_{S_j} v d \Omega\qquad \forall v \in \mathbb{R}^N \ .
+$$
+Usando la formula di Green ed eliminando gli integrali di bordo grazie alle condizioni di Neumann, si ricava:
+$$
+\int_\Omega g v d \Omega= -\int_\Omega \nabla m_{S_j} \nabla g d \Omega \ .
+$$
+Di conseguenza, se si definiscono i vettori con le funzioni di base in spazio e i vettori con le loro derivate parziali
+$$
+\underline \varphi =
+\begin{bmatrix}
+\varphi_{1}  \\
+\varphi_{2}  \\
+\vdots\\
+\varphi_{n}
+\end{bmatrix}
+$$
+\begin{equation}
+\underline \varphi_x=  \begin{bmatrix}
+\partial \varphi_{1}/\partial x \\
+\partial \varphi_{2}/\partial x  \\
+\vdots\\
+\partial \varphi_{n}/\partial x \end{bmatrix} 
+\qquad
+\underline \varphi_x=  \begin{bmatrix}
+\partial \varphi_{1}/\partial y  \\
+\partial \varphi_{2}/\partial y  \\
+\vdots\\
+\partial \varphi_{n}/\partial y\end{bmatrix} 
+\end{equation}
+e le matrici
+$$ R_0 = \int_\Omega \underline \varphi \underline \varphi^T $$
+$$ R_1 = \int_\Omega (\underline \varphi_x \underline \varphi_x^T + \underline \varphi_y \underline \varphi_y^T). $$
+si ha, per l'arbitrarietà di $v$: 
+$$ S_S= - R_1 \underline g \ , \ \ \ \ \ R_0 \underline g = - R_1  $$
+dove $\underline g$ e $\underline v$ contengono i coefficienti dell'espansione in base di $g$ e $v$ rispettivamente, e $\underline c_j =
+\begin{bmatrix}
+c_{1j} & c_{2j} & \hdots & c_{Nj}
+\end{bmatrix}^T$.
+Quindi in conclusione, se 
+$$
+S_S = R_1 R_0^{-1} R_1
+$$
+si avrà:
+$$
+\int_{\Omega_T} ( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) )^2 d \Omega = \int_{\Omega_T} (\triangle m_{S_j}(\underline p))^2 d \Omega  =\underline c^T_j S_S \underline c_j .
+$$
+
+Riguardo al termine $\int_0^T (\frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} )^2 dt$, la semplificazione è molto più semplice, poichè se si considera la matrice
+ $$ S_T = \begin{bmatrix}
+\int_0^T \psi_1''(t) \psi_1''(t) dt  & \int_0^T \psi_1''(t) \psi_2''(t) dt & \hdots & \int_0^T \psi_1''(t) \psi_M''(t) dt  \\
+\int_0^T \psi_2''(t) \psi_1''(t) dt  & \int_0^T \psi_2''(t) \psi_2''(t) dt & \hdots & \int_0^T \psi_2''(t) \psi_M''(t) dt  \\
+\vdots & \vdots & \hdots & \vdots \\
+\int_0^T \psi_M''(t) \psi_1''(t) dt  & \int_0^T \psi_M''(t) \psi_2''(t) dt & \hdots & \int_0^T \psi_M''(t) \psi_M''(t) dt  \\
+\end{bmatrix} $$
+e il vettore $
+\underline c_i =
+\begin{bmatrix}
+c_{i1} & c_{i2} & \hdots & c_{iM}
+\end{bmatrix}^T$ allora si ha:
+$$
+\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} \Bigr)^2 dt =\underline c_i^T  S_T \underline c_i \ .
+$$
+
+Ora che sono state ricavate le forme quadratiche associate ai due integrali, per completare lo studio di \ref{eq:penalizzdisc} è necessario solamente introdurre opportuni prodotti di Kronacker e l'uso del vettore $\underline c$:
+\begin{multline*}
+\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} \Bigr)^2 dt= \\
+= \lambda_S\   \underline c^T (I_M \otimes S_S)\  \underline c   \ +\  \lambda_T\  \underline c^T ( S_T \otimes I_N)\  \underline c
+\end{multline*}
+dove $I_M$ and $I_N$ sono matrici identità di dimensioni $M \times M$ e $N \times N$ rispettivamente.
+Di conseguenza se
+$$ S = \lambda_S\    (S_S \otimes I_M)   \ +\  \lambda_T\   (I_N \otimes S_T)  .$$
+allora
+$$
+\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} \Bigr)^2 dt=\underline c^T S \underline c
+$$
+
+\subsection*{Soluzione del problema di stima}
+Per avere una forma matriciale della versione discreta di 
+\begin{multline*}
+J_{\underline \lambda }^D(f)= \sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 + \\
++ \lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\varphi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\psi_j) }{\partial t ^2} \Bigr)^2 dt
+\end{multline*}
+ occorre definire il vettore $\underline z$ dei valori osservati 
+\begin{equation}
+\underline z =
+\begin{bmatrix}
+z_{11}  \\
+\vdots\\
+z_{1m}  \\
+z_{21}  \\
+\vdots\\
+z_{2m}  \\
+\vdots\\
+z_{nm}
+\end{bmatrix}
+\end{equation}
+e le matrici $\Phi$ (con le valutazioni delle basi spaziali nei punti $\{\underline p_i; i = 1,...,n\}$) e $\Psi$ (con le valutazioni delle basi temporali $\{t_j; j = 1,...,m\}$):
+$$
+\Phi =
+\begin{bmatrix}
+\varphi_{1}(\underline p_1) & \varphi_{2}(\underline p_1) & \hdots & \varphi_{N}(\underline p_1)  \\
+\varphi_{1}(\underline p_2) & \varphi_{2}(\underline p_2) & \hdots & \varphi_{N}(\underline p_2)  \\
+\vdots & \vdots & \hdots & \vdots \\
+\varphi_{1}(\underline p_n) & \varphi_{2}(\underline p_n) & \hdots & \varphi_{N}(\underline p_n)  \\
+\end{bmatrix}
+$$
+$$
+\Psi = 
+\begin{bmatrix}
+\psi_{1}( t_1) & \psi_{2}( t_1) & \hdots & \psi_{M}( t_1)  \\
+\psi_{1}( t_2) & \psi_{2}( t_2) & \hdots & \psi_{M}( t_2)  \\
+\vdots & \vdots & \hdots & \vdots \\
+\psi_{1}( t_n) & \psi_{2}( t_m) & \hdots & \psi_{M}( t_m)  \\
+\end{bmatrix}
+$$
+Sia $\Pi$ il prodotto di Kronecker $\Phi$ e $\Psi$:
+$$ \Pi = \Phi \otimes \Psi \ .$$
+Questa matrice consente di poter dire che
+\begin{equation}
+\begin{bmatrix}
+f(\underline p_1,t_1)  \\
+\vdots\\
+f(\underline p_1,t_m)  \\
+f(\underline p_2,t_1)  \\
+\vdots\\
+f(\underline p_2,t_m)  \\
+\vdots\\
+f(\underline p_n,t_m)
+\end{bmatrix}= \Pi \underline c \ ,
+\end{equation} 
+quindi si ha:
+\begin{equation} 
+\label{eq:Jmatr}
+J_{\underline \lambda }^D(f) = (\underline z - \Pi \underline c)^T (\underline z - \Pi \underline c) + \underline c^t S \underline c \ .
+\end{equation}
+Una volta che è stata ricavata questa forma, per risolvere il problema di minimo è sufficiente derivare questa espressione
+$$
+\frac{\partial}{\partial \underline c}J= -2 \Pi^T \underline z + 2(\Pi^T \Pi + S) \underline c \ \ ,
+$$
+porre uguale a zero, da cui
+\begin{equation}
+(\Pi^T \Pi + S) \underline c = \Pi^T\underline z
+\end{equation} 
+e si ha in conclusione
+$$ \hat  {\underline c} = (\Pi^T \Pi + S)^{-1}\Pi^T \underline z \ .$$
+Grazie a questo risultato è possibile ricavare i valori stimati della funzione $f$ nei punti dati:
+$$
+\hat  {\underline z} =\Pi\hat  {\underline c} = \Pi(\Pi^T \Pi + S)^{-1}\Pi^T \underline z = H\underline{z}
+$$
+dove $H$ rappresenta l'analogo della \textit{hat matrix} del classico modello di regressione in questo caso.
+
+
+\subsection*{Proprietà statistiche di $\hat  {\underline c}$}
+Il modello di partenza indicato in \ref{eq:modellobase} può essere scritto anche in forma matriciale
+\begin{equation}
+\label{eq:modellobasematric}
+\underline z=\Pi \underline c + \underline \epsilon .
+\end{equation}
+A causa delle proprietà statistiche di $\underline \epsilon$
+$$
+\mathbb{E}[\underline \epsilon] = \underline 0 \qquad \mathrm{Var}[\underline \epsilon] = \sigma^2 I_{nm}
+$$
+sia ha
+$$
+\mathbb{E}[\underline z] = \Pi \underline c \qquad \mathrm{Var}[\hat  {\underline c}] = \sigma^2 I_{nm}
+$$
+e quindi è immediato ricavare per lo stimatore $\hat  {\underline c}$ (grazie alle proprietà simmetria di $S$):
+$$
+\mathbb{E}[\hat  {\underline c}] = (\Pi^T \Pi + S)^{-1}\Pi^T\Pi \underline c \qquad \mathrm{Var}[\underline z] = \sigma^2 (\Pi^T \Pi + S)^{-1}\Pi^T\Pi(\Pi^T \Pi + S)^{-1} .
+$$
+Non è stata ipotizzata la gaussianità per $\underline \epsilon$, ma se fosse ipotizzata anche $\hat  {\underline c}$ sarebbe gaussiano. Grazie a questa ulteriore ipotesi sarebbe possibile elaborare (con una data significatività) una regione di confidenza per $\hat  {\underline c}$ e quindi una banda di confidenza per la funzione stimata $f$.
+
+
+\section{Caso con covariate}
+
+Il modello si estende facilmente se si prevede che il dato possa essere influenzato da covariate. Il modello di (\ref{eq:modellobase}) diventa:
+\begin{equation}
+\label{eq:modellobasecovar}
+z_{ij}= \underline w_{ij}^T\  \underline \beta   \ + \  f(\underline p_i,t_j)\ +\ \epsilon_{ij}\ \ \ \ i = 1,...,n\ \ j=1,...,m \ \ ,
+\end{equation}
+dove $\underline w_{ij}$ è il vettore delle $p$ covariate associate a $z_{ij}$ e $\underline \beta$ è il vettore dei coefficienti di regressione. Di conseguenza, il funzionale discreto di \ref{eq:Jmatr} diventa:
+$$ J = (\underline z - W \underline \beta - \Pi \underline c)^T (\underline z - W \underline \beta - \Pi \underline c) + \underline c^t S \underline c  \ ,$$
+dove $W$ è la matrice $nm \times p$ con i vettori $ \{\underline w_{ij}; i=1,...,n;j=1,...,m\}$.
+
+Per ricavare la soluzione occorre derivare questa espressione rispetto a $\underline \beta$ e $\underline c$:
+$$
+\frac{\partial}{\partial \underline \beta}J= -2W^T \underline z + 2W^T \Pi \underline c + 2 W^TW \underline \beta \ \ ,
+$$
+$$
+\frac{\partial}{\partial \underline c}J= -2 \Pi^T \underline z + 2 \Pi^T W \underline \beta + 2(\Pi^T \Pi + S) \underline c \ \ .
+$$
+Imponendo che le derivate siano uguali a zero si hanno le seguenti equazioni:
+$$
+\begin{cases}
+W^TW \hat{\underline \beta} = W^T(\underline z - \Pi \hat{\underline c})  \\
+(\Pi^T \Pi + S) \hat{\underline c}=\Pi^T(\underline z -W \hat{\underline \beta})
+\end{cases}.
+$$
+che ricordano le equazioni usate per la regressione e per il modello senza covariate, con la differenza che in questo caso a $\underline z$ è sottratto in entrambi i casi la parte spiegata dal termine di modello a cui non si riferiscono $\hat{\underline \beta}$ e $\hat{\underline c}$ rispettivamente.
+
+A questo punto si possono ricavare le soluzioni. Si ha:
+$$
+\hat  {\underline c}=[\Pi^T\Pi+S+\Pi^TW(W^TW)^{-1}W^T\Pi]^{-1}\Pi^T[I-W(W^TW)^{-1}W^T]\underline z=AQ \underline z
+$$
+con $A=[\Pi^T\Pi+S+\Pi^TW(W^TW)^{-1}W^T\Pi]^{-1}\Pi^T$ e $Q=[I-W(W^TW)^{-1}W^T]$, matrice molto importante nel caso di regressione lineare, poiché proietta il vettore dei dati nel sottospazio ortogonale allo spazio generato dalle colonne della matrice disegno, ricavando così il vettore dei residui. Questa matrice si ritrova anche in questo caso, ed è ancora valide le sue proprietà:
+\begin{itemize}
+\item $Q$ è idempotente, cioè $QQ=Q$;
+\item $Q$ è simmetrica;
+\item a causa del fatto che proietta nel sottospazio ortogonale di $\mathrm{Col}(W)$, $QW$ risulta essere la matrice nulla di opportune dimensioni. 
+\end{itemize}
+
+Infine, la stima di $\hat  {\underline \beta}$ si ricava dalla stima ottenuta per $\hat  {\underline c}$:
+$$
+(W^TW)^{-1}W^T(I-\Pi AQ)\underline z
+$$
+
+In modo analogo al caso senza covariate, è necessario ricavare anche per questo caso la \textit{hat matrix}:
+$$
+\hat  {\underline z} =\Pi\hat  {\underline c} + W \hat  {\underline \beta} = [\Pi AQ + W(W^TW)^{-1}W^T(I-\Pi AQ)]\underline z = H\underline z .
+$$
+
+\subsection*{Proprietà statistiche di $\hat  {\underline c}$ e $\hat  {\underline \beta}$}
+Anche in questo caso è possibile ricavare valore atteso e varianza degli stimatori ottenuti, ed è utile in quanto consente di verificare la significatività delle covariate. Per farlo però, è necessario avere la forma matriciale del modello indicato in \ref{eq:modellobasecovar}:
+
+\begin{equation}
+\label{eq:modellobasecovarmatric}
+\underline z=\Pi \underline c + W \underline \beta + \underline \epsilon .
+\end{equation}
+
+Di nuovo si ha 
+$$
+\mathbb{E}[\underline \epsilon] = \underline 0 \qquad \mathrm{Var}[\underline \epsilon] = \sigma^2 I_{nm}
+$$
+e di conseguenza
+$$
+\mathbb{E}[\underline z] = \Pi \underline c + W \underline \beta \qquad \mathrm{Var}[\underline z] = \sigma^2 I_{nm} .
+$$
+
+Grazie a ciò e alle proprietà ricavate per la matrice $Q$ è possibile ricavare che:
+$$
+\mathbb{E}[\hat  {\underline c}] = AQ\Pi \underline c \qquad \mathrm{Var}[\hat  {\underline c}] = \sigma^2 AQA^T .
+$$
+Per $\hat  {\underline \beta}$ i calcoli sono più complessi, ma si semplificano grazie alle proprietà indicate in precedenza per la matrice $Q$. Si ritrova:
+$$
+\mathbb{E}[\hat  {\underline \beta}] = \underline \beta + (W^TW)^{-1}W^T(I-\Pi A\Pi)\underline c
+$$
+$$ \mathrm{Var}[\hat  {\underline \beta}] = \sigma^2 (W^TW)^{-1} + \sigma^2 (W^TW)^{-1}W^T \Pi A Q A^T \Pi^T W(W^TW)^{-1}.
+$$
+
+Come nel caso senza covariate, anche ora si potrebbe stimare la gaussianità degli stimatori se fosse ipotizzata per $\underline \epsilon$. Questo permette di elaborare intervalli di confidenza per le componenti di $\underline \beta$ e di verificare la signiificatività delle covariate.
+
+
+\section{Stima di $\sigma^2$ e scelta dei parametri $\lambda_S$ e $\lambda_T$}
+\label{sez:GCV}
+
+Quanto riportato di seguito è valido indipendentemente dal fatto che siano inserite nel modello le covariate. Perciò è valido per entrambi i modelli proposti in precedenza.
+
+\subsection*{Stima di $\sigma^2$}
+Stimare la varianza dell'errore è necessario se si vuole fare inverenza sugli stimatori ed è molto semplice se si conoscono i gradi di libertà equivalenti del modello. Ma questi si ricavano dalla \textit{hat matrix}:
+$$
+\mathrm{EDF=tr(H)} \ .
+$$
+Con questo valore si calcola la stima della varianza, usando i residui e il numero totale di dati:
+$$
+\hat{\sigma}^2=\frac{1}{nm-tr(H)}(\underline z - \hat  {\underline z})^T(\underline z - \hat  {\underline z})
+$$
+
+\subsection*{Parametri di smoothing}
+I parametri $\lambda_S$ e $\lambda_T$ hanno un ruolo rilevante nella stima della soluzione, poichè scelgono quanto peso dare allo smoothing della funzione in spazio e tempo. Quindi è opportuno che siano fissati accuratamente prima della stima della soluzione.
+
+Secondo quanto indicato in \cite{art:marra}, la scelta corretta si ha con il valore di $\underline \lambda$ che realizza il minimo dell'indice di \textit{generalized cross validation}
+$$
+GCV(\underline \lambda) =\frac{nm}{nm-\text{tr}(H)}  D(\hat  {\underline c},\hat  {\underline \beta}) \ ,
+$$
+dove $D$ è la devianza del modello. Si ha:
+$$
+D(\hat  {\underline c},\hat  {\underline \beta})=2\sigma^2(l_{\mathrm{sat}}-l(\hat  {\underline c},\hat  {\underline \beta})) \ ,
+$$
+dove $l$ è la logverosimiglianza del modello, che si ipotizza gaussiano, valutata rispettivamente nel suo massimo (valore di saturazione) e in corrispondenza dei valori stimati. Non è difficile dimostrare che, sia nel caso con covariate che senza covariate, si ha: 
+$$
+D(\hat  {\underline c},\hat  {\underline \beta}) = (\underline z - \hat  {\underline z})^T(\underline z - \hat  {\underline z})
+$$
+Di conseguenza, il migior $\underline \lambda$ può essere scelto come valore che minimizza
+$$
+GCV(\underline \lambda) =\frac{nm}{nm-\text{tr}(H)}  (\underline z - \hat  {\underline z})^T(\underline z - \hat  {\underline z}) \ .
+$$
+
+
+\begin{thebibliography}{9}
+
+\bibitem{art:augustin}
+Nicole H. Augustin, Verena M. Trenkel, Simon N. Wood, Pascal Lorance, \emph{Space-time modelling of blue ling for fisheries stock management}, Environmetrics, 24, 109–119, (2013)
+
+\bibitem{art:marra}
+Giampiero Marra, David L. Miller, Luca Zanin, \emph{Modelling the spatiotemporal distribution of the incidence of resident foreign population}, Statistica Neerlandica, 66, 133–160, (2012)
+
+\bibitem{art:sangalli}
+Laura M. Sangalli, James O. Ramsay, Timothy O. Ramsay, \emph{Spatial spline regression models}, Journal of the Royal Statistical Society: Series B, 75, 681–703, (2013)
+
+\bibitem{art:wood}
+Simon N. Wood, Mark W. Bravington, Sharon L. Hedley, \emph{Soap film smoothing}, Journal of the Royal Statistical Society: Series B, 70, 931–955, (2008)
+
+
+%\bibitem{prog:R}
+%R Core Team, \emph{R: A Language and Environment for Statistical Computing}, R Foundation for Statistical Computing, Vienna, 2013, \url{http://www.R-project.org/}
+
+\end{thebibliography}
+
+\end{document}
+
+
+
+%\[ 
+%\underset{\scriptscriptstyle (m\times 1)}{Y}= 
+%\underset{\scriptscriptstyle (m\times n)}{X} 
+%\underset{\scriptscriptstyle (n\times 1)}{B} 
+%\]

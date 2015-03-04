@@ -1,0 +1,9 @@
+1) Ho posto:
+	LogS = -8:0
+	LogT = -8:0
+	Best -> (-8,-8)
+
+2) Ho osto:
+	LogS = -11:-7
+	LogT = -11:-7
+	Best -> (-10,-11)

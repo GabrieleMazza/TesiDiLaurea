@@ -20,7 +20,7 @@ nint<-sum(InternalPoints)
 TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,TimeOrder=4,DerivativeOrder=2,PlotIt=F)
 SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,InternalPoints,1)
 
-SolutionObj=ReadSolutionObj(SpaceBasisObj,TimeBasisObj,"MatriceC.txt")
+SolutionObj=ReadSolutionObj(SpaceBasisObj,TimeBasisObj,"VettoreC.txt")
 
 
 
@@ -45,6 +45,8 @@ for(j in TimePoints)
 
 save(file="ResultFitted.RData",ResultFitted)
 
+load("ResultFitted.RData")
+
 zlim=c(min(ResultFitted,na.rm=T),max(ResultFitted,na.rm=T))
 
 for(j in 1:length(TimePoints))
@@ -66,6 +68,8 @@ for(j in 1:length(TimePoints))
 
 for(j in 1:length(TimePoints))
 {
+    
+    j<-j+1
     zfit<-NULL
     lon<-NULL
     lat<-NULL
@@ -78,7 +82,8 @@ for(j in 1:length(TimePoints))
             zfit<-c(zfit,ResultFitted[i,j])
         }
     }
-    GoogleMap(zfit ~ lat*lon,main=paste("Funzione stimata tempo ",TimePoints[j],sep=""),panel= function(...) panel.contourplot(...,labels=T,label.style="align",at=c(trunc(min(zfit)),seq(200,2200,by=200),(trunc(max(zfit))+1)),col.regions=rgb(1,seq(0,1,length.out=1000),0,alpha=0.5),regions=FALSE,contour=TRUE))
+    GoogleMap(zfit ~ lat*lon,main=paste("Funzione stimata anno ",TimePoints[j],sep=""),panel= function(...) panel.contourplot(...,labels=T,label.style="align",at=c(trunc(min(zfit)),seq(400,2200,by=300),(trunc(max(zfit))+1)),col.regions=rgb(1,seq(0,1,length.out=1000),0,alpha=0.5),regions=FALSE,contour=TRUE))
+
 }
 
 
