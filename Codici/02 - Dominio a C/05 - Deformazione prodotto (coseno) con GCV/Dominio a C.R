@@ -1,161 +1,195 @@
 library(rgl)
 library(mgcv)
-library(fda)
+library(SDMTools)
+library(ggplot2)
 source("SpazioTempo.R")
+load("FrontieraC.RData")
+load("Validazione.RData")
 
 # Devo aggiungere del rumore al dato?
 noise<-TRUE
 
+SigmaNoise<-0.5
+
 # Per quanti istanti di tempo eseguire la stima?
 TimePoints<-0:5
 
-# Lambda
-LambdaS=10^-3
-LambdaT=10^-5
-logS=-3
-logT=-5
+# Distinguo i punti interni dai punti di bordo
+xknot<-x[TypePoint]
+yknot<-y[TypePoint]
+xbound<-x[!TypePoint]
+ybound<-y[!TypePoint]
 
 # Function for perturbation
-fun=function(x)
+fun=function(x,y,t)
 {
-    y=cos(x)
+    y=fs.test(x,y)*cos(t)
     return(y)
 }
 
+# Tutti i punti della validazione sono contenuti all'interno del bordo?
+Bound<-cbind(xbound,ybound)
+sum(pnt.in.poly(cbind(xValid,yValid),Bound)$pip)==length(xValid)
 
-##### PERTURBAZIONE TEMPORALE DEI DATI #####
 
-load("FrontieraC.RData")
+
+
+##### OGGETTI UTILI #####
+
+TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,TimeOrder=4,DerivativeOrder=2,PlotIt=F)
+SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,TypePoint,1)
+
+
+
+##### DATI E BUBBLEPLOT DEI DATI #####
+
+# Genero una volta i dati allo stesso modo di come farò dopo nel ciclo,
+# per vederne i bubbleplot...
+
+# Ho bisogno dei un dataframe
+Knot=data.frame(xknot=c(xknot,10,10),yknot=c(yknot,1,-1))
+Boundary<-data.frame(xbound,ybound)
+# Genero i dati
 DataMatrix<-NULL
-# Perturbo secondo la funzione cos(x)
-for(i in TimePoints)
+for(t in TimePoints)
 {
     if(noise)
     {
-        DataMatrix<-cbind(DataMatrix,(Data*fun(i)+rnorm(length(Data),0,0.005)))
-    }
-    else
+        DataMatrix<-cbind(DataMatrix,fun(xknot,yknot,rep(t,length(xknot)))+rnorm(length(xknot),0,SigmaNoise))
+    } else
     {
-        DataMatrix<-cbind(DataMatrix,Data*fun(i))
+        DataMatrix<-cbind(DataMatrix,fun(xknot,yknot,j))
     }
 }
-# Per i grafici che devo fare dopo, mi salvo il massimo e il minimo di questa matrice
-MaxD=max(DataMatrix)
-MinD=min(DataMatrix)
 
-#Cerco il massimo
-load("Validazione.RData")
+for(j in 1: length(TimePoints))
+{
+    Gen<-c(DataMatrix[,j],min(DataMatrix),max(DataMatrix))
+    
+    ggplot(data=Knot, aes(x=xknot, y=yknot)) +
+        geom_point(aes(size=(Gen),color=Gen)) +
+        scale_color_gradient(low="yellow", high="red") +
+        geom_polygon(data=Boundary,aes(x=xbound,y=ybound),alpha=1,colour="black", fill=NA, size=1.1) +
+        theme_bw() +
+        labs(color="Dato")+
+        scale_x_continuous(name="x", limits=c(-1,3.5)) +
+        scale_y_continuous(name="y",limits=c(-1,1)) +
+        labs(title=paste("Dati Generati al tempo ",trunc(TimePoints[j],2),sep="")) + 
+        theme(plot.title = element_text(size = rel(1.5), face="bold")) +
+        guides(size=FALSE)
+    ggsave(file=paste("Dati Generati al tempo ",TimePoints[j],".png",sep=""))
+}
+
+rm(Knot,Boundary)
+
+Data<-NULL
+for(i in 1:(dim(DataMatrix)[1]))
+{
+    Data<-c(Data,DataMatrix[i,])
+}
+
+##### GCV #####
+
+LogS<--8:1
+LogT<--8:1
+GCVResult<-ST.GCV(Data,SpaceBasisObj,TimeBasisObj,LogS,LogT)
+png(filename="GCV Matrix.png")
+image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
+dev.off()
+
+save(file="GCVResult.RData",GCVResult,LogS,LogT)
+
+LambdaS=10^GCVResult$Best[1]
+LambdaT=10^GCVResult$Best[2]
+
+# LambdaS=10^-8
+# LambdaT=10^-8
+
+
+
+
+##### SOLUZIONE #####
+
+##### RISOLUZIONE DEL SISTEMA #####
+
+SolutionObj<-ST.Smooth(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
+
+# Ora salvo i risultati
+write.table(SolutionObj$C,file="VettoreC.txt",row.names=FALSE,col.names=FALSE)
+
+
+##### GRAFICI ANNO PER ANNO SOLO DELLA FUNZIONE SENZA COVARIATE #####
+
+PlotMatrix=matrix(ncol=length(yvec),nrow=length(xvec))
+
+# Voglio ricreare perfettamente le posizioni della image matrix tru
 
 # RICERCA DEL MASSIMO
-#PER AVERE UNA SCALA DI COLORI PER IL GRAFICO UNIFORME IN TUTTI GLI ISTANTI DI TEMPO
+# PER AVERE UNA SCALA DI COLORI PER IL GRAFICO UNIFORME IN TUTTI GLI ISTANTI DI TEMPO
+
+ResultFitted<-NULL
+
+for(j in TimePoints)
+{
+    Time<-rep(j,length(xValid))
+    Result<-ST.Eval(xValid,yValid,Time,SolutionObj)
+    
+    ResultFitted<-cbind(ResultFitted,Result)
+}
+
+ResultReal<-NULL
+
+for(j in TimePoints)
+{
+    Time<-rep(j,length(xValid))
+    Result<-fun(xValid,yValid,Time)
+    ResultReal<-cbind(ResultReal,Result)
+}
+
+save(file="ResultFitted.RData", ResultFitted)
+Max=max(ResultFitted,ResultReal,na.rm=TRUE)
+Min=min(ResultFitted,ResultReal,na.rm=TRUE)
+zlim<-c(Min,Max)
+
+
+# GRAFICI
+
+# Ora salvo tutti i grafici
+# Voglio ricreare perfettamente le posizioni della image matrix tru
+
 nx<-length(xvec)
 ny<-length(yvec)
 xx <- rep(xvec,ny)
 yy<-rep(yvec,rep(nx,ny))
-true <- matrix(fs.test(xx,yy),nx,ny)
-for(j in TimePoints)
+
+for(j in 1:length(TimePoints))
 {
-    if(MaxD<max(true*fun(j),na.rm=TRUE))
+    # Funzione Reale
+    for(i in 1:(dim(PosMatrix)[1]))
     {
-        MaxD=max(true*fun(j),na.rm=TRUE)
+        PlotMatrix[PosMatrix[i,1],PosMatrix[i,2]]=ResultReal[i,j]
     }
-    if(MinD>min(true*fun(j),na.rm=TRUE))
+    # Plot
+    png(filename=paste("Tempo ",trunc(TimePoints[j],2)," reale.png",sep=""))
+    image(xvec,yvec,PlotMatrix,zlim=zlim,main=paste("Funzione reale tempo ",trunc(TimePoints[j],2),sep=""))
+    lines(x[TypePoint==FALSE],y[TypePoint==FALSE],lwd=3)
+    contour(xvec,yvec,PlotMatrix,nlevels=10,add=TRUE)
+    dev.off()
+    
+    # Matrice con la stimata
+    for(i in 1:(dim(PosMatrix)[1]))
     {
-        MinD=min(true*fun(j),na.rm=TRUE)
+        PlotMatrix[PosMatrix[i,1],PosMatrix[i,2]]=ResultFitted[i,j]
     }
+    # Plot
+    png(filename=paste("Tempo ",trunc(TimePoints[j],2)," stimata.png",sep=""))
+    image(xvec,yvec,PlotMatrix,zlim=zlim,main=paste("Funzione stimata tempo ",trunc(TimePoints[j],2),sep=""))
+    lines(x[TypePoint==FALSE],y[TypePoint==FALSE],lwd=3)
+    contour(xvec,yvec,PlotMatrix,nlevels=10,add=TRUE)
+    dev.off()
 }
 
-
-##### RISOLVO IL SISTEMA #####
-
-#Creo le basi in spazio e tempo
-TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,4,PlotIt=T)
-SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,TypePoint,1)
-
-# for(logS in -2:-1)
-# {
-#     for(logT in -5:1)
-#     {
-#         LambdaS=10^logS
-#         LambdaT=10^logT
-        #Introduco anche la misurazione del tempo per la funzione chiave
-        SolutionObj<-smooth.ST.fd(DataMatrix,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT,2)
-        
-        # Ora salvo i risultati
-        write.table(SolutionObj$C,file=paste(logS, logT,"MatriceC.txt",sep=" "),row.names=FALSE,col.names=FALSE)
-                
-        ##### GRAFICI #####
-        
-        PlotMatrix=matrix(ncol=length(yvec),nrow=length(xvec))
-           
-        # Voglio ricreare perfettamente le posizioni della image matrix tru
-
-        # RICERCA DEL MASSIMO
-        #PER AVERE UNA SCALA DI COLORI PER IL GRAFICO UNIFORME IN TUTTI GLI ISTANTI DI TEMPO
-    
-        Max=MaxD
-        Min=MinD
-        
-        for(j in TimePoints)
-        {
-            Time<-rep(j,length(xValid))
-            Result<-eval.ST.fd(xValid,yValid,Time,SolutionObj)
-            if(Max<max(Result,na.rm=TRUE))
-            {
-                Max=max(Result,na.rm=TRUE)
-            }
-            if(Min>min(Result,na.rm=TRUE))
-            {
-                Min=min(Result,na.rm=TRUE)
-            }
-        }
-        
-        zlim<-c(Min,Max)
-        
-
-        # GRAFICI
-
-        # Ora salvo tutti i grafici
-        # Voglio ricreare perfettamente le posizioni della image matrix tru
-        
-        # Prima ricavo il grafico della funzione reale
-        nx<-length(xvec)
-        ny<-length(yvec)
-        xx <- rep(xvec,ny)
-        yy<-rep(yvec,rep(nx,ny))
-        true <- matrix(fs.test(xx,yy),nx,ny)
-        for(j in TimePoints)
-        {
-            png(filename=paste(logS, logT,j,"reale.png",sep=" "))
-            image(xvec,yvec,true*fun(j),zlim=zlim,main=paste("Funzione reale",j,logS,logT,sep=" "))
-            lines(x[TypePoint==FALSE],y[TypePoint==FALSE],lwd=3)
-            contour(xvec,yvec,true*fun(j),levels=seq(-5,5,by=.25),add=TRUE)
-            dev.off()
-        }
-        
-        # Ora le stime
-        for(j in TimePoints)
-        {
-            Time<-rep(j,length(xValid))
-            Result<-eval.ST.fd(xValid,yValid,Time,SolutionObj)
-            
-            # Costruisco ora la matrice con l'image plot
-            for(i in 1:(dim(PosMatrix)[1]))
-            {
-                PlotMatrix[PosMatrix[i,1],PosMatrix[i,2]]=Result[i]
-            }
-            
-            png(filename=paste(logS, logT,j,"stimata.png",sep=" "))
-            image(xvec,yvec,PlotMatrix,zlim=zlim,main=paste("Funzione stimata",j,logS,logT,sep=" "))
-            lines(x[TypePoint==FALSE],y[TypePoint==FALSE],lwd=3)
-            contour(xvec,yvec,PlotMatrix,levels=seq(-5,5,by=.25),add=TRUE)
-            dev.off()
-        }
-        
-        # Plot in un punto fisso
-        png(filename="Plot per un punto fissato.png")
-        FixedPointPlot(3,-0.5,SolutionObj)
-        dev.off()
-#     }
-# }
-
+png(filename=paste("Plot per un punto fissato.png",sep=" "))
+FixedPointPlot(xknot[1],yknot[2],SolutionObj)
+points(TimePoints,fun(rep(xknot[1],length(TimePoints)),rep(yknot[1],length(TimePoints)),TimePoints),pch=16,col="red")
+dev.off()
