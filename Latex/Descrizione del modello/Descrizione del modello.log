@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  4 MAR 2015 18:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  9 MAR 2015 08:46
 entering extended mode
 **Descrizione*del*modello.tex
 
@@ -994,7 +994,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
 Overfull \hbox (5.91379pt too wide) detected at line 124
  []$[] \OT1/cmr/m/n/10.95 = +\OML/cmm/m/it/10.95 [] [] [][][]\OMS/cmsy/m/n/10.
-95 4\OT1/cmr/m/n/10.95 ([] \OML/cmm/m/it/10.95 c[]'[]\OT1/cmr/m/n/10.95 ([]))[]
+95 4\OT1/cmr/m/n/10.95 ([] \OML/cmm/m/it/10.95 c[] []\OT1/cmr/m/n/10.95 ([]))[]
 []\OML/cmm/m/it/10.95 d\OT1/cmr/m/n/10.95 
  + \OML/cmm/m/it/10.95 [] [] [][][][][][]dt :  $ 
  []
@@ -1004,14 +1004,15 @@ Underfull \vbox (badness 3098) has occurred while \output is active []
 
  [7]
 [8]
-Overfull \hbox (1.92203pt too wide) in paragraph at lines 352--354
-\OT1/cmr/m/n/10.95 con $\OML/cmm/m/it/10.95 A \OT1/cmr/m/n/10.95 = [[] + \OML
-/cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 + []\OML/cmm/m/it/10.95 W\OT1/cmr/m/n/10.
-95 (\OML/cmm/m/it/10.95 W[]W\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 W[]\OT1/c
-mr/m/n/10.95 ][][]$ e $\OML/cmm/m/it/10.95 Q \OT1/cmr/m/n/10.95 = [\OML/cmm/m
-/it/10.95 I \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 W\OT1/cmr/m/n/10.95 (\OML
-/cmm/m/it/10.95 W[]W\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 W[]\OT1/cmr/m/n/1
-0.95 ]$,
+Overfull \hbox (6.33997pt too wide) in paragraph at lines 352--354
+\OT1/cmr/m/n/10.95 con $\OML/cmm/m/it/10.95 A \OT1/cmr/m/n/10.95 = [\OML/cmm/m/
+it/10.95 B[]B \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 P \OT1/cmr/m/n/10.95 + \
+OML/cmm/m/it/10.95 B[]W\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 W[]W\OT1/cmr/m/n
+/10.95 )[]\OML/cmm/m/it/10.95 W[]B\OT1/cmr/m/n/10.95 ][]\OML/cmm/m/it/10.95 B[]
+$ \OT1/cmr/m/n/10.95 e $\OML/cmm/m/it/10.95 Q \OT1/cmr/m/n/10.95 = [\OML/cmm/m/
+it/10.95 I \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 W\OT1/cmr/m/n/10.95 (\OML/
+cmm/m/it/10.95 W[]W\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 W[]\OT1/cmr/m/n/10
+.95 ]$,
  []
 
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 355.
@@ -1110,7 +1111,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.
 9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Descrizione del modello.pdf" (13 pages, 228360 bytes).
+Output written on "Descrizione del modello.pdf" (13 pages, 228456 bytes).
 PDF statistics:
  194 PDF objects out of 1000 (max. 8388607)
  45 named destinations out of 1000 (max. 500000)

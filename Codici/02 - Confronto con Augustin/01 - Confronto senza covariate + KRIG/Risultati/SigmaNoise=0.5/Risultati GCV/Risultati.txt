@@ -1,0 +1,9 @@
+1) Ho posto:
+	LogS = -5:1
+	LogT = -5:1
+	Best = (0,-3)
+
+2) Ho posto
+	LogS = seq(-1,+1,by=0.25)
+	LogT = seq(-4,-2,by=0.25)
+	Best = (-0.25,-3.25)
