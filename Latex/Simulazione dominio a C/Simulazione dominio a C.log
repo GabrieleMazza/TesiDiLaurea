@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  10 MAR 2015 16:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  11 MAR 2015 10:59
 entering extended mode
 **Simulazione*dominio*a*C.tex
 
@@ -1051,91 +1051,177 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Immagini/DomC_fstest.png, id=16, 481.8pt x 481.8pt>
+<Immagini/DomC_fstest.png, id=20, 481.8pt x 481.8pt>
 File: Immagini/DomC_fstest.png Graphic file (type png)
 
 <use Immagini/DomC_fstest.png>
-Package pdftex.def Info: Immagini/DomC_fstest.png used on input line 49.
+Package pdftex.def Info: Immagini/DomC_fstest.png used on input line 41.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/DomC_Triangolazione.png, id=17, 481.8pt x 481.8pt>
+<Immagini/DomC_Triangolazione.png, id=21, 481.8pt x 481.8pt>
 File: Immagini/DomC_Triangolazione.png Graphic file (type png)
 
 <use Immagini/DomC_Triangolazione.png>
-Package pdftex.def Info: Immagini/DomC_Triangolazione.png used on input line 54
+Package pdftex.def Info: Immagini/DomC_Triangolazione.png used on input line 50
 .
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
  [1
 
 
-{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<Immagini/DomC_0reale.png, id=34, 481.8pt x 481.8pt>
+{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users
+/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazion
+e dominio a C/Immagini/DomC_fstest.png (PNG copy)>] [2 <C:/Users/Gabriele/Deskt
+op/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/I
+mmagini/DomC_Triangolazione.png>]
+<Immagini/DomC_0reale.png, id=43, 481.8pt x 481.8pt>
 File: Immagini/DomC_0reale.png Graphic file (type png)
 
 <use Immagini/DomC_0reale.png>
-Package pdftex.def Info: Immagini/DomC_0reale.png used on input line 98.
-(pdftex.def)             Requested size: 165.60242pt x 139.99101pt.
+Package pdftex.def Info: Immagini/DomC_0reale.png used on input line 111.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/DomC_0stimata.png, id=36, 481.8pt x 481.8pt>
+<Immagini/DomC_0stimata.png, id=44, 481.8pt x 481.8pt>
 File: Immagini/DomC_0stimata.png Graphic file (type png)
 
 <use Immagini/DomC_0stimata.png>
-Package pdftex.def Info: Immagini/DomC_0stimata.png used on input line 102.
+Package pdftex.def Info: Immagini/DomC_0stimata.png used on input line 115.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/DomC_pi4reale.png, id=37, 481.8pt x 481.8pt>
-File: Immagini/DomC_pi4reale.png Graphic file (type png)
+<Immagini/DomC_1reale.png, id=45, 481.8pt x 481.8pt>
+File: Immagini/DomC_1reale.png Graphic file (type png)
 
-<use Immagini/DomC_pi4reale.png>
-Package pdftex.def Info: Immagini/DomC_pi4reale.png used on input line 106.
+<use Immagini/DomC_1reale.png>
+Package pdftex.def Info: Immagini/DomC_1reale.png used on input line 119.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/DomC_pi4stimata.png, id=38, 481.8pt x 481.8pt>
-File: Immagini/DomC_pi4stimata.png Graphic file (type png)
+<Immagini/DomC_1stimata.png, id=46, 481.8pt x 481.8pt>
+File: Immagini/DomC_1stimata.png Graphic file (type png)
 
-<use Immagini/DomC_pi4stimata.png>
-Package pdftex.def Info: Immagini/DomC_pi4stimata.png used on input line 110.
+<use Immagini/DomC_1stimata.png>
+Package pdftex.def Info: Immagini/DomC_1stimata.png used on input line 123.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/DomC_pi2reale.png, id=39, 481.8pt x 481.8pt>
-File: Immagini/DomC_pi2reale.png Graphic file (type png)
+<Immagini/DomC_2reale.png, id=47, 481.8pt x 481.8pt>
+File: Immagini/DomC_2reale.png Graphic file (type png)
 
-<use Immagini/DomC_pi2reale.png>
-Package pdftex.def Info: Immagini/DomC_pi2reale.png used on input line 114.
+<use Immagini/DomC_2reale.png>
+Package pdftex.def Info: Immagini/DomC_2reale.png used on input line 127.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/DomC_pi2stimata.png, id=40, 481.8pt x 481.8pt>
-File: Immagini/DomC_pi2stimata.png Graphic file (type png)
+<Immagini/DomC_2stimata.png, id=48, 481.8pt x 481.8pt>
+File: Immagini/DomC_2stimata.png Graphic file (type png)
 
-<use Immagini/DomC_pi2stimata.png>
-Package pdftex.def Info: Immagini/DomC_pi2stimata.png used on input line 118.
+<use Immagini/DomC_2stimata.png>
+Package pdftex.def Info: Immagini/DomC_2stimata.png used on input line 131.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
 
-LaTeX Warning: Float too large for page by 5.9857pt on input line 121.
+LaTeX Warning: Float too large for page by 19.34663pt on input line 135.
 
-[2 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
-x/Simulazione dominio a C/Immagini/DomC_fstest.png (PNG copy)> <C:/Users/Gabrie
-le/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione domin
-io a C/Immagini/DomC_Triangolazione.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
- [3] [4 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA
-/Latex/Simulazione dominio a C/Immagini/DomC_0reale.png (PNG copy)> <C:/Users/G
-abriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione 
-dominio a C/Immagini/DomC_0stimata.png> <C:/Users/Gabriele/Desktop/Università/
-LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomC_pi
-4reale.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LA
-UREA/Latex/Simulazione dominio a C/Immagini/DomC_pi4stimata.png> <C:/Users/Gabr
-iele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dom
-inio a C/Immagini/DomC_pi2reale.png> <C:/Users/Gabriele/Desktop/Università/LAU
-REA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomC_pi2st
-imata.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
+<Immagini/DomC_tfissato.png, id=50, 481.8pt x 481.8pt>
+File: Immagini/DomC_tfissato.png Graphic file (type png)
+
+<use Immagini/DomC_tfissato.png>
+Package pdftex.def Info: Immagini/DomC_tfissato.png used on input line 140.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3] [4 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/
+Latex/Simulazione dominio a C/Immagini/DomC_0reale.png (PNG copy)> <C:/Users/Ga
+briele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione d
+ominio a C/Immagini/DomC_0stimata.png> <C:/Users/Gabriele/Desktop/Università/L
+AUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomC_1re
+ale.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAURE
+A/Latex/Simulazione dominio a C/Immagini/DomC_1stimata.png> <C:/Users/Gabriele/
+Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio 
+a C/Immagini/DomC_2reale.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAG
+ISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomC_2stimata.png
+>] [5 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/L
+atex/Simulazione dominio a C/Immagini/DomC_tfissato.png>]
+<Immagini/DomCcovar_0reale.png, id=91, 481.8pt x 481.8pt>
+File: Immagini/DomCcovar_0reale.png Graphic file (type png)
+
+<use Immagini/DomCcovar_0reale.png>
+Package pdftex.def Info: Immagini/DomCcovar_0reale.png used on input line 199.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
+<Immagini/DomCcovar_0stimata.png, id=92, 481.8pt x 481.8pt>
+File: Immagini/DomCcovar_0stimata.png Graphic file (type png)
+
+<use Immagini/DomCcovar_0stimata.png>
+Package pdftex.def Info: Immagini/DomCcovar_0stimata.png used on input line 203
+.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
+<Immagini/DomCcovar_1reale.png, id=93, 481.8pt x 481.8pt>
+File: Immagini/DomCcovar_1reale.png Graphic file (type png)
+
+<use Immagini/DomCcovar_1reale.png>
+Package pdftex.def Info: Immagini/DomCcovar_1reale.png used on input line 207.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
+<Immagini/DomCcovar_1stimata.png, id=94, 481.8pt x 481.8pt>
+File: Immagini/DomCcovar_1stimata.png Graphic file (type png)
+
+<use Immagini/DomCcovar_1stimata.png>
+Package pdftex.def Info: Immagini/DomCcovar_1stimata.png used on input line 211
+.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
+<Immagini/DomCcovar_2reale.png, id=95, 481.8pt x 481.8pt>
+File: Immagini/DomCcovar_2reale.png Graphic file (type png)
+
+<use Immagini/DomCcovar_2reale.png>
+Package pdftex.def Info: Immagini/DomCcovar_2reale.png used on input line 215.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
+<Immagini/DomCcovar_2stimata.png, id=96, 481.8pt x 481.8pt>
+File: Immagini/DomCcovar_2stimata.png Graphic file (type png)
+
+<use Immagini/DomCcovar_2stimata.png>
+Package pdftex.def Info: Immagini/DomCcovar_2stimata.png used on input line 219
+.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
+
+LaTeX Warning: Float too large for page by 19.34663pt on input line 222.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Immagini/DomCcovar_tfissato.png, id=97, 481.8pt x 481.8pt>
+File: Immagini/DomCcovar_tfissato.png Graphic file (type png)
+
+<use Immagini/DomCcovar_tfissato.png>
+Package pdftex.def Info: Immagini/DomCcovar_tfissato.png used on input line 227
+.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 243.
+[6] [7 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/
+Latex/Simulazione dominio a C/Immagini/DomCcovar_0reale.png (PNG copy)> <C:/Use
+rs/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazi
+one dominio a C/Immagini/DomCcovar_0stimata.png> <C:/Users/Gabriele/Desktop/Uni
+versità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagin
+i/DomCcovar_1reale.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRAL
+E/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomCcovar_1stimata.png>
+ <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
+Simulazione dominio a C/Immagini/DomCcovar_2reale.png> <C:/Users/Gabriele/Deskt
+op/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/I
+mmagini/DomCcovar_2stimata.png>] [8 <C:/Users/Gabriele/Desktop/Università/LAUR
+EA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomCcovar_t
+fissato.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 243.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 Simulazione dominio a C\Simulazione dominio a C.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 127.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 127.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 243.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 243.
 Package rerunfilecheck Info: File `Simulazione*dominio*a*C.out' has not changed
 .
 (rerunfilecheck)             Checksum: <no file>.
@@ -1143,31 +1229,41 @@ Package rerunfilecheck Info: File `Simulazione*dominio*a*C.out' has not changed
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 127.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
  ) 
 Here is how much of TeX's memory you used:
- 8871 strings out of 493921
- 131568 string characters out of 3144868
- 217052 words of memory out of 3000000
- 12007 multiletter control sequences out of 15000+200000
+ 8932 strings out of 493921
+ 133072 string characters out of 3144868
+ 220433 words of memory out of 3000000
+ 12043 multiletter control sequences out of 15000+200000
  12695 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,11n,38p,636b,338s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Simulazione dominio a C.pdf" (4 pages, 198816 bytes).
+ 36i,11n,38p,852b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{table.caption.4} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.7} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.6} has been referenced but does not 
+exist, replaced by a fixed one
+
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "Simulazione dominio a C.pdf" (8 pages, 270635 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 175 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

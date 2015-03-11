@@ -1,0 +1,14 @@
+1) Ho posto:
+	LogS = -5:+1
+	LogT = -5:+1
+	Best = (0,-4)
+
+2) Ho posto
+	LogS<-seq(-1,+1,by=0.25)
+	LogT<-seq(-5,-3,by=0.25)
+	Best = (0.25, -3.75)
+
+3) Ho posto
+	LogS<-seq(-0.25,0.75,by=0.125)
+	LogT<-seq(-4.25,-3.25,by=0.125)
+	Best = (-0.125, -3.250)
