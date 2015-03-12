@@ -111,6 +111,22 @@ dev.off()
 # minimo di tutti i grafici, per uniformare la scala
 rm(Knot,Boundary)
 
+
+
+##### PLOT DELLE COVARIATE #####
+# Faccio qualche plot, covariate contro dati generati, per escludere le dipendenze
+png(filename="Scatterplot1.png")
+plot(DataFUN,DesMat,main="Scatterplot Covariate",xlab="Dato funzione reale",ylab="Covariata")
+abline(h=0,col="blue")
+dev.off()
+
+png(filename="Scatterplot2.png")
+plot(DataFUN,DesMat,main="Scatterplot Covariate",xlab="Dato funzione reale + Beta*Covariata",ylab="Covariata")
+abline(h=0,col="blue")
+dev.off()
+
+
+
 ##### GCV #####
 
 #Creo le basi in spazio e tempo
@@ -141,6 +157,7 @@ SolutionObj<-ST.Smooth.Covar(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,Lamb
 # Ora salvo i risultati
 write.table(SolutionObj$C,file="MatriceC.txt",row.names=FALSE,col.names=FALSE)
 write.table(SolutionObj$BetaHat,file="BetaHat.txt",row.names=FALSE,col.names=FALSE)
+
 
 
 
@@ -240,3 +257,52 @@ dev.off()
 ##### INTERVALLO DI CONFIDENZA #####
 ICResult<-ST.IC(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
 save(file="ICResult.RData",ICResult,Beta)
+
+
+
+##### PLOT DELLE COVARIATE #####
+
+
+
+
+
+#Ricavo il vettore con tutte le stime
+zHatNoCovar<-NULL
+for(j in TimePoints)
+{
+    Time<-rep(j,length(xknot))
+    zHatNoCovar<-cbind(zHatNoCovar,ST.Eval(xknot,yknot,Time,SolutionObj))
+}
+
+zHatCovar=zHatNoCovar+SolutionObj$BetaHat*DesMat
+
+Residuals=Data-zHatCovar
+
+# Faccio qualche plot
+png(filename="Scatterplot3.png")
+plot(DataFUN,Residuals,main="Scatterplot Residui",xlab="Dato funzione reale",ylab="Residui")
+abline(h=0,col="blue")
+dev.off()
+# Faccio qualche plot
+png(filename="Scatterplot4.png")
+plot(Data,Residuals,main="Scatterplot Residui",xlab="Dato funzione reale + Beta*Covariata",ylab="Residui")
+abline(h=0,col="blue")
+dev.off()
+# Faccio qualche plot
+png(filename="Scatterplot5.png")
+plot(zHatCovar,Residuals,main="Scatterplot Residui",xlab="zHat con covariate",ylab="Residui")
+abline(h=0,col="blue")
+dev.off()
+# Faccio qualche plot
+png(filename="Scatterplot6.png")
+plot(zHatNoCovar,Residuals,main="Scatterplot Residui",xlab="zHat senza covariate",ylab="Residui")
+abline(h=0,col="blue")
+dev.off()
+
+png(filename="QQplot.png")
+qqnorm(Residuals)
+dev.off()
+
+sink(file="Shapiro Test.txt")
+print(shapiro.test(Residuals))
+sink()
