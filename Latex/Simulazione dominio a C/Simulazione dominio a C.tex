@@ -51,30 +51,32 @@ Nel dominio a forma di C non sono presenti punti spaziali definiti dalla natura 
 	\caption{Triangolazione del dominio a forma di C}
 	\label{fig:domC_triang}
 \end{figure}
-In figura \ref{fig:domC_triang} è riportata la triangolazione ottenuta grazie al pacchetto R \textit{RTriangle}. Come basi in spazio sono stati usati gli elementi finiti lineari definiti su questa triangolazione. In tutti gli esempi che seguiranno sarà considerata questa descrizione del dominio, che è formata da 241 punti, pari anche al numero di basi spaziali $N$. Di questi 108 sono di frontiera, e i restanti 133 corrispondono agli $n$ punti sui quali saranno disponibili i dati.
+In figura \ref{fig:domC_triang} è riportata la triangolazione ottenuta grazie al pacchetto R \textit{RTriangle}. Come basi in spazio sono stati usati gli elementi finiti lineari definiti su questa triangolazione. In tutti gli esempi che seguiranno sarà considerata questa descrizione del dominio, che è formata da 241 punti (pari anche al numero di basi spaziali $N$). Di questi 108 sono di frontiera, e i restanti 133 corrispondono agli $n$ punti sui quali saranno disponibili i dati.
 
-Come intervallo temporale di variazione dei dati è stato scelto $[0,2\pi]$, per sfruttare la periodicità del coseno. All'interno di questo intervallo sono stati ricavati 9 istanti temporali equidistanti tra di loro, quindi uno ogni $\frac{\pi}{4}$. Si è scelto di fissare come basi in tempo le \textit{B-splines} cubiche. Il numero di basi $M$ è stato scelto pari al numero di istanti temporali a disposizione $m$, quindi 9. 
+Come intervallo temporale di variazione dei dati è stato scelto $[0,2\pi]$, per sfruttare la periodicità del coseno. All'interno di questo intervallo sono stati ricavati 9 istanti temporali equidistanti tra di loro, quindi uno ogni $\frac{\pi}{4}$. Si è scelto di fissare come basi in tempo le \textit{B-splines} cubiche. Il numero di basi $M$ è uguale al numero di istanti temporali a disposizione $m$, quindi 9. 
 
-%In figura \ref{fig:DomC_BSpline} sono riportate le funzioni di base B-splines che saranno usate per tutte %le analisi che seguiranno.
+In figura \ref{fig:DomC_BSpline} sono riportate le funzioni di base B-splines che saranno usate per tutte le analisi che seguiranno.
 
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=0.55\textwidth]{Immagini/DomC_timebasis.png}   
-%\caption{Basi \textit{B-splines} cubiche}
-%\label{fig:DomC_BSpline}
-%\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.55\textwidth]{Immagini/DomC_timebasis.png}   
+	\caption{Basi \textit{B-splines} cubiche}
+	\label{fig:DomC_BSpline}
+\end{figure}
+
+\newpage
 
 \section{Caso senza covariate}
-Nei punti e negli istanti temporali disponibili i dati sono stati ricavati dalla funzione esatta sporcata dal rumore:
+Nei punti e negli istanti temporali disponibili i dati sono stati ricavati dalla funzione esatta con l'aggiunta del rumore:
 $$
-z_{ij}=g(\underline p_{i})cos(t_j) + \varepsilon_{ij}
+z_{ij}=g(\underline p_{i})cos(t_j) + \varepsilon_{ij} \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
 $$
-con
+dove
 $$
-\varepsilon_{ij}\stackrel{\mathrm{iid}}{\sim}N(0,0.5^2) \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
+\varepsilon_{ij}\stackrel{\mathrm{iid}}{\sim}N(0,0.5^2) \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m \ .
 $$
 
-Come primo passo è necessario scegliere i valori per $\lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$ come riportato in RIMANDO NECESSARIO. In queste analisi $\lambda_S$ e $\lambda_T$ sono sempre espressi in potenze di 10. Per trovare buoni valori per i parametri si procede creando due insiemi discreti di variazione per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$ e minimizzando sui $\underline \lambda$ corrispondenti al prodotto cartesiano tra di essi. Il procedimento viene iterato qualche volta (a causa dell'alto costo computazionale non è opportuno eseguire troppe iterazioni) rendendo la griglia sempre più fitta. In particolare, nel primo caso i valori sono distanziati di 1, poi (una volta che è possibile centrare gli intervalli in base al risultato precedente) di 0.25 e 0.125.
+Per poter eseguire una analisi ottimale, come primo passo è necessario scegliere i valori per $\lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$ come riportato in RIMANDO NECESSARIO. In queste analisi $\lambda_S$ e $\lambda_T$ sono sempre espressi in potenze di 10. Per trovare dei buoni valori per i parametri si procede per tentativi, creando due insiemi discreti di variazione per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$ e minimizzando sui $\underline \lambda$ corrispondenti al prodotto cartesiano tra di essi. Il procedimento viene iterato qualche volta (a causa dell'alto costo computazionale non è opportuno eseguire troppe iterazioni) rendendo la griglia sempre più fitta. In particolare, nel primo caso i valori sono distanziati di 1, poi (una volta che è possibile centrare gli intervalli in base al risultato precedente) di 0.25 e 0.125.
 
 \begin{table}[htbp]
 \renewcommand{\arraystretch}{1.3}
@@ -142,14 +144,14 @@ In figura \ref{fig:DomC_ris} sono riportati i confronti tra funzione reale e sti
 \label{fig:DomC_ris2}
 \end{figure}
 
-Inoltre in figura \ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale nel punto $(3,-0.5)$. La curva reale è nota, ed è una cosinusoide moltiplicata per $g(3,-0.5)=-3.785398$ (funzione blu nel grafico, contiene anche i dati raccolti nei vari istanti di tempo). La curva stimata è molto vicina e non è una perfetta interpolazione dei dati. Questo è un ottimo risultato, poichè si è riusciti a cogliere la variazione temporale del fenomeno senza sovrastimare ed interpolare i dati (cosa che sarebbe successa con valori di $\lambda_T$ più bassi).
+Inoltre in figura \ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in uno dei nodi della triangolazione. La curva reale si può è nota, ed è una cosinusoide moltiplicata per $g(3,-0.5)=-3.785398$ (funzione blu nel grafico, sono tracciati anche i dai negli istanti di tempo considerati). Si può notaLa curva stimata è molto vicina alla reale e non è una perfetta interpolazione dei dati. Questo è un ottimo risultato, poichè si è riusciti a cogliere il fenomeno temporale senza sovrastimare ed interpolare pienamente i dati (cosa che sarebbe successa con valori di $\lambda_T$ più bassi). La funzione $cos(t)$ è 
 
 
 
 \section{Caso con covariate}
-Nel problema della stima della funzione $f(\underline p,t)=g(\underline p)cos(t)$ non sono presenti covariate, quindi è stato necessario generarle aggiungerle al caso precedente. Ad ogni dato è aggiunta la covariata e il rumore come segue:
+Nel problema della stima della funzione $f(\underline p,t)=g(\underline p)cos(t)$ non sono presenti covariate. Quindi per poter provare il modello in questo caso, è stato necessario generare valori da assumere come covariate in ogni punto spaziale ed istante temporale in cui si hanno le misurazioni della risposta. Quindi in definitiva i dati sono così formati:
 $$
-z_{ij}=g(\underline p_{i})cos(t_j) + \beta w_{ij} + \varepsilon_{ij}
+z_{ij}=g(\underline p_{i})cos(t_j) + \beta w_{ij} + \varepsilon_{ij} \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
 $$
 dove covariate e rumore sono generate da due normali tra loro indipendenti:
 $$
@@ -160,7 +162,7 @@ $$
 $$
 e $\beta$ è fissato a 1. Se il modello è buono, c'è da aspettarsi che la parte di funzione stimata senza covariate sia vicina a $f(\underline p,t)$ e che $\hat{\beta}$ si avvicini a 1.
  
-Anche in questo caso è necessaria una analisi preliminare per fissare i valori per $\lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$ in RIMANDO NECESSARIO, che nel caso con covariate si differenzia dal precedente solo per la forma della \textit{smoothing matrix}. In tabella \ref{tab:DomC_covar} sono riportati i risultati ricavati secondo lo stesso approccio del caso senza covariate.
+Anche in questo caso è necessaria una analisi preliminare per fissare i valori per $\lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$, che nel caso con covariate si differenzia dal precedente solo per la forma della \textit{smoothing matrix}. In tabella \ref{tab:DomC_covar} sono riportati i risultati ricavati secondo lo stesso approccio del caso senza covariate.
 
 \begin{table}[htbp]
 \renewcommand{\arraystretch}{1.3}
@@ -187,9 +189,11 @@ Anche in questo caso è necessaria una analisi preliminare per fissare i valori 
 \label{tab:DomC_covar}
 \end{table}
 
-I risultati dello studio di $\mathrm{GCV}(\underline \lambda)$ si sono rivelati molto simili al caso senza covariate riportato in \ref{tab:DomC}, lasciando pensare che la stima della funzione $f(\underline p,t)$ sia molto simile al caso precedente (infatti, a meno di covariate e rumore, coincidono).
+Procedendo per tentativi, si poò notare che i valori si sono rivelati molto simili al caso senza covariate riportato in \ref{tab:DomC}, lasciando pensare che la stima della funzione $f(\underline p,t)$, cioè della parte non spiegata dalla covariata, possa essere molto vicina a quella stimata nel caso senza covariate, e quindi a quella reale.
 
-Eseguendo l'analisi dei dati con $\underline \lambda = (10^{-0.125}, 10^{-3.25})$ questa ipotesi è confermata, e si trova una buona stima della funzione. In figura \ref{fig:DomCcovar_ris} si hanno i grafici dei primi istanti di tempo (si ricorda che la funzione tracciata non contiene la parte spiegata dalle covariate, ma solo la stima di $f(\underline p,t)$). 
+Eseguendo l'analisi con $\underline \lambda = (10^{-0.125}, 10^{-3.25})$ questa ipotesi è confermata, e si trova una buona stima della funzione. In figura \ref{fig:DomCcovar_ris} si hanno i grafici dei primi istanti di tempo (si ricorda che la funzione tracciata non contiene la parte spiegata dalle covariate, ma solo la stima di $f(\underline p,t)$). 
+
+\newpage
 
 \begin{figure}[h]
 \centering
@@ -221,7 +225,8 @@ Eseguendo l'analisi dei dati con $\underline \lambda = (10^{-0.125}, 10^{-3.25})
 \label{fig:DomCcovar_ris}
 \end{figure}
 
-Analogo al caso precedente è l'analisi dell'evoluzione temporale della funzione in un punto fissato. La curva stimata spiega l'andamento della reale, senza ricadere troppo nell'interpolazione.
+Analoga al caso senza covariate è l'evoluzione temporale della funzione in uno dei nodi della triangolazione.
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.46\textwidth]{Immagini/DomCcovar_tfissato.png}   
@@ -236,7 +241,7 @@ $$
 valore vicinissimo al reale.
 
 
-
+GRAFICI DEI RESIDUI???
 
 
 

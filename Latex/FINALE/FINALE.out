@@ -3,16 +3,7 @@
 \BOOKMARK [0][-]{chapter.3}{Presentazione modello}{}% 3
 \BOOKMARK [0][-]{chapter.4}{Applicazione al dominio a forma di C}{}% 4
 \BOOKMARK [0][-]{chapter.5}{Confronto con gli altri modelli}{}% 5
-\BOOKMARK [0][-]{chapter.6}{Produzione di rifiuti nella provincia di Venezia}{}% 6
-\BOOKMARK [1][-]{section.6.1}{L'inclusione dell'effetto del turismo}{chapter.6}% 7
-\BOOKMARK [1][-]{section.6.2}{Trattamento del dominio}{chapter.6}% 8
-\BOOKMARK [2][-]{subsection.6.2.1}{Regression splines}{section.6.2}% 9
-\BOOKMARK [2][-]{subsection.6.2.2}{Scelte particolari tra i comuni}{section.6.2}% 10
-\BOOKMARK [2][-]{subsection.6.2.3}{Triangolazione del dominio}{section.6.2}% 11
-\BOOKMARK [1][-]{section.6.3}{Applicazione del modello senza covariate}{chapter.6}% 12
-\BOOKMARK [2][-]{subsection.6.3.1}{Analisi preliminare e ricerca del miglior }{section.6.3}% 13
-\BOOKMARK [2][-]{subsection.6.3.2}{Risultati}{section.6.3}% 14
-\BOOKMARK [1][-]{section.6.4}{Applicazione del modello con covariate}{chapter.6}% 15
-\BOOKMARK [2][-]{subsection.6.4.1}{Analisi preliminare e ricerca del miglior }{section.6.4}% 16
-\BOOKMARK [2][-]{subsection.6.4.2}{Risultati}{section.6.4}% 17
-\BOOKMARK [0][-]{chapter.7}{Conclusioni e sviluppi futuri}{}% 18
+\BOOKMARK [1][-]{section.5.1}{Caso senza covariate}{chapter.5}% 6
+\BOOKMARK [1][-]{section.5.2}{Caso con covariate}{chapter.5}% 7
+\BOOKMARK [0][-]{chapter.6}{Produzione di rifiuti nella provincia di Venezia}{}% 8
+\BOOKMARK [0][-]{chapter.7}{Conclusioni e sviluppi futuri}{}% 9

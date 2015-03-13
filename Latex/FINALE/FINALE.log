@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  12 MAR 2015 14:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  13 MAR 2015 10:42
 entering extended mode
 **FINALE.tex
 
@@ -975,32 +975,35 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip74
 \backup@length=\skip75
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 FINALE\FINALE.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 30.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cbfonts-fd\lgrcmr.fd"
 File: lgrcmr.fd 2013/09/01 v1.0 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 29.
+LaTeX Info: Redefining \selectfont on input line 30.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1022,7 +1025,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 30.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1031,9 +1034,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count132
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 FINALE\FINALE.out")
@@ -1043,236 +1046,26 @@ FINALE\FINALE.out")
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 FINALE\FINALE.toc"
-LaTeX Font Info:    Try loading font information for U+msa on input line 8.
+LaTeX Font Info:    Try loading font information for U+msa on input line 7.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 8.
+LaTeX Font Info:    Try loading font information for U+msb on input line 7.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-! Missing $ inserted.
-<inserted text> 
-                $
-l.14 ...round \z@ $\relax $}{17}{subsection.6.3.1}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.14 ...round \z@ $\relax $}{17}{subsection.6.3.1}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<argument> ...elax $\@@underline {\hbox {\lambda }
-                                                  }\mathsurround \z@ $\relax...
-l.14 ...round \z@ $\relax $}{17}{subsection.6.3.1}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Extra }, or forgotten $.
-<argument> ...lax $\@@underline {\hbox {\lambda }}
-                                                  \mathsurround \z@ $\relax ...
-l.14 ...round \z@ $\relax $}{17}{subsection.6.3.1}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Extra }, or forgotten $.
-<recently read> }
-                 
-l.14 ...round \z@ $\relax $}{17}{subsection.6.3.1}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.14 ...round \z@ $\relax $}{17}{subsection.6.3.1}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.14 ...round \z@ $\relax $}{17}{subsection.6.3.1}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.14 ...round \z@ $\relax $}{17}{subsection.6.3.1}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.14 ...round \z@ $\relax $}{17}{subsection.6.3.1}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.14 ...round \z@ $\relax $}{17}{subsection.6.3.1}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.17 ...round \z@ $\relax $}{20}{subsection.6.4.1}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.17 ...round \z@ $\relax $}{20}{subsection.6.4.1}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<argument> ...elax $\@@underline {\hbox {\lambda }
-                                                  }\mathsurround \z@ $\relax...
-l.17 ...round \z@ $\relax $}{20}{subsection.6.4.1}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Extra }, or forgotten $.
-<argument> ...lax $\@@underline {\hbox {\lambda }}
-                                                  \mathsurround \z@ $\relax ...
-l.17 ...round \z@ $\relax $}{20}{subsection.6.4.1}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Extra }, or forgotten $.
-<recently read> }
-                 
-l.17 ...round \z@ $\relax $}{20}{subsection.6.4.1}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.17 ...round \z@ $\relax $}{20}{subsection.6.4.1}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.17 ...round \z@ $\relax $}{20}{subsection.6.4.1}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.17 ...round \z@ $\relax $}{20}{subsection.6.4.1}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.17 ...round \z@ $\relax $}{20}{subsection.6.4.1}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.17 ...round \z@ $\relax $}{20}{subsection.6.4.1}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-)
+))
 \tf@toc=\write4
  [1
 
 
-{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2
+{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
 
 ]
 Capitolo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
 [][][][]\OT1/cmr/m/n/9 http://dati.veneto.it/dataset/produzione-annua-di-rifiut
 i-urbani-totale-e-pro-capite-
  []
@@ -1300,577 +1093,314 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
  [11]
-<Immagini/Confronto_metodi.png, id=171, 481.8pt x 481.8pt>
+<Immagini/Confronto_metodi.png, id=120, 481.8pt x 481.8pt>
 File: Immagini/Confronto_metodi.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi.png>
-Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 81.
+Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 83.
 (pdftex.def)             Requested size: 216.0022pt x 215.9993pt.
  [12 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/La
 tex/FINALE/Immagini/Confronto_metodi.png>]
-Capitolo 6.
-[13
+[13] <immagini/simulazioni/REALEtempo1.png, id=140, 481.8pt x 481.8pt>
+File: immagini/simulazioni/REALEtempo1.png Graphic file (type png)
+
+<use immagini/simulazioni/REALEtempo1.png>
+Package pdftex.def Info: immagini/simulazioni/REALEtempo1.png used on input lin
+e 95.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/Dati_tempo1.png, id=141, 469.755pt x 433.62pt>
+File: immagini/simulazioni/Dati_tempo1.png Graphic file (type png)
+
+<use immagini/simulazioni/Dati_tempo1.png>
+Package pdftex.def Info: immagini/simulazioni/Dati_tempo1.png used on input lin
+e 96.
+(pdftex.def)             Requested size: 97.49744pt x 90.0pt.
+
+<immagini/simulazioni/KRIGtempo1.png, id=142, 481.8pt x 481.8pt>
+File: immagini/simulazioni/KRIGtempo1.png Graphic file (type png)
+
+<use immagini/simulazioni/KRIGtempo1.png>
+Package pdftex.def Info: immagini/simulazioni/KRIGtempo1.png used on input line
+ 97.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/SOAPtempo1.png, id=143, 481.8pt x 481.8pt>
+File: immagini/simulazioni/SOAPtempo1.png Graphic file (type png)
+
+<use immagini/simulazioni/SOAPtempo1.png>
+Package pdftex.def Info: immagini/simulazioni/SOAPtempo1.png used on input line
+ 98.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/TPStempo1.png, id=144, 481.8pt x 481.8pt>
+File: immagini/simulazioni/TPStempo1.png Graphic file (type png)
+
+<use immagini/simulazioni/TPStempo1.png>
+Package pdftex.def Info: immagini/simulazioni/TPStempo1.png used on input line 
+99.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/STSRtempo1.png, id=145, 481.8pt x 481.8pt>
+File: immagini/simulazioni/STSRtempo1.png Graphic file (type png)
+
+<use immagini/simulazioni/STSRtempo1.png>
+Package pdftex.def Info: immagini/simulazioni/STSRtempo1.png used on input line
+ 100.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/REALEtempo2.png, id=146, 481.8pt x 481.8pt>
+File: immagini/simulazioni/REALEtempo2.png Graphic file (type png)
+
+<use immagini/simulazioni/REALEtempo2.png>
+Package pdftex.def Info: immagini/simulazioni/REALEtempo2.png used on input lin
+e 102.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/Dati_tempo2.png, id=147, 469.755pt x 433.62pt>
+File: immagini/simulazioni/Dati_tempo2.png Graphic file (type png)
+
+<use immagini/simulazioni/Dati_tempo2.png>
+Package pdftex.def Info: immagini/simulazioni/Dati_tempo2.png used on input lin
+e 103.
+(pdftex.def)             Requested size: 97.49744pt x 90.0pt.
+
+<immagini/simulazioni/KRIGtempo2.png, id=148, 481.8pt x 481.8pt>
+File: immagini/simulazioni/KRIGtempo2.png Graphic file (type png)
+
+<use immagini/simulazioni/KRIGtempo2.png>
+Package pdftex.def Info: immagini/simulazioni/KRIGtempo2.png used on input line
+ 104.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/SOAPtempo2.png, id=149, 481.8pt x 481.8pt>
+File: immagini/simulazioni/SOAPtempo2.png Graphic file (type png)
+
+<use immagini/simulazioni/SOAPtempo2.png>
+Package pdftex.def Info: immagini/simulazioni/SOAPtempo2.png used on input line
+ 105.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/TPStempo2.png, id=150, 481.8pt x 481.8pt>
+File: immagini/simulazioni/TPStempo2.png Graphic file (type png)
+
+<use immagini/simulazioni/TPStempo2.png>
+Package pdftex.def Info: immagini/simulazioni/TPStempo2.png used on input line 
+106.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/STSRtempo2.png, id=151, 481.8pt x 481.8pt>
+File: immagini/simulazioni/STSRtempo2.png Graphic file (type png)
+
+<use immagini/simulazioni/STSRtempo2.png>
+Package pdftex.def Info: immagini/simulazioni/STSRtempo2.png used on input line
+ 107.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/REALEtempo3.png, id=152, 481.8pt x 481.8pt>
+File: immagini/simulazioni/REALEtempo3.png Graphic file (type png)
+
+<use immagini/simulazioni/REALEtempo3.png>
+Package pdftex.def Info: immagini/simulazioni/REALEtempo3.png used on input lin
+e 109.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/Dati_tempo3.png, id=153, 469.755pt x 433.62pt>
+File: immagini/simulazioni/Dati_tempo3.png Graphic file (type png)
+
+<use immagini/simulazioni/Dati_tempo3.png>
+Package pdftex.def Info: immagini/simulazioni/Dati_tempo3.png used on input lin
+e 110.
+(pdftex.def)             Requested size: 97.49744pt x 90.0pt.
+
+<immagini/simulazioni/KRIGtempo3.png, id=154, 481.8pt x 481.8pt>
+File: immagini/simulazioni/KRIGtempo3.png Graphic file (type png)
+
+<use immagini/simulazioni/KRIGtempo3.png>
+Package pdftex.def Info: immagini/simulazioni/KRIGtempo3.png used on input line
+ 111.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/SOAPtempo3.png, id=155, 481.8pt x 481.8pt>
+File: immagini/simulazioni/SOAPtempo3.png Graphic file (type png)
+
+<use immagini/simulazioni/SOAPtempo3.png>
+Package pdftex.def Info: immagini/simulazioni/SOAPtempo3.png used on input line
+ 112.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/TPStempo3.png, id=156, 481.8pt x 481.8pt>
+File: immagini/simulazioni/TPStempo3.png Graphic file (type png)
+
+<use immagini/simulazioni/TPStempo3.png>
+Package pdftex.def Info: immagini/simulazioni/TPStempo3.png used on input line 
+113.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/STSRtempo3.png, id=157, 481.8pt x 481.8pt>
+File: immagini/simulazioni/STSRtempo3.png Graphic file (type png)
+
+<use immagini/simulazioni/STSRtempo3.png>
+Package pdftex.def Info: immagini/simulazioni/STSRtempo3.png used on input line
+ 114.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/REALEtempo4.png, id=158, 481.8pt x 481.8pt>
+File: immagini/simulazioni/REALEtempo4.png Graphic file (type png)
+
+<use immagini/simulazioni/REALEtempo4.png>
+Package pdftex.def Info: immagini/simulazioni/REALEtempo4.png used on input lin
+e 116.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/Dati_tempo4.png, id=159, 469.755pt x 433.62pt>
+File: immagini/simulazioni/Dati_tempo4.png Graphic file (type png)
+
+<use immagini/simulazioni/Dati_tempo4.png>
+Package pdftex.def Info: immagini/simulazioni/Dati_tempo4.png used on input lin
+e 117.
+(pdftex.def)             Requested size: 97.49744pt x 90.0pt.
+
+<immagini/simulazioni/KRIGtempo4.png, id=160, 481.8pt x 481.8pt>
+File: immagini/simulazioni/KRIGtempo4.png Graphic file (type png)
+
+<use immagini/simulazioni/KRIGtempo4.png>
+Package pdftex.def Info: immagini/simulazioni/KRIGtempo4.png used on input line
+ 118.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/SOAPtempo4.png, id=161, 481.8pt x 481.8pt>
+File: immagini/simulazioni/SOAPtempo4.png Graphic file (type png)
+
+<use immagini/simulazioni/SOAPtempo4.png>
+Package pdftex.def Info: immagini/simulazioni/SOAPtempo4.png used on input line
+ 119.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/TPStempo4.png, id=162, 481.8pt x 481.8pt>
+File: immagini/simulazioni/TPStempo4.png Graphic file (type png)
+
+<use immagini/simulazioni/TPStempo4.png>
+Package pdftex.def Info: immagini/simulazioni/TPStempo4.png used on input line 
+120.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+<immagini/simulazioni/STSRtempo4.png, id=163, 481.8pt x 481.8pt>
+File: immagini/simulazioni/STSRtempo4.png Graphic file (type png)
+
+<use immagini/simulazioni/STSRtempo4.png>
+Package pdftex.def Info: immagini/simulazioni/STSRtempo4.png used on input line
+ 121.
+(pdftex.def)             Requested size: 90.0pt x 89.9991pt.
+
+
+LaTeX Warning: Float too large for page by 40.2pt on input line 125.
+
+[14 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/FINALE/immagini/simulazioni/REALEtempo1.png (PNG copy)> <C:/Users/Gabriele/D
+esktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simul
+azioni/Dati_tempo1.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRAL
+E/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/KRIGtempo1.png (PNG copy)> <
+C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FI
+NALE/immagini/simulazioni/SOAPtempo1.png> <C:/Users/Gabriele/Desktop/Universit�
+�/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/TPStempo1.
+png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI D
+I LAUREA/Latex/FINALE/immagini/simulazioni/STSRtempo1.png> <C:/Users/Gabriele/D
+esktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simul
+azioni/REALEtempo2.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRAL
+E/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/Dati_tempo2.png> <C:/Users/G
+abriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immag
+ini/simulazioni/KRIGtempo2.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universit
+à/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/SOAPtempo
+2.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/
+Latex/FINALE/immagini/simulazioni/TPStempo2.png> <C:/Users/Gabriele/Desktop/Uni
+versità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/STS
+Rtempo2.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI L
+AUREA/Latex/FINALE/immagini/simulazioni/REALEtempo3.png> <C:/Users/Gabriele/Des
+ktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simulaz
+ioni/Dati_tempo3.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/
+TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/KRIGtempo3.png> <C:/Users/Gabr
+iele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini
+/simulazioni/SOAPtempo3.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGI
+STRALE/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/TPStempo3.png> <C:/User
+s/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/im
+magini/simulazioni/STSRtempo3.png> <C:/Users/Gabriele/Desktop/Università/LAURE
+A MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/REALEtempo4.png> 
+<C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/F
+INALE/immagini/simulazioni/Dati_tempo4.png> <C:/Users/Gabriele/Desktop/Universi
+tà/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/KRIGtemp
+o4.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TES
+I DI LAUREA/Latex/FINALE/immagini/simulazioni/SOAPtempo4.png> <C:/Users/Gabriel
+e/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/si
+mulazioni/TPStempo4.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRA
+LE/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/STSRtempo4.png>] [15
+
 
 ]
-Overfull \hbox (37.2855pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 14 \OT1/cmr/m/sl/10.95 CAPITOLO 6.  PRODUZIONE DI RIFIUTI NE
-LLA PROVINCIA DI VENEZIA
- []
+[16
 
-[14] <Immagini/Ven_Longitudine.png, id=200, 481.8pt x 481.8pt>
-File: Immagini/Ven_Longitudine.png Graphic file (type png)
-
-<use Immagini/Ven_Longitudine.png>
-Package pdftex.def Info: Immagini/Ven_Longitudine.png used on input line 127.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-<Immagini/Ven_Latitudine.png, id=201, 481.8pt x 481.8pt>
-File: Immagini/Ven_Latitudine.png Graphic file (type png)
-
-<use Immagini/Ven_Latitudine.png>
-Package pdftex.def Info: Immagini/Ven_Latitudine.png used on input line 128.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-<Immagini/Ven_Regione.png, id=202, 481.8pt x 481.8pt>
-File: Immagini/Ven_Regione.png Graphic file (type png)
-
-<use Immagini/Ven_Regione.png>
-Package pdftex.def Info: Immagini/Ven_Regione.png used on input line 131.
-(pdftex.def)             Requested size: 230.39978pt x 230.39386pt.
-
-<Immagini/Ven_punti.png, id=205, 481.8pt x 481.8pt>
-File: Immagini/Ven_punti.png Graphic file (type png)
-
-<use Immagini/Ven_punti.png>
-Package pdftex.def Info: Immagini/Ven_punti.png used on input line 144.
-(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
-
-<Immagini/Ven_puntizoom.png, id=206, 481.8pt x 481.8pt>
-File: Immagini/Ven_puntizoom.png Graphic file (type png)
-
-<use Immagini/Ven_puntizoom.png>
-Package pdftex.def Info: Immagini/Ven_puntizoom.png used on input line 149.
-(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
- [15]
-<Immagini/Ven_triang.png, id=215, 481.8pt x 481.8pt>
-File: Immagini/Ven_triang.png Graphic file (type png)
-
-<use Immagini/Ven_triang.png>
-Package pdftex.def Info: Immagini/Ven_triang.png used on input line 171.
-(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
-
-<Immagini/Ven_triangzoom.png, id=216, 481.8pt x 481.8pt>
-File: Immagini/Ven_triangzoom.png Graphic file (type png)
-
-<use Immagini/Ven_triangzoom.png>
-Package pdftex.def Info: Immagini/Ven_triangzoom.png used on input line 176.
-(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
-
-Overfull \hbox (37.2855pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 16 \OT1/cmr/m/sl/10.95 CAPITOLO 6.  PRODUZIONE DI RIFIUTI NE
-LLA PROVINCIA DI VENEZIA
- []
-
-[16 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/FINALE/Immagini/Ven_Longitudine.png> <C:/Users/Gabriele/Desktop/Università/
-LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/Ven_Latitudine.png> <C:/
-Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINAL
-E/Immagini/Ven_Regione.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 185.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 185.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@underline' on input line 185.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 185.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 185.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 185.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 185.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 185.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 185.
-
-[17 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/FINALE/Immagini/Ven_punti.png (PNG copy)> <C:/Users/Gabriele/Desktop/Univers
-ità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/Ven_puntizoom.png (
-PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAU
-REA/Latex/FINALE/Immagini/Ven_triang.png (PNG copy)> <C:/Users/Gabriele/Desktop
-/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/Ven_triangz
-oom.png (PNG copy)>]
-<Immagini/venezia_senza_covariate/Maps1997.png, id=235, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps1997.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps1997.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps1997.png used on 
-input line 222.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps1998.png, id=237, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps1998.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps1998.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps1998.png used on 
-input line 223.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps1999.png, id=239, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps1999.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps1999.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps1999.png used on 
-input line 224.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2000.png, id=241, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2000.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2000.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2000.png used on 
-input line 225.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2001.png, id=243, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2001.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2001.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2001.png used on 
-input line 226.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2002.png, id=245, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2002.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2002.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2002.png used on 
-input line 227.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2003.png, id=247, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2003.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2003.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2003.png used on 
-input line 228.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2004.png, id=249, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2004.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2004.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2004.png used on 
-input line 229.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2005.png, id=251, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2005.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2005.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2005.png used on 
-input line 230.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2006.png, id=253, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2006.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2006.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2006.png used on 
-input line 231.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2007.png, id=255, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2007.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2007.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2007.png used on 
-input line 232.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2008.png, id=257, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2008.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2008.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2008.png used on 
-input line 233.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2009.png, id=259, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2009.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2009.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2009.png used on 
-input line 234.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2010.png, id=261, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2010.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2010.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2010.png used on 
-input line 235.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_senza_covariate/Maps2011.png, id=263, 828.09375pt x 499.8675p
-t>
-File: Immagini/venezia_senza_covariate/Maps2011.png Graphic file (type png)
- <use Immagini/venezia_senza_covariate/Maps2011.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Maps2011.png used on 
-input line 236.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+]
+Capitolo 6.
+[17]
 Overfull \hbox (37.2855pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/10.95 18 \OT1/cmr/m/sl/10.95 CAPITOLO 6.  PRODUZIONE DI RIFIUTI NE
 LLA PROVINCIA DI VENEZIA
  []
 
-[18] [19 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAURE
-A/Latex/FINALE/Immagini/venezia_senza_covariate/Maps1997.png> <C:/Users/Gabriel
-e/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/ve
-nezia_senza_covariate/Maps1998.png> <C:/Users/Gabriele/Desktop/Università/LAUR
-EA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_senza_covariate/Maps
-1999.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUR
-EA/Latex/FINALE/Immagini/venezia_senza_covariate/Maps2000.png> <C:/Users/Gabrie
-le/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/v
-enezia_senza_covariate/Maps2001.png> <C:/Users/Gabriele/Desktop/Università/LAU
-REA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_senza_covariate/Map
-s2002.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAU
-REA/Latex/FINALE/Immagini/venezia_senza_covariate/Maps2003.png> <C:/Users/Gabri
-ele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/
-venezia_senza_covariate/Maps2004.png> <C:/Users/Gabriele/Desktop/Università/LA
-UREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_senza_covariate/Ma
-ps2005.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LA
-UREA/Latex/FINALE/Immagini/venezia_senza_covariate/Maps2006.png> <C:/Users/Gabr
-iele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini
-/venezia_senza_covariate/Maps2007.png> <C:/Users/Gabriele/Desktop/Università/L
-AUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_senza_covariate/M
-aps2008.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI L
-AUREA/Latex/FINALE/Immagini/venezia_senza_covariate/Maps2009.png> <C:/Users/Gab
-riele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagin
-i/venezia_senza_covariate/Maps2010.png> <C:/Users/Gabriele/Desktop/Università/
-LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_senza_covariate/
-Maps2011.png>]
-<Immagini/venezia_senza_covariate/Venezia.png, id=291, 481.8pt x 481.8pt>
-File: Immagini/venezia_senza_covariate/Venezia.png Graphic file (type png)
-
-<use Immagini/venezia_senza_covariate/Venezia.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Venezia.png used on i
-nput line 247.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-<Immagini/venezia_senza_covariate/Lido(A).png, id=292, 481.8pt x 481.8pt>
-File: Immagini/venezia_senza_covariate/Lido(A).png Graphic file (type png)
-
-<use Immagini/venezia_senza_covariate/Lido(A).png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/Lido(A).png used on i
-nput line 248.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-<Immagini/venezia_senza_covariate/SanMicheleTagliamento.png, id=293, 481.8pt x 
-481.8pt>
-File: Immagini/venezia_senza_covariate/SanMicheleTagliamento.png Graphic file (
-type png)
- <use Immagini/venezia_senza_covariate/SanMicheleTagliamento.png>
-Package pdftex.def Info: Immagini/venezia_senza_covariate/SanMicheleTagliamento
-.png used on input line 249.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-
-LaTeX Warning: Reference `fig:venezia_tempo' on page 20 undefined on input line
- 254.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 258.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 258.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@underline' on input line 258.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 258.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 258.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 258.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 258.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 258.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 258.
-
-
-Overfull \hbox (37.2855pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 20 \OT1/cmr/m/sl/10.95 CAPITOLO 6.  PRODUZIONE DI RIFIUTI NE
-LLA PROVINCIA DI VENEZIA
- []
-
-[20 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/FINALE/Immagini/venezia_senza_covariate/Venezia.png> <C:/Users/Gabriele/Desk
-top/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_
-senza_covariate/Lido(A).png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGI
-STRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_senza_covariate/SanMicheleT
-agliamento.png>]
-<Immagini/venezia_con_covariate/Maps1997.png, id=304, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps1997.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps1997.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps1997.png used on in
-put line 291.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps1998.png, id=306, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps1998.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps1998.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps1998.png used on in
-put line 292.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps1999.png, id=308, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps1999.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps1999.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps1999.png used on in
-put line 293.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2000.png, id=310, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2000.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2000.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2000.png used on in
-put line 294.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2001.png, id=312, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2001.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2001.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2001.png used on in
-put line 295.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2002.png, id=314, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2002.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2002.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2002.png used on in
-put line 296.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2003.png, id=316, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2003.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2003.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2003.png used on in
-put line 297.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2004.png, id=318, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2004.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2004.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2004.png used on in
-put line 298.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2005.png, id=320, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2005.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2005.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2005.png used on in
-put line 299.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2006.png, id=322, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2006.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2006.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2006.png used on in
-put line 300.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2007.png, id=324, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2007.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2007.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2007.png used on in
-put line 301.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2008.png, id=326, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2008.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2008.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2008.png used on in
-put line 302.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2009.png, id=328, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2009.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2009.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2009.png used on in
-put line 303.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2010.png, id=330, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2010.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2010.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2010.png used on in
-put line 304.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Maps2011.png, id=332, 828.09375pt x 499.8675pt>
-File: Immagini/venezia_con_covariate/Maps2011.png Graphic file (type png)
-<use Immagini/venezia_con_covariate/Maps2011.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Maps2011.png used on in
-put line 305.
-(pdftex.def)             Requested size: 115.20264pt x 80.62112pt.
-
-<Immagini/venezia_con_covariate/Venezia.png, id=334, 481.8pt x 481.8pt>
-File: Immagini/venezia_con_covariate/Venezia.png Graphic file (type png)
-
-<use Immagini/venezia_con_covariate/Venezia.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Venezia.png used on inp
-ut line 312.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-<Immagini/venezia_con_covariate/Lido(A).png, id=335, 481.8pt x 481.8pt>
-File: Immagini/venezia_con_covariate/Lido(A).png Graphic file (type png)
-
-<use Immagini/venezia_con_covariate/Lido(A).png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/Lido(A).png used on inp
-ut line 313.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-<Immagini/venezia_con_covariate/SanMicheleTagliamento.png, id=336, 481.8pt x 48
-1.8pt>
-File: Immagini/venezia_con_covariate/SanMicheleTagliamento.png Graphic file (ty
-pe png)
- <use Immagini/venezia_con_covariate/SanMicheleTagliamento.png>
-Package pdftex.def Info: Immagini/venezia_con_covariate/SanMicheleTagliamento.p
-ng used on input line 314.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/La
-tex/FINALE/Immagini/venezia_con_covariate/Maps1997.png> <C:/Users/Gabriele/Desk
-top/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_
-con_covariate/Maps1998.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGIS
-TRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_con_covariate/Maps1999.png> 
-<C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/F
-INALE/Immagini/venezia_con_covariate/Maps2000.png> <C:/Users/Gabriele/Desktop/U
-niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_con_c
-ovariate/Maps2001.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE
-/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_con_covariate/Maps2002.png> <C:/U
-sers/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE
-/Immagini/venezia_con_covariate/Maps2003.png> <C:/Users/Gabriele/Desktop/Univer
-sità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_con_covari
-ate/Maps2004.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI
- DI LAUREA/Latex/FINALE/Immagini/venezia_con_covariate/Maps2005.png> <C:/Users/
-Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Imma
-gini/venezia_con_covariate/Maps2006.png> <C:/Users/Gabriele/Desktop/Università
-/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_con_covariate/M
-aps2007.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI L
-AUREA/Latex/FINALE/Immagini/venezia_con_covariate/Maps2008.png> <C:/Users/Gabri
-ele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/
-venezia_con_covariate/Maps2009.png> <C:/Users/Gabriele/Desktop/Università/LAUR
-EA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_con_covariate/Maps20
-10.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA
-/Latex/FINALE/Immagini/venezia_con_covariate/Maps2011.png>]
-
-LaTeX Warning: Reference `fig:venezia_tempo' on page 22 undefined on input line
- 319.
-
-
-Overfull \hbox (37.2855pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 22 \OT1/cmr/m/sl/10.95 CAPITOLO 6.  PRODUZIONE DI RIFIUTI NE
-LLA PROVINCIA DI VENEZIA
- []
-
-[22 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/FINALE/Immagini/venezia_con_covariate/Venezia.png> <C:/Users/Gabriele/Deskto
-p/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_co
-n_covariate/Lido(A).png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRA
-LE/TESI DI LAUREA/Latex/FINALE/Immagini/venezia_con_covariate/SanMicheleTagliam
-ento.png>]
-Capitolo 7.
-[23
-
-] [24
+[18
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 362.
- [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 362.
+Capitolo 7.
+[19] [20
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
+ [21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 FINALE\FINALE.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 362.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 362.
-Package rerunfilecheck Info: File `FINALE.out' has not changed.
-(rerunfilecheck)             Checksum: EC3FE46DA8CE9CB654BA14C08A6112E1;1358.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
 
 
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Warning: File `FINALE.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 362.
+Package rerunfilecheck Info: Checksums for `FINALE.out':
+(rerunfilecheck)             Before: 1BE87FCDA424C33E8204853017A1DE13;535
+(rerunfilecheck)             After:  B9EC41F3D6F9E0CCBCAB9EDB0AC33C7C;600.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
  ) 
 Here is how much of TeX's memory you used:
- 9163 strings out of 493921
- 140431 string characters out of 3144868
- 219115 words of memory out of 3000000
- 12220 multiletter control sequences out of 15000+200000
- 15154 words of font info for 57 fonts, out of 3000000 for 9000
+ 9033 strings out of 493921
+ 135481 string characters out of 3144868
+ 214771 words of memory out of 3000000
+ 12117 multiletter control sequences out of 15000+200000
+ 13302 words of font info for 50 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,11n,38p,1152b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,8n,38p,1152b,364s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on FINALE.pdf (25 pages, 14755245 bytes).
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on FINALE.pdf (21 pages, 562397 bytes).
 PDF statistics:
- 446 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
- 545 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
+ 190 words of extra memory for PDF output out of 10000 (max. 10000000)
 

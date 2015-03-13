@@ -17,6 +17,7 @@
 \usepackage{subfigure}
 \usepackage{multirow}
 \usepackage{array}
+\usepackage{lscape}	% Per la pagina di grafici
 
 
 
@@ -46,7 +47,6 @@ Il lavoro di tesi sarà strutturato come segue. Nel Capitolo \ref{cap:panoramica
 
 \chapter{Panoramica sui modelli già esistenti}
 \label{cap:panoramica}
-Prima dello sviluppo del modello STR-PDE, è stato necessario uno studio dell'ambito in cui si inserisce il modello. Sono già presenti in letteratura tecniche per l'analisi funzionale di dati di questo tipo.
 
 \chapter{Presentazione modello}
 \label{cap:modello}
@@ -57,17 +57,17 @@ Prima dello sviluppo del modello STR-PDE, è stato necessario uno studio dell'am
 \chapter{Confronto con gli altri modelli}
 \label{cap:confronto}
 
-Il modello STSR rappresenta una generalizzazione del caso puramente spaziale proposto in \cite{art:sangalli} e, come già evidenziato nel Capitolo \ref{cap:panoramica}, non è l'unico modello disponibile per l'analisi di dati distribuiti sia in spazio che in tempo. Pertanto è necessario che sia valutata la bontà del modello attraverso il confronto con altri metodi esistenti e studiati in letteratura, al fine di poter dire se e quanto il modello STR-PDE possa rappresentare un miglioramento in questo campo.
+Il modello STR-PDE rappresenta una generalizzazione del caso puramente spaziale proposto in \cite{art:sangalli} e, come già evidenziato nel Capitolo \ref{cap:panoramica}, non è l'unico modello disponibile per l'analisi di dati distribuiti sia in spazio che in tempo. Pertanto è necessario che sia confrontato con le altre principali metodologie presenti in letteratura, al fine di poter dire se e quanto il modello proposto possa rappresentare un miglioramento in questo campo.
 
-L'articolo \cite{art:augustin} propone l'analisi di dati di questo tipo attraverso modelli misti additivi generalizzati (GAMM) di interazione spazio-tempo. Questo metodo è generalizzato, quindi può essere usato per spiegare anche funzioni del valore atteso della risposta. Nel nostro caso, per avvicinarci al caso STR-PDE, si ipotizza che la risposta sia pari alla somma di una funzione e di un eventuale termine con covariata. Alla funzione è associato lo smoothing secondo il prodotto tensoriale dei termini marginali in spazio e tempo con le loro penalizzazioni. Quindi la costruzione dei GAMM è molto simile a quella analizzata in STR-PDE, e grazie al codice implementato nel pacchetto R \textit{mgcv} è possibile scegliere tra più tipi di modelli. In particolare ne saranno studiati due, i più simili al modello STR-PDE:
+L'articolo \cite{art:augustin} propone l'analisi di dati di questo tipo attraverso modelli misti additivi generalizzati (GAMM) di interazione spazio-tempo. Questo metodo è generalizzato, quindi può essere usato per spiegare anche funzioni del valore atteso della risposta. Nel nostro caso, per avvicinarci al caso STR-PDE, si ipotizza che la risposta sia pari alla somma di una funzione e di un eventuale termine con covariate. Alla funzione è associato lo smoothing secondo il prodotto tensoriale dei termini marginali in spazio e tempo con le loro penalizzazioni. Quindi la costruzione dei GAMM è molto simile a quella analizzata in STR-PDE, e grazie al codice implementato nel pacchetto R \textit{mgcv} è possibile scegliere tra più tipi di modelli. In particolare ne saranno studiati due, i più simili al modello STR-PDE:
 \begin{itemize}
 \item TPS, in cui sono poste marginalmente \textit{cubic regression splines} in tempo e \textit{thin plate splines} in spazio;
 \item SOAP, che considera \textit{cubic regression splines} in tempo e \textit{soap film smoothing} in spazio.
 \end{itemize}
 
-Un altro metodo da confrontare è sicuramente il kriging (KRIG) spazio-temporale. Le stime sono ottenute fissando un variogramma separabile e marginalmente esponenziale in spazio e tempo. I parametri dei variogrammi sono stimati dal variogramma empirico, e successivamente è possibile eseguire la stima grazie al codice implementato nel pacchetto R \textit{spacetime}.
+Un altro metodo da confrontare è sicuramente il kriging (KRIG) spazio-temporale. Le stime sono ottenute fissando un variogramma separabile e marginalmente esponenziale in spazio e tempo. I parametri dei variogrammi sono stimati dal variogramma empirico, e successivamente è possibile calcolare la stima grazie alle funzioni del pacchetto R \textit{spacetime}.
 
-I quattro modelli sono confrontati sull'esempio del dominio a forma di C proposto precedentemente, poichè garantisce di poter conoscere in ogni punto spaziale e ad ogni istante temporale il valore esatto della funzione. La triangolazione e i dati sono ricavati esattamente allo stesso modo di quanto fatto nel Capitolo \ref{cap:domC}. In aggiunta è stata costruita una griglia spazio-temporale di punti per la validazione: sono stati presi 80 punti equispaziati in $(-1,+3.5)$ per l'ascissa, 40 punti in equispaziati $(-1,+1)$ per l'ordinata e 20 istanti in $(0,2\pi)$ per il tempo. Ovviamente la validazione è stata studiata soltanto sui punti che ricadevano all'interno del dominio a forma di C.
+I quattro modelli sono confrontati sull'esempio del dominio a forma di C proposto precedentemente, poichè garantisce di poter conoscere in ogni punto spaziale e ad ogni istante temporale il valore esatto della funzione. La triangolazione e i dati sono gli stessi che sono stati usati nel Capitolo \ref{cap:domC}. In aggiunta è stata costruita una griglia spazio-temporale di punti per la validazione: sono stati presi 80 punti equispaziati in $(-1,+3.5)$ per l'ascissa, 40 punti in equispaziati $(-1,+1)$ per l'ordinata e 20 istanti in $(0,2\pi)$ per il tempo. Ovviamente la validazione è stata studiata soltanto sui punti che ricadevano all'interno del dominio a forma di C.
 
 I modelli sono stati confrontati attraverso il Root Mean Square Error ($\mathrm{RMSE}$) prodotto sui punti di validazione. Quindi se se $V$ è l'insieme dei punti della griglia interni al dominio, e $\mathrm{Mod}$ rappresenta la stima ottenuta dal modello, si avrà:
 $$
@@ -76,15 +76,57 @@ $$
 
 Il procedimento è stato iterato 50 volte, per poter escludere possibili andamenti particolari dovuti alla generazione del rumore.
  
+\section{Caso senza covariate}
+
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.60\textwidth]{Immagini/Confronto_metodi.png}   
 	\caption{Confronto del $\mathrm{RMSE}$, caso senza covariate}
 	\label{fig:cfr}
 \end{figure}
-Nel caso senza covariate si hanno i risultati riportati in figura \ref{fig:cfr}. Sono stati tracciati i boxplot dei valori di $\mathrm{RMSE}$ calcolati nelle 50 iterazioni per ogni metodo. Si hanno alti valori per KRIG e TPS (e questo fa presupporre una stima non buona), ma il modello che commette meno errore è STR-PDE.
 
-AGGIUNTA DEI GRAFICI..
+Nel caso senza covariate si hanno i risultati riportati in figura \ref{fig:cfr}, in cui sono stati tracciati i boxplot dei valori di $\mathrm{RMSE}$ raccolti nelle 50 iterazioni per ogni metodo. Subito si nota che l'errore commesso è minore nel caso di STR-PDE, e quindi la stima ottenuta con il modello proposto è la migliore.
+
+Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_metodi_nocov}. Dai boxplot si nota che l'errore commesso è più alto nei casi di KRIG e TPS, e infatti le stime sono molto distanti dalla funzione reale. Invece SOAP e STR-PDE commettono errori minori, ma tra i due SOAP ha linee di livello meno ordinate che STR-PDE. 
+
+\begin{landscape}
+\begin{figure}
+\centering
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/REALEtempo1.png}
+\includegraphics[height=0.25\textwidth]{immagini/simulazioni/Dati_tempo1.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/KRIGtempo1.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/SOAPtempo1.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/TPStempo1.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/STSRtempo1.png}
+
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/REALEtempo2.png}
+\includegraphics[height=0.25\textwidth]{immagini/simulazioni/Dati_tempo2.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/KRIGtempo2.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/SOAPtempo2.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/TPStempo2.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/STSRtempo2.png}
+
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/REALEtempo3.png}
+\includegraphics[height=0.25\textwidth]{immagini/simulazioni/Dati_tempo3.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/KRIGtempo3.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/SOAPtempo3.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/TPStempo3.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/STSRtempo3.png}
+
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/REALEtempo4.png}
+\includegraphics[height=0.25\textwidth]{immagini/simulazioni/Dati_tempo4.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/KRIGtempo4.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/SOAPtempo4.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/TPStempo4.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni/STSRtempo4.png}
+
+\caption{Per alcuni istanti di tempo, funzione test $f(\underline p,t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, GAMM con soap film smoothing, GAMM con thin plate splines e dtima con STR-PDE.}
+\label{fig:confronto_altri_metodi_nocov}
+\end{figure}
+\end{landscape}
+
+\section{Caso con covariate}
+
 
 \chapter{Produzione di rifiuti nella provincia di Venezia}
 \label{cap:rifiuti}

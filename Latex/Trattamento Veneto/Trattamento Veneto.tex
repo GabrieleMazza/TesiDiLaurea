@@ -124,6 +124,59 @@ La triangolazione è stata prodotta tramite il pacchetto R \textit{RTriangle}. P
 
 In conclusione, il dominio è descritto da 414 punti (41 con dati, 373 di frontiera o aggiunti dalla triangolazione) e da 475 triangoli. 
 
+\section{Analisi preliminare dei dati}
+Prima di eseguire l'analisi, è opportuno avere una visualizzazione dei dati sul dominio della provincia di Venezia. In fig. \ref{fig:Ven_bubbledati} sono riportati i bubbleplot dei dati, che permettono di avere un'idea del fenomeno in spazio e tempo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati1997.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati1998.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati1999.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2000.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2001.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2002.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2003.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2004.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2005.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2006.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2007.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2008.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2009.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2010.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2011.png}
+\caption{Bubbleplot delle misurazioni della produzione di rifiuti urbani pro capite ogni due anni dal 1997 al 2011.}
+\label{fig:Ven_bubbledati}
+\end{figure}
+
+\newpage
+Da questa analisi iniziale ci si aspetta che il risultato mostri una produzione di rifiuti più lata nella zona balneare della regione, e che non abbia grosse variazioni nel tempo, poichè i dati sono più o meno simili negli anni.
+
+Gli stessi grafici sono stati ripetuti in fig. \ref{fig:Ven_bubblePL} per il numero di posti letto pro capite. In questo caso però, si può evidenziare un andamento diverso.
+
+\begin{figure}[H]
+\centering
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL1997.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL1998.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL1999.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2000.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2001.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2002.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2003.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2004.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2005.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2006.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2007.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2008.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2009.png}
+%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2010.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2011.png}
+\caption{Bubbleplot delle misurazioni della produzione di rifiuti urbani pro capite ogni due anni dal 1997 al 2011.}
+\label{fig:Ven_bubblePL}
+\end{figure}
+
+\newpage
+Si può notare che il numero di posti letto assume valori maggiori nella zona balneare rispetto al resto della regione. Contrariamente a quello che ci si aspettava, non si hanno molto posti letto nell'isola di Venezia. Invece si ha una grossa variazione nel comune di Cavallino-Treporti dopo la separazione dal comune di Venezia (si nota che il valore aumenta dopo il 2002). Questo indica che i posti letto sono in realtà numerosi in Cavallino-Treporti, ma quando era unito al comune di Venezia, questo effetto non poteva essere notato in modo così dettagliato. Ci si può quindi aspettare che la funzione stimata presenti un comportamento differente in Cavallino-Treporti nelle due situazioni.
+
 \section{Applicazione del modello senza covariate}
 
 \subsection{Analisi preliminare e ricerca del miglior $\underline \lambda$}
@@ -141,17 +194,17 @@ Prima di calcolare i risultati dell'analisi occorre fissare i parametri $\lambda
 	\noalign{\hrule height 1.2pt}
 	Intervalli per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$& Miglior valore											\\
 	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-5,-4,\ldots,+1\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{0},10^{-3})$} 			\\
+	$\log_{10}\lambda_S \in \{-12,-11,\ldots,+1\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-10},10^{0})$} 			\\
 	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-5,-4,\ldots,+1\}$		& 															\\	
+	$\log_{10}\lambda_T \in \{-8,-7,\ldots,+1\}$		& 															\\	
 	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-1,-0.75,\ldots,+1\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-0.5},10^{-3.25})$} 		\\
+	$\log_{10}\lambda_S \in \{-11,-10.5,\ldots,-9\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-9.5},10^{0})$} 		\\
 	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-4,-3.75,\ldots,-2\}$	& 															\\	
+	$\log_{10}\lambda_T \in \{-1,-0.5,\ldots,+1\}$	& 															\\	
 	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-1,-0.875,\ldots,+0\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-0.375}, 10^{-3.25})$}	\\
+	$\log_{10}\lambda_S \in \{-10,-9.875,\ldots,-9\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-9.625}, 10^{0})$}	\\
 	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-3.75,-3.625,\ldots,-2.75\}$		& 										6		\\	
+	$\log_{10}\lambda_T \in \{-0.5,-0.375,\ldots,+0.5\}$		& 										6		\\	
 	\noalign{\hrule height 1.2pt}
 	\end{tabular}
 \caption{Analisi di $\mathrm{GCV}(\underline \lambda)$}
@@ -159,7 +212,7 @@ Prima di calcolare i risultati dell'analisi occorre fissare i parametri $\lambda
 \end{table}
 
 \subsection{Risultati}
-La produzione dei rifiuti è stata analizzata con $\underline \lambda = (10^{-0.375}, 10^{-3.25})$. In fig. \ref{fig:Ven_ris} sono riportati i risultati ottenuti nei 15 anni a disposizione. Questi grafici (grazie anche alla visualizzazione sulle mappe di Google Maps) permettono di sutdiare il profilo della funzione nei vari istanti temporali, e avere un'idea dell'evoluzione della produzione di rifiuti a livello geografico.
+La produzione dei rifiuti è stata analizzata con $\underline \lambda = (10^{-9.625}, 10^{0})$. In fig. \ref{fig:Ven_ris} sono riportati i risultati ottenuti nei 15 anni a disposizione. Questi grafici (grazie anche alla visualizzazione sulle mappe di Google Maps) permettono di studiare il profilo della funzione nei vari istanti temporali, e avere un'idea dell'evoluzione della produzione di rifiuti a livello geografico.
 
 \begin{figure}[H]
 \centering
@@ -178,9 +231,11 @@ La produzione dei rifiuti è stata analizzata con $\underline \lambda = (10^{-0.
 \includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2009.png}
 \includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2010.png}
 \includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2011.png}
-\caption{Estimated spatio-temporal field of the Venice waste data with the STSR method without covariates at fixed time instants: from year 1997 to year 2011.}
+\caption{Stima della funzione spazio-temporale della produzione dei rifiuti nella provincia di Venezia a tempi fissati: dal 1997 al 2011.}
 \label{fig:Ven_ris}
 \end{figure}
+
+\newpage
 
 Come si può notare dai grafici, ci sono due zone ad elevato valore di produzione dei rifiuti pro capite, corrispondenti a zone di elevato interesse turistico per le spiagge presenti. Nella parte ad est della provincia di Venezia, tra le altre, si hanno le località turistiche di Bibione (confinante con Lingano Sabbiadoro, che però è oltre il confine veneto) e Caorle. Scendendo verso sud-ovest si nota che anche Jesolo causa un innalzamento della funzione che descrive la risposta.
 
@@ -189,13 +244,13 @@ La produzione dei rifiuti è particolarmente alta in queste zone turistiche, e c
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.32\textwidth]{Immagini/venezia_senza_covariate/Venezia.png}
-\includegraphics[width=0.32\textwidth]{Immagini/venezia_senza_covariate/Lido(A).png}
-\includegraphics[width=0.32\textwidth]{Immagini/venezia_senza_covariate/SanMicheleTagliamento.png}
-\caption{Estimated spatio-temporal field of the Venice waste data with the STSR method without covariates at three fixed spatial points: Venice, Lido and San Michele al Tagliamento.}
+\includegraphics[width=0.32\textwidth]{Immagini/venezia_senza_covariate/Jesolo.png}
+\includegraphics[width=0.32\textwidth]{Immagini/venezia_senza_covariate/SanMichelealTagliamento.png}
+\caption{Stima della funzione spazio-temporale della produzione dei rifiuti nella provincia di Venezia in alcuni punti spaziali fissati, corrispondenti a Venezia, Jesolo e San Michele al Tagliamento.}
 \label{fig:Ven_tempo}
 \end{figure}
 
-In fig. \ref{fig:venezia_tempo} Sono riportati gli sviluppi temporali stimati in alcuni comuni dati. In particolare sono stati scelti Venezia, Jesolo e Caorle). Si può notare come la funzione stimata spieghi bene l'andamento tracciato dai dati iniziali senza cadere nell'eccessiva interpolazione.
+In fig. \ref{fig:venezia_tempo} Sono riportati gli sviluppi temporali stimati in alcuni comuni. In particolare sono stati scelti Venezia, Jesolo e San Michele al Tagliamento. I punti rossi corrispondono al dato misurato. Si può notare come la funzione stimata spieghi bene l'andamento tracciato dai dati iniziali senza cadere nell'eccessiva interpolazione.
 
 \section{Applicazione del modello con covariate}
 
@@ -254,24 +309,30 @@ Le analisi sono state eseguite con $\underline \lambda = (10^{-0.375}, 10^{-3.25
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.32\textwidth]{Immagini/venezia_con_covariate/Venezia.png}
-\includegraphics[width=0.32\textwidth]{Immagini/venezia_con_covariate/Lido(A).png}
-\includegraphics[width=0.32\textwidth]{Immagini/venezia_con_covariate/SanMicheleTagliamento.png}
-\caption{Estimated spatio-temporal field of the Venice waste data with the STSR method without covariates at three fixed spatial points: Venice, Lido and San Michele al Tagliamento.}
+\includegraphics[width=0.32\textwidth]{Immagini/venezia_con_covariate/Jesolo.png}
+\includegraphics[width=0.32\textwidth]{Immagini/venezia_con_covariate/SanMichelealTagliamento.png}
+\caption{Stima della funzione spazio-temporale della produzione dei rifiuti nella provincia di Venezia in alcuni punti spaziali fissati, corrispondenti a Venezia, Jesolo e San Michele al Tagliamento.}
 \label{fig:Vencovar_tempo}
 \end{figure}
 
-In fig. \ref{fig:venezia_tempo} Sono riportati gli sviluppi temporali stimati in alcuni comuni dati. In particolare sono stati scelti Venezia, Jesolo e Caorle). Si può notare come la funzione stimata spieghi bene l'andamento tracciato dai dati iniziali senza cadere nell'eccessiva interpolazione.
+In figura \ref{fig:Vencovar_tempo} si hanno anche i grafici della funzione stimata (senza il termine di covariate) in alcuni comuni. I punti tracciati in rosso rappresentano il dato, a cui è sottratto il termine di covariata tramite $\hat{\beta}$ stimato. Non può quindi essere considerato come la parte di dato generato esattamente dalla funzione, ma una sua approssimazione.
 
+L'interpretazione del risultato in questo caso è legata all'alta affluenza turistica nelle zone balneari. Come si può notare dai grafici iniziali dalle fig. \ref{fig:Ven_bubbleDati} e \ref{fig:Ven_bubblePL}, su tutta la zona costiera non si hanno solo i massimi per i rifiuti pro capite, ma anche per il numero di posti letto pro capite. Quindi non soltanto la produzione di rifiuti è massima nella zona balneare (come già si notava dalla funzione stimata nel caso senza covariate) ma anche l'attività turistica. In questo caso
+$$
+\hat{\beta}\approx284.05 \ .
+$$
+Più le covariate sono alte, più è sottratta informazione alla funzione $f(\underline p,t)$, poichè $\hat{\beta}$ è costante in spazio e tempo. Quindi la funzione ha un profilo quasi simile ad una traslazione del caso senza covariate nel resto del dominio (in questa zona il numero di posti letto pro capite, come si nota in fig., è quasi costante) e viene ribassato nella zona balneare, a causa dell'alto contributo della covariata.
 
+Interessante è quanto accade nel comune di Cavallino-Treporti, dove il numero di posti letto pro capite subisce una grossa variazione nel tempo (come si nota dalla fig. \ref{fig:Ven_bubblePL}). 
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Immagini/venezia_con_covariate/Cavallino-Treporti.png}
+\caption{Andamento della funzione spazio-temporale nel comune di Cavallino-Treporti}
+\label{fig:Ven_CTcovar}
+\end{figure}
 
-
-
-
-
-
-
-
+Si può notare come la funzione cambi attorno all'anno 2002, in cui si ha la separazione del comune di Cavallino-Treporti da Venezia. Tuttavia, grazie alle proprietà di smoothing garantite dal modello, non si ha una variazione repentina, ma una curva che riesce a rendere perfettamente l'idea sul cambiamento della funzione.
 
 
 \end{document}

@@ -4,16 +4,7 @@
 \contentsline {chapter}{\numberline {3}Presentazione modello}{7}{chapter.3}
 \contentsline {chapter}{\numberline {4}Applicazione al dominio a forma di C}{9}{chapter.4}
 \contentsline {chapter}{\numberline {5}Confronto con gli altri modelli}{11}{chapter.5}
-\contentsline {chapter}{\numberline {6}Produzione di rifiuti nella provincia di Venezia}{13}{chapter.6}
-\contentsline {section}{\numberline {6.1}L'inclusione dell'effetto del turismo}{14}{section.6.1}
-\contentsline {section}{\numberline {6.2}Trattamento del dominio}{14}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Regression splines}{15}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Scelte particolari tra i comuni}{15}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Triangolazione del dominio}{16}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Applicazione del modello senza covariate}{17}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Analisi preliminare e ricerca del miglior $\relax $\@@underline {\hbox {\lambda }}\mathsurround \z@ $\relax $}{17}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Risultati}{18}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}Applicazione del modello con covariate}{20}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Analisi preliminare e ricerca del miglior $\relax $\@@underline {\hbox {\lambda }}\mathsurround \z@ $\relax $}{20}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Risultati}{21}{subsection.6.4.2}
-\contentsline {chapter}{\numberline {7}Conclusioni e sviluppi futuri}{23}{chapter.7}
+\contentsline {section}{\numberline {5.1}Caso senza covariate}{12}{section.5.1}
+\contentsline {section}{\numberline {5.2}Caso con covariate}{15}{section.5.2}
+\contentsline {chapter}{\numberline {6}Produzione di rifiuti nella provincia di Venezia}{17}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusioni e sviluppi futuri}{19}{chapter.7}
