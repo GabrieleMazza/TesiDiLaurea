@@ -1,4 +1,13 @@
 \BOOKMARK [0][-]{chapter.1}{Descrizione del modello}{}% 1
 \BOOKMARK [1][-]{section.1.1}{Caso senza covariate}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Caso con covariate}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Stima di 2 e scelta dei parametri S e T}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.1}{Dati e modello}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Definizione delle funzioni di base per f\(p,t\)}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Funzionale di penalizzazione J\(f\(p,t\)\)\)}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.4}{Modello ideale}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.5}{Soluzione del problema di stima}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.6}{Propriet\340 statistiche di }{section.1.1}% 8
+\BOOKMARK [1][-]{section.1.2}{Caso con covariate}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.2.1}{Propriet\340 statistiche di \040e }{section.1.2}% 10
+\BOOKMARK [1][-]{section.1.3}{Stima di 2 e scelta dei parametri S e T}{chapter.1}% 11
+\BOOKMARK [2][-]{subsection.1.3.1}{Stima di 2}{section.1.3}% 12
+\BOOKMARK [2][-]{subsection.1.3.2}{Parametri di smoothing}{section.1.3}% 13

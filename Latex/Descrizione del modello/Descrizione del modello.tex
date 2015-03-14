@@ -21,134 +21,175 @@
 
 \chapter{Descrizione del modello}
 
-In questo capitolo viene descritto nel dettaglio il modello proposto per l'analisi dei dati in spazio e tempo. Il modello è un'estensione al caso tempo-variante di quanto riportato in \cite{art:sangalli} e si distingue in due casi, in base alla presenza di possibili covariate.
+In questo capitolo viene descritto nel dettaglio il modello STR-PDE per l'analisi di dati distribuiti in spazio e tempo, ed è calcolata la soluzione al problema di stima..
 
 
 \section{Caso senza covariate}
 
-\subsection*{Dati e modello}
+\subsection{Dati e modello}
 
 Siano $\{\underline p_i = (x_i,y_i); i=1, ... , n\}$ un insieme di $n$ punti spaziali in un dominio limitato $\Omega \subset \mathbb R^2$ e siano $\{t_j ; j=1, ... , m\}$ un insieme di $m$ istanti temporali in un intervallo $[0,T]\subset \mathbb R$. In questi punti ed istanti osserviamo i dati: siano quindi $z_{ij}$ i valori della variabile reale nel punto $\underline p_i$ al tempo $t_j$.
 
-Supponiamo che le osservazioni $\{ z_{ij};i=1, ... , n; j=1, ... , m \}$ provengano da una funzione $f(\underline p, t)$, con l'aggiunta di un rumore:
+Sarebbe possibile trattare i dati come provenienti da funzioni tempo-varianti in ognuno dei punti spaziali considerati, cioè che le osservazioni $\{ z_{ij};i=1, ... , n; j=1, ... , m \}$ provengano da una funzione $z_i(t)$ valutata all'istante $t_j$. Questa marginalizzazione può analogamente essere eseguita in spazio, supponendo che per ogni istante di tempo esista una funzione variante in spazio definita su $\Omega$ che genera i dati. Tuttavia in questa analisi non si studiano questi modelli marginali, ma si suppone che le osservazioni $\{\underline z_{ij}; i=1, ... , n; j=1, ... , m\}$ siano generate da un campo campo spazio-temporale con  l'aggiunta di rumore:
 \begin{equation}
 \label{eq:modellobase}
 z_{ij}=f(\underline p_i,t_j)+\varepsilon_{ij}\ \ \ \ i = 1,...,n\ \ j=1,...,m \ \ ,
 \end{equation}
-dove $\{\varepsilon_{ij}; i = 1,...,n; j=1,...m\}$ sono residui indipendenti identicamente distribuiti di media nulla e varianza $\sigma^2$.
-
-L'obiettivo del modello è stimare la funzione spazio-temporale $f(\underline p, t)$ dai dati, minimizzando il seguente funzionale:
-\begin{multline}
-\label{eq:Jfunc}
-J_{\underline \lambda }(f) = \sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 \ + \\+\   \lambda_S \int_0^T \int_\Omega \Bigl( \triangle f  \Bigr)^2 d\Omega\ dt \ +\  \lambda_T \int_\Omega \int_0^T \Bigl( \frac{\partial^2 f }{\partial t ^2} \Bigr)^2 dt\ d\Omega .
-\end{multline}
-Il primo termine $J_{\underline \lambda }(f)$ tende a minimizzazione dello scarto quadratico tra i dati e la funzione $f$ calcolata nei corrispondenti punti spaziali e istanti temporali. Tuttavia non è l'unico, in quanto in aggiunta il funzionale presenta due termini di smoothing il cui obiettivo nel processo di minimizzazione è di rendere liscia la funzione rispettivamente in spazio e tempo.
-
-Il termine della penalizzazione in spazio comprende l'integrale sull'intervallo $[0,T]$ dell'integrale sul dominio spaziale $\Omega$ del quadrato del laplaciano di $f$ in spazio. Notoriamente il laplaciano esprime la curvatura locale della funzione, quindi il suo integrale è un ottimo modo per avere una misura di quanto la funzione è liscia in spazio. L'analogo significato in tempo è rappresentato dalla derivata seconda in $t$, che nell'ultimo termine della penalizzazione è integrata prima sull'intervallo temporale $[0,T]$, e in seguito sul dominio spaziale $\Omega$.
-
-I due termini $\lambda_S$ e $\lambda_T$ sono rispettivamente i pesi della penalizzazione in spazio e in tempo. La scelta di $\underline \lambda$, vettore $ \begin{bmatrix}
-\lambda_S \\ \lambda_T
-\end{bmatrix}$ deve essere molto accurata. Infatti, valori troppo bassi per i due termini causerebbero una stima vicina all'interpolazione dei dati (poiché darebbero più peso al termine con gli scarti quadratici), mentre valori troppo elevati porterebbero ad avere una funzione $f$ fin troppo liscia e quindi distante dai dati. Per questo motivo sarà dato ampio spazio alla scelta di $\underline \lambda$ (sez. \ref{sez:GCV}).
+dove $\{\varepsilon_{ij}; i = 1,...,n; j=1,...m\}$ sono residui indipendenti identicamente distribuiti di media nulla e varianza $\sigma^2$. L'obiettivo del modello STR-PDE sarà la stima della funzione $f(\underline p,t)$ dalle $nm$ osservazioni a disposizione, minimizzando un funzionale $J(f(\underline p,t))$ con la somma degli scarti quadratici tra le osservazioni e valori stimati, e termini di penalizzazione per la regolarità della funzione separati in spazio e tempo.
 
 
-\subsection*{Spazio funzionale per $f$}
-Prima di procedere con la analisi del modello, occorre definire uno spazio funzionale per $f(\underline p, t)$ coerente con l'analisi e in cui siano definite le derivate necessarie. Sia definita la funzione a tempo fissato
+
+\subsection{Definizione delle funzioni di base per $f(\underline p,t)$}
+\label{subs:basi}
+
+Dall'analisi dei lavori analoghi già disponibili per modelli simili, anche se solo spaziali, si può dedurre che non è possibile dare una stima della funzione se non risulta espressa in una espansione di opportune funzioni di base. Infatti l'infinita possibilità di variazione di una funzione in un qualsiasi spazio funzionale non renderebbe possibile una stima computazionale del risultato. L'approccio scelto per la costruzione di $f(\underline p,t)$ si basa sulla generalizzazione delle espressioni in funzione di base dei casi puramente spaziali o temporali.
+
+Siano $\{ \varphi_k(t);k=1, ... , M \}$  un insieme di $M$ funzioni di base definite sull'intervallo temporale $[T_1,T_2]$ e $\{ \psi_l(\underline p);l=1, ... , N \}$ in insieme di $N$ basi temporali definite sul dominio spaziale $\Omega$. Con le combinazioni lineari
 $$
-f_t(\underline p) : \underline p \rightarrow f(\underline p,t ) \qquad \underline p \in \Omega \qquad t \in [0,T] \ .
+\sum_{k=1}^M a_k\varphi_k(t) \qquad \sum_{l=1}^N b_l\psi_l(\underline p)
 $$
-Come primo passo, si richiede che 
-$$
-f_t(\underline p) \in H^2_{0}(\Omega) = \{h \in H^2(\Omega) | \partial _{\nu}h=0 \mbox{ su } \partial \Omega\} \qquad \forall t \in [0,T]
-$$
-cioè le restrizioni della funzione a tempo fissato appartengono allo spazio di Sobolev $H^2(\Omega)$ con condizioni di Neumann alla frontiera.
-
-Successivamente si impone la condizione sul tempo, per poter garantire la derivabilità:
-$$
-\Bigl( \int_{0}^T (\|f_t(\underline p) \|)_{H^2}^2 dt \Bigl) < \infty
-$$
-Grazie a questa costruzione è stato ricavato lo spazio funzionale per $f$, che garantisce sufficiente regolarità alla funzione per poter definire il funzionale di \ref{eq:Jfunc}. Questo spazio sarà indicato con $L^2(0,T;H^2_{0}(\Omega))$.
-
-\subsection*{Sviluppo in funzioni di base di $f(\underline p,t)$}
-
-Per poter risolvere il problema numericamente è necessaria una riduzione finito-dimensionale di $f$ con un opportuno sviluppo di basi separate in spazio e tempo.
-
-Sia $\{\psi_i(\underline p); i=1, ... , N\}$ un insieme di $N$ basi spaziali definite sul dominio $\Omega$ e $\{\varphi_j(t); j=1, ... , M\}$ un insieme di basi temporali definite sull'intervallo $[0,T]$. Da questi due insiemi di basi marginali in spazio e tempo si costruisce la funzione $f$, con tutti i prodotti incrociati disponibili tra i due insiemi:
+è possibile costruire, rispettivamente, funzioni varianti soltanto in tempo e in spazio. La funzione $f(\underline p,t)$ nasce ipotizzando che i coefficienti costanti delle espansioni in base precedenti possano variare secondo la variabile che non è espressa dalle funzioni di base:
 \begin{equation} 
-\label{eq:basisexp}
-f(\underline p,t)=\sum_{i=1}^N \sum_{j=1}^M c_{ij}\ \psi_i(\underline p)\ \varphi_j(t) .
+\label{eq:f_temp}
+f(\underline p, t) = \sum_{k=1}^M a_k(\underline p)\varphi_k(t)
 \end{equation}
-Nel codice implementato sono disponibili basi per elementi finiti in spazio e B-splines in tempo. Per coerenza con queste scelte da questo punto in avanti il dominio spaziale non sarà più insicato con $\Omega$, ma con la sua triangolazione $\Omega_T$.
-
-La prima conseguenza dello sviluppo in basi di $f(\underline p,t)$ è che risulta possibile identificarla semplicemente con i valori dei coefficienti $\{c_{ij}; i=1, ... , N\ j=1, ... , M\}$. Quindi l'obiettivo della stima sarà il vettore contenente questi coefficienti:
 \begin{equation}
-\underline c =
-\begin{bmatrix}
-c_{11}  \\
-\vdots\\
-c_{1M}  \\
-c_{21}  \\
-\vdots\\
-c_{2M}  \\
-\vdots\\
-c_{NM}
-\end{bmatrix}
+\label{eq:f_space}
+f(\underline p, t) = \sum_{l=1}^N b_l(t)\psi_l(\underline p) \ .
 \end{equation}
-e si dimostrerà che sarà soluzione di un sistema lineare.
+Si ha quindi che $\{ a_k(\underline p);k=1, ... , M \}$ sono i coefficienti spazio-varianti dell'espansione in basi di tempo e $\{ b_l(t);l=1, ... , N \}$ sono i coefficienti tempo-varianti dell'espansione in basi spaziali. In questa costruzione la funzione $f(\underline p,t)$ possiede entrambe queste rappresentazioni.
+
+Sono state ricavate due espressioni equivalenti per $f$, ma come si potrà notare in seguito questo è coerente, e sarà ricavata un'espressione più specifica. Per il momento occorre soltanto aggiungere condizioni per i coefficienti appena introdotti, che saranno necessarie per la costruzione del funzionale di penalizzazione $J(f(\underline p,t))$:
+$$
+a_k(\underline p) \in H_{n_0}^2 \qquad \forall k=1, ... , M
+$$
+e
+$$
+b_l(t) \in H^2 \qquad \forall l=1, ... , N \ ,
+$$
+dove $H^2_{0}(\Omega) = \{h \in H^2(\Omega) | \partial _{\nu}h=0 \mbox{ su } \partial \Omega\}$, spazio incluso in $H_2(\Omega)$ che garantisce alle funzioni $a_k(\underline p)$ di avere condizioni di Neumann alla frontiera.
 
 
-\subsection*{Discretizzazione dei termini di smoothing del funzionale $J_{\underline \lambda }(f)$}
-Dopo aver fissato le basi dello sviluppo di $f$ e identificato la funzione con il vettore $\underline c$, è necessario riscrivere in forma matriciale anche il funzionale $J_{\underline \lambda }(f)$ in \ref{eq:Jfunc} per poter risolvere il problema. La parte più complessa da trattare di $J_{\underline \lambda }(f)$ è rappresentata dai due termini di smoothing in spazio e tempo, che si semplifica considerando la seguente discretizzazione:
+\subsection{Funzionale di penalizzazione $J_{\underline \lambda }(f(\underline p,t)))$}
+
+Per poter stimare $f(\underline p,t)$ si introduce la minimizzazione di un funzionale non formato solamente dagli scarti quadratici tra le osservazioni e le stime negli $nm$ punti disponibili. Sono inclusi in esso anche altri due termini, che derivano dalla penalizzazione di opportune derivate in spazio e tempo per poter garantire regolarità alla funzione.
+
+Analogamente a quanto fatto il \ref{subs:basi}, per costruire tale funzionale si considerano inanzitutto i problemi marginali in spazio e tempo.
+
+Per una funzione spazio-variante sono disponibili più alternative per penalizzare la regolarità, ma in questo caso si considera la radice quadrata la norma $L^2$ del laplaciano. La stessa scelta è stata fatta in altre pubblicazioni come \cite{art:ramsay}, \cite{art:sangalli} e \cite{art:wood}. Quindi se $g(\underline p): \Omega \mapsto \mathbb{R}$ è una funzione spazio-variante, allora si può definire la penalizzazione in spazio come
+$$
+J_S\left(g(\underline p)\right)=\int_{\Omega} \Bigl( \Delta  g(\underline p  ) \Bigr)^2 d \underline p \ .
+$$
+Analogamente in tempo si avrà la penalizzazione della radice quadrata della norma $L^2$ della derivata seconda. Se $h(t): [T_1,T2] \mapsto \mathbb{R}$, allora si avrà
+$$
+J_T\left(h(t)\right)=\int_{T_1}^{T_2} \Bigl( \frac{\partial^2   h(t)   }{\partial t ^2} \Bigr)^2 dt\ .
+$$
+Grazie alle ipotesi di regolarità introdotte in sez. \ref{subs:basi} tali penalizzazioni possono essere applicate ai coefficienti degli sviluppi delle eq. \ref{eq:f_temp} e \ref{eq:f_space}. Per questo motivo si definisce:
+\begin{multline*}
+J_{\underline \lambda }(f(\underline p,t))=\sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 \ + \\
++\lambda_S  \sum_{k=1}^M J_S\Bigl( a_k(\underline p)\Bigr) + \lambda_T \sum_{l=1}^N J_T \Bigl( b_l(t)\Bigr) \ ,
+\end{multline*}
+cioè
 \begin{multline}
 \label{eq:penalizzdisc}
-J_{\underline \lambda }^D(f)=\sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 \ + \\
-+\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\psi_i (\underline p)) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\varphi_j(t)) }{\partial t ^2} \Bigr)^2 dt \ .
+J_{\underline \lambda }(f(\underline p,t))=\sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 \ + \\
++\lambda_S  \sum_{k=1}^M \int_{\Omega} \Bigl( \Delta(  a_k(\underline p)  ) \Bigr)^2 d \underline p + \lambda_T \sum_{l=1}^N\int_{T_1}^{T_2} \Bigl( \frac{\partial^2   b_l(t)   }{\partial t ^2} \Bigr)^2 dt \ ,
 \end{multline}
-La scelta di questa discretizzazione è giustificata dalla separabilità dei termini di smoothing in spazio e tempo di $J_{\underline \lambda }(f)$ e dalla forma di $f$ nell'espressione in funzioni di base in \ref{eq:basisexp}. Infatti $f$ è deriva dalle combinazioni delle basi dei modelli marginali in spazio e in tempo, e si può anche scrivere nelle seguenti forme:
-$$
-f(\underline p,t)=\sum_{i=1}^N \sum_{j=1}^M c_{ij}\ \psi_i(\underline p)\ \varphi_j(t)=\sum_{j=1}^Mm_{S_j}(\underline p)\varphi(t)=\sum_{i=0}^N\psi_i(\underline p)m_{T_i}(t)
-$$
-dove
-$$
-m_{S_j}(\underline p)=\sum_{i=0}^Nc_{ij}\psi_i(\underline p) \qquad \forall j=1...M
-$$
-$$
-m_{T_i}(t)=\sum_{j=0}^Mc{ij}\varphi_j(t) \qquad \forall i=1...N \ ,
-$$
-cioè da $f$ si possono ricavare due insiemi di funzioni marginali fissando rispettivamente l'indice in tempo o in spazio.
+dove $\lambda_S>0$ e $\lambda_T>0$ sono i parametri di smoothing che stabiliscono il peso della penalizzazione della regolarità della funzione rispettivamente in spazio e tempo. 
 
-Inoltre lo smoothing marginale spaziale ha il suo termine di penalizzazione (l'integrale su $\Omega_T$ del laplaciano in spazio, che indicheremo con $J_S$) così come lo smoothing in tempo (l'integrale su $[0,T]$ della derivata seconda in tempo, che indicheremo con $J_T$). Tali modelli marginali sono già stati trattati in letteratura con le stesse basi dei casi che saranno analizzati in seguito (elementi finiti in spazio e B-splines in tempo), quindi per discretizzare gli ultimi due termini di $J_{\underline \lambda }(f)$ secondo quanto indicato in \ref{eq:penalizzdisc} basta applicare $J_S$ e $J_T$ alle restrizioni marginali risultanti dallo sviluppo di $f$:
-\begin{multline*}
-\lambda_S  \sum_{j=1}^M J_S(m_{S_j}(\underline p)) +
-\lambda_T \sum_{i=1}^N J_T(m_{T_i}(t)) =\\
-=+\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\psi_i (\underline p)) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\varphi_j(t)) }{\partial t ^2} \Bigr)^2 dt \ .
-\end{multline*}
-Dopo questa costruzione (analoga a quella riportata in \cite{art:marra}) non resta che calcolare gli integrali in \ref{eq:penalizzdisc}.
 
-L'integrale $\int_{\Omega_T} ( \triangle(\sum_{i=1}^N  c_{ij}\psi_i ) )^2 d \Omega$ si può calcolare  ricorrendo nuovamente alle funzioni marginali in spazio $m_{S_j}$. Fissato $j$, si ha:
+
+\subsection{Modello ideale}
+Il funzionale di penalizzazione riportato in eq. \ref{eq:penalizzdisc} è il risultato di una costruzione associata alla generalizzazione delle penalizzazioni marginali in spazio e tempo, ma idealmente si può ricondurre al seguente:
+\begin{multline}
+\label{eq:Jfunc_cont}
+\tilde J_{\underline \lambda }(f) = \sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 \ + \\+\   \lambda_S \int_{T_1}^{T_2} \int_\Omega \Bigl( \Delta f(\underline p, t)  \Bigr)^2 d\underline p\ dt \ +\  \lambda_T \int_\Omega \int_{T_1}^{T_2} \Bigl( \frac{\partial^2 f(\underline p, t) }{\partial t ^2} \Bigr)^2 dt\ d\underline p ,
+\end{multline}
+dove $J_S$ e $J_T$ sono applicati direttamente alla funzione $f(\underline p, t)$ e sono integrati, rispettivamente, sull'intervallo spaziale e il dominio spaziale.
+
+Se si applica la forma per $f(\underline p,t)$ dell'eq. \ref{eq:f_temp} nel termine di penalizzazione del laplaciano in spazio, allora si può ritrovare:
+\begin{equation} 
+\label{eq:espansione_funzinf_t}
+\begin{split}
+\int_{T_1}^{T_2} \int_\Omega \Bigl( \Delta f(\underline p, t)  \Bigr)^2 d\underline p\ dt 
+&=\int_{T_1}^{T_2} \int_\Omega \Bigl( \Delta \bigl( \sum_{k=1}^M a_k(\underline p) \varphi_k(t) \bigr)  \Bigr)^2 d\underline p\ dt \\
+&=\int_{T_1}^{T_2} \int_\Omega \Bigl( \sum_{k=1}^M \Delta a_k(\underline p) \varphi_k(t)  \Bigr)^2 d\underline p\ dt \\
+&=\int_{T_1}^{T_2} \int_\Omega \Bigl( \sum_{k=1}^M \Delta a_k(\underline p) \varphi_k(t)  \Bigr)\Bigl( \sum_{h=1}^M \Delta a_h(\underline p) \varphi_h(t)  \Bigr) d\underline p\ dt \\
+&=\int_{T_1}^{T_2} \int_\Omega \Bigl( \sum_{k=1}^M \sum_{h=1}^M \Delta a_k(\underline p)\Delta a_h(\underline p)\ \varphi_k(t)  \varphi_h(t)  \Bigr) d\underline p\ dt \\
+&=\sum_{k=1}^M \sum_{h=1}^M \int_\Omega   \Delta a_k(\underline p) \Delta a_h(\underline p)d\underline p \ \int_{T_1}^{T_2} \varphi_k(t)\varphi_h(t)   \ dt .
+\end{split}
+\end{equation}
+Questo termine è equivalente a quello proposto in \ref{eq:penalizzdisc} se le basi temporali siano ortonormali, poichè in tal caso l'ultimo integrale in eq. \ref{eq:espansione_funzinf_t} sarebbe 1 se $k=h$ e 0 altrimenti.
+
+Allo stesso modo, se si sostituisce la forma per $f(\underline p,t)$ dell'eq. \ref{eq:f_space} nella penalizzazione ideale dell'eq. \ref{eq:Jfunc_cont} si ottiene:
+\begin{equation} 
+\label{eq:espansione_funzinf_sp}
+\begin{split}
+\int_\Omega \int_{T_1}^{T_2} \Bigl( \frac{\partial^2 f(\underline p, t) }{\partial t ^2} \Bigr)^2 dt\ d\underline p 
+&=\int_\Omega \int_{T_1}^{T_2} \Bigl( \frac{\partial^2 \sum_{l=1}^N b_l(t)\psi_l(\underline p) }{\partial t ^2} \Bigr)^2 dt\ d\underline p \\
+&=\int_\Omega \int_{T_1}^{T_2} \Bigl( \sum_{l=1}^N \frac{ \partial^2b_l(t)}{\partial t ^2}\psi_l(\underline p)  \Bigr)^2 dt\ d\underline p  \\
+&=\int_\Omega \int_{T_1}^{T_2} \Bigl( \sum_{l=1}^N \frac{ \partial^2b_l(t)}{\partial t ^2}\psi_l(\underline p)  \Bigr)\Bigl( \sum_{h=1}^N \frac{ \partial^2b_h(t)}{\partial t ^2}\psi_h(\underline p)  \Bigr) dt\ d\underline p \\
+&= \int_\Omega \int_{T_1}^{T_2} \Bigl( \sum_{l=1}^N \sum_{h=1}^N \frac{ \partial^2b_l(t)}{\partial t ^2}\frac{ \partial^2b_h(t)}{\partial t ^2}\   \psi_l(\underline p)  \psi_h(\underline p)  \Bigr) dt\ d\underline p \\
+&=\sum_{l=1}^N \sum_{h=1}^N  \int_{T_1}^{T_2}  \frac{ \partial^2b_l(t)}{\partial t ^2}\frac{ \partial^2b_h(t)}{\partial t ^2}dt\  \int_\Omega \psi_l(\underline p)  \psi_h(\underline p)    d\underline p .
+\end{split}
+\end{equation}
+La stessa osservazione del caso precedente vale anche ora: se le basi in spazio sono ortonormali, si ritrova la penalizzazione proposta in \ref{eq:penalizzdisc}. 
+
+Quindi in questo lavoro è proposto un modello che risulterà essere computazionalmente semplice ma non perfettamente equivalente a questo modello ideale. Le basi proposte, infatti, non sono ortonormali. Comunque sia, gli insiemi di basi che saranno adattati sono sparsi, cioè i termini $ \int_{T_1}^{T_2} \varphi_k(t)\varphi_l(t)   \ dt $ e $\int_\Omega \psi_l(\underline p)  \psi_k(\underline p)    d\underline p$ sono diversi da zero solo per poche coppie di indici.
+
+
+
+
+
+
+\subsection*{Discretizzazione dei termini di penalizzazione di $J_{\underline \lambda }(f(\underline p,t)))$}
+Così come è scritto in \ref{eq:penalizzdisc}, il funzionale $J_{\underline \lambda }(f(\underline{p},t))$ non è ancora adatto ad essere trattato computazionalmente. Per poter avere una forma che renda semplice la stima, $f(\underline{p},t)$ e $J_{\underline \lambda }(f(\underline{p},t))$ saranno nuovamente discretizzati. 
+
+Il primo caso da analizzare è l'integrale del laplaciano dei coefficioenti spazio-varianti dell'eq. \ref{eq:f_temp} in modo analogo a quanto fatto in \cite{art:sangalli}. Fissato $k$, l'integrale
 $$
-\int_{\Omega_T} ( \triangle(\sum_{i=1}^N  c_{ij}\psi_i ) )^2 d \Omega = \int_{\Omega_T} (\triangle m_{S_j}(\underline p))^2 d \Omega \ .
+\int_{\Omega} \Bigl( \Delta(  a_k(\underline p)  ) \Bigr)^2 d \underline p
 $$
-Saranno omessi per semplicità gli argomenti delle funzioni. Per avere una forma utile a livello computazionale di questa espressione è necessario considerare $ g = \triangle m_{S_j} $ e approssimarla esprimendola con le basi in spazio:
+può essere semplificando introducendo la funzione $g_k(\underline p)$ come segue:
+\begin{equation}
+\label{eq:ps1}
+\int_\Omega g_k(\underline{p}) v(\underline{p}) d \Omega= \int_\Omega \Delta (a_k(\underline p)) v(\underline p) d \Omega\qquad \forall v(\underline{p}) \in L^2(\Omega) \ .
+\end{equation}
+Non è difficile verificare che se $g_k(\underline p)$ rispetta l'equazione precedente, per l'arbitrarietà di $v$ allora 
+\begin{equation}
+\label{eq:ps2}
+\int_{\Omega} \Bigl( \Delta(  a_k(\underline p)  ) \Bigr)^2 d \underline p = \int_{\Omega}  \Delta(  a_k(\underline p))g_k(\underline p)d \underline p \ .
+\end{equation}
+Grazie alla la formula di Green ed alle condizioni condizioni di Neumann per $a_k(\underline p)$, si possono semplificare gli integrali come segue:
 $$
-g=\sum_{i=1}^N  g_i\psi_i \ .
+\int_{\Omega}  \Delta(  a_k(\underline p))g_k(\underline p)d \underline p \ = -\int_{\Omega} \nabla  a_k(\underline p)\nabla g_k(\underline p)d \underline p
 $$
-Inoltre, occorre definire un insieme di funzioni test $v$, secondo l'espansione di basi in spazio e al variare dei coefficienti delle basi:
 $$
-v=\sum_{i=1}^N  v_i\psi_i \qquad v \in \mathbb{R}^N \ .
+\int_{\Omega}  \Delta(  a_k(\underline p))v(\underline p)d \underline p \ = -\int_{\Omega} \nabla  a_k(\underline p)\nabla v(\underline p)d \underline p \ .
 $$
-Fatto ciò, si potrà considerare la seguente quantità:
+Per poter calcolare analiticamente questi integrali è necessario introdurre l'uso delle basi spaziali $\{ \psi_l(\underline p);l=1, ... , N \}$ per le funzioni $a_k$, $g_k$ e $v$. Siano quindi:
 $$
-\int_\Omega \triangle m_{S_j} g d \Omega
+a_k(\underline p)=\sum_{l=1}^N c_{lk}\psi_l(\underline p) \qquad 
+g_k(\underline p)=\sum_{l=1}^N g_{lk}\psi_l(\underline p) \qquad
+v(\underline p)=\sum_{l=1}^N v_{l}\psi_l(\underline p) \ .
 $$
-con
+Per semplificare le notazioni saranno usati i seguenti vettori:
 $$
-\int_\Omega g v d \Omega= \int_\Omega \triangle m_{S_j} v d \Omega\qquad \forall v \in \mathbb{R}^N \ .
+\underline c_k =
+\begin{bmatrix}
+c_{1k} \\ c_{2k} \\ \hdots \\ c_{Nk}
+\end{bmatrix}
+\qquad
+\underline g_k =
+\begin{bmatrix}
+g_{1k} \\ g_{2k} \\ \hdots \\ g_{Nk}
+\end{bmatrix}
+\qquad
+\underline v =
+\begin{bmatrix}
+v_1 \\ v_2 \\ \hdots \\ v_N
+\end{bmatrix} 
 $$
-Usando la formula di Green ed eliminando gli integrali di bordo grazie alle condizioni di Neumann, si ricava:
-$$
-\int_\Omega g v d \Omega= -\int_\Omega \nabla m_{S_j} \nabla g d \Omega \ .
-$$
-Di conseguenza, se si definiscono i vettori con le funzioni di base in spazio e i vettori con le loro derivate parziali
+e gli analoghi per le funzioni di base e le loro derivate parziali:
 $$
 \underline \psi =
 \begin{bmatrix}
@@ -169,66 +210,92 @@ $$
 \partial \psi_{1}/\partial y  \\
 \partial \psi_{2}/\partial y  \\
 \vdots\\
-\partial \psi_{n}/\partial y\end{bmatrix} 
+\partial \psi_{n}/\partial y\end{bmatrix} \ .
 \end{equation}
-e le matrici
+Grazie all'uso delle funzioni di base e a ciò che è stato ottenuto dall'applicazione della formula di Green, le relazioni \ref{eq:ps1} e \ref{eq:ps2} diventano:
+$$
+\underline{g}_k \Bigl(\int_\Omega \underline \psi \underline \psi^T \Bigr)\underline{v}=
+-\underline{c}_k \Bigl(\int_\Omega (\underline \psi_x \underline \psi_x^T + \underline \psi_y \underline \psi_y^T)\Bigr) \underline{v} \qquad \forall \underline{v} in \mathbb{R}^N
+$$
+$$
+\int_{\Omega} \Bigl( \Delta(  a_k(\underline p)  ) \Bigr)^2 d \underline p = -\underline{c}_k \Bigl(\int_\Omega (\underline \psi_x \underline \psi_x^T + \underline \psi_y \underline \psi_y^T) \Bigr)\underline{g}_k \ ,
+$$
+quindi, se si introducono le matrici (analogamente a quanto fatto in \cite{art:sangalli})
 $$ R_0 = \int_\Omega \underline \psi \underline \psi^T $$
-$$ R_1 = \int_\Omega (\underline \psi_x \underline \psi_x^T + \underline \psi_y \underline \psi_y^T). $$
-si ha, per l'arbitrarietà di $v$: 
-$$ \int_\Omega \triangle m_{S_j} g d \Omega= - \underline c_j^T R_1 \underline g \ , \ \ \ \ \ R_0 \underline g = - R_1 \underline c_j  $$
-dove $\underline g$ e $\underline v$ contengono i coefficienti dell'espansione in base di $g$ e $v$ rispettivamente, e $\underline c_j =
-\begin{bmatrix}
-c_{1j} & c_{2j} & \hdots & c_{Nj}
-\end{bmatrix}^T$.
-Quindi in conclusione, se 
-$$
-P_S = R_1 R_0^{-1} R_1
-$$
-si avrà:
-$$
-\int_{\Omega_T} ( \triangle(\sum_{i=1}^N  c_{ij}\psi_i ) )^2 d \Omega = \int_{\Omega_T} (\triangle m_{S_j}(\underline p))^2 d \Omega  =\underline c^T_j P_S \underline c_j .
-$$
-Si noti che la matrice $P_S$ non dipende dai coefficienti di $\underline c_j$ ed è simmetrica poichè $R_0$ e $R_1$ lo sono.
+$$ R_1 = \int_\Omega (\underline \psi_x \underline \psi_x^T + \underline \psi_y \underline \psi_y^T) \ $$
+si trova in definitiva che
+\begin{equation}
+\label{eq:pspace}
+\int_{\Omega} \Bigl( \Delta(  a_k(\underline p)  ) \Bigr)^2 d \underline p = \underline{c}_k^T R_1 R_0^{-1} R_1 \underline{c}_k=\underline{c}_k^T P_S \underline{c}_k
+\end{equation}
+Si noti che la matrice $P_S$ non dipende da $k$, e può essere considerata la stessa per tutte le funzioni $a_k(\underline{p})$. Inoltre è simmetrica, poichè $R_0$ e $R_1$ lo sono.
 
-Riguardo al termine $\int_0^T (\frac{\partial^2 \sum_{j=1}^M(c_{ij}\varphi_j) }{\partial t ^2} )^2 dt$, la semplificazione è molto più semplice, poichè se si considera la matrice
- $$ P_T = \begin{bmatrix}
-\int_0^T \varphi_1''(t) \varphi_1''(t) dt  & \int_0^T \varphi_1''(t) \varphi_2''(t) dt & \hdots & \int_0^T \varphi_1''(t) \varphi_M''(t) dt  \\
-\int_0^T \varphi_2''(t) \varphi_1''(t) dt  & \int_0^T \varphi_2''(t) \varphi_2''(t) dt & \hdots & \int_0^T \varphi_2''(t) \varphi_M''(t) dt  \\
-\vdots & \vdots & \hdots & \vdots \\
-\int_0^T \varphi_M''(t) \varphi_1''(t) dt  & \int_0^T \varphi_M''(t) \varphi_2''(t) dt & \hdots & \int_0^T \varphi_M''(t) \varphi_M''(t) dt  \\
-\end{bmatrix} $$
-e il vettore $
-\underline c_i =
-\begin{bmatrix}
-c_{i1} & c_{i2} & \hdots & c_{iM}
-\end{bmatrix}^T$ allora si ha:
+Grazie all'introduzione della discretizzazione in basi spaziali
 $$
-\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\varphi_j) }{\partial t ^2} \Bigr)^2 dt =\underline c_i^T  P_T \underline c_i \ .
+a_k(\underline p)=\sum_{l=1}^N c_{lk}\psi_l(\underline p)
+$$
+è stato possibile ridurre la penalizzazione con l'integrale del quadrato di $\Delta a_k(\underline p)$
+alla valutazione di una forma quadratica che non cambia con le funzioni $a_k$. Ma si ha anche un'altra conseguenza: per l'equivalenza ipotizzata tra le espressioni di $f(\underline{p},t)$ in \ref{eq:f_temp} e \ref{eq:f_space}, allora è necessario che i coefficienti tempo-varianti dell'espansione in basi spaziali assumano la seguente forma:
+$$
+b_l(t)=\sum_{k=1}^M c_{lk}\varphi_k(t) \ .
+$$
+Si ritrova quindi anche in questo caso l'espansione in funzioni di base.
+
+Non resta altro che discretizzare anche $\int_{T_1}^{T_2} \Bigl( \frac{\partial^2   b_l(t)   }{\partial t ^2} \Bigr)^2 dt$. Ma dopo aver introdotto l'uso delle funzioni di base, allora se si definisce 
+ $$ P_T = \begin{bmatrix}
+\int_{T_1}^{T_2} \varphi_1''(t) \varphi_1''(t) dt  & \int_{T_1}^{T_2} \varphi_1''(t) \varphi_2''(t) dt & \hdots & \int_{T_1}^{T_2} \varphi_1''(t) \varphi_M''(t) dt  \\
+\int_{T_1}^{T_2} \varphi_2''(t) \varphi_1''(t) dt  & \int_{T_1}^{T_2} \varphi_2''(t) \varphi_2''(t) dt & \hdots & \int_{T_1}^{T_2} \varphi_2''(t) \varphi_M''(t) dt  \\
+\vdots & \vdots & \hdots & \vdots \\
+\int_{T_1}^{T_2} \varphi_M''(t) \varphi_1''(t) dt  & \int_{T_1}^{T_2} \varphi_M''(t) \varphi_2''(t) dt & \hdots & \int_{T_1}^{T_2} \varphi_M''(t) \varphi_M''(t) dt  \\
+\end{bmatrix} $$
+e il vettore $$
+\underline{c}_l =
+\begin{bmatrix}
+c_{l1} \\ c_{l2} \\ \hdots \\ c_{lM}
+\end{bmatrix} \ ,$$ si ritrova:
+$$
+\int_{T_1}^{T_2} \Bigl( \frac{\partial^2   b_l(t)   }{\partial t ^2} \Bigr)^2 dt = \underline{c}_l^T  P_T \underline{c}_l \ .
 $$
 Anche la matrice $P_T$ è simmetrica.
 
-Ora che sono state ricavate le forme quadratiche associate ai due integrali, per completare lo studio di \ref{eq:penalizzdisc} è necessario solamente introdurre opportuni prodotti di Kronacker e l'uso del vettore $\underline c$:
-\begin{multline*}
-\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\psi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\varphi_j) }{\partial t ^2} \Bigr)^2 dt= \\
-= \lambda_S\   \underline c^T (I_M \otimes P_S)\  \underline c   \ +\  \lambda_T\  \underline c^T ( P_T \otimes I_N)\  \underline c
-\end{multline*}
-dove $I_M$ and $I_N$ sono matrici identità di dimensioni $M \times M$ e $N \times N$ rispettivamente.
-Di conseguenza se
-$$ P = \lambda_S\    (P_S \otimes I_M)   \ +\  \lambda_T\   (I_N \otimes P_T)  .$$
-allora
+In conclusione, si può notare come la parte di penalizzazione per la regolarizzazione di $f$ in \ref{eq:penalizzdisc} sia diventata un'unica forma quadratica. Per mostrarlo, si introduce il vettore
+$$\underline c =
+\begin{bmatrix}
+c_{11}  \\
+\vdots\\
+c_{1M}  \\
+c_{21}  \\
+\vdots\\
+c_{2M}  \\
+\vdots\\
+c_{NM}
+\end{bmatrix}
 $$
-\lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\psi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\varphi_j) }{\partial t ^2} \Bigr)^2 dt=\underline c^T P \underline c
+e la matrice $P$, definita con opportuni prodotti di Kronecker come segue:
 $$
-A causa della simmetria dei termini con cui è costruita, $S$ è simmetrica.
+P = \lambda_S\    (P_S \otimes I_M)   \ +\  \lambda_T\   (I_N \otimes P_T) \ ,
+$$
+dove $I_M$ and $I_N$ sono matrici identità di dimensioni $M \times M$ e $N \times N$ rispettivamente. Allora si avrà:
+\begin{multline}
++\lambda_S  \sum_{k=1}^M \int_{\Omega} \Bigl( \Delta(  a_k(\underline p)  ) \Bigr)^2 d \underline p + \lambda_T \sum_{l=1}^N\int_{T_1}^{T_2} \Bigl( \frac{\partial^2   b_l(t)   }{\partial t ^2} \Bigr)^2 dt 
+\\ \lambda_S\sum_{k=1}^M\underline{c}_k^T P_S \underline{c}_k + \lambda_T\sum_{l=1}^N\underline{c}_l^T P_T \underline{c}_l = \underline{c}^T P \underline{c} \ .
+\end{multline}
+A causa della simmetria dei termini con cui è costruita, anche la matrice $P$ è simmetrica.
 
 
-\subsection*{Soluzione del problema di stima}
-Per avere una forma matriciale della versione discreta di 
-\begin{multline*}
-J_{\underline \lambda }^D(f)= \sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 + \\
-+ \lambda_S  \sum_{j=1}^M \int_{\Omega_T} \Bigl( \triangle(\sum_{i=1}^N  c_{ij}\psi_i ) \Bigr)^2 d \Omega + \lambda_T \sum_{i=1}^N\int_0^T \Bigl( \frac{\partial^2 \sum_{j=1}^M(c_{ij}\varphi_j) }{\partial t ^2} \Bigr)^2 dt
-\end{multline*}
- occorre definire il vettore $\underline z$ dei valori osservati 
+\subsection{Soluzione del problema di stima}
+Grazie a quanto ricavato nel paragrafo precedente, la parte di penalizzazione delle derivate del funzionale $J_{\underline \lambda }(f(\underline p,t)))$ si è ridotta ad una forma quadratica. Ma questo è stato possibile grazie all'espressione in funzione di base per i coefficienti delle eq. \ref{eq:f_temp} e \ref{eq:f_space}:
+$$
+a_k(\underline p)=\sum_{l=1}^N c_{lk}\psi_l(\underline p) \qquad b_l(t)=\sum_{k=1}^M c_{lk}\varphi_k(t) \ .
+$$
+Essendo \ref{eq:f_temp} e \ref{eq:f_space}, allora in definitiva:
+\begin{equation} 
+\label{eq:basisexp}
+f(\underline p,t)=\sum_{l=1}^N \sum_{k=1}^M c_{lk}\ \psi_l(\underline p)\ \varphi_k(t) ,
+\end{equation}
+cioè la funzione da stimare è la combinazione lineare di tutti i possibili prodotti incrociati tra le funzioni di base in tempo e spazio. Questa formulazione può essere considerata la definitiva per la funzione $f(\underline p,t)$, e permette di poter identificare la funzione con il vettore dei suoi coefficienti $\underline{c}$. Inoltre, ne consegue che è possibile scrivere in modo più agevole il funzionale $J_{\underline \lambda }(f(\underline p,t)))$.
+
+Siano definiti il vettore dei valori osservati
 \begin{equation}
 \underline z =
 \begin{bmatrix}
@@ -259,11 +326,11 @@ $$
 \varphi_{1}( t_2) & \varphi_{2}( t_2) & \hdots & \varphi_{M}( t_2)  \\
 \vdots & \vdots & \hdots & \vdots \\
 \varphi_{1}( t_n) & \varphi_{2}( t_m) & \hdots & \varphi_{M}( t_m)  \\
-\end{bmatrix}
+\end{bmatrix} \ .
 $$
-Sia $B$ il prodotto di Kronecker $\Phi$ e $\varphi$:
-$$ B = \Psi \otimes \Phi \ .$$
-Questa matrice consente di poter dire che
+Allora, se si definisce la matrice $B$ tramite il prodotto di Kronecker
+$$ B = \Psi \otimes \Phi \ ,$$
+si può facilmente dire che
 \begin{equation}
 \begin{bmatrix}
 f(\underline p_1,t_1)  \\
@@ -274,31 +341,39 @@ f(\underline p_2,t_1)  \\
 f(\underline p_2,t_m)  \\
 \vdots\\
 f(\underline p_n,t_m)
-\end{bmatrix}= B \underline c \ ,
-\end{equation} 
-quindi si ha:
+\end{bmatrix}= B \underline c \ .
+\end{equation}
+
+Quindi è possibile dare una forma definitiva al funzionale di penalizzazione:
 \begin{equation} 
 \label{eq:Jmatr}
-J_{\underline \lambda }^D(f) = (\underline z - B \underline c)^T (\underline z - B \underline c) + \underline c^t P \underline c \ .
+J_{\underline \lambda }(\underline c) = (\underline z - B \underline c)^T (\underline z - B \underline c) + \underline c^t P \underline c \ ,
 \end{equation}
-Una volta che è stata ricavata questa forma, per risolvere il problema di minimo è sufficiente derivare questa espressione
+e per ricavare la stima della funzione $f(\underline{p},t)$ sarà sufficiente ricavare il vettore dei coefficienti $c_kl$ risolvendo il problema di minimo:
+$$
+\hat{\underline{c}}=\argmin_{c \in \mathbb{R}^{NM}} J_{\underline \lambda }(\underline c) \ .
+$$
+Grazie alla formulazione ricavata in \ref{eq:Jmatr}, allora basta derivare per ottenere la soluzione al problema di stima. Grazie alla simmetria di $P$, si ha:
 $$
 \frac{\partial}{\partial \underline c}J= -2 B^T \underline z + 2(B^T B + P) \underline c \ \ ,
 $$
-porre uguale a zero, da cui
-\begin{equation}
+che posta uguale a zero, porta all'equazione
+$$
 (B^T B + P) \underline c = B^T\underline z
-\end{equation} 
-e si ha in conclusione
+$$ 
+e in conclusione
 $$ \hat  {\underline c} = (B^T B + P)^{-1}B^T \underline z \ .$$
-Grazie a questo risultato è possibile ricavare i valori stimati della funzione $f$ nei punti dati:
+
+Il problema di stima è stato risolto, e la soluzione si ricava solo dalla risoluzione di un sistema lineare, seppur di grandi dimensioni (la matrice $(B^T B + P)$ ha dimensioni $NM \times NM$, e già dagli esempi si potranno notare dimensioni elevate).
+
+L'ultimo elemento da definire è la \textit{smoothing matrix} $S$, usata per conoscere i valori stimati dal modello direttamente da quelli osservati:
 $$
-\hat  {\underline z} =B\hat  {\underline c} = B(B^T B + P)^{-1}B^T \underline z = S\underline{z}
+\hat  {\underline z} =B\hat  {\underline c} = B(B^T B + P)^{-1}B^T \underline z = S\underline{z} \ .
 $$
-dove $S$ rappresenta la \textit{smoothing matrix} del classico modello di regressione in questo caso.
 
 
-\subsection*{Proprietà statistiche di $\hat  {\underline c}$}
+
+\subsection{Proprietà statistiche di $\hat  {\underline c}$}
 Il modello di partenza indicato in \ref{eq:modellobase} può essere scritto anche in forma matriciale
 \begin{equation}
 \label{eq:modellobasematric}
@@ -367,7 +442,7 @@ $$
 \hat  {\underline z} =B\hat  {\underline c} + W \hat  {\underline \beta} = [B AQ + W(W^TW)^{-1}W^T(I-B AQ)]\underline z = S\underline z .
 $$
 
-\subsection*{Proprietà statistiche di $\hat  {\underline c}$ e $\hat  {\underline \beta}$}
+\subsection{Proprietà statistiche di $\hat  {\underline c}$ e $\hat  {\underline \beta}$}
 Anche in questo caso è possibile ricavare valore atteso e varianza degli stimatori ottenuti, ed è utile in quanto consente di verificare la significatività delle covariate. Per farlo però, è necessario avere la forma matriciale del modello indicato in \ref{eq:modellobasecovar}:
 
 \begin{equation}
@@ -403,7 +478,7 @@ Come nel caso senza covariate, anche ora si potrebbe stimare la gaussianità deg
 
 Quanto riportato di seguito è valido indipendentemente dal fatto che siano inserite nel modello le covariate. Perciò è valido per entrambi i modelli proposti in precedenza.
 
-\subsection*{Stima di $\sigma^2$}
+\subsection{Stima di $\sigma^2$}
 Stimare la varianza dell'errore è necessario se si vuole fare inverenza sugli stimatori ed è molto semplice se si conoscono i gradi di libertà equivalenti del modello. Ma questi si ricavano dalla \textit{smoothing matrix}:
 $$
 \mathrm{EDF=tr(S)} \ .
@@ -413,7 +488,7 @@ $$
 \hat{\sigma}^2=\frac{1}{nm-tr(S)}(\underline z - \hat  {\underline z})^T(\underline z - \hat  {\underline z})
 $$
 
-\subsection*{Parametri di smoothing}
+\subsection{Parametri di smoothing}
 I parametri $\lambda_S$ e $\lambda_T$ hanno un ruolo rilevante nella stima della soluzione, poichè scelgono quanto peso dare allo smoothing della funzione in spazio e tempo. Quindi è opportuno che siano fissati accuratamente prima della stima della soluzione.
 
 Secondo quanto indicato in \cite{art:marra}, la scelta corretta si ha con il valore di $\underline \lambda$ che realizza il minimo dell'indice di \textit{generalized cross validation}
@@ -432,6 +507,18 @@ Di conseguenza, il migior $\underline \lambda$ può essere scelto come valore ch
 $$
 GCV(\underline \lambda) =\frac{nm}{nm-\text{tr}(S)}  (\underline z - \hat  {\underline z})^T(\underline z - \hat  {\underline z}) \ .
 $$
+si ha
+
+$$ \hat f = \argmin_{\underline c \in \mathbb{R}^{NM}} J_{\underline \lambda }(f) .$$
+
+
+, $\{ c_{lk};l=1, ... , N;k=1, ... , M \}$ sono coefficienti dell'espansione della funzione in basi separabili spazio-temporali. Le espressioni di $f(\underline p,t)$ riportate spiegano che il campo spazio-temporale è il risultato della generalizzazione dei modelli marginali rispettivamente in tempo e in spazio. Perciò la formulazione nell'eq. \ref{eq:basisexp} deriva dall'introduzione della possibilità, per i coefficienti dell'espressione in basi di tempo in \ref{eq:f_temp}, di poter variare in spazio o analogamente, per i coefficienti dell'espressione in basi spaziali di \ref{eq:f_space}, di poter variare in tempo. Ne consegue che anche essi siano esprimibili con le rispettive basi:
+$$
+a_k(\underline p)=\sum_{l=0}^N c_{lk}\psi_l(\underline p)
+$$
+La formulazione finale della funzione $f(\underline p,t)$ è quindi la combinazione lineare di tutti i possibili prodotti incrociati tra i due insiemi delle funzioni di base (eq. \ref{basisexp}), ma concettualmente proviene dalla generalizzazione dei modelli marginali.  
+
+Il fondamento della modellizzazione del campo spazio-temporale sui modelli marginali in spazio e tempo introduce il concetto di separabilità più volte presente in questa formulazione. Come si potrà notare anche in seguito, anche i termini di penalizzazione saranno derivati dall'estensione di termini puramente spaziali o temporali.
 
 
 \begin{thebibliography}{9}
@@ -439,8 +526,17 @@ $$
 \bibitem{art:augustin}
 Nicole H. Augustin, Verena M. Trenkel, Simon N. Wood, Pascal Lorance, \emph{Space-time modelling of blue ling for fisheries stock management}, Environmetrics, 24, 109–119, (2013)
 
+\bibitem{art:azzimonti}
+Laura Azzimonti, Laura M. Sangalli, Piercesare Secchi, Maurizio Domanin, Fabio Nobile, \emph{Blood flow velocity field estimation via spatial regression with PDE penalization}, Journal of the American Statistical Association, (2015) DOI: 10.1080/01621459.2014.946036
+
+\bibitem{art:gcv}
+Peter Craven, Grace Wahba, \emph{Smoothing noisy data with spline functions: estimating the correct degree of smoothing by the method of generalized cross-validation}, Numerische Mathematik, 31, 377–403, (1979)
+
 \bibitem{art:marra}
 Giampiero Marra, David L. Miller, Luca Zanin, \emph{Modelling the spatiotemporal distribution of the incidence of resident foreign population}, Statistica Neerlandica, 66, 133–160, (2012)
+
+\bibitem{art:ramsay}
+Timothy O. Ramsay, \emph{Spline smoothing over difficult regions}, Journal of the Royal Statistical Society: Series B, 64, 307–319, (2002)
 
 \bibitem{art:sangalli}
 Laura M. Sangalli, James O. Ramsay, Timothy O. Ramsay, \emph{Spatial spline regression models}, Journal of the Royal Statistical Society: Series B, 75, 681–703, (2013)
