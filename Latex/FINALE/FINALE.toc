@@ -1,10 +1,9 @@
 \select@language {italian}
-\contentsline {chapter}{\numberline {1}Introduzione}{3}{chapter.1}
-\contentsline {chapter}{\numberline {2}Panoramica sui modelli gi\IeC {\`a} esistenti}{5}{chapter.2}
-\contentsline {chapter}{\numberline {3}Presentazione modello}{7}{chapter.3}
-\contentsline {chapter}{\numberline {4}Applicazione al dominio a forma di C}{9}{chapter.4}
-\contentsline {chapter}{\numberline {5}Confronto con gli altri modelli}{11}{chapter.5}
-\contentsline {section}{\numberline {5.1}Caso senza covariate}{12}{section.5.1}
-\contentsline {section}{\numberline {5.2}Caso con covariate}{15}{section.5.2}
-\contentsline {chapter}{\numberline {6}Produzione di rifiuti nella provincia di Venezia}{17}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusioni e sviluppi futuri}{19}{chapter.7}
+\contentsline {chapter}{\numberline {1}Panoramica sui modelli gi\IeC {\`a} esistenti}{7}{chapter.1}
+\contentsline {chapter}{\numberline {2}Presentazione modello}{9}{chapter.2}
+\contentsline {chapter}{\numberline {3}Applicazione al dominio a forma di C}{11}{chapter.3}
+\contentsline {chapter}{\numberline {4}Confronto con gli altri modelli}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Caso senza covariate}{14}{section.4.1}
+\contentsline {section}{\numberline {4.2}Caso con covariate}{17}{section.4.2}
+\contentsline {chapter}{\numberline {5}Produzione di rifiuti nella provincia di Venezia}{19}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{21}{chapter.6}

@@ -32,9 +32,51 @@
 %Indice e numerazione
 \pagenumbering{arabic}
 
+\thispagestyle{empty}
+\enlargethispage{60mm}
+\begin{center}
+\Large{\textsc{Politecnico di Milano}}\\
+%\vspace{5mm}
+\large{Scuola di Ingegneria Industriale e dell'Informazione}\\
+%\vspace{5mm}
+\large{Corso di laurea in Ingegneria Matematica}\\
+\vspace{10mm}
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=25mm]{Immagini/Logo.png}
+	\end{center}
+	\end{figure}
+\vspace{5mm}
+
+% titolo della tesi
+\begin{LARGE}
+TITOLO
+\end{LARGE}
+\vspace{30mm}
+
+% relatore
+\begin{flushleft}
+\begin{tabular}{l l }
+Relatore:    & Prof. Laura SANGALLI\\
+%Correlatore: & Prof. Pallino PINCO\\
+\end{tabular}
+\end{flushleft}
+\vspace{30mm}
+
+% autore/autori
+\begin{flushright}
+\begin{tabular}{l l }
+Tesi di Laurea di: & \\
+Gabriele Mazza & Matr. 798794 \\
+\end{tabular}
+\end{flushright}
+\vfill
+{\large{\bf Anno Accademico 2013-2014}}
+\end{center}
+
 \tableofcontents
 
-\chapter{Introduzione}
+\chapter*{Introduzione}
 \label{Cap:intro}
 
 Il presente lavoro di tesi illustra un modello statistico spatio-temporal spline regression (STR-PDE) per l'analisi funzionale di dati distribuiti in spazio e tempo. Quanto fatto può essere considerato un'estensione dei modelli proposti in \cite{art:sangalli}, che studiano la possibilità di costruire una stima funzionale per dati distribuiti su un dominio spaziale attraverso l'approssimazione in basi di elementi finiti. Il modello STR-PDE, invece, sviluppa una tecnica analoga permettendo la variazione temporale alla stima funzionale precedente. Di conseguenza, può essere considerato un buon strumento per lo studio di fenomeni varianti in spazio e in tempo. Dalla modellizzazione matematica è stato sviluppato un algoritmo e il codice R per il calcolo della soluzione numerica della stima.
