@@ -116,13 +116,13 @@ rm(Knot,Boundary)
 ##### PLOT DELLE COVARIATE #####
 # Faccio qualche plot, covariate contro dati generati, per escludere le dipendenze
 png(filename="Scatterplot1.png")
-plot(DataFUN,DesMat,main="Scatterplot Covariate",xlab="Dato funzione reale",ylab="Covariata")
-abline(h=0,col="blue")
+plot(DataFUN,DesMat,main="Scatterplot Covariata",xlab="Dato funzione reale",ylab="Covariata")
+abline(h=0,col="blue",lwd=2)
 dev.off()
 
 png(filename="Scatterplot2.png")
-plot(DataFUN,DesMat,main="Scatterplot Covariate",xlab="Dato funzione reale + Beta*Covariata",ylab="Covariata")
-abline(h=0,col="blue")
+plot(Data,DesMat,main="Scatterplot Covariata",xlab="Dato funzione reale + Beta*Covariata",ylab="Covariata")
+abline(h=0,col="blue",lwd=2)
 dev.off()
 
 
@@ -149,13 +149,12 @@ SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,TypePoint,1)
 LambdaS=10^-0.125
 LambdaT=10^-3.25
 
-
 ##### RISOLUZIONE DEL SISTEMA #####
 
 SolutionObj<-ST.Smooth.Covar(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
 
 # Ora salvo i risultati
-write.table(SolutionObj$C,file="MatriceC.txt",row.names=FALSE,col.names=FALSE)
+write.table(SolutionObj$C,file="VettoreC.txt",row.names=FALSE,col.names=FALSE)
 write.table(SolutionObj$BetaHat,file="BetaHat.txt",row.names=FALSE,col.names=FALSE)
 
 
@@ -244,15 +243,17 @@ for(j in 1:length(TimePoints))
     dev.off()
 }
 
-xP<-3
-yP<--0.5
-png(filename=paste("Plot per un punto fissato.png",sep=" "))
-FixedPointPlot(xP,yP,SolutionObj,lwd=2)
-points(TimePoints,fun(rep(xP,length(TimePoints)),rep(yP,length(TimePoints)),TimePoints),pch=16,col="blue")
+i<-40
+xP<-xknot[i]
+yP<-yknot[i]
+png(filename=paste("Plot per un punto fissato",fs.test(xP,yP),".png",sep=" "))
+FixedPointPlot(xP,yP,SolutionObj,lwd=2,NameLocation = paste("(",round(xP,2),",",round(yP,2),")",sep=""),ylim=c(-1,1))
+points(TimePoints,DataMatrix[i,],pch=16,col="red")
 points(seq(min(TimePoints),max(TimePoints),length.out=100),fs.test(xP,yP)*cos(seq(min(TimePoints),max(TimePoints),length.out=100)),type='l',col="blue",lwd=2)
-legend("topright",c("reale", "stimata"), lty = c(1,1),col=c("blue","black"),lwd=2)
+legend("bottomleft",c("reale", "stimata"), lty = c(1,1),col=c("blue","black"),lwd=2)
 dev.off()
-
+# 216 44 40
+#4.5 2 1
 
 ##### INTERVALLO DI CONFIDENZA #####
 ICResult<-ST.IC(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
@@ -260,18 +261,13 @@ save(file="ICResult.RData",ICResult,Beta)
 
 
 
-##### PLOT DELLE COVARIATE #####
-
-
-
-
+##### PLOT DEI RESIDUI #####
 
 #Ricavo il vettore con tutte le stime
 zHatNoCovar<-NULL
-for(j in TimePoints)
+for(i in 1:length(xknot))
 {
-    Time<-rep(j,length(xknot))
-    zHatNoCovar<-cbind(zHatNoCovar,ST.Eval(xknot,yknot,Time,SolutionObj))
+    zHatNoCovar<-c(zHatNoCovar,ST.Eval(rep(xknot[i],length(TimePoints)),rep(yknot[i],length(TimePoints)),TimePoints,SolutionObj))
 }
 
 zHatCovar=zHatNoCovar+SolutionObj$BetaHat*DesMat
@@ -280,27 +276,28 @@ Residuals=Data-zHatCovar
 
 # Faccio qualche plot
 png(filename="Scatterplot3.png")
-plot(DataFUN,Residuals,main="Scatterplot Residui",xlab="Dato funzione reale",ylab="Residui")
-abline(h=0,col="blue")
+plot(DataFUN,Residuals,main="Scatterplot Residui",xlab="Dati senza termine di covariata",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
 dev.off()
 # Faccio qualche plot
 png(filename="Scatterplot4.png")
-plot(Data,Residuals,main="Scatterplot Residui",xlab="Dato funzione reale + Beta*Covariata",ylab="Residui")
-abline(h=0,col="blue")
+plot(Data,Residuals,main="Scatterplot Residui",xlab="Dati",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
 dev.off()
 # Faccio qualche plot
 png(filename="Scatterplot5.png")
-plot(zHatCovar,Residuals,main="Scatterplot Residui",xlab="zHat con covariate",ylab="Residui")
-abline(h=0,col="blue")
+plot(zHatCovar,Residuals,main="Scatterplot Residui",xlab="Valori stimati",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
 dev.off()
 # Faccio qualche plot
 png(filename="Scatterplot6.png")
-plot(zHatNoCovar,Residuals,main="Scatterplot Residui",xlab="zHat senza covariate",ylab="Residui")
-abline(h=0,col="blue")
+plot(zHatNoCovar,Residuals,main="Scatterplot Residui",xlab="Valori stimati senza termine di covariata",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
 dev.off()
 
 png(filename="QQplot.png")
 qqnorm(Residuals)
+qqline(Residuals,lwd=2,col="blue")
 dev.off()
 
 sink(file="Shapiro Test.txt")

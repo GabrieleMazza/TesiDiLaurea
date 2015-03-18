@@ -1,5 +1,11 @@
+load("Territorio.RData")
 load("Venezia.RData")
+
 library(RgoogleMaps)
+
+xcom=x[is.na(Codici)==FALSE]
+ycom=y[is.na(Codici)==FALSE]
+
 
 tmp<- slot(venezia, 'polygons')
 sub.tmp <- slot(tmp[[1]],'Polygons') 
@@ -34,6 +40,7 @@ for(i in 1:101)
         PlotOnStaticMap(Map,lon=c(x[j],x[j+1]),lat=c(y[j],y[j+1]),col="red",type='l',lwd=1,add=TRUE)
     }
     PlotOnStaticMap(Map,lon=c(x[j],x[1]),lat=c(y[j],y[1]),col="red",type='l',lwd=1,add=TRUE)
+    PlotOnStaticMap(Map,lon=xcom,lat=ycom,col="red",pch=20,add=TRUE)
 }
 dev.off()
 
@@ -48,6 +55,7 @@ for(i in c(1,2,5,6,10,15,4,11))
         PlotOnStaticMap(Map,lon=c(x[j],x[j+1]),lat=c(y[j],y[j+1]),col="red",type='l',lwd=1,add=TRUE)
     }
     PlotOnStaticMap(Map,lon=c(x[j],x[1]),lat=c(y[j],y[1]),col="red",type='l',lwd=1,add=TRUE)
+    PlotOnStaticMap(Map,lon=xcom,lat=ycom,col="red",pch=20,add=TRUE)
 }
 dev.off()
 
@@ -68,6 +76,7 @@ for(i in 1:101)
         PlotOnStaticMap(Map,lon=c(x[j],x[j+1]),lat=c(y[j],y[j+1]),col="red",type='l',lwd=1,add=TRUE)
     }
     PlotOnStaticMap(Map,lon=c(x[j],x[1]),lat=c(y[j],y[1]),col="red",type='l',lwd=1,add=TRUE)
+    PlotOnStaticMap(Map,lon=xcom,lat=ycom,col="red",pch=20,add=TRUE)
 }
 dev.off()
 
@@ -82,5 +91,6 @@ for(i in c(1,2,5,6,10,15,4,11))
         PlotOnStaticMap(Map,lon=c(x[j],x[j+1]),lat=c(y[j],y[j+1]),col="red",type='l',lwd=1,add=TRUE)
     }
     PlotOnStaticMap(Map,lon=c(x[j],x[1]),lat=c(y[j],y[1]),col="red",type='l',lwd=1,add=TRUE)
+    PlotOnStaticMap(Map,lon=xcom,lat=ycom,col="red",pch=20,add=TRUE)
 }
 dev.off()

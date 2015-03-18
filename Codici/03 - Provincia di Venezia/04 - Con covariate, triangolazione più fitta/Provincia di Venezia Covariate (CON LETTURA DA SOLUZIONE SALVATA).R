@@ -139,75 +139,75 @@ detach(CoordinateCovariate)
 # Plot per punto fissato
 # Vediamo come va a venezia
 png(filename="Venezia.png")
-FixedPointPlot(12.327500,45.438056,SolutionObj,NameLocation="Venezia")
+FixedPointPlot(12.327500,45.438056,SolutionObj,lwd=2,NameLocation="Venezia",ylim=c(495,737))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Venezia"]-SolutionObj$BetaHat*VeneziaCovar,col="red",pch=16)
 dev.off()
 
 
 # Vediamo come va a San Michele al Tagliamento
 png(filename="San Michele al Tagliamento.png")
-FixedPointPlot(12.994722,45.767222,SolutionObj,NameLocation="San Michele al Tagliamento")
+FixedPointPlot(12.994722,45.767222,SolutionObj,lwd=2,NameLocation="San Michele al Tagliamento",ylim=c(-516,7))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="SanMichelealTagliamento"]-SolutionObj$BetaHat*SanMicheleAlTagliamentoCovar,col="red",pch=16)
 dev.off()
 
 
 # Vediamo come va a Lido di Venezia
 png(filename="Lido(A).png")
-FixedPointPlot(12.348115,45.384122,SolutionObj,NameLocation="Lido di Venezia")
+FixedPointPlot(12.348115,45.384122,SolutionObj,lwd=2,NameLocation="Lido di Venezia",ylim=c(495,737))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Lido(A)"]-SolutionObj$BetaHat*LidoCovar,col="red",pch=16)
 dev.off()
 
 # Vediamo come va a Pellestrina
 png(filename="Pellestrina(A).png")
-FixedPointPlot(12.30181,45.27324,SolutionObj,NameLocation="Pellestrina")
+FixedPointPlot(12.30181,45.27324,SolutionObj,lwd=2,NameLocation="Pellestrina",ylim=c(495,737))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Pellestrina(A)"]-SolutionObj$BetaHat*PellestrinaCovar,col="red",pch=16)
 dev.off()
 
 # Vediamo come va a Murano
 png(filename="Murano(A).png")
-FixedPointPlot(12.35155,45.45810,SolutionObj,NameLocation="Murano")
+FixedPointPlot(12.35155,45.45810,SolutionObj,lwd=2,NameLocation="Murano",ylim=c(495,737))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Murano(A)"]-SolutionObj$BetaHat*MuranoCovar,col="red",pch=16)
 dev.off()
 
 # Vediamo come va a Cavallino-Treporti
 png(filename="Cavallino-Treporti.png")
-FixedPointPlot(12.51000,45.46500,SolutionObj,NameLocation="Cavallino-Treporti")
+FixedPointPlot(12.51000,45.46500,SolutionObj,lwd=2,NameLocation="Cavallino-Treporti",ylim=c(-720,673))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Cavallino-Treporti"]-SolutionObj$BetaHat*CavallinoTreportiCovar,col="red",pch=16)
 dev.off()
 
 # Vediamo come va a Jesolo
 png(filename="Jesolo.png")
-FixedPointPlot(12.64139,45.54,SolutionObj,NameLocation="Jesolo")
+FixedPointPlot(12.64139,45.54,SolutionObj,lwd=2,NameLocation="Jesolo",ylim=c(228,636))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Jesolo"]-SolutionObj$BetaHat*JesoloCovar,col="red",pch=16)
 dev.off()
 
 # Vediamo come va a Caorle
 png(filename="Caorle.png")
-FixedPointPlot(12.88833,45.60250,SolutionObj,NameLocation="Caorle")
+FixedPointPlot(12.88833,45.60250,SolutionObj,lwd=2,NameLocation="Caorle",ylim=c(-135,151))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Caorle"]-SolutionObj$BetaHat*CaorleCovar,col="red",pch=16)
 dev.off()
 
 # Vediamo come va a Chioggia
 png(filename="Chioggia.png")
-FixedPointPlot(12.27944,45.22056,SolutionObj,NameLocation="Chioggia")
+FixedPointPlot(12.27944,45.22056,SolutionObj,lwd=2,NameLocation="Chioggia",ylim=c(319,645))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Chioggia"]-SolutionObj$BetaHat*ChioggiaCovar,col="red",pch=16)
 dev.off()
 
 # Vediamo come va a Portogruaro
 png(filename="Portogruaro.png")
-FixedPointPlot(12.83722,45.77722,SolutionObj,NameLocation="Portogruaro")
+FixedPointPlot(12.83722,45.77722,SolutionObj,lwd=2,NameLocation="Portogruaro",ylim=c(403,543))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Portogruaro"]-SolutionObj$BetaHat*PortogruaroCovar,col="red",pch=16)
 dev.off()
 
 # Vediamo come va a San Don‡ di Piave
 png(filename="SanDon‡diPiave.png")
-FixedPointPlot(12.56528,45.63389,SolutionObj,NameLocation="San Don‡ di Piave")
+FixedPointPlot(12.56528,45.63389,SolutionObj,lwd=2,NameLocation="San Don‡ di Piave",ylim=c(478,585))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="SanDon‡diPiave"]-SolutionObj$BetaHat*SanDon‡Covar,col="red",pch=16)
 dev.off()
 
 # Vediamo come va a Cavarzere
 png(filename="Cavarzere.png")
-FixedPointPlot(12.08389,45.13667,SolutionObj,NameLocation="Cavarzere")
+FixedPointPlot(12.08389,45.13667,SolutionObj,lwd=2,NameLocation="Cavarzere",ylim=c(364,505))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Cavarzere"]-SolutionObj$BetaHat*CavarzereCovar,col="red",pch=16)
 dev.off()
 
@@ -217,3 +217,96 @@ dev.off()
 ##### INTERVALLI DI CONFIDENZA #####
 
 ICResult = ST.IC(DataMatrix,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
+
+
+
+##### PLOT RESIDUI #####
+
+# Matrici di Dati
+DataMatrix<-NULL
+for(i in 1:length(Codici[1:nint]))
+{
+    Data<-numeric(length(TimePoints))
+    for(j in 1:length(TimePoints))
+    {
+        Data[j]=Risposta$TotalePC[(Risposta$Codice==Codici[i]) & (Risposta$Anno==TimePoints[j])]
+    }
+    DataMatrix<-c(DataMatrix,Data)
+}
+Data<-DataMatrix
+# Matrice Disegno
+
+DesMat<-NULL
+attach(CoordinateCovariate)
+for(i in Codici[!is.na(Codici)])
+{
+    PL<-NULL
+    for (j in TimePoints)
+    {
+        #Scelgo la covariata dell'anno j
+        if(j%%100<10)
+        {
+            name<-paste("PL0",j%%100,sep="")
+        } else
+        {
+            name<-paste("PL",j%%100,sep="")
+        }
+        PL<-c(PL,(get(name)[CoordinateCovariate$Codice==i]))
+    }
+    DesMat<-c(DesMat,PL)
+}
+detach(CoordinateCovariate)
+dimnames(DesMat)[[2]]<-NULL
+
+
+##### PLOT DELLE COVARIATE #####
+# Faccio qualche plot, covariate contro dati generati, per escludere le dipendenze
+png(filename="Scatterplot1.png")
+plot(Data,DesMat,main="Scatterplot Covariata",xlab="Dato",ylab="Covariata")
+abline(h=0,col="blue",lwd=2)
+dev.off()
+
+
+xknot=x[!is.na(Codici)]
+yknot=y[!is.na(Codici)]
+#Ricavo il vettore con tutte le stime
+zHatNoCovar<-NULL
+for(j in TimePoints)
+{
+    Time<-rep(j,length(xknot))
+    zHatNoCovar<-cbind(zHatNoCovar,ST.Eval(xknot,yknot,Time,SolutionObj))
+}
+
+zHatCovar=zHatNoCovar+SolutionObj$BetaHat*DesMat
+
+Residuals=Data-zHatCovar
+
+# Faccio qualche plot
+png(filename="Scatterplot2.png")
+plot(Data,Residuals,main="Scatterplot Residui",xlab="Dato",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
+dev.off()
+# Faccio qualche plot
+png(filename="Scatterplot3.png")
+plot(zHatCovar,Residuals,main="Scatterplot Residui",xlab="zHat",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
+dev.off()
+# Faccio qualche plot
+png(filename="Scatterplot4.png")
+plot(zHatNoCovar,Residuals,main="Scatterplot Residui",xlab="zHat senza covariate",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
+dev.off()
+# Faccio qualche plot
+png(filename="Scatterplot5.png")
+plot(DesMat,Residuals,main="Scatterplot Residui",xlab="Covariata",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
+dev.off()
+
+png(filename="QQplot.png")
+qqnorm(Residuals)
+qqline(Residuals,lwd=2,col="blue")
+dev.off()
+
+sink(file="Shapiro Test.txt")
+print(shapiro.test(Residuals))
+sink()

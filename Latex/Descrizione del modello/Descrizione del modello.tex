@@ -1,8 +1,23 @@
 \documentclass[a4paper,11pt,twoside,openright]{book}							% COMANDI INIZIALI
 
 
+
 \usepackage[italian]{babel}								% sillabazione italiana
 \usepackage[utf8]{inputenc}								% Per le lettere accentate IN UNIX E IN WINDOWS
+
+\usepackage[sc]{mathpazo}
+%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+\usepackage[Sonny]{fncychap}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % cancella tutti i campi
+\fancyfoot{}
+\fancyhead[RE,LO]{\slshape \leftmark}
+\fancyhead[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{%
+\markboth{\thechapter.\ #1}{}}
 
 \usepackage{amsthm}
 \usepackage{amssymb}

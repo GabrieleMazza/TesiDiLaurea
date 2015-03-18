@@ -5,6 +5,23 @@
 \usepackage{amsmath}									% Per allineare le equazioni
 \usepackage{amssymb}									% Per le lettere dell'indicatrice (mathbb)
 
+
+\usepackage[sc]{mathpazo}
+%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+\usepackage[Sonny]{fncychap}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % cancella tutti i campi
+\fancyfoot{}
+\fancyhead[RE,LO]{\slshape \leftmark}
+\fancyhead[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{%
+\markboth{\thechapter.\ #1}{}}
+
+
+
 \usepackage{graphicx}
 \usepackage{amsthm}
 \usepackage{amssymb}
@@ -32,58 +49,67 @@
 %Indice e numerazione
 \pagenumbering{arabic}
 
-\thispagestyle{empty}
-\enlargethispage{60mm}
-\begin{center}
-\Large{\textsc{Politecnico di Milano}}\\
+%\thispagestyle{empty}
+%\enlargethispage{60mm}
+%\begin{center}
+%\Large{\textsc{Politecnico di Milano}}\\
 %\vspace{5mm}
-\large{Scuola di Ingegneria Industriale e dell'Informazione}\\
+%\large{Scuola di Ingegneria Industriale e dell'Informazione}\\
 %\vspace{5mm}
-\large{Corso di laurea in Ingegneria Matematica}\\
-\vspace{10mm}
-\begin{figure}[h]
-	\begin{center}
-	\includegraphics[width=25mm]{Immagini/Logo.png}
-	\end{center}
-	\end{figure}
-\vspace{5mm}
+%\large{Corso di Studi in Ingegneria Matematica}\\
+%\vspace{10mm}
+%\begin{figure}[h]
+%	\begin{center}
+%	\includegraphics[width=25mm]{Immagini/Logo.png}
+%	\end{center}
+%	\end{figure}
+%\vspace{5mm}
+%\large{Tesi di Laurea Magistrale}\\
+%\vspace{10mm}
 
 % titolo della tesi
-\begin{LARGE}
-TITOLO
-\end{LARGE}
-\vspace{30mm}
+%\begin{LARGE}
+%TITOLO
+%\end{LARGE}
+%\vspace{30mm}
 
 % relatore
-\begin{flushleft}
-\begin{tabular}{l l }
-Relatore:    & Prof. Laura SANGALLI
-%Correlatore: & Prof. Pallino PINCO\\
-\end{tabular}
-\end{flushleft}
-\vspace{30mm}
+%\begin{flushleft}
+%\begin{tabular}{l l }
+%Relatore:    & Prof. Laura SANGALLI
+%Correlatore: & ?\\
+%\end{tabular}
+%\end{flushleft}
+%\vspace{30mm}
 
 % autore/autori
-\begin{flushright}
-\begin{tabular}{l l }
-Tesi di Laurea di: & \\
-Gabriele Mazza & Matr. 798794 \\
-\end{tabular}
-\end{flushright}
-\vfill
-{\large{\bf Anno Accademico 2013-2014}}
-\end{center}
+%\begin{flushright}
+%\begin{tabular}{l l }
+%Tesi di Laurea di: & \\
+%Gabriele Mazza & Matr. 798794 \\
+%\end{tabular}
+%\end{flushright}
+%\vfill
+%{\large{\bf Anno Accademico 2013-2014}}
+%\end{center}
 
-\tableofcontents
+
+\chapter*{Sommario}
+\label{Cap:sommario}
+
+
+\chapter*{Abstract}
+\label{Cap:abstract}
+
 
 \chapter*{Introduzione}
 \label{Cap:intro}
 
-Il presente lavoro di tesi illustra un modello statistico spatio-temporal spline regression (STR-PDE) per l'analisi funzionale di dati distribuiti in spazio e tempo. Quanto fatto può essere considerato un'estensione dei modelli proposti in \cite{art:sangalli}, che studiano la possibilità di costruire una stima funzionale per dati distribuiti su un dominio spaziale attraverso l'approssimazione in basi di elementi finiti. Il modello STR-PDE, invece, sviluppa una tecnica analoga permettendo la variazione temporale alla stima funzionale precedente. Di conseguenza, può essere considerato un buon strumento per lo studio di fenomeni varianti in spazio e in tempo. Dalla modellizzazione matematica è stato sviluppato un algoritmo e il codice R per il calcolo della soluzione numerica della stima.
+Il presente lavoro di tesi illustra il modello statistico \textit{Spatio-Temporal Regression model with PDE penalization} (STR-PDE) per l'analisi funzionale di dati distribuiti in spazio e tempo. Quanto fatto può essere considerato un'estensione dei modelli proposti in \cite{art:sangalli} che studiano la possibilità di costruire una stima funzionale per dati distribuiti su un dominio spaziale attraverso l'approssimazione in basi di elementi finiti. Il modello STR-PDE, invece, sviluppa una tecnica analoga permettendo la variazione temporale alla stima funzionale precedente. Di conseguenza può essere considerato un buon strumento per lo studio di fenomeni varianti in spazio e in tempo. Dalla modellizzazione matematica è stato sviluppato un algoritmo e il codice R per il calcolo della soluzione numerica della stima.
 
-Il lavoro è motivato dalla ricerca di un buon metodo di analisi di un dataset contenente le misurazioni della produzione dei rifiuti urbani pro capite nei comuni della provincia di Venezia tra il 1997 e il 2011. I dati sono stati raccolti ed elaborati dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto (Arpav) e sono disponibili sul sito di Open Data Veneto\footnote{\href{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}} per la consultazione e il trattamento. Sono disponibili le misurazioni per tutta la regione del Veneto, ma per semplicità computazionale e per l'elevato interesse della laguna veneta sarà analizzata solo la provincia di Venezia. Il modello STR-PDE permette di stimare l'andamento della produzione dei rifiuti su tutta la regione e ad ogni istante di tempo nell'intervallo considerato, garantendo una chiara visualizzazione del fenomeno.
+Il lavoro è motivato dalla ricerca di un buon metodo di analisi di un dataset contenente le misurazioni della produzione dei rifiuti urbani pro-capite nei comuni della provincia di Venezia tra il 1997 e il 2011. I dati sono stati raccolti ed elaborati dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto (Arpav) e sono disponibili sul sito di Open Data Veneto\footnote{\href{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}} per la consultazione e il trattamento. Le misurazioni contenute nel dataset in realtà riguardano tutto il Veneto, ma per semplicità computazionale e per l'elevato interesse riguardo la laguna veneta sarà analizzata solo la provincia di Venezia. Il modello STR-PDE permette di stimare l'andamento della produzione dei rifiuti su tutta la regione e ad ogni istante di tempo nell'intervallo considerato, garantendo una chiara visualizzazione del fenomeno.
 
-Il lavoro di tesi sarà strutturato come segue. Nel Capitolo \ref{cap:panoramica} è riportato un excursus sui metodi simili già esistenti in letteratura. Nel Capitolo \ref{cap:modello} è presentata la costruzione del modello matematico STR-PDE. Nel Capitolo \ref{cap:domC} si hanno i primi risultati, derivanti dall'applicazione del modello e del codice R al caso del dominio a forma di C descritto in \cite{art:ramsay} e \cite{art:wood}, per il quale è possibile valutare la bontà delle stime ottenute grazie alla perfetta conoscenza del fenomeno reale in ogni punto e in ogni istante. Nel capitolo \ref{cap:confronto} il modello STR-PDE è paragonato ad altri metodi già esistenti per il confronto delle stime ottenute. Nel Capitolo \ref{cap:rifiuti} si ha l'applicazione allo studio della produzione dei rifiuti nella provincia di Venezia, e infine nel Capitolo \ref{cap:conclusione} sono raccolte le conclusioni e i possibili sviluppi futuri.
+Il lavoro di tesi sarà strutturato come segue. Nel Capitolo \ref{cap:panoramica} è riportato un excursus sui metodi simili già esistenti in letteratura. Nel Capitolo \ref{cap:modello} è presentata la costruzione del modello matematico STR-PDE. Nel Capitolo \ref{cap:domC} si hanno i primi risultati, derivanti dall'applicazione del modello e del codice R al caso del dominio a forma di C descritto in \cite{art:ramsay} e \cite{art:wood}, per il quale è possibile valutare la bontà delle stime ottenute grazie alla perfetta conoscenza del fenomeno reale in ogni punto e in ogni istante. Nel capitolo \ref{cap:confronto} il modello STR-PDE è paragonato ad altri metodi già esistenti per il confronto delle stime ottenute. Nel Capitolo \ref{cap:rifiuti} si ha l'applicazione allo studio della produzione dei rifiuti nella provincia di Venezia e infine, nel Capitolo \ref{cap:conclusione}, sono raccolte le conclusioni e i possibili sviluppi futuri riguardanti miglioramenti del lavoro.
 
 
 
@@ -99,15 +125,15 @@ Il lavoro di tesi sarà strutturato come segue. Nel Capitolo \ref{cap:panoramica
 \chapter{Confronto con gli altri modelli}
 \label{cap:confronto}
 
-Il modello STR-PDE rappresenta una generalizzazione del caso puramente spaziale proposto in \cite{art:sangalli} e, come già evidenziato nel Capitolo \ref{cap:panoramica}, non è l'unico modello disponibile per l'analisi di dati distribuiti sia in spazio che in tempo. Pertanto è necessario che sia confrontato con le altre principali metodologie presenti in letteratura, al fine di poter dire se e quanto il modello proposto possa rappresentare un miglioramento in questo campo.
+Il modello STR-PDE rappresenta una generalizzazione del caso puramente spaziale proposto in \cite{art:sangalli} e, come è già stato evidenziato nel Capitolo \ref{cap:panoramica}, non è l'unico modello disponibile per l'analisi di dati distribuiti sia in spazio che in tempo. Pertanto è necessario che sia confrontato con le altre principali metodologie presenti in letteratura, al fine di poter dire se e quanto il modello proposto possa rappresentare un miglioramento in questo campo.
 
-L'articolo \cite{art:augustin} propone l'analisi di dati di questo tipo attraverso modelli misti additivi generalizzati (GAMM) di interazione spazio-tempo. Questo metodo è generalizzato, quindi può essere usato per spiegare anche funzioni del valore atteso della risposta. Nel nostro caso, per avvicinarci al caso STR-PDE, si ipotizza che la risposta sia pari alla somma di una funzione e di un eventuale termine con covariate. Alla funzione è associato lo smoothing secondo il prodotto tensoriale dei termini marginali in spazio e tempo con le loro penalizzazioni. Quindi la costruzione dei GAMM è molto simile a quella analizzata in STR-PDE, e grazie al codice implementato nel pacchetto R \textit{mgcv} è possibile scegliere tra più tipi di modelli. In particolare ne saranno studiati due, i più simili al modello STR-PDE:
+L'articolo \cite{art:augustin} propone l'analisi di dati di questo tipo attraverso modelli misti additivi generalizzati (GAMM) di interazione spazio-tempo. Questo metodo è generalizzato, quindi può essere usato per spiegare anche funzioni del valore atteso della risposta. Nel nostro caso, per avvicinarci al caso STR-PDE, si ipotizza che la risposta sia pari alla somma di una funzione e di un eventuale termine con covariata. Alla funzione è associato lo smoothing secondo il prodotto tensoriale dei termini marginali in spazio e tempo con le loro penalizzazioni. Quindi la costruzione dei GAMM è molto simile a quella analizzata in STR-PDE e, mediante il codice implementato nel pacchetto R \textit{mgcv}, è possibile scegliere tra più tipi di modelli. In particolare ne saranno studiati due, i più simili al modello STR-PDE:
 \begin{itemize}
 \item TPS, in cui sono poste marginalmente \textit{cubic regression splines} in tempo e \textit{thin plate splines} in spazio;
 \item SOAP, che considera \textit{cubic regression splines} in tempo e \textit{soap film smoothing} in spazio.
 \end{itemize}
 
-Un altro metodo da confrontare è sicuramente il kriging (KRIG) spazio-temporale. Le stime sono ottenute fissando un variogramma separabile e marginalmente esponenziale in spazio e tempo. I parametri dei variogrammi sono stimati dal variogramma empirico, e successivamente è possibile calcolare la stima grazie alle funzioni del pacchetto R \textit{spacetime}.
+Un altro metodo da confrontare è sicuramente il kriging (KRIG) spazio-temporale. Le stime sono ottenute fissando un variogramma separabile e marginalmente esponenziale in spazio e tempo. I parametri del variogramma sono stimati dall'empirico e, successivamente, è possibile calcolare la stima grazie alle funzioni del pacchetto R \textit{spacetime}. Il confronto con kriging è stato possibile solo nel caso senza covariata.
 
 I quattro modelli sono confrontati sull'esempio del dominio a forma di C proposto precedentemente, poichè garantisce di poter conoscere in ogni punto spaziale e ad ogni istante temporale il valore esatto della funzione. La triangolazione e i dati sono gli stessi che sono stati usati nel Capitolo \ref{cap:domC}. In aggiunta è stata costruita una griglia spazio-temporale di punti per la validazione: sono stati presi 80 punti equispaziati in $(-1,+3.5)$ per l'ascissa, 40 punti in equispaziati $(-1,+1)$ per l'ordinata e 20 istanti in $(0,2\pi)$ per il tempo. Ovviamente la validazione è stata studiata soltanto sui punti che ricadevano all'interno del dominio a forma di C.
 
@@ -117,19 +143,19 @@ $$
 $$ 
 
 Il procedimento è stato iterato 50 volte, per poter escludere possibili andamenti particolari dovuti alla generazione del rumore.
- 
-\section{Caso senza covariate}
+
+\newpage
+\section{Caso senza covariata}
+Nel caso senza covariata si hanno i risultati riportati in figura \ref{fig:cfr}, in cui sono stati tracciati i boxplot dei valori di $\mathrm{RMSE}$ raccolti nelle 50 iterazioni per ogni metodo. Subito si nota che l'errore commesso è minore nel caso di STR-PDE, e quindi la stima ottenuta con il modello proposto è la migliore.
+
+Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_metodi_nocov}. Dai boxplot si nota che l'errore commesso è più alto nei casi di KRIG e TPS, e infatti le stime sono molto distanti dalla funzione reale. Invece SOAP e STR-PDE commettono errori minori, ma tra i due il migliore è STR-PDE, che ha linee di livello più ordinate rispetto a SOAP. 
 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.60\textwidth]{Immagini/Confronto_metodi.png}   
-	\caption{Confronto del $\mathrm{RMSE}$, caso senza covariate}
+	\caption{Confronto tra i metodi, caso senza covariata}
 	\label{fig:cfr}
 \end{figure}
-
-Nel caso senza covariate si hanno i risultati riportati in figura \ref{fig:cfr}, in cui sono stati tracciati i boxplot dei valori di $\mathrm{RMSE}$ raccolti nelle 50 iterazioni per ogni metodo. Subito si nota che l'errore commesso è minore nel caso di STR-PDE, e quindi la stima ottenuta con il modello proposto è la migliore.
-
-Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_metodi_nocov}. Dai boxplot si nota che l'errore commesso è più alto nei casi di KRIG e TPS, e infatti le stime sono molto distanti dalla funzione reale. Invece SOAP e STR-PDE commettono errori minori, ma tra i due SOAP ha linee di livello meno ordinate che STR-PDE. 
 
 \begin{landscape}
 \begin{figure}
@@ -162,13 +188,67 @@ Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_m
 \includegraphics[width=0.25\textwidth]{immagini/simulazioni/TPStempo4.png}
 \includegraphics[width=0.25\textwidth]{immagini/simulazioni/STSRtempo4.png}
 
-\caption{Per alcuni istanti di tempo, funzione test $f(\underline p,t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, GAMM con soap film smoothing, GAMM con thin plate splines e dtima con STR-PDE.}
+\caption{Per alcuni istanti di tempo, funzione test $f(\underline p,t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, GAMM con soap film smoothing, GAMM con thin plate splines e stima con STR-PDE nel caso senza covariata.}
 \label{fig:confronto_altri_metodi_nocov}
 \end{figure}
 \end{landscape}
 
-\section{Caso con covariate}
 
+\section{Caso con covariata}
+
+La stessa analisi, senza il caso del kriging spazio-temporale, è stata eseguita nel caso con covariata. La covariata è stata generata in tutti i punti esattamente come fatto nel Capitolo \ref{cap:domC}. Nella calcolo del RMSE, poichè non è opportuno generare nuovamente valori per la covariata nei punti di validazione, è stato considerato solo il termine dipendente dalla funzione $f(\underline p,t)$. I boxplot riportati in fig. \ref{fig:cfrcovar1} possono quindi essere considerati come valutazione della bontà della stima della parte funzionale del modello. Per la parte spiegata dalla covariata sono stati tracciati i boxplot in fig. \ref{fig:cfrcovar2}, con le stime di $\hat{\beta}$ calcolate dai metodi. 
+
+Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\beta$ non presenta differenze, ma nella parte funzionale il caso STR-PDE è nuovamente il migliore.
+
+Analogamente al caso senza covariata, dai plot della funzione stimata ad alcuni istanti di tempo fissati in fig. \ref{fig:confronto_altri_metodi_cov} si possono trarre le stesse conclusioni. Il modello STR-PDE è quello che più si avvicina alla funzione reale.
+
+\begin{figure}[t]
+	\centering
+	\subfigure[$\mathrm{RMSE}$]
+   {
+   \label{fig:cfrcovar1}
+	\includegraphics[width=0.46\textwidth]{Immagini/Confronto_metodi_covar.png}   
+   }
+	\subfigure[Stime $\hat{\beta}$]
+   {
+   \label{fig:cfrcovar2}
+	\includegraphics[width=0.46\textwidth]{Immagini/Confronto_metodi_beta.png}
+   }
+	\caption{Confronto tra i metodi, caso con covariate}
+	\label{fig:cfrcovar}
+\end{figure}
+
+\begin{landscape}
+\begin{figure}
+\centering
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/REALEtempo1.png}
+\includegraphics[height=0.25\textwidth]{immagini/simulazioni_covar/Dati_tempo1.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/SOAPtempo1.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/TPStempo1.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/STSRtempo1.png}
+
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/REALEtempo2.png}
+\includegraphics[height=0.25\textwidth]{immagini/simulazioni_covar/Dati_tempo2.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/SOAPtempo2.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/TPStempo2.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/STSRtempo2.png}
+
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/REALEtempo3.png}
+\includegraphics[height=0.25\textwidth]{immagini/simulazioni_covar/Dati_tempo3.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/SOAPtempo3.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/TPStempo3.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/STSRtempo3.png}
+
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/REALEtempo4.png}
+\includegraphics[height=0.25\textwidth]{immagini/simulazioni_covar/Dati_tempo4.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/SOAPtempo4.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/TPStempo4.png}
+\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/STSRtempo4.png}
+
+\caption{Per alcuni istanti di tempo, funzione test $f(\underline p,t)$ reale, dati simulati, stime ottenute rispettivamente con GAMM con soap film smoothing, GAMM con thin plate splines e stima con STR-PDE nel caso con covariata.}
+\label{fig:confronto_altri_metodi_cov}
+\end{figure}
+\end{landscape}
 
 \chapter{Produzione di rifiuti nella provincia di Venezia}
 \label{cap:rifiuti}
@@ -180,7 +260,7 @@ Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_m
 
 In questo lavoro di tesi è stato analizzato nel dettaglio il modello STR-PDE nell'ambito della stima funzionale per dati varianti all'interno di un dominio spaziale e di un intervallo temporale. Il modello, che si propone di essere un'estensione del caso puramente spaziale già analizzato in letteratura, è stato sviluppato in codice R. Dal confronto con gli altri metodi e da quanto ricavato con le stime, soprattutto sul dominio a forma di C in cui è possibile conoscere il valore reale della funzione, si può concludere che i risultati prodotti sono molto buoni.
 
-Diversa è la conclusione per le prestazioni computazionali del codice. Per semplicità computazionale le basi degli elementi finiti sono state scelte lineari e la produzione dei rifiuti è stata analizzata solamente nella provincia di Venezia, pur avendo a disposizione i dati di tutto il Veneto. Inoltre, durante l'esecuzione del codice, si è potuto notare che alcune funzioni come la minimizzazione di $\mathrm{GCV}(\underline \lambda)$ o il calcolo dei valori stimati ad un istante di tempo fissato (usati ad esempio per conoscere il profilo della funzione ad un certo anno) sono molto lente. Ovviamente per analisi di dataset di grosse dimensioni deve essere messa in conto una spesa di tempo elevata, ma R certamente non ha aiutato. Infatti, è noto che R non sia un linguaggio di programmazione fortemente efficiente, e questo ha caratterizzato la lentezza di esecuzione. Il più chiaro sviluppo futuro può essere l'uso di questo codice come base per lo sviluppo di un algoritmo più veloce, attraverso l'integrazione con un linguaggio di programmazione più efficiente (come il C++) nei colli di bottiglia più evidenti.
+Diversa è la conclusione per le prestazioni computazionali del codice. Per semplicità computazionale le basi degli elementi finiti sono state scelte lineari e la produzione dei rifiuti è stata analizzata solamente nella provincia di Venezia, pur avendo a disposizione i dati di tutto il Veneto. Inoltre, durante l'esecuzione del codice, si è potuto notare che alcune funzioni come la minimizzazione di $\mathrm{GCV}(\underline \lambda)$ o il calcolo dei valori stimati ad un istante di tempo fissato (usati ad esempio per conoscere il profilo della funzione ad un certo anno) sono molto lente. Ovviamente per analisi di dataset di grosse dimensioni deve essere messa in conto una spesa di tempo elevata, ma R certamente non ha aiutato. Infatti, è noto che R non sia un linguaggio di programmazione fortemente efficiente, e questo ha caratterizzato la lentezza di esecuzione. Il più chiaro sviluppo futuro può essere l'uso del codice come base per la creazione di un algoritmo più veloce, attraverso l'integrazione con un linguaggio di programmazione più efficiente (come il C++) o della parallelizzazione nei colli di bottiglia più evidenti.
 
 Dopo che sarà stata sviluppata l'integrazione del codice, sarà possibile garantire una analisi più agile anche per dataset di dimensioni più elevate o per elementi finiti di ordine maggiore. In questo modo si avrà a disposizione uno strumento di analisi statistica buono non solo dal punto di vista dei risultati, ma anche in termini di efficienza computazionale.
 

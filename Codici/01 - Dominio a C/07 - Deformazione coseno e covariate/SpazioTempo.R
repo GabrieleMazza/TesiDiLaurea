@@ -1086,7 +1086,7 @@ MakeS = function(SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
 }
 
 
-FixedPointPlot=function(x,y,SolutionObj,N=100,lwd=1,NameLocation=NA)
+FixedPointPlot=function(x,y,SolutionObj,N=100,lwd=1,NameLocation=NA,ylim=NA)
 {
     if (class(SolutionObj)!="SolutionObj")
     {  
@@ -1108,7 +1108,13 @@ FixedPointPlot=function(x,y,SolutionObj,N=100,lwd=1,NameLocation=NA)
 
     # Plot
     eval<-ST.Eval(xvec,yvec,Time,SolutionObj)
-    plot(Time,eval,type='l',xlab="Time",ylab=" ",main=paste("Time evolution in ",title,sep=""),lwd=lwd)
+    if(is.na(ylim)[1])
+    {
+        plot(Time,eval,type='l',xlab="Tempo",ylab=" ",main=paste("Evoluzione temporale in ",title,sep=""),lwd=lwd)
+    } else
+    {
+        plot(Time,eval,type='l',xlab="Tempo",ylab=" ",main=paste("Evoluzione temporale in ",title,sep=""),lwd=lwd,ylim=ylim)
+    }
 }
 
 
