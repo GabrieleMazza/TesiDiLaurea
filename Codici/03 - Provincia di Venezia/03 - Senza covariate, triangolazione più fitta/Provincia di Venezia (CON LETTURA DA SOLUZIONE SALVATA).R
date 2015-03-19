@@ -161,3 +161,50 @@ png(filename="Cavarzere.png")
 FixedPointPlot(12.08389,45.13667,SolutionObj,lwd=2,NameLocation="Cavarzere",ylim=c(365,505))
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Cavarzere"],col="red",pch=16)
 dev.off()
+
+
+
+##### PLOT RESIDUI #####
+
+# Matrici di Dati
+Data<-NULL
+for(i in 1:length(Codici[1:nint]))
+{
+    Datatmp<-numeric(length(TimePoints))
+    for(j in 1:length(TimePoints))
+    {
+        Datatmp[j]=Risposta$TotalePC[(Risposta$Codice==Codici[i]) & (Risposta$Anno==TimePoints[j])]
+    }
+    Data<-c(Data,Datatmp)
+}
+
+xknot=x[!is.na(Codici)]
+yknot=y[!is.na(Codici)]
+#Ricavo il vettore con tutte le stime
+zHat<-NULL
+for(i in 1:length(xknot))
+{
+    zHat<-cbind(zHat,ST.Eval(rep(xknot[i],length(TimePoints)),rep(yknot[i],length(TimePoints)),TimePoints,SolutionObj))
+}
+
+Residuals=Data-zHat
+
+# Faccio qualche plot
+png(filename="Scatterplot1.png")
+plot(Data,Residuals,main="Scatterplot Residui",xlab="Dati",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
+dev.off()
+# Faccio qualche plot
+png(filename="Scatterplot2.png")
+plot(zHat,Residuals,main="Scatterplot Residui",xlab="Valori stimati",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
+dev.off()
+
+png(filename="QQplot.png")
+qqnorm(Residuals)
+qqline(Residuals,lwd=2,col="blue")
+dev.off()
+
+sink(file="Shapiro Test.txt")
+print(shapiro.test(Residuals))
+sink()

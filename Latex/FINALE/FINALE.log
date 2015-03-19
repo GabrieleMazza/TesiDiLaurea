@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  18 MAR 2015 16:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  18 MAR 2015 17:51
 entering extended mode
 **FINALE.tex
 
@@ -1073,7 +1073,16 @@ FINALE\FINALE.out")
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 FINALE\FINALE.out")
 \@outlinefile=\write3
+ [1
 
+
+{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+
+] [3] [4
+
+] [5] [6
+
+]
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 FINALE\FINALE.toc"
 LaTeX Font Info:    Font shape `OT1/pplx/bx/n' in size <10.95> not available
@@ -1113,10 +1122,10 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 \tf@toc=\write4
  [1
 
-
-{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+]
 LaTeX Font Info:    Font shape `OT1/pplx/m/sl' in size <10.95> not available
-(Font)              Font shape `OT1/pplx/m/it' tried instead on input line 97.
+(Font)              Font shape `OT1/pplx/m/it' tried instead on input line 118.
+
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1128,8 +1137,161 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
-FINALE\FINALE.lot")
-\tf@lot=\write5
+FINALE\FINALE.lof"
+! Missing $ inserted.
+<inserted text> 
+                $
+l.7 ...a covariata.\relax }}{12}{figure.caption.8}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<argument> ...DE nel caso senza covariata.\relax }
+                                                  }\hyper@linkend 
+l.7 ...a covariata.\relax }}{12}{figure.caption.8}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+<argument> ...E nel caso senza covariata.\relax }}
+                                                  \hyper@linkend 
+l.7 ...a covariata.\relax }}{12}{figure.caption.8}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.7 ...a covariata.\relax }}{12}{figure.caption.8}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.7 ...a covariata.\relax }}{12}{figure.caption.8}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.7 ...a covariata.\relax }}{12}{figure.caption.8}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (251.55568pt too wide) in paragraph at lines 7--7
+ [][] [][]\OT1/pplx/m/n/10.95 Per al-cu-ni istan-ti di tem-po, fun-zio-ne te-st
+ $\OML/zplm/m/it/10.95 f\OT1/zplm/m/n/10.95 ($$[]$\OT1/pplx/m/n/10.95 ,t)$\OML/
+zplm/m/it/10.95 reale\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 datisimulati\OT
+1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 stimeottenuterispettivamenteconkrigings
+pazio \OMS/zplm/m/n/10.95  $ 
+ []
+
+
+Overfull \hbox (125.03993pt too wide) in paragraph at lines 7--7
+ $\OML/zplm/m/it/10.95 temporale\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 GAMM
+consoapfilmsmoothing\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 GAMMconthinplate
+splinesestimaconSTR \OMS/zplm/m/n/10.95  $ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.11 ...covariata.\relax }}{14}{figure.caption.10}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<argument> ...-PDE nel caso con covariata.\relax }
+                                                  }\hyper@linkend 
+l.11 ...covariata.\relax }}{14}{figure.caption.10}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+<argument> ...PDE nel caso con covariata.\relax }}
+                                                  \hyper@linkend 
+l.11 ...covariata.\relax }}{14}{figure.caption.10}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.11 ...covariata.\relax }}{14}{figure.caption.10}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.11 ...covariata.\relax }}{14}{figure.caption.10}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.11 ...covariata.\relax }}{14}{figure.caption.10}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (540.39998pt too wide) in paragraph at lines 11--11
+ [][] [][]\OT1/pplx/m/n/10.95 Per al-cu-ni istan-ti di tem-po, fun-zio-ne te-st
+ $\OML/zplm/m/it/10.95 f\OT1/zplm/m/n/10.95 ($$[]$\OT1/pplx/m/n/10.95 ,t)$\OML/
+zplm/m/it/10.95 reale\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 datisimulati\OT
+1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 stimeottenuterispettivamenteconGAMMcons
+oapfilmsmoothing\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 GAMMconthinplatespli
+nesestimaconSTR \OMS/zplm/m/n/10.95  $ 
+ []
+
+)
+\tf@lof=\write5
  [3]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1139,16 +1301,91 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4
 
-] [5]
+]
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 125.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 125.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 125.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 125.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 125.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 125.
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
+[][][][]\OT1/pplx/m/n/9 http://dati.veneto.it/dataset/produzione-annua-di-rifiu
+ti-urbani-totale-e-pro-capite-
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.128 
+       [1
+
+]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.131 \chapter
+              {Panoramica sui modelli già esistenti} [2]
+Capitolo 1.
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.134 \chapter
+              {Presentazione modello} [3
 
-] [7]
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.134 \chapter
+              {Presentazione modello} [4
+
+]
+Capitolo 2.
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.137 \chapter
+              {Applicazione al dominio a forma di C} [5]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.137 \chapter
+              {Applicazione al dominio a forma di C} [6
+
+]
+Capitolo 3.
+[7]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1158,23 +1395,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [8
 
 ]
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 112.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 112.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 112.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 112.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 112.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 112.
+Capitolo 4.
+LaTeX Font Info:    Try loading font information for OMS+pplx on input line 147
+.
+LaTeX Font Info:    No file OMSpplx.fd. on input line 147.
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-[][][][]\OT1/pplx/m/n/9 http://dati.veneto.it/dataset/produzione-annua-di-rifiu
-ti-urbani-totale-e-pro-capite-
- []
+LaTeX Font Warning: Font shape `OMS/pplx/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 147.
 
 [9]
 
@@ -1184,65 +1412,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [10]
-Capitolo 1.
-[11
-
-]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[12
-
-]
-Capitolo 2.
-[13]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[14
-
-]
-Capitolo 3.
-[15]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[16
-
-]
-Capitolo 4.
-LaTeX Font Info:    Try loading font information for OMS+pplx on input line 134
-.
-LaTeX Font Info:    No file OMSpplx.fd. on input line 134.
-
-LaTeX Font Warning: Font shape `OMS/pplx/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 134.
-
-[17]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[18]
 LaTeX Font Info:    Font shape `OT1/pplx/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 150.
- <Immagini/Confronto_metodi.png, id=156, 481.8pt x 481.8pt>
+(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 163.
+ <Immagini/Confronto_metodi.png, id=175, 481.8pt x 481.8pt>
 File: Immagini/Confronto_metodi.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi.png>
-Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 157.
+Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 170.
 (pdftex.def)             Requested size: 216.0022pt x 215.9993pt.
 
 
@@ -1251,202 +1427,202 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[11 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/FINALE/Immagini/Confronto_metodi.png>]
-<immagini/simulazioni/REALEtempo1.png, id=165, 481.8pt x 481.8pt>
+<immagini/simulazioni/REALEtempo1.png, id=181, 481.8pt x 481.8pt>
 File: immagini/simulazioni/REALEtempo1.png Graphic file (type png)
 
 <use immagini/simulazioni/REALEtempo1.png>
 Package pdftex.def Info: immagini/simulazioni/REALEtempo1.png used on input lin
-e 165.
+e 178.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/Dati_tempo1.png, id=166, 469.755pt x 433.62pt>
+<immagini/simulazioni/Dati_tempo1.png, id=182, 469.755pt x 433.62pt>
 File: immagini/simulazioni/Dati_tempo1.png Graphic file (type png)
 
 <use immagini/simulazioni/Dati_tempo1.png>
 Package pdftex.def Info: immagini/simulazioni/Dati_tempo1.png used on input lin
-e 166.
+e 179.
 (pdftex.def)             Requested size: 97.49744pt x 90.0pt.
 
-<immagini/simulazioni/KRIGtempo1.png, id=167, 481.8pt x 481.8pt>
+<immagini/simulazioni/KRIGtempo1.png, id=183, 481.8pt x 481.8pt>
 File: immagini/simulazioni/KRIGtempo1.png Graphic file (type png)
 
 <use immagini/simulazioni/KRIGtempo1.png>
 Package pdftex.def Info: immagini/simulazioni/KRIGtempo1.png used on input line
- 167.
+ 180.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/SOAPtempo1.png, id=168, 481.8pt x 481.8pt>
+<immagini/simulazioni/SOAPtempo1.png, id=184, 481.8pt x 481.8pt>
 File: immagini/simulazioni/SOAPtempo1.png Graphic file (type png)
 
 <use immagini/simulazioni/SOAPtempo1.png>
 Package pdftex.def Info: immagini/simulazioni/SOAPtempo1.png used on input line
- 168.
+ 181.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/TPStempo1.png, id=169, 481.8pt x 481.8pt>
+<immagini/simulazioni/TPStempo1.png, id=185, 481.8pt x 481.8pt>
 File: immagini/simulazioni/TPStempo1.png Graphic file (type png)
 
 <use immagini/simulazioni/TPStempo1.png>
 Package pdftex.def Info: immagini/simulazioni/TPStempo1.png used on input line 
-169.
+182.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/STSRtempo1.png, id=170, 481.8pt x 481.8pt>
+<immagini/simulazioni/STSRtempo1.png, id=186, 481.8pt x 481.8pt>
 File: immagini/simulazioni/STSRtempo1.png Graphic file (type png)
 
 <use immagini/simulazioni/STSRtempo1.png>
 Package pdftex.def Info: immagini/simulazioni/STSRtempo1.png used on input line
- 170.
+ 183.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/REALEtempo2.png, id=171, 481.8pt x 481.8pt>
+<immagini/simulazioni/REALEtempo2.png, id=187, 481.8pt x 481.8pt>
 File: immagini/simulazioni/REALEtempo2.png Graphic file (type png)
 
 <use immagini/simulazioni/REALEtempo2.png>
 Package pdftex.def Info: immagini/simulazioni/REALEtempo2.png used on input lin
-e 172.
+e 185.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/Dati_tempo2.png, id=172, 469.755pt x 433.62pt>
+<immagini/simulazioni/Dati_tempo2.png, id=188, 469.755pt x 433.62pt>
 File: immagini/simulazioni/Dati_tempo2.png Graphic file (type png)
 
 <use immagini/simulazioni/Dati_tempo2.png>
 Package pdftex.def Info: immagini/simulazioni/Dati_tempo2.png used on input lin
-e 173.
+e 186.
 (pdftex.def)             Requested size: 97.49744pt x 90.0pt.
 
-<immagini/simulazioni/KRIGtempo2.png, id=173, 481.8pt x 481.8pt>
+<immagini/simulazioni/KRIGtempo2.png, id=189, 481.8pt x 481.8pt>
 File: immagini/simulazioni/KRIGtempo2.png Graphic file (type png)
 
 <use immagini/simulazioni/KRIGtempo2.png>
 Package pdftex.def Info: immagini/simulazioni/KRIGtempo2.png used on input line
- 174.
+ 187.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/SOAPtempo2.png, id=174, 481.8pt x 481.8pt>
+<immagini/simulazioni/SOAPtempo2.png, id=190, 481.8pt x 481.8pt>
 File: immagini/simulazioni/SOAPtempo2.png Graphic file (type png)
 
 <use immagini/simulazioni/SOAPtempo2.png>
 Package pdftex.def Info: immagini/simulazioni/SOAPtempo2.png used on input line
- 175.
+ 188.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/TPStempo2.png, id=175, 481.8pt x 481.8pt>
+<immagini/simulazioni/TPStempo2.png, id=191, 481.8pt x 481.8pt>
 File: immagini/simulazioni/TPStempo2.png Graphic file (type png)
 
 <use immagini/simulazioni/TPStempo2.png>
 Package pdftex.def Info: immagini/simulazioni/TPStempo2.png used on input line 
-176.
+189.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/STSRtempo2.png, id=176, 481.8pt x 481.8pt>
+<immagini/simulazioni/STSRtempo2.png, id=192, 481.8pt x 481.8pt>
 File: immagini/simulazioni/STSRtempo2.png Graphic file (type png)
 
 <use immagini/simulazioni/STSRtempo2.png>
 Package pdftex.def Info: immagini/simulazioni/STSRtempo2.png used on input line
- 177.
+ 190.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/REALEtempo3.png, id=177, 481.8pt x 481.8pt>
+<immagini/simulazioni/REALEtempo3.png, id=193, 481.8pt x 481.8pt>
 File: immagini/simulazioni/REALEtempo3.png Graphic file (type png)
 
 <use immagini/simulazioni/REALEtempo3.png>
 Package pdftex.def Info: immagini/simulazioni/REALEtempo3.png used on input lin
-e 179.
+e 192.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/Dati_tempo3.png, id=178, 469.755pt x 433.62pt>
+<immagini/simulazioni/Dati_tempo3.png, id=194, 469.755pt x 433.62pt>
 File: immagini/simulazioni/Dati_tempo3.png Graphic file (type png)
 
 <use immagini/simulazioni/Dati_tempo3.png>
 Package pdftex.def Info: immagini/simulazioni/Dati_tempo3.png used on input lin
-e 180.
+e 193.
 (pdftex.def)             Requested size: 97.49744pt x 90.0pt.
 
-<immagini/simulazioni/KRIGtempo3.png, id=179, 481.8pt x 481.8pt>
+<immagini/simulazioni/KRIGtempo3.png, id=195, 481.8pt x 481.8pt>
 File: immagini/simulazioni/KRIGtempo3.png Graphic file (type png)
 
 <use immagini/simulazioni/KRIGtempo3.png>
 Package pdftex.def Info: immagini/simulazioni/KRIGtempo3.png used on input line
- 181.
+ 194.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/SOAPtempo3.png, id=180, 481.8pt x 481.8pt>
+<immagini/simulazioni/SOAPtempo3.png, id=196, 481.8pt x 481.8pt>
 File: immagini/simulazioni/SOAPtempo3.png Graphic file (type png)
 
 <use immagini/simulazioni/SOAPtempo3.png>
 Package pdftex.def Info: immagini/simulazioni/SOAPtempo3.png used on input line
- 182.
+ 195.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/TPStempo3.png, id=181, 481.8pt x 481.8pt>
+<immagini/simulazioni/TPStempo3.png, id=197, 481.8pt x 481.8pt>
 File: immagini/simulazioni/TPStempo3.png Graphic file (type png)
 
 <use immagini/simulazioni/TPStempo3.png>
 Package pdftex.def Info: immagini/simulazioni/TPStempo3.png used on input line 
-183.
+196.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/STSRtempo3.png, id=182, 481.8pt x 481.8pt>
+<immagini/simulazioni/STSRtempo3.png, id=198, 481.8pt x 481.8pt>
 File: immagini/simulazioni/STSRtempo3.png Graphic file (type png)
 
 <use immagini/simulazioni/STSRtempo3.png>
 Package pdftex.def Info: immagini/simulazioni/STSRtempo3.png used on input line
- 184.
+ 197.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/REALEtempo4.png, id=183, 481.8pt x 481.8pt>
+<immagini/simulazioni/REALEtempo4.png, id=199, 481.8pt x 481.8pt>
 File: immagini/simulazioni/REALEtempo4.png Graphic file (type png)
 
 <use immagini/simulazioni/REALEtempo4.png>
 Package pdftex.def Info: immagini/simulazioni/REALEtempo4.png used on input lin
-e 186.
+e 199.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/Dati_tempo4.png, id=184, 469.755pt x 433.62pt>
+<immagini/simulazioni/Dati_tempo4.png, id=200, 469.755pt x 433.62pt>
 File: immagini/simulazioni/Dati_tempo4.png Graphic file (type png)
 
 <use immagini/simulazioni/Dati_tempo4.png>
 Package pdftex.def Info: immagini/simulazioni/Dati_tempo4.png used on input lin
-e 187.
+e 200.
 (pdftex.def)             Requested size: 97.49744pt x 90.0pt.
 
-<immagini/simulazioni/KRIGtempo4.png, id=185, 481.8pt x 481.8pt>
+<immagini/simulazioni/KRIGtempo4.png, id=201, 481.8pt x 481.8pt>
 File: immagini/simulazioni/KRIGtempo4.png Graphic file (type png)
 
 <use immagini/simulazioni/KRIGtempo4.png>
 Package pdftex.def Info: immagini/simulazioni/KRIGtempo4.png used on input line
- 188.
+ 201.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/SOAPtempo4.png, id=186, 481.8pt x 481.8pt>
+<immagini/simulazioni/SOAPtempo4.png, id=202, 481.8pt x 481.8pt>
 File: immagini/simulazioni/SOAPtempo4.png Graphic file (type png)
 
 <use immagini/simulazioni/SOAPtempo4.png>
 Package pdftex.def Info: immagini/simulazioni/SOAPtempo4.png used on input line
- 189.
+ 202.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/TPStempo4.png, id=187, 481.8pt x 481.8pt>
+<immagini/simulazioni/TPStempo4.png, id=203, 481.8pt x 481.8pt>
 File: immagini/simulazioni/TPStempo4.png Graphic file (type png)
 
 <use immagini/simulazioni/TPStempo4.png>
 Package pdftex.def Info: immagini/simulazioni/TPStempo4.png used on input line 
-190.
+203.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni/STSRtempo4.png, id=188, 481.8pt x 481.8pt>
+<immagini/simulazioni/STSRtempo4.png, id=204, 481.8pt x 481.8pt>
 File: immagini/simulazioni/STSRtempo4.png Graphic file (type png)
 
 <use immagini/simulazioni/STSRtempo4.png>
 Package pdftex.def Info: immagini/simulazioni/STSRtempo4.png used on input line
- 191.
+ 204.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
 
-LaTeX Warning: Float too large for page by 53.8pt on input line 195.
+LaTeX Warning: Float too large for page by 53.8pt on input line 208.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1454,7 +1630,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[12 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/FINALE/immagini/simulazioni/REALEtempo1.png (PNG copy)> <C:/Users/Gabriele/D
 esktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simul
 azioni/Dati_tempo1.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRAL
@@ -1492,20 +1668,20 @@ I DI LAUREA/Latex/FINALE/immagini/simulazioni/SOAPtempo4.png> <C:/Users/Gabriel
 e/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/si
 mulazioni/TPStempo4.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRA
 LE/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni/STSRtempo4.png>]
-<Immagini/Confronto_metodi_covar.png, id=216, 481.8pt x 481.8pt>
+<Immagini/Confronto_metodi_covar.png, id=232, 481.8pt x 481.8pt>
 File: Immagini/Confronto_metodi_covar.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi_covar.png>
 Package pdftex.def Info: Immagini/Confronto_metodi_covar.png used on input line
- 213.
+ 226.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/Confronto_metodi_beta.png, id=217, 481.8pt x 481.8pt>
+<Immagini/Confronto_metodi_beta.png, id=233, 481.8pt x 481.8pt>
 File: Immagini/Confronto_metodi_beta.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi_beta.png>
 Package pdftex.def Info: Immagini/Confronto_metodi_beta.png used on input line 
-218.
+231.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
 
@@ -1514,175 +1690,175 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[21
+[13
 
 
  <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
 FINALE/Immagini/Confronto_metodi_covar.png> <C:/Users/Gabriele/Desktop/Universi
 tà/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/Immagini/Confronto_metodi_bet
 a.png>]
-<immagini/simulazioni_covar/REALEtempo1.png, id=228, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/REALEtempo1.png, id=242, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/REALEtempo1.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/REALEtempo1.png>
 Package pdftex.def Info: immagini/simulazioni_covar/REALEtempo1.png used on inp
-ut line 226.
+ut line 239.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/Dati_tempo1.png, id=229, 433.62pt x 361.35pt>
+<immagini/simulazioni_covar/Dati_tempo1.png, id=243, 433.62pt x 361.35pt>
 File: immagini/simulazioni_covar/Dati_tempo1.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/Dati_tempo1.png>
 Package pdftex.def Info: immagini/simulazioni_covar/Dati_tempo1.png used on inp
-ut line 227.
+ut line 240.
 (pdftex.def)             Requested size: 108.00111pt x 90.0pt.
 
-<immagini/simulazioni_covar/SOAPtempo1.png, id=230, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/SOAPtempo1.png, id=244, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/SOAPtempo1.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/SOAPtempo1.png>
 Package pdftex.def Info: immagini/simulazioni_covar/SOAPtempo1.png used on inpu
-t line 228.
+t line 241.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/TPStempo1.png, id=231, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/TPStempo1.png, id=245, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/TPStempo1.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/TPStempo1.png>
 Package pdftex.def Info: immagini/simulazioni_covar/TPStempo1.png used on input
- line 229.
+ line 242.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/STSRtempo1.png, id=232, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/STSRtempo1.png, id=246, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/STSRtempo1.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/STSRtempo1.png>
 Package pdftex.def Info: immagini/simulazioni_covar/STSRtempo1.png used on inpu
-t line 230.
+t line 243.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/REALEtempo2.png, id=233, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/REALEtempo2.png, id=247, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/REALEtempo2.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/REALEtempo2.png>
 Package pdftex.def Info: immagini/simulazioni_covar/REALEtempo2.png used on inp
-ut line 232.
+ut line 245.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/Dati_tempo2.png, id=234, 433.62pt x 361.35pt>
+<immagini/simulazioni_covar/Dati_tempo2.png, id=248, 433.62pt x 361.35pt>
 File: immagini/simulazioni_covar/Dati_tempo2.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/Dati_tempo2.png>
 Package pdftex.def Info: immagini/simulazioni_covar/Dati_tempo2.png used on inp
-ut line 233.
+ut line 246.
 (pdftex.def)             Requested size: 108.00111pt x 90.0pt.
 
-<immagini/simulazioni_covar/SOAPtempo2.png, id=235, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/SOAPtempo2.png, id=249, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/SOAPtempo2.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/SOAPtempo2.png>
 Package pdftex.def Info: immagini/simulazioni_covar/SOAPtempo2.png used on inpu
-t line 234.
+t line 247.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/TPStempo2.png, id=236, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/TPStempo2.png, id=250, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/TPStempo2.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/TPStempo2.png>
 Package pdftex.def Info: immagini/simulazioni_covar/TPStempo2.png used on input
- line 235.
+ line 248.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/STSRtempo2.png, id=237, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/STSRtempo2.png, id=251, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/STSRtempo2.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/STSRtempo2.png>
 Package pdftex.def Info: immagini/simulazioni_covar/STSRtempo2.png used on inpu
-t line 236.
+t line 249.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/REALEtempo3.png, id=238, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/REALEtempo3.png, id=252, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/REALEtempo3.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/REALEtempo3.png>
 Package pdftex.def Info: immagini/simulazioni_covar/REALEtempo3.png used on inp
-ut line 238.
+ut line 251.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/Dati_tempo3.png, id=239, 433.62pt x 361.35pt>
+<immagini/simulazioni_covar/Dati_tempo3.png, id=253, 433.62pt x 361.35pt>
 File: immagini/simulazioni_covar/Dati_tempo3.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/Dati_tempo3.png>
 Package pdftex.def Info: immagini/simulazioni_covar/Dati_tempo3.png used on inp
-ut line 239.
+ut line 252.
 (pdftex.def)             Requested size: 108.00111pt x 90.0pt.
 
-<immagini/simulazioni_covar/SOAPtempo3.png, id=240, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/SOAPtempo3.png, id=254, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/SOAPtempo3.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/SOAPtempo3.png>
 Package pdftex.def Info: immagini/simulazioni_covar/SOAPtempo3.png used on inpu
-t line 240.
+t line 253.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/TPStempo3.png, id=241, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/TPStempo3.png, id=255, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/TPStempo3.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/TPStempo3.png>
 Package pdftex.def Info: immagini/simulazioni_covar/TPStempo3.png used on input
- line 241.
+ line 254.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/STSRtempo3.png, id=242, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/STSRtempo3.png, id=256, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/STSRtempo3.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/STSRtempo3.png>
 Package pdftex.def Info: immagini/simulazioni_covar/STSRtempo3.png used on inpu
-t line 242.
+t line 255.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/REALEtempo4.png, id=243, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/REALEtempo4.png, id=257, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/REALEtempo4.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/REALEtempo4.png>
 Package pdftex.def Info: immagini/simulazioni_covar/REALEtempo4.png used on inp
-ut line 244.
+ut line 257.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/Dati_tempo4.png, id=244, 433.62pt x 361.35pt>
+<immagini/simulazioni_covar/Dati_tempo4.png, id=258, 433.62pt x 361.35pt>
 File: immagini/simulazioni_covar/Dati_tempo4.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/Dati_tempo4.png>
 Package pdftex.def Info: immagini/simulazioni_covar/Dati_tempo4.png used on inp
-ut line 245.
+ut line 258.
 (pdftex.def)             Requested size: 108.00111pt x 90.0pt.
 
-<immagini/simulazioni_covar/SOAPtempo4.png, id=245, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/SOAPtempo4.png, id=259, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/SOAPtempo4.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/SOAPtempo4.png>
 Package pdftex.def Info: immagini/simulazioni_covar/SOAPtempo4.png used on inpu
-t line 246.
+t line 259.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/TPStempo4.png, id=246, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/TPStempo4.png, id=260, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/TPStempo4.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/TPStempo4.png>
 Package pdftex.def Info: immagini/simulazioni_covar/TPStempo4.png used on input
- line 247.
+ line 260.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
-<immagini/simulazioni_covar/STSRtempo4.png, id=247, 481.8pt x 481.8pt>
+<immagini/simulazioni_covar/STSRtempo4.png, id=261, 481.8pt x 481.8pt>
 File: immagini/simulazioni_covar/STSRtempo4.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/STSRtempo4.png>
 Package pdftex.def Info: immagini/simulazioni_covar/STSRtempo4.png used on inpu
-t line 248.
+t line 261.
 (pdftex.def)             Requested size: 90.0pt x 89.9991pt.
 
 
-LaTeX Warning: Float too large for page by 40.2pt on input line 252.
+LaTeX Warning: Float too large for page by 40.2pt on input line 265.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1690,7 +1866,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[14 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/FINALE/immagini/simulazioni_covar/REALEtempo1.png> <C:/Users/Gabriele/Deskto
 p/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simulazion
 i_covar/Dati_tempo1.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRA
@@ -1724,7 +1900,7 @@ op/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/FINALE/immagini/simulazio
 ni_covar/TPStempo4.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRAL
 E/TESI DI LAUREA/Latex/FINALE/immagini/simulazioni_covar/STSRtempo4.png>]
 Capitolo 5.
-[23
+[15
 
 
 
@@ -1735,40 +1911,40 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24
+[16
 
 ]
 Capitolo 6.
-[25]
+[17]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 300.
- [27
+[18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 313.
+ [19
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 300.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 313.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 FINALE\FINALE.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 300.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 300.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 313.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 313.
 Package rerunfilecheck Info: File `FINALE.out' has not changed.
 (rerunfilecheck)             Checksum: C780BCD2705D1DE690D267EE858734D0;552.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 300.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 313.
  ) 
 Here is how much of TeX's memory you used:
- 9484 strings out of 493921
- 144029 string characters out of 3144868
- 219202 words of memory out of 3000000
+ 9481 strings out of 493921
+ 144012 string characters out of 3144868
+ 221199 words of memory out of 3000000
  12508 multiletter control sequences out of 15000+200000
  34766 words of font info for 98 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1784,9 +1960,9 @@ TeX 2.9/fonts/type1/public/mathpazo/fplmri.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
 rw/palatino/uplri8a.pfb>
-Output written on FINALE.pdf (27 pages, 800574 bytes).
+Output written on FINALE.pdf (29 pages, 806246 bytes).
 PDF statistics:
- 342 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
+ 355 PDF objects out of 1000 (max. 8388607)
+ 53 named destinations out of 1000 (max. 500000)
  300 words of extra memory for PDF output out of 10000 (max. 10000000)
 

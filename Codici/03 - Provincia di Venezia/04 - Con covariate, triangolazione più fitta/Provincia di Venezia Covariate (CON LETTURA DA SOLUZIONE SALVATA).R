@@ -183,7 +183,7 @@ dev.off()
 
 # Vediamo come va a Caorle
 png(filename="Caorle.png")
-FixedPointPlot(12.88833,45.60250,SolutionObj,lwd=2,NameLocation="Caorle",ylim=c(-135,151))
+FixedPointPlot(12.88833,45.60250,SolutionObj,lwd=2,NameLocation="Caorle")
 points(1997:2011,Risposta$TotalePC[Risposta$Comune=="Caorle"]-SolutionObj$BetaHat*CaorleCovar,col="red",pch=16)
 dev.off()
 
@@ -223,19 +223,17 @@ ICResult = ST.IC(DataMatrix,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
 ##### PLOT RESIDUI #####
 
 # Matrici di Dati
-DataMatrix<-NULL
+Data<-NULL
 for(i in 1:length(Codici[1:nint]))
 {
-    Data<-numeric(length(TimePoints))
+    Datatmp<-numeric(length(TimePoints))
     for(j in 1:length(TimePoints))
     {
-        Data[j]=Risposta$TotalePC[(Risposta$Codice==Codici[i]) & (Risposta$Anno==TimePoints[j])]
+        Datatmp[j]=Risposta$TotalePC[(Risposta$Codice==Codici[i]) & (Risposta$Anno==TimePoints[j])]
     }
-    DataMatrix<-c(DataMatrix,Data)
+    Data<-c(Data,Datatmp)
 }
-Data<-DataMatrix
 # Matrice Disegno
-
 DesMat<-NULL
 attach(CoordinateCovariate)
 for(i in Codici[!is.na(Codici)])
@@ -258,11 +256,9 @@ for(i in Codici[!is.na(Codici)])
 detach(CoordinateCovariate)
 dimnames(DesMat)[[2]]<-NULL
 
-
-##### PLOT DELLE COVARIATE #####
 # Faccio qualche plot, covariate contro dati generati, per escludere le dipendenze
 png(filename="Scatterplot1.png")
-plot(Data,DesMat,main="Scatterplot Covariata",xlab="Dato",ylab="Covariata")
+plot(Data,DesMat,main="Scatterplot Covariata",xlab="Dati",ylab="Covariata")
 abline(h=0,col="blue",lwd=2)
 dev.off()
 
@@ -271,29 +267,29 @@ xknot=x[!is.na(Codici)]
 yknot=y[!is.na(Codici)]
 #Ricavo il vettore con tutte le stime
 zHatNoCovar<-NULL
-for(j in TimePoints)
+for(i in 1:length(xknot))
 {
-    Time<-rep(j,length(xknot))
-    zHatNoCovar<-cbind(zHatNoCovar,ST.Eval(xknot,yknot,Time,SolutionObj))
+    zHatNoCovar<-cbind(zHatNoCovar,ST.Eval(rep(xknot[i],length(TimePoints)),rep(yknot[i],length(TimePoints)),TimePoints,SolutionObj))
 }
 
-zHatCovar=zHatNoCovar+SolutionObj$BetaHat*DesMat
 
-Residuals=Data-zHatCovar
+zHat=zHatNoCovar+SolutionObj$BetaHat*DesMat
+
+Residuals=Data-zHat
 
 # Faccio qualche plot
 png(filename="Scatterplot2.png")
-plot(Data,Residuals,main="Scatterplot Residui",xlab="Dato",ylab="Residui")
+plot(Data,Residuals,main="Scatterplot Residui",xlab="Dati",ylab="Residui")
 abline(h=0,col="blue",lwd=2)
 dev.off()
 # Faccio qualche plot
 png(filename="Scatterplot3.png")
-plot(zHatCovar,Residuals,main="Scatterplot Residui",xlab="zHat",ylab="Residui")
+plot(zHat,Residuals,main="Scatterplot Residui",xlab="Valori stimati",ylab="Residui")
 abline(h=0,col="blue",lwd=2)
 dev.off()
 # Faccio qualche plot
 png(filename="Scatterplot4.png")
-plot(zHatNoCovar,Residuals,main="Scatterplot Residui",xlab="zHat senza covariate",ylab="Residui")
+plot(zHatNoCovar,Residuals,main="Scatterplot Residui",xlab="Valori stimati senza il termine di covariata",ylab="Residui")
 abline(h=0,col="blue",lwd=2)
 dev.off()
 # Faccio qualche plot

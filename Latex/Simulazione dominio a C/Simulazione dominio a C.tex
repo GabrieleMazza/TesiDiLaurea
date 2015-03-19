@@ -31,7 +31,7 @@
 \usepackage{subfigure}
 \usepackage{multirow}						% Per le tabelle di gcv, multiple row
 \usepackage{array}							% Per avere i separatori di colonna più spessi
-
+%\usepackage[tableposition=top]{caption}		% Per il caption della tabella prima della tabella
 \justifying 										% giustifica
 
 \date{28 Luglio 2014}
@@ -42,6 +42,8 @@
 
 %Indice e numerazione
 \pagenumbering{arabic}
+\listoffigures
+\listoftables
 
 \chapter{Simulazione dominio a C}
 
@@ -53,7 +55,7 @@ Su questo semplice caso sono stati eseguiti i primi tentativi per il modello STR
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.44\textwidth]{Immagini/DomCinizio/DomC_fstest.png}   
-	\caption{Funzione spaziale $g(\underline p)$}
+	\caption{Funzione spaziale $g(\protect\underline{p})$}
 	\label{fig:domC_fstest}
 \end{figure}
 
@@ -104,7 +106,7 @@ Per poter eseguire una analisi ottimale, come primo passo è necessario sceglier
 	$\log_{10}\lambda_T \in \{-3.75,-3.625,\ldots,-2.75\}$		& 												\\	
 	\noalign{\hrule height 1.2pt}
 	\end{tabular}
-\caption{Analisi di $\mathrm{GCV}(\underline \lambda)$ per il dominio a forma di C, caso senza covariata}
+\caption{Analisi di $\mathrm{GCV}(\protect\underline{\lambda})$ per il dominio a forma di C, caso senza covariata}
 \label{tab:DomC}
 \end{table}
 
@@ -136,7 +138,7 @@ L'analisi è stata eseguita con $\underline \lambda = (10^{-0.375}, 10^{-3.25})$
    {
 	\includegraphics[width=0.40\textwidth]{Immagini/DomC/DomC_2stimata.png}
    }
-	\caption{Stime della funzione $f(\underline p,t)$ ad alcuni istanti di tempo, caso senza covariata}
+	\caption{Stime della funzione $f(\protect\underline{p},t)$ ad alcuni istanti di tempo, caso senza covariata}
 	\label{fig:DomC_ris}
 \end{figure}
 
@@ -201,7 +203,7 @@ Anche in questo caso è necessaria una analisi preliminare per fissare i valori 
 	$\log_{10}\lambda_T \in \{-4.25,-4.125,\ldots,-3.25\}$		& 												\\	
 	\noalign{\hrule height 1.2pt}
 	\end{tabular}
-\caption{Analisi di $\mathrm{GCV}(\underline \lambda)$ per il dominio a forma di C, caso con covariata}
+\caption{Analisi di $\mathrm{GCV}(\protect\underline{\lambda})$ per il dominio a forma di C, caso con covariata}
 \label{tab:DomC_covar}
 \end{table}
 
@@ -236,7 +238,7 @@ Eseguendo l'analisi con $\underline \lambda = (10^{-0.125}, 10^{-3.25})$ questa 
    {
 	\includegraphics[width=0.40\textwidth]{Immagini/DomCCovar/DomCcovar_2stimata.png}
    }
-\caption{Stime della funzione $f(\underline p,t)$ ad alcuni istanti di tempo, caso con covariata}
+\caption{Stime della funzione $f(\protect\underline{p},t)$ ad alcuni istanti di tempo, caso con covariata}
 \label{fig:DomCcovar_ris}
 \end{figure}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  18 MAR 2015 09:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  19 MAR 2015 10:21
 entering extended mode
 **Simulazione*dominio*a*C.tex
 
@@ -1071,121 +1071,144 @@ Simulazione dominio a C\Simulazione dominio a C.out")
 Simulazione dominio a C\Simulazione dominio a C.out")
 \@outlinefile=\write3
 
-Capitolo 1.
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 48.
+("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
+Simulazione dominio a C\Simulazione dominio a C.lof"
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 3.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlzplm.fd"
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 48.
-
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 3.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omszplm.fd"
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 48.
-
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 3.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omxzplm.fd"
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 48.
+(Font)              scaled to size 11.40997pt on input line 3.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 48.
+(Font)              scaled to size 8.33606pt on input line 3.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 48.
+(Font)              scaled to size 6.25204pt on input line 3.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 48.
+(Font)              scaled to size 11.40997pt on input line 3.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 48.
+(Font)              scaled to size 8.33606pt on input line 3.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 48.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 48.
-
+(Font)              scaled to size 6.25204pt on input line 3.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 3.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1zplm.fd"
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-)
-<Immagini/DomCinizio/DomC_fstest.png, id=40, 481.8pt x 481.8pt>
+))
+\tf@lof=\write4
+ [1
+
+
+{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Font shape `OT1/pplx/m/sl' in size <10.95> not available
+(Font)              Font shape `OT1/pplx/m/it' tried instead on input line 46.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2
+
+]
+("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
+Simulazione dominio a C\Simulazione dominio a C.lot")
+\tf@lot=\write5
+ [3]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4
+
+]
+Capitolo 1.
+<Immagini/DomCinizio/DomC_fstest.png, id=88, 481.8pt x 481.8pt>
 File: Immagini/DomCinizio/DomC_fstest.png Graphic file (type png)
 
 <use Immagini/DomCinizio/DomC_fstest.png>
 Package pdftex.def Info: Immagini/DomCinizio/DomC_fstest.png used on input line
- 55.
+ 57.
 (pdftex.def)             Requested size: 158.40088pt x 158.399pt.
 LaTeX Font Info:    Font shape `OT1/pplx/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 61.
+(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 63.
 
-<Immagini/DomCinizio/DomC_Triangolazione.png, id=41, 481.8pt x 481.8pt>
+<Immagini/DomCinizio/DomC_Triangolazione.png, id=89, 481.8pt x 481.8pt>
 File: Immagini/DomCinizio/DomC_Triangolazione.png Graphic file (type png)
 
 <use Immagini/DomCinizio/DomC_Triangolazione.png>
 Package pdftex.def Info: Immagini/DomCinizio/DomC_Triangolazione.png used on in
-put line 65.
+put line 67.
 (pdftex.def)             Requested size: 158.40088pt x 158.399pt.
- [1
-
-
-{C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users
-/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazion
-e dominio a C/Immagini/DomCinizio/DomC_fstest.png (PNG copy)>]
+ [5 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Simulazione dominio a C/Immagini/DomCinizio/DomC_fstest.png (PNG copy)>]
 LaTeX Font Info:    Font shape `OT1/pplx/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 75.
+(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 77.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 75.
+(Font)              scaled to size 12.50409pt on input line 77.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 75.
+(Font)              scaled to size 9.37807pt on input line 77.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 75.
+(Font)              scaled to size 7.29405pt on input line 77.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 75.
+(Font)              scaled to size 12.50409pt on input line 77.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 75.
+(Font)              scaled to size 9.37807pt on input line 77.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 75.
+(Font)              scaled to size 7.29405pt on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 75.
+(hyperref)                removing `math shift' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 75.
+(hyperref)                removing `math shift' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@underline' on input line 75.
+(hyperref)                removing `\@@underline' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 75.
+(hyperref)                removing `\hbox' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 75.
+(hyperref)                removing `\lambda' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 75.
+(hyperref)                removing `\mathsurround' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 75.
+(hyperref)                removing `\z@' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 75.
+(hyperref)                removing `math shift' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 75.
+(hyperref)                removing `math shift' on input line 77.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Font shape `OT1/pplx/m/sl' in size <10.95> not available
-(Font)              Font shape `OT1/pplx/m/it' tried instead on input line 79.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1193,54 +1216,54 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
+[6 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
 x/Simulazione dominio a C/Immagini/DomCinizio/DomC_Triangolazione.png>]
-<Immagini/DomC/DomC_0reale.png, id=64, 481.8pt x 481.8pt>
+<Immagini/DomC/DomC_0reale.png, id=104, 481.8pt x 481.8pt>
 File: Immagini/DomC/DomC_0reale.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_0reale.png>
-Package pdftex.def Info: Immagini/DomC/DomC_0reale.png used on input line 118.
+Package pdftex.def Info: Immagini/DomC/DomC_0reale.png used on input line 120.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 118.
+(Font)              scaled to size 5.21004pt on input line 120.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 118.
+(Font)              scaled to size 5.21004pt on input line 120.
 
-<Immagini/DomC/DomC_0stimata.png, id=65, 481.8pt x 481.8pt>
+<Immagini/DomC/DomC_0stimata.png, id=105, 481.8pt x 481.8pt>
 File: Immagini/DomC/DomC_0stimata.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_0stimata.png>
-Package pdftex.def Info: Immagini/DomC/DomC_0stimata.png used on input line 122
+Package pdftex.def Info: Immagini/DomC/DomC_0stimata.png used on input line 124
 .
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomC/DomC_1reale.png, id=66, 481.8pt x 481.8pt>
+<Immagini/DomC/DomC_1reale.png, id=106, 481.8pt x 481.8pt>
 File: Immagini/DomC/DomC_1reale.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_1reale.png>
-Package pdftex.def Info: Immagini/DomC/DomC_1reale.png used on input line 126.
+Package pdftex.def Info: Immagini/DomC/DomC_1reale.png used on input line 128.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomC/DomC_1stimata.png, id=67, 481.8pt x 481.8pt>
+<Immagini/DomC/DomC_1stimata.png, id=107, 481.8pt x 481.8pt>
 File: Immagini/DomC/DomC_1stimata.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_1stimata.png>
-Package pdftex.def Info: Immagini/DomC/DomC_1stimata.png used on input line 130
+Package pdftex.def Info: Immagini/DomC/DomC_1stimata.png used on input line 132
 .
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomC/DomC_2reale.png, id=68, 481.8pt x 481.8pt>
+<Immagini/DomC/DomC_2reale.png, id=108, 481.8pt x 481.8pt>
 File: Immagini/DomC/DomC_2reale.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_2reale.png>
-Package pdftex.def Info: Immagini/DomC/DomC_2reale.png used on input line 134.
+Package pdftex.def Info: Immagini/DomC/DomC_2reale.png used on input line 136.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomC/DomC_2stimata.png, id=69, 481.8pt x 481.8pt>
+<Immagini/DomC/DomC_2stimata.png, id=109, 481.8pt x 481.8pt>
 File: Immagini/DomC/DomC_2stimata.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_2stimata.png>
-Package pdftex.def Info: Immagini/DomC/DomC_2stimata.png used on input line 138
+Package pdftex.def Info: Immagini/DomC/DomC_2stimata.png used on input line 140
 .
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
@@ -1250,14 +1273,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3]
+[7]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
+[8 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
 x/Simulazione dominio a C/Immagini/DomC/DomC_0reale.png (PNG copy)> <C:/Users/G
 abriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione 
 dominio a C/Immagini/DomC/DomC_0stimata.png> <C:/Users/Gabriele/Desktop/Univers
@@ -1268,62 +1291,62 @@ SI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomC/DomC_1stimata.png> <C:
 lazione dominio a C/Immagini/DomC/DomC_2reale.png> <C:/Users/Gabriele/Desktop/U
 niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immag
 ini/DomC/DomC_2stimata.png>]
-<Immagini/DomC/tfissato1.png, id=94, 481.8pt x 481.8pt>
+<Immagini/DomC/tfissato1.png, id=132, 481.8pt x 481.8pt>
 File: Immagini/DomC/tfissato1.png Graphic file (type png)
 
 <use Immagini/DomC/tfissato1.png>
-Package pdftex.def Info: Immagini/DomC/tfissato1.png used on input line 150.
+Package pdftex.def Info: Immagini/DomC/tfissato1.png used on input line 152.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/DomC/tfissato2.png, id=95, 481.8pt x 481.8pt>
+<Immagini/DomC/tfissato2.png, id=133, 481.8pt x 481.8pt>
 File: Immagini/DomC/tfissato2.png Graphic file (type png)
 
 <use Immagini/DomC/tfissato2.png>
-Package pdftex.def Info: Immagini/DomC/tfissato2.png used on input line 154.
+Package pdftex.def Info: Immagini/DomC/tfissato2.png used on input line 156.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/DomC/tfissato3.png, id=96, 481.8pt x 481.8pt>
+<Immagini/DomC/tfissato3.png, id=134, 481.8pt x 481.8pt>
 File: Immagini/DomC/tfissato3.png Graphic file (type png)
 
 <use Immagini/DomC/tfissato3.png>
-Package pdftex.def Info: Immagini/DomC/tfissato3.png used on input line 158.
+Package pdftex.def Info: Immagini/DomC/tfissato3.png used on input line 160.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 167.
+(hyperref)                removing `math shift' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 167.
+(hyperref)                removing `math shift' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@underline' on input line 167.
+(hyperref)                removing `\@@underline' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 167.
+(hyperref)                removing `\hbox' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 167.
+(hyperref)                removing `\lambda' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 167.
+(hyperref)                removing `\mathsurround' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 167.
+(hyperref)                removing `\z@' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 167.
+(hyperref)                removing `math shift' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 167.
+(hyperref)                removing `math shift' on input line 169.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1331,7 +1354,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
+[9 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
 x/Simulazione dominio a C/Immagini/DomC/tfissato1.png> <C:/Users/Gabriele/Deskt
 op/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/I
 mmagini/DomC/tfissato2.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGIS
@@ -1343,52 +1366,52 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] <Immagini/DomCCovar/DomCcovar_0reale.png, id=116, 481.8pt x 481.8pt>
+[10] <Immagini/DomCCovar/DomCcovar_0reale.png, id=152, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_0reale.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_0reale.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_0reale.png used on input 
-line 218.
+line 221.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomCCovar/DomCcovar_0stimata.png, id=117, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/DomCcovar_0stimata.png, id=153, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_0stimata.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_0stimata.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_0stimata.png used on inpu
-t line 222.
+t line 225.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomCCovar/DomCcovar_1reale.png, id=118, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/DomCcovar_1reale.png, id=154, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_1reale.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_1reale.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_1reale.png used on input 
-line 226.
+line 229.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomCCovar/DomCcovar_1stimata.png, id=119, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/DomCcovar_1stimata.png, id=155, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_1stimata.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_1stimata.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_1stimata.png used on inpu
-t line 230.
+t line 233.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomCCovar/DomCcovar_2reale.png, id=120, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/DomCcovar_2reale.png, id=156, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_2reale.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_2reale.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_2reale.png used on input 
-line 234.
+line 237.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomCCovar/DomCcovar_2stimata.png, id=121, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/DomCcovar_2stimata.png, id=157, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_2stimata.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_2stimata.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_2stimata.png used on inpu
-t line 238.
+t line 241.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
 
@@ -1397,74 +1420,74 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
-x/Simulazione dominio a C/Immagini/DomCCovar/DomCcovar_0reale.png (PNG copy)> <
-C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Si
-mulazione dominio a C/Immagini/DomCCovar/DomCcovar_0stimata.png> <C:/Users/Gabr
-iele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dom
-inio a C/Immagini/DomCCovar/DomCcovar_1reale.png> <C:/Users/Gabriele/Desktop/Un
-iversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagi
-ni/DomCCovar/DomCcovar_1stimata.png> <C:/Users/Gabriele/Desktop/Università/LAU
-REA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomCCovar/
-DomCcovar_2reale.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/
-TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomCCovar/DomCcovar_2stim
-ata.png>] <Immagini/DomCCovar/tfissato1.png, id=140, 481.8pt x 481.8pt>
+[11 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Simulazione dominio a C/Immagini/DomCCovar/DomCcovar_0reale.png (PNG copy)> 
+<C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/S
+imulazione dominio a C/Immagini/DomCCovar/DomCcovar_0stimata.png> <C:/Users/Gab
+riele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione do
+minio a C/Immagini/DomCCovar/DomCcovar_1reale.png> <C:/Users/Gabriele/Desktop/U
+niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immag
+ini/DomCCovar/DomCcovar_1stimata.png> <C:/Users/Gabriele/Desktop/Università/LA
+UREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomCCovar
+/DomCcovar_2reale.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE
+/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomCCovar/DomCcovar_2sti
+mata.png>] <Immagini/DomCCovar/tfissato1.png, id=174, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/tfissato1.png Graphic file (type png)
 
 <use Immagini/DomCCovar/tfissato1.png>
 Package pdftex.def Info: Immagini/DomCCovar/tfissato1.png used on input line 25
-0.
+3.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/DomCCovar/tfissato2.png, id=141, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/tfissato2.png, id=175, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/tfissato2.png Graphic file (type png)
 
 <use Immagini/DomCCovar/tfissato2.png>
 Package pdftex.def Info: Immagini/DomCCovar/tfissato2.png used on input line 25
-4.
+7.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/DomCCovar/tfissato3.png, id=142, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/tfissato3.png, id=176, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/tfissato3.png Graphic file (type png)
 
 <use Immagini/DomCCovar/tfissato3.png>
-Package pdftex.def Info: Immagini/DomCCovar/tfissato3.png used on input line 25
-8.
+Package pdftex.def Info: Immagini/DomCCovar/tfissato3.png used on input line 26
+1.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 269.
+(hyperref)                removing `math shift' on input line 272.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 269.
+(hyperref)                removing `\beta' on input line 272.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 269.
+(hyperref)                removing `math shift' on input line 272.
 
-<Immagini/DomCCovar/Scatterplot4.png, id=143, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/Scatterplot4.png, id=177, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/Scatterplot4.png Graphic file (type png)
 
 <use Immagini/DomCCovar/Scatterplot4.png>
 Package pdftex.def Info: Immagini/DomCCovar/Scatterplot4.png used on input line
- 284.
+ 287.
 (pdftex.def)             Requested size: 161.9989pt x 161.99396pt.
 
-<Immagini/DomCCovar/Scatterplot5.png, id=144, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/Scatterplot5.png, id=178, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/Scatterplot5.png Graphic file (type png)
 
 <use Immagini/DomCCovar/Scatterplot5.png>
 Package pdftex.def Info: Immagini/DomCCovar/Scatterplot5.png used on input line
- 288.
+ 291.
 (pdftex.def)             Requested size: 161.9989pt x 161.99396pt.
 
-<Immagini/DomCCovar/QQplot.png, id=146, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/QQplot.png, id=180, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/QQplot.png Graphic file (type png)
 
 <use Immagini/DomCCovar/QQplot.png>
-Package pdftex.def Info: Immagini/DomCCovar/QQplot.png used on input line 297.
+Package pdftex.def Info: Immagini/DomCCovar/QQplot.png used on input line 300.
 (pdftex.def)             Requested size: 161.9989pt x 161.99396pt.
 
 
@@ -1476,13 +1499,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
-x/Simulazione dominio a C/Immagini/DomCCovar/tfissato1.png> <C:/Users/Gabriele/
-Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio 
-a C/Immagini/DomCCovar/tfissato2.png> <C:/Users/Gabriele/Desktop/Università/LA
-UREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomCCovar
-/tfissato3.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
+[12 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Simulazione dominio a C/Immagini/DomCCovar/tfissato1.png> <C:/Users/Gabriele
+/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio
+ a C/Immagini/DomCCovar/tfissato2.png> <C:/Users/Gabriele/Desktop/Università/L
+AUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/DomCCova
+r/tfissato3.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1490,28 +1513,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
-x/Simulazione dominio a C/Immagini/DomCCovar/Scatterplot4.png> <C:/Users/Gabrie
-le/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione domin
-io a C/Immagini/DomCCovar/Scatterplot5.png> <C:/Users/Gabriele/Desktop/Universi
-tà/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/Dom
-CCovar/QQplot.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
+[13 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Simulazione dominio a C/Immagini/DomCCovar/Scatterplot4.png> <C:/Users/Gabri
+ele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione domi
+nio a C/Immagini/DomCCovar/Scatterplot5.png> <C:/Users/Gabriele/Desktop/Univers
+ità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Simulazione dominio a C/Immagini/Do
+mCCovar/QQplot.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 Simulazione dominio a C\Simulazione dominio a C.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
 Package rerunfilecheck Info: File `Simulazione*dominio*a*C.out' has not changed
 .
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 307.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
  ) 
 Here is how much of TeX's memory you used:
- 9346 strings out of 493921
- 139260 string characters out of 3144868
- 222332 words of memory out of 3000000
- 12393 multiletter control sequences out of 15000+200000
+ 9359 strings out of 493921
+ 139854 string characters out of 3144868
+ 223378 words of memory out of 3000000
+ 12394 multiletter control sequences out of 15000+200000
  37912 words of font info for 106 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  36i,12n,43p,957b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1525,9 +1548,9 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x8
 KTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/urw/palatino/uplri8a.pfb>
-Output written on "Simulazione dominio a C.pdf" (9 pages, 277783 bytes).
+Output written on "Simulazione dominio a C.pdf" (13 pages, 287500 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 500000)
+ 248 PDF objects out of 1000 (max. 8388607)
+ 55 named destinations out of 1000 (max. 500000)
  188 words of extra memory for PDF output out of 10000 (max. 10000000)
 

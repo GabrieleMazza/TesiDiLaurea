@@ -233,5 +233,37 @@ points(TimePoints,DataMatrix[i,],pch=16,col="red")
 points(seq(min(TimePoints),max(TimePoints),length.out=100),fs.test(xP,yP)*cos(seq(min(TimePoints),max(TimePoints),length.out=100)),type='l',col="blue",lwd=2)
 legend("bottomleft",c("reale", "stimata"), lty = c(1,1),col=c("blue","black"),lwd=2)
 dev.off()
-# 216 44 40
-#4.5 2 1
+
+
+
+##### PLOT DEI RESIDUI #####
+
+#Ricavo il vettore con tutte le stime
+zHat<-NULL
+for(i in 1:length(xknot))
+{
+    zHat<-c(zHat,ST.Eval(rep(xknot[i],length(TimePoints)),rep(yknot[i],length(TimePoints)),TimePoints,SolutionObj))
+}
+
+
+Residuals=Data-zHat
+
+# Faccio qualche plot
+png(filename="Scatterplot1.png")
+plot(Data,Residuals,main="Scatterplot Residui",xlab="Dati",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
+dev.off()
+# Faccio qualche plot
+png(filename="Scatterplot2.png")
+plot(zHat,Residuals,main="Scatterplot Residui",xlab="Valori stimati",ylab="Residui")
+abline(h=0,col="blue",lwd=2)
+dev.off()
+
+png(filename="QQplot.png")
+qqnorm(Residuals)
+qqline(Residuals,lwd=2,col="blue")
+dev.off()
+
+sink(file="Shapiro Test.txt")
+print(shapiro.test(Residuals))
+sink()
