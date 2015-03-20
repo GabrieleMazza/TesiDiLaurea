@@ -224,7 +224,7 @@ points(seq(min(TimePoints),max(TimePoints),length.out=100),fs.test(xP,yP)*cos(se
 legend("bottomleft",c("reale", "stimata"), lty = c(1,1),col=c("blue","black"),lwd=2)
 dev.off()
 
-i<-38
+i<-99
 xP<-xknot[i]
 yP<-yknot[i]
 png(filename=paste("Plot per un punto fissato",fs.test(xP,yP),".png",sep=" "))

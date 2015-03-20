@@ -1,0 +1,33 @@
+\select@language {italian}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Funzione spaziale $g(\underline {p})$\relax }}{5}{figure.caption.3}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Triangolazione del dominio a forma di C\relax }}{6}{figure.caption.4}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Stime della funzione $f(\underline {p},t)$ ad alcuni istanti di tempo, caso senza covariata\relax }}{8}{figure.caption.6}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Evoluzione temporale in alcuni nodi della triangolazione, caso senza covariata\relax }}{9}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Funzione reale a $t=0$}}}{9}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Funzione stimata a $t=0$}}}{9}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Funzione reale a $t=\frac {\pi }{4}$}}}{9}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Funzione stimata a $t=\frac {\pi }{4}$}}}{9}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Funzione reale a $t=\frac {\pi }{2}$}}}{9}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Funzione stimata a $t=\frac {\pi }{2}$}}}{9}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ampiezza $0.3486$}}}{9}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ampiezza $1.3819$}}}{9}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Ampiezza $3.8395$}}}{9}{figure.caption.7}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Scatterplot dei residui, caso senza covariata\relax }}{10}{figure.caption.8}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$z_{ij}$ vs $e_{ij}$}}}{10}{figure.caption.8}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\mathaccentV {hat}65E{z}_{ij}$ vs $e_{ij}$}}}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Stime della funzione $f(\underline {p},t)$ ad alcuni istanti di tempo, caso con covariata\relax }}{12}{figure.caption.10}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Evoluzione temporale in alcuni nodi della triangolazione, caso con covariata\relax }}{13}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Funzione reale a $t=0$}}}{13}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Funzione stimata a $t=0$}}}{13}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Funzione reale a $t=\frac {\pi }{4}$}}}{13}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Funzione stimata a $t=\frac {\pi }{4}$}}}{13}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Funzione reale a $t=\frac {\pi }{2}$}}}{13}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Funzione stimata a $t=\frac {\pi }{2}$}}}{13}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ampiezza $0.2810$}}}{13}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ampiezza $1.2761$}}}{13}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Ampiezza $3.8577$}}}{13}{figure.caption.11}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Scatterplot dei residui, caso con covariata\relax }}{14}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$z_{ij}$ vs $e_{ij}$}}}{14}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\mathaccentV {hat}65E{z}_{ij}$ vs $e_{ij}$}}}{14}{figure.caption.12}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces QQplot dei residui, caso con covariata\relax }}{14}{figure.caption.13}

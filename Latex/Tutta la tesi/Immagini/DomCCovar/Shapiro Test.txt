@@ -1,0 +1,6 @@
+
+	Shapiro-Wilk normality test
+
+data:  Residuals
+W = 0.9988, p-value = 0.1259
+

@@ -1,0 +1,13 @@
+\select@language {italian}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Confronto tra i metodi, caso senza covariata\relax }}{11}{figure.caption.8}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Per alcuni istanti di tempo, funzione test $f(\underline {p},t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, GAMM con soap film smoothing, GAMM con thin plate splines e stima con STR-PDE nel caso senza covariata.\relax }}{12}{figure.caption.9}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Confronto tra i metodi, caso con covariata\relax }}{13}{figure.caption.10}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\mathrm {RMSE}$}}}{13}{figure.caption.10}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Stime $\hat {\beta }$}}}{13}{figure.caption.10}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Per alcuni istanti di tempo, funzione test $f(\underline {p},t)$ reale, dati simulati, stime ottenute rispettivamente con GAMM con soap film smoothing, GAMM con thin plate splines e stima con STR-PDE nel caso con covariata.\relax }}{14}{figure.caption.11}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
