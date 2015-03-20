@@ -53,11 +53,16 @@ for(j in 1:length(TimePoints))
 {
     # Matrice
     Mat <- matrix(ResultFitted[,j],nrow=nx,ncol=ny,byrow=F)
+    Mat<-cbind(Mat,numeric(dim(Mat)[1]))
+    Mat[1,ny+1]=zlim[1]
+    Mat[2,ny+1]=zlim[2]
+    
     # Plot
     png(filename=paste("Anno ",TimePoints[j],".png",sep=""))
-    image(xvec,yvec,Mat,zlim=zlim,main=paste("Funzione stimata tempo ",TimePoints[j],sep=""))
+    image(xvec,c(yvec,50),Mat,col=heat.colors(100),main=paste("Funzione stimata tempo ",TimePoints[j],sep=""),ylim=c(yvec[1],yvec[ny]))
     lines(xbound,ybound,lwd=1)
-    contour(xvec,yvec,Mat,nlevels=10,add=TRUE)
+    lines(c(xbound[1],xbound[length(xbound)]),c(ybound[1],ybound[length(ybound)]),lwd=1)
+    contour(xvec,c(yvec,50),Mat,nlevels=10,add=TRUE)
     dev.off()
 }
 
