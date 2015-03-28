@@ -1,0 +1,88 @@
+\select@language {italian}
+\contentsline {figure}{\numberline {1}{\ignorespaces Dominio spaziale e locazioni dei dati\relax }}{1}{figure.caption.9}
+\contentsline {figure}{\numberline {2}{\ignorespaces Rifiuti e posti letto pro capite\relax }}{2}{figure.caption.10}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rifiuti pro capite nel 2011}}}{2}{figure.caption.10}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Posti letto pro capite nel 2011}}}{2}{figure.caption.10}
+\contentsline {figure}{\numberline {3}{\ignorespaces Differenza tra i dati nei comuni di Cavallino-Treporti e Quarto d'Altino\relax }}{3}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Comuni selezionati}}}{3}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Andamenti temporali}}}{3}{figure.caption.11}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Funzioni di base implementate nel codice\relax }}{22}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Elemento finito lineare (spazio)}}}{22}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {B-splines (tempo)}}}{22}{figure.caption.12}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Funzione spaziale $g(\underline {p})$\relax }}{25}{figure.caption.14}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Triangolazione del dominio a forma di C\relax }}{26}{figure.caption.15}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Stime della funzione $f(\underline {p},t)$ ad alcuni istanti di tempo, caso senza covariata\relax }}{28}{figure.caption.16}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Evoluzione temporale in alcuni nodi della triangolazione, caso senza covariata\relax }}{29}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Funzione reale a $t=0$}}}{29}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Funzione stimata a $t=0$}}}{29}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Funzione reale a $t=\frac {\pi }{4}$}}}{29}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Funzione stimata a $t=\frac {\pi }{4}$}}}{29}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Funzione reale a $t=\frac {\pi }{2}$}}}{29}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Funzione stimata a $t=\frac {\pi }{2}$}}}{29}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ampiezza $0.3486$}}}{29}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ampiezza $1.3819$}}}{29}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Ampiezza $4.1648$}}}{29}{figure.caption.17}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Stime della funzione $f(\underline {p},t)$ ad alcuni istanti di tempo, caso con covariata\relax }}{31}{figure.caption.18}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Evoluzione temporale in alcuni nodi della triangolazione, caso con covariata\relax }}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Funzione reale a $t=0$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Funzione stimata a $t=0$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Funzione reale a $t=\frac {\pi }{4}$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Funzione stimata a $t=\frac {\pi }{4}$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Funzione reale a $t=\frac {\pi }{2}$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Funzione stimata a $t=\frac {\pi }{2}$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ampiezza $0.2810$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ampiezza $1.2761$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Ampiezza $3.8577$}}}{32}{figure.caption.19}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Scatterplot dei residui, caso con covariata\relax }}{33}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$z_{ij}$ vs $e_{ij}$}}}{33}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\mathaccentV {hat}65E{z}_{ij}$ vs $e_{ij}$}}}{33}{figure.caption.20}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces QQplot dei residui, caso con covariata\relax }}{33}{figure.caption.21}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Confronto tra i metodi, caso senza covariata\relax }}{37}{figure.caption.22}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Per alcuni istanti di tempo, funzione test $f(\underline {p},t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, GAMM con soap film smoothing, GAMM con thin plate splines e stima con ST-PDE nel caso senza covariata\relax }}{38}{figure.caption.23}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Confronto tra i metodi, caso con covariata\relax }}{39}{figure.caption.24}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\mathrm {RMSE}$}}}{39}{figure.caption.24}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Stime $\hat {\beta }$}}}{39}{figure.caption.24}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Per alcuni istanti di tempo, funzione test $f(\underline {p},t)$ reale, dati simulati, stime ottenute rispettivamente con GAMM con soap film smoothing, GAMM con thin plate splines e stima con ST-PDE nel caso con covariata\relax }}{40}{figure.caption.25}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Poligoni disponibili nel pacchetto \textit {raster}\relax }}{43}{figure.caption.26}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Tutti i poligoni}}}{43}{figure.caption.26}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Poligoni scelti}}}{43}{figure.caption.26}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Smoothing con \textit {Regression Splines} cubiche per il primo poligono dell'entroterra della provincia di Venezia\relax }}{44}{figure.caption.27}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Frontiera e punti spaziali per la provincia di Venezia\relax }}{45}{figure.caption.28}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Provincia di Venezia}}}{45}{figure.caption.28}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Zoom della laguna}}}{45}{figure.caption.28}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Triangolazione della provincia di Venezia\relax }}{46}{figure.caption.29}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Provincia di Venezia}}}{46}{figure.caption.29}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Zoom della laguna}}}{46}{figure.caption.29}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Bubbleplot delle misurazioni della produzione di rifiuti urbani pro capite ogni due anni dal 1997 al 2011\relax }}{47}{figure.caption.30}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Bubbleplot dei posti letto pro capite ogni due anni dal 1997 al 2011\relax }}{48}{figure.caption.31}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Matplot della produzione dei rifiuti urbani\relax }}{49}{figure.caption.32}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Stima della funzione spazio-temporale della produzione dei rifiuti nella provincia di Venezia a tempi fissati dal 1997 al 2011, caso senza covariata\relax }}{51}{figure.caption.34}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Stima della produzione dei rifiuti pro capite in alcuni comuni, caso senza covariata\relax }}{52}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Venezia}}}{52}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cavallino-Treporti}}}{52}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chioggia}}}{52}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Jesolo}}}{52}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Caorle}}}{52}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {S. Michele al Tagliamento}}}{52}{figure.caption.35}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Scatterplot dei residui, caso senza covariata\relax }}{53}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$z_{ij}$ vs $e_{ij}$}}}{53}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\mathaccentV {hat}65E{z}_{ij}$ vs $e_{ij}$}}}{53}{figure.caption.36}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Stima della funzione spazio-temporale della produzione dei rifiuti nella provincia di Venezia a tempi fissati dal 1997 al 2011, con covariata\relax }}{55}{figure.caption.38}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Stima della parte funzionale della produzione dei rifiuti pro capite in alcuni comuni, con covariata\relax }}{56}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Venezia}}}{56}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cavallino-Treporti}}}{56}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chioggia}}}{56}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Jesolo}}}{56}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Caorle}}}{56}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {S. Michele al Tagliamento}}}{56}{figure.caption.39}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Scatterplot dei residui, caso con covariata\relax }}{57}{figure.caption.40}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$z_{ij}$ vs $e_{ij}$}}}{57}{figure.caption.40}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\mathaccentV {hat}65E{z}_{ij}$ vs $e_{ij}$}}}{57}{figure.caption.40}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces QQplot dei residui, caso con covariata\relax }}{58}{figure.caption.41}
+\addvspace {10\p@ }

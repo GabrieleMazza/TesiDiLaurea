@@ -137,7 +137,6 @@ Il presente lavoro di tesi si occupa della costruzione e dell'applicazione di un
 
 \begin{figure}[h]
 	\centering
-    \label{fig:Ven_poligonitutti}
 	\includegraphics[width=0.46\textwidth]{Immagini/Ven_punti.png}   
    	\caption{Dominio spaziale e locazioni dei dati}
 	\label{fig:intro}
@@ -147,12 +146,10 @@ Il presente lavoro di tesi si occupa della costruzione e dell'applicazione di un
 	\centering
 	\subfigure[Rifiuti pro capite nel 2011]
    {
-   \label{fig:Ven_poligonitutti}
 	\includegraphics[width=0.46\textwidth]{Immagini/venezia_dati/Dati2011.png}   
    }
 	\subfigure[Posti letto pro capite nel 2011]
    {
-   \label{fig:Ven_poligoniscelti}
 	\includegraphics[width=0.46\textwidth]{Immagini/venezia_dati/PL2011.png}
    }
 	\caption{Rifiuti e posti letto pro capite}
@@ -168,12 +165,10 @@ Si consideri ad esempio quanto riportato in \ref{fig:intro3}. Sono stati analizz
 	\centering
 	\subfigure[Comuni selezionati]
    {
-   \label{fig:Ven_poligonitutti}
 	\includegraphics[width=0.43\textwidth]{Immagini/CTQDA.png}   
    }
 	\subfigure[Andamenti temporali]
    {
-   \label{fig:Ven_poligoniscelti}
 	\includegraphics[width=0.49\textwidth]{Immagini/andamenti_temporali.png}
    }
 	\caption{Differenza tra i dati nei comuni di Cavallino-Treporti e Quarto d'Altino}
@@ -724,7 +719,7 @@ Per quanto riguarda lo spazio, il codice è stato pensato per dati distribuiti s
 
 \begin{figure}[t]
 	\centering
-	\subfigure[Elemento finito (spazio)]
+	\subfigure[Elemento finito lineare (spazio)]
 	{
 	\label{fig:basisp}
 	\includegraphics[width=0.46\textwidth]{Immagini/elementofinito.jpg}  
@@ -785,7 +780,7 @@ Il motivo di questa lentezza è legato al linguaggio di programmazione. Non è u
 
 \chapter{Simulazioni sul dominio a forma di C}
 \label{cap:domC}
-Prima di applicare il modello allo studio della produzione di rifiuti nella provincia di Venezia sono state eseguite simulazioni su un caso noto e più semplice. Si è scelto di analizzare il dominio a forma di C e la corrispondente funzione spaziale $g(\underline p)$ (riportata in fig. \cite{fig:domC_fstest}) descritti in \ref{art:ramsay}, \cite{art:sangalli}, \cite{art:wood} e implementata nel pacchetto R \textit{mgcv}. Dalla rappresentazione di $g(\underline p)$ si può notare come sia fondamentale la geometria del problema, come per il caso della produzione dei rifiuti nella provincia di Venezia. La funzione $g(\underline p)$ è solo spaziale, quindi è stata introdotta una variazione temporale deformando con il coseno:
+Prima di applicare il modello allo studio della produzione di rifiuti nella provincia di Venezia sono state eseguite simulazioni su un caso noto e più semplice. Si è scelto di analizzare il dominio a forma di C e la corrispondente funzione spaziale $g(\underline p)$ (riportata in fig. \cite{fig:domC_fstest}) descritti in \ref{art:ramsay}, \cite{art:sangalli}, \cite{art:wood} e implementata nel pacchetto R \textit{mgcv}. La funzione $g(\underline p)$ è solo spaziale, quindi è stata introdotta una variazione temporale deformando con il coseno:
 $$
 f(\underline p, t)=g(\underline p)cos(t)
 $$
@@ -796,7 +791,8 @@ Su questo semplice caso sono stati eseguiti i primi tentativi per il modello ST-
 	\caption{Funzione spaziale $g(\protect\underline{p})$}
 	\label{fig:domC_fstest}
 \end{figure}
-
+\newpage
+\noindent Dalla rappresentazione di $g(\underline p)$ si può notare come sia fondamentale la geometria del problema, come per il caso della produzione dei rifiuti nella provincia di Venezia.
 
 \section{Triangolazione e istanti temporali}
 Nel dominio a forma di C non sono presenti punti spaziali definiti dalla natura del problema (come possono essere i comuni per la provincia di Venezia), quindi è stato necessario ricavarli. Sono stati generati casualmente 150 punti all'interno del rettangolo $[-1,+3.5] \times [-1,+1]$ e di questi sono stati considerati validi solo quelli che ricadevano all'interno del dominio. Non è stata usata la descrizione della frontiera presente in \textit{mgcv}, ma una versione diversa che permette di avere punti anche nella parte rettilinea del bordo.
@@ -812,7 +808,6 @@ Come intervallo temporale di variazione dei dati è stato scelto $[0,2\pi]$ per 
 \newpage
 \section{Caso senza covariata}
 
-\subsection{Ricerca del miglior $\protect\underline{\lambda}$}
 Nei punti e negli istanti temporali disponibili i dati sono stati ricavati dalla funzione esatta con l'aggiunta del rumore:
 $$
 z_{ij}=g(\underline p_{i})cos(t_j) + \varepsilon_{ij} \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
@@ -822,35 +817,9 @@ $$
 \varepsilon_{ij}\stackrel{\mathrm{iid}}{\sim}N(0,0.5^2) \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m \ .
 $$
 
-Per poter eseguire una analisi ottimale, come primo passo è necessario scegliere i valori per $\lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$ come riportato in eq. \ref{eq:GCV}. In queste analisi $\lambda_S$ e $\lambda_T$ sono sempre espressi in potenze di 10. Per trovare dei buoni valori per i parametri si procede per tentativi, creando due insiemi discreti di variazione per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$ e minimizzando sui $\underline \lambda$ corrispondenti al prodotto cartesiano tra di essi. Il procedimento viene iterato qualche volta (a causa dell'alto costo computazionale non è opportuno eseguire troppe iterazioni) rendendo la griglia sempre più fitta. In particolare, nel primo caso i valori sono distanziati di 1, poi (una volta che è possibile centrare gli intervalli in base al risultato precedente) di 0.25 e 0.125.
-\newline
-\begin{table}[h]
-\renewcommand{\arraystretch}{1.3}
-\setlength{\tabcolsep}{2mm}
-\centering
-	\begin{tabular}{!{\vrule width 1.2pt}c!{\vrule width 1.2pt}c!{\vrule width 1.2pt}}
-	\noalign{\hrule height 1.2pt}
-	Intervalli per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$& Miglior valore											\\
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-5,-4,\ldots,+1\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{0},10^{-3})$} 			\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-5,-4,\ldots,+1\}$		& 															\\	
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-1,-0.75,\ldots,+1\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-0.5},10^{-3.25})$} 		\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-4,-3.75,\ldots,-2\}$	& 															\\	
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-1,-0.875,\ldots,+0\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-0.375}, 10^{-3.25})$}	\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-3.75,-3.625,\ldots,-2.75\}$		& 												\\	
-	\noalign{\hrule height 1.2pt}
-	\end{tabular}
-\caption{Analisi di $\mathrm{GCV}(\protect\underline{\lambda})$ per il dominio a forma di C, caso senza covariata}
-\label{tab:DomC}
-\end{table}
+Per poter eseguire una analisi ottimale, come primo passo è necessario scegliere i valori per $\lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$ come riportato in eq. \ref{eq:GCV}. In queste analisi $\lambda_S$ e $\lambda_T$ saaranno sempre espressi in potenze di 10. Per trovare dei buoni valori per i parametri si procede per tentativi, creando due insiemi discreti di variazione per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$ e minimizzando sui $\underline \lambda$ corrispondenti al prodotto cartesiano tra di essi. Il procedimento viene iterato qualche volta rendendo la griglia sempre più fitta. Dopo alcuni tentativi, è stato fissato $\underline \lambda = (10^{-0.375}, 10^{-3.25})$ come valore definitivo per questa analisi, ed è stata calcolata computazionalmente la stima della funzione si è rivelata molto buona.
 
-\subsection{Risultati}
-L'analisi è stata eseguita con $\underline \lambda = (10^{-0.375}, 10^{-3.25})$ e la stima della funzione si è rivelata molto buona. In fig. \ref{fig:DomC_ris} sono riportati i confronti tra funzione reale e stimata nei primi istanti di tempo (la scala di colori è stata resa uniforme tra tutti i grafici). Si può notare come la funzione stimata sia effettivamente molto simile a quella reale.
+In fig. \ref{fig:DomC_ris} sono riportati i confronti tra funzione reale e la stima nei primi istanti di tempo (la scala di colori è stata resa uniforme tra tutti i grafici). Si può notare come la funzione stimata sia effettivamente molto simile a quella reale. La diversità tra le due estremità del dominio è stata colta, poiché il procedimento ha considerato correttamente la definizione della geometria spaziale.
 \newpage
 \begin{figure}[H]
 \centering
@@ -881,8 +850,8 @@ L'analisi è stata eseguita con $\underline \lambda = (10^{-0.375}, 10^{-3.25})$
 	\caption{Stime della funzione $f(\protect\underline{p},t)$ ad alcuni istanti di tempo, caso senza covariata}
 	\label{fig:DomC_ris}
 \end{figure}
-
-In fig. \ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in alcuni nodi della triangolazione. Oltre alla curva stimata è tracciata la reale, che è una cosinusoide di ampiezza nota (grazie alla perfetta conoscenza di $g(\underline p)$) riportata con i grafici. I punti rossi corrispondono al dato sporcato dal rumore. Tanto più è vicina a zero l'ampiezza della curva, tanto più il rumore influenza la stima poiché più rilevante (infatti, in fig. \ref{fig:DomC_ris}, le curve di livello dove la funzione reale è vicina a zero sono le più diverse da quelle corrette). Tuttavia, anche nel caso con ampiezza vicina al valore massimo di $g(\underline p)$ in fig. \ref{fig:DomC_ris2C}, la curva stimata non è una perfetta interpolazione dei dati e coglie il vero andamento temporale della funzione. Si può concludere quindi che la stima è molto buona, sebbene più confusa nella parte centrale del dominio a forma di C.
+\newpage
+In fig. \ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in alcuni nodi della triangolazione. Oltre alla curva stimata è stata tracciata la reale, che è una cosinusoide di ampiezza nota (grazie alla perfetta conoscenza di $g(\underline p)$) riportata con i grafici. I punti rossi corrispondono al dato generato (termine dovuto al rumore compreso). Tanto più è vicina a zero l'ampiezza della curva, tanto più il rumore influenza la stima poiché più rilevante (infatti, in fig. \ref{fig:DomC_ris}, le curve di livello della funzione stimata sono le più diverse da quelle reali quando la stima è vicina a zero). Tuttavia, anche nel caso di ampiezza vicina al valore massimo di $g(\underline p)$ in fig. \ref{fig:DomC_ris2C}, l'andamento del fenomeno è stato riconosciuto e non è stata ottenuta una stima troppo interpolante dei dati. Si può concludere che la stima è molto buona, sebbene più confusa nella parte centrale del dominio a forma di C.
 
 \begin{figure}[t]
 	\centering
@@ -903,38 +872,10 @@ In fig. \ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in alcu
 	\label{fig:DomC_ris2}
 \end{figure}
 
-\subsection{Analisi dei residui}
-Nella costruzione del modello spiegata nel dettaglio nel capitolo \ref{cap:modello} si ipotizza che il rumore aggiunto al dato funzionale sia generato da una variabile aleatoria di media nulla e varianza $\sigma^2$. Quindi si ha l'ipotesi di omoschedasticità che deve essere verificata per validare i risultati ottenuti, analogamente a quanto si fa per i modelli di regressione lineare. In questo caso il processo di generazione dei dati è perfettamente noto e il rumore rispetta questa ipotesi poiché generato da una normale con parametri fissi. Tuttavia, per introdurre una prassi che deve essere rispettata quando si controllano i risultati di questo algoritmo, anche in questo caso in cui già a priori si ha la certezza della validità dell'ipotesi di omoschedasticità è opportuno eseguire l'analisi dei residui.
-
-Ad ogni dato è possibile associare il residuo
-$$
-e_{ij}=z_{ij}-\hat{z}_{ij}
-$$
-che, tramite opportuni scatterplot, è impiegato nella verifica dell'ipotesi di omogeneità della varianza.
-\newpage
-\begin{figure}[t]
-	\centering
-	\subfigure[$z_{ij}$ vs $e_{ij}$]
-	{
-	\includegraphics[width=0.46\textwidth]{Immagini/DomC/Scatterplot4.png}  
-	\label{fig:DomC_residuiA} 
-   }
-	\subfigure[$\hat{z}_{ij}$ vs $e_{ij}$]
-   {
-	\includegraphics[width=0.46\textwidth]{Immagini/DomC/Scatterplot5.png}
-   }
-	\caption{Scatterplot dei residui, caso senza covariata}
-	\label{fig:DomC_residui}
-\end{figure}
-Dall'analisi dei grafici in fig. \ref{fig:DomC_residui} si può facilmente capire che non si ha una cattiva dispersione dei residui attorno allo zero. Quindi, come ci si aspettava, l'ipotesi di omoschedasticità può essere considerata valida.
-
-Inoltre, il grafico in fig. \ref{fig:DomC_residuiA} permette di evidenziare una delle particolarità dello smoothing associato all'algoritmo. I residui negativi più bassi sono in corrispondenza dei dati minori e, analogamente, i residui positivi più alti sono in corrispondenza dei dati maggiori. Questo è dovuto allo smoothing imposto dal modello, che tende a smussare la funzione $f(\underline{p},t)$ nei suoi massimi e minimi: come si può notare in fig. \ref{fig:DomC_ris2C} in questi punti si ha la maggior distanza tra la curva reale e quella stimata.
-
 \section{Caso con covariata}
 
 \subsection{Generazione della covariata e ricerca del miglior $\protect\underline{\lambda}$}
 Nel problema della stima della funzione $f(\underline p,t)=g(\underline p)cos(t)$ non sono presenti covariate. Quindi per poter provare il modello in questo caso, è stato necessario generare valori da assumere come covariata in ogni punto spaziale ed istante temporale in cui si hanno le misurazioni della risposta.
-\newpage
 In definitiva i dati sono così formati:
 $$
 z_{ij}=g(\underline p_{i})cos(t_j) + \beta w_{ij} + \varepsilon_{ij} \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
@@ -948,39 +889,7 @@ $$
 $$
 e $\beta$ è fissato a 1. Se il modello è buono, c'è da aspettarsi che la parte di funzione stimata senza covariata sia vicina a $f(\underline p,t)$ e che $\hat{\beta}$ si avvicini a 1.
  
-Anche in questo caso è necessaria una analisi preliminare per fissare i valori per $\lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$, che nel caso con covariata si differenzia dal precedente solo per la forma della \textit{smoothing matrix}. In tab. \ref{tab:DomC_covar} sono riportati i risultati ricavati adattando lo stesso approccio del caso senza covariata.
-\newline
-\newline
-\begin{table}[htbp]
-\renewcommand{\arraystretch}{1.3}
-\setlength{\tabcolsep}{2mm}
-\centering
-	\begin{tabular}{!{\vrule width 1.2pt}c!{\vrule width 1.2pt}c!{\vrule width 1.2pt}}
-	\noalign{\hrule height 1.2pt}
-	Intervalli per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$& Miglior valore											\\
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-5,-4,\ldots,+1\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{0},10^{-4})$} 			\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-5,-4,\ldots,+1\}$		& 															\\	
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-1,-0.75,\ldots,+1\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{0.25},10^{-3.75})$} 		\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-5,-4.75,\ldots,-3\}$	& 															\\	
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-0.25,-0.125,\ldots,+0.75\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-0.125}, 10^{-3.25})$}	\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-4.25,-4.125,\ldots,-3.25\}$		& 												\\	
-	\noalign{\hrule height 1.2pt}
-	\end{tabular}
-\caption{Analisi di $\mathrm{GCV}(\protect\underline{\lambda})$ per il dominio a forma di C, caso con covariata}
-\label{tab:DomC_covar}
-\end{table}
-\newline
-\newline
-Procedendo per tentativi, si può notare come i valori si sono rivelati molto simili al caso senza covariata riportato in \ref{tab:DomC}, facendo pensare che la stima della funzione $f(\underline p,t)$, cioè della parte non spiegata dalla covariata, possa essere molto vicina a quella stimata nel caso senza covariata e, quindi, a quella reale.
-
-\subsection{Risultati}
-Eseguendo l'analisi con $\underline \lambda = (10^{-0.125}, 10^{-3.25})$ questa ipotesi è confermata e si trova una buona stima della funzione. In fig. \ref{fig:DomCcovar_ris} si hanno i grafici dei primi istanti di tempo (si ricorda che la funzione tracciata non contiene la parte spiegata dalla covariata, ma solo la stima di $f(\underline p,t)$). 
+Anche in questo caso è necessaria una analisi preliminare per fissare i valori per $\lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$, che nel caso con covariata si differenzia dal precedente solo per la forma della \textit{smoothing matrix}. Dopo alcuni tentativi è stato fissato $\underline \lambda = (10^{-0.125}, 10^{-3.25})$. 
 \newpage
 \begin{figure}[H]
 \centering
@@ -1011,7 +920,7 @@ Eseguendo l'analisi con $\underline \lambda = (10^{-0.125}, 10^{-3.25})$ questa 
 \caption{Stime della funzione $f(\protect\underline{p},t)$ ad alcuni istanti di tempo, caso con covariata}
 \label{fig:DomCcovar_ris}
 \end{figure}
-
+\newpage
 In fig. \ref{fig:DomCcovar_ris2}, analogamente a quanto fatto nel caso senza covariata, si hanno i grafici dell'evoluzione temporale della funzione in alcuni punti spaziali. I punti rossi tracciati corrispondono alla parte di dato senza il termine dovuto alla covariata. Le conclusioni sono le stesse del caso senza covariata: la stima è ben riuscita e la vera variazione temporale è stata colta dal modello. Tuttavia, avvicinandosi alla parte centrale del dominio, si ha una maggiore influenza del rumore.
 
 \begin{figure}[t]
@@ -1032,50 +941,24 @@ In fig. \ref{fig:DomCcovar_ris2}, analogamente a quanto fatto nel caso senza cov
 	\label{fig:DomCcovar_ris2}
 \end{figure}
 
-Dai grafici precedenti si può concludere che la stima della parte funzionale della risposta sia effettivamente una buona approssimazione della reale. Tuttavia occorre verificare anche che il contributo delle covariata sia ben riconosciuto dal modello, e per questo basta controllare il valore stimato di $\beta$. Si ha:
+Dai grafici precedenti si può concludere che la stima della parte funzionale della risposta sia effettivamente una buona approssimazione della reale. Tuttavia occorre verificare anche che il contributo della covariata sia ben riconosciuto dal modello, controllando il valore stimato di $\beta$. Si ha:
 $$
 \hat{\beta} \approx 1.005 \ ,
 $$
-valore vicinissimo al reale.
-
-\subsection{Analisi dei residui e test d'ipotesi per $\beta$}
-Sarebbe interessante eseguire un test del tipo
+valore vicinissimo al reale. Pertanto è interessante calcolare un test del tipo
 $$
 \begin{cases}
 H_0: & \beta=1 \\
 H_1: & \beta \not = 1
 \end{cases}
 $$
-per poter controllare con una data significatività se il valore stimato corrisponde a quello reale. Tuttavia è necessario controllare prima le ipotesi del modello e verificare se è possibile attribuire la normalità ai residui. Analogamente a quanto fatto nel caso senza covariata, siamo già certi che tutte queste ipotesi siano valide per come sono stati costruiti i dati. Tuttavia, per completezza, è necessario eseguire l'analisi dei residui anche in questo caso.
-
-\begin{figure}[t]
-	\centering
-	\subfigure[$z_{ij}$ vs $e_{ij}$]
-	{
-	\includegraphics[width=0.45\textwidth]{Immagini/DomCCovar/Scatterplot4.png}   
-   }
-	\subfigure[$\hat{z}_{ij}$ vs $e_{ij}$]
-   {
-	\includegraphics[width=0.45\textwidth]{Immagini/DomCCovar/Scatterplot5.png}
-   }
-	\caption{Scatterplot dei residui, caso con covariata}
-	\label{fig:DomCcovar_residui}
-\end{figure}
-
-Per quanto riguarda l'omoschedasticità, in fig. \ref{fig:DomCcovar_residui} si hanno gli scatterplot dei residui. Non si hanno problemi riguardo all'ipotesi di varianza uniforme e valgono le stesse considerazioni riportate nel caso senza covariata.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.45\textwidth]{Immagini/DomCCovar/QQplot.png}   
-   \caption{QQplot dei residui, caso con covariata}
-	\label{fig:DomCcovar_qqplot}
-\end{figure}
-Riguardo alla normalità, sia in base al QQplot dei residui riportato in fig. \ref{fig:DomCcovar_qqplot} (che si adatta alla retta eccetto per qualche punto nelle code) sia in base al p-value del Shapiro-Wilk test (0.1259) si può concludere che i residui possono essere considerati gaussiani. Quindi è possibile costruire un intervallo di confidenza approssimato al $95\%$ per $\beta$ (eliminando il termine di distorsione) con quanto ricavato in sez. \ref{sec:IC}. Ne risulta:
+per poter verificate con una data significatività se il valore stimato corrisponde a quello reale. Per poter fare ciò si costruisce un un intervallo di confidenza approssimato al $95\%$ per $\beta$ (eliminando il termine di distorsione) con quanto ricavato in sez. \ref{sec:IC}. Ne risulta:
 $$
 \beta \in [0.9843;1.0259]
 $$
-che contiene 1. L'ipotesi $H_0$ è accettata.
+che contiene 1. L'ipotesi $H_0$ può essere accettata.
 
+Concludendo, la simulazione esposta in questo capitolo ha permesso di verificare, in un caso totalmente noto e con una dipendenza dalla geometria spaziale, l'appropriata stima del campo spazio-temporale e del termine con covariata. Pertanto la simulazione sul dominio a forma di C può essere considerata come un ottimo esempio per il confronto delle stime del modello ST-PDE con le altre tecniche disponibili in letteratura.
 
 
 \chapter{Confronto con altri metodi}
