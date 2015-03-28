@@ -34,6 +34,10 @@
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{lscape}	% Per la pagina di grafici
+\usepackage[export]{adjustbox}
+\usepackage{array,multirow,graphicx}
+\usepackage[misc,geometry]{ifsym}
+
 
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\norma}{\lVert}{\rVert}
@@ -94,13 +98,14 @@ Gabriele Mazza & Matr. 798794 \\
 \chapter*{Sommario}
 \label{Cap:sommario}
 \thispagestyle{empty}
-Il presente lavoro di tesi illustra il modello statistico \textit{Spatio-Temporal Regression model with PDE penalization} (STR-PDE) per l'analisi funzionale di dati distribuiti in un dominio spaziale e in un intervallo temporale, estendendo il caso puramente spaziale proposto in \cite{art:sangalli}. Il modello ipotizza che i dati possano essere rappresentati dalla somma di una funzione spazio-temporale e di un eventuale termine di covariate. I risultati analitici hanno portato alla creazione di un codice R, con cui il modello ha potuto essere testato nel caso noto del dominio a forma di C descritto in \cite{art:ramsay} e confrontato con alcune tecniche già esistenti. L'applicazione studiata riguarda l'analisi della produzione di rifiuti urbani pro capite nella provincia di Venezia tra il 1997 e il 2011, con un'attenzione particolare agli effetti legati al turismo.
+Il presente lavoro di tesi propone un modello separabile per l'analisi funzionale di dati distribuiti in spazio e tempo. Il modello è particolarmente adatto allo studio di domini spaziali complessi, con concavità o buchi. La capacità di tener conto della geometria spaziale rappresenta un forte vantaggio per questo modello, che sarà paragonato alle altre tecniche già esistenti, comprese quelle che non presentano tale particolarità. Oltre allo sviluppo analitico è stato creato un algoritmo e un codice R per il calcolo computazionale della stima. L'applicazione studiata riguarda la produzione di rifiuti urbani pro capite nei comuni della provincia di Venezia tra il 1997 e il 2011, con un'attenzione speciale agli effetti legati al turismo.
+
 \newpage
 \thispagestyle{empty}
 \chapter*{Abstract}
 \label{Cap:abstract}
 \thispagestyle{empty}
-The present work of thesis describes the statistical model \textit{Spatio-Temporal Regression model with PDE penalization} (STR-PDE) for the functional analysis of data distributed over a spatial domain and a temporal interval, extending the case purely spatial proposed in \cite{art:sangalli}. The model assumes that the data could be represented by the sum of a function of space and time and a possible term of covariates. The analytical results led to the creation of a R code, with which the model could be tested in the known case of the C-shaped domain described in \cite{art:ramsay} and compared with some existing techniques. The application studied concerns the analysis of urban waste production per capita in Venice province between 1997 and 2011, with a particular attention to the effects related to tourism.
+The present work of thesis proposes a separable model for the functional analysis of data distributed in space and time. The model is particularly appropriate to the study of complex spatial domains, with concavities or holes. The ability to consider the spatial geometry is a strong advantage of this model, which will be compared to other existing techniques, including those that haven't this peculiarity. In addition to the analitical definition, an algorithm ad an R code for the computation of the estimate has been created. The application studied regards the production of urban waste per capita in the municipalities of Venice province between 1997 and 2011, with a special attention to the effects related to tourism.
 \newpage
 \thispagestyle{empty}
 
@@ -128,71 +133,110 @@ da fare
 \markboth{Introduzione}{Introduzione}
 \thispagestyle{empty}
 
-Il presente lavoro di tesi illustra il modello statistico \textit{Spatio-Temporal Regression model with PDE penalization} (STR-PDE) per l'analisi funzionale di dati distribuiti in spazio e tempo. Quanto fatto può essere considerato un'estensione dei modelli proposti in \cite{art:sangalli} che studiano la possibilità di costruire una stima funzionale per dati distribuiti su un dominio spaziale attraverso l'approssimazione in basi di elementi finiti. Il modello STR-PDE, invece, sviluppa una tecnica analoga aggiungendo alla stima spaziale precedente la possibilità di variare anche in tempo. Di conseguenza può essere considerato un buon strumento per lo studio di fenomeni spaziali e temporali. Dalla modellizzazione matematica è stato sviluppato un algoritmo e il codice R per il calcolo della soluzione numerica della stima.
+Il presente lavoro di tesi si occupa della costruzione e dell'applicazione di un modello statistico per l'analisi funzionale di dati tempo-varianti e distribuiti su un dominio spaziale. Questa ricerca è motivata dalla necessità di avere un buon metodo d'analisi per i dati riguardanti la produzione dei rifiuti urbani pro capite nei comuni della provincia di Venezia. I dati sono stati raccolti ed elaborati dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto (Arpav) e sono disponibili sul sito di Open Data Veneto\footnote{\href{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}}. Le misurazioni sono state registrate per comune. In fig. \ref{fig:intro} è stata tracciata la descrizione del dominio con i punti in cui i dati sono localizzati. Il problema presenta anche la dipendenza dal tempo, poiché i dati sono riportati annualmente dal 1997 al 2011.
 
-La tecnica proposta si inserisce nell'ambito di analisi di dati funzionali, branca della statistica che si occupa della stima di una funzione matematica da sue realizzazioni in alcuni punti. Come esempio, sia considerato un caso semplice (che sarà analizzato nel dettaglio nel capitolo \ref{cap:rifiuti}). Occorre stimare una funzione che rappresenta la latitudine del confine della provincia di Venezia. I dati sono raccolti in dipendenza dell'ascissa curvilinea misurata sul bordo della regione in un insieme di punti $\{s_i ; i=1, \ldots , N\}$. La funzione $\mathrm{lat}(s)$ è stimata (secondo una determinata espansione in funzioni di base) da $\{\mathrm{lat}(s_i) ; i=1, \ldots , N\}$. In fig. \ref{fig:fda} è riportato il risultato: in nero sono tracciati i punti raccolti (in questo sono molti, e la stima è precisa) e in rosso la funzione stimata. Dopo questa analisi si ha a disposizione una rappresentazione della funzione, che può essere studiata in ogni suo punto. Nel caso dell'esempio, come si vedrà successivamente, questo consentirà di valutare la funzione in un numero molto minore di punti rispetto a quelli iniziali.
-
-Il modello STR-PDE esegue una analisi di dati funzionale, ma con dati distribuiti in spazio e tempo. L'obiettivo finale sarà una funzione
-$$
-f(\underline{p},t) \ , 
-$$
-dove $\underline{p}$ è il vettore delle coordinate spaziali e $t$, ovviamente, il tempo. Sarà possibile aggiungere alla funzione anche un termine di covariate. Inoltre saranno riportate tutte le analisi delle proprietà statistiche della funzione. A causa della dipendenza spaziale, il modello STR-PDE sarà confrontato anche con tecniche di geostatistica. Particolare attenzione sarà posta riguardo alla regolarità della funzione stimata, poiché nel modello sono inserite anche penalizzazioni di opportune derivate della funzione. Quindi quanto proposto tiene conto anche di tecniche di smoothing.
-
-Questo studio è motivato dalla ricerca di un buon metodo di analisi di un dataset contenente le misurazioni della produzione dei rifiuti urbani pro capite nei comuni della provincia di Venezia tra il 1997 e il 2011. I dati sono stati raccolti ed elaborati dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto (Arpav) e sono disponibili sul sito di Open Data Veneto\footnote{\href{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}} per la consultazione e il trattamento. Le misurazioni contenute nel dataset in realtà riguardano tutto il Veneto, ma per semplicità computazionale e per l'elevato interesse riguardo la laguna veneta sarà analizzata solo la provincia di Venezia. Il modello STR-PDE permette di stimare l'andamento della produzione dei rifiuti su tutta la regione e ad ogni istante di tempo nell'intervallo considerato, garantendo una chiara visualizzazione del fenomeno.
-
+\begin{figure}[h]
+	\centering
+    \label{fig:Ven_poligonitutti}
+	\includegraphics[width=0.46\textwidth]{Immagini/Ven_punti.png}   
+   	\caption{Dominio spaziale e locazioni dei dati}
+	\label{fig:intro}
+\end{figure}
+\newpage
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.50\textwidth]{Immagini/Ven_Latitudinefda.png}   
-	\caption{Esempio di analisi di dati funzionali}
-	\label{fig:fda}
+	\subfigure[Rifiuti pro capite nel 2011]
+   {
+   \label{fig:Ven_poligonitutti}
+	\includegraphics[width=0.46\textwidth]{Immagini/venezia_dati/Dati2011.png}   
+   }
+	\subfigure[Posti letto pro capite nel 2011]
+   {
+   \label{fig:Ven_poligoniscelti}
+	\includegraphics[width=0.46\textwidth]{Immagini/venezia_dati/PL2011.png}
+   }
+	\caption{Rifiuti e posti letto pro capite}
+	\label{fig:intro2}
 \end{figure}
+\noindent La produzione di rifiuti urbani sarà certamente influenzata anche dal turismo. Per questo motivo sarà considerato nel modello anche questo effetto, non trascurabile nella stima, attraverso il numero di posti letto pro capite nei comuni (maggiori dettagli saranno forniti in seguito). In fig. \ref{fig:intro2} sono visualizzati i valori dei rifiuti e dei posti letto pro capite nel 2011, anno più recente nel dataset, come esempio di ciò che si ha a disposizione.
 
-Il lavoro di tesi sarà strutturato come segue. Nel capitolo \ref{cap:panoramica} è riportato un excursus sui metodi simili già esistenti in letteratura. Nel capitolo \ref{cap:modello} è presentata la costruzione del modello matematico STR-PDE, seguita dallo sviluppo del codice R descritto nel capitolo \ref{cap:Codice}. Nel capitolo \ref{cap:domC} si hanno i primi risultati, derivanti dall'applicazione del modello e del codice R al caso del dominio a forma di C descritto in \cite{art:ramsay} e \cite{art:wood}, per il quale è possibile valutare la bontà delle stime ottenute grazie alla perfetta conoscenza del fenomeno reale in ogni punto e in ogni istante. Nel capitolo \ref{cap:confronto} il modello STR-PDE è paragonato ad altri metodi già esistenti per il confronto delle stime ottenute. Nel capitolo \ref{cap:rifiuti} si ha l'applicazione allo studio della produzione dei rifiuti nella provincia di Venezia e infine, nel capitolo \ref{cap:conclusione}, sono raccolte le conclusioni e i possibili sviluppi futuri riguardanti miglioramenti del lavoro.
+Il problema della produzione dei rifiuti nella provincia di Venezia richiede la formulazione di un modello particolarmente adatto per l'analisi funzionale di dati definiti in spazio e tempo. Sono già disponibili in letteratura delle tecniche per dati di questo tipo ma non tutte sono adatte al trattamento di questi dati. La geometria del dominio, infatti, è complessa. In alcuni punti essa ha una definizione per nulla grossolana e presenta una grossa concavità nella laguna di Venezia, oltre alla presenza delle isole. Pertanto non si può evitare di considerare le particolarità del dominio spaziale.
+
+Si consideri ad esempio quanto riportato in \ref{fig:intro3}. Sono stati analizzati i comuni di Quarto d'Altino e Cavallino-Treporti, tra di loro non eccessivamente distanti in linea d'aria ma con valori di produzione dei rifiuti decisamente diversi (come si può notare dagli andamenti temporali). Se i dati fossero analizzati con una tecnica che non tiene conto della geometria spaziale i due comuni sarebbero ritenuti vicini tra loro, quando in realtà si ha una grande separazione dovuta alla laguna di Venezia. Tecniche che trascurano la forma del dominio non sono appropriate poiché porterebbero ad una cattiva stima del fenomeno.
+\newpage
+\begin{figure}[t]
+	\centering
+	\subfigure[Comuni selezionati]
+   {
+   \label{fig:Ven_poligonitutti}
+	\includegraphics[width=0.43\textwidth]{Immagini/CTQDA.png}   
+   }
+	\subfigure[Andamenti temporali]
+   {
+   \label{fig:Ven_poligoniscelti}
+	\includegraphics[width=0.49\textwidth]{Immagini/andamenti_temporali.png}
+   }
+	\caption{Differenza tra i dati nei comuni di Cavallino-Treporti e Quarto d'Altino}
+	\label{fig:intro3}
+\end{figure}
+In questa tesi è illustrato il modello statistico \textit{Spatio-Temporal Regression model with PDE penalization} (ST-PDE) per l'analisi funzionale di dati distribuiti in spazio e tempo. Questo modello si dimostrerà in grado di assolvere pienamente questo compito e di fornire una buona stima dell'andamento della produzione di rifiuti urbani nella provincia di Venezia. La funzione sarà stimata dalla minimizzazione di un funzionale di penalizzazione con termini differenziali, quindi sarà garantita anche la regolarità della stima. La stima sarà espressa secondo opportune funzioni di base (elementi finiti in spazio, B-splines in tempo) capaci di tener conto della geometria spaziale. Tramite l'aggiunta di un termine con covariata sarà possibile introdurre anche dell'effetto del turismo. Dalla modellizzazione matematica è stato sviluppato un algoritmo e il relativo codice R per il calcolo della soluzione numerica della stima. 
+
+Il lavoro di tesi sarà strutturato come segue. Nel capitolo \ref{cap:panoramica} è riportato una panoramica dettagliata dei metodi già esistenti in letteratura. Nel capitolo \ref{cap:modello} è presentata la costruzione del modello matematico ST-PDE, seguita dallo sviluppo del codice R descritto nel capitolo \ref{cap:Codice}. Nel capitolo \ref{cap:domC} si hanno i primi risultati, derivanti dall'applicazione del modello e del codice R a simulazioni eseguite sul dominio a forma di C descritto in \cite{art:ramsay} e \cite{art:wood}, per il quale è possibile valutare la bontà delle stime ottenute grazie alla perfetta conoscenza del fenomeno reale in ogni punto e in ogni istante. Nel capitolo \ref{cap:confronto} il modello ST-PDE sarà paragonato ad altri metodi già esistenti per il confronto delle stime ottenute. Nel capitolo \ref{cap:rifiuti} si ha l'applicazione allo studio della produzione dei rifiuti nella provincia di Venezia e infine, nel capitolo \ref{cap:conclusione}, sono raccolte le conclusioni e i possibili sviluppi futuri.
 \newpage
 \thispagestyle{empty}
-
-
-
 
 \chapter{Panoramica sui modelli già esistenti}
 \label{cap:panoramica}
 
-L'obiettivo del modello che sarà presentato in seguito è la rappresentazione funzionale di dati distribuiti in spazio e tempo. La funzione, però, non può essere identificata solo dalla minimizzazione degli scarti quadratici tra valori osservati e stimati, ma il processo di stima deve tener conto anche della regolarità della funzione. Quindi il modello STR-PDE si inserisce anche nello studio di tecniche di smoothing di dati funzionali, che prevedono la penalizzazione di opportune derivate della funzione stimata. Sono già disponibili alcune pubblicazioni riguardanti l'analisi di dati funzionali con smoothing ed è possibile evidenziare similarità o contrasti con ognuna di esse. 
-
-Come già accennato nell'introduzione, il lavoro si propone di essere un'estensione al caso tempo-variante di quanto fatto in \cite{art:sangalli}. In questa pubblicazione si ipotizza che i dati siano distribuiti su un dominio limitato e che possano essere descritti da una funzione con l'aggiunta di rumore:
+Il modello ST-PDE si inserisce nell'ambito dell'analisi funzionale di dati distribuiti in spazio e tempo. Sia $\underline p = (x,y) \in \Omega$ il vettore con le coordinate del punto spaziale, $t \in [T_1,T_2]$ l'istante temporale e $z \in \mathbb{R}$ la variabile risposta. Le metodologie classiche di analisi funzionale, esposte ad esempio in CITA RAMSAY SILVERMAN, possono essere applicate per la stima di un dato tempo-variante. Tuttavia in questo caso si ha anche la dipendenza spaziale, pertanto la funzione da stimare sarà:
 $$
-z_i=f(\underline{p}_i) + \varepsilon_i \qquad \forall i \in 1\ldots n
+z=f(\underline p,t) \ .
 $$
-dove $\underline{p}_i$ è il vettore delle coordinate. Estendere ciò al caso tempo-variante significa aggiungere ad $f$ anche la dipendenza temporale e studiare dati che abbiano anche un'informazione legata al tempo, appartenente ad un intervallo fissato. L'approccio seguito, però, sarà differente sotto alcuni aspetti. Per poter stimare la funzione solo spaziale in \cite{art:sangalli} era posto un funzionale di penalizzazione da minimizzare con la somma di un termine di scarti quadratici tra dati e valori stimati dal modello e di un integrale del laplaciano della funzione (utile ad avere una stima più o meno liscia). Il problema di minimo era ridotto ad un problema variazionale che, per poter essere risolto computazionalmente, necessitava della riduzione di $f$ ad una combinazione lineare di funzioni di base. Quindi la possibilità di avere una soluzione era dovuta al passaggio da una formulazione complessa esatta ad una più semplice (risolvibile tramite un sistema lineare) e approssimata, vincolando l'appartenenza della funzione ad uno spazio finito-dimensionale. Nell'approccio seguito in questo lavoro, come si potrà vedere in seguito, non sarà così. Tuttavia l'articolo è stato da ispirazione per molte cose: la scelta di adottare gli elementi finiti come basi in spazio, la penalizzazione del laplaciano come misura di regolarità in spazio, l'uso di alcune matrici (come $R_0$ e $R_1$, che si ritroveranno nel prossimo capitolo nella spiegazione analitica del modello) derivano dalla volontà di estendere il caso puramente spaziale.
+Secondo quanto è solitamente fatto per problemi di analisi di dati funzionali, sarà necessario minimizzare un funzionale di penalizzazione che contenga non soltanto gli scarti tra valori osservati e stimati ma anche termini differenziali per la regolarità della stima.
 
-Anche in \cite{art:augustin} è analizzato un metodo per l'analisi di dati distribuiti in spazio e tempo. Questo lavoro, però, si basa su modelli additivi generalizzati (GAMM), costruiti per spiegare una funzione del valore atteso della risposta (nell'articolo è usato il logaritmo) tramite uno o più termini funzionali:
+La letteratura su modelli spazio-temporali è già ampia, come è esposto in CITA CRESSIE. Tuttavia le metodologie già disponibili presentano tra loro delle differenze. Non tutti i modelli sono adatti ad essere applicati alla stima della produzione di rifiuti urbani nella provincia di Venezia a causa della forte dipendenza dalla geometria del problema. Per questo motivo, dopo la definizione del modello ST-PDE, sarà dedicato anche uno spazio al al confronto delle stime dai tra i diversi metodi a disposizione su dati appositamente generati.
+
+Ad esempio, il kriging spazio-temporale, descritto in CITAZIONI, non è in grado di tener conto del dominio spaziale. Questa tecnica sarà considerata negli studi di simulazione e nei confronti ma non potrà garantire risultati ottimali per questo tipo di analisi.
+
+Particolare attenzione deve essere posta riguardo a quanto fatto in \cite{art:sangalli}. In questa pubblicazione è studiato un modello solamente spaziale, definito su un dominio spaziale $\Omega$. Questo dominio può assumere le stesse caratteristiche che saranno studiate in questa tesi: definizione complessa, concavità o buchi. Di conseguenza la risposta sarà espressa dal seguente modello:
 $$
-\log(\mathbb{E}[z_i])= f_1+f_2+ \ldots +\varepsilon_i \ .
+z=f(\underline{p})
 $$
-Anche in \cite{art:marra} è eseguita la stessa analisi, ma con una sola funzione. La costruzione di queste pubblicazioni, quindi, è più complessa del modello STR-PDE, in cui si studia una sola funzione di risposta e non si fa uso di modelli generalizzati. Tuttavia, in \cite{art:augustin} e in \cite{art:marra} è posta un'ipotesi molto interessante: già dall'inizio la funzione è espressa come sviluppo di funzioni di base. Questo può essere considerato come il maggior punto di incontro del modello STR-PDE con GAMM, poichè non sarà creato un problema esatto da approssimare solo alla fine della costruzione del modello, ma sarà imposta già da subito una rappresentazione finito-dimensionale.
+Per poter stimare la funzione $f$ è introdotto il seguente funzionale di penalizzazione da minimizzare:
+$$
+J_{\lambda }(f(\underline p))=\sum_{i=1}^n \bigl( z_{i} - f(\underline p_i) \bigr)^2 \ + \\
++\lambda\int_{\Omega} ( \Delta(  f(\underline p)  ) \Bigr)^2 d \Omega \ .
+$$
+Il problema di minimo è risolto attraverso il passaggio ad una forma variazionale che, a seguito dell'introduzione di un'opportuna espansione in elementi finiti per $f$, è ridotta ad un problema discreto risolvibile con un sistema lineare. L'articolo \cite{art:sangalli} non contempla la variazione temporale per $f$ ma può essere considerato il punto di partenza per il modello ST-PDE. Non sarà ricavata una forma variazionale per la stima della soluzione, ma l'attenzione alla geometria del problema e l'uso degli elementi finiti rappresentano un forte legame con il modello ST-PDE.
+
+Le pubblicazioni \cite{art:marra} e \cite{art:augustin} studiano metodi per l'analisi funzionale di dati distribuiti in spazio e tempo. Questo lavori, però, si basano su modelli che possono assumere una forma più complessa, ipotizzando che una funzione del valore atteso della risposta (nel loro caso il logaritmo) possa essere spiegato da uno o più termini funzionali (quest'ultima possibilità è riportata solo in \cite{art:augustin}):
+$$
+\log(\mathbb{E}[z_i])= f_1+f_2+ \ldots f_N .
+$$
+Ognuna di queste funzioni può avere dipendenza solo spaziale, solo temporale o entrambe. Queste complicazioni rispetto al modello che sarà studiato da ST-PDE possono essere risolte molto velocemente ipotizzando che la risposta dipenda da un solo termine spazio-temporale. Le tecniche proposte dagli autori sono un ottimo termine di paragone per il modello ST-PDE. La loro applicabilità per un problema con forte dipendenza dalla forma del dominio, come sarà spiegato più nel dettaglio in \ref{cap:confronto}, dipende dalla scelta delle funzioni di base. 
 
 
-\chapter{Presentazione del modello STR-PDE}
+\chapter{Presentazione del modello ST-PDE}
 \label{cap:modello}
-In questo capitolo viene descritto nel dettaglio il modello STR-PDE per l'analisi di dati distribuiti in spazio e tempo ed è calcolata la soluzione al problema di stima.
+In questo capitolo viene descritto nel dettaglio il modello ST-PDE per l'analisi di dati distribuiti in spazio e tempo ed è calcolata la soluzione al problema di stima.
 
 
 \section{Caso senza covariate}
 
 \subsection{Dati e modello}
 
-Siano $\{\underline p_i = (x_i,y_i); i=1, \ldots , n\}$ un insieme di $n$ punti spaziali in un dominio limitato $\Omega \subset \mathbb R^2$ e siano $\{t_j ; j=1, \ldots , m\}$ un insieme di $m$ istanti temporali in un intervallo $[0,T]\subset \mathbb R$. In questi punti ed istanti si osservano i dati: siano quindi $\{ z_{ij};i=1, \ldots , n; j=1, \ldots , m \}$ i valori della variabile reale nel punto $\underline p_i$ al tempo $t_j$.
+Sia $\{\underline p_i = (x_i,y_i); i=1, \ldots , n\}$ un insieme di $n$ punti spaziali in un dominio limitato $\Omega \subset \mathbb R^2$ e sia $\{t_j ; j=1, \ldots , m\}$ un insieme di $m$ istanti temporali in un intervallo $[T_1,T_2]\subset \mathbb R$. In questi punti ed istanti si osservano i dati: siano quindi $\{ z_{ij};i=1, \ldots , n; j=1, \ldots , m \}$ i valori della variabile risposta nel punto $\underline p_i$ al tempo $t_j$.
 
-Sarebbe possibile trattare i dati come provenienti da funzioni tempo-varianti in ognuno dei punti spaziali considerati, cioè ipotizzare che le osservazioni $z_{ij}$ provengano da una funzione $z_i(t)$ valutata all'istante $t_j$. Questa marginalizzazione può analogamente essere eseguita in spazio, supponendo che per ogni istante di tempo esista una funzione spaziale definita su $\Omega$ che genera i dati. Tuttavia in questa analisi non si studiano modelli marginali, ma si ipotizza che le osservazioni $\{z_{ij}; i=1, \ldots , n; j=1, \ldots , m\}$ siano generate da un campo spazio-temporale con l'aggiunta di rumore:
+Come già riportato nel capitolo precedente, l'obiettivo sarà la stima di un campo spazio-temporale che rappresenti il fenomeno da cui sono stati raccolti i dati. Quindi si ipotizza che le osservazioni $z_{ij}$ siano generate da tale campo spazio-temporale con l'aggiunta di rumore:
 \begin{equation}
 \label{eq:modellobase}
 z_{ij}=f(\underline p_i,t_j)+\varepsilon_{ij}\ \ \ \ i = 1,\ldots,n\ \ j=1,\ldots,m \ \ ,
 \end{equation}
-dove $\{ \varepsilon_{ij}; i = 1,\ldots ,n; j=1,\ldots m\}$ sono residui indipendenti identicamente distribuiti di media nulla e varianza $\sigma^2$. L'obiettivo del modello STR-PDE sarà la stima della funzione $f(\underline p,t)$ dalle $nm$ osservazioni a disposizione, minimizzando un funzionale $J_{\underline \lambda }(f(\underline p,t))$ con la somma degli scarti quadratici tra le osservazioni e valori stimati e termini di penalizzazione delle derivate per la regolarità della funzione.
+dove $\{ \varepsilon_{ij}; i = 1,\ldots ,n; j=1,\ldots m\}$ sono residui indipendenti identicamente distribuiti di media nulla e varianza $\sigma^2$. L'obiettivo del modello ST-PDE sarà la stima della funzione $f(\underline p,t)$ dalle $nm$ osservazioni a disposizione, minimizzando un funzionale $J_{\underline \lambda }(f(\underline p,t))$ con la somma degli scarti quadratici tra le osservazioni e valori stimati e termini di penalizzazione delle derivate per la regolarità della funzione.
 
 
 
-\subsection{Definizione delle funzioni di base per $f(\protect\underline{p},t)$}
+\subsection{Definizione delle funzioni di base}
 \label{subs:basi}
 
 Dall'analisi della letteratura già disponibile per modelli simili, anche se solo spaziali, si può dedurre che non è possibile dare una stima della funzione se essa non risulta espressa in una espansione di opportune funzioni di base. Infatti l'infinita possibilità di variazione di una funzione in un qualsiasi spazio funzionale non renderebbe possibile una stima computazionale del risultato. L'approccio scelto per la costruzione di $f(\underline p,t)$ si basa sulla generalizzazione delle espansioni in funzione di base dei casi puramente spaziali o temporali.
@@ -220,7 +264,7 @@ f(\underline p, t) = \sum_{l=1}^N b_l(t)\psi_l(\underline p) \ .
 \end{equation}
 Si ha quindi che $\{ a_k(\underline p);k=1, \ldots , M \}$ sono i coefficienti spazio-varianti dell'espansione in basi di temporali e $\{ b_l(t);l=1, \ldots , N \}$ sono i coefficienti tempo-varianti dell'espansione in basi spaziali. In questa costruzione la funzione $f(\underline p,t)$ possiede entrambe queste rappresentazioni.
 
-Sono state ricavate due espressioni equivalenti per $f$ ma, come si potrà notare in seguito, questo è coerente (sarà ricavata un'espressione più specifica). Per il momento occorre soltanto aggiungere le seguenti condizioni (che saranno necessarie per la costruzione del funzionale di penalizzazione $J_{\underline \lambda }(f(\underline p,t))$) per i coefficienti appena introdotti:
+Sono state ricavate due espressioni equivalenti per $f$ ma, come si potrà notare in seguito, questo è coerente (sarà ricavata un'espressione più specifica). Per una corretta definizione del funzionale di penalizzazione $J_{\underline \lambda }(f(\underline p,t))$) è necessario introdurre, per tali coefficienti, le seguenti condizioni:
 $$
 a_k(\underline p) \in H_{n_0}^2(\Omega) \qquad \forall k=1, \ldots , M
 $$
@@ -228,10 +272,10 @@ e
 $$
 b_l(t) \in H^2([T_1,T_2]) \qquad \forall l=1, \ldots , N \ ,
 $$
-dove $H^2_{n_0}(\Omega) = \{h \in H^2(\Omega) | \partial _{\nu}h=0 \mbox{ su } \partial \Omega\}$, spazio incluso in $H^2(\Omega)$ che garantisce alle funzioni $a_k(\underline p)$ di avere condizioni di Neumann alla frontiera.
+dove $H^2_{n_0}(\Omega) = \{h \in H^2(\Omega) | \partial _{\nu}h=0 \mbox{ su } \partial \Omega\}$, spazio incluso in $H^2(\Omega)$ con condizioni di Neumann alla frontiera. Altre condizioni possono essere poste (a patto che garantiscano l'applicabilità del funzionale di penalizzazione), ma per semplicità saranno ipotizzate queste.
 
 
-\subsection{Funzionale di penalizzazione $J_{\protect\underline{\lambda}}(f(\protect\underline{p},t))$}
+\subsection{Funzionale di penalizzazione}
 
 Per poter stimare $f(\underline p,t)$ si introduce la minimizzazione di un funzionale non formato solamente dagli scarti quadratici tra le osservazioni e le stime negli $nm$ punti disponibili. Sono inclusi in esso anche altri due termini, che derivano dalla penalizzazione di opportune derivate in spazio e tempo per poter garantire regolarità alla funzione. Analogamente a quanto fatto il \ref{subs:basi}, per costruire tale funzionale si considerano inanzitutto i problemi marginali in spazio e tempo.
 
@@ -530,7 +574,7 @@ $$
 
 
 
-\subsection{Proprietà statistiche di $\hat  {\protect\underline{c}}$}
+\subsection{Proprietà statistiche dello stimatore}
 Il modello di partenza indicato in \ref{eq:modellobase} può essere scritto anche in forma matriciale
 \begin{equation}
 \label{eq:modellobasematric}
@@ -602,7 +646,7 @@ $$
 \hat  {\underline z} =B\hat  {\underline c} + W \hat  {\underline \beta} = [B AQ + W(W^TW)^{-1}W^T(I-B AQ)]\underline z = S\underline z .
 $$
 
-\subsection{Proprietà statistiche di $\hat  {\protect\underline{c}}$ e $\hat  {\protect\underline{\beta}}$}
+\subsection{Proprietà statistiche degli stimatori}
 \label{sec:IC}
 Anche in questo caso è possibile calcolare valore atteso e varianza degli stimatori ottenuti. Questo è particolarmente utile in presenza di covariate, poichè consente di calcolare intervalli di confidenza o effettuare test per verificarne la sisignificatività. Per farlo, però, è necessario avere la forma matriciale del modello indicato in \ref{eq:modellobasecovar}:
 
@@ -628,15 +672,15 @@ $$
 $$
 $$ \mathrm{Var}[\hat  {\underline \beta}] = \sigma^2 (W^TW)^{-1} + \sigma^2 (W^TW)^{-1}W^T B A Q A^T B^T W(W^TW)^{-1}.
 $$
-Come nel caso senza covariate, anche ora si avrebbe la gaussianità degli stimatori se fosse ipotizzata per $\underline \varepsilon$. Se questa ipotesi fosse posta sarebbe possibile elaborare intervalli di confidenza o test per le componenti di $\underline \beta$ e verificarne la significatività. Tuttavia si può notare un termine di distorsione in $\mathbb{E}[\hat  {\underline \beta}]$ che complica l'inferenza su $\underline \beta$. Quindi nel codice R è stato deciso di non considerare tale distorsione, per avere intervalli di confidenza simmetrici e per non complicare eccessivamente questi calcoli. 
+Come nel caso senza covariate, anche ora si avrebbe la gaussianità degli stimatori se fosse ipotizzata per $\underline \varepsilon$. Se questa ipotesi fosse posta sarebbe possibile elaborare intervalli di confidenza o test per le componenti di $\underline \beta$ e verificarne la significatività. 
 
 
-\section{Stima di $\sigma^2$ e scelta dei parametri $\lambda_S$ e $\lambda_T$}
+\section{Stima della varianza di modello e scelta dei parametri di smoothing}
 \label{sez:GCV}
 
 Quanto riportato di seguito è valido indipendentemente dal fatto che siano inserite nel modello le covariate, quindi per entrambi i modelli proposti in precedenza.
 
-\subsection{Stima di $\sigma^2$}
+\subsection{Varianza di modello}
 Stimare la varianza dell'errore è necessario se si vuole fare inferenza sugli stimatori ed è molto semplice se si conoscono i gradi di libertà equivalenti del modello. Ma questi si ricavano dalla \textit{smoothing matrix}:
 $$
 \mathrm{EDF}=\mathrm{tr}(S) \ .
@@ -646,7 +690,7 @@ $$
 \hat{\sigma}^2=\frac{1}{nm-tr(S)}(\underline z - \hat  {\underline z})^T(\underline z - \hat  {\underline z})
 $$
 
-\subsection{Parametri $\lambda_S$ e $\lambda_T$}
+\subsection{Parametri di smoothing}
 I parametri $\lambda_S$ e $\lambda_T$ hanno un ruolo rilevante nella stima della soluzione, poichè scelgono quanto peso dare alla regolarità della funzione in spazio e tempo. Quindi è opportuno che siano fissati accuratamente prima della stima della soluzione.
 
 Secondo quanto indicato in \cite{art:marra}, la scelta corretta si ha con il valore di $\underline \lambda$ che realizza il minimo dell'indice di \textit{generalized cross validation}
@@ -673,10 +717,10 @@ Il modello descritto nel capitolo precedente è stato associato ad un algoritmo 
 
 Il linguaggio di programmazione adottato è R. Questa decisione ha permesso di sfruttare le numerose funzioni statistiche che in altri linguaggi non sarebbero disponibili. Ma, come si potrà notare in seguito, sono anche emersi i lati negativi di questo linguaggio. Durante l'implementazione si è fatto uso del pacchetto \textit{fda} e di alcune funzioni già disponibili per il caso puramente spaziale descritto in \cite{art:sangalli}.
 
-\section{Funzioni di base disponibili nel codice}
+\section{Funzioni di base considerate}
 Sono stati implementati solo alcuni tipi di funzione di base in spazio e tempo, che si sono rivelate utili alle applicazioni che saranno riportate nei capitoli successivi. 
 
-Per quanto riguarda lo spazio, il codice è stato pensato per dati distribuiti su un dominio bidimensionale anche complesso (con bordi irregolari o buchi). Quindi un'ottima scelta di funzioni di base sono gli elementi finiti descritti in REFERENZA NECESSARIA. Queste funzioni sono costruite su una triangolazione del dominio, definita dai vertici del poligono che descrive la frontiera e dai punti interni (solitamente quelli in cui sono disponibili i dati). Ognuno di questi punti diventa un nodo della triangolazione e ad ogni nodo è associata una funzione lineare a tratti come quella in \ref{fig:basisp}, che vale 1 sul nodo selezionato, decresce linearmente sui triangoli adiacenti e si annulla su tutti gli altri nodi e triangoli. Per l'implementazione di queste funzioni è stato riutilizzata una parte del codice del caso puramente spaziale. Anche gli elementi finiti quadratici sono stati implementati, ma non sono stati scelti nelle applicazioni poiché rallentano l'esecuzione a causa della maggiore precisione che richiedono.
+Per quanto riguarda lo spazio, il codice è stato pensato per dati distribuiti su un dominio dalla complessa definizione (con bordi irregolari o buchi). Quindi un'ottima scelta di funzioni di base sono gli elementi finiti descritti in \cite{art:quarteroni}, analogamente a quanto fatto in \cite{art:sangalli}. Queste funzioni sono costruite su una triangolazione di Delaunay del dominio $\Omega_{\tau}$, definita dai vertici del poligono che descrive la frontiera e dai punti interni (solitamente quelli in cui sono disponibili i dati). Ognuno di questi punti diventa un nodo della triangolazione e ad ogni nodo è associata una funzione lineare a tratti come quella in \ref{fig:basisp}, che vale 1 sul nodo selezionato, decresce linearmente sui triangoli adiacenti e si annulla su tutti gli altri nodi e triangoli. Per l'implementazione di queste funzioni è stato riutilizzata una parte del codice del caso puramente spaziale. Anche gli elementi finiti quadratici sono stati implementati, ma non sono stati scelti nelle applicazioni poiché rallentano l'esecuzione a causa della maggiore precisione che richiedono.
 
 \begin{figure}[t]
 	\centering
@@ -694,7 +738,7 @@ Per quanto riguarda lo spazio, il codice è stato pensato per dati distribuiti s
 	\label{fig:basi}
 \end{figure}
 
-Le basi in tempo a disposizione sono le B-splines, funzioni che, fissato un intervallo temporale e alcuni nodi in esso contenuti (nel nostro caso equispaziati), sono usate per l'espansione in base delle \textit{funzioni spline}. Il codice necessario è già stato implementato ed ottimizzato nel pacchetto \textit{fda} ed è stato riciclato per il codice del modello STR-PDE. In fig. \ref{fig:basit} sono riportate le 9 B-splines cubiche definite sull'intervallo $[0,2\pi]$ (che sarà usato per l'applicazione al dominio a forma di C). L'unico vincolo imposto a queste funzioni di base è il grado, che deve essere almeno 3 per avere la derivata seconda delle basi necessaria per la penalizzazione.
+Le basi in tempo a disposizione sono le B-splines, funzioni che, fissato un intervallo temporale e alcuni nodi in esso contenuti (nel nostro caso equispaziati), sono usate per l'espansione in base delle \textit{funzioni spline}. Il codice necessario è già stato implementato ed ottimizzato nel pacchetto \textit{fda} ed è stato riciclato per il codice del modello ST-PDE. In fig. \ref{fig:basit} sono riportate le 9 B-splines cubiche definite sull'intervallo $[0,2\pi]$ (che sarà usato per l'applicazione al dominio a forma di C). L'unico vincolo imposto a queste funzioni di base è il grado, che deve essere almeno 3 per avere la derivata seconda delle basi necessaria per la penalizzazione.
 
 \section{Schematizzazione dell'algoritmo di stima}
 L'esecuzione del codice è stata divisa in alcuni passi per poter permettere all'utente di inserire gradualmente gli oggetti in ingresso e fissare i parametri che servono per ottenere la stima finale. In più punti si è cercato di nascondere all'utente le variabili temporanee e di includere in opportune classi di R tutte le informazioni riguardanti concetti tra di loro comuni. 
@@ -739,13 +783,13 @@ Non sono state eseguite più misurazioni per caso perchè già da queste è chia
 
 Il motivo di questa lentezza è legato al linguaggio di programmazione. Non è una novità che R non sia uno dei linguaggi maggiormente efficienti. Inoltre, tra tutte le operazioni a disposizione, l'esecuzione dei cicli e di operazioni di accesso è un punto debole\footnote{si consultino le considerazioni in questa pagina: \href{http://adv-r.had.co.nz/Rcpp.html}{http://adv-r.had.co.nz/Rcpp.html}}. Quindi l'uso di fattorizzazione QR (e della risoluzione di un sistema tramite \textit{backward substitutions} che richiede) o di matrici sparse (implementate tramite tre vettori rispettivamente con indici di riga, colonna e valori non nulli) sono necessariamente lente per l'alto numero di cicli che richiedono. Le funzioni base di R, invece, sono certamente più ottimizzate. La conseguenza di questa analisi sarà evidenziata anche nel cap. \ref{cap:conclusione}, in cui si indica che l'integrazione con linguaggi più efficienti nei colli di bottiglia del codice porterebbe a miglioramenti certi e alla possibilità di applicazione a dataset di grandi dimensioni.
 
-\chapter{Applicazione al dominio a forma di C}
+\chapter{Simulazioni sul dominio a forma di C}
 \label{cap:domC}
-Prima di applicare il modello allo studio della produzione di rifiuti nella provincia di Venezia sono state eseguite simulazioni su un caso noto e più semplice. Si è scelto di analizzare il dominio a forma di C e la corrispondente funzione spaziale $g(\underline p)$ (riportata in fig. \cite{fig:domC_fstest}) descritti in \ref{art:ramsay}, \cite{art:sangalli}, \cite{art:wood} e implementata nel pacchetto R \textit{mgcv}. La funzione $g(\underline p)$ è solo spaziale, quindi è stata introdotta una variazione temporale deformando con il coseno:
+Prima di applicare il modello allo studio della produzione di rifiuti nella provincia di Venezia sono state eseguite simulazioni su un caso noto e più semplice. Si è scelto di analizzare il dominio a forma di C e la corrispondente funzione spaziale $g(\underline p)$ (riportata in fig. \cite{fig:domC_fstest}) descritti in \ref{art:ramsay}, \cite{art:sangalli}, \cite{art:wood} e implementata nel pacchetto R \textit{mgcv}. Dalla rappresentazione di $g(\underline p)$ si può notare come sia fondamentale la geometria del problema, come per il caso della produzione dei rifiuti nella provincia di Venezia. La funzione $g(\underline p)$ è solo spaziale, quindi è stata introdotta una variazione temporale deformando con il coseno:
 $$
 f(\underline p, t)=g(\underline p)cos(t)
 $$
-Su questo semplice caso sono stati eseguiti i primi tentativi per il modello STR-PDE sia senza covariate che con una covariata generata.
+Su questo semplice caso sono stati eseguiti i primi tentativi per il modello ST-PDE sia senza covariate che con una covariata generata.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.44\textwidth]{Immagini/DomCinizio/DomC_fstest.png}   
@@ -1037,9 +1081,9 @@ che contiene 1. L'ipotesi $H_0$ è accettata.
 \chapter{Confronto con altri metodi}
 \label{cap:confronto}
 
-Il modello STR-PDE rappresenta una generalizzazione del caso puramente spaziale proposto in \cite{art:sangalli} e, come è già stato evidenziato nel capitolo \ref{cap:panoramica}, non è l'unico modello disponibile per l'analisi di dati distribuiti sia in spazio che in tempo. Pertanto è necessario che sia confrontato con le altre principali metodologie presenti in letteratura, al fine di poter dire se e quanto il modello proposto possa rappresentare un miglioramento in questo campo.
+Il modello ST-PDE rappresenta una generalizzazione del caso puramente spaziale proposto in \cite{art:sangalli} e, come è già stato evidenziato nel capitolo \ref{cap:panoramica}, non è l'unico modello disponibile per l'analisi di dati distribuiti sia in spazio che in tempo. Pertanto è necessario che sia confrontato con le altre principali metodologie presenti in letteratura, al fine di poter dire se e quanto il modello proposto possa rappresentare un miglioramento in questo campo.
 
-Come già riportato nel cap. \ref{cap:panoramica}, l'articolo \cite{art:augustin} propone l'analisi di dati di questo tipo attraverso modelli misti additivi generalizzati (GAMM) di interazione spazio-tempo. Questo metodo è generalizzato, quindi può essere usato per spiegare anche funzioni del valore atteso della risposta. Nel nostro caso, per avvicinarci al caso STR-PDE, si ipotizza che la risposta sia pari alla somma di una funzione e di un eventuale termine con covariata. Alla funzione è associato lo smoothing secondo il prodotto tensoriale dei termini marginali in spazio e tempo con le loro penalizzazioni. Quindi la costruzione dei GAMM è molto simile a quella analizzata in STR-PDE e, mediante il codice implementato nel pacchetto R \textit{mgcv}, è possibile scegliere tra più tipi di modelli. In particolare ne saranno studiati due, i più simili al modello STR-PDE:
+Come già riportato nel cap. \ref{cap:panoramica}, l'articolo \cite{art:augustin} propone l'analisi di dati di questo tipo attraverso modelli misti additivi generalizzati (GAMM) di interazione spazio-tempo. Questo metodo è generalizzato, quindi può essere usato per spiegare anche funzioni del valore atteso della risposta. Nel nostro caso, per avvicinarci al caso ST-PDE, si ipotizza che la risposta sia pari alla somma di una funzione e di un eventuale termine con covariata. Alla funzione è associato lo smoothing secondo il prodotto tensoriale dei termini marginali in spazio e tempo con le loro penalizzazioni. Quindi la costruzione dei GAMM è molto simile a quella analizzata in ST-PDE e, mediante il codice implementato nel pacchetto R \textit{mgcv}, è possibile scegliere tra più tipi di modelli. In particolare ne saranno studiati due, i più simili al modello ST-PDE:
 \begin{itemize}
 \item TPS, in cui sono poste marginalmente \textit{cubic regression splines} in tempo e \textit{thin plate splines} in spazio;
 \item SOAP, che considera \textit{cubic regression splines} in tempo e \textit{soap film smoothing} in spazio.
@@ -1058,9 +1102,9 @@ Il procedimento è stato iterato 50 volte, per poter escludere possibili effetti
 
 \newpage
 \section{Caso senza covariata}
-Nel caso senza covariata si hanno i risultati riportati in fig. \ref{fig:cfr}, in cui sono stati tracciati i boxplot dei valori di $\mathrm{RMSE}$ raccolti nelle 50 iterazioni per ogni metodo. Subito si nota che l'errore commesso è minore nel caso di STR-PDE, e quindi la stima ottenuta con il modello proposto è la migliore.
+Nel caso senza covariata si hanno i risultati riportati in fig. \ref{fig:cfr}, in cui sono stati tracciati i boxplot dei valori di $\mathrm{RMSE}$ raccolti nelle 50 iterazioni per ogni metodo. Subito si nota che l'errore commesso è minore nel caso di ST-PDE, e quindi la stima ottenuta con il modello proposto è la migliore.
 
-Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_metodi_nocov}. Dai boxplot si nota che l'errore commesso è più alto nei casi di KRIG e TPS, e infatti le stime sono molto distanti dalla funzione reale. Invece SOAP e STR-PDE commettono errori minori, ma tra i due il migliore è STR-PDE, che ha linee di livello più ordinate rispetto a SOAP. 
+Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_metodi_nocov}. Dai boxplot si nota che l'errore commesso è più alto nei casi di KRIG e TPS, e infatti le stime sono molto distanti dalla funzione reale. Invece SOAP e ST-PDE commettono errori minori, ma tra i due il migliore è ST-PDE, che ha linee di livello più ordinate rispetto a SOAP. 
 
 \begin{figure}[t]
 	\centering
@@ -1071,46 +1115,48 @@ Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_m
 
 \begin{landscape}
 \begin{figure}
-\centering
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/REALEtempo1.png}
-\includegraphics[height=0.25\textwidth]{immagini/simulazioni/Dati_tempo1.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/KRIGtempo1.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/SOAPtempo1.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/TPStempo1.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/STSRtempo1.png}
+\begin{tabular}{lcccccccc}
+& Funzione reale & Dati generati & KRIG & TPS & SOAP & ST-PDE \\
+&&&&&&\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=r]{90}{$t=0$\ \ \ \ \ \ }}}&\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/REALEtempo1.png} &
+\includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{immagini/simulazioni/Dati_tempo1.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo1.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/TPStempo1.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo1.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo1.png}\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=0.785$\ \ \ \ \ }}}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/REALEtempo2.png}&
+\includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/Dati_tempo2.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo2.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/TPStempo2.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo2.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo2.png}\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=\ 1.571$\ \ \ \ \ }}}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/REALEtempo3.png}&
+\includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/Dati_tempo3.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo3.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/TPStempo3.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo3.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo3.png}\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=2.356$\ \ \ \ \ }}}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/REALEtempo4.png}&
+\includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/Dati_tempo4.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo4.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/TPStempo4.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo4.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo4.png}&
 
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/REALEtempo2.png}
-\includegraphics[height=0.25\textwidth]{immagini/simulazioni/Dati_tempo2.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/KRIGtempo2.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/SOAPtempo2.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/TPStempo2.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/STSRtempo2.png}
-
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/REALEtempo3.png}
-\includegraphics[height=0.25\textwidth]{immagini/simulazioni/Dati_tempo3.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/KRIGtempo3.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/SOAPtempo3.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/TPStempo3.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/STSRtempo3.png}
-
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/REALEtempo4.png}
-\includegraphics[height=0.25\textwidth]{immagini/simulazioni/Dati_tempo4.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/KRIGtempo4.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/SOAPtempo4.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/TPStempo4.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni/STSRtempo4.png}
-
-\caption{Per alcuni istanti di tempo, funzione test $f(\protect\underline{p},t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, GAMM con soap film smoothing, GAMM con thin plate splines e stima con STR-PDE nel caso senza covariata}
+\end{tabular}
+\caption{Per alcuni istanti di tempo, funzione test $f(\protect\underline{p},t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, GAMM con soap film smoothing, GAMM con thin plate splines e stima con ST-PDE nel caso senza covariata}
 \label{fig:confronto_altri_metodi_nocov}
 \end{figure}
 \end{landscape}
-
 
 \section{Caso con covariata}
 
 La stessa analisi è stata eseguita nel caso con covariata. La covariata è stata generata in tutti i punti esattamente come fatto nel capitolo \ref{cap:domC}. Nella calcolo del RMSE è stato considerato solo il termine dipendente dalla funzione $f(\underline p,t)$, poiché non è opportuno generare nuovamente valori per la covariata nei punti di validazione. I boxplot riportati in fig. \ref{fig:cfrcovar1} possono quindi essere considerati come valutazione della bontà della stima della parte funzionale del modello. Per la parte spiegata dalla covariata sono stati tracciati i boxplot in fig. \ref{fig:cfrcovar2}, con le stime di $\hat{\beta}$ calcolate dai metodi. Il kriging, che nel caso senza covariata si è rivelato ampiamente peggiore degli altri metodi, non è stato considerato.
 
-Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\beta$ non presenta differenze, ma nella parte funzionale il caso STR-PDE è nuovamente il migliore. Analogamente al caso senza covariata, dai plot della funzione stimata ad alcuni istanti di tempo fissati in fig. \ref{fig:confronto_altri_metodi_cov} si possono trarre le stesse conclusioni. Il modello STR-PDE è quello che più si avvicina alla funzione reale.
+Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\beta$ non presenta differenze, ma nella parte funzionale il caso ST-PDE è nuovamente il migliore. Analogamente al caso senza covariata, dai plot della funzione stimata ad alcuni istanti di tempo fissati in fig. \ref{fig:confronto_altri_metodi_cov} si possono trarre le stesse conclusioni. Il modello ST-PDE è quello che più si avvicina alla funzione reale.
 
 \begin{figure}[t]
 	\centering
@@ -1155,16 +1201,16 @@ Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\bet
 \includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/TPStempo4.png}
 \includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/STSRtempo4.png}
 
-\caption{Per alcuni istanti di tempo, funzione test $f(\protect\underline{p},t)$ reale, dati simulati, stime ottenute rispettivamente con GAMM con soap film smoothing, GAMM con thin plate splines e stima con STR-PDE nel caso con covariata}
+\caption{Per alcuni istanti di tempo, funzione test $f(\protect\underline{p},t)$ reale, dati simulati, stime ottenute rispettivamente con GAMM con soap film smoothing, GAMM con thin plate splines e stima con ST-PDE nel caso con covariata}
 \label{fig:confronto_altri_metodi_cov}
 \end{figure}
 \end{landscape}
 
 
-\chapter{Analisi della produzione di rifiuti urbani nella provincia di Venezia}
+\chapter{Applicazione allo studio della produzione di rifiuti urbani nella provincia di Venezia}
 \label{cap:rifiuti}
 
-Come è già stato brevemente accennato in precedenza, l'applicazione scelta per il modello STR-PDE riguarda i dati della produzione di rifiuti urbani nel periodo di anni dal 1997 al 2011 nella provincia di Venezia. Per rifiuti urbani si intendono rifiuti domestici, rifiuti prodotti in locali, aree pubbliche, parchi, giardini o spiagge, rifiuti provenienti dalla pulizia delle strade o di altri luoghi pubblici. Non sono conteggiati i rifiuti speciali (tra cui ad esempio quelli industriali, agricoli o provenienti da attività commerciali o di costruzione) o pericolosi (per i quali esistono programmi di smaltimento particolari).
+Come è già stato brevemente accennato in precedenza, l'applicazione scelta per il modello ST-PDE riguarda i dati della produzione di rifiuti urbani nel periodo di anni dal 1997 al 2011 nella provincia di Venezia. Per rifiuti urbani si intendono rifiuti domestici, rifiuti prodotti in locali, aree pubbliche, parchi, giardini o spiagge, rifiuti provenienti dalla pulizia delle strade o di altri luoghi pubblici. Non sono conteggiati i rifiuti speciali (tra cui ad esempio quelli industriali, agricoli o provenienti da attività commerciali o di costruzione) o pericolosi (per i quali esistono programmi di smaltimento particolari).
 
 In realtà, come già precedentemente indicato, i dati raccolti dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto (Arpav) riguardano tutta la regione. Tuttavia è stata analizzata solo la provincia di Venezia per due motivi. Inanzitutto l'interesse particolare per la zona della laguna veneta, in cui è rilevante il ruolo del turismo (come si potrà notare in seguito). Inoltre considerare tutto il Veneto aumenterebbe notevolmente le dimensioni delle matrici in gioco causando una grossa spesa computazionale per la ricerca della soluzione. Quindi è stato scelto di concentrarsi su un dominio più piccolo ma nel quale è possibile notare più facilmente le particolarità dell'andamento del fenomeno della produzione dei rifiuti urbani.
 
@@ -1564,7 +1610,7 @@ Essendo presente una covariata, potrebbe essere interessante calcolare per essa 
 \chapter{Conclusioni e sviluppi futuri}
 \label{cap:conclusione}
 
-In questo lavoro di tesi è stato analizzato nel dettaglio il modello STR-PDE nell'ambito della stima funzionale per dati varianti all'interno di un dominio spaziale e di un intervallo temporale. Il modello, che si propone di essere un'estensione del caso puramente spaziale già analizzato in letteratura, è stato sviluppato in codice R. Dal confronto con gli altri metodi e da quanto ricavato con le stime, soprattutto sul dominio a forma di C in cui è possibile conoscere il valore reale della funzione, si può concludere che i risultati prodotti sono molto buoni.
+In questo lavoro di tesi è stato analizzato nel dettaglio il modello ST-PDE nell'ambito della stima funzionale per dati varianti all'interno di un dominio spaziale e di un intervallo temporale. Il modello, che si propone di essere un'estensione del caso puramente spaziale già analizzato in letteratura, è stato sviluppato in codice R. Dal confronto con gli altri metodi e da quanto ricavato con le stime, soprattutto sul dominio a forma di C in cui è possibile conoscere il valore reale della funzione, si può concludere che i risultati prodotti sono molto buoni.
 
 Diversa è la conclusione per le prestazioni computazionali del codice. Per semplicità computazionale le basi degli elementi finiti sono state scelte lineari e la produzione dei rifiuti è stata analizzata solamente nella provincia di Venezia, pur avendo a disposizione i dati di tutto il Veneto. Inoltre, durante l'esecuzione del codice, si è potuto notare come alcune funzioni come la minimizzazione di $\mathrm{GCV}(\underline \lambda)$ o il calcolo dei valori stimati ad un istante di tempo fissato (usati ad esempio per conoscere il profilo della funzione ad un certo anno) siano molto lente. Ovviamente per analisi di dataset di grosse dimensioni deve essere messa in conto una spesa di tempo elevata, ma R certamente non ha aiutato. Infatti, è noto che R non sia un linguaggio di programmazione fortemente efficiente, e questo ha caratterizzato la lentezza di esecuzione. Il più chiaro sviluppo futuro può essere l'uso del codice come base per la creazione di un algoritmo più veloce attraverso l'integrazione con un linguaggio di programmazione più efficiente (come il C++) o dell'eventuale parallelizzazione nei colli di bottiglia più evidenti.
 
@@ -1593,6 +1639,9 @@ Laura M. Sangalli, James O. Ramsay, Timothy O. Ramsay, \emph{Spatial spline regr
 
 \bibitem{art:wood}
 Simon N. Wood, Mark W. Bravington, Sharon L. Hedley, \emph{Soap film smoothing}, Journal of the Royal Statistical Society: Series B, 70, 931–955, (2008)
+
+\bibitem{art:quarteroni}
+A. Quarteroni, \emph{Modellistica numerica per problemi differenziali}, Springer-Verlag Italia, (2012)
 
 \bibitem{prog:R}
 R Core Team, \emph{R: A Language and Environment for Statistical Computing}, R Foundation for Statistical Computing, Vienna, 2013, \href{http://www.R-project.org/}{http://www.R-project.org/}

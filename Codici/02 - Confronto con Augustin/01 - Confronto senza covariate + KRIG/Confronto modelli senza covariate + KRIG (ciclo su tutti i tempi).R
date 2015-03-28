@@ -492,7 +492,7 @@ for(j in 1:length(TimePoints))
         labs(color="Dato")+
         scale_x_continuous(name="x", limits=c(-1,3.5)) +
         scale_y_continuous(name="y",limits=c(-1,1)) +
-        labs(title=paste("Dati Generati al tempo ",round(TimePoints[j],3),sep="")) + 
+        labs(title=paste("Dati generati al tempo ",round(TimePoints[j],3),sep="")) + 
         theme(plot.title = element_text(size = rel(1.5), face="bold")) +
         guides(size=FALSE)
     ggsave(file=paste("Dati_tempo",j,".png",sep=""),height=5,width=6)
@@ -523,7 +523,7 @@ for(jj in 1:length(TimePoints))
     }
     # Plot
     png(filename=paste("TPStempo",jj,".png",sep=""))
-    image(xGen,c(yGen,2),PlotMatrix,col=heat.colors(100),main=paste("Estimated function at time ",round(TimeSelected,3)," (TPS)",sep=""),xlab="",ylab="",ylim=c(-1,1))
+    image(xGen,c(yGen,2),PlotMatrix,col=heat.colors(100),main=paste("Funzione stimata al tempo ",round(TimeSelected,3)," (TPS)",sep=""),xlab="",ylab="",ylim=c(-1,1))
     lines(xbound,ybound,lwd=3)
     lines(c(xbound[1],xbound[length(xbound)]),c(ybound[1],ybound[length(ybound)]),lwd=3)
     contour(xGen,c(yGen,2),PlotMatrix,nlevels=10,add=TRUE,lwd=2,labcex=1.1)
@@ -536,7 +536,7 @@ for(jj in 1:length(TimePoints))
     }
     # Plot
     png(filename=paste("SOAPtempo",jj,".png",sep=""))
-    image(xGen,c(yGen,2),PlotMatrix,col=heat.colors(100),main=paste("Estimated function at time ",round(TimeSelected,3)," (SOAP)",sep=""),xlab="",ylab="",ylim=c(-1,1))
+    image(xGen,c(yGen,2),PlotMatrix,col=heat.colors(100),main=paste("Funzione stimata al tempo ",round(TimeSelected,3)," (SOAP)",sep=""),xlab="",ylab="",ylim=c(-1,1))
     lines(xbound,ybound,lwd=3)
     lines(c(xbound[1],xbound[length(xbound)]),c(ybound[1],ybound[length(ybound)]),lwd=3)
     contour(xGen,c(yGen,2),PlotMatrix,nlevels=10,add=TRUE,lwd=2,labcex=1.1)
@@ -549,7 +549,7 @@ for(jj in 1:length(TimePoints))
     }
     # Plot
     png(filename=paste("STSRtempo",jj,".png",sep=""))
-    image(xGen,c(yGen,2),PlotMatrix,col=heat.colors(100),main=paste("Estimated function at time ",round(TimeSelected,3)," (STSR)",sep=""),xlab="",ylab="",ylim=c(-1,1))
+    image(xGen,c(yGen,2),PlotMatrix,col=heat.colors(100),main=paste("Funzione stimata al tempo ",round(TimeSelected,3)," (STR-PDE)",sep=""),xlab="",ylab="",ylim=c(-1,1))
     lines(xbound,ybound,lwd=3)
     lines(c(xbound[1],xbound[length(xbound)]),c(ybound[1],ybound[length(ybound)]),lwd=3)
     contour(xGen,c(yGen,2),PlotMatrix,nlevels=10,add=TRUE,lwd=2,labcex=1.1)
@@ -562,7 +562,7 @@ for(jj in 1:length(TimePoints))
     }
     # Plot
     png(filename=paste("REALEtempo",jj,".png",sep=""))
-    image(xGen,c(yGen,2),PlotMatrix,col=heat.colors(100),main=paste("Real function at time ",round(TimeSelected,3),sep=""),xlab="",ylab="",ylim=c(-1,1))
+    image(xGen,c(yGen,2),PlotMatrix,col=heat.colors(100),main=paste("Funzione reale al tempo ",round(TimeSelected,3),sep=""),xlab="",ylab="",ylim=c(-1,1))
     lines(xbound,ybound,lwd=3)
     lines(c(xbound[1],xbound[length(xbound)]),c(ybound[1],ybound[length(ybound)]),lwd=3)
     contour(xGen,c(yGen,2),PlotMatrix,nlevels=10,add=TRUE,lwd=2,labcex=1.1)
@@ -576,7 +576,7 @@ for(jj in 1:length(TimePoints))
     }
     # Plot
     png(filename=paste("KRIGtempo",jj,".png",sep=""))
-    image(xGen,c(yGen,2),PlotMatrix,col=heat.colors(100),main=paste("Estimated function at time ",round(TimeSelected,3)," (KRIG)",sep=""),xlab="",ylab="",ylim=c(-1,1))
+    image(xGen,c(yGen,2),PlotMatrix,col=heat.colors(100),main=paste("Funzione stimata al tempo ",round(TimeSelected,3)," (KRIG)",sep=""),xlab="",ylab="",ylim=c(-1,1))
     lines(xbound,ybound,lwd=3)
     lines(c(xbound[1],xbound[length(xbound)]),c(ybound[1],ybound[length(ybound)]),lwd=3)
     contour(xGen,c(yGen,2),PlotMatrix,nlevels=10,add=TRUE,lwd=2,labcex=1.1)
