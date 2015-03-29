@@ -12,36 +12,28 @@
 \contentsline {subsection}{\numberline {2.1.7}Propriet\IeC {\`a} statistiche dello stimatore}{16}{subsection.2.1.7}
 \contentsline {section}{\numberline {2.2}Caso con covariate}{17}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Propriet\IeC {\`a} statistiche degli stimatori}{18}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Stima della varianza di modello e scelta dei parametri di smoothing}{19}{section.2.3}
+\contentsline {section}{\numberline {2.3}Stima della varianza di modello e scelta dei parametri di smoothing}{18}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Varianza di modello}{19}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Parametri di smoothing}{19}{subsection.2.3.2}
 \contentsline {chapter}{\numberline {3}Sviluppo del codice R}{21}{chapter.3}
 \contentsline {section}{\numberline {3.1}Funzioni di base considerate}{21}{section.3.1}
 \contentsline {section}{\numberline {3.2}Schematizzazione dell'algoritmo di stima}{22}{section.3.2}
 \contentsline {section}{\numberline {3.3}Strutture dati adottate}{23}{section.3.3}
-\contentsline {chapter}{\numberline {4}Simulazioni sul dominio a forma di C}{25}{chapter.4}
+\contentsline {chapter}{\numberline {4}Simulazioni nel caso del dominio a forma di C}{25}{chapter.4}
 \contentsline {section}{\numberline {4.1}Triangolazione e istanti temporali}{26}{section.4.1}
 \contentsline {section}{\numberline {4.2}Caso senza covariata}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}Caso con covariata}{29}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Generazione della covariata e ricerca del miglior $\underline {\lambda }$}{29}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Analisi dei residui e test d'ipotesi per $\beta $}{32}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.3}Caso con covariata}{30}{section.4.3}
 \contentsline {chapter}{\numberline {5}Confronto con altri metodi}{35}{chapter.5}
 \contentsline {section}{\numberline {5.1}Caso senza covariata}{37}{section.5.1}
 \contentsline {section}{\numberline {5.2}Caso con covariata}{39}{section.5.2}
-\contentsline {chapter}{\numberline {6}Applicazione allo studio della produzione di rifiuti urbani nella provincia di Venezia}{41}{chapter.6}
-\contentsline {section}{\numberline {6.1}L'inclusione dell'effetto del turismo}{42}{section.6.1}
+\contentsline {chapter}{\numberline {6}Applicazione alla produzione di rifiuti urbani nella provincia di Venezia}{41}{chapter.6}
+\contentsline {section}{\numberline {6.1}Il turismo come possibile covariata}{42}{section.6.1}
 \contentsline {section}{\numberline {6.2}Trattamento del dominio}{42}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Regression splines}{43}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Scelte particolari tra i comuni}{45}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.2}Replica dei dati}{44}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}Triangolazione del dominio}{45}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Analisi preliminare dei dati}{46}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Funzioni di base}{49}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Applicazione del modello senza covariata}{50}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Ricerca del miglior $\underline {\lambda }$}{50}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Risultati}{50}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Analisi dei residui}{53}{subsection.6.4.3}
-\contentsline {section}{\numberline {6.5}Applicazione del modello con covariata}{53}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Ricerca del miglior $\underline {\lambda }$}{53}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Risultati}{54}{subsection.6.5.2}
-\contentsline {subsection}{\numberline {6.5.3}Analisi dei residui}{57}{subsection.6.5.3}
-\contentsline {chapter}{\numberline {7}Conclusioni e sviluppi futuri}{59}{chapter.7}
+\contentsline {section}{\numberline {6.3}Analisi preliminare dei dati}{47}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Funzioni di base}{50}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}Applicazione del modello senza covariata}{51}{section.6.4}
+\contentsline {section}{\numberline {6.5}Applicazione del modello con covariata}{55}{section.6.5}
+\contentsline {chapter}{\numberline {7}Conclusioni e sviluppi futuri}{61}{chapter.7}

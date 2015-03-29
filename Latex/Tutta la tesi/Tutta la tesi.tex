@@ -98,14 +98,14 @@ Gabriele Mazza & Matr. 798794 \\
 \chapter*{Sommario}
 \label{Cap:sommario}
 \thispagestyle{empty}
-Il presente lavoro di tesi propone un modello separabile per l'analisi funzionale di dati distribuiti in spazio e tempo. Il modello è particolarmente adatto allo studio di domini spaziali complessi, con concavità o buchi. La capacità di tener conto della geometria spaziale rappresenta un forte vantaggio per questo modello, che sarà paragonato alle altre tecniche già esistenti, comprese quelle che non presentano tale particolarità. Oltre allo sviluppo analitico è stato creato un algoritmo e un codice R per il calcolo computazionale della stima. L'applicazione studiata riguarda la produzione di rifiuti urbani pro capite nei comuni della provincia di Venezia tra il 1997 e il 2011, con un'attenzione speciale agli effetti legati al turismo.
+Il presente lavoro di tesi propone un modello separabile per l'analisi funzionale di dati distribuiti in spazio e tempo. Il modello è particolarmente adatto allo studio di problemi con domini spaziali complessi, con concavità o buchi. La capacità di tener conto della geometria spaziale rappresenta un forte vantaggio per questo modello, che sarà paragonato alle altre tecniche già esistenti, comprese quelle che non presentano tale particolarità. Oltre allo sviluppo analitico è stato creato un algoritmo e un codice R per il calcolo computazionale della stima. La principale applicazione studiata in questa tesi riguarda la produzione di rifiuti urbani pro capite nei comuni della provincia di Venezia tra il 1997 e il 2011, con un'attenzione speciale agli effetti legati al turismo.
 
 \newpage
 \thispagestyle{empty}
 \chapter*{Abstract}
 \label{Cap:abstract}
 \thispagestyle{empty}
-The present work of thesis proposes a separable model for the functional analysis of data distributed in space and time. The model is particularly appropriate to the study of complex spatial domains, with concavities or holes. The ability to consider the spatial geometry is a strong advantage of this model, which will be compared to other existing techniques, including those that haven't this peculiarity. In addition to the analitical definition, an algorithm ad an R code for the computation of the estimate has been created. The application studied regards the production of urban waste per capita in the municipalities of Venice province between 1997 and 2011, with a special attention to the effects related to tourism.
+The present work of thesis proposes a separable model for the functional analysis of data distributed in space and time. The model is particularly appropriate to the study of problems with complex spatial domains, with concavities or holes. The ability to consider the spatial geometry is a strong advantage of this model, which will be compared to other existing techniques, including those that haven't this peculiarity. In addition to the analitical definition, an algorithm ad an R code for the computation of the estimate has been created. The main application studied in this thesis regards the production of urban waste per capita in the municipalities of Venice province between 1997 and 2011, with a special attention to the effects related to tourism.
 \newpage
 \thispagestyle{empty}
 
@@ -155,11 +155,11 @@ Il presente lavoro di tesi si occupa della costruzione e dell'applicazione di un
 	\caption{Rifiuti e posti letto pro capite}
 	\label{fig:intro2}
 \end{figure}
-\noindent La produzione di rifiuti urbani sarà certamente influenzata anche dal turismo. Per questo motivo sarà considerato nel modello anche questo effetto, non trascurabile nella stima, attraverso il numero di posti letto pro capite nei comuni (maggiori dettagli saranno forniti in seguito). In fig. \ref{fig:intro2} sono visualizzati i valori dei rifiuti e dei posti letto pro capite nel 2011, anno più recente nel dataset, come esempio di ciò che si ha a disposizione.
+La produzione di rifiuti urbani sarà certamente influenzata anche dal turismo. Per questo motivo sarà considerato nel modello anche questo effetto, non trascurabile nella stima, attraverso il numero di posti letto pro capite nei comuni (maggiori dettagli saranno forniti in seguito). In fig. \ref{fig:intro2} sono visualizzati i valori dei rifiuti e dei posti letto pro capite nel 2011, anno più recente nel dataset, come esempio di ciò che si ha a disposizione.
 
-Il problema della produzione dei rifiuti nella provincia di Venezia richiede la formulazione di un modello particolarmente adatto per l'analisi funzionale di dati definiti in spazio e tempo. Sono già disponibili in letteratura delle tecniche per dati di questo tipo ma non tutte sono adatte al trattamento di questi dati. La geometria del dominio, infatti, è complessa. In alcuni punti essa ha una definizione per nulla grossolana e presenta una grossa concavità nella laguna di Venezia, oltre alla presenza delle isole. Pertanto non si può evitare di considerare le particolarità del dominio spaziale.
+Il problema della produzione dei rifiuti nella provincia di Venezia richiede la formulazione di un modello per l'analisi funzionale di dati definiti in spazio e tempo particolarmente adatto. Sono già disponibili in letteratura tecniche per dati di questo tipo ma non tutte sono adatte al trattamento di questi dati. La geometria del dominio, infatti, è complessa. In alcuni punti essa ha una definizione per nulla grossolana e presenta una grossa concavità nella laguna di Venezia, oltre alle numerose isole. Pertanto non si può evitare di considerare le particolarità del dominio spaziale.
 
-Si consideri ad esempio quanto riportato in \ref{fig:intro3}. Sono stati analizzati i comuni di Quarto d'Altino e Cavallino-Treporti, tra di loro non eccessivamente distanti in linea d'aria ma con valori di produzione dei rifiuti decisamente diversi (come si può notare dagli andamenti temporali). Se i dati fossero analizzati con una tecnica che non tiene conto della geometria spaziale i due comuni sarebbero ritenuti vicini tra loro, quando in realtà si ha una grande separazione dovuta alla laguna di Venezia. Tecniche che trascurano la forma del dominio non sono appropriate poiché porterebbero ad una cattiva stima del fenomeno.
+Si consideri ad esempio quanto riportato in \ref{fig:intro3}. Sono stati riportati i comuni di Quarto d'Altino e Cavallino-Treporti, tra di loro non eccessivamente distanti in linea d'aria ma con valori di produzione dei rifiuti decisamente diversi (come si può notare dagli andamenti temporali). Se i dati fossero analizzati con una tecnica che non tiene conto della geometria spaziale i due comuni sarebbero ritenuti vicini tra loro, quando in realtà si ha una grande separazione dovuta alla laguna di Venezia. Tecniche che trascurano la forma del dominio non sono appropriate poiché porterebbero ad una cattiva stima del fenomeno.
 \newpage
 \begin{figure}[t]
 	\centering
@@ -174,9 +174,9 @@ Si consideri ad esempio quanto riportato in \ref{fig:intro3}. Sono stati analizz
 	\caption{Differenza tra i dati nei comuni di Cavallino-Treporti e Quarto d'Altino}
 	\label{fig:intro3}
 \end{figure}
-In questa tesi è illustrato il modello statistico \textit{Spatio-Temporal Regression model with PDE penalization} (ST-PDE) per l'analisi funzionale di dati distribuiti in spazio e tempo. Questo modello si dimostrerà in grado di assolvere pienamente questo compito e di fornire una buona stima dell'andamento della produzione di rifiuti urbani nella provincia di Venezia. La funzione sarà stimata dalla minimizzazione di un funzionale di penalizzazione con termini differenziali, quindi sarà garantita anche la regolarità della stima. La stima sarà espressa secondo opportune funzioni di base (elementi finiti in spazio, B-splines in tempo) capaci di tener conto della geometria spaziale. Tramite l'aggiunta di un termine con covariata sarà possibile introdurre anche dell'effetto del turismo. Dalla modellizzazione matematica è stato sviluppato un algoritmo e il relativo codice R per il calcolo della soluzione numerica della stima. 
+In questa tesi sarà illustrato il modello statistico \textit{Spatio-Temporal Regression model with PDE penalization} (ST-PDE) per l'analisi funzionale di dati distribuiti in spazio e tempo. Questo modello si dimostrerà in grado di assolvere pienamente questo compito e di fornire una buona stima dell'andamento della produzione di rifiuti urbani nella provincia di Venezia. La funzione sarà stimata dalla minimizzazione di un funzionale di penalizzazione con termini differenziali, quindi sarà garantita anche la regolarità della stima. La funzione stimata sarà espressa secondo opportune funzioni di base (elementi finiti in spazio, B-splines in tempo) capaci di tener conto della geometria spaziale. Tramite l'aggiunta di un termine con covariata sarà possibile introdurre anche dell'effetto del turismo. Dalla modellizzazione matematica è stato sviluppato un algoritmo e il conseguente codice R per il calcolo della soluzione numerica della stima. 
 
-Il lavoro di tesi sarà strutturato come segue. Nel capitolo \ref{cap:panoramica} è riportato una panoramica dettagliata dei metodi già esistenti in letteratura. Nel capitolo \ref{cap:modello} è presentata la costruzione del modello matematico ST-PDE, seguita dallo sviluppo del codice R descritto nel capitolo \ref{cap:Codice}. Nel capitolo \ref{cap:domC} si hanno i primi risultati, derivanti dall'applicazione del modello e del codice R a simulazioni eseguite sul dominio a forma di C descritto in \cite{art:ramsay} e \cite{art:wood}, per il quale è possibile valutare la bontà delle stime ottenute grazie alla perfetta conoscenza del fenomeno reale in ogni punto e in ogni istante. Nel capitolo \ref{cap:confronto} il modello ST-PDE sarà paragonato ad altri metodi già esistenti per il confronto delle stime ottenute. Nel capitolo \ref{cap:rifiuti} si ha l'applicazione allo studio della produzione dei rifiuti nella provincia di Venezia e infine, nel capitolo \ref{cap:conclusione}, sono raccolte le conclusioni e i possibili sviluppi futuri.
+Il lavoro di tesi sarà strutturato come segue. Nel capitolo \ref{cap:panoramica} è riportato una panoramica dei metodi già esistenti in letteratura. Nel capitolo \ref{cap:modello} è presentata la costruzione del modello matematico ST-PDE, seguita dallo sviluppo del codice R descritto nel capitolo \ref{cap:Codice}. Nel capitolo \ref{cap:domC} si hanno i primi risultati, derivanti dall'applicazione del modello e del codice R a simulazioni eseguite sul dominio a forma di C descritto in \cite{art:ramsay} e \cite{art:wood}, per il quale è possibile valutare la bontà delle stime ottenute grazie alla perfetta conoscenza del fenomeno reale in ogni punto e in ogni istante. Nel capitolo \ref{cap:confronto} il modello ST-PDE sarà paragonato ad altri metodi già esistenti per il confronto delle stime ottenute. Nel capitolo \ref{cap:rifiuti} si ha l'applicazione allo studio della produzione dei rifiuti nella provincia di Venezia e infine, nel capitolo \ref{cap:conclusione}, sono raccolte le conclusioni e i possibili sviluppi futuri.
 \newpage
 \thispagestyle{empty}
 
@@ -193,7 +193,13 @@ La letteratura su modelli spazio-temporali è già ampia, come è esposto in CIT
 
 Ad esempio, il kriging spazio-temporale, descritto in CITAZIONI, non è in grado di tener conto del dominio spaziale. Questa tecnica sarà considerata negli studi di simulazione e nei confronti ma non potrà garantire risultati ottimali per questo tipo di analisi.
 
-Particolare attenzione deve essere posta riguardo a quanto fatto in \cite{art:sangalli}. In questa pubblicazione è studiato un modello solamente spaziale, definito su un dominio spaziale $\Omega$. Questo dominio può assumere le stesse caratteristiche che saranno studiate in questa tesi: definizione complessa, concavità o buchi. Di conseguenza la risposta sarà espressa dal seguente modello:
+Le pubblicazioni \cite{art:augustin} e \cite{art:marra} studiano metodi per l'analisi funzionale di dati distribuiti in spazio e tempo. Questo lavori, però, si basano su modelli che possono assumere una forma più complessa, ipotizzando che una funzione del valore atteso della risposta (nel loro caso il logaritmo) possa essere spiegato da uno o più termini funzionali (quest'ultima possibilità è riportata solo in \cite{art:augustin}):
+$$
+\log(\mathbb{E}[z_i])= f_1+f_2+ \ldots f_N .
+$$
+Ognuna di queste funzioni può avere dipendenza solo spaziale, solo temporale o entrambe. Queste complicazioni rispetto al modello che sarà studiato da ST-PDE possono essere risolte molto velocemente ipotizzando che la risposta dipenda da un solo termine spazio-temporale. Le tecniche proposte dagli autori sono un ottimo termine di paragone per il modello ST-PDE. La loro applicabilità per un problema con forte dipendenza dalla forma del dominio, come sarà spiegato più nel dettaglio in \ref{cap:confronto}, dipende dalla scelta delle funzioni di base. 
+
+Particolare attenzione deve essere posta riguardo a quanto fatto in \cite{art:sangalli}. In questa pubblicazione è studiato un modello solamente spaziale, definito su un dominio $\Omega$. Tale dominio può assumere le stesse caratteristiche che saranno studiate in questa tesi: definizione complessa, concavità o buchi. La risposta è espressa dal seguente modello:
 $$
 z=f(\underline{p})
 $$
@@ -204,16 +210,9 @@ J_{\lambda }(f(\underline p))=\sum_{i=1}^n \bigl( z_{i} - f(\underline p_i) \big
 $$
 Il problema di minimo è risolto attraverso il passaggio ad una forma variazionale che, a seguito dell'introduzione di un'opportuna espansione in elementi finiti per $f$, è ridotta ad un problema discreto risolvibile con un sistema lineare. L'articolo \cite{art:sangalli} non contempla la variazione temporale per $f$ ma può essere considerato il punto di partenza per il modello ST-PDE. Non sarà ricavata una forma variazionale per la stima della soluzione, ma l'attenzione alla geometria del problema e l'uso degli elementi finiti rappresentano un forte legame con il modello ST-PDE.
 
-Le pubblicazioni \cite{art:marra} e \cite{art:augustin} studiano metodi per l'analisi funzionale di dati distribuiti in spazio e tempo. Questo lavori, però, si basano su modelli che possono assumere una forma più complessa, ipotizzando che una funzione del valore atteso della risposta (nel loro caso il logaritmo) possa essere spiegato da uno o più termini funzionali (quest'ultima possibilità è riportata solo in \cite{art:augustin}):
-$$
-\log(\mathbb{E}[z_i])= f_1+f_2+ \ldots f_N .
-$$
-Ognuna di queste funzioni può avere dipendenza solo spaziale, solo temporale o entrambe. Queste complicazioni rispetto al modello che sarà studiato da ST-PDE possono essere risolte molto velocemente ipotizzando che la risposta dipenda da un solo termine spazio-temporale. Le tecniche proposte dagli autori sono un ottimo termine di paragone per il modello ST-PDE. La loro applicabilità per un problema con forte dipendenza dalla forma del dominio, come sarà spiegato più nel dettaglio in \ref{cap:confronto}, dipende dalla scelta delle funzioni di base. 
-
-
 \chapter{Presentazione del modello ST-PDE}
 \label{cap:modello}
-In questo capitolo viene descritto nel dettaglio il modello ST-PDE per l'analisi di dati distribuiti in spazio e tempo ed è calcolata la soluzione al problema di stima.
+In questo capitolo è descritto nel dettaglio il modello ST-PDE per l'analisi di dati distribuiti in spazio e tempo ed è calcolata la soluzione al problema di stima.
 
 
 \section{Caso senza covariate}
@@ -259,7 +258,7 @@ f(\underline p, t) = \sum_{l=1}^N b_l(t)\psi_l(\underline p) \ .
 \end{equation}
 Si ha quindi che $\{ a_k(\underline p);k=1, \ldots , M \}$ sono i coefficienti spazio-varianti dell'espansione in basi di temporali e $\{ b_l(t);l=1, \ldots , N \}$ sono i coefficienti tempo-varianti dell'espansione in basi spaziali. In questa costruzione la funzione $f(\underline p,t)$ possiede entrambe queste rappresentazioni.
 
-Sono state ricavate due espressioni equivalenti per $f$ ma, come si potrà notare in seguito, questo è coerente (sarà ricavata un'espressione più specifica). Per una corretta definizione del funzionale di penalizzazione $J_{\underline \lambda }(f(\underline p,t))$) è necessario introdurre, per tali coefficienti, le seguenti condizioni:
+Sono state ricavate due espressioni equivalenti per $f$ ma, come si potrà notare in seguito, questo è coerente (sarà ricavata un'espressione più specifica). Per una corretta definizione del funzionale di penalizzazione $J_{\underline \lambda }(f(\underline p,t))$ è necessario introdurre, per tali coefficienti, le seguenti condizioni:
 $$
 a_k(\underline p) \in H_{n_0}^2(\Omega) \qquad \forall k=1, \ldots , M
 $$
@@ -267,16 +266,16 @@ e
 $$
 b_l(t) \in H^2([T_1,T_2]) \qquad \forall l=1, \ldots , N \ ,
 $$
-dove $H^2_{n_0}(\Omega) = \{h \in H^2(\Omega) | \partial _{\nu}h=0 \mbox{ su } \partial \Omega\}$, spazio incluso in $H^2(\Omega)$ con condizioni di Neumann alla frontiera. Altre condizioni possono essere poste (a patto che garantiscano l'applicabilità del funzionale di penalizzazione), ma per semplicità saranno ipotizzate queste.
+dove $H^2_{n_0}(\Omega) = \{h \in H^2(\Omega) | \partial _{\nu}h=0 \mbox{ su } \partial \Omega\}$, spazio incluso in $H^2(\Omega)$ con condizioni di Neumann alla frontiera. Altre condizioni possono essere poste (a patto che garantiscano l'applicabilità del funzionale di penalizzazione) ma, per semplicità, saranno ipotizzate queste.
 
 
 \subsection{Funzionale di penalizzazione}
 
-Per poter stimare $f(\underline p,t)$ si introduce la minimizzazione di un funzionale non formato solamente dagli scarti quadratici tra le osservazioni e le stime negli $nm$ punti disponibili. Sono inclusi in esso anche altri due termini, che derivano dalla penalizzazione di opportune derivate in spazio e tempo per poter garantire regolarità alla funzione. Analogamente a quanto fatto il \ref{subs:basi}, per costruire tale funzionale si considerano inanzitutto i problemi marginali in spazio e tempo.
+Per poter stimare $f(\underline p,t)$ si introduce la minimizzazione di un funzionale non formato solamente dagli scarti quadratici tra le osservazioni e le stime negli $nm$ punti disponibili. Sono inclusi in esso anche altri due termini, che derivano dalla penalizzazione di opportune derivate in spazio e tempo per poter garantire regolarità alla funzione. Analogamente a quanto fatto il \ref{subs:basi}, per costruire tale funzionale si considerano innanzitutto i problemi marginali in spazio e tempo.
 
 Per garantire una buona regolarità spaziale alla funzione è necessario penalizzare il quadrato della norma $L^2$ del laplaciano (dove per laplaciano si intenderà, da ora in avanti, rispetto alle variabili in spazio $\underline p$). La stessa scelta è stata fatta in altre pubblicazioni come \cite{art:ramsay}, \cite{art:sangalli} e \cite{art:wood}. Quindi se $g(\underline p): \Omega \mapsto \mathbb{R}$ è una funzione spazio-variante, allora si può definire la penalizzazione della regolarità in spazio tramite:
 $$
-J_S\left(g(\underline p)\right)=\int_{\Omega} \Bigl( \Delta  g(\underline p  ) \Bigr)^2 d \underline p \ .
+J_S(g(\underline p))=\int_{\Omega} \Bigl( \Delta  g(\underline p  ) \Bigr)^2 d \underline p \ .
 $$
 Analogamente in tempo si avrà la penalizzazione del quadrato della norma $L^2$ della derivata seconda. Se $h(t): [T_1,T_2] \mapsto \mathbb{R}$, allora si avrà
 $$
@@ -285,7 +284,7 @@ $$
 Grazie alle ipotesi di regolarità introdotte in sez. \ref{subs:basi} tali penalizzazioni possono essere applicate ai coefficienti degli sviluppi delle eq. \ref{eq:f_temp} e \ref{eq:f_space}. Per questo motivo si definisce:
 \begin{multline*}
 J_{\underline \lambda }(f(\underline p,t))=\sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\underline p_i,t_j) \bigr)^2 \ + \\
-+\lambda_S  \sum_{k=1}^M J_S\Bigl( a_k(\underline p)\Bigr) + \lambda_T \sum_{l=1}^N J_T \Bigl( b_l(t)\Bigr) \ ,
++\lambda_S  \sum_{k=1}^M J_S( a_k(\underline p)) + \lambda_T \sum_{l=1}^N J_T ( b_l(t)) \ ,
 \end{multline*}
 cioè
 \begin{multline}
@@ -315,7 +314,7 @@ dove $J_S$ e $J_T$ sono applicati direttamente alla funzione $f(\underline p, t)
 &=\sum_{k=1}^M \sum_{h=1}^M \int_\Omega   \Delta a_k(\underline p) \Delta a_h(\underline p)d\underline p \ \int_{T_1}^{T_2} \varphi_k(t)\varphi_h(t)   \ dt .
 \end{split}
 \end{equation}
-Questo termine è equivalente a quello proposto in \ref{eq:penalizzdisc} se le basi temporali siano ortonormali, poichè in tal caso l'ultimo integrale in eq. \ref{eq:espansione_funzinf_t} sarebbe 1 se $k=h$ e 0 altrimenti.
+Questo termine è equivalente a quello proposto in \ref{eq:penalizzdisc} se le basi temporali siano ortonormali, poichè in tal caso l'ultimo integrale in eq. \ref{eq:espansione_funzinf_t} vale 1 se $k=h$ e 0 altrimenti.
 
 Allo stesso modo, se si sostituisce la forma di $f(\underline p,t)$ dell'eq. \ref{eq:f_space} nella penalizzazione ideale dell'eq. \ref{eq:Jfunc_cont} si ottiene:
 \begin{equation} 
@@ -331,7 +330,7 @@ Allo stesso modo, se si sostituisce la forma di $f(\underline p,t)$ dell'eq. \re
 \end{equation}
 La stessa osservazione del caso precedente vale anche ora: se le basi in spazio sono ortonormali, si ritrova la penalizzazione proposta in \ref{eq:penalizzdisc}. 
 
-In questo lavoro di tesi, quindi, è proposto un modello che risulterà essere computazionalmente semplice ma non perfettamente equivalente a questo modello ideale. In generale, le funzioni di base non sono ortonormali. Comunque sia, gli insiemi di basi che saranno adattati sono sparsi, cioè i termini $ \int_{T_1}^{T_2} \varphi_k(t)\varphi_l(t)\ dt $ e $\int_\Omega \psi_l(\underline p)  \psi_k(\underline p)d\underline p$ sono diversi da zero solo per poche coppie di indici.
+In questo lavoro di tesi, quindi, è proposto un modello che risulterà essere computazionalmente semplice ma non perfettamente equivalente a questo modello ideale. In generale le funzioni di base non sono ortonormali. Comunque sia, gli insiemi di basi che saranno adattati sono sparsi, cioè i termini $ \int_{T_1}^{T_2} \varphi_k(t)\varphi_l(t)\ dt $ e $\int_\Omega \psi_l(\underline p)  \psi_k(\underline p)d\underline p$ sono diversi da zero solo per poche coppie di indici.
 
 
 
@@ -424,7 +423,7 @@ si trova, per l'arbitrarietà di $\underline v$:
 \label{eq:pspace}
 \int_{\Omega} \Bigl( \Delta(  a_k(\underline p)  ) \Bigr)^2 d \underline p = \underline{c}_k^T R_1 R_0^{-1} R_1 \underline{c}_k=\underline{c}_k^T P_S \underline{c}_k
 \end{equation}
-Si noti che la matrice $P_S$ non dipende da $k$ e può essere considerata la stessa per tutte le funzioni $a_k(\underline{p})$. Inoltre è simmetrica, poichè $R_0$ e $R_1$ lo sono.
+Si noti che la matrice $P_S$ non dipende da $k$, pertanto è la stessa per tutte le funzioni $a_k(\underline{p})$. Inoltre è simmetrica, poichè $R_0$ e $R_1$ lo sono.
 
 Grazie all'introduzione della discretizzazione in basi spaziali
 $$
@@ -454,7 +453,7 @@ $$
 $$
 Anche la matrice $P_T$ è simmetrica.
 
-L'introduzione di $P_S$ e $P_T$ può essere ulteriormente sviluppata per dimostrare che la parte di penalizzazione per la regolarizzazione di $f$ in \ref{eq:penalizzdisc} sia rappresentabile con un'unica forma quadratica. Per mostrarlo, si introduce il vettore
+Le forme quadratiche con $P_S$ e $P_T$ possono essere ulteriormente sviluppate per dimostrare che la parte di penalizzazione per la regolarizzazione di $f$ in \ref{eq:penalizzdisc} è rappresentabile con un'unica forma quadratica. Per mostrarlo, si introduce il vettore
 $$\underline c =
 \begin{bmatrix}
 c_{11}  \\
@@ -542,7 +541,7 @@ Quindi è possibile dare una forma definitiva al funzionale di penalizzazione:
 \label{eq:Jmatr}
 J_{\underline \lambda }(\underline c) = (\underline z - B \underline c)^T (\underline z - B \underline c) + \underline c^T P \underline c \ ,
 \end{equation}
-e per trovare la stima della funzione $f(\underline{p},t)$ sarà sufficiente ricavare il vettore dei coefficienti $\underline c$ risolvendo il problema di minimo:
+e per trovare la stima $\hat{f}(\underline{p},t)$ sarà sufficiente ricavare il vettore dei coefficienti $\underline c$ risolvendo il problema di minimo:
 $$
 \hat{\underline{c}}=\argmin_{c \in \mathbb{R}^{NM}} J_{\underline \lambda }(\underline c) \ .
 $$
@@ -587,7 +586,7 @@ e quindi è immediato ricavare per lo stimatore $\hat  {\underline c}$ (grazie a
 $$
 \mathbb{E}[\hat  {\underline c}] = (B^T B + P)^{-1}B^TB \underline c \qquad \mathrm{Var}[\hat  {\underline c}] = \sigma^2 (B^T B + P)^{-1}B^TB(B^T B + P)^{-1} .
 $$
-Non è stata ipotizzata la gaussianità per $\underline \varepsilon$, ma se così fosse anche $\hat  {\underline c}$ sarebbe gaussiano. Attraverso questa ulteriore ipotesi sarebbe possibile elaborare (con una data significatività) una regione di confidenza per $\hat  {\underline c}$ e quindi una banda di confidenza per la funzione stimata $f$.
+Non è stata ipotizzata la gaussianità per $\underline \varepsilon$, ma se così fosse anche $\hat  {\underline c}$ sarebbe gaussiano. Grazie a quanto appena ricavato è possibile elaborare (con una data significatività) una regione di confidenza per $\hat  {\underline c}$ e quindi una banda di confidenza per la funzione stimata $f$.
 
 
 \section{Caso con covariate}
@@ -667,7 +666,7 @@ $$
 $$
 $$ \mathrm{Var}[\hat  {\underline \beta}] = \sigma^2 (W^TW)^{-1} + \sigma^2 (W^TW)^{-1}W^T B A Q A^T B^T W(W^TW)^{-1}.
 $$
-Come nel caso senza covariate, anche ora si avrebbe la gaussianità degli stimatori se fosse ipotizzata per $\underline \varepsilon$. Se questa ipotesi fosse posta sarebbe possibile elaborare intervalli di confidenza o test per le componenti di $\underline \beta$ e verificarne la significatività. 
+Come nel caso senza covariate, anche ora si avrebbe la gaussianità degli stimatori se fosse ipotizzata per $\underline \varepsilon$. Come si può notare da quanto ricavato, lo stimatore per $\hat{\beta}$ è distorto.
 
 
 \section{Stima della varianza di modello e scelta dei parametri di smoothing}
@@ -705,6 +704,9 @@ Di conseguenza, il miglior $\underline \lambda$ può essere scelto come valore c
 \label{eq:GCV}
 \mathrm{GCV}(\underline \lambda) =\frac{nm}{nm-\text{tr}(S)}  (\underline z - \hat  {\underline z})^T(\underline z - \hat  {\underline z}) \ .
 \end{equation}
+\newpage
+\thispagestyle{empty}
+
 
 \chapter{Sviluppo del codice R}
 \label{cap:Codice}
@@ -715,7 +717,7 @@ Il linguaggio di programmazione adottato è R. Questa decisione ha permesso di s
 \section{Funzioni di base considerate}
 Sono stati implementati solo alcuni tipi di funzione di base in spazio e tempo, che si sono rivelate utili alle applicazioni che saranno riportate nei capitoli successivi. 
 
-Per quanto riguarda lo spazio, il codice è stato pensato per dati distribuiti su un dominio dalla complessa definizione (con bordi irregolari o buchi). Quindi un'ottima scelta di funzioni di base sono gli elementi finiti descritti in \cite{art:quarteroni}, analogamente a quanto fatto in \cite{art:sangalli}. Queste funzioni sono costruite su una triangolazione di Delaunay del dominio $\Omega_{\tau}$, definita dai vertici del poligono che descrive la frontiera e dai punti interni (solitamente quelli in cui sono disponibili i dati). Ognuno di questi punti diventa un nodo della triangolazione e ad ogni nodo è associata una funzione lineare a tratti come quella in \ref{fig:basisp}, che vale 1 sul nodo selezionato, decresce linearmente sui triangoli adiacenti e si annulla su tutti gli altri nodi e triangoli. Per l'implementazione di queste funzioni è stato riutilizzata una parte del codice del caso puramente spaziale. Anche gli elementi finiti quadratici sono stati implementati, ma non sono stati scelti nelle applicazioni poiché rallentano l'esecuzione a causa della maggiore precisione che richiedono.
+Per quanto riguarda lo spazio, il codice è stato pensato per dati distribuiti su un dominio dalla complessa definizione (con bordi irregolari o buchi). Quindi un'ottima scelta di funzioni di base sono gli elementi finiti descritti in \cite{art:quarteroni}, analogamente a quanto fatto in \cite{art:sangalli}. Queste funzioni sono definite su $\Omega_{\tau}$, triangolazione di Delaunay del dominio $\Omega$, costruita con i vertici del poligono che descrive la frontiera e con i punti interni (solitamente quelli in cui sono disponibili i dati). Ognuno di questi punti diventa un nodo della triangolazione e ad ogni nodo è associata una funzione lineare a tratti come quella in \ref{fig:basisp}, che vale 1 sul nodo selezionato, decresce linearmente sui triangoli adiacenti e si annulla su tutti gli altri nodi e triangoli. Per l'implementazione di queste funzioni è stato riutilizzata una parte del codice del caso puramente spaziale. Anche gli elementi finiti quadratici sono stati implementati, ma non sono stati scelti nelle applicazioni poiché rallentano l'esecuzione a causa della maggiore precisione che richiedono.
 
 \begin{figure}[t]
 	\centering
@@ -738,7 +740,7 @@ Le basi in tempo a disposizione sono le B-splines, funzioni che, fissato un inte
 \section{Schematizzazione dell'algoritmo di stima}
 L'esecuzione del codice è stata divisa in alcuni passi per poter permettere all'utente di inserire gradualmente gli oggetti in ingresso e fissare i parametri che servono per ottenere la stima finale. In più punti si è cercato di nascondere all'utente le variabili temporanee e di includere in opportune classi di R tutte le informazioni riguardanti concetti tra di loro comuni. 
 
-Inanzitutto si ha l'acquisizione dei dati (e delle eventuali covariate) e la creazione della triangolazione. In questo caso non sono state implementate funzioni apposite poiché ci sono già pacchetti specializzati (nelle applicazioni che saranno presentate in seguito si è fatto uso di \textit{RTriangle} per la triangolazione).
+Innanzitutto si ha l'acquisizione dei dati (e delle eventuali covariate) e la creazione della triangolazione. In questo caso non sono state implementate funzioni apposite poiché ci sono già pacchetti specializzati (nelle applicazioni che saranno presentate in seguito si è fatto uso di \textit{RTriangle} per la triangolazione).
 
 Dopo aver definito i punti, la triangolazione e gli istanti di tempo occorre fissare le funzioni di base. Sono state implementate due funzioni di R, una per lo spazio e una per il tempo, che in base ai parametri in ingresso e agli ordini scelti per le funzioni di base creano appositi oggetti che memorizzano tutte le informazioni necessarie.  
 
@@ -746,12 +748,12 @@ A questo punto si ha la ricerca i migliori parametri di smoothing: definiti un i
 
 Dopo aver fissato i parametri di smoothing si arriva al cuore dell'algoritmo, poiché è calcolata la stima della soluzione. Ciò che eseguono le apposite funzioni è calcolare tutte le matrici di passaggio ($P$ e $B$) nascondendole all'utente e risolvere gli appositi sistemi lineari (eq. \ref{eq:sysnocovar}, \ref{eq:syscovar1} e \ref{eq:syscovar2}). In uscita è restituito un oggetto che racchiude i vettori ricavati e le funzioni di base, in modo da poter immagazzinare insieme tutti gli elementi necessari per tracciare grafici riguardanti la soluzione.
 
-Terminata la stima, ciò che resta da fare è analizzare i risultati. Sono state create più funzioni, da scegliere in base a quello che si vuole ricavare: calcolo della soluzione in punti ed istanti scelti, plot della funzione ad un istante fissato o ad un punto spaziale fissato, calcolo degli intervalli di confidenza approssimati (senza il termine di distorsione) per le componenti di $\underline{\beta}$.
+Terminata la stima, ciò che resta da fare è analizzare i risultati. Sono state create più funzioni, da scegliere in base a quello che si vuole visualizzare: calcolo della soluzione in punti ed istanti scelti, plot della funzione ad un istante fissato o ad un punto spaziale fissato, calcolo degli intervalli di confidenza approssimati (senza il termine di distorsione) per le componenti di $\underline{\beta}$.
 
 \section{Strutture dati adottate}
-Al momento dell'implementazione del codice corrispondente alle eq. \ref{eq:GCV}, \ref{eq:sysnocovar}, \ref{eq:syscovar1} e \ref{eq:syscovar2} è stato necessario decidere la corretta struttura dati per le matrici e una buona tecnica di inversione. In generale, quando si studiano dati distribuiti in spazio e tempo su domini complessi, le dimensioni delle matrici da invertire per calcolare $\hat{\underline{c}}$ sono di grandi dimensioni. Inoltre, a causa delle funzioni di base scelte in precedenza, non è difficile immaginare che le matrici $\Psi$, $\Phi$, $P_S$, $R_0$ e $R_1$ saranno facilmente sparse. Quindi la scelta di una struttura dati efficiente tra quelle disponibili in R è abbastanza delicata.
+Al momento dell'implementazione del codice corrispondente alle eq. \ref{eq:GCV}, \ref{eq:sysnocovar}, \ref{eq:syscovar1} e \ref{eq:syscovar2} è stato necessario decidere la corretta struttura dati per le matrici e una buona tecnica di inversione. In generale, quando si studiano dati distribuiti in spazio e tempo su domini complessi, le dimensioni delle matrici da invertire per calcolare $\hat{\underline{c}}$ sono di grandi dimensioni. Inoltre, a causa delle funzioni di base scelte in precedenza, le matrici $\Psi$, $\Phi$, $P_S$, $R_0$ e $R_1$ risulteranno sparse con molta facilità. Quindi la scelta di una struttura dati efficiente tra quelle disponibili in R è abbastanza delicata.
 
-Sono stati analizzati quattro casi, in base al tipo di matrici (le matrici base di R o le sparse del pacchetto \textit{Matrix}) o alla tecnica di inversione (classica di R o con fattorizzazione QR). Sono stati misurati i tempi di calcolo della stima con queste quattro modalità nell'applicazione del dominio a forma di C senza covariate (sarà discusso nel dettaglio nel prossimo capitolo) e in tab. \ref{tab:tempo} sono riportati i risultati. I tentativi sono disponibili al variare del numero di punti interni del dominio (e quindi della dimensione della matrice da invertire in \ref{eq:sysnocovar}) per poter controllare in più casi la velocità di esecuzione.
+Sono stati analizzati quattro casi, in base al tipo di matrici (le matrici base di R o le sparse del pacchetto \textit{Matrix}) o alla tecnica di inversione (classica di R o con fattorizzazione QR). Sono stati misurati i tempi di calcolo della stima con queste quattro modalità nell'applicazione del dominio a forma di C senza covariate (sarà discusso nel dettaglio nel prossimo capitolo) e in tab. \ref{tab:tempo} sono riportati i risultati. Sono stati eseguiti più tentativi, al variare del numero di punti interni del dominio (e quindi della dimensione della matrice da invertire in \ref{eq:sysnocovar}), per poter controllare la velocità di esecuzione a difficoltà crescente.
 \newline
 \begin{table}[h]
 \renewcommand{\arraystretch}{1.3}
@@ -770,17 +772,17 @@ Sono stati analizzati quattro casi, in base al tipo di matrici (le matrici base 
 	7086 & 1592.88 & 1840.64 &  & \\
 	\noalign{\hrule height 1.2pt}
 	\end{tabular}
-\caption{Tempo di calcolo della stima di $\protect\hat{\protect\underline{c}}$ (in secondi) nel caso del dominio a forma di C}
+\caption{Tempo di calcolo della stima di $\protect\hat{\protect\underline{c}}$ (in secondi) nelle simulazioni eseguite sul dominio a forma di C}
 \label{tab:tempo}
 \end{table}
 \newline
 Non sono state eseguite più misurazioni per caso perchè già da queste è chiaro quale sia la miglior scelta. L'uso delle matrici sparse è stato progressivamente abbandonato poichè nettamente più lento. Anche la fattorizzazione QR non ha portato ad un miglioramento, perciò è stato adottata l'inversione base di R.
 
-Il motivo di questa lentezza è legato al linguaggio di programmazione. Non è una novità che R non sia uno dei linguaggi maggiormente efficienti. Inoltre, tra tutte le operazioni a disposizione, l'esecuzione dei cicli e di operazioni di accesso è un punto debole\footnote{si consultino le considerazioni in questa pagina: \href{http://adv-r.had.co.nz/Rcpp.html}{http://adv-r.had.co.nz/Rcpp.html}}. Quindi l'uso di fattorizzazione QR (e della risoluzione di un sistema tramite \textit{backward substitutions} che richiede) o di matrici sparse (implementate tramite tre vettori rispettivamente con indici di riga, colonna e valori non nulli) sono necessariamente lente per l'alto numero di cicli che richiedono. Le funzioni base di R, invece, sono certamente più ottimizzate. La conseguenza di questa analisi sarà evidenziata anche nel cap. \ref{cap:conclusione}, in cui si indica che l'integrazione con linguaggi più efficienti nei colli di bottiglia del codice porterebbe a miglioramenti certi e alla possibilità di applicazione a dataset di grandi dimensioni.
+Il motivo di questa lentezza è legato al linguaggio di programmazione. Non è una novità che R non sia uno dei linguaggi maggiormente efficienti. Inoltre, tra tutte le operazioni a disposizione, l'esecuzione dei cicli e di operazioni di accesso è un punto debole\footnote{si consultino le considerazioni in questa pagina: \href{http://adv-r.had.co.nz/Rcpp.html}{http://adv-r.had.co.nz/Rcpp.html}}. Quindi l'uso di fattorizzazione QR (e della risoluzione di un sistema tramite \textit{backward substitutions} che richiede) o di matrici sparse (implementate tramite tre vettori rispettivamente con indici di riga, colonna e valori non nulli) sono necessariamente lente per l'alto numero di cicli che richiedono. Le funzioni base di R, invece, sono certamente più ottimizzate. La conseguenza di questa analisi sarà riportata anche nel cap. \ref{cap:conclusione}, in cui si sottolinea che l'integrazione con linguaggi più efficienti nei colli di bottiglia del codice porterebbe a miglioramenti computazionali sicuri e alla possibilità di applicazione a dataset di grandi dimensioni.
 
-\chapter{Simulazioni sul dominio a forma di C}
+\chapter{Simulazioni nel caso del dominio a forma di C}
 \label{cap:domC}
-Prima di applicare il modello allo studio della produzione di rifiuti nella provincia di Venezia sono state eseguite simulazioni su un caso noto e più semplice. Si è scelto di analizzare il dominio a forma di C e la corrispondente funzione spaziale $g(\underline p)$ (riportata in fig. \cite{fig:domC_fstest}) descritti in \ref{art:ramsay}, \cite{art:sangalli}, \cite{art:wood} e implementata nel pacchetto R \textit{mgcv}. La funzione $g(\underline p)$ è solo spaziale, quindi è stata introdotta una variazione temporale deformando con il coseno:
+Prima di applicare il modello ST-PDE all'analisi della produzione di rifiuti nella provincia di Venezia sono state eseguite simulazioni su un caso noto e più semplice. Si è scelto di analizzare il dominio a forma di C e la corrispondente funzione spaziale $g(\underline p)$ (riportata in fig. \ref{fig:domC_fstest}) descritti in \cite{art:ramsay}, \cite{art:sangalli}, \cite{art:wood} e implementata nel pacchetto R \textit{mgcv}. La funzione $g(\underline p)$ è solo spaziale, quindi è stata introdotta una variazione temporale deformando con il coseno:
 $$
 f(\underline p, t)=g(\underline p)cos(t)
 $$
@@ -792,19 +794,19 @@ Su questo semplice caso sono stati eseguiti i primi tentativi per il modello ST-
 	\label{fig:domC_fstest}
 \end{figure}
 \newpage
-\noindent Dalla rappresentazione di $g(\underline p)$ si può notare come sia fondamentale la geometria del problema, come per il caso della produzione dei rifiuti nella provincia di Venezia.
+Dalla rappresentazione di $g(\underline p)$ si può notare come sia fondamentale la geometria del problema, come per il caso della produzione dei rifiuti nella provincia di Venezia. Infatti, i massimi e i minimi si trovano sulle estremità del dominio, tra di loro vicine ma non collegate se non attraverso tutto il dominio.
 
 \section{Triangolazione e istanti temporali}
-Nel dominio a forma di C non sono presenti punti spaziali definiti dalla natura del problema (come possono essere i comuni per la provincia di Venezia), quindi è stato necessario ricavarli. Sono stati generati casualmente 150 punti all'interno del rettangolo $[-1,+3.5] \times [-1,+1]$ e di questi sono stati considerati validi solo quelli che ricadevano all'interno del dominio. Non è stata usata la descrizione della frontiera presente in \textit{mgcv}, ma una versione diversa che permette di avere punti anche nella parte rettilinea del bordo.
+In questo caso non sono presenti punti spaziali definiti dalla natura del problema (come possono essere i comuni per la provincia di Venezia), quindi è stato necessario ricavarli. Sono stati generati casualmente 150 punti all'interno del rettangolo $[-1,+3.5] \times [-1,+1]$ e di questi sono stati considerati validi solo quelli che ricadevano all'interno del dominio. Non è stata usata la descrizione della frontiera presente in \textit{mgcv}, ma una versione diversa che permette di avere punti anche nella parte rettilinea del bordo.
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.44\textwidth]{Immagini/DomCinizio/DomC_Triangolazione.png}
 	\caption{Triangolazione del dominio a forma di C}
 	\label{fig:domC_triang}
 \end{figure}
-In fig. \ref{fig:domC_triang} è riportata la triangolazione ottenuta grazie al pacchetto R \textit{RTriangle}. Come basi in spazio sono stati usati gli elementi finiti lineari definiti su questa triangolazione. In tutti gli esempi che seguiranno sarà considerata questa descrizione del dominio, che è formata da 241 punti (pari anche al numero di basi spaziali $N$). Di questi, 108 sono di frontiera e i restanti 133 corrispondono agli $n$ punti sui quali saranno disponibili i dati.
+In fig. \ref{fig:domC_triang} è riportata la triangolazione di Delaunay ottenuta grazie al pacchetto R \textit{RTriangle}. Come basi in spazio sono stati usati gli elementi finiti lineari definiti su questa triangolazione. In tutti gli esempi che seguiranno sarà considerata questa descrizione del dominio, che è formata da 241 punti (pari anche al numero di basi spaziali $N$). Di questi, 108 sono di frontiera e i restanti 133 corrispondono agli $n$ punti sui quali saranno disponibili i dati.
 
-Come intervallo temporale di variazione dei dati è stato scelto $[0,2\pi]$ per sfruttare la periodicità del coseno. All'interno di questo intervallo sono stati ricavati 9 istanti temporali equidistanti tra di loro, quindi uno ogni $\frac{\pi}{4}$. Si è scelto di fissare come basi in tempo le B-splines cubiche. Il numero di basi $M$ è uguale al numero di istanti temporali a disposizione $m$, quindi 9. 
+Come intervallo temporale di variazione dei dati è stato scelto $[0,2\pi]$ per sfruttare la periodicità del coseno. All'interno di questo intervallo sono stati ricavati 9 istanti temporali equidistanti tra di loro, quindi uno ogni $\frac{\pi}{4}$. Sono state fissate come basi in tempo le B-splines cubiche. Il numero di basi $M$ è uguale al numero di istanti temporali a disposizione $m$, quindi 9. 
 \newpage
 \section{Caso senza covariata}
 
@@ -817,9 +819,9 @@ $$
 \varepsilon_{ij}\stackrel{\mathrm{iid}}{\sim}N(0,0.5^2) \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m \ .
 $$
 
-Per poter eseguire una analisi ottimale, come primo passo è necessario scegliere i valori per $\lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$ come riportato in eq. \ref{eq:GCV}. In queste analisi $\lambda_S$ e $\lambda_T$ saaranno sempre espressi in potenze di 10. Per trovare dei buoni valori per i parametri si procede per tentativi, creando due insiemi discreti di variazione per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$ e minimizzando sui $\underline \lambda$ corrispondenti al prodotto cartesiano tra di essi. Il procedimento viene iterato qualche volta rendendo la griglia sempre più fitta. Dopo alcuni tentativi, è stato fissato $\underline \lambda = (10^{-0.375}, 10^{-3.25})$ come valore definitivo per questa analisi, ed è stata calcolata computazionalmente la stima della funzione si è rivelata molto buona.
+Per poter eseguire una analisi ottimale, come primo passo è necessario scegliere i valori dei parametri di smoothing ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$ riportato in eq. \ref{eq:GCV}. In queste analisi $\lambda_S$ e $\lambda_T$ saranno sempre espressi in potenze di 10. Per trovare dei buoni valori per i parametri sono stati eseguiti più tentativi, creando due insiemi discreti di variazione per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$ e minimizzando sui $\underline \lambda$ corrispondenti al prodotto cartesiano tra di essi. Il procedimento viene ripetuto qualche volta rendendo la griglia sempre più fitta. Dopo alcune iterazioni, è stato fissato $\underline \lambda = (10^{-0.375}, 10^{-3.25})$ come valore definitivo per questa analisi ed è stata calcolata computazionalmente la stima.
 
-In fig. \ref{fig:DomC_ris} sono riportati i confronti tra funzione reale e la stima nei primi istanti di tempo (la scala di colori è stata resa uniforme tra tutti i grafici). Si può notare come la funzione stimata sia effettivamente molto simile a quella reale. La diversità tra le due estremità del dominio è stata colta, poiché il procedimento ha considerato correttamente la definizione della geometria spaziale.
+In fig. \ref{fig:DomC_ris} sono riportati i confronti tra funzione reale e stimata nei primi istanti di tempo (la scala di colori è stata resa uniforme tra tutti i grafici). Si può notare come la funzione stimata sia effettivamente molto simile a quella reale. La diversità tra le due estremità del dominio è stata colta, poiché il procedimento ha considerato correttamente la definizione della geometria spaziale.
 \newpage
 \begin{figure}[H]
 \centering
@@ -851,7 +853,7 @@ In fig. \ref{fig:DomC_ris} sono riportati i confronti tra funzione reale e la st
 	\label{fig:DomC_ris}
 \end{figure}
 \newpage
-In fig. \ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in alcuni nodi della triangolazione. Oltre alla curva stimata è stata tracciata la reale, che è una cosinusoide di ampiezza nota (grazie alla perfetta conoscenza di $g(\underline p)$) riportata con i grafici. I punti rossi corrispondono al dato generato (termine dovuto al rumore compreso). Tanto più è vicina a zero l'ampiezza della curva, tanto più il rumore influenza la stima poiché più rilevante (infatti, in fig. \ref{fig:DomC_ris}, le curve di livello della funzione stimata sono le più diverse da quelle reali quando la stima è vicina a zero). Tuttavia, anche nel caso di ampiezza vicina al valore massimo di $g(\underline p)$ in fig. \ref{fig:DomC_ris2C}, l'andamento del fenomeno è stato riconosciuto e non è stata ottenuta una stima troppo interpolante dei dati. Si può concludere che la stima è molto buona, sebbene più confusa nella parte centrale del dominio a forma di C.
+In fig. \ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in alcuni nodi della triangolazione. Oltre alla curva stimata è stata tracciata la reale, che è una cosinusoide di ampiezza nota (grazie alla perfetta conoscenza di $g(\underline p)$) riportata con i grafici. I punti rossi corrispondono al dato generato (termine dovuto al rumore compreso). Tanto più è vicina a zero l'ampiezza della curva, tanto più il rumore influenza la stima poiché più rilevante (infatti, in fig. \ref{fig:DomC_ris}, le curve di livello della funzione stimata sono le più diverse da quelle reali quando la stima è vicina a zero). Tuttavia, anche nel caso di ampiezza vicina al valore massimo di $g(\underline p)$ in fig. \ref{fig:DomC_ris2C}, l'andamento del fenomeno è stato riconosciuto e non è stata ottenuta una stima troppo interpolante dei dati. Si può concludere che la stima è molto buona, sebbene leggermente più confusa nella parte centrale del dominio.
 
 \begin{figure}[t]
 	\centering
@@ -871,11 +873,10 @@ In fig. \ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in alcu
 	\caption{Evoluzione temporale in alcuni nodi della triangolazione, caso senza covariata}
 	\label{fig:DomC_ris2}
 \end{figure}
-
+\newpage
 \section{Caso con covariata}
 
-\subsection{Generazione della covariata e ricerca del miglior $\protect\underline{\lambda}$}
-Nel problema della stima della funzione $f(\underline p,t)=g(\underline p)cos(t)$ non sono presenti covariate. Quindi per poter provare il modello in questo caso, è stato necessario generare valori da assumere come covariata in ogni punto spaziale ed istante temporale in cui si hanno le misurazioni della risposta.
+Nel problema della stima della funzione $f(\underline p,t)=g(\underline p)cos(t)$ non sono presenti covariate. Quindi per poter testare il modello anche in questo caso, è stato necessario generare valori da assumere come covariata in ogni punto spaziale ed istante temporale in cui si ha la risposta.
 In definitiva i dati sono così formati:
 $$
 z_{ij}=g(\underline p_{i})cos(t_j) + \beta w_{ij} + \varepsilon_{ij} \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
@@ -889,7 +890,7 @@ $$
 $$
 e $\beta$ è fissato a 1. Se il modello è buono, c'è da aspettarsi che la parte di funzione stimata senza covariata sia vicina a $f(\underline p,t)$ e che $\hat{\beta}$ si avvicini a 1.
  
-Anche in questo caso è necessaria una analisi preliminare per fissare i valori per $\lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$, che nel caso con covariata si differenzia dal precedente solo per la forma della \textit{smoothing matrix}. Dopo alcuni tentativi è stato fissato $\underline \lambda = (10^{-0.125}, 10^{-3.25})$. 
+Anche in questo caso è necessaria una analisi preliminare per fissare i valori di $\underline \lambda$ ottimizzando l'indice $\mathrm{GCV}(\underline \lambda)$, che nel caso con covariata si differenzia dal precedente solo per la forma della \textit{smoothing matrix}. Dopo alcuni tentativi su griglie discrete (esattamente come nel caso precedente) è stato ottenuto un minimo in corrispondenza di $\underline \lambda = (10^{-0.125}, 10^{-3.25})$. 
 \newpage
 \begin{figure}[H]
 \centering
@@ -921,7 +922,7 @@ Anche in questo caso è necessaria una analisi preliminare per fissare i valori 
 \label{fig:DomCcovar_ris}
 \end{figure}
 \newpage
-In fig. \ref{fig:DomCcovar_ris2}, analogamente a quanto fatto nel caso senza covariata, si hanno i grafici dell'evoluzione temporale della funzione in alcuni punti spaziali. I punti rossi tracciati corrispondono alla parte di dato senza il termine dovuto alla covariata. Le conclusioni sono le stesse del caso senza covariata: la stima è ben riuscita e la vera variazione temporale è stata colta dal modello. Tuttavia, avvicinandosi alla parte centrale del dominio, si ha una maggiore influenza del rumore.
+In fig. \ref{fig:DomCcovar_ris2}, analogamente a quanto fatto nel caso senza covariata, si hanno i grafici dell'evoluzione temporale della funzione in alcuni punti spaziali. I punti rossi tracciati corrispondono alla parte di dato senza il termine dovuto alla covariata (ma con il rumore). Le conclusioni sono le stesse del caso senza covariata: la stima è ben riuscita e la vera variazione temporale è stata colta dal modello. Tuttavia, avvicinandosi alla parte centrale del dominio, si ha una maggiore influenza del rumore, in questo caso meno evidente a causa della presenza della covariata.
 
 \begin{figure}[t]
 	\centering
@@ -941,53 +942,55 @@ In fig. \ref{fig:DomCcovar_ris2}, analogamente a quanto fatto nel caso senza cov
 	\label{fig:DomCcovar_ris2}
 \end{figure}
 
-Dai grafici precedenti si può concludere che la stima della parte funzionale della risposta sia effettivamente una buona approssimazione della reale. Tuttavia occorre verificare anche che il contributo della covariata sia ben riconosciuto dal modello, controllando il valore stimato di $\beta$. Si ha:
+Dai grafici precedenti si può concludere che la stima della parte funzionale della risposta sia effettivamente una buona approssimazione della reale. Occorre verificare, però, anche che il contributo della covariata sia ben riconosciuto dal modello, controllando il valore stimato di $\beta$. Si ha:
 $$
 \hat{\beta} \approx 1.005 \ ,
 $$
-valore vicinissimo al reale. Pertanto è interessante calcolare un test del tipo
+valore vicinissimo al reale. Pertanto è interessante validare questo risultato attraverso un test del tipo
 $$
 \begin{cases}
 H_0: & \beta=1 \\
 H_1: & \beta \not = 1
-\end{cases}
+\end{cases} \ ,
 $$
-per poter verificate con una data significatività se il valore stimato corrisponde a quello reale. Per poter fare ciò si costruisce un un intervallo di confidenza approssimato al $95\%$ per $\beta$ (eliminando il termine di distorsione) con quanto ricavato in sez. \ref{sec:IC}. Ne risulta:
+per poter verificare con una data significatività se il valore stimato corrisponde a quello reale. Per poter fare ciò si costruisce un un intervallo di confidenza approssimato al $95\%$ per $\beta$ (eliminando il termine di distorsione) con quanto ricavato in sez. \ref{sec:IC}. Ne risulta:
 $$
 \beta \in [0.9843;1.0259]
 $$
 che contiene 1. L'ipotesi $H_0$ può essere accettata.
-
-Concludendo, la simulazione esposta in questo capitolo ha permesso di verificare, in un caso totalmente noto e con una dipendenza dalla geometria spaziale, l'appropriata stima del campo spazio-temporale e del termine con covariata. Pertanto la simulazione sul dominio a forma di C può essere considerata come un ottimo esempio per il confronto delle stime del modello ST-PDE con le altre tecniche disponibili in letteratura.
-
+\newpage
+Concludendo, la simulazione esposta in questo capitolo ha permesso di verificare, in un caso dalle caratteristiche totalmente note e con una forte dipendenza dalla geometria spaziale, l'appropriata stima del campo spazio-temporale e del termine con covariata. Grazie a questi risultati (e alla possibilità di conoscere i valori reali su tutto il dominio) si può dedurre che questo esempio sia adatto per il confronto delle stime del modello ST-PDE con le altre tecniche disponibili in letteratura.
+\newpage
+\thispagestyle{empty}
 
 \chapter{Confronto con altri metodi}
 \label{cap:confronto}
 
-Il modello ST-PDE rappresenta una generalizzazione del caso puramente spaziale proposto in \cite{art:sangalli} e, come è già stato evidenziato nel capitolo \ref{cap:panoramica}, non è l'unico modello disponibile per l'analisi di dati distribuiti sia in spazio che in tempo. Pertanto è necessario che sia confrontato con le altre principali metodologie presenti in letteratura, al fine di poter dire se e quanto il modello proposto possa rappresentare un miglioramento in questo campo.
+Il modello ST-PDE, come è già stato evidenziato nel capitolo \ref{cap:panoramica}, non è l'unico modello disponibile per l'analisi funzionale di dati distribuiti sia in spazio che in tempo. Pertanto è necessario che sia confrontato con le altre principali metodologie presenti in letteratura, al fine di poter dire se e quanto tale modello possa rappresentare un miglioramento in questo campo. I confronti saranno eseguiti nel caso della simulazione sul dominio a forma di C, poiché la conoscenza della funzione reale permette il calcolo dell'errore di stima. 
 
-Come già riportato nel cap. \ref{cap:panoramica}, l'articolo \cite{art:augustin} propone l'analisi di dati di questo tipo attraverso modelli misti additivi generalizzati (GAMM) di interazione spazio-tempo. Questo metodo è generalizzato, quindi può essere usato per spiegare anche funzioni del valore atteso della risposta. Nel nostro caso, per avvicinarci al caso ST-PDE, si ipotizza che la risposta sia pari alla somma di una funzione e di un eventuale termine con covariata. Alla funzione è associato lo smoothing secondo il prodotto tensoriale dei termini marginali in spazio e tempo con le loro penalizzazioni. Quindi la costruzione dei GAMM è molto simile a quella analizzata in ST-PDE e, mediante il codice implementato nel pacchetto R \textit{mgcv}, è possibile scegliere tra più tipi di modelli. In particolare ne saranno studiati due, i più simili al modello ST-PDE:
+Una tecnica da confrontare è senza dubbio il kriging spazio-temporale (KRIG). Le stime sono ottenute fissando un variogramma separabile e marginalmente esponenziale in spazio e tempo. I parametri del variogramma sono stimati dall'empirico e, successivamente, è possibile calcolare la stima grazie alle funzioni del pacchetto R \textit{gstat}. Per alcuni problemi con l'uso del pacchetto il kriging non sarà analizzato nel caso con covariata. Come è già stato evidenziato precedentemente, in questa tecnica non è preso in considerazione il dominio spaziale. Pertanto ci si aspettano stime peggiori rispetto ai metodi che possiedono questa caratteristica.
+
+Assieme al modello costruito, in \cite{art:augustin} è possibile consultare il codice per il calcolo della stima, implementato nel pacchetto R \textit{mgcv}. Per un corretto confronto con il modello ST-PDE sarà considerato un solo termine funzionale per la risposta, costituito dal prodotto tensoriale dei modelli marginali in spazio e tempo (definiti dalle funzioni di base e dai termini di penalizzazione differenziali, analoghi a quelli proposti per ST-PDE). Saranno sempre considerate come basi in tempo le \textit{Regression splines} cubiche, mentre in spazio saranno
+\newpage
+\noindent analizzati due casi:
 \begin{itemize}
-\item TPS, in cui sono poste marginalmente \textit{cubic regression splines} in tempo e \textit{thin plate splines} in spazio;
-\item SOAP, che considera \textit{cubic regression splines} in tempo e \textit{soap film smoothing} in spazio.
+\item basi spaziali per \textit{thin plate splines}, riportate in \cite{package:mgcv4}, che sono basi radiali non in grado di considerare la geometria spaziale (TPS);
+\item basi spaziali per \textit{soap film smoothing}, analizzate nel dettaglio in \cite{art:wood} e utilizzate in \cite{art:marra} e \cite{art:augustin} e costituite da due insiemi di funzioni (rispettivamente per la parte interna del dominio e per la frontiera) appositamente pensate per casi con dominio spaziale complesso (SOAP).
 \end{itemize}
 
-Un altro metodo da confrontare è sicuramente il kriging (KRIG) spazio-temporale. Le stime sono ottenute fissando un variogramma separabile e marginalmente esponenziale in spazio e tempo. I parametri del variogramma sono stimati dall'empirico e, successivamente, è possibile calcolare la stima grazie alle funzioni del pacchetto R \textit{gstat}. 
+La triangolazione e i dati sono gli stessi che sono stati usati nel capitolo \ref{cap:domC}. In aggiunta è stata costruita una griglia spazio-temporale di punti per la validazione, attraverso l'uso di 80 punti equispaziati in $[-1,+3.5]$, 40 punti in equispaziati $[-1,+1]$ e 20 istanti di tempo equispaziati in $[0,2\pi]$. Ovviamente l'errore è stato valutato soltanto sui punti che ricadevano all'interno del dominio a forma di C.
 
-I quattro modelli sono confrontati sull'esempio del dominio a forma di C proposto precedentemente, poiché garantisce di poter conoscere in ogni punto spaziale e ad ogni istante temporale il valore esatto della funzione. La triangolazione e i dati sono gli stessi che sono stati usati nel capitolo \ref{cap:domC}. In aggiunta è stata costruita una griglia spazio-temporale di punti per la validazione: sono stati presi 80 punti equispaziati in $[-1,+3.5]$ per l'ascissa, 40 punti in equispaziati $[-1,+1]$ per l'ordinata e 20 istanti in $[0,2\pi]$ per il tempo. Ovviamente la validazione è stata studiata soltanto sui punti che ricadevano all'interno del dominio a forma di C.
-
-I modelli sono stati confrontati attraverso il Root Mean Square Error ($\mathrm{RMSE}$) prodotto sui punti di validazione. Quindi se se $V$ è l'insieme dei punti della griglia interni al dominio, e $\mathrm{Mod}$ rappresenta la stima ottenuta dal modello, si avrà:
+I modelli sono stati confrontati attraverso il Root Mean Square Error ($\mathrm{RMSE}$) calcolato nei punti di validazione. Quindi se se $V$ è l'insieme dei punti della griglia interni al dominio, fissato un modello si avrà:
 $$
-\mathrm{RMSE}_V(\mathrm{Mod})=\sqrt{\frac{\sum_{(\underline p_i,t_i)\in V} (\mathrm{Mod}(\underline p_i,t_i)-g(\underline p_i)cos(t_i))^2}{\mathrm{card}(V)}}
+\mathrm{RMSE}_V=\sqrt{\frac{\sum_{(\underline p_i,t_i)\in V} (\hat{z}_{ij}-g(\underline p_i)cos(t_i))^2}{\mathrm{card}(V)}}
 $$ 
-
 Il procedimento è stato iterato 50 volte, per poter escludere possibili effetti particolari dovuti alla generazione del rumore.
 
 \newpage
 \section{Caso senza covariata}
-Nel caso senza covariata si hanno i risultati riportati in fig. \ref{fig:cfr}, in cui sono stati tracciati i boxplot dei valori di $\mathrm{RMSE}$ raccolti nelle 50 iterazioni per ogni metodo. Subito si nota che l'errore commesso è minore nel caso di ST-PDE, e quindi la stima ottenuta con il modello proposto è la migliore.
+Nel caso senza covariata si hanno i risultati riportati in fig. \ref{fig:cfr}, in cui sono stati tracciati i boxplot dei valori di $\mathrm{RMSE}$ ottenuti nelle 50 iterazioni per ogni metodo. Subito si nota che l'errore commesso è minore nel caso di ST-PDE, e quindi la stima ottenuta con il modello proposto è la migliore.
 
-Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_metodi_nocov}. Dai boxplot si nota che l'errore commesso è più alto nei casi di KRIG e TPS, e infatti le stime sono molto distanti dalla funzione reale. Invece SOAP e ST-PDE commettono errori minori, ma tra i due il migliore è ST-PDE, che ha linee di livello più ordinate rispetto a SOAP. 
+I risultati riflettono quanto è stato ipotizzato in precedenza: KRIG e TPS, che non considerano la geometria del problema, hanno prodotto gli errori più alti. Invece SOAP e ST-PDE commettono errori minori, ma tra i due il migliore è ST-PDE. Come ulteriore conferma di tutto ciò, in fig. \ref{fig:confronto_altri_metodi_nocov} sono riportate le stime ottenute dai differenti metodi per i primi istanti di tempo.  
 
 \begin{figure}[t]
 	\centering
@@ -1001,27 +1004,27 @@ Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_m
 \begin{tabular}{lcccccccc}
 & Funzione reale & Dati generati & KRIG & TPS & SOAP & ST-PDE \\
 &&&&&&\\
-\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=r]{90}{$t=0$\ \ \ \ \ \ }}}&\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/REALEtempo1.png} &
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=r]{90}{$t=0$}}}&\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/REALEtempo1.png} &
 \includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{immagini/simulazioni/Dati_tempo1.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo1.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/TPStempo1.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo1.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo1.png}\\
-\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=0.785$\ \ \ \ \ }}}&
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=0.785$}}}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/REALEtempo2.png}&
 \includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/Dati_tempo2.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo2.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/TPStempo2.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo2.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo2.png}\\
-\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=\ 1.571$\ \ \ \ \ }}}&
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=\ 1.571$}}}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/REALEtempo3.png}&
 \includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/Dati_tempo3.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo3.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/TPStempo3.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo3.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo3.png}\\
-\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=2.356$\ \ \ \ \ }}}&
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=2.356$}}}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/REALEtempo4.png}&
 \includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/Dati_tempo4.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo4.png}&
@@ -1030,16 +1033,16 @@ Tutto ciò è confermato dai grafici presenti in fig. \ref{fig:confronto_altri_m
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo4.png}&
 
 \end{tabular}
-\caption{Per alcuni istanti di tempo, funzione test $f(\protect\underline{p},t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, GAMM con soap film smoothing, GAMM con thin plate splines e stima con ST-PDE nel caso senza covariata}
+\caption{Per alcuni istanti di tempo, funzione test $f(\protect\underline{p},t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, soap film smoothing, thin plate splines e ST-PDE, caso senza covariata}
 \label{fig:confronto_altri_metodi_nocov}
 \end{figure}
 \end{landscape}
 
 \section{Caso con covariata}
 
-La stessa analisi è stata eseguita nel caso con covariata. La covariata è stata generata in tutti i punti esattamente come fatto nel capitolo \ref{cap:domC}. Nella calcolo del RMSE è stato considerato solo il termine dipendente dalla funzione $f(\underline p,t)$, poiché non è opportuno generare nuovamente valori per la covariata nei punti di validazione. I boxplot riportati in fig. \ref{fig:cfrcovar1} possono quindi essere considerati come valutazione della bontà della stima della parte funzionale del modello. Per la parte spiegata dalla covariata sono stati tracciati i boxplot in fig. \ref{fig:cfrcovar2}, con le stime di $\hat{\beta}$ calcolate dai metodi. Il kriging, che nel caso senza covariata si è rivelato ampiamente peggiore degli altri metodi, non è stato considerato.
+La stessa analisi è stata eseguita nel caso con covariata, generata in tutti i punti esattamente come fatto nel capitolo \ref{cap:domC}. Nella calcolo del $\mathrm{RMSE}$ è stato considerato solo la parte di risposta spiegata dalla funzione $f(\underline p,t)$, poiché non è opportuno generare nuovamente valori per la covariata nei punti di validazione. I boxplot riportati in fig. \ref{fig:cfrcovar1} possono quindi essere considerati come valutazione della bontà della stima della parte funzionale del modello. Per confrontare la parte spiegata dalla covariata sono stati tracciati i boxplot in fig. \ref{fig:cfrcovar2}, con le stime di $\hat{\beta}$ calcolate durante le 50 iterazioni. Come è già stato riportato in precedenza, il kriging non è stato analizzato per alcuni problemi riguardanti l'uso del pacchetto \textit{gstat} in presenza di covariate.
 
-Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\beta$ non presenta differenze, ma nella parte funzionale il caso ST-PDE è nuovamente il migliore. Analogamente al caso senza covariata, dai plot della funzione stimata ad alcuni istanti di tempo fissati in fig. \ref{fig:confronto_altri_metodi_cov} si possono trarre le stesse conclusioni. Il modello ST-PDE è quello che più si avvicina alla funzione reale.
+Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\beta$ non presenta differenze, ma nella parte funzionale il caso ST-PDE è nuovamente il migliore. Dai plot della funzione stimata ad alcuni istanti di tempo fissati in fig. \ref{fig:confronto_altri_metodi_cov} si possono trarre le stesse conclusioni dal caso senza covariata. Il modello ST-PDE è quello che più si avvicina alla funzione reale.
 
 \begin{figure}[t]
 	\centering
@@ -1059,61 +1062,65 @@ Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\bet
 
 \begin{landscape}
 \begin{figure}
-\centering
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/REALEtempo1.png}
-\includegraphics[height=0.25\textwidth]{immagini/simulazioni_covar/Dati_tempo1.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/SOAPtempo1.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/TPStempo1.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/STSRtempo1.png}
+\begin{tabular}{lccccccc}
+& Funzione reale & Dati generati & TPS & SOAP & ST-PDE \\
+&&&&&&\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=r]{90}{$t=0$}}}&\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/REALEtempo1.png} &
+\includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{immagini/simulazioni_covar/Dati_tempo1.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/TPStempo1.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/SOAPtempo1.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/STSRtempo1.png}\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=0.785$}}}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/REALEtempo2.png}&
+\includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/Dati_tempo2.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/TPStempo2.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/SOAPtempo2.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/STSRtempo2.png}\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=\ 1.571$}}}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/REALEtempo3.png}&
+\includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/Dati_tempo3.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/TPStempo3.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/SOAPtempo3.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/STSRtempo3.png}\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=2.356$}}}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/REALEtempo4.png}&
+\includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/Dati_tempo4.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/TPStempo4.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/SOAPtempo4.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/STSRtempo4.png}&
 
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/REALEtempo2.png}
-\includegraphics[height=0.25\textwidth]{immagini/simulazioni_covar/Dati_tempo2.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/SOAPtempo2.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/TPStempo2.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/STSRtempo2.png}
-
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/REALEtempo3.png}
-\includegraphics[height=0.25\textwidth]{immagini/simulazioni_covar/Dati_tempo3.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/SOAPtempo3.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/TPStempo3.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/STSRtempo3.png}
-
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/REALEtempo4.png}
-\includegraphics[height=0.25\textwidth]{immagini/simulazioni_covar/Dati_tempo4.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/SOAPtempo4.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/TPStempo4.png}
-\includegraphics[width=0.25\textwidth]{immagini/simulazioni_covar/STSRtempo4.png}
-
-\caption{Per alcuni istanti di tempo, funzione test $f(\protect\underline{p},t)$ reale, dati simulati, stime ottenute rispettivamente con GAMM con soap film smoothing, GAMM con thin plate splines e stima con ST-PDE nel caso con covariata}
+\end{tabular}
+\caption{Per alcuni istanti di tempo, funzione test $f(\protect\underline{p},t)$ reale, dati simulati, stime ottenute rispettivamente con soap film smoothing, thin plate splines e ST-PDE, caso con covariata}
 \label{fig:confronto_altri_metodi_cov}
 \end{figure}
 \end{landscape}
 
 
-\chapter{Applicazione allo studio della produzione di rifiuti urbani nella provincia di Venezia}
+\chapter{Applicazione alla produzione di rifiuti urbani nella provincia di Venezia}
 \label{cap:rifiuti}
 
-Come è già stato brevemente accennato in precedenza, l'applicazione scelta per il modello ST-PDE riguarda i dati della produzione di rifiuti urbani nel periodo di anni dal 1997 al 2011 nella provincia di Venezia. Per rifiuti urbani si intendono rifiuti domestici, rifiuti prodotti in locali, aree pubbliche, parchi, giardini o spiagge, rifiuti provenienti dalla pulizia delle strade o di altri luoghi pubblici. Non sono conteggiati i rifiuti speciali (tra cui ad esempio quelli industriali, agricoli o provenienti da attività commerciali o di costruzione) o pericolosi (per i quali esistono programmi di smaltimento particolari).
+L'applicazione principale per il modello ST-PDE in questo lavoro di tesi riguarda i dati della produzione di rifiuti urbani nel periodo di anni dal 1997 al 2011 nella provincia di Venezia. Per rifiuti urbani si intendono rifiuti domestici, rifiuti prodotti in locali, aree pubbliche, parchi, giardini o spiagge, rifiuti provenienti dalla pulizia delle strade o di altri luoghi pubblici. Non sono conteggiati i rifiuti speciali (tra cui ad esempio quelli industriali, agricoli o provenienti da attività commerciali o di costruzione) o pericolosi (per i quali esistono programmi di smaltimento particolari).
 
-In realtà, come già precedentemente indicato, i dati raccolti dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto (Arpav) riguardano tutta la regione. Tuttavia è stata analizzata solo la provincia di Venezia per due motivi. Inanzitutto l'interesse particolare per la zona della laguna veneta, in cui è rilevante il ruolo del turismo (come si potrà notare in seguito). Inoltre considerare tutto il Veneto aumenterebbe notevolmente le dimensioni delle matrici in gioco causando una grossa spesa computazionale per la ricerca della soluzione. Quindi è stato scelto di concentrarsi su un dominio più piccolo ma nel quale è possibile notare più facilmente le particolarità dell'andamento del fenomeno della produzione dei rifiuti urbani.
+In realtà i dati raccolti dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto (Arpav) e condivisi sul sito Open Data Veneto riguardano tutta la regione. Tuttavia è stata analizzata solo la provincia di Venezia per due motivi. Innanzitutto l'interesse per la zona della laguna veneta e per le particolarità del dominio spaziale da cui essa è descritta. Inoltre considerare tutto il Veneto aumenterebbe notevolmente le dimensioni delle matrici in gioco causando una grossa spesa computazionale per la ricerca della soluzione. Quindi è stato scelto di concentrarsi su un dominio più piccolo ma nel quale è possibile notare più facilmente le caratteristiche dell'andamento del fenomeno della produzione dei rifiuti urbani e le proprietà di stima del modello.
 
 Per ogni comune della provincia di Venezia e per ogni anno è disponibile il numero di rifiuti totali raccolti in tonnellate e la popolazione residente. La popolazione è certamente un valore influente per la produzione di rifiuti, perciò la quantità di riferimento non sarà il valore dei rifiuti totali raccolti in ogni anno per comune, ma il valore pro capite.
 
-Le coordinate spaziali dei comuni sono la longitudine e la latitudine, disponibili on line\footnote{\href{http://www.dossier.net/utilities/coordinate-geografiche/}{http://www.dossier.net/utilities/coordinate-geografiche/}}. Nel caso dei comuni con dato replicato (sez \ref{sez:comunireplicati}), le coordinate sono state scaricate da Google Maps.
+Le coordinate spaziali dei comuni sono la longitudine e la latitudine, disponibili on line\footnote{\href{http://www.dossier.net/utilities/coordinate-geografiche/}{http://www.dossier.net/utilities/coordinate-geografiche/}}. Nel caso dei comuni con dato replicato (sez. \ref{sez:comunireplicati}), le coordinate sono state ottenute da Google Maps.
 
+La più importante ipotesi iniziale in questa applicazione è la scelta di riferire i dati riguardanti la raccolta dei rifiuti di tutto il territorio comunale in un unico punto, corrispondente al capoluogo. Potrebbe essere più appropriato riferire i dati all'intero territorio comunale o alla zona urbanizzata del comune (non su tutto il territorio sono prodotti rifiuti urbani). Ma per semplicità lo studio è eseguito con dati puntiformi normalizzati rispetto alla popolazione. 
 
-\section{L'inclusione dell'effetto del turismo}
+\section{Il turismo come possibile covariata}
 
 L'inclusione della popolazione residente nella risposta tramite la scelta di usare i valori pro capite è necessaria, poiché permette di depurare la risposta da una variabile che per sua natura la influenzerebbe. Ma sarebbe un errore fermarsi solo alla popolazione residente, poiché anche i turisti rappresentano una componente non trascurabile di produzione di rifiuti urbani.
 
-Nella provincia di Venezia sono presenti molte zone di elevata attrazione turistica. Grande importanza è da attribuire a Venezia, ma si hanno anche zone balneari (come Lido di Venezia, Cavallino-Treporti, Jesolo, San Michele al Tagliamento, Bibione, ecc...). L'informazione scelta per sintetizzare l'attività turistica è il numero di posti letto totali del comune, valore disponibile grazie all'applicativo dell'Istat \textit{Atlante Statistico dei Comuni}\footnote{\href{http://www.istat.it/it/archivio/113712}{http://www.istat.it/it/archivio/113712}} per ogni anno. Il totale dei posti letto per comune è la somma di vari tipi di attività non solamente alberghiere in senso stretto (ad esempio sono conteggiati anche esercizi complementari, bed \& breakfast, campeggi) e saranno considerati normalizzati per la popolazione residente per uniformità con la risposta. I valori ricavati saranno inseriti nel modello come possibile covariata.
+Nella provincia di Venezia sono presenti molte zone di elevata attrazione turistica. Grande importanza è da attribuire a Venezia, ma si hanno anche zone balneari (come Lido di Venezia, Cavallino-Treporti, Jesolo, San Michele al Tagliamento, Bibione, ecc...). L'informazione scelta per sintetizzare l'attività turistica è il numero di posti letto totali del comune, valore disponibile grazie all'applicativo dell'Istat \textit{Atlante Statistico dei Comuni}\footnote{\href{http://www.istat.it/it/archivio/113712}{http://www.istat.it/it/archivio/113712}} per ogni anno. Il totale dei posti letto per comune è la somma di vari tipi di attività non solamente alberghiere in senso stretto (ad esempio sono conteggiati anche esercizi complementari, bed \& breakfast, campeggi) e sarà considerato normalizzato per la popolazione residente per uniformità con la risposta. I valori ricavati saranno inseriti nel modello come possibile covariata.
 
 
 \section{Trattamento del dominio}
 
 Per poter studiare il problema a livello computazionale occorre avere una buona approssimazione della frontiera della regione. Questa è disponibile nel pacchetto R \textit{raster} che descrive dati geografici di moltissime zone del mondo sia a livello nazionale che locale (nel caso italiano province e comuni) tramite poligoni molto precisi.
 
-Una volta scaricata la provincia di Venezia da \textit{raster}, si è riscontrato subito un problema: la regione è composta da un insieme di 101 poligoni distinti (a causa delle numerose isole di cui è composta la laguna) e ogni poligono ha un alto numero di vertici (ad esempio, la prima delle due regioni corrispondenti all'entroterra aveva 10538 vertici). Non è possibile analizzare il problema su un territorio così descritto, perciò è stata necessaria una analisi iniziale della frontiera per ridurne la complessità. 
+Una volta scaricata la provincia di Venezia da \textit{raster}, si è riscontrato subito un problema: la regione è composta da un insieme di 101 poligoni distinti (a causa delle numerose isole di cui è composta la laguna) e ogni poligono ha un alto numero di vertici (ad esempio, la prima delle due regioni corrispondenti alla parte interna della provincia ha 10538 vertici). Non è possibile analizzare il problema su un territorio così descritto, perciò è stata necessaria una analisi iniziale della frontiera per ridurne la complessità. 
 
 \begin{figure}[t]
 	\centering
@@ -1131,15 +1138,15 @@ Una volta scaricata la provincia di Venezia da \textit{raster}, si è riscontrat
 	\label{fig:Ven_poligoni}
 \end{figure}
 
-Oltre all'entroterra (composto da due poligoni) stati scelte solo le più più rilevanti isole della laguna a livello di popolazione e turismo: Venezia, Murano, Lido di Venezia, Pellestrina e Chioggia (composta da due poligoni). In fig. \ref{fig:Ven_poligoni} (tracciata, come per le successive, con il pacchetto R \textit{RgoogleMaps}) sono visualizzati i poligoni disponibili e quelli scelti per l'analisi. Come sarà indicato nel paragrafo successivo, tutte queste isole sono state trattate per la riduzione dei vertici e, per creare un poligono unico, sono state unite tra loro con ponti dove era possibile. Tra le isole collegate solamente via mare con il resto del territorio sono stati simulati ponti in corrispondenza delle trafficate linee di trasporto pubblico con traghetto. 
+Oltre all'entroterra (composto da due poligoni) saranno considerate solo le più più rilevanti isole della laguna a livello di popolazione e turismo: Venezia, Murano, Lido di Venezia, Pellestrina e Chioggia (composta da due poligoni). In fig. \ref{fig:Ven_poligoni} (tracciata, come per le successive, con il pacchetto R \textit{RgoogleMaps}) sono visualizzati i poligoni disponibili in \textit{raster} e quelli scelti per l'analisi. Come sarà indicato nel paragrafo successivo, tutte queste isole sono state trattate per la riduzione dei vertici e, per creare un poligono unico, sono state unite tra loro con ponti dove era possibile. Tra le isole collegate solamente via mare con il resto del territorio sono stati simulati ponti in corrispondenza delle trafficate linee di trasporto pubblico con traghetto. 
 
 \subsection{Regression splines}
 
-Per ridurre l'elevato numero di vertici di ognuno dei poligoni considerati si è scelto di ricorrere ad un'analisi di smoothing di dati funzionali. Ad ogni poligono è associata una coppia di funzioni: la latitudine e la longitudine rispetto all'ascissa curvilinea (disponibili per punti, corrispondenti ai vertici di \textit{raster}) che sono state rappresentate in basi. Successivamente, le funzioni stimate sono state valutate in un mumero molto inferiore di punti, con i quali si è costruita la nuova definizione della regione.
+Per ridurre l'elevato numero di vertici di ognuno dei poligoni considerati (e la conseguente complessità della stima) è stato necessario ricorrere a tecniche di smoothing di dati funzionali. Ad ogni poligono è possibile associare una coppia di funzioni: la latitudine e la longitudine rispetto all'ascissa curvilinea (disponibili per punti, corrispondenti ai vertici di \textit{raster}) da rappresentare in funzioni di base. Successivamente, le nuove funzioni stimate sono state valutate in un numero molto inferiore di valori dell'ascissa curvilinea. Con le nuove coordinate ottenute dopo questo procedimento è stata costruita la nuova definizione della regione.
 
-Per avere una rappresentazione tramite funzioni di base di queste funzioni sono state provate più tecniche e la scelta definitiva è ricaduta sulle \textit{Regression Splines} cubiche senza penalizzazione della derivata seconda. Infatti i risultati non sono stati migliori con le altre tecniche provate a causa della zona interna alla laguna di Venezia, fortemente frastagliata: ad esempio penalizzare la derivata seconda eliminava troppe asperità presenti sulle coste del territorio, mentre con \textit{Kernel Smoothing} sono state ricavate regioni che, dopo la triangolazione, presentavano troppi triangoli composti solamente da punti di frontiera (e quindi senza dati) rispetto agli altri metodi.
+Per avere una rappresentazione ottimale tramite funzioni di base sono state provate più tecniche. La scelta definitiva è ricaduta sull'uso di \textit{Regression Splines} cubiche senza penalizzazione della derivata seconda. Infatti i risultati non sono stati migliori con le altre tecniche provate a causa della zona interna alla laguna di Venezia, fortemente frastagliata: ad esempio penalizzare la derivata seconda ha eliminato troppe asperità presenti sulle coste del territorio, mentre l'utilizzo di \textit{Kernel Smoothing} ha portato alla definizione di regioni che, dopo la triangolazione, presentavano un maggior numero di triangoli composti solamente da punti di frontiera (e quindi senza dati) rispetto agli altri metodi.
 
-Una volta fissato un ragionevole numero di punti con cui descrivere la regione sono stati eseguiti più tentativi per decidere il miglior numero di basi necessario per descrivere le due funzioni. Il criterio di scelta è stato complesso, poiché sono stati esclusi i valori che generavano intersezioni nella nuova descrizione della regione e comuni esterni alla frontiera. Ma la scelta del miglior numero di basi per \textit{Regression Splines} è ricaduta sul valore che, una volta eseguito lo smoothing della regione, causava la minor distanza tra i nuovi punti della regione e il poligono iniziale. In fig. \ref{fig:Ven_ent1} è riportato il risultato dello smoothing sul primo poligono che descrive l'entroterra della provincia di Venezia (nella versione definitiva ha 100 punti, molti meno dei 10538 iniziali).  
+Una volta fissato un ragionevole numero di punti con cui descrivere la regione sono stati eseguiti più tentativi per decidere il miglior numero di funzioni di base. Il criterio di scelta è stato complesso, poiché sono stati esclusi i valori che generavano intersezioni nella nuova descrizione della regione e comuni esterni alla frontiera. Il miglior valore per \textit{Regression Splines} è stato quello che, una volta eseguito lo smoothing della regione, ha causato la minor distanza tra i nuovi punti della regione e il poligono iniziale di \textit{raster}. In fig. \ref{fig:Ven_ent1} è riportato il risultato dello smoothing sul primo poligono che descrive l'entroterra della provincia di Venezia (nella versione definitiva ha 100 punti, molti meno dei 10538 iniziali).  
 
 \begin{figure}[t]
 	\centering
@@ -1154,7 +1161,7 @@ Una volta fissato un ragionevole numero di punti con cui descrivere la regione s
 	\label{fig:Ven_ent1}
 \end{figure}
 
-Dopo aver ripetuto l'analisi per ognuna delle isole elencate precedentemente (eccetto Chioggia, aggregata al dominio in modo molto più semplificato), la descrizione finale è stata ricavata unendo tra loro tutti i nuovi poligoni. In seguito è stata eliminata una zona costiera dell'entroterra della laguna di Venezia che, sebbene sia presente sia in \textit{raster} che nei grafici di Google Maps, corrisponde ad una parte fangosa e paludosa e quindi disabitata. Non essendo possibile che su di essa siano prodotti rifiuti è stata tagliata dalla regione. Per questo motivo si troverà sempre una zona non analizzata sui grafici con mappe da Google Maps. In fig. \ref{fig:Ven_rgm} è riportata la descrizione finale del dominio con i punti spaziali considerati (si consulti anche la sezione successiva).
+Dopo aver ripetuto l'analisi per ognuna delle isole elencate precedentemente (eccetto Chioggia, aggregata al dominio in modo molto più semplificato), la descrizione finale è stata ricavata unendo tra loro tutti i nuovi poligoni. In seguito è stata eliminata una zona costiera dell'entroterra della laguna di Venezia che, sebbene presente sia in \textit{raster} che nei grafici di Google Maps, corrisponde ad una parte fangosa e paludosa e quindi disabitata. Non essendo possibile che su di essa siano prodotti rifiuti, è stata tagliata dalla regione. Per questo motivo si troverà sempre una zona non analizzata sui grafici con mappe di Google Maps. In fig. \ref{fig:Ven_rgm} è riportata la descrizione finale del dominio con i punti spaziali considerati.
 \begin{figure}[t]
 	\centering
 	\subfigure[Provincia di Venezia]
@@ -1171,18 +1178,37 @@ Dopo aver ripetuto l'analisi per ognuna delle isole elencate precedentemente (ec
 	\label{fig:Ven_rgm}
 \end{figure}
 
-\subsection{Scelte particolari tra i comuni}
+\subsection{Replica dei dati}
 \label{sez:comunireplicati}
 
-L'uso di valori pro capite per rifiuti e posti letto consente di replicare il dato del comune anche su altri punti in cui risulta necessario. Ad esempio, le isole di Murano, Lido di Venezia e Pellestrina non sono sedi di comune, ma si riferiscono a Venezia. Quindi il dato di Venezia è stato replicato in queste isole ad ogni anno, per avere un valore di riferimento in quanto zone distaccate. Come si può notare in fig. \ref{fig:Ven_rgm_zoom} anche nell'isola di Venezia è stato duplicato il dato, per avere una triangolazione  senza troppi triangoli composti solo da punti di frontiera in una zona di particolare rilevanza.
+L'uso di valori pro capite per rifiuti e posti letto consente di replicare il dato del comune anche su altri punti in cui risulta necessario. Ad esempio, le isole di Murano, Lido di Venezia e Pellestrina non sono sedi di comune, ma si riferiscono a Venezia. Quindi il dato di Venezia è stato replicato in queste isole ad ogni anno, per avere un valore di riferimento anche nelle isole. I dati replicati dal comune di Venezia sono visualizzati in rosso in fig. \ref{fig:Ven_rep1}. Come si può notare, anche nell'isola di Venezia è stato duplicato il dato, per poter ottenere una triangolazione senza troppi triangoli composti solo da punti di frontiera in una zona di particolare rilevanza. 
 
-Un caso particolare riguarda il comune di Cavallino-Treporti, che è stato istituito nel 1999 con una parte dei territori del comune di Venezia. La separazione all'interno dei dati, però, è presente dal 2002. Di conseguenza prima di questo anno il dato in Cavallino-Treporti è una replica del dato di Venezia.
+Un caso particolare riguarda il comune di Cavallino-Treporti, che è stato istituito nel 1999 con una parte dei territori del comune di Venezia. La separazione all'interno dei dati, però, è presente dal 2002. Di conseguenza prima di questo anno il dato in Cavallino-Treporti è una replica del dato di Venezia. Cavallino-Treporti corrisponde al punto blu in fig. \ref{fig:Ven_rep2}.
+
+Un altro punto di replica del dato è Bibione, località balneare vicina a Lignano Sabbiadoro (che però non è in Veneto) ed interna alla regione (punto verde in fig. \ref{fig:Ven_rep2}). Il comune di riferimento di Bibione (San Michele al Tagliamento) è lontano, pertanto si genera una parte di territorio senza dati molto ampia nell'estremità orientale della provincia. Quindi la replica della misurazione in Bibione consente di avere un dato in una zona rilevante (già dai grafici in fig. \ref{fig:Ven_bubbledati} e \ref{fig:Ven_bubblePL} si potrà capire l'importanza della zona balneare in questo studio) e di coprire anche un'estremità del dominio altrimenti priva di riferimenti.
+
+\begin{figure}[t]
+\centering
+\subfigure[Repliche del dato di Venezia]
+   {
+   \label{fig:Ven_rep1}
+	\includegraphics[width=0.46\textwidth]{Immagini/Repliche1.png}   
+   }
+\subfigure[Cavallino-Treporti e Bibione]
+   {
+   \label{fig:Ven_rep2}
+	\includegraphics[width=0.46\textwidth]{Immagini/Repliche2.png}
+   }
+\caption{Dati replicati}
+\label{fig:Ven_rep}
+\end{figure}
+
 
 \subsection{Triangolazione del dominio}
 
-La triangolazione è stata prodotta tramite il pacchetto R \textit{RTriangle}. Poiché nella zona ad est il numero di capoluoghi di comune (e quindi di nodi della triangolazione) è minore rispetto al resto della regione, è stata fissata un'area massima per i triangoli generati da \textit{RTriangle}. Questo ha reso la triangolazione più fitta anche dove non lo sarebbe stata, e garantirà una stima della risposta più precisa nella zona balneare che, come si potrà notare in seguito, ha una grande importanza per la distribuzione dei rifiuti. Affinchè questo sia possibile sono stati aggiuhnti nuovi punti spaziali, che restano senza dato per tutta l'analisi. In fig. \ref{fig:Ven_triang} si ha la triangolazione finale che sarà usata da ora in avanti.
+La triangolazione è stata prodotta tramite il pacchetto R \textit{RTriangle}. Poiché nella zona ad est il numero di capoluoghi di comune (e quindi di nodi della triangolazione) è minore rispetto al resto della regione, è stata fissata un'area massima per i triangoli generati da \textit{RTriangle}. Questo ha reso la triangolazione più fitta anche dove non lo sarebbe stata, e garantirà una stima della risposta più precisa nella zona balneare che, come si potrà notare in seguito, ha una grande importanza per la distribuzione dei rifiuti. Affinchè questo sia possibile sono stati aggiunti nuovi punti spaziali all'interno della regione, che resteranno senza dato per tutta l'analisi ma saranno utili per la definizione dei triangoli. In fig. \ref{fig:Ven_triang} si ha la triangolazione finale che sarà usata da ora in avanti.
 
-\begin{figure}[t]
+\begin{figure}[h]
 \centering
 \subfigure[Provincia di Venezia]
    {
@@ -1197,11 +1223,11 @@ La triangolazione è stata prodotta tramite il pacchetto R \textit{RTriangle}. P
 \caption{Triangolazione della provincia di Venezia}
 \label{fig:Ven_triang}
 \end{figure}
-
-In conclusione, il dominio è descritto da 414 punti (41 con dati, 373 di frontiera o aggiunti dalla triangolazione) e da 475 triangoli.
+\newpage
+In conclusione, il dominio è descritto da 418 punti (49 con dati, 369 di frontiera o aggiunti durante la creazione della triangolazione) e da 480 triangoli.
 
 \section{Analisi preliminare dei dati}
-Prima di eseguire l'analisi, è opportuno avere una visualizzazione dei dati sul dominio della provincia di Venezia. In fig. \ref{fig:Ven_bubbledati} sono riportati i bubbleplot dei dati (realizzati grazie all'aiuto del paccherro R \textit{ggmap}), che permettono di avere un'idea del fenomeno in spazio e tempo.
+Prima di eseguire l'analisi, è opportuno avere una visualizzazione dei dati sul dominio della provincia di Venezia. In fig. \ref{fig:Ven_bubbledati} e \ref{fig:Ven_bubblePL} sono visualizzati, rispettivamente, i valori dei rifiuti e dei posti letto pro capite (realizzati grazie all'aiuto del pacchetto R \textit{ggmap}), che permettono di avere un'idea della loro distribuzione in spazio e tempo.
 \newpage
 \begin{figure}[H]
 	\centering
@@ -1220,7 +1246,7 @@ Prima di eseguire l'analisi, è opportuno avere una visualizzazione dei dati sul
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2009.png}
 	%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2010.png}
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/Dati2011.png}
-	\caption{Bubbleplot delle misurazioni della produzione di rifiuti urbani pro capite ogni due anni dal 1997 al 2011}
+	\caption{Rifiuti urbani pro capite ogni due anni dal 1997 al 2011}
 	\label{fig:Ven_bubbledati}
 \end{figure}
 \newpage
@@ -1241,95 +1267,84 @@ Prima di eseguire l'analisi, è opportuno avere una visualizzazione dei dati sul
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2009.png}
 	%\includegraphics[trim=0cm 0cm 0cm 2cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2010.png}
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip=true,width=0.45\textwidth]{Immagini/venezia_dati/PL2011.png}
-	\caption{Bubbleplot dei posti letto pro capite ogni due anni dal 1997 al 2011}
+	\caption{Posti letto pro capite ogni due anni dal 1997 al 2011}
 	\label{fig:Ven_bubblePL}
 \end{figure}
 \newpage
 \begin{figure}[t]
 \centering
 	\includegraphics[width=0.60\textwidth]{Immagini/Matplot.png}   
- \caption{Matplot della produzione dei rifiuti urbani}
+ \caption{Andamento temporale della produzione dei rifiuti urbani nei comuni}
    \label{fig:Ven_matplot}
 \end{figure}
-Da questa analisi iniziale si può già notare come la produzione di rifiuti sia più alta nella zona balneare della regione e che non abbia grosse variazioni nel tempo, poiché i dati sono più o meno simili negli anni. Questo è evidenziato anche in fig. \ref{fig:Ven_matplot}, dove i dati risultano raggruppabili in due gruppi (zona balneare e altri comuni) totalmente distinti, eccetto per un comune (Cavallino-Treporti) che subisce un forte innalzamento nel tempo.
+Da questa analisi iniziale si può già notare come la produzione di rifiuti sia più alta nella zona balneare della regione e come non presenti grosse variazioni nel tempo in quasi tutti i comuni, poiché i dati sono più o meno simili negli anni. Questo è evidenziato anche in fig. \ref{fig:Ven_matplot}, dove sono stati collegati tra loro i dati al variare del tempo per ogni comune. Si distinguono subito due gruppi (valori più alti per la zona balneare e più bassi negli altri comuni) totalmente distinti, eccetto per un comune (Cavallino-Treporti) che subisce un forte innalzamento nel tempo.
 
-Gli stessi grafici sono stati ripetuti in fig. \ref{fig:Ven_bubblePL} per il numero di posti letto pro capite. Il numero di posti letto assume valori decisamente più alti nella zona balneare rispetto al resto della regione. Contrariamente a quello che ci si aspettava, non si hanno molto posti letto nell'isola di Venezia. Invece si ha una grossa variazione nel comune di Cavallino-Treporti dopo la separazione dal comune di Venezia (si nota che il raggio della bolla aumenta notevolmente dopo il 2002). Questo indica che i posti letto sono in realtà numerosi in Cavallino-Treporti, ma quando era unito al comune di Venezia questo effetto non poteva essere colto in modo così dettagliato. Ci si può quindi aspettare che la funzione stimata presenti un comportamento differente in Cavallino-Treporti nelle due situazioni.
+Dai grafici in fig. \ref{fig:Ven_bubblePL} per il numero di posti letto pro capite si può notare che la covariata assume valori decisamente più alti nella zona balneare rispetto al resto della regione. Contrariamente a quello che si potrebbe pensare, non si ha un elevato valore di posti letto nell'isola di Venezia. Invece si ha una grossa variazione nel comune di Cavallino-Treporti dopo la separazione dal comune di Venezia (si nota che il raggio della bolla aumenta notevolmente dopo il 2002). Questo indica che i posti letto sono in realtà più densi in Cavallino-Treporti, ma quando il dato era unito al comune di Venezia questo effetto non poteva essere colto in modo così dettagliato. Ci si può quindi aspettare che la funzione stimata presenti un comportamento differente in Cavallino-Treporti nelle due situazioni.
 
 \subsection{Funzioni di base}
-Le basi in spazio scelte per l'applicazione del modello sono gli elementi finiti lineari anche in questo caso. Ad ognuno dei punti spaziali (interni o di frontiera) è associata una funzione di base, coerentemente con la triangolazione prodotta. Di conseguenza si ha $N=414$ mentre il numero di punti con dati $n$ è minore ed è pari a 41.
+Le basi in spazio scelte per l'applicazione del modello sono gli elementi finiti lineari anche in questo caso. Ad ognuno dei punti spaziali (interni o di frontiera) è associata una funzione di base, coerentemente con la triangolazione prodotta. Di conseguenza si ha $N=418$ mentre il numero di punti con dati $n$ è minore ed è pari a 49.
 
-In tempo, esattamente come nel caso del dominio a forma di C, sono state scelte come funzioni di base le B-splines cubiche. L'intervallo temporale per la descrizione del dominio è $[1997,2011]$ e i dati sono disponibili con cadenza annuale. Anche in questo caso si assume che il numero di basi sia pari al numero di istanti temporali a disposizione, quindi $M=m=15$.
+In tempo, esattamente come nel caso del dominio a forma di C, saranno adottate come funzioni di base le B-splines cubiche. L'intervallo temporale per la descrizione del dominio è $[1997,2011]$ e i dati sono disponibili con cadenza annuale. Anche in questo caso si assume che il numero di basi sia pari al numero di istanti temporali a disposizione, quindi $M=m=15$.
 
 \section{Applicazione del modello senza covariata}
 
-\subsection{Ricerca del miglior $\protect\underline{\lambda}$}
+Prima di calcolare i risultati dell'analisi occorre fissare i parametri $\lambda_S$ e $\lambda_T$. Il procedimento è perfettamente analogo a quello ricavato nel caso del dominio a forma di C per ricavare una buona approssimazione del minimo di $\mathrm{GCV}(\underline \lambda)$ in eq. \ref{eq:GCV}. A seguito di alcuni tentativi su griglie discrete, la produzione dei rifiuti è stata analizzata con $\underline \lambda = (10^{-9}, 10^{-0.125})$. In fig. \ref{fig:Ven_ris} sono riportati i risultati ottenuti nei 15 anni a disposizione. Questi grafici permettono di studiare il profilo della funzione nei vari istanti temporali in modo molto accurato, perchè la scala cromatica è stata resa uniforme tra tutti gli anni.
 
-Prima di calcolare i risultati dell'analisi occorre fissare i parametri $\lambda_S$ e $\lambda_T$. Il procedimento è perfettamente analogo a quello ricavato nel caso del dominio a forma di C, minimizzando la quantità $\mathrm{GCV}(\underline \lambda)$ in eq. \ref{eq:GCV}. In tab. \ref{tab:Ven} sono disponibili i risultati.
+Successivamente sarà rappresentata anche la stima dell'evoluzione temporale della funzione in alcuni comuni, riportati in fig. \ref{fig:Ven_selected}.
 \newline
-\begin{table}[h]
-\renewcommand{\arraystretch}{1.3}
-\setlength{\tabcolsep}{2mm}
-\centering
-	\begin{tabular}{!{\vrule width 1.2pt}c!{\vrule width 1.2pt}c!{\vrule width 1.2pt}}
-	\noalign{\hrule height 1.2pt}
-	Intervalli per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$& Miglior valore											\\
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-12,-11,\ldots,+1\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-10},10^{0})$} 			\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-8,-7,\ldots,+1\}$		& 															\\	
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-11,-10.5,\ldots,-9\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-9.5},10^{0})$} 		\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-1,-0.5,\ldots,+1\}$	& 															\\	
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-10,-9.875,\ldots,-9\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-9.625}, 10^{0})$}	\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-0.5,-0.375,\ldots,+0.5\}$		& 			\\	
-	\noalign{\hrule height 1.2pt}
-	\end{tabular}
-\caption{Analisi di $\mathrm{GCV}(\protect\underline{\lambda})$ per la provincia di Venezia, caso senza covariata}
-\label{tab:Ven}
-\end{table}
+\newline
+\newline
+\newline
+\newline
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{Immagini/comuni_selezionati.png}   
+   \caption{Comuni selezionati per l'analisi dei risultati}
+	\label{fig:Ven_selected}
+\end{figure}
 
-\subsection{Risultati}
-La produzione dei rifiuti è stata analizzata con $\underline \lambda = (10^{-9.625}, 10^{0})$. In fig. \ref{fig:Ven_ris} sono riportati i risultati ottenuti nei 15 anni a disposizione. Questi grafici (grazie anche alla visualizzazione sulle mappe di Google Maps) permettono di studiare il profilo della funzione nei vari istanti temporali e di avere un'idea dell'evoluzione della produzione di rifiuti a livello geografico.
+
+
 \newpage
 \begin{figure}[H]
-\centering
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps1997.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps1998.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps1999.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2000.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2001.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2002.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2003.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2004.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2005.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2006.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2007.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2008.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2009.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2010.png}
-	\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_senza_covariate/Maps2011.png}
-	\caption{Stima della funzione spazio-temporale della produzione dei rifiuti nella provincia di Venezia a tempi fissati dal 1997 al 2011, caso senza covariata}
-	\label{fig:Ven_ris}
+	\centering
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno1997.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno1998.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno1999.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2000.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2001.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2002.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2003.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2004.png}
 \end{figure}
 \newpage
-Come si può notare dai grafici, ci sono due zone ad elevato valore di produzione dei rifiuti pro capite, corrispondenti a località con grande interesse turistico per le spiagge presenti. Ad est, tra le altre, si hanno le località turistiche di Bibione (confinante con Lignano Sabbiadoro, che però è oltre il confine) e Caorle. Scendendo verso sud-ovest si nota che anche Jesolo causa un innalzamento della funzione che descrive la risposta. La produzione dei rifiuti è particolarmente alta in queste zone turistiche e, contrariamente a ciò che si poteva immaginare, molto più di Venezia. Quindi, come già si notava dai bubbleplot in fig. \ref{fig:Ven_bubblePL}, il turismo sarà rilevante nell'analisi della produzione di rifiuti, e la causa non sarà Venezia (dove la produzione non è eccessivamente diversa dagli altri comuni) ma saranno le località balneari.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2005.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2006.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2007.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2008.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2009.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2010.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_senza_covariate/Anno2011.png}
+\caption{Stima della funzione spazio-temporale della produzione di rifiuti urbani pro capite nella provincia di Venezia a tempi fissati dal 1997 al 2011, caso senza covariata}
+\label{fig:Ven_ris}
+\end{figure}
+\newpage
 
 \begin{figure}[t]
 	\centering
+	\subfigure[Cavarzere]
+   {
+	\includegraphics[width=0.31\textwidth]{Immagini/venezia_senza_covariate/Cavarzere.png}   
+   }
 	\subfigure[Venezia]
    {
-	\includegraphics[width=0.31\textwidth]{Immagini/venezia_senza_covariate/Venezia.png}   
+	\includegraphics[width=0.31\textwidth]{Immagini/venezia_senza_covariate/Venezia.png}
    }
 	\subfigure[Cavallino-Treporti]
    {
-	\includegraphics[width=0.31\textwidth]{Immagini/venezia_senza_covariate/Cavallino-Treporti.png}
-   }
-	\subfigure[Chioggia]
-   {
-	\includegraphics[width=0.31\textwidth]{Immagini/venezia_senza_covariate/Chioggia.png}   
+	\includegraphics[width=0.31\textwidth]{Immagini/venezia_senza_covariate/Cavallino-Treporti.png}   
    }
 	\subfigure[Jesolo]
    {
@@ -1339,101 +1354,63 @@ Come si può notare dai grafici, ci sono due zone ad elevato valore di produzion
    {
 	\includegraphics[width=0.31\textwidth]{Immagini/venezia_senza_covariate/Caorle.png}   
    }
-	\subfigure[S. Michele al Tagliamento]
+	\subfigure[Bibione]
    {
-	\includegraphics[width=0.31\textwidth]{Immagini/venezia_senza_covariate/SanMichelealTagliamento.png}
+	\includegraphics[width=0.31\textwidth]{Immagini/venezia_senza_covariate/Bibione.png}
    }
-	\caption{Stima della produzione dei rifiuti pro capite in alcuni comuni, caso senza covariata}
+	\caption{Stima della produzione di rifiuti urbani pro capite in alcuni comuni, caso senza covariata}
 	\label{fig:Ven_tempo}
 \end{figure}
 
-In fig. \ref{fig:Ven_tempo} sono tracciati gli sviluppi temporali stimati in alcuni comuni. I punti rossi corrispondono al dato misurato. La funzione stimata spiega bene l'andamento tracciato dai dati iniziali senza cadere nell'eccessiva interpolazione. Infatti lo smoothing imposto dal modello tramite la penalizzazione della derivata seconda in tempo permette di non avere variazioni repentine. Ad esempio, nei grafici di Venezia e Cavallino-Treporti, il cambio di andamento dovuto alla separazione del comune dal 2002 ha provocato un cambiamento ma è stato comunque colto dal modello. Si noti come la risposta cresca velocemente in Cavallino-Treporti (come già notato in \ref{fig:Ven_matplot}). In Chioggia e in Jesolo si ha un calo generale della produzione dei rifiuti, mentre in San Michele al Tagliamento (comune di appartenenza di Bibione) e Caorle si hanno valori alti, a conferma dei grafici in \ref{fig:Ven_ris}.
+Da tutti questi grafici è confermata la deduzione iniziale: i rifiuti sono massimi nella parte balneare della regione e minimi nella parte interna. I valori più alti si registrano in Bibione, ad est della regione. Questo conferma l'intuizione della replica del dato in questo punto. Contrariamente a quanto poteva essere supposto inizialmente, Venezia (meta turistica di fama internazionale) non è la località con la produzione più alta. Come già si notava dai grafici in fig. \ref{fig:Ven_bubblePL}, il turismo sarà rilevante nell'analisi della produzione di rifiuti e la causa non sarà Venezia (dove la produzione non è eccessivamente diversa dagli altri comuni) ma le località balneari.
 
-\subsection{Analisi dei residui}
+Le variazioni temporali della funzione in generale non sono marcate (i grafici in fig. \ref{fig:Ven_ris} sono molto simili) ma si possono notare alcune particolarità. In fig. \ref{fig:Ven_tempo} sono tracciati gli sviluppi temporali stimati in alcuni comuni. I punti rossi corrispondono al dato misurato. La funzione stimata spiega bene l'andamento tracciato dai dati iniziali senza cadere nell'eccessiva interpolazione. Infatti, lo smoothing imposto dal modello tramite la penalizzazione della derivata seconda in tempo non permette di avere variazioni repentine poiché $\lambda_T$ non è eccessivamente basso. Ad esempio, nei grafici di Venezia e Cavallino-Treporti, i cambiamenti dovuti alla separazione del comune dal 2002 hanno provocato un mutamento dello sviluppo temporale, ma l'andamento generale è comunque colto dal modello. 
 
-\begin{figure}[t]
-	\centering
-	\subfigure[$z_{ij}$ vs $e_{ij}$]
-	{
-	\includegraphics[width=0.46\textwidth]{Immagini/venezia_senza_covariate/Scatterplot1.png}  
-   }
-	\subfigure[$\hat{z}_{ij}$ vs $e_{ij}$]
-   {
-	\includegraphics[width=0.46\textwidth]{Immagini/venezia_senza_covariate/Scatterplot2.png}
-   }
-	\caption{Scatterplot dei residui, caso senza covariata}
-	\label{fig:Ven_residui}
-\end{figure}
-Contrariamente a quanto fatto in precedenza nel caso di dominio a forma di C, non si può prescindere dall'analisi dei residui per verificare l'ipotesi di omogeneità in varianza. Tramite gli scatterplot in fig. \ref{fig:Ven_residui} si può concludere che l'ipotesi è rispettata poiché i residui si dispongono come una nuvola uniformemente distribuita intorno allo zero.
-
+Si noti come la risposta cresca velocemente in Cavallino-Treporti (già si vedeva in fig. \ref{fig:Ven_matplot}). In fig. \ref{fig:Ven_ris} il cambiamento più marcato nel corso degli anni è proprio in questa località. La separazione dal comune di Venezia del 2002 rende il dato più preciso in Cavallino-Treporti, che successivamente cresce negli anni. Quindi l'utilizzo di questo metodo, che considera accuratamente la geometria spaziale del problema, si conferma appropriato. Se non fosse ritenuta esclusa la zona marittima della laguna, il dato di Cavallino-Treporti influenzerebbe i comuni circostanti, Venezia compresa. Invece l'effetto dell'innalzamento del dato si propaga solo verso sud-ovest, fino al termine della piccola parte di terra prima del mare.
 
 \section{Applicazione del modello con covariata}
 
-\subsection{Ricerca del miglior $\protect\underline{\lambda}$}
-Prima di eseguire l'analisi, come al solito, occorre cercare buoni valori per $\underline \lambda$. Dalla tab. \ref{tab:Vencovar} si possono seguire le iterazioni eseguite e il risultato finale.
-\newpage
-\begin{table}[h]
-\renewcommand{\arraystretch}{1.3}
-\setlength{\tabcolsep}{2mm}
-\centering
-	\begin{tabular}{!{\vrule width 1.2pt}c!{\vrule width 1.2pt}c!{\vrule width 1.2pt}}
-	\noalign{\hrule height 1.2pt}
-	Intervalli per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$& Miglior valore											\\
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-12,-11,\ldots,+1\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-8},10^{0})$} 			\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-8,-7,\ldots,+1\}$		& 															\\	
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-9,-8.5,\ldots,-7\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-8},10^{0})$} 		\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-1,-0.5,\ldots,+1\}$	& 															\\	
-	\noalign{\hrule height 1.2pt}
-	$\log_{10}\lambda_S \in \{-8.5,-8.375,\ldots,-7.5\}$ 	& \multirow{2}{*}{$\underline \lambda = (10^{-7.750}, 10^{-0.125})$}	\\
-	\cline{1-1}
-	$\log_{10}\lambda_T \in \{-0.5,-0.375,\ldots,+0.5\}$		& 			\\	
-	\noalign{\hrule height 1.2pt}
-	\end{tabular}
-\caption{Analisi di $\mathrm{GCV}(\protect\underline{\lambda})$ per la provincia di Venezia, caso con covariata}
-\label{tab:Vencovar}
-\end{table}
-
-\subsection{Risultati}
-Le analisi sono state eseguite con $\underline \lambda = (10^{-7.750}, 10^{-0.125})$. Come si può notare dai grafici in fig. \ref{fig:Vencovar_ris}, dove è riportata la stima della funzione $f(\underline p,t)$ in tutti i punti senza l'aggiunta della parte spiegata dalla covariata, nelle zone dove la produzione di rifiuti è massima si hanno ora i valori più bassi.
+Le analisi sono state eseguite con $\underline \lambda = (10^{-7.625}, 10^{-0.125})$, valore ricavato come nei casi precedenti. Come si potrà notare dai prossimi grafici, dove è riportata la stima della funzione $f(\underline p,t)$ in tutti i punti senza l'aggiunta della parte spiegata dalla covariata, nelle zone dove la produzione di rifiuti pro capite era massima nel caso senza covariate ora risultano i valori più bassi.
 \newpage
 \begin{figure}[H]
-\centering
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps1997.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps1998.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps1999.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2000.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2001.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2002.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2003.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2004.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2005.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2006.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2007.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2008.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2009.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2010.png}
-\includegraphics[trim=0cm 0cm 4cm 0cm,clip=true,width=0.32\textwidth]{Immagini/venezia_con_covariate/Maps2011.png}
-\caption{Stima della funzione spazio-temporale della produzione dei rifiuti nella provincia di Venezia a tempi fissati dal 1997 al 2011, con covariata}
+	\centering
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno1997.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno1998.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno1999.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2000.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2001.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2002.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2003.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2004.png}
+\end{figure}
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2005.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2006.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2007.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2008.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2009.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2010.png}
+	\includegraphics[width=0.43\textwidth ,height=0.235\textheight]{Immagini/venezia_con_covariate/Anno2011.png}
+\caption{Stima della parte funzionale della produzione di rifiuti urbani pro capite nella provincia di Venezia a tempi fissati dal 1997 al 2011, caso con covariata}
 \label{fig:Vencovar_ris}
 \end{figure}
+\newpage
 
 \begin{figure}[t]
 	\centering
+	\subfigure[Cavarzere]
+   {
+	\includegraphics[width=0.31\textwidth]{Immagini/venezia_con_covariate/Cavarzere.png}   
+   }
 	\subfigure[Venezia]
    {
-	\includegraphics[width=0.31\textwidth]{Immagini/venezia_con_covariate/Venezia.png}   
+	\includegraphics[width=0.31\textwidth]{Immagini/venezia_con_covariate/Venezia.png}
    }
 	\subfigure[Cavallino-Treporti]
    {
-	\includegraphics[width=0.31\textwidth]{Immagini/venezia_con_covariate/Cavallino-Treporti.png}
-   }
-	\subfigure[Chioggia]
-   {
-	\includegraphics[width=0.31\textwidth]{Immagini/venezia_con_covariate/Chioggia.png}   
+	\includegraphics[width=0.31\textwidth]{Immagini/venezia_con_covariate/Cavallino-Treporti.png}   
    }
 	\subfigure[Jesolo]
    {
@@ -1443,61 +1420,38 @@ Le analisi sono state eseguite con $\underline \lambda = (10^{-7.750}, 10^{-0.12
    {
 	\includegraphics[width=0.31\textwidth]{Immagini/venezia_con_covariate/Caorle.png}   
    }
-	\subfigure[S. Michele al Tagliamento]
+	\subfigure[Bibione]
    {
-	\includegraphics[width=0.31\textwidth]{Immagini/venezia_con_covariate/SanMichelealTagliamento.png}
+	\includegraphics[width=0.31\textwidth]{Immagini/venezia_con_covariate/Bibione.png}
    }
-	\caption{Stima della parte funzionale della produzione dei rifiuti pro capite in alcuni comuni, con covariata}
+	\caption{Stima della parte funzionale produzione della produzione di rifiuti urbani pro capite in alcuni comuni, caso con covariata}
 	\label{fig:Vencovar_tempo}
 \end{figure}
 \newpage
-In fig. \ref{fig:Vencovar_tempo} si hanno anche i grafici della funzione stimata (senza il termine di covariata) in alcuni comuni. I punti tracciati in rosso rappresentano il dato, a cui è sottratta la covariata moltiplicata per $\hat{\beta}$ stimato. Non possono essere considerati come la parte di dati generati esattamente dalla funzione, ma come una loro buona approssimazione (ma sono comunque ciò che è riconosciuto dal modello per la stime di $\hat{\underline{c}}$, come già evidenziato in sez. \ref{sez:beta}).
+In fig. \ref{fig:Vencovar_tempo} sono tracciati i grafici della funzione stimata (senza il termine di covariata) negli stessi comuni che sono stati scelti per il caso senza covariata. I punti tracciati in rosso rappresentano il dato senza i termine della covariata, sottratto attraverso la moltiplicazione per $\hat{\beta}$ stimato. Non possono essere considerati come la parte di dati generati esattamente dalla funzione, ma come una sua buona approssimazione (ma sono comunque ciò che è analizzato dal modello per la stime di $\hat{\underline{c}}$, come già evidenziato in sez. \ref{sez:beta}).
 
-L'interpretazione del risultato in questo caso è legata all'alta affluenza turistica nelle zone balneari. Come si può notare dai grafici iniziali dalle fig. \ref{fig:Ven_bubbledati} e \ref{fig:Ven_bubblePL}, su tutta la zona costiera non si hanno solo i massimi dei rifiuti pro capite ma anche del numero di posti letto pro capite. Quindi non soltanto la produzione di rifiuti è massima nella zona balneare (come già si notava dalla funzione stimata nel caso senza covariata) ma anche l'attività turistica. In questo caso
+L'interpretazione del risultato in questo caso è legata all'alta affluenza turistica nelle zone balneari. Come già si notava dai grafici iniziali in fig. \ref{fig:Ven_bubbledati} e \ref{fig:Ven_bubblePL}, su tutta la zona costiera non si hanno solo i massimi dei rifiuti pro capite ma anche del numero di posti letto pro capite. I valori della covariata nella parte interna della regione sono quasi trascurabili rispetto alle località balneari. Quindi non solo la produzione di rifiuti è massima sulla parte settentrionale della costa, ma ancora di più, in proporzione, lo è la covariata.
+
+Il modello stima
 $$
-\hat{\beta}\approx284.05 \ .
+\hat{\beta}\approx274.034 \ .
 $$
-Più la covariata è alta, più è sottratta informazione alla funzione $f(\underline p,t)$ poiché $\hat{\beta}$ è costante in spazio e tempo. Perciò la funzione ha un profilo quasi simile ad una traslazione del caso senza covariate nel resto del dominio (in questa zona il numero di posti letto pro capite, come si nota in fig. \ref{fig:Ven_bubblePL}, è quasi costante) e ribassato nella zona balneare, a causa dell'alto contributo della covariata.
+Più la covariata è alta, più è sottratta informazione a $\hat{f}(\underline p,t)$ dal termine con covariata, poiché $\hat{\beta}$ è costante in spazio e tempo. Perciò la funzione ha un profilo quasi simile ad una traslazione del caso senza covariate nella parte interna del dominio (in questa zona il numero di posti letto pro capite, come era stato evidenziato in fig. \ref{fig:Ven_bubblePL}, è quasi nullo) e fortemente ribassato (talvolta fino a valori negativi) nella zona balneare a causa dell'alto contributo della covariata. Dall'intervallo di confidenza per $\beta$
+$$
+\beta \in [271.923;276.148]
+$$
+si può dedurre che la covariata non può essere esclusa dal modello.
 
-Interessante è quanto accade nel comune di Cavallino-Treporti, dove la funzione subisce una grossa variazione dopo la divisione dal comune di Venezia per l'aumento del numero dei posti letto. Attorno all'anno 2002 si ha uno stravolgimento dell'andamento della funzione. Tuttavia, essendo dovuto alla maggior precisione del dato in Cavallino-Treporti, è un cambiamento utile a spiegar meglio la risposta. Gli effetti dovuti alle propiretà di smoothing poste dal modello sono analoghi al caso senza covariata, si ha una spiegazione dell'andamento generale della funzione senza cogliere troppo il dato e senza interpolare. Nelle località dove si avevano i valori massimi nel caso senza covariata, ora si hanno i minimi a causa dei posti letto (in alcuni casi la funzione è addirittura negativa).
-
-\subsection{Analisi dei residui}
-
-\begin{figure}[t]
-	\centering
-	\subfigure[$z_{ij}$ vs $e_{ij}$]
-	{
-	\includegraphics[width=0.46\textwidth]{Immagini/venezia_con_covariate/Scatterplot2.png}  
-	}
-	\subfigure[$\hat{z}_{ij}$ vs $e_{ij}$]
-   {
-	\includegraphics[width=0.46\textwidth]{Immagini/venezia_con_covariate/Scatterplot3.png}
-   }
-	\caption{Scatterplot dei residui, caso con covariata}
-	\label{fig:Vencovar_residui}
-\end{figure}
-Anche in questo caso è necessario controllare l'ipotesi di omoschedasticità dei residui. I risultati sono perfettamente analoghi al caso senza covariata e si può concludere che l'ipotesi è rispettata.
-\newpage
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.45\textwidth]{Immagini/venezia_con_covariate/QQplot.png}   
-   \caption{QQplot dei residui, caso con covariata}
-	\label{fig:Ven_qqplot}
-\end{figure}
-Essendo presente una covariata, potrebbe essere interessante calcolare per essa intervalli di confidenza o verificare alcune ipotesi. Pertanto in questo caso è opportuno controllare anche l'eventuale gaussianità dei residui. Dal QQplot in fig. \ref{fig:Ven_qqplot}, troppo distante da una retta, e dal p-value del Shapiro-Wilk test, che è stimato minore di $2\times 10^{-16}$, si deduce che la gaussianità non può essere ipotizzata e quindi non è possibile calcolare intervalli di confidenza come fatto per il dominio a forma di C.
-
-
-
-
+Di nuovo è interessante il comportamento nel comune di Cavallino-Treporti, dove la funzione subisce una grossa variazione dopo la divisione dal comune di Venezia per l'aumento del numero dei posti letto. Attorno all'anno 2002 si ha un aumento molto forte della covariata (si veda fig. \ref{fig:Ven_bubblePL}), perciò la funzione si abbassa di colpo. Tuttavia, visto che questo è dovuto alla maggior precisione del dato in Cavallino-Treporti, è un cambiamento utile a spiegar meglio la risposta. Gli effetti dovuti alle proprietà di smoothing poste dal modello (non troppo interpolanti, poiché anche in questo caso $\lambda_T$ non ha un valore eccessivamente basso) portano ad un cambiamento smussato attorno all'anno della separazione del dato.
 
 \chapter{Conclusioni e sviluppi futuri}
 \label{cap:conclusione}
 
-In questo lavoro di tesi è stato analizzato nel dettaglio il modello ST-PDE nell'ambito della stima funzionale per dati varianti all'interno di un dominio spaziale e di un intervallo temporale. Il modello, che si propone di essere un'estensione del caso puramente spaziale già analizzato in letteratura, è stato sviluppato in codice R. Dal confronto con gli altri metodi e da quanto ricavato con le stime, soprattutto sul dominio a forma di C in cui è possibile conoscere il valore reale della funzione, si può concludere che i risultati prodotti sono molto buoni.
+In questo lavoro di tesi è stato analizzato nel dettaglio il modello ST-PDE nell'ambito della stima funzionale per dati varianti all'interno di un dominio spaziale e di un intervallo temporale. L'algoritmo di stima, particolarmente adatto a domini spaziali complessi, è stato implementato in codice R. Dal confronto con gli altri metodi e da quanto ricavato con le stime, soprattutto sul dominio a forma di C in cui è possibile conoscere il valore reale della funzione, si può concludere che i risultati prodotti sono molto buoni.
 
-Diversa è la conclusione per le prestazioni computazionali del codice. Per semplicità computazionale le basi degli elementi finiti sono state scelte lineari e la produzione dei rifiuti è stata analizzata solamente nella provincia di Venezia, pur avendo a disposizione i dati di tutto il Veneto. Inoltre, durante l'esecuzione del codice, si è potuto notare come alcune funzioni come la minimizzazione di $\mathrm{GCV}(\underline \lambda)$ o il calcolo dei valori stimati ad un istante di tempo fissato (usati ad esempio per conoscere il profilo della funzione ad un certo anno) siano molto lente. Ovviamente per analisi di dataset di grosse dimensioni deve essere messa in conto una spesa di tempo elevata, ma R certamente non ha aiutato. Infatti, è noto che R non sia un linguaggio di programmazione fortemente efficiente, e questo ha caratterizzato la lentezza di esecuzione. Il più chiaro sviluppo futuro può essere l'uso del codice come base per la creazione di un algoritmo più veloce attraverso l'integrazione con un linguaggio di programmazione più efficiente (come il C++) o dell'eventuale parallelizzazione nei colli di bottiglia più evidenti.
+Il modello è stato proposto a seguito della necessità di dover analizzare la produzione dei rifiuti urbani tra il 1997 e il 2011 nella provincia di Venezia. I dati, disponibili per comune, sono stati localizzati in punti corrispondenti al capoluogo. Tuttavia potrebbero essere considerati in modo più preciso (ma anche più complesso) come dati areali definiti sul territorio dei comuni o sulla zona urbanizzata del comune (visto che i rifiuti urbani non sono prodotti fuori da questa zona). Quindi un possibile sviluppo futuro di questo lavoro può essere sicuramente l'estensione del modello a dati non puntiformi e la conseguente applicazione a questo problema. I risultati ottenuti dalla stima con dati puntiformi sono comunque buoni, perché spiegano appropriatamente il modello. Una conferma da un eventuale modello per dati areali, però, sarebbe senza dubbio interessante.
 
-Dopo che sarà stata sviluppata l'integrazione del codice sarà possibile garantire una analisi più agile anche per dataset di dimensioni più elevate o per elementi finiti di ordine maggiore. In questo modo si avrà a disposizione uno strumento di analisi statistica buono non solo dal punto di vista dei risultati, ma anche in termini di efficienza computazionale.
+Diversa è la valutazione conclusiva sulle prestazioni computazionali del codice. Per semplicità le basi degli elementi finiti sono state utilizzate soltanto lineari e la produzione dei rifiuti è stata analizzata solamente nella provincia di Venezia, pur avendo a disposizione i dati di tutto il Veneto. Inoltre, durante l'esecuzione del codice, si è potuto notare come alcune funzioni come la minimizzazione di $\mathrm{GCV}(\underline \lambda)$ o il calcolo dei valori stimati ad un istante di tempo fissato (usato per tracciare il profilo della funzione ad un certo anno) siano molto lente. Ovviamente per analisi di dataset di grosse dimensioni deve essere messa in conto una spesa di tempo elevata, ma R certamente non ha aiutato. Infatti, è noto che R non sia un linguaggio di programmazione fortemente efficiente e questo ha prodotto la lentezza di esecuzione. Un chiaro sviluppo futuro può essere l'uso del codice come base per la creazione di un algoritmo più veloce attraverso l'integrazione con un linguaggio di programmazione più efficiente (come il C++) o dell'eventuale parallelizzazione nei colli di bottiglia più evidenti. Dopo che sarà stata sviluppata l'integrazione del codice sarà possibile garantire un'analisi più agile anche per dataset di dimensioni più elevate o per elementi finiti di ordine maggiore. In questo modo si avrà a disposizione uno strumento di analisi statistica buono non solo dal punto di vista dei risultati, ma anche in termini di efficienza computazionale.
 
 
 \begin{thebibliography}{99}
@@ -1562,12 +1516,6 @@ Robert J. Hijmans (2015). \emph{raster: Geographic data analysis and modeling}. 
 
 \bibitem{package:rgooglemaps}
 Markus Loecher (2014). \emph{RgoogleMaps: Overlays on Google map tiles in R}. R package version 1.2.0.6. \href{http://CRAN.R-project.org/package=RgoogleMaps}{http://CRAN.R-project.org/package=RgoogleMaps}
-  
-\bibitem{package:loa1}
-Karl Ropkins (2014). \emph{loa: various plots, options and add-ins for use with lattice}. R package version 0.2.15.
-
-\bibitem{package:loa2}
-Karl Ropkins, David C. Carslaw, Said Munir and Haibo Chen (2012). \emph{R, lattice and RgoogleMaps: A practical framework for the development of new geovisualizations}. Invited paper for Special Session on Statistical Graphics, American Statistical Association (ASA) 2012 Joint Statistical Meeting, San Diego, US, 29 July - 2 August, 2012.
 
 \bibitem{package:ggplot2}
 H. Wickham. \emph{ggplot2: elegant graphics for data analysis}. Springer New York, 2009.

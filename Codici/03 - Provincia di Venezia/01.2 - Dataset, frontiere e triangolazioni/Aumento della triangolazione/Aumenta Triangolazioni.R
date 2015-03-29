@@ -4,6 +4,8 @@
 library(RTriangle)
 load("TerritorioOld.RData")
 
+xbound=x[is.na(Codici)]
+ybound=y[is.na(Codici)]
 # Creo l'oggetto boundaries
 nint<-length(Codici[!is.na(Codici)])
 Boundaries<-NULL
@@ -19,7 +21,7 @@ pslg_obj<-pslg(cbind(x,y),S=Boundaries)
 #Creo la mesh
 #Y dice di non aggiungere Steiner Points
 #D dice di triangolare con Delaunay
-mesh<-triangulate(pslg_obj,Y=FALSE,D=TRUE,a=0.001)
+mesh<-triangulate(pslg_obj,Y=FALSE,D=TRUE,a=0.003)
 
 Triang<-mesh$T
 xnew<-mesh$P[,1]

@@ -9,12 +9,12 @@ inutili (in tutto 3).
 Nessun triangolo eliminato.
 
 3) SCONSIGLIATA: SenzaTriangoli
-Sono stati eliminati molti triangoli di bordo (in tutto 3+4).
+Sono stati eliminati molti triangoli di bordo (in tutto 3+3).
 In alcuni punti la frontiera potrebbe non aderire perfettamente
 alle realtà.
 
 
 Per completezza, ecco gli indici per i grafici contenuti nella cartella
 "Triangoli di Bordo":
-Gruppo da 2: 3, 4, 5
-Gruppo da 4: 33, 34, 37, 91
+Gruppo da 3: 3, 4, 5
+Gruppo da 3 (SenzaTriangoli): 33, 34, 37

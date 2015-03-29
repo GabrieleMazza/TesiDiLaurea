@@ -1110,10 +1110,10 @@ FixedPointPlot=function(x,y,SolutionObj,N=100,lwd=1,NameLocation=NA,ylim=NA)
     eval<-ST.Eval(xvec,yvec,Time,SolutionObj)
     if(is.na(ylim)[1])
     {
-        plot(Time,eval,type='l',xlab="Tempo",ylab=" ",main=paste("Evoluzione temporale in ",title,sep=""),lwd=lwd)
+        plot(Time,eval,type='l',xlab="Tempo",ylab="f(p,t)",main=paste("Evoluzione temporale in ",title,sep=""),lwd=lwd)
     } else
     {
-        plot(Time,eval,type='l',xlab="Tempo",ylab=" ",main=paste("Evoluzione temporale in ",title,sep=""),lwd=lwd,ylim=ylim)
+        plot(Time,eval,type='l',xlab="Tempo",ylab="f(p,t)",main=paste("Evoluzione temporale in ",title,sep=""),lwd=lwd,ylim=ylim)
     }
 }
 

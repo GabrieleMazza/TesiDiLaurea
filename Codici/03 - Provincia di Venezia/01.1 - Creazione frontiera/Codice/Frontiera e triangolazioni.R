@@ -554,8 +554,8 @@ for(k in 1:length(xG))
 
 # Dall'analisi dei grafici si ha che:
 IDDelete=c(3,4,5)
-IDChoose=c(33,34,37,91)
-IDKeep=1:94
+IDChoose=c(33,34,37)
+IDKeep=1:93
 IDKeep=IDKeep[-c(IDDelete,IDChoose)]
 #Ma questi sono secondo gli indici di BorderTR, ora devo trovare gli ID di Triang
 IDDelete<-BorderTR[IDDelete]

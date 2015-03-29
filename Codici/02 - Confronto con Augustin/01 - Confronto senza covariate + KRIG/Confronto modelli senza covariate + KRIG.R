@@ -280,7 +280,7 @@ for(ntimes in 1:NTIMES)
     SolutionObj<-ST.Smooth(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
     Prediction<-ST.Eval(xValid,yValid,tValid,SolutionObj)
     RMSE<-c(RMSE,sqrt(sum((Prediction-RealValues)^2)/n))
-    LABEL<-c(LABEL,"STR-PDE")
+    LABEL<-c(LABEL,"ST-PDE")
     
     
     ## KRIGING ##
