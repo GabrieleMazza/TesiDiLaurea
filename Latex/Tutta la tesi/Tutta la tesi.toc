@@ -30,8 +30,8 @@
 \contentsline {section}{\numberline {6.1}Il turismo come possibile covariata}{42}{section.6.1}
 \contentsline {section}{\numberline {6.2}Trattamento del dominio}{42}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Regression splines}{43}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Replica dei dati}{44}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Triangolazione del dominio}{45}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.2}Replica dei dati}{45}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Triangolazione del dominio}{46}{subsection.6.2.3}
 \contentsline {section}{\numberline {6.3}Analisi preliminare dei dati}{47}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Funzioni di base}{50}{subsection.6.3.1}
 \contentsline {section}{\numberline {6.4}Applicazione del modello senza covariata}{51}{section.6.4}

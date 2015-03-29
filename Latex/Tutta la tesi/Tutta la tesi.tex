@@ -183,15 +183,15 @@ Il lavoro di tesi sarà strutturato come segue. Nel capitolo \ref{cap:panoramica
 \chapter{Panoramica sui modelli già esistenti}
 \label{cap:panoramica}
 
-Il modello ST-PDE si inserisce nell'ambito dell'analisi funzionale di dati distribuiti in spazio e tempo. Sia $\underline p = (x,y) \in \Omega$ il vettore con le coordinate del punto spaziale, $t \in [T_1,T_2]$ l'istante temporale e $z \in \mathbb{R}$ la variabile risposta. Le metodologie classiche di analisi funzionale, esposte ad esempio in CITA RAMSAY SILVERMAN, possono essere applicate per la stima di un dato tempo-variante. Tuttavia in questo caso si ha anche la dipendenza spaziale, pertanto la funzione da stimare sarà:
+Il modello ST-PDE si inserisce nell'ambito dell'analisi funzionale di dati distribuiti in spazio e tempo. Sia $\underline p = (x,y) \in \Omega$ il vettore con le coordinate del punto spaziale, $t \in [T_1,T_2]$ l'istante temporale e $z \in \mathbb{R}$ la variabile risposta. Le metodologie classiche di analisi funzionale, esposte ad esempio in \cite{art:ramsaysilverman}, possono essere applicate per la stima di un dato tempo-variante. Tuttavia in questo caso si ha anche la dipendenza spaziale, pertanto la funzione da stimare sarà:
 $$
 z=f(\underline p,t) \ .
 $$
 Secondo quanto è solitamente fatto per problemi di analisi di dati funzionali, sarà necessario minimizzare un funzionale di penalizzazione che contenga non soltanto gli scarti tra valori osservati e stimati ma anche termini differenziali per la regolarità della stima.
 
-La letteratura su modelli spazio-temporali è già ampia, come è esposto in CITA CRESSIE. Tuttavia le metodologie già disponibili presentano tra loro delle differenze. Non tutti i modelli sono adatti ad essere applicati alla stima della produzione di rifiuti urbani nella provincia di Venezia a causa della forte dipendenza dalla geometria del problema. Per questo motivo, dopo la definizione del modello ST-PDE, sarà dedicato anche uno spazio al al confronto delle stime dai tra i diversi metodi a disposizione su dati appositamente generati.
+La letteratura su modelli spazio-temporali è già ampia, come è esposto in \cite{art:cressie}. Tuttavia le metodologie già disponibili presentano tra loro delle differenze. Non tutti i modelli sono adatti ad essere applicati alla stima della produzione di rifiuti urbani nella provincia di Venezia a causa della forte dipendenza dalla geometria del problema. Per questo motivo, dopo la definizione del modello ST-PDE, sarà dedicato anche uno spazio al al confronto delle stime dai tra i diversi metodi a disposizione su dati appositamente generati.
 
-Ad esempio, il kriging spazio-temporale, descritto in CITAZIONI, non è in grado di tener conto del dominio spaziale. Questa tecnica sarà considerata negli studi di simulazione e nei confronti ma non potrà garantire risultati ottimali per questo tipo di analisi.
+Ad esempio, il kriging spazio-temporale, descritto in \cite{art:caballero}, \cite{art:menafoglio1} e \cite{art:menafoglio1}, non è in grado di tener conto del dominio spaziale. Questa tecnica sarà considerata negli studi di simulazione e nei confronti ma non potrà garantire risultati ottimali per questo tipo di analisi.
 
 Le pubblicazioni \cite{art:augustin} e \cite{art:marra} studiano metodi per l'analisi funzionale di dati distribuiti in spazio e tempo. Questo lavori, però, si basano su modelli che possono assumere una forma più complessa, ipotizzando che una funzione del valore atteso della risposta (nel loro caso il logaritmo) possa essere spiegato da uno o più termini funzionali (quest'ultima possibilità è riportata solo in \cite{art:augustin}):
 $$
@@ -1001,7 +1001,8 @@ I risultati riflettono quanto è stato ipotizzato in precedenza: KRIG e TPS, che
 
 \begin{landscape}
 \begin{figure}
-\begin{tabular}{lcccccccc}
+\centering
+\begin{tabular}{lcccccc}
 & Funzione reale & Dati generati & KRIG & TPS & SOAP & ST-PDE \\
 &&&&&&\\
 \parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=r]{90}{$t=0$}}}&\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/REALEtempo1.png} &
@@ -1030,7 +1031,7 @@ I risultati riflettono quanto è stato ipotizzato in precedenza: KRIG e TPS, che
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo4.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/TPStempo4.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo4.png}&
-\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo4.png}&
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo4.png}
 
 \end{tabular}
 \caption{Per alcuni istanti di tempo, funzione test $f(\protect\underline{p},t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, soap film smoothing, thin plate splines e ST-PDE, caso senza covariata}
@@ -1062,9 +1063,10 @@ Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\bet
 
 \begin{landscape}
 \begin{figure}
-\begin{tabular}{lccccccc}
+\centering
+\begin{tabular}{lccccc}
 & Funzione reale & Dati generati & TPS & SOAP & ST-PDE \\
-&&&&&&\\
+&&&&&\\
 \parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=r]{90}{$t=0$}}}&\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/REALEtempo1.png} &
 \includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{immagini/simulazioni_covar/Dati_tempo1.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/TPStempo1.png}&
@@ -1087,8 +1089,7 @@ Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\bet
 \includegraphics[trim=0.8cm 0.8cm 2.5cm 1.2cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/Dati_tempo4.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/TPStempo4.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/SOAPtempo4.png}&
-\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/STSRtempo4.png}&
-
+\includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/STSRtempo4.png}
 \end{tabular}
 \caption{Per alcuni istanti di tempo, funzione test $f(\protect\underline{p},t)$ reale, dati simulati, stime ottenute rispettivamente con soap film smoothing, thin plate splines e ST-PDE, caso con covariata}
 \label{fig:confronto_altri_metodi_cov}
@@ -1144,10 +1145,6 @@ Oltre all'entroterra (composto da due poligoni) saranno considerate solo le più
 
 Per ridurre l'elevato numero di vertici di ognuno dei poligoni considerati (e la conseguente complessità della stima) è stato necessario ricorrere a tecniche di smoothing di dati funzionali. Ad ogni poligono è possibile associare una coppia di funzioni: la latitudine e la longitudine rispetto all'ascissa curvilinea (disponibili per punti, corrispondenti ai vertici di \textit{raster}) da rappresentare in funzioni di base. Successivamente, le nuove funzioni stimate sono state valutate in un numero molto inferiore di valori dell'ascissa curvilinea. Con le nuove coordinate ottenute dopo questo procedimento è stata costruita la nuova definizione della regione.
 
-Per avere una rappresentazione ottimale tramite funzioni di base sono state provate più tecniche. La scelta definitiva è ricaduta sull'uso di \textit{Regression Splines} cubiche senza penalizzazione della derivata seconda. Infatti i risultati non sono stati migliori con le altre tecniche provate a causa della zona interna alla laguna di Venezia, fortemente frastagliata: ad esempio penalizzare la derivata seconda ha eliminato troppe asperità presenti sulle coste del territorio, mentre l'utilizzo di \textit{Kernel Smoothing} ha portato alla definizione di regioni che, dopo la triangolazione, presentavano un maggior numero di triangoli composti solamente da punti di frontiera (e quindi senza dati) rispetto agli altri metodi.
-
-Una volta fissato un ragionevole numero di punti con cui descrivere la regione sono stati eseguiti più tentativi per decidere il miglior numero di funzioni di base. Il criterio di scelta è stato complesso, poiché sono stati esclusi i valori che generavano intersezioni nella nuova descrizione della regione e comuni esterni alla frontiera. Il miglior valore per \textit{Regression Splines} è stato quello che, una volta eseguito lo smoothing della regione, ha causato la minor distanza tra i nuovi punti della regione e il poligono iniziale di \textit{raster}. In fig. \ref{fig:Ven_ent1} è riportato il risultato dello smoothing sul primo poligono che descrive l'entroterra della provincia di Venezia (nella versione definitiva ha 100 punti, molti meno dei 10538 iniziali).  
-
 \begin{figure}[t]
 	\centering
 	\begin{minipage}{.32\textwidth}
@@ -1160,6 +1157,12 @@ Una volta fissato un ragionevole numero di punti con cui descrivere la regione s
 	\caption{Smoothing con \textit{Regression Splines} cubiche per il primo poligono dell'entroterra della provincia di Venezia}
 	\label{fig:Ven_ent1}
 \end{figure}
+
+Per avere una rappresentazione ottimale tramite funzioni di base sono state provate più tecniche. La scelta definitiva è ricaduta sull'uso di \textit{Regression Splines} cubiche senza penalizzazione della derivata seconda. Infatti i risultati non sono stati migliori con le altre tecniche provate a causa della zona interna alla laguna di Venezia, fortemente frastagliata: ad esempio penalizzare la derivata seconda ha eliminato troppe asperità presenti sulle coste del territorio, mentre l'utilizzo di \textit{Kernel Smoothing} ha portato alla definizione di regioni che, dopo la triangolazione, presentavano un maggior numero di triangoli composti solamente da punti di frontiera (e quindi senza dati) rispetto agli altri metodi.
+
+Una volta fissato un ragionevole numero di punti con cui descrivere la regione sono stati eseguiti più tentativi per decidere il miglior numero di funzioni di base. Il criterio di scelta è stato complesso, poiché sono stati esclusi i valori che generavano intersezioni nella nuova descrizione della regione e comuni esterni alla frontiera. Il miglior valore per \textit{Regression Splines} è stato quello che, una volta eseguito lo smoothing della regione, ha causato la minor distanza tra i nuovi punti della regione e il poligono iniziale di \textit{raster}. In fig. \ref{fig:Ven_ent1} è riportato il risultato dello smoothing sul primo poligono che descrive l'entroterra della provincia di Venezia (nella versione definitiva ha 100 punti, molti meno dei 10538 iniziali).  
+
+
 
 Dopo aver ripetuto l'analisi per ognuna delle isole elencate precedentemente (eccetto Chioggia, aggregata al dominio in modo molto più semplificato), la descrizione finale è stata ricavata unendo tra loro tutti i nuovi poligoni. In seguito è stata eliminata una zona costiera dell'entroterra della laguna di Venezia che, sebbene presente sia in \textit{raster} che nei grafici di Google Maps, corrisponde ad una parte fangosa e paludosa e quindi disabitata. Non essendo possibile che su di essa siano prodotti rifiuti, è stata tagliata dalla regione. Per questo motivo si troverà sempre una zona non analizzata sui grafici con mappe di Google Maps. In fig. \ref{fig:Ven_rgm} è riportata la descrizione finale del dominio con i punti spaziali considerati.
 \begin{figure}[t]
@@ -1208,7 +1211,8 @@ Un altro punto di replica del dato è Bibione, località balneare vicina a Ligna
 
 La triangolazione è stata prodotta tramite il pacchetto R \textit{RTriangle}. Poiché nella zona ad est il numero di capoluoghi di comune (e quindi di nodi della triangolazione) è minore rispetto al resto della regione, è stata fissata un'area massima per i triangoli generati da \textit{RTriangle}. Questo ha reso la triangolazione più fitta anche dove non lo sarebbe stata, e garantirà una stima della risposta più precisa nella zona balneare che, come si potrà notare in seguito, ha una grande importanza per la distribuzione dei rifiuti. Affinchè questo sia possibile sono stati aggiunti nuovi punti spaziali all'interno della regione, che resteranno senza dato per tutta l'analisi ma saranno utili per la definizione dei triangoli. In fig. \ref{fig:Ven_triang} si ha la triangolazione finale che sarà usata da ora in avanti.
 
-\begin{figure}[h]
+In conclusione, il dominio è descritto da 418 punti (49 con dati, 369 di frontiera o aggiunti durante la creazione della triangolazione) e da 480 triangoli.
+\begin{figure}[t]
 \centering
 \subfigure[Provincia di Venezia]
    {
@@ -1223,8 +1227,6 @@ La triangolazione è stata prodotta tramite il pacchetto R \textit{RTriangle}. P
 \caption{Triangolazione della provincia di Venezia}
 \label{fig:Ven_triang}
 \end{figure}
-\newpage
-In conclusione, il dominio è descritto da 418 punti (49 con dati, 369 di frontiera o aggiunti durante la creazione della triangolazione) e da 480 triangoli.
 
 \section{Analisi preliminare dei dati}
 Prima di eseguire l'analisi, è opportuno avere una visualizzazione dei dati sul dominio della provincia di Venezia. In fig. \ref{fig:Ven_bubbledati} e \ref{fig:Ven_bubblePL} sono visualizzati, rispettivamente, i valori dei rifiuti e dei posti letto pro capite (realizzati grazie all'aiuto del pacchetto R \textit{ggmap}), che permettono di avere un'idea della loro distribuzione in spazio e tempo.
@@ -1443,6 +1445,8 @@ $$
 si può dedurre che la covariata non può essere esclusa dal modello.
 
 Di nuovo è interessante il comportamento nel comune di Cavallino-Treporti, dove la funzione subisce una grossa variazione dopo la divisione dal comune di Venezia per l'aumento del numero dei posti letto. Attorno all'anno 2002 si ha un aumento molto forte della covariata (si veda fig. \ref{fig:Ven_bubblePL}), perciò la funzione si abbassa di colpo. Tuttavia, visto che questo è dovuto alla maggior precisione del dato in Cavallino-Treporti, è un cambiamento utile a spiegar meglio la risposta. Gli effetti dovuti alle proprietà di smoothing poste dal modello (non troppo interpolanti, poiché anche in questo caso $\lambda_T$ non ha un valore eccessivamente basso) portano ad un cambiamento smussato attorno all'anno della separazione del dato.
+\newpage
+\thispagestyle{empty}
 
 \chapter{Conclusioni e sviluppi futuri}
 \label{cap:conclusione}
@@ -1522,6 +1526,21 @@ H. Wickham. \emph{ggplot2: elegant graphics for data analysis}. Springer New Yor
 
 \bibitem{package:ggmap}
 D. Kahle and H. Wickham. \emph{ggmap: Spatial Visualization with ggplot2}. The R Journal, 5(1), 144-161. \href{http://journal.r-project.org/archive/2013-1/kahle-wickham.pdf}{http://journal.r-project.org/archive/2013-1/kahle-wickham.pdf}
+
+\bibitem{art:menafoglio1}
+, Dalla Rosa M. et al. \emph{A Universal Kriging predictor for spatially dependent functional data of a Hilbert Space}. Electronic Journal of Statistics. 7:2209--2240 (2013)
+
+\bibitem{art:menafoglio2}
+Menafoglio A., Guadagnini A., Secchi P. \emph{A kriging approach based on Aitchison geometry for the characterization of particle-size curves in heterogeneous aquifers}. Stochastic Environmental Research and Risk Assessment. 28(7):1835--1851 (2014)
+
+\bibitem{art:caballero}
+Caballero W., Giraldo R., Mateu J. \emph{A universal kriging approach for spatial functional data}. Stochastic Environmental Research and Risk Assessment 27(7):1553--1563. Springer (2013) 
+
+\bibitem{art:cressie}
+Cressie N., Wikle C. K. \emph{Statistics for spatio-temporal data}. John Wiley \& Sons. (2011)
+
+\bibitem{art:ramsaysilverman}
+Ramsay J., Silverman, B. W. \emph{Functional Data Analysis}. Springer (2005)
 
 \end{thebibliography}
 

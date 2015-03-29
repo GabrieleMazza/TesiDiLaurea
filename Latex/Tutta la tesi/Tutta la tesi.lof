@@ -48,16 +48,16 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Poligoni disponibili nel pacchetto \textit {raster}\relax }}{43}{figure.caption.24}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Tutti i poligoni}}}{43}{figure.caption.24}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Poligoni scelti}}}{43}{figure.caption.24}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Smoothing con \textit {Regression Splines} cubiche per il primo poligono dell'entroterra della provincia di Venezia\relax }}{45}{figure.caption.25}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Frontiera e punti spaziali per la provincia di Venezia\relax }}{46}{figure.caption.26}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Provincia di Venezia}}}{46}{figure.caption.26}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Zoom della laguna}}}{46}{figure.caption.26}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Dati replicati\relax }}{47}{figure.caption.27}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Repliche del dato di Venezia}}}{47}{figure.caption.27}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cavallino-Treporti e Bibione}}}{47}{figure.caption.27}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Triangolazione della provincia di Venezia\relax }}{48}{figure.caption.28}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Provincia di Venezia}}}{48}{figure.caption.28}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Zoom della laguna}}}{48}{figure.caption.28}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Smoothing con \textit {Regression Splines} cubiche per il primo poligono dell'entroterra della provincia di Venezia\relax }}{44}{figure.caption.25}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Frontiera e punti spaziali per la provincia di Venezia\relax }}{45}{figure.caption.26}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Provincia di Venezia}}}{45}{figure.caption.26}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Zoom della laguna}}}{45}{figure.caption.26}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Dati replicati\relax }}{46}{figure.caption.27}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Repliche del dato di Venezia}}}{46}{figure.caption.27}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cavallino-Treporti e Bibione}}}{46}{figure.caption.27}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Triangolazione della provincia di Venezia\relax }}{47}{figure.caption.28}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Provincia di Venezia}}}{47}{figure.caption.28}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Zoom della laguna}}}{47}{figure.caption.28}
 \contentsline {figure}{\numberline {6.6}{\ignorespaces Rifiuti urbani pro capite ogni due anni dal 1997 al 2011\relax }}{48}{figure.caption.29}
 \contentsline {figure}{\numberline {6.7}{\ignorespaces Posti letto pro capite ogni due anni dal 1997 al 2011\relax }}{49}{figure.caption.30}
 \contentsline {figure}{\numberline {6.8}{\ignorespaces Andamento temporale della produzione dei rifiuti urbani nei comuni\relax }}{50}{figure.caption.31}
