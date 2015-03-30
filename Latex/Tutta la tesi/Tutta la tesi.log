@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  29 MAR 2015 21:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  30 MAR 2015 09:09
 entering extended mode
 **Tutta*la*tesi.tex
 
@@ -3155,35 +3155,35 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [62]
-Underfull \hbox (badness 1603) in paragraph at lines 1488--1489
-\OT1/pplx/m/it/10.95 pu-ting\OT1/pplx/m/n/10.95 , R Foun-da-tion for Sta-ti-sti
--cal Com-pu-ting, Vien-na, 2013,
+Underfull \hbox (badness 1275) in paragraph at lines 1471--1472
+[]\OT1/pplx/m/n/10.95 D. Ba-tes, M. Mae-chler, \OT1/pplx/m/it/10.95 Ma-trix: Sp
+ar-se and Den-se Ma-trix Clas-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1489--1490
+[]\OT1/pplx/m/n/10.95 M. Loe-cher, \OT1/pplx/m/it/10.95 Rgoo-gle-Maps: Over-lay
+s on Goo-gle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1489--1490
+\OT1/pplx/m/it/10.95 map ti-les in R\OT1/pplx/m/n/10.95 , R pac-ka-ge ver-sion 
+1.2.0.6, 2014.
  []
 
 [63
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1519--1520
-[]\OT1/pplx/m/n/10.95 Robert J. Hi-j-mans (2015). \OT1/pplx/m/it/10.95 ra-ster:
- Geo-gra-phic da-
+Underfull \hbox (badness 2573) in paragraph at lines 1501--1502
+[]\OT1/pplx/m/n/10.95 E.J. Pe-be-sma, \OT1/pplx/m/it/10.95 Mul-ti-va-ria-ble ge
+o-sta-ti-stics in S: the gstat pac-ka-ge\OT1/pplx/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1519--1520
-\OT1/pplx/m/it/10.95 ta ana-ly-sis and mo-de-ling\OT1/pplx/m/n/10.95 . R pac-ka
--ge ver-sion 2.3-24.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1522--1523
-[]\OT1/pplx/m/n/10.95 Markus Loe-cher (2014). \OT1/pplx/m/it/10.95 Rgoo-gle-Map
-s: Over-lays on
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1522--1523
-\OT1/pplx/m/it/10.95 Goo-gle map ti-les in R\OT1/pplx/m/n/10.95 . R pac-ka-ge v
-er-sion 1.2.0.6.
+Underfull \hbox (badness 1603) in paragraph at lines 1507--1508
+\OT1/pplx/m/it/10.95 pu-ting\OT1/pplx/m/n/10.95 , R Foun-da-tion for Sta-ti-sti
+-cal Com-pu-ting, Vien-na, 2013,
  []
 
 
@@ -3193,18 +3193,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [64]
-Underfull \hbox (badness 10000) in paragraph at lines 1528--1529
-[]\OT1/pplx/m/n/10.95 D. Ka-hle and H. Wic-kham. \OT1/pplx/m/it/10.95 gg-map: S
-pa-tial Vi-sua-
- []
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1549.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1528--1529
-\OT1/pplx/m/it/10.95 li-za-tion wi-th gg-plot2\OT1/pplx/m/n/10.95 . The R Jour-
-nal, 5(1), 144-161.
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1548.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3212,12 +3202,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [65]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1548.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1549.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 Tutta la tesi\Tutta la tesi.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1548.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1548.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1549.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1549.
 
 Package rerunfilecheck Info: File `Tutta*la*tesi.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
@@ -3225,12 +3215,12 @@ Package rerunfilecheck Info: File `Tutta*la*tesi.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1548.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1549.
  ) 
 Here is how much of TeX's memory you used:
  11224 strings out of 493921
  180621 string characters out of 3144868
- 250693 words of memory out of 3000000
+ 249693 words of memory out of 3000000
  13919 multiletter control sequences out of 15000+200000
  45947 words of font info for 128 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -3249,9 +3239,9 @@ s/type1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
 rw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palat
 ino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr
 i8a.pfb>
-Output written on "Tutta la tesi.pdf" (79 pages, 6480805 bytes).
+Output written on "Tutta la tesi.pdf" (79 pages, 6481253 bytes).
 PDF statistics:
- 1265 PDF objects out of 1440 (max. 8388607)
+ 1267 PDF objects out of 1440 (max. 8388607)
  247 named destinations out of 1000 (max. 500000)
  1380 words of extra memory for PDF output out of 10000 (max. 10000000)
 
