@@ -1,40 +1,40 @@
 \select@language {italian}
-\contentsline {chapter}{Introduzione}{1}{chapter*.7}
-\contentsline {chapter}{\numberline {1}Panoramica sui modelli gi\IeC {\`a} esistenti}{5}{chapter.1}
-\contentsline {chapter}{\numberline {2}Presentazione del modello ST-PDE}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Caso senza covariate}{7}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Dati e modello}{7}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Definizione delle funzioni di base}{8}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Funzionale di penalizzazione}{9}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Modello ideale}{10}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}Discretizzazione dei termini di penalizzazione delle derivate}{11}{subsection.2.1.5}
-\contentsline {subsection}{\numberline {2.1.6}Soluzione del problema di stima}{14}{subsection.2.1.6}
-\contentsline {subsection}{\numberline {2.1.7}Propriet\IeC {\`a} statistiche dello stimatore}{17}{subsection.2.1.7}
-\contentsline {section}{\numberline {2.2}Caso con covariate}{17}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Propriet\IeC {\`a} statistiche degli stimatori}{18}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Stima della varianza di modello e scelta dei parametri di smoothing}{19}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Varianza di modello}{19}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Parametri di smoothing}{19}{subsection.2.3.2}
-\contentsline {chapter}{\numberline {3}Sviluppo del codice R}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}Funzioni di base considerate}{21}{section.3.1}
-\contentsline {section}{\numberline {3.2}Schematizzazione dell'algoritmo di stima}{22}{section.3.2}
-\contentsline {section}{\numberline {3.3}Strutture dati adottate}{23}{section.3.3}
-\contentsline {chapter}{\numberline {4}Simulazioni nel caso del dominio a forma di C}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Triangolazione e istanti temporali}{26}{section.4.1}
-\contentsline {section}{\numberline {4.2}Caso senza covariata}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}Caso con covariata}{30}{section.4.3}
-\contentsline {chapter}{\numberline {5}Confronto con altri metodi}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}Caso senza covariata}{37}{section.5.1}
-\contentsline {section}{\numberline {5.2}Caso con covariata}{39}{section.5.2}
-\contentsline {chapter}{\numberline {6}Applicazione alla produzione di rifiuti urbani nella provincia di Venezia}{41}{chapter.6}
-\contentsline {section}{\numberline {6.1}Il turismo come possibile covariata}{42}{section.6.1}
-\contentsline {section}{\numberline {6.2}Trattamento del dominio}{42}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Regression splines}{43}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Replica dei dati}{45}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Triangolazione del dominio}{46}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Analisi preliminare dei dati}{47}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Funzioni di base}{50}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Applicazione del modello senza covariata}{51}{section.6.4}
-\contentsline {section}{\numberline {6.5}Applicazione del modello con covariata}{55}{section.6.5}
-\contentsline {chapter}{\numberline {7}Conclusioni e sviluppi futuri}{61}{chapter.7}
-\contentsline {chapter}{Bibliografia}{63}{chapter*.38}
+\contentsline {chapter}{\numberline {1}Introduzione}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Modello di regressione spazio-temporale con regolarizzazioni differenziali}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Caso senza covariate}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Dati e modello}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Definizione delle funzioni di base}{6}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Funzionale di penalizzazione}{7}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Modello ideale}{8}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Discretizzazione dei termini di penalizzazione}{9}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {2.1.6}Soluzione del problema di stima}{12}{subsection.2.1.6}
+\contentsline {subsection}{\numberline {2.1.7}Propriet\IeC {\`a} statistiche dello stimatore}{14}{subsection.2.1.7}
+\contentsline {section}{\numberline {2.2}Caso con covariate}{14}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Propriet\IeC {\`a} statistiche degli stimatori}{16}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Stima della varianza di modello e scelta dei parametri di smoothing}{16}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Varianza di modello}{16}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Parametri di smoothing}{17}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}Sviluppo del codice R}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Funzioni di base considerate}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Schematizzazione dell'algoritmo di stima}{20}{section.3.2}
+\contentsline {section}{\numberline {3.3}Strutture dati adottate}{21}{section.3.3}
+\contentsline {chapter}{\numberline {4}Studi di simulazione}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Triangolazione e istanti temporali}{24}{section.4.1}
+\contentsline {section}{\numberline {4.2}Caso senza covariata}{25}{section.4.2}
+\contentsline {section}{\numberline {4.3}Caso con covariata}{28}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Validazione dell'intervallo di confidenza approssimato}{31}{subsection.4.3.1}
+\contentsline {chapter}{\numberline {5}Confronto con altri metodi}{33}{chapter.5}
+\contentsline {section}{\numberline {5.1}Caso senza covariata}{35}{section.5.1}
+\contentsline {section}{\numberline {5.2}Caso con covariata}{37}{section.5.2}
+\contentsline {chapter}{\numberline {6}Applicazione alla produzione di rifiuti urbani nella provincia di Venezia}{39}{chapter.6}
+\contentsline {section}{\numberline {6.1}Il turismo come possibile covariata}{40}{section.6.1}
+\contentsline {section}{\numberline {6.2}Trattamento del dominio}{41}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Regression Splines}{42}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Replica dei dati}{43}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Triangolazione del dominio}{45}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Analisi preliminare dei dati}{45}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Funzioni di base}{48}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}Applicazione del modello senza covariata}{49}{section.6.4}
+\contentsline {section}{\numberline {6.5}Applicazione del modello con covariata}{53}{section.6.5}
+\contentsline {chapter}{\numberline {7}Conclusioni e sviluppi futuri}{59}{chapter.7}
+\contentsline {chapter}{Bibliografia}{61}{chapter*.38}

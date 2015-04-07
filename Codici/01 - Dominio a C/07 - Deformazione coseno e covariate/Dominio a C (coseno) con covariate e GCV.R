@@ -112,29 +112,14 @@ dev.off()
 rm(Knot,Boundary)
 
 
-
-##### PLOT DELLE COVARIATE #####
-# Faccio qualche plot, covariate contro dati generati, per escludere le dipendenze
-png(filename="Scatterplot1.png")
-plot(DataFUN,DesMat,main="Scatterplot Covariata",xlab="Dato funzione reale",ylab="Covariata")
-abline(h=0,col="blue",lwd=2)
-dev.off()
-
-png(filename="Scatterplot2.png")
-plot(Data,DesMat,main="Scatterplot Covariata",xlab="Dato funzione reale + Beta*Covariata",ylab="Covariata")
-abline(h=0,col="blue",lwd=2)
-dev.off()
-
-
-
 ##### GCV #####
 
 #Creo le basi in spazio e tempo
 TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,TimeOrder=4,DerivativeOrder=2,PlotIt=F)
 SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,TypePoint,1)
 
-# LogS<-seq(-0.25,0.75,by=0.125)
-# LogT<-seq(-4.25,-3.25,by=0.125)
+# LogS<-seq(-1,0,by=0.125)
+# LogT<-seq(-4,-3,by=0.125)
 # GCVResult<-ST.GCV.Covar(Data,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
 # 
 # png(filename="GCV Matrix.png")
@@ -146,7 +131,7 @@ SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,TypePoint,1)
 # 
 # save(file="GCVResult.RData",GCVResult,LogS,LogT)
 
-LambdaS=10^-0.125
+LambdaS=10^-0.5
 LambdaT=10^-3.25
 
 ##### RISOLUZIONE DEL SISTEMA #####
@@ -243,63 +228,37 @@ for(j in 1:length(TimePoints))
     dev.off()
 }
 
-i<-40
+i<-216
 xP<-xknot[i]
 yP<-yknot[i]
 png(filename=paste("Plot per un punto fissato",fs.test(xP,yP),".png",sep=" "))
-FixedPointPlot(xP,yP,SolutionObj,lwd=2,NameLocation = paste("(",round(xP,2),",",round(yP,2),")",sep=""),ylim=c(-1,1))
+FixedPointPlot(xP,yP,SolutionObj,lwd=2,NameLocation = paste("(",round(xP,2),",",round(yP,2),")",sep=""),ylim=c(-4.4,4.4))
 points(TimePoints,DataMatrix[i,],pch=16,col="red")
 points(seq(min(TimePoints),max(TimePoints),length.out=100),fs.test(xP,yP)*cos(seq(min(TimePoints),max(TimePoints),length.out=100)),type='l',col="blue",lwd=2)
 legend("bottomleft",c("reale", "stimata"), lty = c(1,1),col=c("blue","black"),lwd=2)
 dev.off()
-# 216 44 40
-#4.5 2 1
+
+i<-44
+xP<-xknot[i]
+yP<-yknot[i]
+png(filename=paste("Plot per un punto fissato",fs.test(xP,yP),".png",sep=" "))
+FixedPointPlot(xP,yP,SolutionObj,lwd=2,NameLocation = paste("(",round(xP,2),",",round(yP,2),")",sep=""),ylim=c(-4.4,4.4))
+points(TimePoints,DataMatrix[i,],pch=16,col="red")
+points(seq(min(TimePoints),max(TimePoints),length.out=100),fs.test(xP,yP)*cos(seq(min(TimePoints),max(TimePoints),length.out=100)),type='l',col="blue",lwd=2)
+legend("bottomleft",c("reale", "stimata"), lty = c(1,1),col=c("blue","black"),lwd=2)
+dev.off()
+
+i<-40
+xP<-xknot[i]
+yP<-yknot[i]
+png(filename=paste("Plot per un punto fissato",fs.test(xP,yP),".png",sep=" "))
+FixedPointPlot(xP,yP,SolutionObj,lwd=2,NameLocation = paste("(",round(xP,2),",",round(yP,2),")",sep=""),ylim=c(-4.4,4.4))
+points(TimePoints,DataMatrix[i,],pch=16,col="red")
+points(seq(min(TimePoints),max(TimePoints),length.out=100),fs.test(xP,yP)*cos(seq(min(TimePoints),max(TimePoints),length.out=100)),type='l',col="blue",lwd=2)
+legend("bottomleft",c("reale", "stimata"), lty = c(1,1),col=c("blue","black"),lwd=2)
+dev.off()
+
 
 ##### INTERVALLO DI CONFIDENZA #####
 ICResult<-ST.IC(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
 save(file="ICResult.RData",ICResult,Beta)
-
-
-
-##### PLOT DEI RESIDUI #####
-
-#Ricavo il vettore con tutte le stime
-zHatNoCovar<-NULL
-for(i in 1:length(xknot))
-{
-    zHatNoCovar<-c(zHatNoCovar,ST.Eval(rep(xknot[i],length(TimePoints)),rep(yknot[i],length(TimePoints)),TimePoints,SolutionObj))
-}
-
-zHatCovar=zHatNoCovar+SolutionObj$BetaHat*DesMat
-
-Residuals=Data-zHatCovar
-
-# Faccio qualche plot
-png(filename="Scatterplot3.png")
-plot(DataFUN,Residuals,main="Scatterplot Residui",xlab="Dati senza termine di covariata",ylab="Residui")
-abline(h=0,col="blue",lwd=2)
-dev.off()
-# Faccio qualche plot
-png(filename="Scatterplot4.png")
-plot(Data,Residuals,main="Scatterplot Residui",xlab="Dati",ylab="Residui")
-abline(h=0,col="blue",lwd=2)
-dev.off()
-# Faccio qualche plot
-png(filename="Scatterplot5.png")
-plot(zHatCovar,Residuals,main="Scatterplot Residui",xlab="Valori stimati",ylab="Residui")
-abline(h=0,col="blue",lwd=2)
-dev.off()
-# Faccio qualche plot
-png(filename="Scatterplot6.png")
-plot(zHatNoCovar,Residuals,main="Scatterplot Residui",xlab="Valori stimati senza termine di covariata",ylab="Residui")
-abline(h=0,col="blue",lwd=2)
-dev.off()
-
-png(filename="QQplot.png")
-qqnorm(Residuals)
-qqline(Residuals,lwd=2,col="blue")
-dev.off()
-
-sink(file="Shapiro Test.txt")
-print(shapiro.test(Residuals))
-sink()

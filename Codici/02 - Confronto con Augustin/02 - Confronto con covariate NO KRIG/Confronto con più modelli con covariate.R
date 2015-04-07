@@ -176,7 +176,7 @@ rm(Knot,Boundary)
 # LambdaS=10^GCVResult$Best[1]
 # LambdaT=10^GCVResult$Best[2]
 
-LambdaS=10^-0.125
+LambdaS=10^-0.5
 LambdaT=10^-3.25
 
 

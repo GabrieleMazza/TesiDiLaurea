@@ -1,6 +1,0 @@
-
-	Shapiro-Wilk normality test
-
-data:  Residuals
-W = 0.6149, p-value < 2.2e-16
-

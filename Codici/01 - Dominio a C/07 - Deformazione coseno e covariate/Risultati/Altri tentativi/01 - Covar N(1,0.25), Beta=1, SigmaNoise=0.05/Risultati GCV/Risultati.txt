@@ -1,4 +1,0 @@
-1) Ho scelto:
-	LogS = -8:+1
-	LogT = -8:+1
-	Best = (-2,-8)

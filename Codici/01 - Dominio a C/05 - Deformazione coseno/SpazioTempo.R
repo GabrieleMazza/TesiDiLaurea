@@ -1559,9 +1559,9 @@ ST.GCV.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
     Temp0<-t(Pi)%*%Pi
     
     TempDM<-DesMat%*%solve(t(DesMat)%*%DesMat)%*%t(DesMat)
-    Temp1<-t(Pi)%*%TempDM%*%Pi
-    Temp2<-t(Pi)%*%(diag(dim(DesMat)[1])-TempDM)
-    
+    Q=(diag(dim(DesMat)[1])-TempDM)
+    Temp1<-t(Pi)%*%Q%*%Pi
+    Temp2=t(Pi)%*%Q
     # Create the matrix with GCVvalues
     
     # Generalized Cross Validation Matrix
@@ -1585,7 +1585,7 @@ ST.GCV.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LogS,LogT)
             
             # Compute Hat Matrix
             S=LambdaS*KronSpace+LambdaT*KronTime
-            HSm=Pi%*%solve(Temp0+S+Temp1)%*%Temp2
+            HSm=Pi%*%solve(S+Temp1)%*%Temp2
             HCovar=TempDM%*%(diag(dim(HSm)[1])-HSm)
             if((dim(HSm)[1])!=(dim(HCovar)[1]))
                 stop("Something wrong with dimensions")
@@ -1743,8 +1743,8 @@ ST.Smooth.Covar = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,Lambda
     }
     
     Temp1<-DesMat%*%solve(t(DesMat)%*%DesMat)%*%t(DesMat)
-    
-    C=solve(t(Pi)%*%Pi+S+t(Pi)%*%Temp1%*%Pi)%*%t(Pi)%*%(diag(dim(Temp1)[1])-Temp1)%*%Data
+    Q=(diag(dim(Temp1)[1])-Temp1)
+    C=solve(S+t(Pi)%*%Q%*%Pi)%*%t(Pi)%*%Q%*%Data
     rm(Temp1)       #Free memory (useless object from now...)
 
     BetaHat=solve(t(DesMat)%*%DesMat)%*%t(DesMat)%*%(Data-Pi%*%C)
@@ -1867,30 +1867,25 @@ ST.IC = function(Data,DesMat,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT,Alpha=0.
     }
     
     n=dim(Data)[1]
+    Temp1<-DesMat%*%solve(t(DesMat)%*%DesMat)%*%t(DesMat)
+    Q=(diag(dim(Temp1)[1])-Temp1)
+    A=solve(S+t(Pi)%*%Q%*%Pi)%*%t(Pi)
+    C=A%*%Q%*%Data
+    H=(Pi%*%A%*%Q + Temp1%*%(diag(dim(Pi)[1])-Pi%*%A%*%Q))
     
-    # Temporary matrix
-    Temp1<-solve(t(DesMat)%*%DesMat)
-    TempDM<-DesMat%*%Temp1%*%t(DesMat)
-    
-    # First of all: I need BetaHat
-    PSm=solve(t(Pi)%*%Pi+S+t(Pi)%*%TempDM%*%Pi)%*%t(Pi)%*%(diag(dim(TempDM)[1])-TempDM)
-    rm(TempDM, S)       # Free memory (useless object from now)...
-    PCovar=Temp1%*%t(DesMat)%*%(diag(dim(Pi)[1])-Pi%*%PSm)
-    BetaHat=PCovar%*%Data
-    
+    BetaHat=solve(t(DesMat)%*%DesMat)%*%t(DesMat)%*%(Data-Pi%*%C)
     
     # Then, I need Sigma2Hat
-    HatMatrix=Pi%*%PSm+DesMat%*%PCovar
-    DataHat=HatMatrix%*%Data
+    DataHat=H%*%Data
     
-    Sigma2Hat=(1/(n-sum(diag(HatMatrix))))*t(Data-DataHat)%*%(Data-DataHat)
-    rm(PCovar,HatMatrix,DataHat,Data)   #Free temporary objects (useless from now...)
+    Sigma2Hat=(1/(n-sum(diag(H))))*t(Data-DataHat)%*%(Data-DataHat)
     
     # Then, I need Variance Matrix
+    Temp1=solve(t(DesMat)%*%DesMat)
     VarMatrix=
         Sigma2Hat*(
         Temp1+
-        Temp1%*%t(DesMat)%*%Pi%*%PSm%*%t(PSm)%*%t(Pi)%*%DesMat%*%Temp1
+        Temp1%*%t(DesMat)%*%Pi%*%A%*%Q%*%t(A)%*%t(Pi)%*%DesMat%*%Temp1
         )
     
     if(Correct)

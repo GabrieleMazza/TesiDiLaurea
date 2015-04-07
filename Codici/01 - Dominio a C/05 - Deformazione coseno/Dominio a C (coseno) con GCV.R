@@ -208,7 +208,7 @@ i<-98
 xP<-xknot[i]
 yP<-yknot[i]
 png(filename=paste("Plot per un punto fissato",fs.test(xP,yP),".png",sep=" "))
-FixedPointPlot(xP,yP,SolutionObj,lwd=2,NameLocation = paste("(",round(xP,2),",",round(yP,2),")",sep=""),ylim=c(-1,1))
+FixedPointPlot(xP,yP,SolutionObj,lwd=2,NameLocation = paste("(",round(xP,2),",",round(yP,2),")",sep=""),ylim=c(-4.5,4.5))
 points(TimePoints,DataMatrix[i,],pch=16,col="red")
 points(seq(min(TimePoints),max(TimePoints),length.out=100),fs.test(xP,yP)*cos(seq(min(TimePoints),max(TimePoints),length.out=100)),type='l',col="blue",lwd=2)
 legend("bottomleft",c("reale", "stimata"), lty = c(1,1),col=c("blue","black"),lwd=2)
@@ -218,7 +218,7 @@ i<-108
 xP<-xknot[i]
 yP<-yknot[i]
 png(filename=paste("Plot per un punto fissato",fs.test(xP,yP),".png",sep=" "))
-FixedPointPlot(xP,yP,SolutionObj,lwd=2,NameLocation = paste("(",round(xP,2),",",round(yP,2),")",sep=""),ylim=c(-2,2))
+FixedPointPlot(xP,yP,SolutionObj,lwd=2,NameLocation = paste("(",round(xP,2),",",round(yP,2),")",sep=""),ylim=c(-4.5,4.5))
 points(TimePoints,DataMatrix[i,],pch=16,col="red")
 points(seq(min(TimePoints),max(TimePoints),length.out=100),fs.test(xP,yP)*cos(seq(min(TimePoints),max(TimePoints),length.out=100)),type='l',col="blue",lwd=2)
 legend("bottomleft",c("reale", "stimata"), lty = c(1,1),col=c("blue","black"),lwd=2)

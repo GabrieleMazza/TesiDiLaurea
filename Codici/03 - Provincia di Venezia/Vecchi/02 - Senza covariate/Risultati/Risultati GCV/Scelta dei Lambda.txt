@@ -1,4 +1,0 @@
-1) Ho posto:
-	LogS = -11:-5
-	LogT = -3:+1
-	Best -> (-10,0)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  31 MAR 2015 13:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  7 APR 2015 11:09
 entering extended mode
 **Tutta*la*tesi.tex
 
@@ -1139,39 +1139,39 @@ Tutta la tesi\Tutta la tesi.out")
 <Immagini/Logo.png, id=159, 225.84375pt x 225.84375pt>
 File: Immagini/Logo.png Graphic file (type png)
  <use Immagini/Logo.png>
-Package pdftex.def Info: Immagini/Logo.png used on input line 86.
+Package pdftex.def Info: Immagini/Logo.png used on input line 85.
 (pdftex.def)             Requested size: 99.58464pt x 99.5852pt.
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 101
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 100
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlzplm.fd"
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 101
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 100
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omszplm.fd"
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 101
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 100
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omxzplm.fd"
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 101.
+(Font)              scaled to size 11.40997pt on input line 100.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 101.
+(Font)              scaled to size 8.33606pt on input line 100.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 101.
+(Font)              scaled to size 6.25204pt on input line 100.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 101.
+(Font)              scaled to size 11.40997pt on input line 100.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 101.
+(Font)              scaled to size 8.33606pt on input line 100.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 101.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 101
+(Font)              scaled to size 6.25204pt on input line 100.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 100
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1zplm.fd"
@@ -1181,27 +1181,27 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 {C:/Users/Gabriele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users
 /Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la t
 esi/Immagini/Logo.png>] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 122--128
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--128
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--128
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--128
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--128
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 
  []
 
@@ -1216,13 +1216,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--128
 Tutta la tesi\Tutta la tesi.toc"
 LaTeX Font Info:    Font shape `OT1/pplx/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/pplx/b/n' tried instead on input line 2.
- [1
+
+Overfull \hbox (1.4152pt too wide) in paragraph at lines 3--3
+ [] []\OT1/pplx/b/n/10.95 Modello di re-gres-sio-ne spazio-temporale con re-go-
+la-riz-za-zio-ni dif- 
+ []
+
+[1
 
 
 ])
 \tf@toc=\write4
 LaTeX Font Info:    Font shape `OT1/pplx/m/sl' in size <10.95> not available
-(Font)              Font shape `OT1/pplx/m/it' tried instead on input line 172.
+(Font)              Font shape `OT1/pplx/m/it' tried instead on input line 171.
 
 
 
@@ -1234,15 +1240,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [2]
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 Tutta la tesi\Tutta la tesi.lof"
-Overfull \hbox (1.28387pt too wide) in paragraph at lines 6--6
+Overfull \hbox (1.28387pt too wide) in paragraph at lines 5--5
  [][] []\OT1/pplx/m/n/10.95 Differenza tra i da-ti nei co-mu-ni di Cavallino-Tr
 eporti e Quar- 
- []
-
-
-Overfull \hbox (0.35309pt too wide) in paragraph at lines 46--46
- \OT1/pplx/m/n/10.95 si-mu-la-ti, sti-me ot-te-nu-te ri-spet-ti-va-men-te con s
-oap film smoo- 
  []
 
 [3
@@ -1265,54 +1265,61 @@ Tutta la tesi\Tutta la tesi.lot")
 ] [6
 
 ]
+Capitolo 1.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 186.
+(Font)              scaled to size 9.37807pt on input line 182.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 186.
+(Font)              scaled to size 7.29405pt on input line 182.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 186.
+(Font)              scaled to size 5.21004pt on input line 182.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 186.
+(Font)              scaled to size 9.37807pt on input line 182.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 186.
+(Font)              scaled to size 7.29405pt on input line 182.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 186.
+(Font)              scaled to size 5.21004pt on input line 182.
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--186
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 [][][][]\OT1/pplx/m/n/9 http://dati.veneto.it/dataset/produzione-annua-di-rifiu
 ti-urbani-totale-e-pro-capite-
  []
 
-<Immagini/Ven_punti.png, id=339, 481.8pt x 481.8pt>
+<Immagini/Ven_punti.png, id=341, 481.8pt x 481.8pt>
 File: Immagini/Ven_punti.png Graphic file (type png)
 
 <use Immagini/Ven_punti.png>
-Package pdftex.def Info: Immagini/Ven_punti.png used on input line 190.
-(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+Package pdftex.def Info: Immagini/Ven_punti.png used on input line 186.
+(pdftex.def)             Requested size: 158.40088pt x 158.399pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.194 \newpage
+l.190 \newpage
                [1
 
  <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
 Tutta la tesi/Immagini/Ven_punti.png (PNG copy)>]
-<Immagini/venezia_dati/Dati2011.png, id=345, 362.10281pt x 295.1025pt>
+<Immagini/venezia_dati/Dati2011.png, id=348, 362.10281pt x 295.1025pt>
 File: Immagini/venezia_dati/Dati2011.png Graphic file (type png)
 
 <use Immagini/venezia_dati/Dati2011.png>
 Package pdftex.def Info: Immagini/venezia_dati/Dati2011.png used on input line 
-200.
-(pdftex.def)             Requested size: 165.60242pt x 134.96077pt.
+193.
+(pdftex.def)             Requested size: 187.20154pt x 152.56259pt.
 
-<Immagini/venezia_dati/PL2011.png, id=346, 350.81062pt x 294.34969pt>
-File: Immagini/venezia_dati/PL2011.png Graphic file (type png)
+<Immagini/CTQDA.png, id=350, 481.8pt x 481.8pt>
+File: Immagini/CTQDA.png Graphic file (type png)
+ <use Immagini/CTQDA.png>
+Package pdftex.def Info: Immagini/CTQDA.png used on input line 206.
+(pdftex.def)             Requested size: 154.79736pt x 154.79668pt.
 
-<use Immagini/venezia_dati/PL2011.png>
-Package pdftex.def Info: Immagini/venezia_dati/PL2011.png used on input line 20
-4.
-(pdftex.def)             Requested size: 165.60242pt x 138.9507pt.
+<Immagini/andamenti_temporali.png, id=351, 1104.125pt x 853.1875pt>
+File: Immagini/andamenti_temporali.png Graphic file (type png)
+
+<use Immagini/andamenti_temporali.png>
+Package pdftex.def Info: Immagini/andamenti_temporali.png used on input line 21
+0.
+(pdftex.def)             Requested size: 176.40198pt x 136.30449pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1324,24 +1331,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.213 \newpage
-               [2 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI
- DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_dati/Dati2011.png> <C:/Users/Ga
-briele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi
-/Immagini/venezia_dati/PL2011.png>]
-<Immagini/CTQDA.png, id=354, 481.8pt x 481.8pt>
-File: Immagini/CTQDA.png Graphic file (type png)
- <use Immagini/CTQDA.png>
-Package pdftex.def Info: Immagini/CTQDA.png used on input line 219.
-(pdftex.def)             Requested size: 154.79736pt x 154.79668pt.
-
-<Immagini/andamenti_temporali.png, id=355, 1104.125pt x 853.1875pt>
-File: Immagini/andamenti_temporali.png Graphic file (type png)
-
-<use Immagini/andamenti_temporali.png>
-Package pdftex.def Info: Immagini/andamenti_temporali.png used on input line 22
-3.
-(pdftex.def)             Requested size: 176.40198pt x 136.30449pt.
+l.216 
+       [2 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUR
+EA/Latex/Tutta la tesi/Immagini/venezia_dati/Dati2011.png> <C:/Users/Gabriele/D
+esktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagin
+i/CTQDA.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRAL
+E/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/andamenti_temporali.png>]
+Overfull \hbox (2.71283pt too wide) in paragraph at lines 219--220
+[]\OT1/pplx/m/n/10.95 In que-sta te-si sar[]a il-lu-stra-to il mo-del-lo di Re-
+gres-sio-ne Spazio-Temporale
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1353,20 +1352,26 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.230 \newpage
-               [3 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI
- DI LAUREA/Latex/Tutta la tesi/Immagini/CTQDA.png (PNG copy)> <C:/Users/Gabriel
-e/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Imma
-gini/andamenti_temporali.png>]pdfTeX warning (ext4): destination with the same 
-identifier (name{page.4}) has been already used, duplicate ignored
+l.224 \newpage
+               [3]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.233 \chapter
-              {Panoramica sui modelli già esistenti} [4
-
-]
-Capitolo 1.
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 236
+l.224 \newpage
+               [4]
+Capitolo 2.
+LaTeX Font Info:    Font shape `OT1/pplx/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 233.
+LaTeX Font Info:    Font shape `OT1/pplx/bx/n' in size <12> not available
+(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 235.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 237
 .
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ufplmbb.fd"
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
@@ -1374,8 +1379,10 @@ File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.247 $$
-         [5]
+l.251 $$
+         [5
+
+]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1386,21 +1393,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.264 \chapter
-              {Presentazione del modello ST-PDE} [6]
-Capitolo 2.
-LaTeX Font Info:    Font shape `OT1/pplx/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 269.
-LaTeX Font Info:    Font shape `OT1/pplx/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pplx/b/n' tried instead on input line 271.
+l.277 
+       [6]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.288 
-       [7
+l.297 
+       [7]
+Overfull \hbox (8.69608pt too wide) in paragraph at lines 316--316
+[] 
+ []
 
-]
+
+Overfull \hbox (19.25578pt too wide) in paragraph at lines 330--330
+[] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1411,8 +1426,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.321 
-       [8]
+l.330 \end{equation}
+                     [8]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1423,17 +1438,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.347 
-       [9]
-Overfull \hbox (8.69608pt too wide) in paragraph at lines 367--367
-[] 
- []
-
-
-Overfull \hbox (19.25578pt too wide) in paragraph at lines 381--381
-[] 
- []
-
+l.354 \end{equation}
+                     [9]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1444,8 +1450,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.381 \end{equation}
-                     [10]
+l.419 ...T + \bm \psi_y \bm \psi_y^T)d \bm p \ ,$$
+                                                   [10]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1474,8 +1480,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [14]
-Underfull \vbox (badness 1859) has occurred while \output is active []
+LaTeX Font Info:    Try loading font information for OMS+pplx on input line 615
+.
+LaTeX Font Info:    No file OMSpplx.fd. on input line 615.
 
+
+LaTeX Font Warning: Font shape `OMS/pplx/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 615.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1497,52 +1509,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17]
-LaTeX Font Info:    Try loading font information for OMS+pplx on input line 678
-.
-LaTeX Font Info:    No file OMSpplx.fd. on input line 678.
+[17] [18
 
-
-LaTeX Font Warning: Font shape `OMS/pplx/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 678.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[18]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[19]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[20]
+]
 Capitolo 3.
-[21
-
-] <Immagini/elementofinito.jpg, id=533, 417.81094pt x 321.45094pt>
+[19] <Immagini/elementofinito.jpg, id=527, 417.81094pt x 321.45094pt>
 File: Immagini/elementofinito.jpg Graphic file (type jpg)
 
 <use Immagini/elementofinito.jpg>
-Package pdftex.def Info: Immagini/elementofinito.jpg used on input line 778.
+Package pdftex.def Info: Immagini/elementofinito.jpg used on input line 715.
 (pdftex.def)             Requested size: 165.60242pt x 127.41072pt.
 
-<Immagini/Bsplines.png, id=534, 575.14874pt x 453.695pt>
+<Immagini/Bsplines.png, id=528, 575.14874pt x 453.695pt>
 File: Immagini/Bsplines.png Graphic file (type png)
 
 <use Immagini/Bsplines.png>
-Package pdftex.def Info: Immagini/Bsplines.png used on input line 783.
+Package pdftex.def Info: Immagini/Bsplines.png used on input line 720.
 (pdftex.def)             Requested size: 165.60242pt x 130.63359pt.
 
 
@@ -1551,33 +1533,38 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[20 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/elementofinito.jpg> <C:/Users/Gabriele/Desktop/Univer
 sità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/Bsplines.pn
 g>]
+Overfull \hbox (3.07956pt too wide) in paragraph at lines 742--743
+\OT1/pplx/m/n/10.95 Al mo-men-to del-l'im-ple-men-ta-zio-ne del co-di-ce cor-ri
+-spon-den-te al-le eq. [],
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23]
+[21]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24]
+[22]
 Capitolo 4.
 <Immagini/DomCinizio/DomC_fstest.png, id=566, 481.8pt x 481.8pt>
 File: Immagini/DomCinizio/DomC_fstest.png Graphic file (type png)
 
 <use Immagini/DomCinizio/DomC_fstest.png>
 Package pdftex.def Info: Immagini/DomCinizio/DomC_fstest.png used on input line
- 842.
+ 780.
 (pdftex.def)             Requested size: 158.40088pt x 158.399pt.
- [25
+ [23
 
  <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
 Tutta la tesi/Immagini/DomCinizio/DomC_fstest.png (PNG copy)>]
@@ -1586,7 +1573,7 @@ File: Immagini/DomCinizio/DomC_Triangolazione.png Graphic file (type png)
 
 <use Immagini/DomCinizio/DomC_Triangolazione.png>
 Package pdftex.def Info: Immagini/DomCinizio/DomC_Triangolazione.png used on in
-put line 853.
+put line 791.
 (pdftex.def)             Requested size: 158.40088pt x 158.399pt.
 
 
@@ -1595,7 +1582,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[24 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/DomCinizio/DomC_Triangolazione.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1603,18 +1590,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27] <Immagini/DomC/DomC_0reale.png, id=585, 481.8pt x 481.8pt>
+[25] <Immagini/DomC/DomC_0reale.png, id=585, 481.8pt x 481.8pt>
 File: Immagini/DomC/DomC_0reale.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_0reale.png>
-Package pdftex.def Info: Immagini/DomC/DomC_0reale.png used on input line 881.
+Package pdftex.def Info: Immagini/DomC/DomC_0reale.png used on input line 819.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
 <Immagini/DomC/DomC_0stimata.png, id=586, 481.8pt x 481.8pt>
 File: Immagini/DomC/DomC_0stimata.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_0stimata.png>
-Package pdftex.def Info: Immagini/DomC/DomC_0stimata.png used on input line 885
+Package pdftex.def Info: Immagini/DomC/DomC_0stimata.png used on input line 823
 .
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
@@ -1622,14 +1609,14 @@ Package pdftex.def Info: Immagini/DomC/DomC_0stimata.png used on input line 885
 File: Immagini/DomC/DomC_1reale.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_1reale.png>
-Package pdftex.def Info: Immagini/DomC/DomC_1reale.png used on input line 889.
+Package pdftex.def Info: Immagini/DomC/DomC_1reale.png used on input line 827.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
 <Immagini/DomC/DomC_1stimata.png, id=588, 481.8pt x 481.8pt>
 File: Immagini/DomC/DomC_1stimata.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_1stimata.png>
-Package pdftex.def Info: Immagini/DomC/DomC_1stimata.png used on input line 893
+Package pdftex.def Info: Immagini/DomC/DomC_1stimata.png used on input line 831
 .
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
@@ -1637,14 +1624,14 @@ Package pdftex.def Info: Immagini/DomC/DomC_1stimata.png used on input line 893
 File: Immagini/DomC/DomC_2reale.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_2reale.png>
-Package pdftex.def Info: Immagini/DomC/DomC_2reale.png used on input line 897.
+Package pdftex.def Info: Immagini/DomC/DomC_2reale.png used on input line 835.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
 <Immagini/DomC/DomC_2stimata.png, id=590, 481.8pt x 481.8pt>
 File: Immagini/DomC/DomC_2stimata.png Graphic file (type png)
 
 <use Immagini/DomC/DomC_2stimata.png>
-Package pdftex.def Info: Immagini/DomC/DomC_2stimata.png used on input line 901
+Package pdftex.def Info: Immagini/DomC/DomC_2stimata.png used on input line 839
 .
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
@@ -1654,7 +1641,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[26 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/DomC/DomC_0reale.png (PNG copy)> <C:/Users/Gabriele/D
 esktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagin
 i/DomC/DomC_0stimata.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTR
@@ -1664,25 +1651,25 @@ esi/Immagini/DomC/DomC_1stimata.png> <C:/Users/Gabriele/Desktop/Università/LAU
 REA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/DomC/DomC_2reale.png
 > <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex
 /Tutta la tesi/Immagini/DomC/DomC_2stimata.png>]
-<Immagini/DomC/tfissato1.png, id=609, 481.8pt x 481.8pt>
+<Immagini/DomC/tfissato1.png, id=610, 481.8pt x 481.8pt>
 File: Immagini/DomC/tfissato1.png Graphic file (type png)
 
 <use Immagini/DomC/tfissato1.png>
-Package pdftex.def Info: Immagini/DomC/tfissato1.png used on input line 913.
+Package pdftex.def Info: Immagini/DomC/tfissato1.png used on input line 853.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/DomC/tfissato2.png, id=610, 481.8pt x 481.8pt>
+<Immagini/DomC/tfissato2.png, id=611, 481.8pt x 481.8pt>
 File: Immagini/DomC/tfissato2.png Graphic file (type png)
 
 <use Immagini/DomC/tfissato2.png>
-Package pdftex.def Info: Immagini/DomC/tfissato2.png used on input line 917.
+Package pdftex.def Info: Immagini/DomC/tfissato2.png used on input line 857.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/DomC/tfissato3.png, id=611, 481.8pt x 481.8pt>
+<Immagini/DomC/tfissato3.png, id=612, 481.8pt x 481.8pt>
 File: Immagini/DomC/tfissato3.png Graphic file (type png)
 
 <use Immagini/DomC/tfissato3.png>
-Package pdftex.def Info: Immagini/DomC/tfissato3.png used on input line 922.
+Package pdftex.def Info: Immagini/DomC/tfissato3.png used on input line 861.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
 
@@ -1691,7 +1678,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[29 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[27 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/DomC/tfissato1.png> <C:/Users/Gabriele/Desktop/Univer
 sità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/DomC/tfissa
 to2.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAURE
@@ -1702,52 +1689,52 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[30] <Immagini/DomCCovar/DomCcovar_0reale.png, id=626, 481.8pt x 481.8pt>
+[28] <Immagini/DomCCovar/DomCcovar_0reale.png, id=628, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_0reale.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_0reale.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_0reale.png used on input 
-line 950.
+line 889.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomCCovar/DomCcovar_0stimata.png, id=627, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/DomCcovar_0stimata.png, id=629, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_0stimata.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_0stimata.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_0stimata.png used on inpu
-t line 954.
+t line 893.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomCCovar/DomCcovar_1reale.png, id=628, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/DomCcovar_1reale.png, id=630, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_1reale.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_1reale.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_1reale.png used on input 
-line 958.
+line 897.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomCCovar/DomCcovar_1stimata.png, id=629, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/DomCcovar_1stimata.png, id=631, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_1stimata.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_1stimata.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_1stimata.png used on inpu
-t line 962.
+t line 901.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomCCovar/DomCcovar_2reale.png, id=630, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/DomCcovar_2reale.png, id=632, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_2reale.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_2reale.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_2reale.png used on input 
-line 966.
+line 905.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
-<Immagini/DomCCovar/DomCcovar_2stimata.png, id=631, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/DomCcovar_2stimata.png, id=633, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/DomCcovar_2stimata.png Graphic file (type png)
 
 <use Immagini/DomCCovar/DomCcovar_2stimata.png>
 Package pdftex.def Info: Immagini/DomCCovar/DomCcovar_2stimata.png used on inpu
-t line 970.
+t line 909.
 (pdftex.def)             Requested size: 143.9978pt x 143.99709pt.
 
 
@@ -1756,7 +1743,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[31 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[29 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/DomCCovar/DomCcovar_0reale.png (PNG copy)> <C:/Users/
 Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la te
 si/Immagini/DomCCovar/DomCcovar_0stimata.png> <C:/Users/Gabriele/Desktop/Univer
@@ -1767,28 +1754,28 @@ ESI DI LAUREA/Latex/Tutta la tesi/Immagini/DomCCovar/DomCcovar_1stimata.png> <C
 ta la tesi/Immagini/DomCCovar/DomCcovar_2reale.png> <C:/Users/Gabriele/Desktop/
 Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/DomCC
 ovar/DomCcovar_2stimata.png>]
-<Immagini/DomCCovar/tfissato1.png, id=648, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/tfissato1.png, id=650, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/tfissato1.png Graphic file (type png)
 
 <use Immagini/DomCCovar/tfissato1.png>
-Package pdftex.def Info: Immagini/DomCCovar/tfissato1.png used on input line 98
-2.
+Package pdftex.def Info: Immagini/DomCCovar/tfissato1.png used on input line 92
+1.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/DomCCovar/tfissato2.png, id=649, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/tfissato2.png, id=651, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/tfissato2.png Graphic file (type png)
 
 <use Immagini/DomCCovar/tfissato2.png>
-Package pdftex.def Info: Immagini/DomCCovar/tfissato2.png used on input line 98
-6.
+Package pdftex.def Info: Immagini/DomCCovar/tfissato2.png used on input line 92
+5.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/DomCCovar/tfissato3.png, id=650, 481.8pt x 481.8pt>
+<Immagini/DomCCovar/tfissato3.png, id=652, 481.8pt x 481.8pt>
 File: Immagini/DomCCovar/tfissato3.png Graphic file (type png)
 
 <use Immagini/DomCCovar/tfissato3.png>
-Package pdftex.def Info: Immagini/DomCCovar/tfissato3.png used on input line 99
-0.
+Package pdftex.def Info: Immagini/DomCCovar/tfissato3.png used on input line 92
+9.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
 
@@ -1797,34 +1784,40 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[30 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/DomCCovar/tfissato1.png> <C:/Users/Gabriele/Desktop/U
 niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/DomCCo
 var/tfissato2.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TES
 I DI LAUREA/Latex/Tutta la tesi/Immagini/DomCCovar/tfissato3.png>]
+<Immagini/pval.png, id=665, 481.8pt x 481.8pt>
+File: Immagini/pval.png Graphic file (type png)
+ <use Immagini/pval.png>
+Package pdftex.def Info: Immagini/pval.png used on input line 955.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[33] [34
+[31 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Tutta la tesi/Immagini/pval.png>] [32
 
 ]
 Capitolo 5.
-[35]
+[33]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[36] <Immagini/Confronto_metodi.png, id=689, 481.8pt x 481.8pt>
+[34] <Immagini/Confronto_metodi.png, id=705, 481.8pt x 481.8pt>
 File: Immagini/Confronto_metodi.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi.png>
-Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 1047.
-
+Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 996.
 (pdftex.def)             Requested size: 216.0022pt x 215.9993pt.
 
 
@@ -1833,226 +1826,226 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[37 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[35 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/Confronto_metodi.png>]
-Overfull \hbox (1.96349pt too wide) in paragraph at lines 1058--1058
+Overfull \hbox (1.96349pt too wide) in paragraph at lines 1007--1007
 [][] 
  []
 
-<Immagini/simulazioni/REALEtempo1.png, id=695, 481.8pt x 481.8pt>
+<Immagini/simulazioni/REALEtempo1.png, id=711, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/REALEtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo1.png used on input lin
-e 1058.
+e 1007.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<immagini/simulazioni/Dati_tempo1.png, id=697, 433.62pt x 361.35pt>
+<immagini/simulazioni/Dati_tempo1.png, id=713, 433.62pt x 361.35pt>
 File: immagini/simulazioni/Dati_tempo1.png Graphic file (type png)
 
 <use immagini/simulazioni/Dati_tempo1.png>
 Package pdftex.def Info: immagini/simulazioni/Dati_tempo1.png used on input lin
-e 1059.
+e 1008.
 (pdftex.def)             Requested size: 68.40088pt x 61.29662pt.
 
-<Immagini/simulazioni/KRIGtempo1.png, id=699, 481.8pt x 481.8pt>
+<Immagini/simulazioni/KRIGtempo1.png, id=715, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/KRIGtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo1.png used on input line
- 1060.
+ 1009.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/TPStempo1.png, id=701, 481.8pt x 481.8pt>
+<Immagini/simulazioni/TPStempo1.png, id=717, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/TPStempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo1.png used on input line 
-1061.
+1010.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/SOAPtempo1.png, id=703, 481.8pt x 481.8pt>
+<Immagini/simulazioni/SOAPtempo1.png, id=719, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/SOAPtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo1.png used on input line
- 1062.
+ 1011.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/STSRtempo1.png, id=705, 481.8pt x 481.8pt>
+<Immagini/simulazioni/STSRtempo1.png, id=721, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/STSRtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo1.png used on input line
- 1063.
+ 1012.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-Overfull \vbox (2.98381pt too high) detected at line 1064
+Overfull \vbox (2.98381pt too high) detected at line 1013
  []
 
 
-Overfull \hbox (1.96349pt too wide) in paragraph at lines 1064--1064
+Overfull \hbox (1.96349pt too wide) in paragraph at lines 1013--1013
 [][] 
  []
 
-<Immagini/simulazioni/REALEtempo2.png, id=707, 481.8pt x 481.8pt>
+<Immagini/simulazioni/REALEtempo2.png, id=723, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/REALEtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo2.png used on input lin
-e 1065.
+e 1014.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/Dati_tempo2.png, id=709, 433.62pt x 361.35pt>
+<Immagini/simulazioni/Dati_tempo2.png, id=725, 433.62pt x 361.35pt>
 File: Immagini/simulazioni/Dati_tempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/Dati_tempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/Dati_tempo2.png used on input lin
-e 1066.
+e 1015.
 (pdftex.def)             Requested size: 68.40088pt x 61.29662pt.
 
-<Immagini/simulazioni/KRIGtempo2.png, id=711, 481.8pt x 481.8pt>
+<Immagini/simulazioni/KRIGtempo2.png, id=727, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/KRIGtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo2.png used on input line
- 1067.
+ 1016.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/TPStempo2.png, id=713, 481.8pt x 481.8pt>
+<Immagini/simulazioni/TPStempo2.png, id=729, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/TPStempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo2.png used on input line 
-1068.
+1017.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/SOAPtempo2.png, id=715, 481.8pt x 481.8pt>
+<Immagini/simulazioni/SOAPtempo2.png, id=731, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/SOAPtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo2.png used on input line
- 1069.
+ 1018.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/STSRtempo2.png, id=717, 481.8pt x 481.8pt>
+<Immagini/simulazioni/STSRtempo2.png, id=733, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/STSRtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo2.png used on input line
- 1070.
+ 1019.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-Overfull \vbox (6.17026pt too high) detected at line 1071
+Overfull \vbox (6.17026pt too high) detected at line 1020
  []
 
 
-Overfull \hbox (2.12775pt too wide) in paragraph at lines 1071--1071
+Overfull \hbox (2.12775pt too wide) in paragraph at lines 1020--1020
 [][] 
  []
 
-<Immagini/simulazioni/REALEtempo3.png, id=719, 481.8pt x 481.8pt>
+<Immagini/simulazioni/REALEtempo3.png, id=735, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/REALEtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo3.png used on input lin
-e 1072.
+e 1021.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/Dati_tempo3.png, id=721, 433.62pt x 361.35pt>
+<Immagini/simulazioni/Dati_tempo3.png, id=737, 433.62pt x 361.35pt>
 File: Immagini/simulazioni/Dati_tempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/Dati_tempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/Dati_tempo3.png used on input lin
-e 1073.
+e 1022.
 (pdftex.def)             Requested size: 68.40088pt x 61.29662pt.
 
-<Immagini/simulazioni/KRIGtempo3.png, id=723, 481.8pt x 481.8pt>
+<Immagini/simulazioni/KRIGtempo3.png, id=739, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/KRIGtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo3.png used on input line
- 1074.
+ 1023.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/TPStempo3.png, id=725, 481.8pt x 481.8pt>
+<Immagini/simulazioni/TPStempo3.png, id=741, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/TPStempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo3.png used on input line 
-1075.
+1024.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/SOAPtempo3.png, id=727, 481.8pt x 481.8pt>
+<Immagini/simulazioni/SOAPtempo3.png, id=743, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/SOAPtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo3.png used on input line
- 1076.
+ 1025.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/STSRtempo3.png, id=729, 481.8pt x 481.8pt>
+<Immagini/simulazioni/STSRtempo3.png, id=745, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/STSRtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo3.png used on input line
- 1077.
+ 1026.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-Overfull \vbox (2.98381pt too high) detected at line 1078
+Overfull \vbox (2.98381pt too high) detected at line 1027
  []
 
 
-Overfull \hbox (1.96349pt too wide) in paragraph at lines 1078--1078
+Overfull \hbox (1.96349pt too wide) in paragraph at lines 1027--1027
 [][] 
  []
 
-<Immagini/simulazioni/REALEtempo4.png, id=731, 481.8pt x 481.8pt>
+<Immagini/simulazioni/REALEtempo4.png, id=747, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/REALEtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo4.png used on input lin
-e 1079.
+e 1028.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/Dati_tempo4.png, id=733, 433.62pt x 361.35pt>
+<Immagini/simulazioni/Dati_tempo4.png, id=749, 433.62pt x 361.35pt>
 File: Immagini/simulazioni/Dati_tempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/Dati_tempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/Dati_tempo4.png used on input lin
-e 1080.
+e 1029.
 (pdftex.def)             Requested size: 68.40088pt x 61.29662pt.
 
-<Immagini/simulazioni/KRIGtempo4.png, id=735, 481.8pt x 481.8pt>
+<Immagini/simulazioni/KRIGtempo4.png, id=751, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/KRIGtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo4.png used on input line
- 1081.
+ 1030.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/TPStempo4.png, id=737, 481.8pt x 481.8pt>
+<Immagini/simulazioni/TPStempo4.png, id=753, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/TPStempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo4.png used on input line 
-1082.
+1031.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/SOAPtempo4.png, id=739, 481.8pt x 481.8pt>
+<Immagini/simulazioni/SOAPtempo4.png, id=755, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/SOAPtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo4.png used on input line
- 1083.
+ 1032.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni/STSRtempo4.png, id=741, 481.8pt x 481.8pt>
+<Immagini/simulazioni/STSRtempo4.png, id=757, 481.8pt x 481.8pt>
 File: Immagini/simulazioni/STSRtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo4.png used on input line
- 1084.
+ 1033.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
 
@@ -2061,7 +2054,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[38 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[36 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/simulazioni/REALEtempo1.png (PNG copy)> <C:/Users/Gab
 riele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/
 immagini/simulazioni/Dati_tempo1.png (PNG copy)> <C:/Users/Gabriele/Desktop/Uni
@@ -2102,20 +2095,20 @@ agini/simulazioni/TPStempo4.png> <C:/Users/Gabriele/Desktop/Università/LAUREA
 MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/simulazioni/SOAPtempo4.p
 ng> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/simulazioni/STSRtempo4.png>]
-<Immagini/Confronto_metodi_covar.png, id=789, 481.8pt x 481.8pt>
+<Immagini/Confronto_metodi_covar.png, id=805, 481.8pt x 481.8pt>
 File: Immagini/Confronto_metodi_covar.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi_covar.png>
 Package pdftex.def Info: Immagini/Confronto_metodi_covar.png used on input line
- 1104.
+ 1053.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/Confronto_metodi_beta.png, id=790, 481.8pt x 481.8pt>
+<Immagini/Confronto_metodi_beta.png, id=806, 481.8pt x 481.8pt>
 File: Immagini/Confronto_metodi_beta.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi_beta.png>
 Package pdftex.def Info: Immagini/Confronto_metodi_beta.png used on input line 
-1109.
+1058.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
 
@@ -2124,199 +2117,199 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[39
+[37
 
 
  <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
 Tutta la tesi/Immagini/Confronto_metodi_covar.png> <C:/Users/Gabriele/Desktop/U
 niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/Confro
 nto_metodi_beta.png>]
-Overfull \hbox (1.96349pt too wide) in paragraph at lines 1120--1120
+Overfull \hbox (1.96349pt too wide) in paragraph at lines 1069--1069
 [][] 
  []
 
-<Immagini/simulazioni_covar/REALEtempo1.png, id=800, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/REALEtempo1.png, id=815, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/REALEtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/REALEtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/REALEtempo1.png used on inp
-ut line 1120.
+ut line 1069.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<immagini/simulazioni_covar/Dati_tempo1.png, id=802, 433.62pt x 361.35pt>
+<immagini/simulazioni_covar/Dati_tempo1.png, id=817, 433.62pt x 361.35pt>
 File: immagini/simulazioni_covar/Dati_tempo1.png Graphic file (type png)
 
 <use immagini/simulazioni_covar/Dati_tempo1.png>
 Package pdftex.def Info: immagini/simulazioni_covar/Dati_tempo1.png used on inp
-ut line 1121.
+ut line 1070.
 (pdftex.def)             Requested size: 68.40088pt x 61.29662pt.
 
-<Immagini/simulazioni_covar/TPStempo1.png, id=804, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/TPStempo1.png, id=819, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/TPStempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/TPStempo1.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/TPStempo1.png used on input
- line 1122.
+ line 1071.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/SOAPtempo1.png, id=806, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/SOAPtempo1.png, id=821, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/SOAPtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/SOAPtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/SOAPtempo1.png used on inpu
-t line 1123.
+t line 1072.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/STSRtempo1.png, id=808, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/STSRtempo1.png, id=823, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/STSRtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/STSRtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/STSRtempo1.png used on inpu
-t line 1124.
+t line 1073.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-Overfull \vbox (2.98381pt too high) detected at line 1125
+Overfull \vbox (2.98381pt too high) detected at line 1074
  []
 
 
-Overfull \hbox (1.96349pt too wide) in paragraph at lines 1125--1125
+Overfull \hbox (1.96349pt too wide) in paragraph at lines 1074--1074
 [][] 
  []
 
-<Immagini/simulazioni_covar/REALEtempo2.png, id=810, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/REALEtempo2.png, id=825, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/REALEtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/REALEtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/REALEtempo2.png used on inp
-ut line 1126.
+ut line 1075.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/Dati_tempo2.png, id=812, 433.62pt x 361.35pt>
+<Immagini/simulazioni_covar/Dati_tempo2.png, id=827, 433.62pt x 361.35pt>
 File: Immagini/simulazioni_covar/Dati_tempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/Dati_tempo2.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/Dati_tempo2.png used on inp
-ut line 1127.
+ut line 1076.
 (pdftex.def)             Requested size: 68.40088pt x 61.29662pt.
 
-<Immagini/simulazioni_covar/TPStempo2.png, id=814, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/TPStempo2.png, id=829, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/TPStempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/TPStempo2.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/TPStempo2.png used on input
- line 1128.
+ line 1077.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/SOAPtempo2.png, id=816, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/SOAPtempo2.png, id=831, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/SOAPtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/SOAPtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/SOAPtempo2.png used on inpu
-t line 1129.
+t line 1078.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/STSRtempo2.png, id=818, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/STSRtempo2.png, id=833, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/STSRtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/STSRtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/STSRtempo2.png used on inpu
-t line 1130.
+t line 1079.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-Overfull \vbox (6.17026pt too high) detected at line 1131
+Overfull \vbox (6.17026pt too high) detected at line 1080
  []
 
 
-Overfull \hbox (2.12775pt too wide) in paragraph at lines 1131--1131
+Overfull \hbox (2.12775pt too wide) in paragraph at lines 1080--1080
 [][] 
  []
 
-<Immagini/simulazioni_covar/REALEtempo3.png, id=820, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/REALEtempo3.png, id=835, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/REALEtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/REALEtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/REALEtempo3.png used on inp
-ut line 1132.
+ut line 1081.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/Dati_tempo3.png, id=822, 433.62pt x 361.35pt>
+<Immagini/simulazioni_covar/Dati_tempo3.png, id=837, 433.62pt x 361.35pt>
 File: Immagini/simulazioni_covar/Dati_tempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/Dati_tempo3.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/Dati_tempo3.png used on inp
-ut line 1133.
+ut line 1082.
 (pdftex.def)             Requested size: 68.40088pt x 61.29662pt.
 
-<Immagini/simulazioni_covar/TPStempo3.png, id=824, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/TPStempo3.png, id=839, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/TPStempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/TPStempo3.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/TPStempo3.png used on input
- line 1134.
+ line 1083.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/SOAPtempo3.png, id=826, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/SOAPtempo3.png, id=841, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/SOAPtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/SOAPtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/SOAPtempo3.png used on inpu
-t line 1135.
+t line 1084.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/STSRtempo3.png, id=828, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/STSRtempo3.png, id=843, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/STSRtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/STSRtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/STSRtempo3.png used on inpu
-t line 1136.
+t line 1085.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-Overfull \vbox (2.98381pt too high) detected at line 1137
+Overfull \vbox (2.98381pt too high) detected at line 1086
  []
 
 
-Overfull \hbox (1.96349pt too wide) in paragraph at lines 1137--1137
+Overfull \hbox (1.96349pt too wide) in paragraph at lines 1086--1086
 [][] 
  []
 
-<Immagini/simulazioni_covar/REALEtempo4.png, id=830, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/REALEtempo4.png, id=845, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/REALEtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/REALEtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/REALEtempo4.png used on inp
-ut line 1138.
+ut line 1087.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/Dati_tempo4.png, id=832, 433.62pt x 361.35pt>
+<Immagini/simulazioni_covar/Dati_tempo4.png, id=847, 433.62pt x 361.35pt>
 File: Immagini/simulazioni_covar/Dati_tempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/Dati_tempo4.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/Dati_tempo4.png used on inp
-ut line 1139.
+ut line 1088.
 (pdftex.def)             Requested size: 68.40088pt x 61.29662pt.
 
-<Immagini/simulazioni_covar/TPStempo4.png, id=834, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/TPStempo4.png, id=849, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/TPStempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/TPStempo4.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/TPStempo4.png used on input
- line 1140.
+ line 1089.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/SOAPtempo4.png, id=836, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/SOAPtempo4.png, id=851, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/SOAPtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/SOAPtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/SOAPtempo4.png used on inpu
-t line 1141.
+t line 1090.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
-<Immagini/simulazioni_covar/STSRtempo4.png, id=838, 481.8pt x 481.8pt>
+<Immagini/simulazioni_covar/STSRtempo4.png, id=853, 481.8pt x 481.8pt>
 File: Immagini/simulazioni_covar/STSRtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni_covar/STSRtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni_covar/STSRtempo4.png used on inpu
-t line 1142.
+t line 1091.
 (pdftex.def)             Requested size: 68.40088pt x 61.12903pt.
 
 
@@ -2325,7 +2318,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[40 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[38 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/simulazioni_covar/REALEtempo1.png> <C:/Users/Gabriele
 /Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/immag
 ini/simulazioni_covar/Dati_tempo1.png (PNG copy)> <C:/Users/Gabriele/Desktop/Un
@@ -2364,7 +2357,7 @@ Capitolo 6.
 
 Underfull \vbox (badness 2846) has occurred while \output is active []
 
- [41
+ [39
 
 
 
@@ -2375,19 +2368,73 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42] <Immagini/Ven_poligoni.png, id=894, 481.8pt x 481.8pt>
+[40] <Immagini/Ven_poligoni.png, id=911, 481.8pt x 481.8pt>
 File: Immagini/Ven_poligoni.png Graphic file (type png)
 
 <use Immagini/Ven_poligoni.png>
-Package pdftex.def Info: Immagini/Ven_poligoni.png used on input line 1182.
+Package pdftex.def Info: Immagini/Ven_poligoni.png used on input line 1130.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/Ven_poligoniscelti.png, id=895, 481.8pt x 481.8pt>
+<Immagini/Ven_poligoniscelti.png, id=912, 481.8pt x 481.8pt>
 File: Immagini/Ven_poligoniscelti.png Graphic file (type png)
 
 <use Immagini/Ven_poligoniscelti.png>
-Package pdftex.def Info: Immagini/Ven_poligoniscelti.png used on input line 118
-7.
+Package pdftex.def Info: Immagini/Ven_poligoniscelti.png used on input line 113
+5.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[41 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Tutta la tesi/Immagini/Ven_poligoni.png (PNG copy)> <C:/Users/Gabriele/Deskt
+op/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/Ve
+n_poligoniscelti.png (PNG copy)>]
+<Immagini/Ven_Longitudine.png, id=924, 481.8pt x 481.8pt>
+File: Immagini/Ven_Longitudine.png Graphic file (type png)
+
+<use Immagini/Ven_Longitudine.png>
+Package pdftex.def Info: Immagini/Ven_Longitudine.png used on input line 1149.
+(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
+
+<Immagini/Ven_Latitudine.png, id=925, 481.8pt x 481.8pt>
+File: Immagini/Ven_Latitudine.png Graphic file (type png)
+
+<use Immagini/Ven_Latitudine.png>
+Package pdftex.def Info: Immagini/Ven_Latitudine.png used on input line 1150.
+(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
+
+<Immagini/Ven_Regione.png, id=926, 481.8pt x 481.8pt>
+File: Immagini/Ven_Regione.png Graphic file (type png)
+
+<use Immagini/Ven_Regione.png>
+Package pdftex.def Info: Immagini/Ven_Regione.png used on input line 1153.
+(pdftex.def)             Requested size: 230.39978pt x 230.39386pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[42 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Tutta la tesi/Immagini/Ven_Longitudine.png> <C:/Users/Gabriele/Desktop/Unive
+rsità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/Ven_Latitu
+dine.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUR
+EA/Latex/Tutta la tesi/Immagini/Ven_Regione.png>]
+File: Immagini/Ven_punti.png Graphic file (type png)
+ <use Immagini/Ven_punti.png>
+Package pdftex.def Info: Immagini/Ven_punti.png used on input line 1172.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+
+<Immagini/Ven_puntizoom.png, id=936, 481.8pt x 481.8pt>
+File: Immagini/Ven_puntizoom.png Graphic file (type png)
+
+<use Immagini/Ven_puntizoom.png>
+Package pdftex.def Info: Immagini/Ven_puntizoom.png used on input line 1177.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
 
@@ -2397,32 +2444,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [43 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/Tutta la tesi/Immagini/Ven_poligoni.png (PNG copy)> <C:/Users/Gabriele/Deskt
-op/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/Ve
-n_poligoniscelti.png (PNG copy)>]
-<Immagini/Ven_Longitudine.png, id=904, 481.8pt x 481.8pt>
-File: Immagini/Ven_Longitudine.png Graphic file (type png)
+ex/Tutta la tesi/Immagini/Ven_puntizoom.png (PNG copy)>]
+<Immagini/Repliche1.png, id=948, 481.8pt x 481.8pt>
+File: Immagini/Repliche1.png Graphic file (type png)
 
-<use Immagini/Ven_Longitudine.png>
-Package pdftex.def Info: Immagini/Ven_Longitudine.png used on input line 1201.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
+<use Immagini/Repliche1.png>
+Package pdftex.def Info: Immagini/Repliche1.png used on input line 1197.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/Ven_Latitudine.png, id=905, 481.8pt x 481.8pt>
-File: Immagini/Ven_Latitudine.png Graphic file (type png)
+<Immagini/Repliche2.png, id=949, 481.8pt x 481.8pt>
+File: Immagini/Repliche2.png Graphic file (type png)
 
-<use Immagini/Ven_Latitudine.png>
-Package pdftex.def Info: Immagini/Ven_Latitudine.png used on input line 1202.
-(pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
-
-<Immagini/Ven_Regione.png, id=906, 481.8pt x 481.8pt>
-File: Immagini/Ven_Regione.png Graphic file (type png)
-
-<use Immagini/Ven_Regione.png>
-Package pdftex.def Info: Immagini/Ven_Regione.png used on input line 1205.
-(pdftex.def)             Requested size: 230.39978pt x 230.39386pt.
-
-Underfull \vbox (badness 1852) has occurred while \output is active []
-
+<use Immagini/Repliche2.png>
+Package pdftex.def Info: Immagini/Repliche2.png used on input line 1202.
+(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2431,20 +2466,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [44 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/Tutta la tesi/Immagini/Ven_Longitudine.png> <C:/Users/Gabriele/Desktop/Unive
-rsità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/Ven_Latitu
-dine.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUR
-EA/Latex/Tutta la tesi/Immagini/Ven_Regione.png>]
-File: Immagini/Ven_punti.png Graphic file (type png)
- <use Immagini/Ven_punti.png>
-Package pdftex.def Info: Immagini/Ven_punti.png used on input line 1224.
+ex/Tutta la tesi/Immagini/Repliche1.png (PNG copy)> <C:/Users/Gabriele/Desktop/
+Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/Repli
+che2.png (PNG copy)>] <Immagini/Ven_triang.png, id=957, 481.8pt x 481.8pt>
+File: Immagini/Ven_triang.png Graphic file (type png)
+
+<use Immagini/Ven_triang.png>
+Package pdftex.def Info: Immagini/Ven_triang.png used on input line 1219.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
-<Immagini/Ven_puntizoom.png, id=916, 481.8pt x 481.8pt>
-File: Immagini/Ven_puntizoom.png Graphic file (type png)
+<Immagini/Ven_triangzoom.png, id=958, 481.8pt x 481.8pt>
+File: Immagini/Ven_triangzoom.png Graphic file (type png)
 
-<use Immagini/Ven_puntizoom.png>
-Package pdftex.def Info: Immagini/Ven_puntizoom.png used on input line 1229.
+<use Immagini/Ven_triangzoom.png>
+Package pdftex.def Info: Immagini/Ven_triangzoom.png used on input line 1224.
 (pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
 
 
@@ -2454,20 +2489,70 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [45 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/Tutta la tesi/Immagini/Ven_puntizoom.png (PNG copy)>]
-<Immagini/Repliche1.png, id=930, 481.8pt x 481.8pt>
-File: Immagini/Repliche1.png Graphic file (type png)
+ex/Tutta la tesi/Immagini/Ven_triang.png (PNG copy)> <C:/Users/Gabriele/Desktop
+/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/Ven_
+triangzoom.png (PNG copy)>]
+<Immagini/venezia_dati/Dati1997.png, id=972, 362.10281pt x 295.1025pt>
+File: Immagini/venezia_dati/Dati1997.png Graphic file (type png)
 
-<use Immagini/Repliche1.png>
-Package pdftex.def Info: Immagini/Repliche1.png used on input line 1249.
-(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+<use Immagini/venezia_dati/Dati1997.png>
+Package pdftex.def Info: Immagini/venezia_dati/Dati1997.png used on input line 
+1234.
+(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
 
-<Immagini/Repliche2.png, id=931, 481.8pt x 481.8pt>
-File: Immagini/Repliche2.png Graphic file (type png)
+<Immagini/venezia_dati/Dati1999.png, id=974, 362.10281pt x 295.1025pt>
+File: Immagini/venezia_dati/Dati1999.png Graphic file (type png)
 
-<use Immagini/Repliche2.png>
-Package pdftex.def Info: Immagini/Repliche2.png used on input line 1254.
-(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
+<use Immagini/venezia_dati/Dati1999.png>
+Package pdftex.def Info: Immagini/venezia_dati/Dati1999.png used on input line 
+1236.
+(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
+
+<Immagini/venezia_dati/Dati2001.png, id=976, 362.10281pt x 295.1025pt>
+File: Immagini/venezia_dati/Dati2001.png Graphic file (type png)
+
+<use Immagini/venezia_dati/Dati2001.png>
+Package pdftex.def Info: Immagini/venezia_dati/Dati2001.png used on input line 
+1238.
+(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
+
+<Immagini/venezia_dati/Dati2003.png, id=978, 362.10281pt x 295.1025pt>
+File: Immagini/venezia_dati/Dati2003.png Graphic file (type png)
+
+<use Immagini/venezia_dati/Dati2003.png>
+Package pdftex.def Info: Immagini/venezia_dati/Dati2003.png used on input line 
+1240.
+(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
+
+<Immagini/venezia_dati/Dati2005.png, id=980, 362.10281pt x 295.1025pt>
+File: Immagini/venezia_dati/Dati2005.png Graphic file (type png)
+
+<use Immagini/venezia_dati/Dati2005.png>
+Package pdftex.def Info: Immagini/venezia_dati/Dati2005.png used on input line 
+1242.
+(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
+
+<Immagini/venezia_dati/Dati2007.png, id=982, 362.10281pt x 295.1025pt>
+File: Immagini/venezia_dati/Dati2007.png Graphic file (type png)
+
+<use Immagini/venezia_dati/Dati2007.png>
+Package pdftex.def Info: Immagini/venezia_dati/Dati2007.png used on input line 
+1244.
+(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
+
+<Immagini/venezia_dati/Dati2009.png, id=984, 362.10281pt x 295.1025pt>
+File: Immagini/venezia_dati/Dati2009.png Graphic file (type png)
+
+<use Immagini/venezia_dati/Dati2009.png>
+Package pdftex.def Info: Immagini/venezia_dati/Dati2009.png used on input line 
+1246.
+(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
+File: Immagini/venezia_dati/Dati2011.png Graphic file (type png)
+
+<use Immagini/venezia_dati/Dati2011.png>
+Package pdftex.def Info: Immagini/venezia_dati/Dati2011.png used on input line 
+1248.
+(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2476,101 +2561,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [46 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/Tutta la tesi/Immagini/Repliche1.png (PNG copy)> <C:/Users/Gabriele/Desktop/
-Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/Repli
-che2.png (PNG copy)>] <Immagini/Ven_triang.png, id=938, 481.8pt x 481.8pt>
-File: Immagini/Ven_triang.png Graphic file (type png)
-
-<use Immagini/Ven_triang.png>
-Package pdftex.def Info: Immagini/Ven_triang.png used on input line 1271.
-(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
-
-<Immagini/Ven_triangzoom.png, id=939, 481.8pt x 481.8pt>
-File: Immagini/Ven_triangzoom.png Graphic file (type png)
-
-<use Immagini/Ven_triangzoom.png>
-Package pdftex.def Info: Immagini/Ven_triangzoom.png used on input line 1276.
-(pdftex.def)             Requested size: 165.60242pt x 165.59628pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[47 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/Tutta la tesi/Immagini/Ven_triang.png (PNG copy)> <C:/Users/Gabriele/Desktop
-/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/Ven_
-triangzoom.png (PNG copy)>]
-<Immagini/venezia_dati/Dati1997.png, id=948, 362.10281pt x 295.1025pt>
-File: Immagini/venezia_dati/Dati1997.png Graphic file (type png)
-
-<use Immagini/venezia_dati/Dati1997.png>
-Package pdftex.def Info: Immagini/venezia_dati/Dati1997.png used on input line 
-1286.
-(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
-
-<Immagini/venezia_dati/Dati1999.png, id=950, 362.10281pt x 295.1025pt>
-File: Immagini/venezia_dati/Dati1999.png Graphic file (type png)
-
-<use Immagini/venezia_dati/Dati1999.png>
-Package pdftex.def Info: Immagini/venezia_dati/Dati1999.png used on input line 
-1288.
-(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
-
-<Immagini/venezia_dati/Dati2001.png, id=952, 362.10281pt x 295.1025pt>
-File: Immagini/venezia_dati/Dati2001.png Graphic file (type png)
-
-<use Immagini/venezia_dati/Dati2001.png>
-Package pdftex.def Info: Immagini/venezia_dati/Dati2001.png used on input line 
-1290.
-(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
-
-<Immagini/venezia_dati/Dati2003.png, id=954, 362.10281pt x 295.1025pt>
-File: Immagini/venezia_dati/Dati2003.png Graphic file (type png)
-
-<use Immagini/venezia_dati/Dati2003.png>
-Package pdftex.def Info: Immagini/venezia_dati/Dati2003.png used on input line 
-1292.
-(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
-
-<Immagini/venezia_dati/Dati2005.png, id=956, 362.10281pt x 295.1025pt>
-File: Immagini/venezia_dati/Dati2005.png Graphic file (type png)
-
-<use Immagini/venezia_dati/Dati2005.png>
-Package pdftex.def Info: Immagini/venezia_dati/Dati2005.png used on input line 
-1294.
-(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
-
-<Immagini/venezia_dati/Dati2007.png, id=958, 362.10281pt x 295.1025pt>
-File: Immagini/venezia_dati/Dati2007.png Graphic file (type png)
-
-<use Immagini/venezia_dati/Dati2007.png>
-Package pdftex.def Info: Immagini/venezia_dati/Dati2007.png used on input line 
-1296.
-(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
-
-<Immagini/venezia_dati/Dati2009.png, id=960, 362.10281pt x 295.1025pt>
-File: Immagini/venezia_dati/Dati2009.png Graphic file (type png)
-
-<use Immagini/venezia_dati/Dati2009.png>
-Package pdftex.def Info: Immagini/venezia_dati/Dati2009.png used on input line 
-1298.
-(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
-File: Immagini/venezia_dati/Dati2011.png Graphic file (type png)
-
-<use Immagini/venezia_dati/Dati2011.png>
-Package pdftex.def Info: Immagini/venezia_dati/Dati2011.png used on input line 
-1300.
-(pdftex.def)             Requested size: 161.9989pt x 132.02489pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[48 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/venezia_dati/Dati1997.png> <C:/Users/Gabriele/Desktop
 /Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/vene
 zia_dati/Dati1999.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE
@@ -2582,65 +2572,68 @@ ti2005.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LA
 UREA/Latex/Tutta la tesi/Immagini/venezia_dati/Dati2007.png> <C:/Users/Gabriele
 /Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immag
 ini/venezia_dati/Dati2009.png>]
-<Immagini/venezia_dati/PL1997.png, id=975, 350.81062pt x 294.34969pt>
+<Immagini/venezia_dati/PL1997.png, id=999, 350.81062pt x 294.34969pt>
 File: Immagini/venezia_dati/PL1997.png Graphic file (type png)
 
 <use Immagini/venezia_dati/PL1997.png>
-Package pdftex.def Info: Immagini/venezia_dati/PL1997.png used on input line 13
-07.
+Package pdftex.def Info: Immagini/venezia_dati/PL1997.png used on input line 12
+55.
 (pdftex.def)             Requested size: 161.9989pt x 135.92798pt.
 
-<Immagini/venezia_dati/PL1999.png, id=977, 350.81062pt x 294.34969pt>
+<Immagini/venezia_dati/PL1999.png, id=1001, 350.81062pt x 294.34969pt>
 File: Immagini/venezia_dati/PL1999.png Graphic file (type png)
 
 <use Immagini/venezia_dati/PL1999.png>
-Package pdftex.def Info: Immagini/venezia_dati/PL1999.png used on input line 13
-09.
+Package pdftex.def Info: Immagini/venezia_dati/PL1999.png used on input line 12
+57.
 (pdftex.def)             Requested size: 161.9989pt x 135.92798pt.
 
-<Immagini/venezia_dati/PL2001.png, id=979, 350.81062pt x 294.34969pt>
+<Immagini/venezia_dati/PL2001.png, id=1003, 350.81062pt x 294.34969pt>
 File: Immagini/venezia_dati/PL2001.png Graphic file (type png)
 
 <use Immagini/venezia_dati/PL2001.png>
-Package pdftex.def Info: Immagini/venezia_dati/PL2001.png used on input line 13
-11.
+Package pdftex.def Info: Immagini/venezia_dati/PL2001.png used on input line 12
+59.
 (pdftex.def)             Requested size: 161.9989pt x 135.92798pt.
 
-<Immagini/venezia_dati/PL2003.png, id=981, 350.81062pt x 294.34969pt>
+<Immagini/venezia_dati/PL2003.png, id=1005, 350.81062pt x 294.34969pt>
 File: Immagini/venezia_dati/PL2003.png Graphic file (type png)
 
 <use Immagini/venezia_dati/PL2003.png>
-Package pdftex.def Info: Immagini/venezia_dati/PL2003.png used on input line 13
-13.
+Package pdftex.def Info: Immagini/venezia_dati/PL2003.png used on input line 12
+61.
 (pdftex.def)             Requested size: 161.9989pt x 135.92798pt.
 
-<Immagini/venezia_dati/PL2005.png, id=983, 350.81062pt x 294.34969pt>
+<Immagini/venezia_dati/PL2005.png, id=1007, 350.81062pt x 294.34969pt>
 File: Immagini/venezia_dati/PL2005.png Graphic file (type png)
 
 <use Immagini/venezia_dati/PL2005.png>
-Package pdftex.def Info: Immagini/venezia_dati/PL2005.png used on input line 13
-15.
+Package pdftex.def Info: Immagini/venezia_dati/PL2005.png used on input line 12
+63.
 (pdftex.def)             Requested size: 161.9989pt x 135.92798pt.
 
-<Immagini/venezia_dati/PL2007.png, id=985, 350.81062pt x 294.34969pt>
+<Immagini/venezia_dati/PL2007.png, id=1009, 350.81062pt x 294.34969pt>
 File: Immagini/venezia_dati/PL2007.png Graphic file (type png)
 
 <use Immagini/venezia_dati/PL2007.png>
-Package pdftex.def Info: Immagini/venezia_dati/PL2007.png used on input line 13
-17.
+Package pdftex.def Info: Immagini/venezia_dati/PL2007.png used on input line 12
+65.
 (pdftex.def)             Requested size: 161.9989pt x 135.92798pt.
 
-<Immagini/venezia_dati/PL2009.png, id=987, 350.81062pt x 294.34969pt>
+<Immagini/venezia_dati/PL2009.png, id=1011, 350.81062pt x 294.34969pt>
 File: Immagini/venezia_dati/PL2009.png Graphic file (type png)
 
 <use Immagini/venezia_dati/PL2009.png>
-Package pdftex.def Info: Immagini/venezia_dati/PL2009.png used on input line 13
-19.
+Package pdftex.def Info: Immagini/venezia_dati/PL2009.png used on input line 12
+67.
 (pdftex.def)             Requested size: 161.9989pt x 135.92798pt.
+
+<Immagini/venezia_dati/PL2011.png, id=1013, 350.81062pt x 294.34969pt>
 File: Immagini/venezia_dati/PL2011.png Graphic file (type png)
- <use Immagini/venezia_dati/PL2011.png>
-Package pdftex.def Info: Immagini/venezia_dati/PL2011.png used on input line 13
-21.
+
+<use Immagini/venezia_dati/PL2011.png>
+Package pdftex.def Info: Immagini/venezia_dati/PL2011.png used on input line 12
+69.
 (pdftex.def)             Requested size: 161.9989pt x 135.92798pt.
 
 
@@ -2649,7 +2642,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[49 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[47 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/venezia_dati/PL1997.png> <C:/Users/Gabriele/Desktop/U
 niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezi
 a_dati/PL1999.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TES
@@ -2660,11 +2653,13 @@ Immagini/venezia_dati/PL2003.png> <C:/Users/Gabriele/Desktop/Università/LAUREA
 > <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex
 /Tutta la tesi/Immagini/venezia_dati/PL2007.png> <C:/Users/Gabriele/Desktop/Uni
 versità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_
-dati/PL2009.png>] <Immagini/Matplot.png, id=1002, 534.99875pt x 433.62pt>
+dati/PL2009.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI 
+DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_dati/PL2011.png>]
+<Immagini/Matplot.png, id=1027, 534.99875pt x 433.62pt>
 File: Immagini/Matplot.png Graphic file (type png)
 
 <use Immagini/Matplot.png>
-Package pdftex.def Info: Immagini/Matplot.png used on input line 1328.
+Package pdftex.def Info: Immagini/Matplot.png used on input line 1276.
 (pdftex.def)             Requested size: 216.0022pt x 175.07259pt.
 
 
@@ -2673,38 +2668,38 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[50 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[48 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/Matplot.png>]
-<Immagini/comuni_selezionati.png, id=1013, 481.8pt x 481.8pt>
+<Immagini/comuni_selezionati.png, id=1038, 481.8pt x 481.8pt>
 File: Immagini/comuni_selezionati.png Graphic file (type png)
 
 <use Immagini/comuni_selezionati.png>
-Package pdftex.def Info: Immagini/comuni_selezionati.png used on input line 135
-3.
+Package pdftex.def Info: Immagini/comuni_selezionati.png used on input line 130
+1.
 (pdftex.def)             Requested size: 161.9989pt x 161.99396pt.
 
-Overfull \hbox (1.79305pt too wide) in paragraph at lines 1345--1357
+Overfull \hbox (1.79305pt too wide) in paragraph at lines 1293--1305
 []\OT1/pplx/m/n/10.95 Successivamente sar[]a rap-pre-sen-ta-ta an-che la sti-ma
  del-l'e-vo-lu-zio-ne tem-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1345--1357
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1345--1357
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1345--1357
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1345--1357
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1305
 
  []
 
@@ -2714,70 +2709,70 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[51 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[49 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/comuni_selezionati.png (PNG copy)>]
-<Immagini/venezia_senza_covariate/Anno1997.png, id=1019, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno1997.png, id=1043, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno1997.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno1997.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno1997.png used on 
-input line 1363.
+input line 1311.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno1998.png, id=1020, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno1998.png, id=1044, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno1998.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno1998.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno1998.png used on 
-input line 1364.
+input line 1312.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno1999.png, id=1021, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno1999.png, id=1045, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno1999.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno1999.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno1999.png used on 
-input line 1365.
+input line 1313.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2000.png, id=1022, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2000.png, id=1046, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2000.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2000.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2000.png used on 
-input line 1366.
+input line 1314.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2001.png, id=1023, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2001.png, id=1047, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2001.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2001.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2001.png used on 
-input line 1367.
+input line 1315.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2002.png, id=1024, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2002.png, id=1048, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2002.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2002.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2002.png used on 
-input line 1368.
+input line 1316.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2003.png, id=1025, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2003.png, id=1049, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2003.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2003.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2003.png used on 
-input line 1369.
+input line 1317.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2004.png, id=1026, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2004.png, id=1050, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2004.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2004.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2004.png used on 
-input line 1370.
+input line 1318.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
 
@@ -2786,7 +2781,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[52 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[50 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/venezia_senza_covariate/Anno1997.png (PNG copy)> <C:/
 Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta
  la tesi/Immagini/venezia_senza_covariate/Anno1998.png (PNG copy)> <C:/Users/Ga
@@ -2802,60 +2797,60 @@ A MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_senza_covariat
 e/Anno2003.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGIST
 RALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_senza_covariate/Anno20
 04.png (PNG copy)>]
-<Immagini/venezia_senza_covariate/Anno2005.png, id=1032, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2005.png, id=1056, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2005.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2005.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2005.png used on 
-input line 1375.
+input line 1323.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2006.png, id=1033, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2006.png, id=1057, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2006.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2006.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2006.png used on 
-input line 1376.
+input line 1324.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2007.png, id=1034, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2007.png, id=1058, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2007.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2007.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2007.png used on 
-input line 1377.
+input line 1325.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2008.png, id=1035, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2008.png, id=1059, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2008.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2008.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2008.png used on 
-input line 1378.
+input line 1326.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2009.png, id=1036, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2009.png, id=1060, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2009.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2009.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2009.png used on 
-input line 1379.
+input line 1327.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2010.png, id=1037, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2010.png, id=1061, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2010.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2010.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2010.png used on 
-input line 1380.
+input line 1328.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_senza_covariate/Anno2011.png, id=1038, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Anno2011.png, id=1062, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Anno2011.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Anno2011.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Anno2011.png used on 
-input line 1381.
+input line 1329.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
 Overfull \vbox (18.04967pt too high) has occurred while \output is active []
@@ -2867,7 +2862,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[53 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[51 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/venezia_senza_covariate/Anno2005.png (PNG copy)> <C:/
 Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta
  la tesi/Immagini/venezia_senza_covariate/Anno2006.png (PNG copy)> <C:/Users/Ga
@@ -2881,57 +2876,54 @@ a_senza_covariate/Anno2009.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universit
 covariate/Anno2010.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAURE
 A MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_senza_covariat
 e/Anno2011.png (PNG copy)>]
-<Immagini/venezia_senza_covariate/Cavarzere.png, id=1043, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Cavarzere.png, id=1068, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Cavarzere.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Cavarzere.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Cavarzere.png used on
- input line 1392.
+ input line 1340.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/venezia_senza_covariate/Venezia.png, id=1044, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Venezia.png, id=1069, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Venezia.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Venezia.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Venezia.png used on i
-nput line 1396.
+nput line 1344.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/venezia_senza_covariate/Cavallino-Treporti.png, id=1045, 481.8pt x 48
+<Immagini/venezia_senza_covariate/Cavallino-Treporti.png, id=1070, 481.8pt x 48
 1.8pt>
 File: Immagini/venezia_senza_covariate/Cavallino-Treporti.png Graphic file (typ
 e png)
  <use Immagini/venezia_senza_covariate/Cavallino-Treporti.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Cavallino-Treporti.pn
-g used on input line 1400.
+g used on input line 1348.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/venezia_senza_covariate/Jesolo.png, id=1046, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Jesolo.png, id=1071, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Jesolo.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Jesolo.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Jesolo.png used on in
-put line 1404.
+put line 1352.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/venezia_senza_covariate/Caorle.png, id=1047, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Caorle.png, id=1072, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Caorle.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Caorle.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Caorle.png used on in
-put line 1408.
+put line 1356.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/venezia_senza_covariate/Bibione.png, id=1048, 481.8pt x 481.8pt>
+<Immagini/venezia_senza_covariate/Bibione.png, id=1073, 481.8pt x 481.8pt>
 File: Immagini/venezia_senza_covariate/Bibione.png Graphic file (type png)
 
 <use Immagini/venezia_senza_covariate/Bibione.png>
 Package pdftex.def Info: Immagini/venezia_senza_covariate/Bibione.png used on i
-nput line 1412.
+nput line 1360.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
-
-Underfull \vbox (badness 1231) has occurred while \output is active []
-
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2939,7 +2931,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[54 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[52 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/venezia_senza_covariate/Cavarzere.png> <C:/Users/Gabr
 iele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/I
 mmagini/venezia_senza_covariate/Venezia.png> <C:/Users/Gabriele/Desktop/Univers
@@ -2956,68 +2948,68 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[55] <Immagini/venezia_con_covariate/Anno1997.png, id=1074, 481.8pt x 481.8pt>
+[53] <Immagini/venezia_con_covariate/Anno1997.png, id=1099, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno1997.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno1997.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno1997.png used on in
-put line 1429.
+put line 1383.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno1998.png, id=1075, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno1998.png, id=1100, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno1998.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno1998.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno1998.png used on in
-put line 1430.
+put line 1384.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno1999.png, id=1076, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno1999.png, id=1101, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno1999.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno1999.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno1999.png used on in
-put line 1431.
+put line 1385.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2000.png, id=1077, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2000.png, id=1102, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2000.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2000.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2000.png used on in
-put line 1432.
+put line 1386.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2001.png, id=1078, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2001.png, id=1103, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2001.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2001.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2001.png used on in
-put line 1433.
+put line 1387.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2002.png, id=1079, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2002.png, id=1104, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2002.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2002.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2002.png used on in
-put line 1434.
+put line 1388.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2003.png, id=1080, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2003.png, id=1105, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2003.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2003.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2003.png used on in
-put line 1435.
+put line 1389.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2004.png, id=1081, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2004.png, id=1106, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2004.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2004.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2004.png used on in
-put line 1436.
+put line 1390.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
 
@@ -3026,75 +3018,75 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[56 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
-ex/Tutta la tesi/Immagini/venezia_con_covariate/Anno1997.png> <C:/Users/Gabriel
-e/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Imma
-gini/venezia_con_covariate/Anno1998.png (PNG copy)> <C:/Users/Gabriele/Desktop/
-Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venez
-ia_con_covariate/Anno1999.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universit�
-�/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_con_cov
-ariate/Anno2000.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA M
-AGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_con_covariate/Ann
-o2001.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/
-TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_con_covariate/Anno2002.png 
-(PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LA
-UREA/Latex/Tutta la tesi/Immagini/venezia_con_covariate/Anno2003.png (PNG copy)
-> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex
-/Tutta la tesi/Immagini/venezia_con_covariate/Anno2004.png (PNG copy)>]
-<Immagini/venezia_con_covariate/Anno2005.png, id=1088, 481.8pt x 481.8pt>
+[54 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Tutta la tesi/Immagini/venezia_con_covariate/Anno1997.png (PNG copy)> <C:/Us
+ers/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta l
+a tesi/Immagini/venezia_con_covariate/Anno1998.png (PNG copy)> <C:/Users/Gabrie
+le/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Imm
+agini/venezia_con_covariate/Anno1999.png (PNG copy)> <C:/Users/Gabriele/Desktop
+/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/vene
+zia_con_covariate/Anno2000.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universit
+à/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_con_co
+variate/Anno2001.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA 
+MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_con_covariate/An
+no2002.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE
+/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_con_covariate/Anno2003.png
+ (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI L
+AUREA/Latex/Tutta la tesi/Immagini/venezia_con_covariate/Anno2004.png (PNG copy
+)>] <Immagini/venezia_con_covariate/Anno2005.png, id=1112, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2005.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2005.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2005.png used on in
-put line 1441.
+put line 1395.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2006.png, id=1089, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2006.png, id=1113, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2006.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2006.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2006.png used on in
-put line 1442.
+put line 1396.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2007.png, id=1090, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2007.png, id=1114, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2007.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2007.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2007.png used on in
-put line 1443.
+put line 1397.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2008.png, id=1091, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2008.png, id=1115, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2008.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2008.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2008.png used on in
-put line 1444.
+put line 1398.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2009.png, id=1092, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2009.png, id=1116, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2009.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2009.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2009.png used on in
-put line 1445.
+put line 1399.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2010.png, id=1093, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2010.png, id=1117, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2010.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2010.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2010.png used on in
-put line 1446.
+put line 1400.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
-<Immagini/venezia_con_covariate/Anno2011.png, id=1094, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Anno2011.png, id=1118, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Anno2011.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Anno2011.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Anno2011.png used on in
-put line 1447.
+put line 1401.
 (pdftex.def)             Requested size: 154.79668pt x 140.01248pt.
 
 Overfull \vbox (18.04967pt too high) has occurred while \output is active []
@@ -3106,7 +3098,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[57 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[55 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/venezia_con_covariate/Anno2005.png (PNG copy)> <C:/Us
 ers/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta l
 a tesi/Immagini/venezia_con_covariate/Anno2006.png (PNG copy)> <C:/Users/Gabrie
@@ -3120,54 +3112,57 @@ MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_con_covariate/An
 no2010.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE
 /TESI DI LAUREA/Latex/Tutta la tesi/Immagini/venezia_con_covariate/Anno2011.png
  (PNG copy)>]
-<Immagini/venezia_con_covariate/Cavarzere.png, id=1100, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Cavarzere.png, id=1123, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Cavarzere.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Cavarzere.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Cavarzere.png used on i
-nput line 1458.
+nput line 1412.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/venezia_con_covariate/Venezia.png, id=1101, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Venezia.png, id=1124, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Venezia.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Venezia.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Venezia.png used on inp
-ut line 1462.
+ut line 1416.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/venezia_con_covariate/Cavallino-Treporti.png, id=1102, 481.8pt x 481.
+<Immagini/venezia_con_covariate/Cavallino-Treporti.png, id=1125, 481.8pt x 481.
 8pt>
 File: Immagini/venezia_con_covariate/Cavallino-Treporti.png Graphic file (type 
 png)
  <use Immagini/venezia_con_covariate/Cavallino-Treporti.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Cavallino-Treporti.png 
-used on input line 1466.
+used on input line 1420.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/venezia_con_covariate/Jesolo.png, id=1103, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Jesolo.png, id=1126, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Jesolo.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Jesolo.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Jesolo.png used on inpu
-t line 1470.
+t line 1424.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/venezia_con_covariate/Caorle.png, id=1104, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Caorle.png, id=1127, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Caorle.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Caorle.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Caorle.png used on inpu
-t line 1474.
+t line 1428.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
 
-<Immagini/venezia_con_covariate/Bibione.png, id=1105, 481.8pt x 481.8pt>
+<Immagini/venezia_con_covariate/Bibione.png, id=1128, 481.8pt x 481.8pt>
 File: Immagini/venezia_con_covariate/Bibione.png Graphic file (type png)
 
 <use Immagini/venezia_con_covariate/Bibione.png>
 Package pdftex.def Info: Immagini/venezia_con_covariate/Bibione.png used on inp
-ut line 1478.
+ut line 1432.
 (pdftex.def)             Requested size: 111.59912pt x 111.59828pt.
+
+Underfull \vbox (badness 1231) has occurred while \output is active []
+
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3175,7 +3170,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[58 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+[56 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
 ex/Tutta la tesi/Immagini/venezia_con_covariate/Cavarzere.png> <C:/Users/Gabrie
 le/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Tutta la tesi/Imm
 agini/venezia_con_covariate/Venezia.png> <C:/Users/Gabriele/Desktop/Università
@@ -3192,45 +3187,45 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[59] [60
+[57] [58
 
 ]
 Capitolo 7.
-[61]
+[59]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[62]
-Underfull \hbox (badness 1275) in paragraph at lines 1523--1524
+[60]
+Underfull \hbox (badness 1275) in paragraph at lines 1469--1470
 []\OT1/pplx/m/n/10.95 D. Ba-tes, M. Mae-chler, \OT1/pplx/m/it/10.95 Ma-trix: Sp
 ar-se and Den-se Ma-trix Clas-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1541--1542
+Underfull \hbox (badness 10000) in paragraph at lines 1487--1488
 []\OT1/pplx/m/n/10.95 M. Loe-cher, \OT1/pplx/m/it/10.95 Rgoo-gle-Maps: Over-lay
 s on Goo-gle
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1541--1542
+Underfull \hbox (badness 10000) in paragraph at lines 1487--1488
 \OT1/pplx/m/it/10.95 map ti-les in R\OT1/pplx/m/n/10.95 , R pac-ka-ge ver-sion 
 1.2.0.6, 2014.
  []
 
-[63
+[61
 
 ]
-Underfull \hbox (badness 2573) in paragraph at lines 1553--1554
+Underfull \hbox (badness 2573) in paragraph at lines 1499--1500
 []\OT1/pplx/m/n/10.95 E.J. Pe-be-sma, \OT1/pplx/m/it/10.95 Mul-ti-va-ria-ble ge
 o-sta-ti-stics in S: the gstat pac-ka-ge\OT1/pplx/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 1559--1560
+Underfull \hbox (badness 1603) in paragraph at lines 1505--1506
 \OT1/pplx/m/it/10.95 pu-ting\OT1/pplx/m/n/10.95 , R Foun-da-tion for Sta-ti-sti
 -cal Com-pu-ting, Vien-na, 2013,
  []
@@ -3241,8 +3236,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[64]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1601.
+[62]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1548.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3250,13 +3245,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[65]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1601.
+[63]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1548.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 Tutta la tesi\Tutta la tesi.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1601.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1601.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1548.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1548.
 
 Package rerunfilecheck Info: File `Tutta*la*tesi.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
@@ -3264,16 +3259,16 @@ Package rerunfilecheck Info: File `Tutta*la*tesi.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1601.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1548.
  ) 
 Here is how much of TeX's memory you used:
- 11328 strings out of 493921
- 181794 string characters out of 3144868
- 250013 words of memory out of 3000000
- 14007 multiletter control sequences out of 15000+200000
+ 11333 strings out of 493921
+ 181906 string characters out of 3144868
+ 250331 words of memory out of 3000000
+ 14014 multiletter control sequences out of 15000+200000
  61790 words of font info for 160 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,19n,75p,1539b,482s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,19n,75p,1382b,482s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
@@ -3289,9 +3284,9 @@ e1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/pa
 latino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/u
 plbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "Tutta la tesi.pdf" (81 pages, 6498131 bytes).
+Output written on "Tutta la tesi.pdf" (79 pages, 6537262 bytes).
 PDF statistics:
- 1284 PDF objects out of 1440 (max. 8388607)
- 245 named destinations out of 1000 (max. 500000)
- 1388 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1293 PDF objects out of 1440 (max. 8388607)
+ 242 named destinations out of 1000 (max. 500000)
+ 1393 words of extra memory for PDF output out of 10000 (max. 10000000)
 

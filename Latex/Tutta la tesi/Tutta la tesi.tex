@@ -70,7 +70,6 @@
 
 \begin{document}
 
-
 %\newgeometry{left=2cm,right=2cm,top=3cm,bottom=3cm}
 \begin{changemargin}{-1.3cm}{-3cm}
 \thispagestyle{empty}
@@ -136,14 +135,14 @@
 \chapter*{Sommario}
 \label{Cap:sommario}
 \thispagestyle{empty}
-Il presente lavoro di tesi propone un modello separabile per la regressione di dati distribuiti in spazio e tempo. Il modello è particolarmente adatto allo studio di problemi con domini spaziali complessi, con concavità o buchi. La capacità di tener conto della geometria spaziale rappresenta un forte vantaggio per questo modello, che sarà paragonato alle altre tecniche già esistenti, comprese quelle che non presentano tale particolarità. Oltre allo sviluppo analitico è stato creato un algoritmo e un codice R per il calcolo computazionale della stima. La principale applicazione studiata in questa tesi riguarda la produzione di rifiuti urbani pro capite nei comuni della provincia di Venezia tra il 1997 e il 2011, con un'attenzione speciale agli effetti legati al turismo.
+Il presente lavoro di tesi propone un modello separabile per la regressione di dati distribuiti in spazio e tempo. Il modello è particolarmente adatto allo studio di problemi con domini spaziali complessi, con concavità o buchi. La capacità di tener conto della geometria spaziale rappresenta un forte vantaggio per questo modello, che sarà paragonato alle altre tecniche già esistenti per lo studio di dati spazio-temporali. Oltre al modello è stato sviluppato un algoritmo e un codice R per il calcolo computazionale della stima. La principale applicazione studiata in questa tesi riguarda la produzione di rifiuti urbani pro capite nei comuni della provincia di Venezia tra il 1997 e il 2011, con una particolare attenzione agli effetti legati al turismo.
 
 \newpage
 \thispagestyle{empty}
 \chapter*{Abstract}
 \label{Cap:abstract}
 \thispagestyle{empty}
-The present work of thesis proposes a separable model for the regression of data distributed in space and time. The model is particularly appropriate for the study of problems with complex spatial domains, with concavities or holes. The ability to consider the spatial geometry is a strong advantage of this model, which will be compared to other existing techniques, including those that haven't this peculiarity. In addition to the analitical definition, an algorithm and an R code for the computation of the estimate has been created. The main application studied in this thesis regards the production of urban waste per capita in the municipalities of Venice province between 1997 and 2011, with a special attention to the effects related to tourism.
+The present work of thesis proposes a separable model for the regression of data distributed in space and time. The model is particularly appropriate for the study of problems with complex spatial domains, with concavities or holes. The ability to consider the spatial geometry is a strong advantage of this model, which will be compared to other existing techniques for the study of spatio-temporal data. In addition to the model, an algorithm and an R code for the computation of the estimate has been developed. The main application studied in this thesis regards the production of urban waste per capita in the municipalities of Venice province between 1997 and 2011, with a particular attention to the effects related to tourism.
 \newpage
 \thispagestyle{empty}
 
@@ -177,41 +176,29 @@ Se mi fermo un attimo a pensare mi rendo conto che spesso basta poco per essere 
 \thispagestyle{empty}
 \mainmatter
 
-\chapter*{Introduzione}
+\chapter{Introduzione}
 \label{Cap:intro}
-\addcontentsline{toc}{chapter}{Introduzione}
-\markboth{Introduzione}{Introduzione}
-\thispagestyle{empty}
 
-Il presente lavoro di tesi si occupa della costruzione e dell'applicazione di un modello statistico per la regressione di dati tempo-varianti e distribuiti su un dominio spaziale. Questa ricerca è motivata dalla necessità di avere un buon metodo d'analisi per i dati riguardanti la produzione dei rifiuti urbani pro capite nei comuni della provincia di Venezia. I dati sono stati raccolti ed elaborati dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto (Arpav) e sono disponibili sul sito di Open Data Veneto\footnote{\href{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}}. Le misurazioni sono state registrate per comune. In fig.~\ref{fig:intro} è stata tracciata la descrizione del dominio con i punti in cui i dati sono localizzati. Il problema presenta anche la dipendenza dal tempo, poiché i dati sono riportati annualmente dal 1997 al 2011.
+Il presente lavoro di tesi si occupa della costruzione e dell'applicazione di un modello di regressione per dati varianti in spazio e in tempo. Questo studio è motivato dalla necessità di avere un buon metodo d'analisi per dati distribuiti su un dominio spaziale complesso, con concavità o buchi. Il modello sarà applicato ai dati riguardanti la produzione dei rifiuti urbani pro capite nella provincia di Venezia tra il 1997 al 2011, raccolti dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto (Arpav) e disponibili sul sito di Open Data Veneto\footnote{\href{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}{http://dati.veneto.it/dataset/produzione-annua-di-rifiuti-urbani-totale-e-pro-capite-1997-2011}}. In fig.~\ref{fig:intro} è rappresentata la descrizione del dominio con i comuni e le località turistiche di rilievo.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.46\textwidth]{Immagini/Ven_punti.png}   
+	\includegraphics[width=0.44\textwidth]{Immagini/Ven_punti.png}   
    	\caption{Dominio spaziale e locazioni dei dati}
 	\label{fig:intro}
 \end{figure}
 \newpage
 \begin{figure}[t]
 	\centering
-	\subfigure[Rifiuti pro capite nel 2011]
-   {
-	\includegraphics[width=0.46\textwidth]{Immagini/venezia_dati/Dati2011.png}   
-   }
-	\subfigure[Posti letto pro capite nel 2011]
-   {
-	\includegraphics[width=0.46\textwidth]{Immagini/venezia_dati/PL2011.png}
-   }
-	\caption{Rifiuti e posti letto pro capite}
+	\includegraphics[width=0.52\textwidth]{Immagini/venezia_dati/Dati2011.png}
+   \caption{Rifiuti pro capite nel 2011}
 	\label{fig:intro2}
 \end{figure}
-La produzione di rifiuti urbani sarà certamente influenzata anche dal turismo. Per questo motivo sarà considerato nel modello anche questo effetto, non trascurabile nella stima, attraverso il numero di posti letto pro capite nei comuni (maggiori dettagli saranno forniti in seguito). In fig.~\ref{fig:intro2} sono visualizzati i valori dei rifiuti e dei posti letto pro capite nel 2011, anno più recente nel dataset, come esempio di ciò che si ha a disposizione.
+In fig.~\ref{fig:intro2} sono visualizzati i valori dei rifiuti sul territorio nel 2011. L'analisi di questi dati potrebbe essere influenzata dagli effetti legati al turismo nella regione, pertanto il modello dovrà tener conto anche di questa possibilità.
 
-Il problema della produzione dei rifiuti nella provincia di Venezia richiede la formulazione di un modello per l'analisi funzionale di dati definiti in spazio e tempo particolarmente adatto. Sono già disponibili in letteratura tecniche per dati di questo tipo ma non tutte sono adatte al trattamento di questi dati. La geometria del dominio, infatti, è complessa. In alcuni punti essa ha una definizione per nulla grossolana e presenta una grossa concavità nella laguna di Venezia, oltre alle numerose isole. Pertanto non si può evitare di considerare le particolarità del dominio spaziale.
+Il problema della produzione dei rifiuti nella provincia di Venezia richiede la formulazione di un modello appropriato. Infatti, in questo caso la geometria del dominio è complessa a causa della concavità dovuta alla laguna di Venezia o della presenza di isole. 
 
-Si consideri ad esempio quanto riportato in fig.~\ref{fig:intro3}. Sono stati evidenziati i comuni di Quarto d'Altino e Cavallino-Treporti, tra di loro non eccessivamente distanti in linea d'aria ma con valori di produzione dei rifiuti decisamente diversi (come si può notare dagli andamenti temporali). Se i dati fossero analizzati con una tecnica che non tiene conto della geometria spaziale i due comuni sarebbero ritenuti vicini tra loro, quando in realtà si ha una grande separazione dovuta alla laguna di Venezia. Tecniche che trascurano la forma del dominio non sono appropriate poiché porterebbero ad una cattiva stima del fenomeno.
-\newpage
-\begin{figure}[t]
+\begin{figure}[h]
 	\centering
 	\subfigure[Comuni selezionati]
    {
@@ -224,44 +211,21 @@ Si consideri ad esempio quanto riportato in fig.~\ref{fig:intro3}. Sono stati ev
 	\caption{Differenza tra i dati nei comuni di Cavallino-Treporti e Quarto d'Altino}
 	\label{fig:intro3}
 \end{figure}
-In questa tesi sarà illustrato il modello statistico \textit{Spatio-Temporal Regression model with PDE penalization} (ST-PDE) per la regressione di dati distribuiti in spazio e tempo. Questo modello si dimostrerà in grado di assolvere pienamente questo compito e di fornire una buona stima dell'andamento della produzione di rifiuti urbani nella provincia di Venezia. La funzione sarà stimata dalla minimizzazione di un funzionale di penalizzazione con termini differenziali, quindi sarà garantita anche la regolarità della stima. La funzione stimata sarà espressa secondo opportune funzioni di base (elementi finiti in spazio, B-splines in tempo) capaci di tener conto della geometria spaziale. Tramite l'aggiunta di un termine con covariata sarà possibile introdurre anche dell'effetto del turismo. Dalla modellizzazione matematica è stato sviluppato un algoritmo e il conseguente codice R per il calcolo della soluzione numerica del problema di stima. 
 
-Il lavoro di tesi sarà strutturato come segue. Nel capitolo~\ref{cap:panoramica} è riportato una panoramica dei metodi già esistenti in letteratura. Nel capitolo~\ref{cap:modello} è presentata la costruzione del modello matematico ST-PDE, seguita dallo sviluppo del codice R descritto nel capitolo~\ref{cap:Codice}. Nel capitolo~\ref{cap:domC} si hanno i primi risultati, derivanti dall'applicazione del modello e del codice R a simulazioni eseguite sul dominio a forma di C descritto in \cite{art:ramsay} e \cite{art:wood}, per il quale è possibile valutare la bontà delle stime ottenute grazie alla perfetta conoscenza del fenomeno reale in ogni punto e in ogni istante. Nel capitolo~\ref{cap:confronto} il modello ST-PDE sarà paragonato ad altri metodi già esistenti attraverso il confronto degli errori. Nel capitolo~\ref{cap:rifiuti} si ha l'applicazione allo studio della produzione dei rifiuti nella provincia di Venezia e infine, nel capitolo~\ref{cap:conclusione}, sono raccolte le conclusioni e i possibili sviluppi futuri.
+Si consideri ad esempio quanto riportato in fig.~\ref{fig:intro3}. Sono stati evidenziati i comuni di Quarto d'Altino e Cavallino-Treporti, tra di loro non distanti in linea d'aria ma con valori di produzione di rifiuti decisamente diversi (come si può notare dagli andamenti temporali). Se i dati fossero analizzati con una tecnica che non tiene conto della geometria spaziale i due comuni sarebbero ritenuti vicini tra loro, quando in realtà si ha una grande separazione dovuta alla laguna di Venezia. Tecniche che trascurano la forma del dominio non sono appropriate poiché porterebbero ad una cattiva stima del fenomeno.
+
+Sono già disponibili modelli per l'analisi di dati distribuiti in spazio e tempo ma non tutti sono adatti al caso di domini spaziali influenti. Una referenza classica per dati di questa tipologia è rappresentata da \cite{art:cressie}. Esiste una letteratura più recente che nasce dall'ambito dell'analisi di dati funzionali (descritto ampiamente in \cite{art:ramsaysilverman}) e che studia, tramite kriging, curve tempo-varianti con dipendenza spaziale (\cite{art:caballero}, \cite{art:menafoglio2} e \cite{art:menafoglio1}). Questa tecnica, però, non considera la forma del dominio spaziale. Altre proposte sono esposte in \cite{art:augustin} e \cite{art:marra}, attraverso metodi e applicazioni per l'analisi di dati spazio-temporali su domini irregolari. L'approccio seguito sarà simile a quello sviluppato da queste pubblicazioni.
+
+In questa tesi sarà illustrato il modello di Regressione Spazio-Temporale con Penalizzazioni Differenziali (ST-PDE). Questo modello si dimostrerà in grado di assolvere pienamente questo compito e di fornire una buona stima dell'andamento della produzione di rifiuti urbani nella provincia di Venezia. La funzione sarà stimata dalla minimizzazione di un funzionale di penalizzazione con termini differenziali per garantire anche la regolarità della stima. La funzione stimata sarà espressa secondo opportune funzioni di base (elementi finiti in spazio, B-splines in tempo) capaci di tener conto della geometria spaziale. Tramite l'aggiunta di un termine con covariata sarà possibile introdurre anche l'effetto del turismo. Dalla modellizzazione matematica è stato sviluppato un algoritmo e il conseguente codice R per il calcolo della soluzione numerica del problema di stima. 
+
+Per sviluppare il modello ST-PDE è stata presa ispirazione non soltanto da quanto fatto in \cite{art:augustin} e \cite{art:marra}, ma anche da ciò che si ritrova in \cite{art:sangalli}, dove è studiato un modello solamente spaziale e definito su un dominio con le stesse caratteristiche che saranno studiate in questa tesi (definizione complessa, concavità o buchi). Per poter stimare il fenomeno in analisi è introdotto un funzionale di penalizzazione con termini differenziali. Il problema di minimo è risolto attraverso il passaggio ad una forma variazionale che, a seguito dell'introduzione di un'opportuna espansione in elementi finiti, è ridotta ad un problema discreto da cui si ricava la stima grazie alla risoluzione di un sistema lineare. L'articolo \cite{art:sangalli} non contempla la variazione temporale ma può essere considerato il punto di partenza per il modello ST-PDE. Non sarà ricavata una forma variazionale per la stima della soluzione, ma l'attenzione alla geometria del problema e l'uso degli elementi finiti rappresentano un forte legame con il modello ST-PDE.
+
+Il lavoro di tesi è strutturato come segue. Nel capitolo~\ref{cap:modello} è presentata la costruzione del modello matematico ST-PDE, seguita dallo sviluppo del codice R descritto nel capitolo~\ref{cap:Codice}. Nel capitolo~\ref{cap:domC} si hanno i primi risultati, derivanti dall'applicazione del modello e del codice R a simulazioni eseguite sul dominio a forma di C descritto in \cite{art:ramsay} e \cite{art:wood}, per il quale è possibile valutare la bontà delle stime ottenute grazie alla perfetta conoscenza del fenomeno reale in ogni punto e in ogni istante. Nel capitolo~\ref{cap:confronto} il modello ST-PDE è paragonato ad altri metodi già esistenti attraverso il confronto degli errori. Nel capitolo~\ref{cap:rifiuti} si ha l'applicazione allo studio della produzione dei rifiuti nella provincia di Venezia e infine, nel capitolo~\ref{cap:conclusione}, sono raccolte le conclusioni e i possibili sviluppi futuri.
 \newpage
 \thispagestyle{empty}
 
-\chapter{Panoramica sui modelli già esistenti}
-\label{cap:panoramica}
 
-Il modello ST-PDE si collega all'ambito dell'analisi funzionale di dati distribuiti in spazio e tempo. Sia $\bm p = (x,y) \in \Omega$ il vettore con le coordinate del punto spaziale, $t \in [T_1,T_2]$ l'istante temporale e $z \in \mathbb{R}$ la variabile risposta. Le metodologie classiche di analisi funzionale, esposte ad esempio in \cite{art:ramsaysilverman}, possono essere applicate per la stima di un dato tempo-variante. Tuttavia in questo caso si ha anche la dipendenza spaziale, pertanto la funzione da stimare sarà:
-$$
-z=f(\bm p,t) \ .
-$$
-Secondo quanto è solitamente fatto per problemi di analisi di dati funzionali, sarà necessario minimizzare un funzionale di penalizzazione che contenga non soltanto gli scarti tra valori osservati e stimati ma anche termini differenziali per la regolarità della stima.
-
-La letteratura su modelli spazio-temporali è già ampia, come è esposto in \cite{art:cressie}. Tuttavia le metodologie già disponibili presentano tra loro delle differenze. Non tutti i modelli sono adatti ad essere applicati alla stima della produzione di rifiuti urbani nella provincia di Venezia a causa della forte dipendenza dalla geometria del problema. Per questo motivo, dopo la definizione del modello ST-PDE, sarà dedicato anche uno spazio al al confronto delle stime dai tra i diversi metodi a disposizione su dati appositamente generati.
-
-Ad esempio, il kriging spazio-temporale, descritto in \cite{art:caballero}, \cite{art:menafoglio2} e \cite{art:menafoglio1}, non è in grado di tener conto del dominio spaziale. Questa tecnica sarà considerata negli studi di simulazione e nei confronti ma non potrà garantire risultati ottimali per questo tipo di analisi.
-
-Le pubblicazioni \cite{art:augustin} e \cite{art:marra} studiano metodi per l'analisi di dati distribuiti in spazio e tempo. Questo lavori, però, si basano su modelli che possono assumere una forma più complessa, ipotizzando che una funzione del valore atteso della risposta (nel loro caso il logaritmo) possa essere spiegato da uno o più termini funzionali (quest'ultima possibilità è riportata solo in \cite{art:augustin}):
-$$
-\log(\mathbb{E}[z_i])= f_1+f_2+ \ldots f_N .
-$$
-Ognuna di queste funzioni può avere dipendenza solo spaziale, solo temporale o entrambe. Queste complicazioni rispetto al modello che sarà studiato da ST-PDE possono essere risolte molto velocemente ipotizzando che la risposta dipenda da un solo termine spazio-temporale. Le tecniche proposte dagli autori sono un ottimo termine di paragone per il modello ST-PDE. La loro applicabilità per un problema con forte dipendenza dalla forma del dominio, come sarà spiegato più nel dettaglio nel cap.~\ref{cap:confronto}, dipende dalla scelta delle funzioni di base. 
-
-Particolare attenzione deve essere posta riguardo a quanto fatto in \cite{art:sangalli}. In questa pubblicazione è studiato un modello solamente spaziale, definito su un dominio $\Omega$. Tale dominio può assumere le stesse caratteristiche che saranno studiate in questa tesi: definizione complessa, concavità o buchi. La risposta è espressa dal seguente modello:
-$$
-z=f(\bm{p})
-$$
-Per poter stimare la funzione $f$ è introdotto il seguente funzionale di penalizzazione da minimizzare:
-$$
-J_{\lambda }(f(\bm p))=\sum_{i=1}^n \bigl( z_{i} - f(\bm p_i) \bigr)^2 \ + \\
-+\lambda\int_{\Omega} \Bigl( \Delta(  f(\bm p)  ) \Bigr)^2 d \bm{p} \ 
-$$
-dove $\{ z_{i};i=1, \ldots , n\}$ sono i valori della risposta osservati nei punti $\{\bm p_i;i=1, \ldots , n\}$.
-Il problema di minimo è risolto attraverso il passaggio ad una forma variazionale che, a seguito dell'introduzione di un'opportuna espansione in elementi finiti per $f$, è ridotta ad un problema discreto da cui si ricava la stima grazie alla risoluzione di un sistema lineare. L'articolo \cite{art:sangalli} non contempla la variazione temporale per $f$ ma può essere considerato il punto di partenza per il modello ST-PDE. Non sarà ricavata una forma variazionale per la stima della soluzione, ma l'attenzione alla geometria del problema e l'uso degli elementi finiti rappresentano un forte legame con il modello ST-PDE.
-
-\chapter{Presentazione del modello ST-PDE}
+\chapter{Modello di regressione spazio-temporale con regolarizzazioni differenziali}
 \label{cap:modello}
 In questo capitolo è descritto nel dettaglio il modello ST-PDE per l'analisi di dati distribuiti in spazio e tempo ed è calcolata la soluzione al problema di stima.
 
@@ -270,9 +234,7 @@ In questo capitolo è descritto nel dettaglio il modello ST-PDE per l'analisi di
 
 \subsection{Dati e modello}
 
-Sia $\{\bm p_i = (x_i,y_i); i=1, \ldots , n\}$ un insieme di $n$ punti spaziali in un dominio limitato $\Omega \subset \mathbb R^2$ e sia $\{t_j ; j=1, \ldots , m\}$ un insieme di $m$ istanti temporali in un intervallo $[T_1,T_2]\subset \mathbb R$. In questi punti ed istanti si osservano i dati: siano quindi $\{ z_{ij};i=1, \ldots , n; j=1, \ldots , m \}$ i valori della variabile risposta nel punto $\bm p_i$ al tempo $t_j$.
-
-Come già riportato nel capitolo precedente, l'obiettivo sarà la stima di un campo spazio-temporale che rappresenti il fenomeno da cui sono stati raccolti i dati. Quindi si ipotizza che le osservazioni $z_{ij}$ siano generate da tale campo spazio-temporale con l'aggiunta di rumore:
+Sia $\{\bm p_i = (x_i,y_i); i=1, \ldots , n\}$ un insieme di $n$ punti spaziali in un dominio limitato $\Omega \subset \mathbb R^2$ e sia $\{t_j ; j=1, \ldots , m\}$ un insieme di $m$ istanti temporali in un intervallo $[T_1,T_2]\subset \mathbb R$. In questi punti ed istanti si osservano i dati: siano quindi $\{ z_{ij};i=1, \ldots , n; j=1, \ldots , m \}$ i valori della variabile risposta nel punto $\bm p_i$ al tempo $t_j$. Si ipotizza che le osservazioni $z_{ij}$ siano generate da un campo spazio-temporale con l'aggiunta di rumore:
 \begin{equation}
 \label{eq:modellobase}
 z_{ij}=f(\bm p_i,t_j)+\varepsilon_{ij}\ \ \ \ i = 1,\ldots,n\ \ j=1,\ldots,m \ \ ,
@@ -284,45 +246,34 @@ dove $\{ \varepsilon_{ij}; i = 1,\ldots ,n; j=1,\ldots m\}$ sono residui indipen
 \subsection{Definizione delle funzioni di base}
 \label{subs:basi}
 
-Dall'analisi della letteratura già disponibile per modelli simili, anche se solo spaziali, si può dedurre che non è possibile dare una stima della funzione se essa non risulta espressa in un'espansione di opportune funzioni di base. Infatti l'infinita possibilità di variazione di una funzione in un qualsiasi spazio funzionale non renderebbe possibile una stima computazionale del risultato. L'approccio scelto per la costruzione di $f(\bm p,t)$ si basa sulla generalizzazione delle espansioni in funzione di base dei casi puramente spaziali o temporali.
-
+Dall'analisi della letteratura già disponibile per modelli simili, anche se solo spaziali, si può dedurre che non è possibile dare una stima della funzione se essa non risulta espressa in un'espansione di opportune funzioni di base. Infatti l'infinita possibilità di variazione di una funzione in un qualsiasi spazio funzionale non renderebbe possibile una stima computazionale del risultato. L'approccio scelto per la costruzione di $f(\bm p,t)$ si basa sulla separabilità del modello in spazio e tempo e sull'implementazione con basi separabili.
 Siano 
 $$
-\{ \varphi_k(t);k=1, \ldots , M \} \subset H^2([T_1,T_2])
+\{ \varphi_k(t);k=1, \ldots , M \}
 $$
 un insieme di $M$ funzioni di base definite sull'intervallo temporale $[T_1,T_2]$ e
 $$
-\{ \psi_l(\bm p);l=1, \ldots , N \} \subset H^1(\Omega)
+\{ \psi_l(\bm p);l=1, \ldots , N \}
 $$
 in insieme di $N$ funzioni di base definite sul dominio spaziale $\Omega$. Con le combinazioni lineari
 $$
 \sum_{k=1}^M a_k\varphi_k(t) \qquad \sum_{l=1}^N b_l\psi_l(\bm p)
 $$
-è possibile costruire, rispettivamente, funzioni varianti soltanto in tempo e in spazio. La funzione $f(\bm p,t)$ nasce ipotizzando che i coefficienti costanti delle espansioni in base precedenti possano variare secondo la variabile che non è espressa dalle funzioni di base:
-\begin{equation} 
-\label{eq:f_temp}
-f(\bm p, t) = \sum_{k=1}^M a_k(\bm p)\varphi_k(t)
-\end{equation}
-\begin{equation}
-\label{eq:f_space}
-f(\bm p, t) = \sum_{l=1}^N b_l(t)\psi_l(\bm p) \ .
-\end{equation}
-Si ha quindi che $\{ a_k(\bm p);k=1, \ldots , M \}$ sono i coefficienti spazio-varianti dell'espansione in basi di temporali e $\{ b_l(t);l=1, \ldots , N \}$ sono i coefficienti tempo-varianti dell'espansione in basi spaziali. In questa costruzione la funzione $f(\bm p,t)$ possiede entrambe queste rappresentazioni.
-
-Sono state ricavate due espressioni equivalenti per $f$ ma, come si potrà notare in seguito, questo è coerente (sarà ricavata un'espressione più specifica). Per una corretta definizione del funzionale di penalizzazione $J_{\bm \lambda }(f(\bm p,t))$ è necessario introdurre, per tali coefficienti, le seguenti condizioni:
+è possibile costruire, rispettivamente, funzioni varianti soltanto in tempo e in spazio. La funzione $f(\bm p,t)$ nasce ipotizzando che i coefficienti costanti delle espansioni in base precedenti possano variare secondo la variabile che non è espressa dalle funzioni di base come segue:
+\begin{eqnarray}
+f(\bm p, t) &=& \sum_{k=1}^M a_k(\bm p)\varphi_k(t) \label{eq:f_temp} \\
+&=& \sum_{l=1}^N b_l(t)\psi_l(\bm p) \label{eq:f_space} \\ 
+&=& \sum_{l=1}^N \sum_{k=1}^M c_{lk}\psi_l(\bm p)\varphi_k(t) \label{eq:basisexp}\ .
+\end{eqnarray}
+Si ha quindi che $\{ a_k(\bm p);k=1, \ldots , M \}$ sono i coefficienti spazio-varianti dell'espansione in basi di temporali e $\{ b_l(t);l=1, \ldots , N \}$ sono i coefficienti tempo-varianti dell'espansione in basi spaziali, a loro volta esprimibili come espansione di funzioni di base:
 $$
-a_k(\bm p) \in H_{n_0}^2(\Omega) \qquad \forall k=1, \ldots , M
+a_k(\bm p)=\sum_{l=1}^N c_{lk}\psi_l(\bm p) \qquad b_l(t)=\sum_{k=1}^M c_{lk}\varphi_k(t) \ .
 $$
-e
-$$
-b_l(t) \in H^2([T_1,T_2]) \qquad \forall l=1, \ldots , N \ ,
-$$
-dove $H^2_{n_0}(\Omega) = \{h \in H^2(\Omega) | \partial _{\nu}h=0 \mbox{ su } \partial \Omega\}$, spazio incluso in $H^2(\Omega)$ con condizioni di Neumann alla frontiera. Altre condizioni possono essere poste (a patto che garantiscano l'applicabilità del funzionale di penalizzazione) ma, per semplicità, saranno ipotizzate queste.
-
+Pertanto, il campo spazio-temporale $f(\bm p,t)$ è la combinazione lineare di tutti i possibili prodotti incrociati tra le basi in spazio e le basi in tempo. 
 
 \subsection{Funzionale di penalizzazione}
 
-Per poter stimare $f(\bm p,t)$ si introduce la minimizzazione di un funzionale non formato solamente dagli scarti quadratici tra le osservazioni e le stime negli $nm$ punti disponibili. Sono inclusi in esso anche altri due termini, che derivano dalla penalizzazione di opportune derivate in spazio e tempo per poter garantire regolarità alla funzione. Analogamente a quanto fatto il sez.~\ref{subs:basi}, per costruire tale funzionale si considerano innanzitutto i problemi marginali in spazio e tempo.
+Per poter stimare $f(\bm p,t)$ si introduce la minimizzazione di un funzionale formato non solamente dagli scarti quadratici tra le osservazioni e le stime negli $nm$ punti disponibili, ma anche da altri due termini, che derivano dalla penalizzazione di opportune derivate in spazio e tempo per poter garantire regolarità alla funzione. Analogamente a quanto fatto il sez.~\ref{subs:basi}, per costruire tale funzionale si considerano innanzitutto i problemi marginali in spazio e tempo.
 
 Per garantire una buona regolarità spaziale alla funzione è necessario penalizzare il quadrato della norma $L^2$ del laplaciano (dove per laplaciano si intenderà, da ora in avanti, rispetto alle variabili in spazio $\bm p$). La stessa scelta è stata fatta in altre pubblicazioni come \cite{art:ramsay}, \cite{art:sangalli} e \cite{art:wood}. Quindi se $g(\bm p): \Omega \mapsto \mathbb{R}$ è una funzione spazio-variante, allora si può definire la penalizzazione della regolarità in spazio tramite:
 $$
@@ -332,28 +283,26 @@ Analogamente in tempo si avrà la penalizzazione del quadrato della norma $L^2$ 
 $$
 J_T\left(h(t)\right)=\int_{T_1}^{T_2} \Bigl( \frac{\partial^2   h(t)   }{\partial t ^2} \Bigr)^2 dt\ .
 $$
-Grazie alle ipotesi di regolarità introdotte in sez.~\ref{subs:basi} tali penalizzazioni possono essere applicate ai coefficienti degli sviluppi delle eq.~\ref{eq:f_temp} e \ref{eq:f_space}. Per questo motivo si definisce:
-\begin{multline*}
-J_{\bm \lambda }(f(\bm p,t))=\sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\bm p_i,t_j) \bigr)^2 \ + \\
-+\lambda_S  \sum_{k=1}^M J_S( a_k(\bm p)) + \lambda_T \sum_{l=1}^N J_T ( b_l(t)) \ ,
-\end{multline*}
-cioè
+Grazie alle ipotesi di regolarità introdotte in sez.~\ref{subs:basi} tali penalizzazioni possono essere applicate ai coefficienti degli sviluppi delle eq.~\eqref{eq:f_temp} e \eqref{eq:f_space} (in analogia a quanto fatto in \cite{art:augustin} e \cite{art:marra}). Si ritrovano i seguenti termini per la regolarità delle derivate:
+\begin{equation*}
+\sum_{k=1}^M J_S( a_k(\bm p)) \qquad \sum_{l=1}^N J_T ( b_l(t)) 
+\end{equation*}
+che uniti al termine di scarti quadratici tra valori osservati e stimati, costituiscono il funzionale di penalizzazione di riferimento per questo modello:
 \begin{multline}
 \label{eq:penalizzdisc}
 J_{\bm \lambda }(f(\bm p,t))=\sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\bm p_i,t_j) \bigr)^2 \ + \\
-+\lambda_S  \sum_{k=1}^M \int_{\Omega} \Bigl( \Delta(  a_k(\bm p)  ) \Bigr)^2 d \bm p + \lambda_T \sum_{l=1}^N\int_{T_1}^{T_2} \Bigl( \frac{\partial^2   b_l(t)   }{\partial t ^2} \Bigr)^2 dt \ ,
++\lambda_S  \sum_{k=1}^M \int_{\Omega} \Bigl( \Delta(  a_k(\bm p)  ) \Bigr)^2 d \bm p + \lambda_T \sum_{l=1}^N\int_{T_1}^{T_2} \Bigl( \frac{\partial^2   b_l(t)   }{\partial t ^2} \Bigr)^2 dt \ .
 \end{multline}
-dove $\lambda_S>0$ e $\lambda_T>0$ sono i parametri di smoothing che stabiliscono il peso della penalizzazione della regolarità della funzione rispettivamente in spazio e tempo. Se troppo alti, la funzione stimata tenderà ad essere quasi liscia e distante dai dati. Al contrario, se troppo bassi, la funzione stimata sarà vicina all'interpolazione dei dati e per nulla liscia. Sebbene quest'ultimo caso possa sembrare molto buono poiché vicino ai valori osservati, non è ciò che si desidera, poiché crea una stima troppo dipendente dai dati e spesso con variazioni eccessivamente repentine. Un corretto bilanciamento di questi casi garantisce una buona descrizione del fenomeno.
-
+I termini $\lambda_S>0$ e $\lambda_T>0$ sono i parametri di smoothing che stabiliscono il peso delle penalizzazioni rispettivamente in spazio e tempo. Se troppo alti, la funzione stimata tenderà ad essere quasi liscia e distante dai dati. Al contrario, se troppo bassi, la funzione stimata sarà l'interpolazione dei dati e per nulla liscia. Sebbene quest'ultimo caso possa sembrare molto buono poiché vicino ai valori osservati, non è ciò che si desidera, poiché crea una stima troppo dipendente dai dati e spesso con variazioni eccessivamente repentine. Un corretto bilanciamento di questi casi garantisce una buona descrizione del fenomeno. Pertanto, prima della stima della soluzione, sarà necessaria una analisi per la ricerca di buoni valori per $\lambda_S$ e $\lambda_T$, come sarà descritto in sez.~\ref{sez:GCV}.
 
 
 \subsection{Modello ideale}
-Il funzionale di penalizzazione riportato in eq.~\ref{eq:penalizzdisc} è il risultato di una costruzione derivante dalle penalizzazioni marginali in spazio e tempo, ma idealmente si può ricondurre al seguente:
+Il funzionale di penalizzazione riportato in eq.~\eqref{eq:penalizzdisc} è il risultato di una costruzione derivante dalle penalizzazioni marginali in spazio e tempo, ma idealmente si può ricondurre al seguente:
 \begin{multline}
 \label{eq:Jfunc_cont}
 \tilde J_{\bm \lambda }(f) = \sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\bm p_i,t_j) \bigr)^2 \ + \\+\   \lambda_S \int_{T_1}^{T_2} \int_\Omega \Bigl( \Delta f(\bm p, t)  \Bigr)^2 d\bm p\ dt \ +\  \lambda_T \int_\Omega \int_{T_1}^{T_2} \Bigl( \frac{\partial^2 f(\bm p, t) }{\partial t ^2} \Bigr)^2 dt\ d\bm p ,
 \end{multline}
-dove $J_S$ e $J_T$ sono applicati direttamente alla funzione $f(\bm p, t)$ e sono integrati, rispettivamente, sull'intervallo spaziale e il dominio spaziale. Se si applica la forma di $f(\bm p,t)$ dell'eq.~\ref{eq:f_temp} nel termine di penalizzazione del laplaciano in spazio, allora si può ritrovare:
+dove $J_S$ e $J_T$ sono applicati direttamente alla funzione $f(\bm p, t)$ e sono integrati, rispettivamente, sull'intervallo temporale e sul dominio spaziale. Se si applica la forma di $f(\bm p,t)$ dell'eq.~\eqref{eq:f_temp} nel termine di penalizzazione del laplaciano in spazio, allora si può ritrovare:
 \begin{equation} 
 \label{eq:espansione_funzinf_t}
 \begin{split}
@@ -365,9 +314,9 @@ dove $J_S$ e $J_T$ sono applicati direttamente alla funzione $f(\bm p, t)$ e son
 &=\sum_{k=1}^M \sum_{h=1}^M \int_\Omega   \Delta a_k(\bm p) \Delta a_h(\bm p)d\bm p \ \int_{T_1}^{T_2} \varphi_k(t)\varphi_h(t)   \ dt .
 \end{split}
 \end{equation}
-Questo termine è equivalente a quello proposto in eq.~\ref{eq:penalizzdisc} se le basi temporali siano ortonormali, poiché in tal caso l'ultimo integrale in eq.~\ref{eq:espansione_funzinf_t} vale 1 se $k=h$ e 0 altrimenti.
+Questo termine è equivalente a quello proposto in eq.~\eqref{eq:penalizzdisc} se le basi temporali sono ortonormali, poiché in tal caso l'ultimo integrale in eq.~\eqref{eq:espansione_funzinf_t} vale 1 se $k=h$ e 0 altrimenti.
 
-Allo stesso modo, se si sostituisce la forma di $f(\bm p,t)$ dell'eq.~\ref{eq:f_space} nella penalizzazione ideale dell'eq.~\ref{eq:Jfunc_cont} si ottiene:
+Allo stesso modo, se si sostituisce la forma di $f(\bm p,t)$ dell'eq.~\eqref{eq:f_space} nella penalizzazione ideale dell'eq.~\eqref{eq:Jfunc_cont} si ottiene:
 \begin{equation} 
 \label{eq:espansione_funzinf_sp}
 \begin{split}
@@ -379,46 +328,45 @@ Allo stesso modo, se si sostituisce la forma di $f(\bm p,t)$ dell'eq.~\ref{eq:f_
 &=\sum_{l=1}^N \sum_{h=1}^N  \int_{T_1}^{T_2}  \frac{ \partial^2b_l(t)}{\partial t ^2}\frac{ \partial^2b_h(t)}{\partial t ^2}dt\  \int_\Omega \psi_l(\bm p)  \psi_h(\bm p)    d\bm p .
 \end{split}
 \end{equation}
-La stessa osservazione del caso precedente vale anche ora: se le basi in spazio sono ortonormali, si ritrova la penalizzazione proposta in eq.~\ref{eq:penalizzdisc}. 
+La stessa osservazione del caso precedente vale anche ora: se le basi in spazio sono ortonormali, si ritrova la penalizzazione proposta in eq.~\eqref{eq:penalizzdisc}. 
 
-In questo lavoro di tesi, quindi, è proposto un modello che risulterà essere computazionalmente semplice ma non perfettamente equivalente a questo modello ideale. In generale le funzioni di base non sono ortonormali. Comunque sia, gli insiemi di basi che saranno adattati sono sparsi, cioè i termini $ \int_{T_1}^{T_2} \varphi_k(t)\varphi_l(t)\ dt $ e $\int_\Omega \psi_l(\bm p)  \psi_k(\bm p)d\bm p$ sono diversi da zero solo per poche coppie di indici.
-
-
+In questo lavoro di tesi, quindi, è proposto un modello che risulterà essere computazionalmente semplice ma non perfettamente equivalente a questo modello ideale. In generale le funzioni di base non sono ortonormali. Comunque, gli insiemi di basi che saranno adattati sono sparsi, cioè i termini $ \int_{T_1}^{T_2} \varphi_k(t)\varphi_h(t)\ dt $ e $\int_\Omega \psi_l(\bm p)  \psi_h(\bm p)d\bm p$ sono diversi da zero solo per poche coppie di indici $(k,h)$ e $(l,h)$ rispettivamente.
 
 
 
+\subsection{Discretizzazione dei termini di penalizzazione}
+Così come è scritto in eq.~\eqref{eq:penalizzdisc}, il funzionale $J_{\bm \lambda }(f(\bm{p},t))$ non è ancora adatto ad essere trattato computazionalmente. Per poter avere una forma che renda semplice la stima i termini di penalizzazione di $J_{\bm \lambda }(f(\bm{p},t))$ saranno nuovamente discretizzati. 
 
-\subsection{Discretizzazione dei termini di penalizzazione delle derivate}
-Così come è scritto in eq.~\ref{eq:penalizzdisc}, il funzionale $J_{\bm \lambda }(f(\bm{p},t))$ non è ancora adatto ad essere trattato computazionalmente. Per poter avere una forma che renda semplice la stima, $f(\bm{p},t)$ e $J_{\bm \lambda }(f(\bm{p},t))$ saranno nuovamente discretizzati. 
-
-Il primo caso da trattare è l'integrale del laplaciano dei coefficienti spazio-varianti dell'eq.~\ref{eq:f_temp} in modo analogo a quanto fatto in \cite{art:sangalli}. Fissato $k$, l'integrale
-$$
+Il primo caso da trattare è l'integrale del laplaciano dei coefficienti spazio-varianti dell'eq.~\eqref{eq:f_temp} (un approccio analogo è descritto in \cite{art:sangalli}). Fissato $k$, l'integrale
+\begin{equation}
 \int_{\Omega} \Bigl( \Delta(  a_k(\bm p)  ) \Bigr)^2 d \bm p
-$$
+\label{eq:formadoppia}
+\end{equation}
 può essere semplificato introducendo la funzione $g_k(\bm p) \in L^2(\Omega)$ come segue:
 \begin{equation}
 \label{eq:ps1}
 \int_\Omega g_k(\bm{p}) v(\bm{p}) d \bm{p}= \int_\Omega \Delta (a_k(\bm p)) v(\bm p) d \bm{p}\qquad \forall v(\bm{p}) \in L^2(\Omega) \ .
 \end{equation}
-Non è difficile verificare che, se $g_k(\bm p)$ rispetta l'equazione precedente, per l'arbitrarietà di $v$ allora:
+Non è difficile verificare che, se $g_k(\bm p)$ rispetta l'equazione precedente con $v$ arbitraria, allora:
 \begin{equation}
 \label{eq:ps2}
 \int_{\Omega} \Bigl( \Delta(  a_k(\bm p)  ) \Bigr)^2 d \bm p = \int_{\Omega}  \Delta(  a_k(\bm p))g_k(\bm p)d \bm p \ .
 \end{equation}
-Applicando la la formula di Green e tenendo conto delle condizioni di Neumann per $a_k(\bm p)$, si possono semplificare gli integrali eliminando l'uso del laplaciano:
-$$
+Applicando la la formula di Green e imponendo in maniera naturale le condizioni di Neumann alla frontiera di $\Omega$ per $a_k(\bm p)$ (altre condizioni sono possibili, si veda \cite{art:sangalli}), si possono semplificare gli integrali:
+\begin{equation}
 \int_{\Omega}  \Delta(  a_k(\bm p))g_k(\bm p)d \bm p \ = -\int_{\Omega} \nabla  a_k(\bm p)\nabla g_k(\bm p)d \bm p
-$$
-$$
+\label{eq:formasing1}
+\end{equation}
+\begin{equation}
 \int_{\Omega}  \Delta(  a_k(\bm p))v(\bm p)d \bm p \ = -\int_{\Omega} \nabla  a_k(\bm p)\nabla v(\bm p)d \bm p \ .
+\label{eq:formasing2}
+\end{equation}
+Per poter calcolare analiticamente questi integrali è necessario introdurre l'uso delle basi spaziali $\{ \psi_l(\bm p);l=1, \ldots , N \}$ per le funzioni per $g_k$ e $v$. Siano quindi:
 $$
-Per poter calcolare analiticamente questi integrali è necessario introdurre l'uso delle basi spaziali $\{ \psi_l(\bm p);l=1, \ldots , N \}$ per le funzioni $a_k$, $g_k$ e $v$. Siano quindi:
-$$
-a_k(\bm p)=\sum_{l=1}^N c_{lk}\psi_l(\bm p) \qquad 
 g_k(\bm p)=\sum_{l=1}^N g_{lk}\psi_l(\bm p) \qquad
 v(\bm p)=\sum_{l=1}^N v_{l}\psi_l(\bm p) \ .
 $$
-Per semplificare le notazioni saranno usati i seguenti vettori:
+Per semplificare le notazioni saranno usati i vettori:
 $$
 \bm c_k =
 \begin{bmatrix}
@@ -435,7 +383,7 @@ g_{1k} \\ g_{2k} \\ \hdots \\ g_{Nk}
 v_1 \\ v_2 \\ \hdots \\ v_N
 \end{bmatrix} 
 $$
-e gli analoghi per le funzioni di base e le loro derivate parziali:
+e i seguenti per le funzioni di base e le loro derivate parziali:
 $$
 \bm \psi =
 \begin{bmatrix}
@@ -458,34 +406,24 @@ $$
 \vdots\\
 \partial \psi_{N}/\partial y\end{bmatrix} \ .
 \end{equation}
-Mediante l'uso delle funzioni di base e di ciò che è stato ottenuto dall'applicazione della formula di Green, le relazioni \ref{eq:ps1} e \ref{eq:ps2} diventano:
+Mediante l'uso delle funzioni di base e di ciò che è stato ottenuto dall'applicazione della formula di Green, le relazioni \eqref{eq:ps1} e \eqref{eq:ps2} diventano:
 $$
-\bm{g}_k \Bigl(\int_\Omega \bm \psi \bm \psi^T \Bigr)\bm{v}=
--\bm{c}_k \Bigl(\int_\Omega (\bm \psi_x \bm \psi_x^T + \bm \psi_y \bm \psi_y^T)\Bigr) \bm{v} \qquad \forall \bm{v} \in \mathbb{R}^N
+\bm{g}_k \Bigl(\int_\Omega \bm \psi \bm \psi^T d \bm p\Bigr)\bm{v}=
+-\bm{c}_k \Bigl(\int_\Omega (\bm \psi_x \bm \psi_x^T + \bm \psi_y \bm \psi_y^T)d \bm p\Bigr) \bm{v} \qquad \forall \bm{v} \in \mathbb{R}^N
 $$
 $$
-\int_{\Omega} \Bigl( \Delta(  a_k(\bm p)  ) \Bigr)^2 d \bm p = -\bm{c}_k \Bigl(\int_\Omega (\bm \psi_x \bm \psi_x^T + \bm \psi_y \bm \psi_y^T) \Bigr)\bm{g}_k \ .
+\int_{\Omega} \Bigl( \Delta(  a_k(\bm p)  ) \Bigr)^2 d \bm p = -\bm{c}_k \Bigl(\int_\Omega (\bm \psi_x \bm \psi_x^T + \bm \psi_y \bm \psi_y^T) d \bm p\Bigr)\bm{g}_k \ .
 $$
 Quindi, se si introducono le matrici (analogamente a quanto fatto in \cite{art:sangalli})
-$$ R_0 = \int_\Omega \bm \psi \bm \psi^T $$
-$$ R_1 = \int_\Omega (\bm \psi_x \bm \psi_x^T + \bm \psi_y \bm \psi_y^T) \ ,$$
+$$ R_0 = \int_\Omega \bm \psi \bm \psi^T d \bm p$$
+$$ R_1 = \int_\Omega (\bm \psi_x \bm \psi_x^T + \bm \psi_y \bm \psi_y^T)d \bm p \ ,$$
 si trova, per l'arbitrarietà di $\bm v$:
 \begin{equation}
 \label{eq:pspace}
 \int_{\Omega} \Bigl( \Delta(  a_k(\bm p)  ) \Bigr)^2 d \bm p = \bm{c}_k^T R_1 R_0^{-1} R_1 \bm{c}_k=\bm{c}_k^T P_S \bm{c}_k
 \end{equation}
 Si noti che la matrice $P_S$ non dipende da $k$, pertanto è la stessa per tutte le funzioni $a_k(\bm{p})$. Inoltre è simmetrica, poiché $R_0$ e $R_1$ lo sono.
-
-Grazie all'introduzione della discretizzazione in basi spaziali
-$$
-a_k(\bm p)=\sum_{l=1}^N c_{lk}\psi_l(\bm p)
-$$
-è stato possibile ridurre la penalizzazione con l'integrale del quadrato di $\Delta a_k(\bm p)$
-alla valutazione di una forma quadratica che non cambia con le funzioni $a_k$. Si ha anche un'altra conseguenza: per l'equivalenza ipotizzata tra le espressioni di $f(\bm{p},t)$ in eq.~\ref{eq:f_temp} e \ref{eq:f_space}, allora è necessario che i coefficienti tempo-varianti dell'espansione in basi spaziali assumano la seguente forma:
-$$
-b_l(t)=\sum_{k=1}^M c_{lk}\varphi_k(t) \ .
-$$
-Si ritrova quindi anche in questo caso l'espansione in funzioni di base.
+Anziché usare per la penalizzazione in spazio una discretizzazione che proviene direttamente dall'eq.~\eqref{eq:formadoppia}, è stata ricavata una forma che, attraverso l'uso delle eq.~\eqref{eq:formasing1} e \eqref{eq:formasing2}, contiene soltanto derivate prime della funzione di base. Grazie a questa forma e all'uso della matrice $P_S$ sarà possibile adottare basi in spazio non necessariamente in $H^2(\Omega)$, come gli elementi finiti lineari, aumentando l'efficienza del calcolo computazionale della stima. 
 
 Non resta altro che discretizzare anche $\int_{T_1}^{T_2} \Bigl( \frac{\partial^2   b_l(t)   }{\partial t ^2} \Bigr)^2 dt$. Dopo aver introdotto l'uso delle funzioni di base, se si definisce 
  $$ P_T = \begin{bmatrix}
@@ -504,7 +442,7 @@ $$
 $$
 Anche la matrice $P_T$ è simmetrica.
 
-Le forme quadratiche con $P_S$ e $P_T$ possono essere ulteriormente sviluppate per dimostrare che la parte di penalizzazione per la regolarizzazione di $f$ in eq.~\ref{eq:penalizzdisc} è rappresentabile con un'unica forma quadratica. Per mostrarlo, si introduce il vettore
+Tramite l'uso delle matrici $P_S$ e $P_T$, la parte di penalizzazione per la regolarizzazione di $f$ in eq.~\eqref{eq:penalizzdisc} è rappresentabile con un'unica forma quadratica. Per mostrarlo, si introduce il vettore
 $$\bm c =
 \begin{bmatrix}
 c_{11}  \\
@@ -530,16 +468,7 @@ A causa della simmetria dei termini con cui è costruita, anche la matrice $P$ �
 
 
 \subsection{Soluzione del problema di stima}
-Grazie a quanto ricavato nel paragrafo precedente, la parte di penalizzazione delle derivate del funzionale $J_{\bm \lambda }(f(\bm p,t))$ si è ridotta ad un'unica forma quadratica. Ma questo è stato possibile grazie all'espressione in funzione di base per i coefficienti delle eq.~\ref{eq:f_temp} e \ref{eq:f_space}:
-$$
-a_k(\bm p)=\sum_{l=1}^N c_{lk}\psi_l(\bm p) \qquad b_l(t)=\sum_{k=1}^M c_{lk}\varphi_k(t) \ .
-$$
-Essendo \ref{eq:f_temp} e \ref{eq:f_space} equivalenti, allora in definitiva:
-\begin{equation} 
-\label{eq:basisexp}
-f(\bm p,t)=\sum_{l=1}^N \sum_{k=1}^M c_{lk}\ \psi_l(\bm p)\ \varphi_k(t) ,
-\end{equation}
-cioè la funzione da stimare è la combinazione lineare di tutti i possibili prodotti incrociati tra le funzioni di base in tempo e spazio. Questa formulazione può essere considerata la definitiva per la funzione $f(\bm p,t)$ e permette di poter identificare la funzione con il vettore dei suoi coefficienti $\bm{c}$. Ne consegue anche la possibilità di scrivere in modo più agevole il funzionale $J_{\bm \lambda }(f(\bm p,t))$. Siano definiti il vettore dei valori osservati
+Grazie a quanto ricavato nel paragrafo precedente, la parte di penalizzazione delle derivate del funzionale $J_{\bm \lambda }(f(\bm p,t))$ si è ridotta ad un'unica forma quadratica. Per trovare una stima della soluzione, però, occorre scrivere in forma matriciale anche il termine con gli scarti quadratici tra valori osservati e valori stimati dal modello. Siano definiti il vettore dei valori osservati
 \begin{equation}
 \bm z =
 \begin{bmatrix}
@@ -596,20 +525,20 @@ e per trovare la stima $\hat{f}(\bm{p},t)$ sarà sufficiente ricavare il vettore
 $$
 \hat{\bm{c}}=\argmin_{c \in \mathbb{R}^{NM}} J_{\bm \lambda }(\bm c) \ .
 $$
-Mediante la formulazione ottenuta in eq.~\ref{eq:Jmatr} basta derivare per ottenere la soluzione al problema di stima. Grazie alla simmetria di $P$, si ha:
+Basta derivare la formulazione ottenuta in eq.~\eqref{eq:Jmatr} per ottenere la soluzione al problema di stima. Grazie alla simmetria di $P$, si ha:
 $$
 \frac{\partial}{\partial \bm c}J= -2 B^T \bm z + 2(B^T B + P) \bm c \ \ ,
 $$
 che posta uguale a zero porta all'equazione
 $$
-(B^T B + P) \bm c = B^T\bm z
+(B^T B + P) \hat  {\bm c} = B^T\bm z
 $$ 
 e in conclusione
 \begin{equation}
 \label{eq:sysnocovar}
 \hat  {\bm c} = (B^T B + P)^{-1}B^T \bm z \ .
 \end{equation} 
-La forma ritrovata per la stima ricorda i modelli di regressione penalizzata. La soluzione si può ricavare risolvendo un sistema lineare, seppur di grandi dimensioni (la matrice $B^T B + P$ ha dimensioni $NM \times NM$ e già negli esempi si avranno dimensioni elevate).
+La forma ritrovata per la stima ricorda i modelli di regressione penalizzata. La soluzione si può ricavare risolvendo un sistema lineare, seppur di grandi dimensioni (la matrice $B^T B + P$ ha dimensioni $NM \times NM$ e già con le prime simulazioni si avranno dimensioni elevate).
 
 L'ultimo elemento da definire è la \textit{smoothing matrix} $S$, che permette di derivare i valori stimati dal modello direttamente da quelli osservati:
 $$
@@ -619,7 +548,7 @@ $$
 
 
 \subsection{Proprietà statistiche dello stimatore}
-Il modello di partenza indicato in eq.~\ref{eq:modellobase} può essere scritto anche in forma matriciale (del tutto simile a quella della regressione)
+Il modello di partenza indicato in eq.~\eqref{eq:modellobase} può essere scritto anche in forma matriciale (del tutto simile a quella della regressione lineare)
 \begin{equation}
 \label{eq:modellobasematric}
 \bm z=B \bm c + \bm \varepsilon .
@@ -636,17 +565,17 @@ e quindi è immediato ricavare per lo stimatore $\hat  {\bm c}$ (grazie alle pro
 $$
 \mathbb{E}[\hat  {\bm c}] = (B^T B + P)^{-1}B^TB \bm c \qquad \mathrm{Var}[\hat  {\bm c}] = \sigma^2 (B^T B + P)^{-1}B^TB(B^T B + P)^{-1} .
 $$
-Non è stata ipotizzata la gaussianità per $\bm \varepsilon$, ma se così fosse anche $\hat  {\bm c}$ sarebbe gaussiano. Grazie a quanto appena ricavato è possibile elaborare (con una data significatività) una regione di confidenza per $\hat  {\bm c}$ e quindi una banda di confidenza per la funzione stimata $f$.
+Non è stata ipotizzata la gaussianità per $\bm \varepsilon$, ma se così fosse anche $\hat  {\bm c}$ sarebbe gaussiano. Grazie a quanto appena ricavato è possibile elaborare (con una data significatività) una regione di confidenza per $\hat  {\bm c}$ o intervalli di confidenza puntuali per la funzione stimata.
 
 
 \section{Caso con covariate}
 \label{sez:beta}
-Il modello si estende facilmente se si prevede che il dato possa essere influenzato da covariate. La forma in eq.~\ref{eq:modellobase} diventa:
+Il modello si estende facilmente se si prevede che il dato possa essere influenzato da covariate. La forma in eq.~\eqref{eq:modellobase} diventa:
 \begin{equation}
 \label{eq:modellobasecovar}
 z_{ij}= \bm w_{ij}^T\  \bm \beta   \ + \  f(\bm p_i,t_j)\ +\ \varepsilon_{ij}\ \ \ \ i = 1,\ldots,n\ \ j=1,\ldots,m \ \ ,
 \end{equation}
-dove $\bm w_{ij}$ è il vettore delle $p$ covariate associate a $z_{ij}$ e $\bm \beta$ è il vettore dei coefficienti di regressione. Di conseguenza il funzionale discreto di eq.~\ref{eq:Jmatr} diventa:
+dove $\bm w_{ij}$ è il vettore delle $p$ covariate associate a $z_{ij}$ e $\bm \beta$ è il vettore dei coefficienti di regressione. Di conseguenza il funzionale discreto di eq.~\eqref{eq:Jmatr} diventa:
 $$ J_{\bm \lambda }(\bm c) = (\bm z - W \bm \beta - B \bm c)^T (\bm z - W \bm \beta - B \bm c) + \bm c^t S \bm c  \ ,$$
 dove $W$ è la matrice $nm \times p$ con i vettori $ \{\bm w_{ij}; i=1,\ldots,n;j=1,\ldots,m\}$.
 
@@ -670,10 +599,18 @@ A questo punto si possono ricavare le stime dei parametri. Per i coefficienti de
 
 \begin{eqnarray}
  \label{eq:syscovar1}
-\hat  {\bm c} &=& [B^TB+P+B^TW(W^TW)^{-1}W^TB]^{-1}B^T[I-W(W^TW)^{-1}W^T]\bm z  \nonumber \\
+\hat  {\bm c} &=& [B^TB-B^TW(W^TW)^{-1}W^TB+P]^{-1}B^T[I-W(W^TW)^{-1}W^T]\bm z  \nonumber \\
  &=& AQ \bm z
 \end{eqnarray} 
-con $A=[B^TB+P+B^TW(W^TW)^{-1}W^TB]^{-1}B^T$ e $Q=[I-W(W^TW)^{-1}W^T]$, matrice molto importante nel caso di regressione lineare, poiché essa proietta il vettore dei dati nel sottospazio ortogonale allo spazio generato dalle colonne della matrice disegno, ricavando così il vettore dei residui. Questa matrice si ritrova anche in questo caso e sono valide le sue proprietà:
+con
+$$
+Q=[I-W(W^TW)^{-1}W^T]
+$$
+e
+$$
+A=[B^TB-B^TW(W^TW)^{-1}W^TB+P]^{-1}B^T=[B^TQB+P]^{-1}B^T
+$$
+La matrice $Q$ proietta sul sottospazio ortogonale allo spazio generato dalle colonne della matrice disegno. La si ritrova anche nella regressione lineare, dove è utilizzata per ricavare il vettore dei residui da quello dei dati. Sono valide le seguenti proprietà:
 \begin{itemize}
 \item $Q$ è idempotente, cioè $QQ=Q$;
 \item $Q$ è simmetrica;
@@ -692,7 +629,7 @@ $$
 
 \subsection{Proprietà statistiche degli stimatori}
 \label{sec:IC}
-Anche in questo caso è possibile calcolare valore atteso e varianza degli stimatori ottenuti. Questo è particolarmente utile in presenza di covariate, poiché consente di calcolare intervalli di confidenza o effettuare test per verificarne la sisignificatività. Per farlo, però, è necessario avere la forma matriciale del modello indicato in eq.~\ref{eq:modellobasecovar}:
+Anche in questo caso è possibile calcolare valore atteso e varianza degli stimatori ottenuti. Questo è particolarmente utile in presenza di covariate, poiché consente di calcolare intervalli per verificarne la significatività. Per farlo, però, è necessario avere la forma matriciale del modello indicato in eq.~\eqref{eq:modellobasecovar}:
 
 \begin{equation}
 \label{eq:modellobasecovarmatric}
@@ -712,20 +649,20 @@ $$
 $$
 Per $\hat  {\bm \beta}$ i calcoli sono più complessi, ma si semplificano grazie alle proprietà indicate in precedenza per la matrice $Q$. Si ritrova:
 $$
-\mathbb{E}[\hat  {\bm \beta}] = \bm \beta + (W^TW)^{-1}W^T(I-B AB)\bm c
+\mathbb{E}[\hat  {\bm \beta}] = \bm \beta + (W^TW)^{-1}W^T(I-B AQ)B\bm c
 $$
 $$ \mathrm{Var}[\hat  {\bm \beta}] = \sigma^2 (W^TW)^{-1} + \sigma^2 (W^TW)^{-1}W^T B A Q A^T B^T W(W^TW)^{-1}.
 $$
-Come nel caso senza covariate, anche ora si avrebbe la gaussianità degli stimatori se fosse ipotizzata per $\bm \varepsilon$. Come si può notare da quanto ricavato, lo stimatore per $\hat{\beta}$ è distorto.
+Come nel caso senza covariate, anche ora si avrebbe la gaussianità degli stimatori se fosse ipotizzata per $\bm \varepsilon$. Lo stimatore per $\hat{\beta}$ è distorto.
 
 
 \section{Stima della varianza di modello e scelta dei parametri di smoothing}
 \label{sez:GCV}
 
-Quanto riportato di seguito è valido indipendentemente dal fatto che siano inserite nel modello le covariate, quindi per entrambi i modelli proposti in precedenza.
+Quanto riportato di seguito è valido indipendentemente dal fatto che siano inserite nel modello le covariate o no, quindi per entrambi i modelli proposti in precedenza.
 
 \subsection{Varianza di modello}
-Stimare la varianza dell'errore è necessario se si vuole fare inferenza sugli stimatori ed è molto semplice se si conoscono i gradi di libertà equivalenti del modello. Ma questi si ricavano dalla \textit{smoothing matrix}:
+Stimare la varianza dell'errore è necessario se si vuole fare inferenza sugli stimatori ed è molto semplice se si conoscono i gradi di libertà equivalenti del modello (EDF). Questi si ricavano dalla \textit{smoothing matrix}:
 $$
 \mathrm{EDF}=\mathrm{tr}(S) \ .
 $$
@@ -745,7 +682,7 @@ dove $D$ è la devianza del modello. Essa è così definita:
 $$
 D(\hat  {\bm c},\hat  {\bm \beta})=2\sigma^2(l_{\mathrm{sat}}-l(\hat  {\bm c},\hat  {\bm \beta})) \ ,
 $$
-dove $l$ è la logverosimiglianza del modello, che si ipotizza gaussiano, valutata rispettivamente nel suo massimo (valore di saturazione) e in corrispondenza dei valori stimati. Non è difficile dimostrare che, sia nel caso con covariate che senza covariate, si ha: 
+dove $l$ è la log-verosimiglianza del modello, che si ipotizza gaussiano, valutata rispettivamente nel suo massimo (valore di saturazione $l_{\mathrm{sat}}$) e in corrispondenza dei valori stimati ($l(\hat  {\bm c},\hat  {\bm \beta})$). Non è difficile dimostrare che, sia nel caso con covariate che senza covariate, si ha: 
 $$
 D(\hat  {\bm c},\hat  {\bm \beta}) = (\bm z - \hat  {\bm z})^T(\bm z - \hat  {\bm z})
 $$
@@ -762,12 +699,12 @@ Di conseguenza, il miglior $\bm \lambda$ può essere scelto come valore che mini
 \label{cap:Codice}
 Il modello descritto nel capitolo precedente è stato associato ad un algoritmo e ha portato allo sviluppo di un codice R per l'analisi dei dati. In questo capitolo saranno spiegate alcune delle scelte adottate o imposte durante la fase di sviluppo computazionale.
 
-Il linguaggio di programmazione adottato è R. Questa decisione ha permesso di sfruttare le numerose funzioni statistiche che in altri linguaggi non sarebbero disponibili. Ma, come si potrà notare in seguito, sono anche emersi i lati negativi di questo linguaggio. Durante l'implementazione si è fatto uso del pacchetto \textit{fda} e di alcune funzioni già disponibili per il caso puramente spaziale descritto in \cite{art:sangalli}.
+Il linguaggio di programmazione adottato è R (\cite{prog:R}). Questa decisione ha permesso di sfruttare le numerose funzioni statistiche che in altri linguaggi non sarebbero disponibili. Tuttavia, come si potrà notare in seguito, sono anche emersi i lati negativi di questo linguaggio. Durante l'implementazione si è fatto uso del pacchetto \textit{fda} (analizzato in \cite{package:fda}) e di alcune funzioni già disponibili per il caso puramente spaziale descritto in \cite{art:sangalli}.
 
 \section{Funzioni di base considerate}
-Sono stati implementati solo alcuni tipi di funzione di base in spazio e tempo, che si sono rivelate utili alle applicazioni che saranno riportate nei capitoli successivi. 
+Sono stati implementati solo alcuni tipi di funzioni di base in spazio e tempo, che si sono rivelati utili alle applicazioni che saranno riportate nei capitoli successivi. 
 
-Per quanto riguarda lo spazio, il codice è stato pensato per dati distribuiti su un dominio dalla complessa definizione (con bordi irregolari o buchi). Quindi un'ottima scelta di funzioni di base sono gli elementi finiti descritti ad esempio in \cite{art:quarteroni}, analogamente a quanto fatto in \cite{art:sangalli}. Queste funzioni sono definite su $\Omega_{\tau}$, triangolazione di Delaunay del dominio $\Omega$, costruita con i vertici del poligono che descrive la frontiera e con i punti interni (solitamente quelli in cui sono disponibili i dati). Ognuno di questi punti diventa un nodo della triangolazione e ad ogni nodo è associata una funzione lineare a tratti come quella in fig.~\ref{fig:basisp}, che vale 1 sul nodo selezionato, decresce linearmente sui triangoli adiacenti e si annulla su tutti gli altri nodi e triangoli. Per l'implementazione di queste funzioni è stato riutilizzata una parte del codice del caso puramente spaziale. Anche gli elementi finiti quadratici sono stati implementati, ma non sono stati scelti nelle applicazioni poiché rallentano l'esecuzione a causa della maggiore precisione che richiedono.
+Per quanto riguarda lo spazio, il codice è stato pensato per dati distribuiti su un dominio dalla complessa definizione (con bordi irregolari o buchi). Quindi un'ottima scelta di funzioni di base sono gli elementi finiti (descritti ad esempio in \cite{art:quarteroni}) analogamente a quanto fatto in \cite{art:sangalli}. Queste funzioni sono definite su $\Omega_{\tau}$, triangolazione di Delaunay del dominio $\Omega$, costruita con i vertici del poligono che descrive la frontiera e con i punti interni (punti in cui sono disponibili i dati e, nel caso della provincia di Venezia, punti aggiuntivi per il vincolo dell'area massima per i triangoli). Ognuno di questi punti diventa un nodo della triangolazione e ad ogni nodo è associata una funzione lineare a tratti come quella in fig.~\ref{fig:basisp}, che vale 1 sul nodo selezionato, decresce linearmente sui triangoli adiacenti e si annulla su tutti gli altri nodi e triangoli. Per l'implementazione di queste funzioni è stata riutilizzata una parte del codice del caso puramente spaziale. Anche gli elementi finiti quadratici sono stati implementati, ma non sono stati scelti nelle applicazioni poiché rallentano l'esecuzione a causa della maggior costo computazionale che richiedono.
 
 \begin{figure}[t]
 	\centering
@@ -785,25 +722,26 @@ Per quanto riguarda lo spazio, il codice è stato pensato per dati distribuiti s
 	\label{fig:basi}
 \end{figure}
 
-Le basi in tempo a disposizione sono le B-splines (dettagliate ad esempio in \cite{art:ramsaysilverman}), funzioni che, fissato un intervallo temporale e alcuni nodi in esso contenuti (nel nostro caso equispaziati), sono usate per l'espansione in base delle \textit{funzioni spline}. Il codice necessario è già stato implementato ed ottimizzato nel pacchetto \textit{fda} ed è stato riciclato per il codice del modello ST-PDE. In fig.~\ref{fig:basit} sono riportate le 9 B-splines cubiche definite sull'intervallo $[0,2\pi]$ (che sarà usato per l'applicazione al dominio a forma di C). L'unico vincolo imposto a queste funzioni di base è il grado, che deve essere almeno 3 per avere la derivata seconda delle basi necessaria per la penalizzazione.
+Le basi in tempo scelte per queste analisi sono le B-splines (esposte ad esempio in \cite{art:ramsaysilverman}), funzioni che, fissato un intervallo temporale e alcuni nodi in esso contenuti (nel nostro caso equispaziati), sono usate per l'espansione in base delle \textit{funzioni spline} (funzioni polinomiali a tratti con condizioni di continuità e di derivata continua). Il codice necessario è già stato implementato ed ottimizzato nel pacchetto \textit{fda} ed è stato riciclato per il codice del modello ST-PDE. In fig.~\ref{fig:basit} sono riportate le 9 B-splines cubiche definite sull'intervallo $[0,2\pi]$ (che sarà usato per l'applicazione al dominio a forma di C). L'unico vincolo imposto a queste funzioni di base è il grado, che deve essere almeno 3 per avere la derivata seconda delle basi necessaria per la penalizzazione.
 
 \section{Schematizzazione dell'algoritmo di stima}
+\label{sec:alg}
 L'esecuzione del codice è stata divisa in alcuni passi per poter permettere all'utente di inserire gradualmente gli oggetti in ingresso e fissare i parametri che servono per ottenere la stima finale. In più punti si è cercato di nascondere all'utente le variabili temporanee e di includere in opportune classi di R tutte le informazioni riguardanti concetti tra di loro comuni. 
 
-Innanzitutto si ha l'acquisizione dei dati (e delle eventuali covariate) e la creazione della triangolazione. In questo caso non sono state implementate funzioni apposite poiché ci sono già pacchetti specializzati (nelle applicazioni che saranno presentate in seguito si è fatto uso di \textit{RTriangle} per la triangolazione).
+Innanzitutto si ha l'acquisizione dei dati (e delle eventuali covariate) e la creazione della triangolazione. In questo caso non sono state implementate funzioni apposite poiché ci sono già pacchetti specializzati (nelle applicazioni che saranno presentate in seguito si è fatto uso del pacchetto \textit{RTriangle} descritto in \cite{package:RTriangle} per la triangolazione).
 
 Dopo aver definito i punti, la triangolazione e gli istanti di tempo occorre fissare le funzioni di base. Sono state implementate due funzioni di R, una per lo spazio e una per il tempo, che in base ai parametri in ingresso e agli ordini scelti per le funzioni di base creano appositi oggetti che memorizzano tutte le informazioni necessarie.  
 
-A questo punto si ha la ricerca i migliori parametri di smoothing: definiti un insieme discreto di valori per $\lambda_S$ ed uno analogo su $\lambda_T$, l'indice in eq.~\ref{eq:GCV} è minimizzato sul prodotto cartesiano di tali insiemi. Per una corretta applicazione del modello questa operazione deve essere ripetuta più volte, fino al raggiungimento di una accettabile precisione nella stima di $\bm{\lambda}$. Sono state implementate due funzioni, una per il caso senza covariate e una per il caso con covariate, a causa della diversità della \textit{smoothing matrix}. Questo è il passaggio più lento dell'algoritmo.
+A questo punto si ha la ricerca dei migliori parametri di smoothing. In queste analisi $\lambda_S$ e $\lambda_T$ saranno sempre espressi in potenze di 10. Per trovare dei buoni valori per i parametri si eseguono più tentativi, creando due insiemi discreti di variazione per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$ e minimizzando l'indice in eq.~\eqref{eq:GCV} sui $\bm \lambda$ corrispondenti al prodotto cartesiano tra di essi. Il procedimento viene ripetuto qualche volta rendendo la griglia sempre più fitta e centrata sul punto di minimo ottenuto nell'iterazione precedente. Sono state implementate due funzioni, una per il caso senza covariate e una per il caso con covariate, a causa della diversità della \textit{smoothing matrix}. Questo è il passaggio più lento dell'algoritmo.
 
-Dopo aver fissato i parametri di smoothing si arriva al cuore dell'algoritmo, poiché è calcolata la stima della soluzione. Ciò che eseguono le apposite funzioni è calcolare tutte le matrici di passaggio ($P$ e $B$) nascondendole all'utente e risolvere gli appositi sistemi lineari (eq.~\ref{eq:sysnocovar}, \ref{eq:syscovar1} e \ref{eq:syscovar2}). In uscita è restituito un oggetto che racchiude i vettori ricavati e le funzioni di base, in modo da poter immagazzinare insieme tutti gli elementi necessari per tracciare grafici riguardanti la soluzione.
+Dopo aver fissato i parametri di smoothing si arriva al cuore dell'algoritmo, poiché è calcolata la stima della soluzione. Ciò che eseguono le apposite funzioni è calcolare tutte le matrici di passaggio ($P$ e $B$) nascondendole all'utente e risolvere gli appositi sistemi lineari (eq.~\eqref{eq:sysnocovar}, \eqref{eq:syscovar1} e \eqref{eq:syscovar2}). In uscita è restituito un oggetto che racchiude i vettori ricavati e le funzioni di base, in modo da poter immagazzinare insieme tutti gli elementi necessari per tracciare grafici riguardanti la soluzione.
 
-Terminata la stima, ciò che resta da fare è analizzare i risultati. Sono state create più funzioni, da scegliere in base a quello che si vuole visualizzare: calcolo della soluzione in punti ed istanti scelti, plot della funzione ad un istante fissato o ad un punto spaziale fissato, calcolo degli intervalli di confidenza approssimati (senza il termine di distorsione) per le componenti di $\bm{\beta}$.
+Terminata la stima, ciò che resta da fare è analizzare i risultati. Sono state create più funzioni, da scegliere in base a quello che si vuole visualizzare: calcolo della soluzione in punti ed istanti scelti, plot della funzione ad un istante fissato o ad un punto spaziale fissato, calcolo degli intervalli di confidenza approssimati per le componenti di $\bm{\beta}$.
 
 \section{Strutture dati adottate}
-Al momento dell'implementazione del codice corrispondente alle eq.~\ref{eq:GCV}, \ref{eq:sysnocovar}, \ref{eq:syscovar1} e \ref{eq:syscovar2} è stato necessario decidere la corretta struttura dati per le matrici e una buona tecnica di inversione. In generale, quando si studiano dati distribuiti in spazio e tempo su domini complessi, le dimensioni delle matrici da invertire per calcolare $\hat{\bm{c}}$ sono di grandi dimensioni. Inoltre, a causa delle funzioni di base scelte in precedenza, le matrici $\Psi$, $\Phi$, $P_S$, $R_0$ e $R_1$ risulteranno sparse con molta facilità. Quindi la scelta di una struttura dati efficiente tra quelle disponibili in R è abbastanza delicata.
+Al momento dell'implementazione del codice corrispondente alle eq.~\eqref{eq:GCV}, \eqref{eq:sysnocovar}, \eqref{eq:syscovar1} e \eqref{eq:syscovar2} è stato necessario decidere la corretta struttura dati per le matrici e una buona tecnica di inversione. In generale, quando si studiano dati distribuiti in spazio e tempo su domini complessi, le dimensioni delle matrici da invertire per calcolare $\hat{\bm{c}}$ sono di grandi dimensioni. Inoltre, a causa delle funzioni di base scelte in precedenza, le matrici $\Psi$, $\Phi$, $P_S$, $R_0$ e $R_1$ risulteranno sparse con molta facilità. Quindi la scelta di una struttura dati efficiente tra quelle disponibili in R è abbastanza delicata.
 
-Sono stati analizzati quattro casi, in base al tipo di matrici (le matrici base di R o le sparse del pacchetto \textit{Matrix}) o alla tecnica di inversione (classica di R o con fattorizzazione QR). Sono stati misurati i tempi di calcolo della stima con queste quattro modalità nell'applicazione del dominio a forma di C senza covariate (sarà discusso nel dettaglio nel prossimo capitolo) e in tab.~\ref{tab:tempo} sono riportati i risultati. Sono stati eseguiti più tentativi, al variare del numero di punti interni del dominio (e quindi della dimensione della matrice da invertire in eq.~\ref{eq:sysnocovar}), per poter controllare la velocità di esecuzione a difficoltà crescente.
+Sono stati analizzati quattro casi, in base al tipo di matrice o alla tecnica di inversione. Come tipi di matrice sono state provate le matrici base di R o le matrici sparse del pacchetto \textit{Matrix} (descritto in \cite{package:Matrix}). Il motivo della scelta delle matrici sparse non è dovuto soltanto al fatto che molte matrici hanno questa caratteristica (come già evidenziato in precedenza) ma anche all'eccessiva richiesta di memoria dell'algoritmo (particolarmente alta per le dimensioni delle matrici usate per la stima). Come tecnica di inversione sono state provate l'inversione classica di R (comando \textit{solve}) o la fattorizzazione QR (moltiplicazione per la matrice Q trasposta e \textit{backward substitutions} con la matrice R). Sono stati misurati i tempi di calcolo della stima con queste quattro modalità nell'applicazione del dominio a forma di C senza covariate (sarà discusso nel dettaglio nel prossimo capitolo) e in tab.~\ref{tab:tempo} sono riportati i risultati. Sono stati eseguiti più tentativi, al variare del numero di punti interni del dominio (e quindi della dimensione della matrice da invertire in eq.~\eqref{eq:sysnocovar}) per poter controllare la velocità di esecuzione a difficoltà crescente.
 \newline
 \begin{table}[h]
 \renewcommand{\arraystretch}{1.3}
@@ -828,11 +766,11 @@ Sono stati analizzati quattro casi, in base al tipo di matrici (le matrici base 
 \newline
 Non sono state eseguite più misurazioni per caso perchè già da queste è chiaro quale sia la miglior scelta. L'uso delle matrici sparse è stato progressivamente abbandonato poiché nettamente più lento. Anche la fattorizzazione QR non ha portato ad un miglioramento, perciò è stato adottata l'inversione base di R.
 
-Il motivo di questa lentezza è legato al linguaggio di programmazione. Non è una novità che R non sia uno dei linguaggi maggiormente efficienti. Inoltre, tra tutte le operazioni a disposizione, l'esecuzione dei cicli e di operazioni di accesso sono tra le pu difficoltose. Quindi l'uso di fattorizzazione QR (e della risoluzione di un sistema tramite \textit{backward substitutions} che richiede) o di matrici sparse (implementate tramite tre vettori rispettivamente con indici di riga, colonna e valori non nulli) sono necessariamente lente per l'alto numero di cicli che richiedono. Le funzioni base di R, invece, sono certamente più ottimizzate. La conseguenza di questa analisi sarà riportata anche nel cap.~\ref{cap:conclusione}, in cui si sottolinea che l'integrazione con linguaggi più efficienti nei colli di bottiglia del codice porterebbe a miglioramenti computazionali sicuri e alla possibilità di applicazione a dataset di grandi dimensioni.
+Il motivo di questa lentezza è legato al linguaggio di programmazione. Non è una novità che R non sia uno dei linguaggi maggiormente efficienti. Inoltre, tra tutte le operazioni a disposizione, l'esecuzione dei cicli e di operazioni di accesso sono tra le pu difficoltose. Quindi l'uso di fattorizzazione QR (e della risoluzione di un sistema tramite \textit{backward substitutions} che richiede) o di matrici sparse (implementate tramite tre vettori rispettivamente con indici di riga, di colonna e valori non nulli) sono necessariamente lente per l'alto numero di cicli che richiedono. Le funzioni base di R, invece, sono certamente più ottimizzate. La conseguenza di questa analisi sarà riportata anche nel cap.~\ref{cap:conclusione}, in cui si sottolinea che l'integrazione con linguaggi più efficienti porterebbe sicuramente a miglioramenti computazionali.
 
-\chapter{Simulazioni nel caso del dominio a forma di C}
+\chapter{Studi di simulazione}
 \label{cap:domC}
-Prima di applicare il modello ST-PDE all'analisi della produzione di rifiuti nella provincia di Venezia sono state eseguite simulazioni su un caso noto e più semplice. Si è scelto di analizzare il dominio a forma di C e la corrispondente funzione spaziale $g(\bm p)$ (riportata in fig.~\ref{fig:domC_fstest}) descritti in \cite{art:ramsay}, \cite{art:sangalli}, \cite{art:wood} e implementata nel pacchetto R \textit{mgcv}. La funzione $g(\bm p)$ è solo spaziale, quindi è stata introdotta una variazione temporale deformando con il coseno:
+Prima di applicare il modello ST-PDE all'analisi della produzione di rifiuti nella provincia di Venezia sono state eseguite simulazioni su un caso noto e più semplice. Si è scelto di analizzare il dominio a forma di C e la corrispondente funzione spaziale $g(\bm p)$ (riportata in fig.~\ref{fig:domC_fstest}) descritti in \cite{art:ramsay}, \cite{art:sangalli}, \cite{art:wood} e implementati nel pacchetto R \textit{mgcv}. La funzione $g(\bm p)$ è solo spaziale, quindi è stata introdotta una variazione temporale deformando con il coseno:
 $$
 f(\bm p, t)=g(\bm p)cos(t)
 $$
@@ -844,7 +782,7 @@ Su questo semplice caso sono stati eseguiti i primi tentativi per il modello ST-
 	\label{fig:domC_fstest}
 \end{figure}
 \newpage
-Dalla rappresentazione di $g(\bm p)$ si può notare come sia fondamentale la geometria del problema, come per il caso della produzione dei rifiuti nella provincia di Venezia. Infatti, i massimi e i minimi si trovano sulle estremità del dominio, tra di loro vicine ma non collegate se non attraverso tutto il dominio.
+Dalla rappresentazione di $g(\bm p)$ si può notare come sia fondamentale la geometria del problema, come per il caso della produzione dei rifiuti nella provincia di Venezia. Infatti, i massimi e i minimi si trovano sulle estremità del dominio, tra di loro vicine ma non collegate se non attraverso tutto il dominio. Si ha una forte concavità che non può essere ignorata durante la stima.
 
 \section{Triangolazione e istanti temporali}
 In questo caso non sono presenti punti spaziali definiti dalla natura del problema (come possono essere i comuni per la provincia di Venezia), quindi è stato necessario ricavarli. Sono stati generati casualmente 150 punti all'interno del rettangolo $[-1,+3.5] \times [-1,+1]$ e di questi sono stati considerati validi solo quelli che ricadevano all'interno del dominio. Non è stata usata la descrizione della frontiera presente in \textit{mgcv}, ma una versione diversa che permette di avere punti anche nella parte rettilinea del bordo.
@@ -862,14 +800,14 @@ Come intervallo temporale di variazione dei dati è stato scelto $[0,2\pi]$ per 
 
 Nei punti e negli istanti temporali disponibili i dati sono stati ricavati dalla funzione esatta con l'aggiunta del rumore:
 $$
-z_{ij}=g(\bm p_{i})cos(t_j) + \varepsilon_{ij} \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
+z_{ij}=f(\bm p_{i},t_j) + \varepsilon_{ij} \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
 $$
 dove
 $$
 \varepsilon_{ij}\stackrel{\mathrm{iid}}{\sim}N(0,0.5^2) \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m \ .
 $$
 
-Per poter eseguire una analisi ottimale, come primo passo è necessario scegliere i valori dei parametri di smoothing ottimizzando l'indice $\mathrm{GCV}(\bm \lambda)$ riportato in eq.~\ref{eq:GCV}. In queste analisi $\lambda_S$ e $\lambda_T$ saranno sempre espressi in potenze di 10. Per trovare dei buoni valori per i parametri sono stati eseguiti più tentativi, creando due insiemi discreti di variazione per $\log_{10}\lambda_S$ e $\log_{10}\lambda_T$ e minimizzando sui $\bm \lambda$ corrispondenti al prodotto cartesiano tra di essi. Il procedimento viene ripetuto qualche volta rendendo la griglia sempre più fitta. Dopo alcune iterazioni, è stato fissato $\bm \lambda = (10^{-0.375}, 10^{-3.25})$ come valore definitivo per questa analisi ed è stata calcolata computazionalmente la stima.
+Per poter eseguire una analisi ottimale, come primo passo è necessario scegliere i valori dei parametri di smoothing ottimizzando l'indice $\mathrm{GCV}(\bm \lambda)$ riportato in eq.~\eqref{eq:GCV}. Questo passaggio è stato eseguito esattamente come riportato in sez.~\ref{sec:alg}. Dopo alcune iterazioni, è stato fissato $\bm \lambda = (10^{-0.375}, 10^{-3.25})$ come valore definitivo per questa analisi ed è stata calcolata computazionalmente la stima.
 
 In fig.~\ref{fig:DomC_ris} sono riportati i confronti tra funzione reale e stimata nei primi istanti di tempo (la scala di colori è stata resa uniforme tra tutti i grafici). Si può notare come la funzione stimata sia effettivamente molto simile a quella reale. La diversità tra le due estremità del dominio è stata colta, poiché il procedimento ha considerato correttamente la definizione della geometria spaziale.
 \newpage
@@ -903,13 +841,15 @@ In fig.~\ref{fig:DomC_ris} sono riportati i confronti tra funzione reale e stima
 	\label{fig:DomC_ris}
 \end{figure}
 \newpage
-In fig.~\ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in alcuni nodi della triangolazione. Oltre alla curva stimata è stata tracciata la reale, che è una cosinusoide di ampiezza nota (grazie alla perfetta conoscenza di $g(\bm p)$) riportata con i grafici. I punti rossi corrispondono al dato generato (termine dovuto al rumore compreso). Tanto più è vicina a zero l'ampiezza della curva, tanto più il rumore influenza la stima poiché più rilevante (infatti, in fig.~\ref{fig:DomC_ris}, le curve di livello della funzione stimata sono le più diverse da quelle reali quando la stima è vicina a zero). Tuttavia, anche nel caso di ampiezza vicina al valore massimo di $g(\bm p)$ in fig.~\ref{fig:DomC_ris2C}, l'andamento del fenomeno è stato riconosciuto e non è stata ottenuta una stima troppo interpolante dei dati. Si può concludere che la stima è molto buona, sebbene leggermente più confusa nella parte centrale del dominio.
+In fig.~\ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in alcuni nodi della triangolazione. Oltre alla curva stimata, tracciata in nero, in questo caso in cui si ha perfetta conoscenza del fenomeno che genera i dati è possibile visualizzare anche la curva reale, tracciata in blu. Per come è stata costruita la funzione $f(\bm{p},t)$, la curva reale sarà una cosinusoide di ampiezza nota (pari a $g(\bm p)$). Tale ampiezza è stata riportata con i grafici. I punti rossi corrispondono al dato generato (termine dovuto al rumore compreso). Tanto più è vicina a zero l'ampiezza della curva, tanto più il rumore influenza la stima poiché più rilevante (infatti, in fig.~\ref{fig:DomC_ris}, le curve di livello della funzione stimata sono le più diverse da quelle reali quando la stima è vicina a zero). Tuttavia, anche nel caso di ampiezza vicina al valore minimo di $g(\bm p)$ in fig.~\ref{fig:DomC_ris2A} o nell'istante di tempo $t=\frac{\pi}{2}$ in fig.~\ref{fig:DomC_ris}, l'andamento del fenomeno è stato riconosciuto ed è stata ottenuta una buona stima.
 
 \begin{figure}[t]
 	\centering
 	\subfigure[Ampiezza $0.3486$]
 	{
-	\includegraphics[width=0.31\textwidth]{Immagini/DomC/tfissato1.png}   
+	\includegraphics[width=0.31\textwidth]{Immagini/DomC/tfissato1.png}  
+	
+	\label{fig:DomC_ris2A}  
    }
 	\subfigure[Ampiezza $1.3819$]
    {
@@ -918,7 +858,6 @@ In fig.~\ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in alcu
    \subfigure[Ampiezza $4.1648$]
    {
 	\includegraphics[width=0.31\textwidth]{Immagini/DomC/tfissato3.png}  
-	\label{fig:DomC_ris2C} 
    } 
 	\caption{Evoluzione temporale in alcuni nodi della triangolazione, caso senza covariata}
 	\label{fig:DomC_ris2}
@@ -926,12 +865,12 @@ In fig.~\ref{fig:DomC_ris2} si ha il confronto dell'evoluzione temporale in alcu
 \newpage
 \section{Caso con covariata}
 
-Nel problema della stima della funzione $f(\bm p,t)=g(\bm p)cos(t)$ non sono presenti covariate. Quindi per poter testare il modello anche in questo caso, è stato necessario generare valori da assumere come covariata in ogni punto spaziale ed istante temporale in cui si ha la risposta.
+Nel problema della stima della funzione $f(\bm p,t)$ non sono presenti covariate. Quindi per poter testare il modello anche in questo caso, è stato necessario generare valori da assumere come covariata in ogni punto spaziale ed istante temporale in cui si ha la risposta.
 In definitiva i dati sono così formati:
 $$
-z_{ij}=g(\bm p_{i})cos(t_j) + \beta w_{ij} + \varepsilon_{ij} \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
+z_{ij}=f(\bm p_{i},t_j) + \beta w_{ij} + \varepsilon_{ij} \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
 $$
-dove covariata e rumore sono generate da due normali tra loro indipendenti:
+dove covariata e rumore sono generati da due normali tra loro indipendenti:
 $$
 w_{ij}\stackrel{\mathrm{iid}}{\sim}N(0,1) \qquad \forall i \in 1\ldots n, \forall j \in 1\ldots m
 $$
@@ -940,7 +879,7 @@ $$
 $$
 e $\beta$ è fissato a 1. Se il modello è buono, c'è da aspettarsi che la parte di funzione stimata senza covariata sia vicina a $f(\bm p,t)$ e che $\hat{\beta}$ si avvicini a 1.
  
-Anche in questo caso è necessaria una analisi preliminare per fissare i valori di $\bm \lambda$ ottimizzando l'indice $\mathrm{GCV}(\bm \lambda)$, che nel caso con covariata si differenzia dal precedente solo per la forma della \textit{smoothing matrix}. Dopo alcuni tentativi su griglie discrete (esattamente come nel caso precedente) è stato ottenuto un minimo in corrispondenza di $\bm \lambda = (10^{-0.125}, 10^{-3.25})$. 
+Anche in questo caso è necessaria una analisi preliminare per fissare i valori di $\bm \lambda$ ottimizzando l'indice $\mathrm{GCV}(\bm \lambda)$, che nel caso con covariata si differenzia dal precedente solo per la forma della \textit{smoothing matrix}. Dopo alcuni tentativi su griglie discrete (esattamente come nel caso precedente) è stato ottenuto un minimo in corrispondenza di $\bm \lambda = (10^{-0.5}, 10^{-3.25})$. 
 \newpage
 \begin{figure}[H]
 \centering
@@ -972,7 +911,7 @@ Anche in questo caso è necessaria una analisi preliminare per fissare i valori 
 \label{fig:DomCcovar_ris}
 \end{figure}
 \newpage
-In fig.~\ref{fig:DomCcovar_ris2}, analogamente a quanto fatto nel caso senza covariata, si hanno i grafici dell'evoluzione temporale della funzione in alcuni punti spaziali. I punti rossi tracciati corrispondono alla parte di dato senza il termine dovuto alla covariata (ma con il rumore). Le conclusioni sono le stesse del caso senza covariata: la stima è ben riuscita e la vera variazione temporale è stata colta dal modello. Tuttavia, avvicinandosi alla parte centrale del dominio, si ha una maggiore influenza del rumore, in questo caso meno evidente a causa della presenza della covariata.
+In fig.~\ref{fig:DomCcovar_ris2}, analogamente a quanto fatto nel caso senza covariata, si hanno i grafici dell'evoluzione temporale della funzione in alcuni punti spaziali. I punti rossi tracciati corrispondono alla parte di dato senza il termine dovuto alla covariata (ma con il rumore). Le conclusioni sono le stesse del caso senza covariata: la stima è ben riuscita e la vera variazione temporale è stata colta dal modello. Tuttavia, avvicinandosi alla parte centrale del dominio, si di nuovo ha una maggiore influenza del rumore.
 
 \begin{figure}[t]
 	\centering
@@ -992,47 +931,57 @@ In fig.~\ref{fig:DomCcovar_ris2}, analogamente a quanto fatto nel caso senza cov
 	\label{fig:DomCcovar_ris2}
 \end{figure}
 
-Dai grafici precedenti si può concludere che la stima della parte funzionale della risposta sia effettivamente una buona approssimazione della reale. Occorre verificare, però, anche che il contributo della covariata sia ben riconosciuto dal modello, controllando il valore stimato di $\beta$. Si ha:
+Dai grafici precedenti si può concludere che la stima della parte funzionale della risposta sia effettivamente vicina alla reale. Occorre verificare anche che il contributo della covariata sia ben riconosciuto dal modello, controllando il valore stimato di $\beta$. Si ha:
+
 $$
-\hat{\beta} \approx 1.005 \ ,
+\hat{\beta} \approx 1.001 \ ,
 $$
-valore vicinissimo al reale. Pertanto è interessante validare questo risultato attraverso un test del tipo
+valore vicinissimo al reale. Per poter controllare con una data significatività se il valore stimato corrisponde a quello reale si costruisce un un intervallo di confidenza al $95\%$ approssimato per $\beta$ con quanto ricavato in sez.~\ref{sec:IC}. Ne risulta:
 $$
-\begin{cases}
-H_0: & \beta=1 \\
-H_1: & \beta \not = 1
-\end{cases} \ ,
+\beta \in [0.9809;1.0225]
 $$
-per poter verificare con una data significatività se il valore stimato corrisponde a quello reale. Per poter fare ciò si costruisce un un intervallo di confidenza approssimato al $95\%$ per $\beta$ (eliminando il termine di distorsione) con quanto ricavato in sez.~\ref{sec:IC}. Ne risulta:
-$$
-\beta \in [0.9843;1.0259]
-$$
-che contiene 1. L'ipotesi $H_0$ può essere accettata.
-\newpage
+che contiene 1. 
+
 Concludendo, la simulazione esposta in questo capitolo ha permesso di verificare, in un caso dalle caratteristiche totalmente note e con una forte dipendenza dalla geometria spaziale, l'appropriata stima del campo spazio-temporale e del termine con covariata. Grazie a questi risultati (e alla possibilità di conoscere i valori reali su tutto il dominio) si può dedurre che questo esempio sia adatto per il confronto delle stime del modello ST-PDE con le altre tecniche disponibili in letteratura.
+
+\subsection{Validazione dell'intervallo di confidenza approssimato}
+L'intervallo di confidenza riportato precedentemente è stato costruito tramite l'assunzione di gaussianità per lo stimatore $\hat{\beta}$. Grazie a ciò è stato possibile calcolare un intervallo approssimato per $\beta$ attraverso l'uso della distribuzione gaussiana. Questa ipotesi può essere validata controllando l'asintotica normalità degli stimatori.
+
+Per poter verificare l'asintotica normalità degli stimatori sono state eseguite 100 simulazioni del caso di dominio a forma di C con covariata appena esposto. Tuttavia, in questo caso, il rumore non è stato generato da una distribuzione gaussiana ma da una t di Student a 5 gradi di libertà, per poter verificare tale ipotesi in un caso in cui la gaussianità non è presente per costruzione. Ad ogni iterazione sono stati calcolati $\hat{\beta}$ e le stime di $\hat{f}(\bm p,t)$ nei 1197 punti in cui sono stati generati i dati. Al termine delle 100 simulazioni è stata controllata la gaussianità di queste stime con i p-values del Shapiro-Wilk test (corretti con \textit{false discovery rate}). 
+
+Il p-value per $\hat{\beta}$ è 0.928. Quindi l'asintotica normalità per questo stimatore è verificata. Per quanto riguarda le stime puntuali di $f(\bm p,t)$, i p-values aggiustati sono stati riportati in fig.~\ref{fig:pval}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.46\textwidth]{Immagini/pval.png}  
+	\caption{p-values corretti per $\protect\hat{f}(\bm p,t)$}
+		\label{fig:pval}
+\end{figure}
+
+I p-values sono molto alti (superano la soglia di 0.05 nel 99.5\% dei casi). Si può quindi concludere per l'asintotica normalità delle stime di $\hat{f}(\bm p,t)$ anche in questo caso con errore non generato da una normale.
 \newpage
 \thispagestyle{empty}
-
 \chapter{Confronto con altri metodi}
 \label{cap:confronto}
 
-Il modello ST-PDE, come è già stato evidenziato nel cap.~\ref{cap:panoramica}, non è l'unico modello disponibile per l'analisi di dati distribuiti sia in spazio che in tempo. Pertanto è necessario che sia confrontato con le altre principali metodologie presenti in letteratura, al fine di poter dire se e quanto tale modello possa rappresentare un miglioramento in questo campo. I confronti saranno eseguiti nel caso della simulazione sul dominio a forma di C, poiché la conoscenza della funzione reale permette il calcolo dell'errore di stima. 
+Il modello ST-PDE, come è già stato evidenziato nel cap.~\ref{Cap:intro}, non è l'unico modello disponibile per l'analisi di dati distribuiti sia in spazio che in tempo. Pertanto è necessario che sia confrontato con le altre principali metodologie presenti in letteratura, al fine di poter dire se e quanto tale modello possa rappresentare un miglioramento in questo campo. I confronti saranno eseguiti nel caso della simulazione sul dominio a forma di C, poiché la conoscenza della funzione reale permette il calcolo dell'errore di stima. 
 
-Una tecnica da confrontare è senza dubbio il kriging spazio-temporale (KRIG). Le stime sono ottenute fissando un variogramma separabile e marginalmente esponenziale in spazio e tempo. I parametri del variogramma sono stimati dall'empirico e, successivamente, è possibile calcolare la stima grazie alle funzioni del pacchetto R \textit{gstat}. Per alcuni problemi con l'uso del pacchetto il kriging non sarà analizzato nel caso con covariata. Come è già stato sottolineato precedentemente, in questa tecnica non è preso in considerazione il dominio spaziale. Pertanto ci si aspettano stime peggiori rispetto ai metodi che possiedono questa caratteristica.
+Una tecnica da confrontare è senza dubbio il kriging spazio-temporale (KRIG). Le stime sono ottenute fissando un variogramma separabile e marginalmente esponenziale in spazio e tempo. I parametri del variogramma sono stimati dal variogramma empirico e, successivamente, è possibile calcolare la stima grazie alle funzioni del pacchetto R \textit{gstat} (descritto in \cite{package:gstat}). Il caso con covariata non è implementato nel pacchetto, quindi il kriging sarà analizzato solo nel caso senza covariata. Come è già stato sottolineato precedentemente, in questa tecnica non è in grado di considerare il dominio spaziale. Pertanto ci si aspettano stime peggiori rispetto ai metodi che possiedono questa caratteristica.
 
-Assieme al modello costruito, in \cite{art:augustin} è possibile consultare il codice per il calcolo della stima, implementato nel pacchetto R \textit{mgcv}. Per un corretto confronto con il modello ST-PDE sarà considerato un solo termine funzionale per la risposta, costituito dal prodotto tensoriale dei modelli marginali in spazio e tempo (definiti dalle funzioni di base e dai termini di penalizzazione differenziali, analoghi a quelli proposti per ST-PDE). Come basi in tempo saranno utilizzate sempre le \textit{Regression splines}.
-\newpage
-In spazio, invece, saranno analizzati due casi:
+Assieme al modello costruito, in \cite{art:augustin} è possibile consultare il codice per il calcolo della stima. Molte funzioni per l'applicazione di questo modello sono implementate nel pacchetto R \textit{mgcv} (descritto in \cite{package:mgcv1}, \cite{package:mgcv2}, \cite{package:mgcv3}, \cite{package:mgcv4}, \cite{package:mgcv5}). Questa pubblicazione studia modelli che possono essere più complessi di quello analizzaato con ST-PDE, ipotizzando che una funzione del valore atteso della risposta (nel loro caso il logaritmo) possa essere spiegato da uno o più termini funzionali:
+$$
+\log(\mathbb{E}[z_i])= f_1+f_2+ \ldots f_N \ .
+$$
+Ognuna di queste funzioni può avere dipendenza solo spaziale, solo temporale o entrambe. Per un corretto confronto con il modello ST-PDE sarà considerato un solo termine funzionale, costituito dal prodotto tensoriale dei modelli marginali in spazio e tempo (definiti dalle funzioni di base e dai termini di penalizzazione differenziali, analoghi a quelli proposti per ST-PDE) e studio della risposta senza ulteriori complicazioni. Anche modelli più complessi, con l'aggiunta di termini funzionali solo spaziali o solo temporali, sono stati confrontati con ST-PDE. Tuttavia, a causa dell'alto errore che producevano, non sono stati riportati. Come basi in tempo saranno adottate sempre le \textit{Smoothing Splines}. In spazio, invece, saranno analizzati due casi:
 \begin{itemize}
-\item basi spaziali per \textit{thin plate splines}, riportate in \cite{package:mgcv4}, che sono basi radiali non in grado di considerare la geometria spaziale (TPS);
-\item basi spaziali per \textit{soap film smoothing}, analizzate nel dettaglio in \cite{art:wood} e utilizzate in \cite{art:augustin} e \cite{art:marra} e costituite da due insiemi di funzioni (rispettivamente per la parte interna del dominio e per la frontiera) appositamente pensate per casi con dominio spaziale complesso (SOAP).
+\item basi spaziali per \textit{thin plate splines}, riportate in \cite{package:mgcv4}, non in grado di considerare la geometria spaziale (TPS);
+\item basi spaziali per \textit{soap film smoothing}, analizzate nel dettaglio in \cite{art:wood} e utilizzate in \cite{art:augustin} e \cite{art:marra}, costituite da due insiemi di funzioni (rispettivamente per la parte interna del dominio e per la frontiera) appositamente pensate per casi con dominio spaziale complesso (SOAP).
 \end{itemize}
 
 La triangolazione e i dati sono gli stessi che sono stati usati nel cap.~\ref{cap:domC}. In aggiunta è stata costruita una griglia spazio-temporale di punti per la validazione, attraverso l'uso di 80 punti equispaziati in $[-1,+3.5]$, 40 punti in equispaziati $[-1,+1]$ e 20 istanti di tempo equispaziati in $[0,2\pi]$. Ovviamente l'errore è stato valutato soltanto sui punti che ricadevano all'interno del dominio a forma di C.
 
 I modelli sono stati confrontati attraverso il Root Mean Square Error ($\mathrm{RMSE}$) calcolato nei punti di validazione. Quindi se se $V$ è l'insieme dei punti della griglia interni al dominio, fissato un modello si avrà:
 $$
-\mathrm{RMSE}_V=\sqrt{\frac{\sum_{(\bm p_i,t_i)\in V} (\hat{z}_{ij}-g(\bm p_i)cos(t_i))^2}{\mathrm{card}(V)}}
+\mathrm{RMSE}_V=\sqrt{\frac{\sum_{(\bm p_i,t_i)\in V} (\hat{z}_{ij}-f(\bm p_i,t_i))^2}{\mathrm{card}(V)}}
 $$ 
 Il procedimento è stato iterato 50 volte, per poter escludere possibili effetti particolari dovuti alla generazione del rumore.
 
@@ -1084,14 +1033,14 @@ I risultati riflettono quanto è stato ipotizzato in precedenza: KRIG e TPS, che
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni/STSRtempo4.png}
 
 \end{tabular}
-\caption{Per alcuni istanti di tempo, funzione test $f(\protect\bm{p},t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, soap film smoothing, thin plate splines e ST-PDE, caso senza covariata}
+\caption{Per alcuni istanti di tempo, funzione test $f(\protect\bm{p},t)$ reale, dati simulati, stime ottenute rispettivamente con kriging spazio-temporale, modelli basati su thin plate splines, modelli basati su soap film smoothing, ST-PDE, caso senza covariata}
 \label{fig:confronto_altri_metodi_nocov}
 \end{figure}
 \end{landscape}
 
 \section{Caso con covariata}
 
-La stessa analisi è stata eseguita nel caso con covariata, generata in tutti i punti esattamente come fatto nel cap.~\ref{cap:domC}. Nella calcolo del $\mathrm{RMSE}$ è stato considerato solo la parte di risposta spiegata dalla funzione $f(\bm p,t)$, poiché non è opportuno generare nuovamente valori per la covariata nei punti di validazione. I boxplot riportati in fig.~\ref{fig:cfrcovar1} possono quindi essere considerati come valutazione della bontà della stima della parte funzionale del modello. Per confrontare la parte spiegata dalla covariata sono stati tracciati i boxplot in fig.~\ref{fig:cfrcovar2}, con le stime di $\hat{\beta}$ calcolate durante le 50 iterazioni. Come è già stato riportato in precedenza, il kriging non è stato analizzato per alcuni problemi riguardanti l'uso del pacchetto \textit{gstat} in presenza di covariate.
+La stessa analisi è stata eseguita nel caso con covariata, generata in tutti i punti esattamente come fatto nel cap.~\ref{cap:domC}. Nel calcolo del $\mathrm{RMSE}$ è stata considerata solo la parte di risposta spiegata dalla funzione $f(\bm p,t)$, poiché non è opportuno generare nuovamente valori per la covariata nei punti di validazione. I boxplot riportati in fig.~\ref{fig:cfrcovar1} possono quindi essere considerati come valutazione della bontà della stima della parte funzionale del modello. Per confrontare la parte spiegata dalla covariata sono stati tracciati i boxplot in fig.~\ref{fig:cfrcovar2}, con le stime di $\hat{\beta}$ calcolate durante le 50 iterazioni. Come è già stato riportato in precedenza, il kriging non è stato analizzato poiché il caso con covariate non è implementato nel pacchetto \textit{gstat}.
 
 Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\beta$ non presenta differenze, ma nella parte funzionale il caso ST-PDE è nuovamente il migliore. Dai plot della funzione stimata ad alcuni istanti di tempo fissati in fig.~\ref{fig:confronto_altri_metodi_cov} si possono trarre le stesse conclusioni dal caso senza covariata. Il modello ST-PDE è quello che più si avvicina alla funzione reale.
 
@@ -1141,7 +1090,7 @@ Le conclusioni sono perfettamente analoghe al caso precedente. La stima di $\bet
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/SOAPtempo4.png}&
 \includegraphics[trim=0cm 0cm 0cm 1.8cm,clip=true,width=0.19\textwidth,valign=t]{Immagini/simulazioni_covar/STSRtempo4.png}
 \end{tabular}
-\caption{Per alcuni istanti di tempo, funzione test $f(\protect\bm{p},t)$ reale, dati simulati, stime ottenute rispettivamente con soap film smoothing, thin plate splines e ST-PDE, caso con covariata}
+\caption{Per alcuni istanti di tempo, funzione test $f(\protect\bm{p},t)$ reale, dati simulati, stime ottenute rispettivamente con modelli basati su thin plate splines, modelli basati su soap film smoothing, ST-PDE, caso con covariata}
 \label{fig:confronto_altri_metodi_cov}
 \end{figure}
 \end{landscape}
@@ -1156,22 +1105,21 @@ In realtà i dati raccolti dall'Agenzia Regionale per la Prevenzione e Protezion
 
 Per ogni comune della provincia di Venezia e per ogni anno è disponibile il numero di rifiuti totali raccolti in tonnellate e la popolazione residente. La popolazione è certamente un valore influente per la produzione di rifiuti, perciò la quantità di riferimento non sarà il valore dei rifiuti totali raccolti in ogni anno per comune, ma il valore pro capite.
 
+La più importante ipotesi iniziale in questa applicazione è la scelta di riferire i dati riguardanti la raccolta dei rifiuti di tutto il territorio comunale ad un unico punto. La natura del dato (rifiuti prodotti ad esempio da residenti, turisti o da piccole attività) richiede che esso sia riferito alla zona urbanizzata del comune. Non avendo a disposizione questa quantità si hanno due possibili semplificazioni: studiare il dato come areale riferendolo all'intero comune (sebbene i rifiuti urbani non siano prodotti su tutto il territorio comunale) o localizzarlo in un punto corrispondente al paese più importante del comune. Per semplicità, i valori disponibili saranno considerati come puntualmente localizzati. Anche in tempo è stata fatta una semplificazione simile, perché i dati (valore di rifiuti prodotti in un intero anno) saranno riferiti agli istanti corrispondenti al cambio di anno.
+
 Le coordinate spaziali dei comuni sono la longitudine e la latitudine, disponibili on line\footnote{\href{http://www.dossier.net/utilities/coordinate-geografiche/}{http://www.dossier.net/utilities/coordinate-geografiche/}}. Nel caso dei comuni con dato replicato (sez.~\ref{sez:comunireplicati}), le coordinate sono state ottenute da Google Maps.
-
-La più importante ipotesi iniziale in questa applicazione è la scelta di riferire i dati riguardanti la raccolta dei rifiuti di tutto il territorio comunale in un unico punto, corrispondente al capoluogo. Potrebbe essere più appropriato riferire i dati all'intero territorio comunale o alla zona urbanizzata del comune (non su tutto il territorio sono prodotti rifiuti urbani). Ma per semplicità lo studio è eseguito con dati puntiformi normalizzati rispetto alla popolazione. 
-
 \section{Il turismo come possibile covariata}
 
 L'inclusione della popolazione residente nella risposta tramite la scelta di usare i valori pro capite è necessaria, poiché permette di depurare la risposta da una variabile che per sua natura la influenzerebbe. Ma sarebbe un errore fermarsi solo alla popolazione residente, poiché anche i turisti rappresentano una componente non trascurabile di produzione di rifiuti urbani.
 
 Nella provincia di Venezia sono presenti molte zone di elevata attrazione turistica. Grande importanza è da attribuire a Venezia, ma si hanno anche zone balneari (come Lido di Venezia, Cavallino-Treporti, Jesolo, San Michele al Tagliamento, Bibione, ecc...). L'informazione scelta per sintetizzare l'attività turistica è il numero di posti letto totali del comune, valore disponibile grazie all'applicativo dell'Istat \textit{Atlante Statistico dei Comuni}\footnote{\href{http://www.istat.it/it/archivio/113712}{http://www.istat.it/it/archivio/113712}} per ogni anno. Il totale dei posti letto per comune è la somma di vari tipi di attività non solamente alberghiere in senso stretto (ad esempio sono conteggiati anche esercizi complementari, bed \& breakfast, campeggi) e sarà considerato normalizzato per la popolazione residente per uniformità con la risposta. I valori ricavati saranno inseriti nel modello come possibile covariata.
-
+\newpage
 
 \section{Trattamento del dominio}
 
 Per poter studiare il problema a livello computazionale occorre avere una buona approssimazione della frontiera della regione. Questa è disponibile nel pacchetto R \textit{raster} che descrive dati geografici di moltissime zone del mondo sia a livello nazionale che locale (nel caso italiano province e comuni) tramite poligoni molto precisi.
 
-Una volta scaricata la provincia di Venezia da \textit{raster}, si è riscontrato subito un problema: la regione è composta da un insieme di 101 poligoni distinti (a causa delle numerose isole di cui è composta la laguna) e ogni poligono ha un alto numero di vertici (ad esempio, la prima delle due regioni corrispondenti alla parte interna della provincia ha 10538 vertici). Non è possibile analizzare il problema su un territorio così descritto, perciò è stata necessaria una analisi iniziale della frontiera per ridurne la complessità. 
+Una volta scaricata la provincia di Venezia da \textit{raster} (descritto in \cite{package:raster}), si è riscontrato subito un problema: la regione è composta da un insieme di 101 poligoni distinti (a causa delle numerose isole di cui è composta la laguna) e ogni poligono ha un alto numero di vertici (ad esempio, la prima delle due regioni corrispondenti alla parte interna della provincia ha 10538 vertici). Non è possibile analizzare il problema su un territorio così descritto, perciò è stata necessaria una analisi iniziale della frontiera per ridurne la complessità. 
 
 \begin{figure}[t]
 	\centering
@@ -1189,9 +1137,9 @@ Una volta scaricata la provincia di Venezia da \textit{raster}, si è riscontrat
 	\label{fig:Ven_poligoni}
 \end{figure}
 
-Oltre all'entroterra (composto da due poligoni) saranno considerate solo le più più rilevanti isole della laguna a livello di popolazione e turismo: Venezia, Murano, Lido di Venezia, Pellestrina e Chioggia (composta da due poligoni). In fig.~\ref{fig:Ven_poligoni} (tracciata, come per le successive, con il pacchetto R \textit{RgoogleMaps}) sono visualizzati i poligoni disponibili in \textit{raster} e quelli scelti per l'analisi. Come sarà indicato nel paragrafo successivo, tutte queste isole sono state trattate per la riduzione dei vertici e, per creare un poligono unico, sono state unite tra loro con ponti dove era possibile. Tra le isole collegate solamente via mare con il resto del territorio sono stati simulati ponti in corrispondenza delle trafficate linee di trasporto pubblico con traghetto. 
+Oltre all'entroterra (composto da due poligoni) saranno considerate solo le più più rilevanti isole della laguna a livello di popolazione e turismo: Venezia, Murano, Lido di Venezia, Pellestrina e Chioggia (composta da due poligoni). In fig.~\ref{fig:Ven_poligoni} (tracciata, come per le successive, con il pacchetto R \textit{RgoogleMaps} descritto in \cite{package:rgooglemaps}) sono visualizzati i poligoni disponibili in \textit{raster} e quelli scelti per l'analisi. Come sarà indicato nel paragrafo successivo, tutte queste isole sono state trattate per la riduzione dei vertici e, per creare un poligono unico, sono state unite tra loro con ponti dove era possibile. Tra le isole collegate solamente via mare con il resto del territorio sono stati simulati ponti in corrispondenza delle trafficate linee di trasporto pubblico con traghetto. 
 
-\subsection{Regression splines}
+\subsection{Regression Splines}
 
 Per ridurre l'elevato numero di vertici di ognuno dei poligoni considerati (e la conseguente complessità della stima) è stato necessario ricorrere a tecniche di smoothing di dati funzionali (descritte in \cite{art:ramsaysilverman}). Ad ogni poligono è possibile associare una coppia di funzioni: la latitudine e la longitudine rispetto all'ascissa curvilinea (disponibili per punti, corrispondenti ai vertici di \textit{raster}) da rappresentare in funzioni di base. Successivamente, le nuove funzioni stimate sono state valutate in un numero molto inferiore di valori dell'ascissa curvilinea. Con le nuove coordinate ottenute dopo questo procedimento è stata costruita la nuova definizione della regione.
 
@@ -1234,11 +1182,11 @@ Dopo aver ripetuto l'analisi per ognuna delle isole elencate precedentemente (ec
 \subsection{Replica dei dati}
 \label{sez:comunireplicati}
 
-L'uso di valori pro capite per rifiuti e posti letto consente di replicare il dato del comune anche su altri punti in cui risulta necessario. Ad esempio, le isole di Murano, Lido di Venezia e Pellestrina non sono sedi di comune, ma si riferiscono a Venezia. Quindi il dato di Venezia è stato replicato in queste isole ad ogni anno, per avere un valore di riferimento anche nelle isole. I dati replicati dal comune di Venezia sono visualizzati in rosso in fig.~\ref{fig:Ven_rep1}. Come si può notare, anche nell'isola di Venezia è stato duplicato il dato, per poter ottenere una triangolazione senza troppi triangoli composti solo da punti di frontiera in una zona di particolare rilevanza. 
+L'uso di valori pro capite per rifiuti e covariata consente di replicare il dato del comune anche su altri punti in cui risulta necessario. Ad esempio, le isole di Murano, Lido di Venezia e Pellestrina non sono sedi di comune, ma si riferiscono a Venezia. Quindi il dato di Venezia è stato replicato in queste isole ad ogni anno, per avere un valore di riferimento anche nelle isole. Infatti, se si avesse a disposizione l'area urbanizzata del comune a cui riferire il dato, queste isole sarebbero sicuramente considerate. Quindi non è opportuno trascurarle. I dati replicati dal comune di Venezia sono visualizzati in rosso in fig.~\ref{fig:Ven_rep1}. Come si può notare, anche nell'isola di Venezia è stato duplicato il dato, per poter ottenere una triangolazione senza troppi triangoli composti solo da punti di frontiera in una zona di particolare rilevanza. 
 
 Un caso particolare riguarda il comune di Cavallino-Treporti, che è stato istituito nel 1999 con una parte dei territori del comune di Venezia. La separazione all'interno dei dati, però, è presente dal 2002. Di conseguenza prima di questo anno il dato in Cavallino-Treporti è una replica del dato di Venezia. Cavallino-Treporti corrisponde al punto blu in fig.~\ref{fig:Ven_rep2}.
 
-Un altro punto di replica del dato è Bibione, località balneare vicina a Lignano Sabbiadoro (che però non è in Veneto) ed interna alla regione (punto verde in fig.~\ref{fig:Ven_rep2}). Il comune di riferimento di Bibione (San Michele al Tagliamento) è lontano, pertanto si genera una parte di territorio senza dati molto ampia nell'estremità orientale della provincia. Quindi la replica della misurazione in Bibione consente di avere un dato in una zona rilevante (già dai grafici in fig.~\ref{fig:Ven_bubbledati} e \ref{fig:Ven_bubblePL} si potrà capire l'importanza della zona balneare in questo studio) e di coprire anche un'estremità del dominio altrimenti priva di riferimenti.
+Anche in Bibione, località balneare vicina a Lignano Sabbiadoro (che però non è in Veneto) ed interna alla regione (punto verde in fig.~\ref{fig:Ven_rep2}), è stato replicato il dato. Il comune di riferimento di Bibione (San Michele al Tagliamento) è lontano, pertanto si genera una parte di territorio senza dati molto ampia nell'estremità orientale della provincia. Come nel caso delle isole della laguna, questa zona avrebbe un valore di riferimento se si considerasse l'area urbanizzata del comune. Quindi la replica della misurazione in Bibione consente di coprire anche un'estremità del dominio altrimenti priva di riferimenti e di avere un dato in una zona rilevante (già dai grafici in fig.~\ref{fig:Ven_bubbledati} e \ref{fig:Ven_bubblePL} si potrà capire l'importanza della zona balneare in questo studio).
 
 \begin{figure}[t]
 \centering
@@ -1255,7 +1203,7 @@ Un altro punto di replica del dato è Bibione, località balneare vicina a Ligna
 \caption{Dati replicati}
 \label{fig:Ven_rep}
 \end{figure}
-
+\newpage
 
 \subsection{Triangolazione del dominio}
 
@@ -1279,7 +1227,7 @@ In conclusione, il dominio è descritto da 418 punti (49 con dati, 369 di fronti
 \end{figure}
 
 \section{Analisi preliminare dei dati}
-Prima di eseguire l'analisi, è opportuno avere una visualizzazione dei dati sul dominio della provincia di Venezia. In fig.~\ref{fig:Ven_bubbledati} e \ref{fig:Ven_bubblePL} sono visualizzati, rispettivamente, i valori dei rifiuti e dei posti letto pro capite (realizzati grazie all'aiuto del pacchetto R \textit{ggmap}), che permettono di avere un'idea della loro distribuzione in spazio e tempo.
+Prima di eseguire l'analisi, è opportuno avere una visualizzazione dei dati sul dominio della provincia di Venezia. In fig.~\ref{fig:Ven_bubbledati} e \ref{fig:Ven_bubblePL} sono visualizzati, rispettivamente, i valori dei rifiuti e dei posti letto pro capite (realizzati grazie all'aiuto dei pacchetti R \textit{ggplot2} e \textit{ggmap}, descritti rispettivamente in \cite{package:ggplot2} e \cite{package:ggmap}), che permettono di avere un'idea della loro distribuzione in spazio e tempo.
 \newpage
 \begin{figure}[H]
 	\centering
@@ -1331,7 +1279,7 @@ Prima di eseguire l'analisi, è opportuno avere una visualizzazione dei dati sul
 \end{figure}
 Da questa analisi iniziale si può già notare come la produzione di rifiuti sia più alta nella zona balneare della regione e come non presenti grosse variazioni nel tempo in quasi tutti i comuni, poiché i dati sono più o meno simili negli anni. Questo è evidenziato anche in fig.~\ref{fig:Ven_matplot}, dove sono stati collegati tra loro i dati al variare del tempo per ogni comune. Si distinguono subito due gruppi (valori più alti per la zona balneare e più bassi negli altri comuni) totalmente distinti, eccetto per un comune (Cavallino-Treporti) che subisce un forte innalzamento nel tempo.
 
-Dai grafici in fig.~\ref{fig:Ven_bubblePL} per il numero di posti letto pro capite si può notare che la covariata assume valori decisamente più alti nella zona balneare rispetto al resto della regione. Contrariamente a quello che si potrebbe pensare, non si ha un elevato valore di posti letto nell'isola di Venezia. Invece si ha una grossa variazione nel comune di Cavallino-Treporti dopo la separazione dal comune di Venezia (si nota che il raggio della bolla aumenta notevolmente dopo il 2002). Questo indica che i posti letto sono in realtà più densi in Cavallino-Treporti, ma quando il dato era unito al comune di Venezia questo effetto non poteva essere colto in modo così dettagliato. Ci si può quindi aspettare che la funzione stimata presenti un comportamento differente in Cavallino-Treporti nelle due situazioni.
+Dai grafici in fig.~\ref{fig:Ven_bubblePL} per il numero di posti letto pro capite si può notare che la covariata assume valori decisamente più alti nella zona balneare rispetto al resto della regione. Contrariamente a quello che si potrebbe pensare, non si ha un elevato valore di posti letto nell'isola di Venezia. Invece si ha una grossa variazione nel comune di Cavallino-Treporti dopo la separazione dal comune di Venezia (si nota che il raggio della bolla aumenta notevolmente dopo il 2002). Questo indica che i posti letto sono in realtà più densi in Cavallino-Treporti, ma quando il dato era unito al comune di Venezia questo effetto non poteva essere colto in modo così dettagliato. Nella parte centrale del dominio quasi non si notano i punti corrispondenti alla covariata a causa del fatto che i valori assunti sono prossimi allo zero.
 
 \subsection{Funzioni di base}
 Le basi in spazio scelte per l'applicazione del modello sono gli elementi finiti lineari anche in questo caso. Ad ognuno dei punti spaziali (interni o di frontiera) è associata una funzione di base, coerentemente con la triangolazione prodotta. Di conseguenza si ha $N=418$ mentre il numero di punti con dati $n$ è minore ed è pari a 49.
@@ -1340,7 +1288,7 @@ In tempo, esattamente come nel caso del dominio a forma di C, saranno adottate c
 
 \section{Applicazione del modello senza covariata}
 
-Prima di calcolare i risultati dell'analisi occorre fissare i parametri $\lambda_S$ e $\lambda_T$. Il procedimento è perfettamente analogo a quello ricavato nel caso del dominio a forma di C per ricavare una buona approssimazione del minimo di $\mathrm{GCV}(\bm \lambda)$ in eq.~\ref{eq:GCV}. A seguito di alcuni tentativi su griglie discrete, la produzione dei rifiuti è stata analizzata con $\bm \lambda = (10^{-9}, 10^{-0.125})$. In fig.~\ref{fig:Ven_ris} sono riportati i risultati ottenuti nei 15 anni a disposizione. Questi grafici permettono di studiare il profilo della funzione nei vari istanti temporali in modo molto accurato, perché la scala cromatica è stata resa uniforme tra tutti gli anni.
+Prima di calcolare i risultati dell'analisi occorre fissare i parametri $\lambda_S$ e $\lambda_T$. Il procedimento è perfettamente analogo a quello ricavato nel caso del dominio a forma di C per ricavare una buona approssimazione del minimo di $\mathrm{GCV}(\bm \lambda)$ in eq.~\eqref{eq:GCV}. A seguito di alcuni tentativi su griglie discrete, la produzione dei rifiuti è stata analizzata con $\bm \lambda = (10^{-9}, 10^{-0.125})$. In fig.~\ref{fig:Ven_ris} sono riportati i risultati ottenuti nei 15 anni a disposizione. Questi grafici permettono di studiare il profilo della funzione nei vari istanti temporali in modo molto accurato, perché la scala cromatica è stata resa uniforme tra tutti gli anni.
 
 Successivamente sarà rappresentata anche la stima dell'evoluzione temporale della funzione in alcuni comuni, riportati in fig.~\ref{fig:Ven_selected}.
 \newline
@@ -1414,15 +1362,21 @@ Successivamente sarà rappresentata anche la stima dell'evoluzione temporale del
 	\label{fig:Ven_tempo}
 \end{figure}
 
-Da tutti questi grafici è confermata la deduzione iniziale: i rifiuti sono massimi nella parte balneare della regione e minimi nella parte interna. I valori più alti si registrano in Bibione, ad est della regione. Questo conferma l'intuizione della replica del dato in questo punto. Contrariamente a quanto poteva essere supposto inizialmente, Venezia (meta turistica di fama internazionale) non è la località con la produzione più alta. Come già si notava dai grafici in fig.~\ref{fig:Ven_bubblePL}, il turismo sarà rilevante nell'analisi della produzione di rifiuti e la causa non sarà Venezia (dove la produzione non è eccessivamente diversa dagli altri comuni) ma le località balneari.
+I grafici spaziali in fig.~\ref{fig:Ven_ris}, coerentemente con quanto già notato per il dato in fig.~\ref{fig:Ven_bubblePL}, riportano i massimi nella zona balneare del territorio, e i minimi nella parte interna. Il dato è massimo in Bibione (e questo conferma la necessità di replicare il dato). Contrariamente a quello che si poteva pensare prima di questa analisi, non è Venezia la località turistica con maggiore produzione di rifiuti. Questa prima analisi conferma la necessità di inserire la covariata nel modello per poter tener conto degli effetti legati al turismo, poiché nelle zone dove la stima è massima si hanno anche i valori più alti della covariata.
 
-Le variazioni temporali della funzione in generale non sono marcate (i grafici in fig.~\ref{fig:Ven_ris} sono molto simili) ma si possono notare alcune particolarità. In fig.~\ref{fig:Ven_tempo} sono tracciati gli sviluppi temporali stimati in alcuni comuni. I punti rossi corrispondono al dato misurato. La funzione stimata spiega bene l'andamento tracciato dai dati iniziali senza cadere nell'eccessiva interpolazione. Infatti, lo smoothing imposto dal modello tramite la penalizzazione della derivata seconda in tempo non permette di avere variazioni repentine poiché $\lambda_T$ non è eccessivamente basso. Ad esempio, nei grafici di Venezia e Cavallino-Treporti, i cambiamenti dovuti alla separazione del comune dal 2002 hanno provocato un mutamento dello sviluppo temporale, ma l'andamento generale è comunque colto dal modello. 
+Si noti anche come cambia la stima in Cavallino-Treporti (già si vedeva in fig.~\ref{fig:Ven_matplot}). La separazione dal comune di Venezia del 2002 rende il dato più accurato in Cavallino-Treporti, la cui produzione di rifiuti cresce negli anni. Quindi l'utilizzo di questo metodo, che considera accuratamente la geometria spaziale del problema, si conferma appropriato. Se non fosse ritenuta esclusa la zona marittima della laguna, il dato di Cavallino-Treporti influenzerebbe i comuni circostanti, Venezia compresa. Invece l'effetto dell'innalzamento del dato si propaga solo verso sud-ovest, fino al termine della piccola parte di terra prima del mare.
 
-Si noti come la risposta cresca velocemente in Cavallino-Treporti (già si vedeva in fig.~\ref{fig:Ven_matplot}). In fig.~\ref{fig:Ven_ris} il cambiamento più marcato nel corso degli anni è proprio in questa località. La separazione dal comune di Venezia del 2002 rende il dato più preciso in Cavallino-Treporti, che successivamente cresce negli anni. Quindi l'utilizzo di questo metodo, che considera accuratamente la geometria spaziale del problema, si conferma appropriato. Se non fosse ritenuta esclusa la zona marittima della laguna, il dato di Cavallino-Treporti influenzerebbe i comuni circostanti, Venezia compresa. Invece l'effetto dell'innalzamento del dato si propaga solo verso sud-ovest, fino al termine della piccola parte di terra prima del mare.
+Le variazioni temporali della funzione, in generale, non sono marcate (i grafici in fig.~\ref{fig:Ven_ris} sono molto simili) ma si possono notare alcune particolarità. In fig.~\ref{fig:Ven_tempo} sono visualizzati gli sviluppi temporali stimati in alcuni comuni. I punti rossi corrispondono al dato misurato. La funzione stimata spiega bene l'andamento tracciato dai dati iniziali. Ad esempio, nei grafici di Venezia e Cavallino-Treporti, i cambiamenti dovuti alla separazione del comune dal 2002 hanno provocato un mutamento dello sviluppo temporale, ma l'andamento generale è comunque colto dal modello. Anche dal grafico con gli sviluppi temporali si può notare come la produzione di rifiuti cresca in Cavallino-Treporti.
 
 \section{Applicazione del modello con covariata}
 
-Le analisi sono state eseguite con $\bm \lambda = (10^{-7.625}, 10^{-0.125})$, valore ricavato come nei casi precedenti. Come si potrà notare dai prossimi grafici, dove è riportata la stima della funzione $f(\bm p,t)$ in tutti i punti senza l'aggiunta della parte spiegata dalla covariata, nelle zone dove la produzione di rifiuti pro capite era massima nel caso senza covariate ora risultano i valori più bassi.
+Le analisi sono state eseguite con $\bm \lambda = (10^{-9}, 10^{-0.125})$, valore ricavato come nei casi precedenti. La funzione stimata in questo caso può essere interpretata come la parte di rifiuti urbani prodotta dalla popolazione residente, poiché viene escluso da essa la parte riguardante il turismo.
+
+Il modello stima
+$$
+\hat{\beta}\approx 30.5563 \ .
+$$
+Più la covariata è alta, più è sottratta informazione a $\hat{f}(\bm p,t)$ dal termine con covariata, poiché $\hat{\beta}$ è costante in spazio e tempo. Quindi ci si può aspettare che la stima nella parte balneare della regione subisca maggiormente questo effetto.
 \newpage
 \begin{figure}[H]
 	\centering
@@ -1480,32 +1434,27 @@ Le analisi sono state eseguite con $\bm \lambda = (10^{-7.625}, 10^{-0.125})$, v
 	\label{fig:Vencovar_tempo}
 \end{figure}
 \newpage
-In fig.~\ref{fig:Vencovar_tempo} sono tracciati i grafici della funzione stimata (senza il termine di covariata) negli stessi comuni che sono stati scelti per il caso senza covariata. I punti tracciati in rosso rappresentano il dato senza i termine della covariata, sottratto attraverso la moltiplicazione per $\hat{\beta}$ stimato. Non possono essere considerati come la parte di dati generati esattamente dalla funzione, ma come una sua buona approssimazione (ma sono comunque ciò che è analizzato dal modello per la stime di $\hat{\bm{c}}$, come già evidenziato in sez.~\ref{sez:beta}).
+Come si nota dai grafici spaziali in \ref{fig:Vencovar_ris}, la funzione ha un profilo simile al caso senza covariate. Il valore della covariata nella parte interna del dominio è quasi nullo (come era stato evidenziato in fig.~\ref{fig:Ven_bubblePL}) e più alto nella zona balneare. Quindi l'effetto della covariata non ha variato la stima della produzione di rifiuti pro capite nella parte interna della regione. Coerentemente all'interpretazione che si attribuisce a questa stima, avendo un valore quasi nullo per la covariata, la produzione di rifiuti pro capite della popolazione residente nella parte interna della regione è praticamente la stessa del modello precedente.
 
-L'interpretazione del risultato in questo caso è legata all'alta affluenza turistica nelle zone balneari. Come già si notava dai grafici iniziali in fig.~\ref{fig:Ven_bubbledati} e \ref{fig:Ven_bubblePL}, su tutta la zona costiera non si hanno solo i massimi dei rifiuti pro capite ma anche del numero di posti letto pro capite. I valori della covariata nella parte interna della regione sono quasi trascurabili rispetto alle località balneari. Quindi non solo la produzione di rifiuti è massima sulla parte settentrionale della costa, ma ancora di più, in proporzione, lo è la covariata.
+La funzione presenta nuovamente i massimi lungo la costa. Tuttavia, i valori di tali massimi sono minori rispetto al caso senza covariata. Una parte di produzione di rifiuti è stata associata al turismo, ma non si hanno comunque valori simili alla parte interna della regione. Se si interpreta la funzione stimata come parte dei rifiuti prodotta dalla popolazione residente si trovano ancora valori molto alti poiché risentono dell'effetto del turismo, che potrebbe non essere dipendente soltanto dalle capacità alberghiere del territorio (ad esempio, molti turisti potrebbero giungere dalla parte interna della regione e fermarsi in giornata). Non avendo a disposizione ulteriori dati per esprimere in modo più accurato il turismo a livello comunale ci accontentiamo di dire che la covariata è influente nella produzione di rifiuti urbani, poiché si trova il seguente intervallo di confidenta per $\beta$:
+$$
+\beta \in [14.3158;46.7767] \ .
+$$
+L'alta produzione pro capite nella zona balneare della regione potrebbe essere dovuta alla mancanza di ulteriori covariate.
 
-Il modello stima
-$$
-\hat{\beta}\approx274.034 \ .
-$$
-Più la covariata è alta, più è sottratta informazione a $\hat{f}(\bm p,t)$ dal termine con covariata, poiché $\hat{\beta}$ è costante in spazio e tempo. Perciò la funzione ha un profilo quasi simile ad una traslazione del caso senza covariate nella parte interna del dominio (in questa zona il numero di posti letto pro capite, come era stato evidenziato in fig.~\ref{fig:Ven_bubblePL}, è quasi nullo) e fortemente ribassato (talvolta fino a valori negativi) nella zona balneare a causa dell'alto contributo della covariata. Dall'intervallo di confidenza per $\beta$
-$$
-\beta \in [271.923;276.148]
-$$
-si può dedurre che la covariata non può essere esclusa dal modello.
+In fig.~\ref{fig:Vencovar_tempo} sono tracciati i grafici della funzione stimata (senza il termine di covariata) negli stessi comuni che sono stati scelti per il caso senza covariata. I punti tracciati in rosso rappresentano il dato senza i termine della covariata, sottratto attraverso la moltiplicazione per $\hat{\beta}$ stimato. Non possono essere considerati come la parte di dati generati esattamente dalla funzione, ma come una sua buona approssimazione (ma sono comunque ciò che è analizzato dal modello per la stime di $\hat{\bm{c}}$, come già evidenziato in sez.~\ref{sez:beta}). Anche in questo caso si vede chiaramente dai grafici che il modello ha colto molto bene l'andamento temporale dei dati. I profili sono simili al caso senza covariata e si nota di nuovo come i massimi siano minori rispetto a quelli in fig.\ref{fig:Ven_tempo}.
 
-Di nuovo è interessante il comportamento nel comune di Cavallino-Treporti, dove la funzione subisce una grossa variazione dopo la divisione dal comune di Venezia per l'aumento del numero dei posti letto. Attorno all'anno 2002 si ha un aumento molto forte della covariata (si veda fig.~\ref{fig:Ven_bubblePL}), perciò la funzione si abbassa di colpo. Tuttavia, visto che questo è dovuto alla maggior precisione del dato in Cavallino-Treporti, è un cambiamento utile a spiegar meglio la risposta. Gli effetti dovuti alle proprietà di smoothing poste dal modello (non troppo interpolanti, poiché anche in questo caso $\lambda_T$ non ha un valore eccessivamente basso) portano ad un cambiamento smussato attorno all'anno della separazione del dato.
 \newpage
 \thispagestyle{empty}
 
 \chapter{Conclusioni e sviluppi futuri}
 \label{cap:conclusione}
 
-In questo lavoro di tesi è stato analizzato nel dettaglio il modello ST-PDE per la regressione di dati varianti all'interno di un dominio spaziale e di un intervallo temporale. L'algoritmo di stima, particolarmente adatto a domini spaziali complessi, è stato implementato in codice R. Dal confronto con gli altri metodi e da quanto ricavato con le stime, soprattutto sul dominio a forma di C in cui è possibile conoscere il valore reale della funzione, si può concludere che i risultati prodotti sono molto buoni.
+In questo lavoro di tesi è stato descritto nel dettaglio il modello ST-PDE per la regressione di dati varianti all'interno di un dominio spaziale e di un intervallo temporale. L'algoritmo di stima, particolarmente adatto a domini spaziali complessi, è stato implementato in codice R. Dal confronto con gli altri metodi e da quanto ricavato con le stime, soprattutto sul dominio a forma di C in cui è possibile conoscere il valore reale della funzione, si può concludere che i risultati prodotti sono molto buoni.
 
-Il modello è stato proposto a seguito della necessità di dover analizzare la produzione dei rifiuti urbani tra il 1997 e il 2011 nella provincia di Venezia. I dati, disponibili per comune, sono stati localizzati in punti corrispondenti al capoluogo. Tuttavia potrebbero essere considerati in modo più preciso (ma anche più complesso) come dati areali definiti sul territorio dei comuni o sulla zona urbanizzata del comune (visto che i rifiuti urbani non sono prodotti fuori da questa zona). Quindi un possibile sviluppo futuro di questo lavoro può essere l'estensione del modello a dati non puntiformi e la conseguente applicazione a questo problema. I risultati ottenuti dalla stima con dati puntiformi sono comunque buoni perché spiegano appropriatamente il fenomeno. Una conferma da un eventuale modello per dati areali, però, sarebbe senza dubbio interessante.
+Il modello è illustrato attraverso l'applicazione allo studio della produzione dei rifiuti urbani tra il 1997 e il 2011 nella provincia di Venezia. I dati, per loro natura, si riferiscono alla zona urbanizzata del comune. Non avendo a disposizione la descrizione delle zone urbanizzate sono possibili due semplificazioni: considerare i dati come areali e riferirli a tutto il territorio del comune, o considerarli puntualmente localizzati nel paese di riferimento. In questa tesi sono stati analizzati i dati puntuali. Quindi un possibile sviluppo futuro di questo lavoro può essere l'estensione del modello a dati areali la conseguente applicazione a questo problema (con dati riferiti a tutto il territorio comunale). I risultati ottenuti dalla stima con dati puntiformi sono comunque buoni perché spiegano appropriatamente il fenomeno. Tuttavia, una conferma da un eventuale modello per dati areali sarebbe senza dubbio interessante.
 
-Diversa è la valutazione conclusiva sulle prestazioni computazionali del codice. Per semplicità le basi degli elementi finiti sono state utilizzate soltanto lineari e la produzione dei rifiuti è stata analizzata solamente nella provincia di Venezia, pur avendo a disposizione i dati di tutto il Veneto. Inoltre, durante l'esecuzione del codice, si è potuto notare come alcune funzioni come la minimizzazione di $\mathrm{GCV}(\bm \lambda)$ o il calcolo dei valori stimati ad un istante di tempo fissato (usato per tracciare il profilo della funzione ad un certo anno) siano piuttosto lente. Ovviamente per analisi di dataset di grosse dimensioni deve essere messa in conto una spesa di tempo elevata, ma R certamente non ha aiutato. Infatti, è noto che R non sia un linguaggio di programmazione fortemente efficiente e questo ha prodotto la lentezza di esecuzione. Un chiaro sviluppo futuro può essere l'uso del codice come base per la creazione di un algoritmo più veloce attraverso l'integrazione con un linguaggio di programmazione più efficiente (come il C++) o dell'eventuale parallelizzazione nei colli di bottiglia più evidenti. Dopo che sarà stata sviluppata l'integrazione del codice sarà possibile garantire un'analisi più agile anche per dataset di dimensioni più elevate o per elementi finiti di ordine maggiore. In questo modo si avrà a disposizione uno strumento di analisi statistica buono non solo dal punto di vista dei risultati, ma anche in termini di efficienza computazionale.
+Sono possibili anche alcune importanti considerazioni sulle prestazioni computazionali del codice. Per semplicità le basi degli elementi finiti sono state utilizzate soltanto lineari e la produzione dei rifiuti è stata analizzata solamente nella provincia di Venezia, pur avendo a disposizione i dati di tutto il Veneto. Inoltre, durante l'esecuzione del codice, si è potuto notare come alcune funzioni come la minimizzazione di $\mathrm{GCV}(\bm \lambda)$ o il calcolo dei valori stimati ad un istante di tempo fissato (usato per tracciare il profilo della funzione ad un certo anno) siano piuttosto lente. Ovviamente per analisi di dataset di grosse dimensioni deve essere messa in conto una spesa di tempo elevata, ma R certamente non ha aiutato. Infatti, è noto che R non sia un linguaggio di programmazione fortemente efficiente e questo ha prodotto la lentezza di esecuzione. Un chiaro sviluppo futuro può essere l'uso del codice come base per la creazione di un algoritmo più veloce attraverso l'integrazione con un linguaggio di programmazione più efficiente (come il C++) o dell'eventuale parallelizzazione nei colli di bottiglia più evidenti. Dopo che sarà stata sviluppata l'integrazione del codice sarà possibile garantire un'analisi più agile anche per dataset di dimensioni più elevate o per elementi finiti di ordine maggiore.
 
 
 \begin{thebibliography}{99}
@@ -1515,9 +1464,6 @@ Diversa è la valutazione conclusiva sulle prestazioni computazionali del codice
 
 \bibitem{art:augustin}
 N.H. Augustin, V.M. Trenkel, S.N. Wood, P. Lorance, \emph{Space-time modelling of blue ling for fisheries stock management}, Environmetrics, 24, 109–119, 2013.
-
-\bibitem{art:azzimonti}
-L. Azzimonti, L.M. Sangalli, P. Secchi, M. Domanin, F. Nobile, \emph{Blood flow velocity field estimation via spatial regression with PDE penalization}, Journal of the American Statistical Association, 2015.
 
 \bibitem{package:Matrix}
 D. Bates, M. Maechler, \emph{Matrix: Sparse and Dense Matrix Classes and Methods}, R package version 1.1-5, 2015, \href{http://CRAN.R-project.org/package=Matrix}{http://CRAN.R-project.org/package=Matrix}
@@ -1566,6 +1512,7 @@ J.O. Ramsay, H. Wickham, S. Graves, G. Hooker, \emph{fda: Functional Data Analys
 
 \bibitem{art:ramsay}
 T.O. Ramsay, \emph{Spline smoothing over difficult regions}, Journal of the Royal Statistical Society, Series B, 64, pp. 307–319, 2002.
+
 
 \bibitem{art:sangalli}
 L.M. Sangalli, J.O. Ramsay, T.O. Ramsay, \emph{Spatial spline regression models}, Journal of the Royal Statistical Society, Series B, 75, pp. 681–703, 2013.
