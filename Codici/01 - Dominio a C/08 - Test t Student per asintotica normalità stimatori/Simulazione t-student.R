@@ -1,6 +1,8 @@
 library(rgl)
 library(mgcv)
 library(SDMTools)
+library(mvtnorm)
+library(mvnormtest)
 source("SpazioTempo.R")
 load("FrontieraC.RData")
 load("Validazione.RData")
@@ -123,8 +125,9 @@ for(iter in 1:NITER)
     ResultT<-cbind(ResultT,tmp)
     ResultBeta<-c(ResultBeta,SolutionObj$BetaHat)
 }
+save(file="Simulazione.RData",ResultT,ResultBeta)
 
-
+### CONTROLLO CON P-VALUES CORRETTI ###
 p<-NULL
 for(i in 1:(dim(ResultT)[1]))
 {
@@ -137,6 +140,12 @@ pf<-padj[1:(length(padj)-1)]
 png("p-values.png")
 plot(pf,xlab="Punti",ylab="p-values",main="p-values per le stime puntuali di f")
 dev.off()
-length(pf[pf>0.05])/length(pf))
+length(pf[pf>0.05])/length(pf)
 padj[length(padj)]
-save(file="Simulazione.RData",ResultT,ResultBeta)
+
+### CONTROLLO CON MCSHAPIRO ###
+# Per f
+load("mcshapiro.test.RData")
+mcshapiro.test(t(ResultT))
+# Per beta
+shapiro.test(ResultBeta)$p.value

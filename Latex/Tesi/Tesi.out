@@ -1,0 +1,39 @@
+\BOOKMARK [0][-]{chapter.1}{Introduzione}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Modello di regressione spazio-temporale con regolarizzazioni differenziali}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Caso senza covariate}{chapter.2}% 3
+\BOOKMARK [2][-]{subsection.2.1.1}{Dati e modello}{section.2.1}% 4
+\BOOKMARK [2][-]{subsection.2.1.2}{Definizione delle funzioni di base}{section.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.1.3}{Funzionale di penalizzazione}{section.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.1.4}{Modello ideale}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.5}{Discretizzazione dei termini di penalizzazione}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.6}{Soluzione del problema di stima}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.7}{Propriet\340 statistiche dello stimatore}{section.2.1}% 10
+\BOOKMARK [1][-]{section.2.2}{Caso con covariate}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.1}{Propriet\340 statistiche degli stimatori}{section.2.2}% 12
+\BOOKMARK [1][-]{section.2.3}{Stima della varianza di modello e scelta dei parametri di smoothing}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.3.1}{Varianza di modello}{section.2.3}% 14
+\BOOKMARK [2][-]{subsection.2.3.2}{Parametri di smoothing}{section.2.3}% 15
+\BOOKMARK [0][-]{chapter.3}{Sviluppo del codice R}{}% 16
+\BOOKMARK [1][-]{section.3.1}{Funzioni di base considerate}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Schematizzazione dell'algoritmo di stima}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{Strutture dati adottate}{chapter.3}% 19
+\BOOKMARK [0][-]{chapter.4}{Studi di simulazione}{}% 20
+\BOOKMARK [1][-]{section.4.1}{Triangolazione e istanti temporali}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.2}{Caso senza covariata}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.3}{Caso con covariata}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.3.1}{Validazione dell'intervallo di confidenza approssimato}{section.4.3}% 24
+\BOOKMARK [0][-]{chapter.5}{Confronto con altri metodi}{}% 25
+\BOOKMARK [1][-]{section.5.1}{Caso senza covariata}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.2}{Caso con covariata}{chapter.5}% 27
+\BOOKMARK [0][-]{chapter.6}{Applicazione alla produzione di rifiuti urbani nella provincia di Venezia}{}% 28
+\BOOKMARK [1][-]{section.6.1}{Il turismo come possibile covariata}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.2}{Trattamento del dominio}{chapter.6}% 30
+\BOOKMARK [2][-]{subsection.6.2.1}{Regression Splines}{section.6.2}% 31
+\BOOKMARK [2][-]{subsection.6.2.2}{Replica dei dati}{section.6.2}% 32
+\BOOKMARK [2][-]{subsection.6.2.3}{Triangolazione del dominio}{section.6.2}% 33
+\BOOKMARK [1][-]{section.6.3}{Analisi preliminare dei dati}{chapter.6}% 34
+\BOOKMARK [2][-]{subsection.6.3.1}{Funzioni di base}{section.6.3}% 35
+\BOOKMARK [1][-]{section.6.4}{Applicazione del modello senza covariata}{chapter.6}% 36
+\BOOKMARK [1][-]{section.6.5}{Applicazione del modello con covariata}{chapter.6}% 37
+\BOOKMARK [0][-]{chapter.7}{Conclusioni e sviluppi futuri}{}% 38
+\BOOKMARK [0][-]{chapter*.38}{Bibliografia}{}% 39

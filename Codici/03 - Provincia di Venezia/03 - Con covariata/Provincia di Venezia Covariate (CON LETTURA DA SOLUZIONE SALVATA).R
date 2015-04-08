@@ -57,8 +57,8 @@ for(j in 1:length(TimePoints))
     Mat[2,ny+1]=zlim[2]
     
     # Plot
-    png(filename=paste("Anno ",TimePoints[j],".png",sep=""))
-    image(xvec,c(yvec,50),Mat,col=heat.colors(100),main=paste("Funzione stimata tempo ",TimePoints[j],sep=""),ylim=c(yvec[1],yvec[ny]))
+    png(filename=paste("Anno",TimePoints[j],".png",sep=""))
+    image(xvec,c(yvec,50),Mat,col=heat.colors(100),main=paste("Funzione stimata anno ",TimePoints[j],sep=""),ylim=c(yvec[1],yvec[ny]),xlab="",ylab="")
     lines(xbound,ybound,lwd=1)
     lines(c(xbound[1],xbound[length(xbound)]),c(ybound[1],ybound[length(ybound)]),lwd=1)
     contour(xvec,c(yvec,50),Mat,nlevels=10,add=TRUE)
