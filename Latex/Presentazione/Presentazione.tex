@@ -1,0 +1,345 @@
+\documentclass[landscape,9pt]{beamer}                           % COMANDI INIZIALI
+\usepackage[italian]{babel}                             % sillabazione italiana
+\usepackage[utf8]{inputenc}                             % Per le lettere accentate IN UNIX E IN WINDOWS
+\usepackage{ragged2e}                                   % giustifica
+\usepackage{amsmath}                                    % Per allineare le equazioni
+\usepackage{amssymb}                                    % Per le lettere dell'indicatrice (mathbb)
+\usepackage{graphicx}                                   % Per le figure
+\usepackage{bm}
+\usepackage{subfigure}
+\usepackage{animate}
+\usepackage[export]{adjustbox}
+\usepackage{array,multirow,graphicx}
+\usepackage[misc,geometry]{ifsym}
+%\usepackage{cm-super}
+
+\renewcommand{\fontsubfuzz}{1.1pt}                          % Elimina i warning inutili
+
+\justifying                                         % giustifica
+
+\usetheme{CambridgeUS}
+\date{29 Aprile 2015}
+\author{Gabriele Mazza}
+\title{Regressione con regolarizzazioni differenziali per dati spazio-temporali, con applicazione all'analisi della produzione di rifiuti urbani nella provincia di Venezia}
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+\setbeamercolor{date in head/foot}{use=frametitle, bg=frametitle.bg}
+\setbeamercolor{subsection in head/foot}{use=framtitle, bg=frametitle.bg}
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\begin{center}
+\includegraphics[width=0.25\textwidth,
+	height=0.28\textheight]
+	{Immagini/Logo.png}
+\end{center}
+\end{frame}
+
+\section{Introduzione}
+\begin{frame}
+\frametitle{Introduzione}
+In questo lavoro di tesi è costruito e analizzato il modello di \textit{Regressione Spazio-Temporale con Penalizzazioni Differenziali} (ST-PDE) per dati distribuiti in spazio e tempo:
+$$
+z=f(\bm{p},t)
+$$
+con $\bm{p} \in \Omega$, $t \in [T_1,T_2]$.
+\ \ 
+\newline
+\newline
+Grande attenzione sarà dedicata al dominio spaziale.
+\end{frame}
+
+\begin{frame}
+L'applicazione scelta riguarda l'analisi della produzione di rifiuti urbani nella provincia di Venezia tra il 1997 e il 2011
+\begin{figure}[h]
+	\centering
+	\subfigure
+   {
+	\includegraphics[width=0.43\textwidth]{Immagini/CTQDA.png}   
+   }
+	\subfigure
+   {
+	\includegraphics[width=0.49\textwidth]{Immagini/andamenti_temporali.png}
+   }
+\end{figure}
+\end{frame}
+
+
+
+\section{Presentazione modello ST-PDE}
+\subsection{Caso senza covariate}
+\begin{frame}
+\frametitle{Presentazione modello ST-PDE}
+Definisco:
+\begin{itemize}
+\item $\{\bm{p}_i = (x_i,y_i); i=1, \ldots , n\} \subset \Omega \subset \mathbb{R}^2$
+\item $\{t_j ; j=1, \ldots , m\} \subset [T_1,T_2]\subset \mathbb{R}$
+\item $z_{ij}$ osservazioni in $(\bm{p}_i,t_j)$
+\end{itemize}
+\ \ 
+\newline
+Modello:
+$$
+z_{ij}=f(\bm{p}_i,t_j)+\varepsilon_{ij}\ \ \ \ i = 1,\ldots,n\ \ j=1,\ldots,m \ \ 
+$$
+\ \ 
+\newline
+$\varepsilon_{ij}$ rumore iid di media nulla e varianza $\sigma^2$
+\end{frame}
+
+\begin{frame}
+Funzioni di base in spazio e tempo:
+\begin{eqnarray*}
+\{ \varphi_k(t);k = 1, \ldots , M \} &\qquad & \mbox{ basi temporali definite in } [T_1,T_2] \\
+\{ \psi_l(\bm{p});l = 1, \ldots , N \} &\qquad & \mbox{ basi spaziali definite in } \Omega
+\end{eqnarray*}
+\begin{figure}[t]
+	\centering
+	\subfigure
+	{
+	\includegraphics[width=0.46\textwidth]{Immagini/elementofinito.jpg}  
+   }
+	\subfigure
+   {
+	\includegraphics[width=0.46\textwidth]{Immagini/Bsplines.png}
+   }
+\end{figure}
+\end{frame}
+
+\begin{frame}
+La funzione è espressa tramite le funzioni di base:
+$$
+f(\bm{p}, t) = \sum_{k=1}^M a_k(\bm{p})\varphi_k(t) = \sum_{l=1}^N b_l(t)\psi_l(\bm{p}) = \sum_{l=1}^N \sum_{k=1}^M c_{lk}\psi_l(\bm{p})\varphi_k(t)
+$$
+La soluzione si ricaverà minimizzando il funzionale di penalizzazione:
+\begin{multline*}
+J_{\bm \lambda }(f(\bm p,t))=\sum_{i=1}^n \sum_{j=1}^m \bigl( z_{ij} - f(\bm p_i,t_j) \bigr)^2 \ + \\
++\lambda_S  \sum_{k=1}^M \int_{\Omega} \Bigl( \Delta(  a_k(\bm p)  ) \Bigr)^2 d \bm p + \lambda_T \sum_{l=1}^N\int_{T_1}^{T_2} \Bigl( \frac{\partial^2   b_l(t)   }{\partial t ^2} \Bigr)^2 dt \ .
+\end{multline*}
+\end{frame}
+
+\begin{frame}
+Dati i vettori:
+$$
+\bm{c} =
+\begin{bmatrix}
+c_{11}  \\
+\vdots\\
+c_{1M}  \\
+c_{21}  \\
+\vdots\\
+c_{NM}
+\end{bmatrix}
+\qquad
+\bm \psi =
+\begin{bmatrix}
+\psi_{1}  \\
+\psi_{2}  \\
+\vdots\\
+\psi_{N}
+\end{bmatrix}
+\qquad
+\bm \psi_x=  \begin{bmatrix}
+\partial \psi_{1}/\partial x \\
+\partial \psi_{2}/\partial x  \\
+\vdots\\
+\partial \psi_{N}/\partial x \end{bmatrix} 
+\qquad
+\bm \psi_y=  \begin{bmatrix}
+\partial \psi_{1}/\partial y  \\
+\partial \psi_{2}/\partial y  \\
+\vdots\\
+\partial \psi_{N}/\partial y\end{bmatrix}
+\qquad
+\bm z =
+\begin{bmatrix}
+z_{11}  \\
+\vdots\\
+z_{1m}  \\
+z_{21}  \\
+\vdots\\
+z_{nm}
+\end{bmatrix}
+$$
+\ \ 
+\newline
+e le matrici: 
+\begin{itemize}
+\item $P_S=R_1 R_0^{-1} R_1 \qquad R_0 = \int_\Omega \bm \psi \bm \psi^T d \bm p \ , R_1 = \int_\Omega (\bm \psi_x \bm \psi_x^T + \bm \psi_y \bm \psi_y^T)d \bm p$
+\item $P_T|_{k_1,k_2} =\int_{T_1}^{T_2} \varphi_{k_1}''(t) \varphi_{k_2}''(t)$
+\item $P = \lambda_S\    (P_S \otimes I_M)   \ +\  \lambda_T\   (I_N \otimes P_T)$
+\item $B = \Psi \otimes \Phi \qquad \Psi|_{i,l}=\psi_{l}(\bm p_i) \ , \Phi|_{j,k}=\varphi_{k}( t_j)$
+\end{itemize}
+Allora:
+$$
+J_{\bm \lambda }(\bm c) = (\bm z - B \bm c)^T (\bm z - B \bm c) + \bm c^T P \bm c \qquad \Rightarrow \qquad \hat  {\bm c} = (B^T B + P)^{-1}B^T \bm z
+$$
+\end{frame}
+
+
+\subsection{Caso con covariate}
+\begin{frame}
+Si inseriscono nel modello $p$ possibili covariate:
+$$
+z_{ij}=\bm w_{ij}^T  \bm \beta + f(\bm{p}_i,t_j)+\varepsilon_{ij}\ \ \ \ i = 1,\ldots,n\ \ j=1,\ldots,m \ \ 
+$$
+Data la matrice disegno $W$, che si ottiene accostando per colonna i vettori di covariate, allora:
+$$ J_{\bm \lambda }(\bm c) = (\bm z - W \bm \beta - B \bm c)^T (\bm z - W \bm \beta - B \bm c) + \bm c^t S \bm c $$
+Derivando:
+$$
+\begin{cases}
+W^TW \hat{\bm \beta} = W^T(\bm z - B \hat{\bm c})  \\
+(B^T B + P) \hat{\bm c}=B^T(\bm z -W \hat{\bm \beta})
+\end{cases} \qquad \Rightarrow \qquad
+\begin{cases}
+\hat{\bm \beta} = (W^TW)^{-1}W^T(\bm z - B \hat{\bm c}) \\
+\hat  {\bm c} = AQ \bm z
+\end{cases}
+$$
+con
+$$
+Q=[I-W(W^TW)^{-1}W^T] \qquad A=[B^TQB+P]^{-1}B^T
+$$
+\end{frame}
+
+\section{Studi di simulazione}
+\begin{frame}
+\frametitle{Studi di simulazione}
+\begin{columns}
+	\begin{column}{0.6\textwidth}
+	Le simulazioni sono state eseguite simulando da $f(\bm{p},t)=g(\bm{p})cos(t)$:
+	del rumore:
+	$$
+	z_{ij}=f(\bm p_{i},t_j) + \beta w_{ij} + \varepsilon_{ij} \qquad \forall i , \forall j 
+	$$
+	dove:
+	\begin{itemize}
+	\item $\beta=1$ (eventuale)
+	\item $w_{ij}\stackrel{\mathrm{iid}}{\sim}N(0,1) \qquad \forall i, \forall j$
+	\item $\varepsilon_{ij}\stackrel{\mathrm{iid}}{\sim}N(0,0.5^2) \qquad \forall i, \forall j$
+	\end{itemize} 
+	I parametri di smoothing sono calcolati tramite GCV:
+	\begin{itemize}
+	\item senza covariata $\bm{\lambda}= (10^{-0.375}, 10^{-3.25})$
+	\item con covariata $\bm{\lambda}= (10^{-0.5}, 10^{-3.25})$
+	\end{itemize}
+	\end{column}
+	\begin{column}{0.4\textwidth}
+		\begin{center}
+		\includegraphics[width=0.8\textwidth]{Immagini/DomC_fstest.png}
+		\end{center}
+		\begin{center}
+		\includegraphics[width=0.8\textwidth]{Immagini/DomC_Triangolazione.png}
+		\end{center}
+	\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Caso senza covariata}
+\begin{frame}
+\begin{center}
+\animategraphics[autoplay,loop,height=6cm]{1}{Immagini/Animazione/image}{1}{100}
+\end{center}
+\end{frame}
+
+\subsection{Caso con covariata}
+\begin{frame}
+\begin{columns}
+	\begin{column}{0.3\textwidth}
+	Il modello stima:
+	$$
+	\hat{\beta} \approx 1.001 
+	$$
+	IC approssimato:
+	$$
+	\beta \in [0.9809;1.0225]
+	$$
+	\end{column}
+	\begin{column}{0.6\textwidth}	
+		\begin{flushright}		
+		\animategraphics[autoplay,loop,height=5cm]{1}{Immagini/AnimazioneCovar/image}{1}{100}
+		\end{flushright}
+	\end{column}
+\end{columns}
+\end{frame}
+
+
+\section{Confronto con altri metodi}
+\subsection{Caso senza covariate}
+\begin{frame}
+\frametitle{Confronto con altri metodi}
+\begin{columns}
+	\begin{column}{0.6\textwidth}
+	L'algoritmo è stato confrontato con altre tecniche già esistenti:
+	\begin{itemize}
+	\item KRIG: modello basato su kriging spazio-temporale
+	\item TPS: basi in spazio \textit{Thin Plate Splines}, in tempo \textit{Smoothing Splines}
+	\item SOAP: basi in spazio \textit{Soap Film Smoothing}, in tempo \textit{Smoothing Splines} 
+	\end{itemize}
+	Solo SOAP e ST-PDE possono tener conto del dominio spaziale!
+	\end{column}
+	\begin{column}{0.4\textwidth}
+	\begin{flushright}
+		\includegraphics[width=1\textwidth]{Immagini/Confronto_metodi.png}
+	\end{flushright}		
+	\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+\centering
+\begin{tabular}{lccccc}
+& Reale & KRIG & TPS & SOAP & ST-PDE \\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=r]{90}{$t=0$}}}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/REALEtempo1.png} &
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo1.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/TPStempo1.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo1.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/STSRtempo1.png}\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=\frac{\pi}{4}$}}}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/REALEtempo2.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo2.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/TPStempo2.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo2.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/STSRtempo2.png}\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=\frac{\pi}{2}$}}}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/REALEtempo3.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo3.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/TPStempo3.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo3.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/STSRtempo3.png}\\
+\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{$t=\frac{3}{4}\pi$}}}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/REALEtempo4.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/KRIGtempo4.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/TPStempo4.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/SOAPtempo4.png}&
+\includegraphics[width=0.16\textwidth,valign=t]{Immagini/simulazioni/STSRtempo4.png}
+\end{tabular}
+\end{figure}
+\end{frame}
+
+\section{Applicazione allo studio dei rifiuti nella provincia di Venezia}
+
+
+
+
+
+
+\end{document}

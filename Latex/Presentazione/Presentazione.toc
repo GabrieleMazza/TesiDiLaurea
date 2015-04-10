@@ -1,0 +1,11 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {italian}
+\beamer@sectionintoc {1}{Introduzione}{2}{0}{1}
+\beamer@sectionintoc {2}{Presentazione modello ST-PDE}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Caso senza covariate}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Caso con covariate}{8}{0}{2}
+\beamer@sectionintoc {3}{Studi di simulazione}{9}{0}{3}
+\beamer@subsectionintoc {3}{1}{Caso senza covariata}{10}{0}{3}
+\beamer@subsectionintoc {3}{2}{Caso con covariata}{11}{0}{3}
+\beamer@sectionintoc {4}{Confronto con altri metodi}{12}{0}{4}
+\beamer@subsectionintoc {4}{1}{Caso senza covariate}{12}{0}{4}

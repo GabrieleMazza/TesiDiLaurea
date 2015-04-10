@@ -43,33 +43,10 @@ sum(pnt.in.poly(cbind(xValid,yValid),Bound)$pip)==length(xValid)
 TimeBasisObj<-Create.Bspline.Time.Basis(TimePoints,TimeOrder=4,DerivativeOrder=2,PlotIt=F)
 SpaceBasisObj<-Create.FEM.Space.Basis(cbind(x,y),Triang,TypePoint,1)
 
-
-
-##### GCV #####
-
-# LogS = seq(-1,0,by=0.125)
-# LogT = seq(-3.75,-2.75,by=0.125)
-# GCVResult<-ST.GCV(Data,SpaceBasisObj,TimeBasisObj,LogS,LogT)
-# png(filename="GCV Matrix.png")
-# image(LogS,LogT,GCVResult$GCVMatrix,col=heat.colors(100),main="GCV Matrix",xlab="logLambdaS",ylab="logLambdaT")
-# dev.off()
-# 
-# save(file="GCVResult.RData",GCVResult,LogS,LogT)
-# 
-# LambdaS=10^GCVResult$Best[1]
-# LambdaT=10^GCVResult$Best[2]
-
-LambdaS=10^-0.375
-LambdaT=10^-3.250
+SolutionObj=ReadSolutionObj(SpaceBasisObj,TimeBasisObj,"VettoreC.txt")
 
 
 
-
-##### SOLUZIONE #####
-
-##### RISOLUZIONE DEL SISTEMA #####
-
-SolutionObj<-ST.Smooth(Data,SpaceBasisObj,TimeBasisObj,LambdaS,LambdaT)
 
 TimeValid=seq(0,2*pi,length.out=100)
 
@@ -169,3 +146,47 @@ saveGIF({
         contour(xvec,c(yvec,4),PlotMatrix,nlevels=10,add=TRUE,lwd=2,labcex=1.1)
     }
 })
+
+
+#STAMPA PER ANIMAZIONE A SCORRIMENTO
+for (j in 1:length(TimeValid))
+{
+    png(file=paste("image",j,".png",sep=""))
+    par(oma=c(4,0,4,0),mar=c(2,2,2,2))
+    layout(matrix(c(1,1,
+                    2,3
+    ), nrow=2,ncol=2,byrow = TRUE),height=c(1,4),width=c(1,1))
+    
+    # Set up the top chart that keeps track of the current frame/iteration
+    # Dress it up a little just for fun
+    plot(-5, xlim = c(0,2*pi), ylim = c(0, .3), xlab = "", ylab = "", main = "Time",axes=F)
+    abline(v=TimeValid[j], lwd=5, col = rgb(0, 0, 255, 255, maxColorValue=255))
+    
+    # Bring back the X axis
+    xticks <- round(seq(0,2*pi,length.out=9),2)
+    axis(side=1, at=xticks, labels=xticks)
+    
+    
+    # Funzione Reale
+    for(i in 1:(dim(PosMatrix)[1]))
+    {
+        PlotMatrix[PosMatrix[i,1],PosMatrix[i,2]]=ResultRealAni[i,j]
+    }
+    # Plot
+    image(xvec,c(yvec,4),PlotMatrix,col=heat.colors(100),ylim=c(-1,+1),xlab=" ",ylab=" ",main="Funzione reale")
+    lines(xbound,ybound,lwd=3)
+    lines(c(xbound[1],xbound[length(xbound)]),c(ybound[1],ybound[length(ybound)]),lwd=3)
+    contour(xvec,c(yvec,4),PlotMatrix,nlevels=10,add=TRUE,lwd=2,labcex=1.1)
+    
+    # Matrice con la stimata
+    for(i in 1:(dim(PosMatrix)[1]))
+    {
+        PlotMatrix[PosMatrix[i,1],PosMatrix[i,2]]=ResultFittedAni[i,j]
+    }
+    # Plot
+    image(xvec,c(yvec,4),PlotMatrix,col=heat.colors(100),ylim=c(-1,+1),xlab=" ",ylab=" ",main="Funzione stimata")
+    lines(xbound,ybound,lwd=3)
+    lines(c(xbound[1],xbound[length(xbound)]),c(ybound[1],ybound[length(ybound)]),lwd=3)
+    contour(xvec,c(yvec,4),PlotMatrix,nlevels=10,add=TRUE,lwd=2,labcex=1.1)
+    dev.off()
+}
