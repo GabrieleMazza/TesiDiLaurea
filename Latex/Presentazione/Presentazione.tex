@@ -65,6 +65,7 @@ con $\bm{p} \in \Omega$, $t \in [T_1,T_2]$.
 Grande attenzione sarà dedicata al dominio spaziale.
 \end{frame}
 
+\subsection{Applicazione alla produzione di rifiuti urbani nella provincia di Venezia}
 \begin{frame}
 L'applicazione scelta riguarda l'analisi della produzione di rifiuti urbani nella provincia di Venezia tra il 1997 e il 2011
 \begin{figure}[h]
@@ -281,7 +282,7 @@ $$
 
 
 \section{Confronto con altri metodi}
-\subsection{Caso senza covariate}
+\subsection{Caso senza covariata}
 \begin{frame}
 \frametitle{Confronto con altri metodi}
 \begin{columns}
@@ -337,7 +338,79 @@ $$
 
 \section{Applicazione allo studio dei rifiuti nella provincia di Venezia}
 
+\begin{frame}
+\frametitle{Confronto con altri metodi}
+\begin{columns}
+	\begin{column}{0.6\textwidth}
+	I dati sono stati localizzati in un unico punto, nel paese di riferimento del comune.
+	\newline\newline
+	Come covariata, per tener conto dell'effetto del turismo, si usa il numero di posti letto pro capite in strutture ricettive.
+	\newline\newline
+	Sono stati usati i valori pro capite, sia per il dato che per la covariata (possibilità di replicare i dati poichè densità).
+	\end{column}
+	\begin{column}{0.4\textwidth}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{Immagini/Dati.png}
+	\end{center}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{Immagini/PL.png}
+	\end{center}		
+	\end{column}
+\end{columns}
+\end{frame}
 
+\subsection{Caso senza covariata}
+\begin{frame}
+Risultati dell'applicazione del modello senza la covariata:
+\newline
+\begin{columns}
+	\begin{column}{0.225\textwidth}
+	\includegraphics[width=1\textwidth]{Immagini/Venezia/Cavarzere.png}
+	\ \
+	\newline
+	\includegraphics[width=1\textwidth]{Immagini/Venezia/Cavallino-Treporti.png}
+	\end{column}
+	\begin{column}{0.225\textwidth}
+	\includegraphics[width=1\textwidth]{Immagini/Venezia/Venezia.png}
+	\ \
+	\newline
+	\includegraphics[width=1\textwidth]{Immagini/Venezia/Bibione.png}
+	\end{column}
+	\begin{column}{0.35\textwidth}	
+		\begin{center}		
+		\animategraphics[autoplay,loop,height=4.5cm,width=4cm]{1}{Immagini/Venezia/image}{1}{100}
+		\end{center}
+	\end{column}
+\end{columns}
+\end{frame}
+
+
+\subsection{Caso con covariata}
+\begin{frame}
+Risultati dell'applicazione del modello con la covariata:
+$$
+\hat{\beta}\approx 30.5563 \qquad \beta \in [14.3158;46.7767]
+$$
+\begin{columns}
+	\begin{column}{0.225\textwidth}
+	\includegraphics[width=1\textwidth]{Immagini/VeneziaCovar/Cavarzere.png}
+	\ \
+	\newline
+	\includegraphics[width=1\textwidth]{Immagini/VeneziaCovar/Cavallino-Treporti.png}
+	\end{column}
+	\begin{column}{0.225\textwidth}
+	\includegraphics[width=1\textwidth]{Immagini/VeneziaCovar/Venezia.png}
+	\ \
+	\newline
+	\includegraphics[width=1\textwidth]{Immagini/VeneziaCovar/Bibione.png}
+	\end{column}
+	\begin{column}{0.35\textwidth}	
+		\begin{center}		
+		\animategraphics[autoplay,loop,height=4.5cm,width=4cm]{1}{Immagini/VeneziaCovar/image}{1}{100}
+		\end{center}
+	\end{column}
+\end{columns}
+\end{frame}
 
 
 

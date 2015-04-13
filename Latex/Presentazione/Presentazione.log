@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  10 APR 2015 18:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  13 APR 2015 18:11
 entering extended mode
 **Presentazione.tex
 
@@ -1711,7 +1711,7 @@ LaTeX Info: Redefining \selectfont on input line 43.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
 Presentazione\Presentazione.nav")
-<Immagini/Logo.png, id=54, 225.84375pt x 225.84375pt>
+<Immagini/Logo.png, id=70, 225.84375pt x 225.84375pt>
 File: Immagini/Logo.png Graphic file (type png)
  <use Immagini/Logo.png>
 Package pdftex.def Info: Immagini/Logo.png used on input line 52.
@@ -1746,17 +1746,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--66
 
 [2
 
-] <Immagini/CTQDA.png, id=118, 481.8pt x 481.8pt>
+] <Immagini/CTQDA.png, id=135, 481.8pt x 481.8pt>
 File: Immagini/CTQDA.png Graphic file (type png)
  <use Immagini/CTQDA.png>
-Package pdftex.def Info: Immagini/CTQDA.png used on input line 81.
+Package pdftex.def Info: Immagini/CTQDA.png used on input line 82.
 (pdftex.def)             Requested size: 148.64651pt x 148.64334pt.
 
-<Immagini/andamenti_temporali.png, id=119, 1038.88126pt x 750.805pt>
+<Immagini/andamenti_temporali.png, id=136, 1038.88126pt x 750.805pt>
 File: Immagini/andamenti_temporali.png Graphic file (type png)
 
 <use Immagini/andamenti_temporali.png>
-Package pdftex.def Info: Immagini/andamenti_temporali.png used on input line 81
+Package pdftex.def Info: Immagini/andamenti_temporali.png used on input line 82
 .
 (pdftex.def)             Requested size: 169.39267pt x 122.41106pt.
  [3
@@ -1767,18 +1767,18 @@ ità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/andamenti_te
 mporali.png>] [4
 
 ]
-<Immagini/elementofinito.jpg, id=182, 417.81094pt x 321.45094pt>
+<Immagini/elementofinito.jpg, id=198, 417.81094pt x 321.45094pt>
 File: Immagini/elementofinito.jpg Graphic file (type jpg)
 
 <use Immagini/elementofinito.jpg>
-Package pdftex.def Info: Immagini/elementofinito.jpg used on input line 123.
+Package pdftex.def Info: Immagini/elementofinito.jpg used on input line 124.
 (pdftex.def)             Requested size: 159.02223pt x 122.34882pt.
 
-<Immagini/Bsplines.png, id=183, 491.8375pt x 354.32375pt>
+<Immagini/Bsplines.png, id=199, 491.8375pt x 354.32375pt>
 File: Immagini/Bsplines.png Graphic file (type png)
 
 <use Immagini/Bsplines.png>
-Package pdftex.def Info: Immagini/Bsplines.png used on input line 123.
+Package pdftex.def Info: Immagini/Bsplines.png used on input line 124.
 (pdftex.def)             Requested size: 159.02223pt x 114.55913pt.
  [5
 
@@ -1788,7 +1788,7 @@ Presentazione/Immagini/elementofinito.jpg> <C:/Users/Gabriele/Desktop/Universit
  [6
 
 ]
-Overfull \hbox (1.13617pt too wide) detected at line 193
+Overfull \hbox (1.13617pt too wide) detected at line 194
 \OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9   \OT1/cmss/m
 /n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/c
 mss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \OT1/cmss/m/n/9 = []
@@ -1798,19 +1798,19 @@ mss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \OT1/cmss/m/n/9 = []
 
 ] [8
 
-] <Immagini/DomC_fstest.png, id=299, 419.5675pt x 382.42876pt>
+] <Immagini/DomC_fstest.png, id=312, 419.5675pt x 382.42876pt>
 File: Immagini/DomC_fstest.png Graphic file (type png)
 
 <use Immagini/DomC_fstest.png>
-Package pdftex.def Info: Immagini/DomC_fstest.png used on input line 252.
+Package pdftex.def Info: Immagini/DomC_fstest.png used on input line 253.
 (pdftex.def)             Requested size: 110.62128pt x 100.82962pt.
 
-<Immagini/DomC_Triangolazione.png, id=300, 313.9228pt x 281.55188pt>
+<Immagini/DomC_Triangolazione.png, id=313, 313.9228pt x 281.55188pt>
 File: Immagini/DomC_Triangolazione.png Graphic file (type png)
 
 <use Immagini/DomC_Triangolazione.png>
 Package pdftex.def Info: Immagini/DomC_Triangolazione.png used on input line 25
-2.
+3.
 (pdftex.def)             Requested size: 110.62128pt x 99.21053pt.
  [9
 
@@ -2158,190 +2158,189 @@ LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/AnimazioneCovar/i
 mage100.png (PNG copy)>
 [11
 
-] <Immagini/Confronto_metodi.png, id=1490, 448.67625pt x 404.51125pt>
+] <Immagini/Confronto_metodi.png, id=1504, 448.67625pt x 404.51125pt>
 File: Immagini/Confronto_metodi.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi.png>
-Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 303.
+Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 304.
 (pdftex.def)             Requested size: 138.27608pt x 124.66267pt.
-Package atenddvi Info: Last page = 12.
  [12
 
  <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
 Presentazione/Immagini/Confronto_metodi.png>]
-<Immagini/simulazioni/REALEtempo1.png, id=1521, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/REALEtempo1.png, id=1534, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/REALEtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo1.png used on input lin
-e 336.
+e 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/KRIGtempo1.png, id=1522, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/KRIGtempo1.png, id=1535, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/KRIGtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo1.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/TPStempo1.png, id=1523, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/TPStempo1.png, id=1536, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/TPStempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo1.png used on input line 
-336.
+337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/SOAPtempo1.png, id=1524, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/SOAPtempo1.png, id=1537, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/SOAPtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo1.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/STSRtempo1.png, id=1525, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/STSRtempo1.png, id=1538, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/STSRtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo1.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 336--336
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 337--337
 [][] 
  []
 
-<Immagini/simulazioni/REALEtempo2.png, id=1526, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/REALEtempo2.png, id=1539, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/REALEtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo2.png used on input lin
-e 336.
+e 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/KRIGtempo2.png, id=1527, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/KRIGtempo2.png, id=1540, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/KRIGtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo2.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/TPStempo2.png, id=1528, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/TPStempo2.png, id=1541, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/TPStempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo2.png used on input line 
-336.
+337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/SOAPtempo2.png, id=1529, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/SOAPtempo2.png, id=1542, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/SOAPtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo2.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/STSRtempo2.png, id=1530, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/STSRtempo2.png, id=1543, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/STSRtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo2.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 336--336
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 337--337
 [][] 
  []
 
-<Immagini/simulazioni/REALEtempo3.png, id=1531, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/REALEtempo3.png, id=1544, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/REALEtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo3.png used on input lin
-e 336.
+e 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/KRIGtempo3.png, id=1532, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/KRIGtempo3.png, id=1545, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/KRIGtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo3.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/TPStempo3.png, id=1533, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/TPStempo3.png, id=1546, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/TPStempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo3.png used on input line 
-336.
+337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/SOAPtempo3.png, id=1534, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/SOAPtempo3.png, id=1547, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/SOAPtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo3.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/STSRtempo3.png, id=1535, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/STSRtempo3.png, id=1548, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/STSRtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo3.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (4.9883pt too wide) in paragraph at lines 336--336
+Overfull \hbox (4.9883pt too wide) in paragraph at lines 337--337
 [][] 
  []
 
-<Immagini/simulazioni/REALEtempo4.png, id=1536, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/REALEtempo4.png, id=1549, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/REALEtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo4.png used on input lin
-e 336.
+e 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/KRIGtempo4.png, id=1537, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/KRIGtempo4.png, id=1550, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/KRIGtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo4.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/TPStempo4.png, id=1538, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/TPStempo4.png, id=1551, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/TPStempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo4.png used on input line 
-336.
+337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/SOAPtempo4.png, id=1539, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/SOAPtempo4.png, id=1552, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/SOAPtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo4.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/STSRtempo4.png, id=1540, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/STSRtempo4.png, id=1553, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/STSRtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo4.png used on input line
- 336.
+ 337.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (8.55772pt too wide) in paragraph at lines 336--336
+Overfull \hbox (8.55772pt too wide) in paragraph at lines 337--337
  [] 
  []
 
@@ -2381,76 +2380,488 @@ oni/TPStempo4.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TES
 I DI LAUREA/Latex/Presentazione/Immagini/simulazioni/SOAPtempo4.png> <C:/Users/
 Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazio
 ne/Immagini/simulazioni/STSRtempo4.png>]
+<Immagini/Dati.png, id=1595, 359.09157pt x 289.83281pt>
+File: Immagini/Dati.png Graphic file (type png)
+
+<use Immagini/Dati.png>
+Package pdftex.def Info: Immagini/Dati.png used on input line 360.
+(pdftex.def)             Requested size: 110.62128pt x 89.28558pt.
+ <Immagini/PL.png, id=1596, 347.04657pt x 289.83281pt>
+File: Immagini/PL.png Graphic file (type png)
+
+<use Immagini/PL.png>
+Package pdftex.def Info: Immagini/PL.png used on input line 360.
+(pdftex.def)             Requested size: 110.62128pt x 92.38574pt.
+ [14
+
+ <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
+Presentazione/Immagini/Dati.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universi
+tà/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/PL.png (PNG c
+opy)>]
+<Immagini/Venezia/Cavarzere.png, id=1623, 419.5675pt x 408.52625pt>
+File: Immagini/Venezia/Cavarzere.png Graphic file (type png)
+
+<use Immagini/Venezia/Cavarzere.png>
+Package pdftex.def Info: Immagini/Venezia/Cavarzere.png used on input line 385.
+
+(pdftex.def)             Requested size: 77.78358pt x 75.73201pt.
+
+<Immagini/Venezia/Cavallino-Treporti.png, id=1624, 419.5675pt x 408.52625pt>
+File: Immagini/Venezia/Cavallino-Treporti.png Graphic file (type png)
+
+<use Immagini/Venezia/Cavallino-Treporti.png>
+Package pdftex.def Info: Immagini/Venezia/Cavallino-Treporti.png used on input 
+line 385.
+(pdftex.def)             Requested size: 77.78358pt x 75.73201pt.
+
+<Immagini/Venezia/Venezia.png, id=1625, 419.5675pt x 408.52625pt>
+File: Immagini/Venezia/Venezia.png Graphic file (type png)
+
+<use Immagini/Venezia/Venezia.png>
+Package pdftex.def Info: Immagini/Venezia/Venezia.png used on input line 385.
+(pdftex.def)             Requested size: 77.78358pt x 75.73201pt.
+
+<Immagini/Venezia/Bibione.png, id=1626, 419.5675pt x 408.52625pt>
+File: Immagini/Venezia/Bibione.png Graphic file (type png)
+
+<use Immagini/Venezia/Bibione.png>
+Package pdftex.def Info: Immagini/Venezia/Bibione.png used on input line 385.
+(pdftex.def)             Requested size: 77.78358pt x 75.73201pt.
+ <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
+Presentazione/Immagini/Venezia/image1.png (PNG copy)> <C:/Users/Gabriele/Deskto
+p/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Ven
+ezia/image2.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGIS
+TRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image3.png (PNG copy)
+> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex
+/Presentazione/Immagini/Venezia/image4.png (PNG copy)> <C:/Users/Gabriele/Deskt
+op/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Ve
+nezia/image5.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGI
+STRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image6.png (PNG copy
+)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
+x/Presentazione/Immagini/Venezia/image7.png (PNG copy)> <C:/Users/Gabriele/Desk
+top/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/V
+enezia/image8.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAG
+ISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image9.png (PNG cop
+y)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Presentazione/Immagini/Venezia/image10.png (PNG copy)> <C:/Users/Gabriele/De
+sktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini
+/Venezia/image11.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA 
+MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image12.png (PNG
+ copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA
+/Latex/Presentazione/Immagini/Venezia/image13.png (PNG copy)> <C:/Users/Gabriel
+e/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Imma
+gini/Venezia/image14.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAU
+REA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image15.png 
+(PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LA
+UREA/Latex/Presentazione/Immagini/Venezia/image16.png (PNG copy)> <C:/Users/Gab
+riele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/
+Immagini/Venezia/image17.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università
+/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image18.
+png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI D
+I LAUREA/Latex/Presentazione/Immagini/Venezia/image19.png (PNG copy)> <C:/Users
+/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazi
+one/Immagini/Venezia/image20.png (PNG copy)> <C:/Users/Gabriele/Desktop/Univers
+ità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/imag
+e21.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TE
+SI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image22.png (PNG copy)> <C:/U
+sers/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presen
+tazione/Immagini/Venezia/image23.png (PNG copy)> <C:/Users/Gabriele/Desktop/Uni
+versità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/
+image24.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRAL
+E/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image25.png (PNG copy)> <
+C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Pr
+esentazione/Immagini/Venezia/image26.png (PNG copy)> <C:/Users/Gabriele/Desktop
+/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Vene
+zia/image27.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGIS
+TRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image28.png (PNG copy
+)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
+x/Presentazione/Immagini/Venezia/image29.png (PNG copy)> <C:/Users/Gabriele/Des
+ktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/
+Venezia/image30.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA M
+AGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image31.png (PNG 
+copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/
+Latex/Presentazione/Immagini/Venezia/image32.png (PNG copy)> <C:/Users/Gabriele
+/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immag
+ini/Venezia/image33.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUR
+EA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image34.png (
+PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAU
+REA/Latex/Presentazione/Immagini/Venezia/image35.png (PNG copy)> <C:/Users/Gabr
+iele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/I
+mmagini/Venezia/image36.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/
+LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image37.p
+ng (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI
+ LAUREA/Latex/Presentazione/Immagini/Venezia/image38.png (PNG copy)> <C:/Users/
+Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazio
+ne/Immagini/Venezia/image39.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universi
+tà/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image
+40.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TES
+I DI LAUREA/Latex/Presentazione/Immagini/Venezia/image41.png (PNG copy)> <C:/Us
+ers/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Present
+azione/Immagini/Venezia/image42.png (PNG copy)> <C:/Users/Gabriele/Desktop/Univ
+ersità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/i
+mage43.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE
+/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image44.png (PNG copy)> <C
+:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Pre
+sentazione/Immagini/Venezia/image45.png (PNG copy)> <C:/Users/Gabriele/Desktop/
+Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venez
+ia/image46.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGIST
+RALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image47.png (PNG copy)
+> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex
+/Presentazione/Immagini/Venezia/image48.png (PNG copy)> <C:/Users/Gabriele/Desk
+top/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/V
+enezia/image49.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MA
+GISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image50.png (PNG c
+opy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/L
+atex/Presentazione/Immagini/Venezia/image51.png (PNG copy)> <C:/Users/Gabriele/
+Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagi
+ni/Venezia/image52.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAURE
+A MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image53.png (P
+NG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUR
+EA/Latex/Presentazione/Immagini/Venezia/image54.png (PNG copy)> <C:/Users/Gabri
+ele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Im
+magini/Venezia/image55.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/L
+AUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image56.pn
+g (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI 
+LAUREA/Latex/Presentazione/Immagini/Venezia/image57.png (PNG copy)> <C:/Users/G
+abriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazion
+e/Immagini/Venezia/image58.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universit
+à/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image5
+9.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI
+ DI LAUREA/Latex/Presentazione/Immagini/Venezia/image60.png (PNG copy)> <C:/Use
+rs/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presenta
+zione/Immagini/Venezia/image61.png (PNG copy)> <C:/Users/Gabriele/Desktop/Unive
+rsità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/im
+age62.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/
+TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image63.png (PNG copy)> <C:
+/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Pres
+entazione/Immagini/Venezia/image64.png (PNG copy)> <C:/Users/Gabriele/Desktop/U
+niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezi
+a/image65.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTR
+ALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image66.png (PNG copy)>
+ <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
+Presentazione/Immagini/Venezia/image67.png (PNG copy)> <C:/Users/Gabriele/Deskt
+op/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Ve
+nezia/image68.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAG
+ISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image69.png (PNG co
+py)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/La
+tex/Presentazione/Immagini/Venezia/image70.png (PNG copy)> <C:/Users/Gabriele/D
+esktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagin
+i/Venezia/image71.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA
+ MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image72.png (PN
+G copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAURE
+A/Latex/Presentazione/Immagini/Venezia/image73.png (PNG copy)> <C:/Users/Gabrie
+le/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Imm
+agini/Venezia/image74.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LA
+UREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image75.png
+ (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI L
+AUREA/Latex/Presentazione/Immagini/Venezia/image76.png (PNG copy)> <C:/Users/Ga
+briele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione
+/Immagini/Venezia/image77.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universit�
+�/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image78
+.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI 
+DI LAUREA/Latex/Presentazione/Immagini/Venezia/image79.png (PNG copy)> <C:/User
+s/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentaz
+ione/Immagini/Venezia/image80.png (PNG copy)> <C:/Users/Gabriele/Desktop/Univer
+sità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/ima
+ge81.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/T
+ESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image82.png (PNG copy)> <C:/
+Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Prese
+ntazione/Immagini/Venezia/image83.png (PNG copy)> <C:/Users/Gabriele/Desktop/Un
+iversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia
+/image84.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRA
+LE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image85.png (PNG copy)> 
+<C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/P
+resentazione/Immagini/Venezia/image86.png (PNG copy)> <C:/Users/Gabriele/Deskto
+p/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Ven
+ezia/image87.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGI
+STRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image88.png (PNG cop
+y)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Presentazione/Immagini/Venezia/image89.png (PNG copy)> <C:/Users/Gabriele/De
+sktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini
+/Venezia/image90.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA 
+MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image91.png (PNG
+ copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA
+/Latex/Presentazione/Immagini/Venezia/image92.png (PNG copy)> <C:/Users/Gabriel
+e/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Imma
+gini/Venezia/image93.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAU
+REA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image94.png 
+(PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LA
+UREA/Latex/Presentazione/Immagini/Venezia/image95.png (PNG copy)> <C:/Users/Gab
+riele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/
+Immagini/Venezia/image96.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università
+/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/image97.
+png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI D
+I LAUREA/Latex/Presentazione/Immagini/Venezia/image98.png (PNG copy)> <C:/Users
+/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazi
+one/Immagini/Venezia/image99.png (PNG copy)> <C:/Users/Gabriele/Desktop/Univers
+ità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/imag
+e100.png (PNG copy)> [15
+
+ <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
+Presentazione/Immagini/Venezia/Cavarzere.png> <C:/Users/Gabriele/Desktop/Univer
+sità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/Cav
+allino-Treporti.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/T
+ESI DI LAUREA/Latex/Presentazione/Immagini/Venezia/Venezia.png> <C:/Users/Gabri
+ele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Im
+magini/Venezia/Bibione.png>]
+<Immagini/VeneziaCovar/Cavarzere.png, id=2159, 419.5675pt x 408.52625pt>
+File: Immagini/VeneziaCovar/Cavarzere.png Graphic file (type png)
+
+<use Immagini/VeneziaCovar/Cavarzere.png>
+Package pdftex.def Info: Immagini/VeneziaCovar/Cavarzere.png used on input line
+ 413.
+(pdftex.def)             Requested size: 77.78358pt x 75.73201pt.
+
+<Immagini/VeneziaCovar/Cavallino-Treporti.png, id=2160, 419.5675pt x 408.52625p
+t>
+File: Immagini/VeneziaCovar/Cavallino-Treporti.png Graphic file (type png)
+ <use Immagini/VeneziaCovar/Cavallino-Treporti.png>
+Package pdftex.def Info: Immagini/VeneziaCovar/Cavallino-Treporti.png used on i
+nput line 413.
+(pdftex.def)             Requested size: 77.78358pt x 75.73201pt.
+
+<Immagini/VeneziaCovar/Venezia.png, id=2161, 419.5675pt x 408.52625pt>
+File: Immagini/VeneziaCovar/Venezia.png Graphic file (type png)
+
+<use Immagini/VeneziaCovar/Venezia.png>
+Package pdftex.def Info: Immagini/VeneziaCovar/Venezia.png used on input line 4
+13.
+(pdftex.def)             Requested size: 77.78358pt x 75.73201pt.
+
+<Immagini/VeneziaCovar/Bibione.png, id=2162, 419.5675pt x 408.52625pt>
+File: Immagini/VeneziaCovar/Bibione.png Graphic file (type png)
+
+<use Immagini/VeneziaCovar/Bibione.png>
+Package pdftex.def Info: Immagini/VeneziaCovar/Bibione.png used on input line 4
+13.
+(pdftex.def)             Requested size: 77.78358pt x 75.73201pt.
+ <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
+Presentazione/Immagini/VeneziaCovar/image1.png (PNG copy)> <C:/Users/Gabriele/D
+esktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagin
+i/VeneziaCovar/image2.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LA
+UREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image3
+.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI 
+DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image4.png (PNG copy)> <C:/
+Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Prese
+ntazione/Immagini/VeneziaCovar/image5.png (PNG copy)> <C:/Users/Gabriele/Deskto
+p/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Ven
+eziaCovar/image6.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA 
+MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image7.png 
+(PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LA
+UREA/Latex/Presentazione/Immagini/VeneziaCovar/image8.png (PNG copy)> <C:/Users
+/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazi
+one/Immagini/VeneziaCovar/image9.png (PNG copy)> <C:/Users/Gabriele/Desktop/Uni
+versità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaC
+ovar/image10.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGI
+STRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image11.png (PN
+G copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAURE
+A/Latex/Presentazione/Immagini/VeneziaCovar/image12.png (PNG copy)> <C:/Users/G
+abriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazion
+e/Immagini/VeneziaCovar/image13.png (PNG copy)> <C:/Users/Gabriele/Desktop/Univ
+ersità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCo
+var/image14.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGIS
+TRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image15.png (PNG
+ copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA
+/Latex/Presentazione/Immagini/VeneziaCovar/image16.png (PNG copy)> <C:/Users/Ga
+briele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione
+/Immagini/VeneziaCovar/image17.png (PNG copy)> <C:/Users/Gabriele/Desktop/Unive
+rsità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCov
+ar/image18.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGIST
+RALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image19.png (PNG 
+copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/
+Latex/Presentazione/Immagini/VeneziaCovar/image20.png (PNG copy)> <C:/Users/Gab
+riele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/
+Immagini/VeneziaCovar/image21.png (PNG copy)> <C:/Users/Gabriele/Desktop/Univer
+sità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCova
+r/image22.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTR
+ALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image23.png (PNG c
+opy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/L
+atex/Presentazione/Immagini/VeneziaCovar/image24.png (PNG copy)> <C:/Users/Gabr
+iele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/I
+mmagini/VeneziaCovar/image25.png (PNG copy)> <C:/Users/Gabriele/Desktop/Univers
+ità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar
+/image26.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRA
+LE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image27.png (PNG co
+py)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/La
+tex/Presentazione/Immagini/VeneziaCovar/image28.png (PNG copy)> <C:/Users/Gabri
+ele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Im
+magini/VeneziaCovar/image29.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universi
+tà/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/
+image30.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRAL
+E/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image31.png (PNG cop
+y)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Lat
+ex/Presentazione/Immagini/VeneziaCovar/image32.png (PNG copy)> <C:/Users/Gabrie
+le/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Imm
+agini/VeneziaCovar/image33.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universit
+à/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/i
+mage34.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE
+/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image35.png (PNG copy
+)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Late
+x/Presentazione/Immagini/VeneziaCovar/image36.png (PNG copy)> <C:/Users/Gabriel
+e/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Imma
+gini/VeneziaCovar/image37.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universit�
+�/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/im
+age38.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/
+TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image39.png (PNG copy)
+> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex
+/Presentazione/Immagini/VeneziaCovar/image40.png (PNG copy)> <C:/Users/Gabriele
+/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immag
+ini/VeneziaCovar/image41.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università
+/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/ima
+ge42.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/T
+ESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image43.png (PNG copy)>
+ <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
+Presentazione/Immagini/VeneziaCovar/image44.png (PNG copy)> <C:/Users/Gabriele/
+Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagi
+ni/VeneziaCovar/image45.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/
+LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/imag
+e46.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TE
+SI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image47.png (PNG copy)> 
+<C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/P
+resentazione/Immagini/VeneziaCovar/image48.png (PNG copy)> <C:/Users/Gabriele/D
+esktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagin
+i/VeneziaCovar/image49.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/L
+AUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image
+50.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TES
+I DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image51.png (PNG copy)> <
+C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Pr
+esentazione/Immagini/VeneziaCovar/image52.png (PNG copy)> <C:/Users/Gabriele/De
+sktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini
+/VeneziaCovar/image53.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LA
+UREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image5
+4.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI
+ DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image55.png (PNG copy)> <C
+:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Pre
+sentazione/Immagini/VeneziaCovar/image56.png (PNG copy)> <C:/Users/Gabriele/Des
+ktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/
+VeneziaCovar/image57.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAU
+REA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image58
+.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI 
+DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image59.png (PNG copy)> <C:
+/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Pres
+entazione/Immagini/VeneziaCovar/image60.png (PNG copy)> <C:/Users/Gabriele/Desk
+top/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/V
+eneziaCovar/image61.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUR
+EA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image62.
+png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI D
+I LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image63.png (PNG copy)> <C:/
+Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Prese
+ntazione/Immagini/VeneziaCovar/image64.png (PNG copy)> <C:/Users/Gabriele/Deskt
+op/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Ve
+neziaCovar/image65.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAURE
+A MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image66.p
+ng (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI
+ LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image67.png (PNG copy)> <C:/U
+sers/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presen
+tazione/Immagini/VeneziaCovar/image68.png (PNG copy)> <C:/Users/Gabriele/Deskto
+p/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Ven
+eziaCovar/image69.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA
+ MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image70.pn
+g (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI 
+LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image71.png (PNG copy)> <C:/Us
+ers/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Present
+azione/Immagini/VeneziaCovar/image72.png (PNG copy)> <C:/Users/Gabriele/Desktop
+/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Vene
+ziaCovar/image73.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA 
+MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image74.png
+ (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI L
+AUREA/Latex/Presentazione/Immagini/VeneziaCovar/image75.png (PNG copy)> <C:/Use
+rs/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presenta
+zione/Immagini/VeneziaCovar/image76.png (PNG copy)> <C:/Users/Gabriele/Desktop/
+Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venez
+iaCovar/image77.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA M
+AGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image78.png 
+(PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LA
+UREA/Latex/Presentazione/Immagini/VeneziaCovar/image79.png (PNG copy)> <C:/User
+s/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentaz
+ione/Immagini/VeneziaCovar/image80.png (PNG copy)> <C:/Users/Gabriele/Desktop/U
+niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezi
+aCovar/image81.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MA
+GISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image82.png (
+PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAU
+REA/Latex/Presentazione/Immagini/VeneziaCovar/image83.png (PNG copy)> <C:/Users
+/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazi
+one/Immagini/VeneziaCovar/image84.png (PNG copy)> <C:/Users/Gabriele/Desktop/Un
+iversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezia
+Covar/image85.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAG
+ISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image86.png (P
+NG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUR
+EA/Latex/Presentazione/Immagini/VeneziaCovar/image87.png (PNG copy)> <C:/Users/
+Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazio
+ne/Immagini/VeneziaCovar/image88.png (PNG copy)> <C:/Users/Gabriele/Desktop/Uni
+versità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaC
+ovar/image89.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGI
+STRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image90.png (PN
+G copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAURE
+A/Latex/Presentazione/Immagini/VeneziaCovar/image91.png (PNG copy)> <C:/Users/G
+abriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazion
+e/Immagini/VeneziaCovar/image92.png (PNG copy)> <C:/Users/Gabriele/Desktop/Univ
+ersità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCo
+var/image93.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGIS
+TRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image94.png (PNG
+ copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA
+/Latex/Presentazione/Immagini/VeneziaCovar/image95.png (PNG copy)> <C:/Users/Ga
+briele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione
+/Immagini/VeneziaCovar/image96.png (PNG copy)> <C:/Users/Gabriele/Desktop/Unive
+rsità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCov
+ar/image97.png (PNG copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGIST
+RALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image98.png (PNG 
+copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/
+Latex/Presentazione/Immagini/VeneziaCovar/image99.png (PNG copy)> <C:/Users/Gab
+riele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/
+Immagini/VeneziaCovar/image100.png (PNG copy)>
+Package atenddvi Info: Last page = 16.
+ [16
+
+ <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
+Presentazione/Immagini/VeneziaCovar/Cavarzere.png> <C:/Users/Gabriele/Desktop/U
+niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezi
+aCovar/Cavallino-Treporti.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MA
+GISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/Venezia.png> 
+<C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/P
+resentazione/Immagini/VeneziaCovar/Bibione.png>]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 345.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 345.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 418.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 418.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
-Presentazione\Presentazione.aux"
-
-Package atenddvi Warning: Rerun LaTeX, last page has changed.
-
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 345.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 345.
-
-
-Package rerunfilecheck Warning: File `Presentazione.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Presentazione.out':
-(rerunfilecheck)             Before: 53FBE0020F175C9559934433E5D67299;578
-(rerunfilecheck)             After:  E5AD85C4C56F69E4755756321E6685B7;579.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
+Presentazione\Presentazione.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 418.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 418.
+Package rerunfilecheck Info: File `Presentazione.out' has not changed.
+(rerunfilecheck)             Checksum: 3E5F026C43F1C4AAED111E193BECEA7B;945.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 418.
  ) 
 Here is how much of TeX's memory you used:
- 20791 strings out of 493921
- 386080 string characters out of 3144868
- 465933 words of memory out of 3000000
- 23382 multiletter control sequences out of 15000+200000
+ 21665 strings out of 493921
+ 403648 string characters out of 3144868
+ 478611 words of memory out of 3000000
+ 24243 multiletter control sequences out of 15000+200000
  16206 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  56i,17n,64p,473b,677s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Outline0.4.1.11} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.2.10} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.1.9} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.2.2.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.2.1.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{C:/Users/Gabriele/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/cm-super/cm-super
--t1.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/
-cmex9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmi
-b6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/c
-mmib9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users
-/Gabriele/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/cm-super/sfso0900.pfb>
-Output written on Presentazione.pdf (13 pages, 2809201 bytes).
+{C:/Users/Gabriele/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/cm-super/cm-sup
+er-t1.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextr
+a/cmex9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cm
+mib6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra
+/cmmib9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss1
+0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Use
+rs/Gabriele/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/cm-super/sfso0900.pfb
+>
+Output written on Presentazione.pdf (16 pages, 7075478 bytes).
 PDF statistics:
- 1644 PDF objects out of 1728 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
- 3695 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2759 PDF objects out of 2984 (max. 8388607)
+ 46 named destinations out of 1000 (max. 500000)
+ 7185 words of extra memory for PDF output out of 10000 (max. 10000000)
 

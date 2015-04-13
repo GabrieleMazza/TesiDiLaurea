@@ -119,7 +119,7 @@ saveGIF({
         
         # Set up the top chart that keeps track of the current frame/iteration
         # Dress it up a little just for fun
-        plot(-5, xlim = c(0,2*pi), ylim = c(0, .3), xlab = "", ylab = "", main = "Time",axes=F)
+        plot(-5, xlim = c(0,2*pi), ylim = c(0, .3), xlab = "", ylab = "", main = "Tempo",axes=F)
         abline(v=TimeValid[j], lwd=5, col = rgb(0, 0, 255, 255, maxColorValue=255))
         
         # Bring back the X axis
@@ -163,7 +163,7 @@ for (j in 1:length(TimeValid))
     
     # Set up the top chart that keeps track of the current frame/iteration
     # Dress it up a little just for fun
-    plot(-5, xlim = c(0,2*pi), ylim = c(0, .3), xlab = "", ylab = "", main = "Time",axes=F)
+    plot(-5, xlim = c(0,2*pi), ylim = c(0, .3), xlab = "", ylab = "", main = "Tempo",axes=F)
     abline(v=TimeValid[j], lwd=5, col = rgb(0, 0, 255, 255, maxColorValue=255))
     
     # Bring back the X axis
