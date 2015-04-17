@@ -17,7 +17,6 @@ Bound<-read.table("Boundary.txt",header=T)
 
 TimePoints=1997:2011
 TimeOrder=4                 # Cubic B-Splines (use order +1)
-DerivativeOrder=2           # Penalizing second derivative in time
 NumBasis=length(TimePoints)  # How many time basis? I use the same number as TimePoints
 
 TimeBasisObj = create.bspline.basis(c(min(TimePoints),max(TimePoints)), NumBasis, TimeOrder)
@@ -138,6 +137,9 @@ for(j in 1:length(TimePoints))
     contour(xvec,c(yvec,50),Mat,nlevels=10,add=TRUE)
     dev.off()
 }
+
+# Try also fixed time plot
+FixedTimePlot(1998,SpaceBasisObj,TimeBasisObj,SolutionObj)
 
 ## PLOT IN SOME MUNICIPALITIES
 
@@ -298,6 +300,9 @@ for(j in 1:length(TimePoints))
     dev.off()
 }
 
+# Try also fixed time plot
+FixedTimePlot(1998,SpaceBasisObj,TimeBasisObj,SolutionObj)
+
 ## PLOT IN SOME MUNICIPALITIES
 
 #First of all, I need covariates
@@ -425,5 +430,3 @@ dev.off()
 
 ## CONFIDENCE INTERVAL
 IC=ST.IC(Data,DesMat,SpaceBasisObj,TimeBasisObj,LogLambdaS,LogLambdaT,Alpha=0.05)
-
-FixedTimePlot(1998,SpaceBasisObj,TimeBasisObj,SolutionObj)

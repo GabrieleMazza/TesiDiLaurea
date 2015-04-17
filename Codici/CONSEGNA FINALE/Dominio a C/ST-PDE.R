@@ -1624,10 +1624,10 @@ FixedPointPlot=function(x,y,SpaceBasisObj,TimeBasisObj,SolutionObj,lwd=1,NameLoc
     eval<-ST.Eval(xvec,yvec,Time,SpaceBasisObj,TimeBasisObj,SolutionObj)
     if(is.na(ylim)[1])
     {
-        plot(Time,eval,type='l',xlab="Tempo",ylab=" ",main=paste("Evoluzione temporale in ",title,sep=""),lwd=2)
+        plot(Time,eval,type='l',xlab="Time",ylab=" ",main=paste("Time evolution in ",title,sep=""),lwd=2)
     } else
     {
-        plot(Time,eval,type='l',xlab="Tempo",ylab=" ",main=paste("Evoluzione temporale in ",title,sep=""),lwd=lwd,ylim=ylim)
+        plot(Time,eval,type='l',xlab="Time",ylab=" ",main=paste("Time evolution in ",title,sep=""),lwd=lwd,ylim=ylim)
     }
 }
 
