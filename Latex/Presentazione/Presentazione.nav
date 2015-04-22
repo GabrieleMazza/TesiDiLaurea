@@ -4,58 +4,64 @@
 \headcommand {\sectionentry {1}{Introduzione}{2}{Introduzione}{0}}
 \headcommand {\beamer@sectionpages {1}{1}}
 \headcommand {\beamer@subsectionpages {1}{1}}
-\headcommand {\slideentry {1}{0}{2}{2/2}{}{0}}
-\headcommand {\beamer@framepages {2}{2}}
-\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Applicazione alla produzione di rifiuti urbani nella provincia di Venezia}}\headcommand {\beamer@subsectionpages {2}{2}}
-\headcommand {\slideentry {1}{1}{1}{3/3}{Applicazione alla produzione di rifiuti urbani nella provincia di Venezia}{0}}
-\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\slideentry {1}{0}{2}{2/3}{}{0}}
+\headcommand {\beamer@framepages {2}{3}}
 \headcommand {\sectionentry {2}{Presentazione modello ST-PDE}{4}{Presentazione modello ST-PDE}{0}}
 \headcommand {\beamer@sectionpages {2}{3}}
-\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\beamer@subsectionpages {2}{3}}
 \headcommand {\beamer@subsectionentry {0}{2}{1}{4}{Caso senza covariate}}\headcommand {\beamer@subsectionpages {4}{3}}
-\headcommand {\slideentry {2}{1}{1}{4/4}{Caso senza covariate}{0}}
-\headcommand {\beamer@framepages {4}{4}}
-\headcommand {\slideentry {2}{1}{2}{5/5}{Caso senza covariate}{0}}
-\headcommand {\beamer@framepages {5}{5}}
-\headcommand {\slideentry {2}{1}{3}{6/6}{Caso senza covariate}{0}}
-\headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {2}{1}{4}{7/7}{Caso senza covariate}{0}}
-\headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{8}{Caso con covariate}}\headcommand {\beamer@subsectionpages {4}{7}}
-\headcommand {\slideentry {2}{2}{1}{8/8}{Caso con covariate}{0}}
-\headcommand {\beamer@framepages {8}{8}}
-\headcommand {\sectionentry {3}{Studi di simulazione}{9}{Studi di simulazione}{0}}
-\headcommand {\beamer@sectionpages {4}{8}}
-\headcommand {\beamer@subsectionpages {8}{8}}
-\headcommand {\slideentry {3}{0}{2}{9/9}{}{0}}
-\headcommand {\beamer@framepages {9}{9}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{10}{Caso senza covariata}}\headcommand {\beamer@subsectionpages {9}{9}}
-\headcommand {\slideentry {3}{1}{1}{10/10}{Caso senza covariata}{0}}
-\headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{11}{Caso con covariata}}\headcommand {\beamer@subsectionpages {10}{10}}
-\headcommand {\slideentry {3}{2}{1}{11/11}{Caso con covariata}{0}}
-\headcommand {\beamer@framepages {11}{11}}
-\headcommand {\sectionentry {4}{Confronto con altri metodi}{12}{Confronto con altri metodi}{0}}
-\headcommand {\beamer@sectionpages {9}{11}}
-\headcommand {\beamer@subsectionpages {11}{11}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{12}{Caso senza covariata}}\headcommand {\beamer@subsectionpages {12}{11}}
-\headcommand {\slideentry {4}{1}{1}{12/12}{Caso senza covariata}{0}}
-\headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {4}{1}{2}{13/13}{Caso senza covariata}{0}}
-\headcommand {\beamer@framepages {13}{13}}
-\headcommand {\sectionentry {5}{Applicazione allo studio dei rifiuti nella provincia di Venezia}{14}{Applicazione allo studio dei rifiuti nella provincia di Venezia}{0}}
-\headcommand {\beamer@sectionpages {12}{13}}
-\headcommand {\beamer@subsectionpages {12}{13}}
-\headcommand {\slideentry {5}{0}{3}{14/14}{}{0}}
-\headcommand {\beamer@framepages {14}{14}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{15}{Caso senza covariata}}\headcommand {\beamer@subsectionpages {14}{14}}
-\headcommand {\slideentry {5}{1}{1}{15/15}{Caso senza covariata}{0}}
-\headcommand {\beamer@framepages {15}{15}}
-\headcommand {\beamer@subsectionentry {0}{5}{2}{16}{Caso con covariata}}\headcommand {\beamer@subsectionpages {15}{15}}
-\headcommand {\slideentry {5}{2}{1}{16/16}{Caso con covariata}{0}}
-\headcommand {\beamer@framepages {16}{16}}
-\headcommand {\beamer@partpages {1}{16}}
-\headcommand {\beamer@subsectionpages {16}{16}}
-\headcommand {\beamer@sectionpages {14}{16}}
-\headcommand {\beamer@documentpages {16}}
-\headcommand {\def \inserttotalframenumber {16}}
+\headcommand {\slideentry {2}{1}{1}{4/6}{Caso senza covariate}{0}}
+\headcommand {\beamer@framepages {4}{6}}
+\headcommand {\slideentry {2}{1}{2}{7/9}{Caso senza covariate}{0}}
+\headcommand {\beamer@framepages {7}{9}}
+\headcommand {\slideentry {2}{1}{3}{10/14}{Caso senza covariate}{0}}
+\headcommand {\beamer@framepages {10}{14}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{15}{Caso con covariate}}\headcommand {\beamer@subsectionpages {4}{14}}
+\headcommand {\slideentry {2}{2}{1}{15/18}{Caso con covariate}{0}}
+\headcommand {\beamer@framepages {15}{18}}
+\headcommand {\slideentry {2}{2}{2}{19/20}{Caso con covariate}{0}}
+\headcommand {\beamer@framepages {19}{20}}
+\headcommand {\sectionentry {3}{Studi di simulazione}{21}{Studi di simulazione}{0}}
+\headcommand {\beamer@sectionpages {4}{20}}
+\headcommand {\beamer@subsectionpages {15}{20}}
+\headcommand {\slideentry {3}{0}{3}{21/21}{}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{22}{Caso con covariata}}\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\slideentry {3}{1}{1}{22/22}{Caso con covariata}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\sectionentry {4}{Confronto con altri metodi}{23}{Confronto con altri metodi}{0}}
+\headcommand {\beamer@sectionpages {21}{22}}
+\headcommand {\beamer@subsectionpages {22}{22}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{23}{Caso senza covariata}}\headcommand {\beamer@subsectionpages {23}{22}}
+\headcommand {\slideentry {4}{1}{1}{23/28}{Caso senza covariata}{0}}
+\headcommand {\beamer@framepages {23}{28}}
+\headcommand {\slideentry {4}{1}{2}{29/33}{Caso senza covariata}{0}}
+\headcommand {\beamer@framepages {29}{33}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{34}{Caso con covariata}}\headcommand {\beamer@subsectionpages {23}{33}}
+\headcommand {\slideentry {4}{2}{1}{34/34}{Caso con covariata}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\sectionentry {5}{Applicazione allo studio dei rifiuti nella provincia di Venezia}{35}{Applicazione allo studio dei rifiuti nella provincia di Venezia}{0}}
+\headcommand {\beamer@sectionpages {23}{34}}
+\headcommand {\beamer@subsectionpages {34}{34}}
+\headcommand {\slideentry {5}{0}{2}{35/35}{}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{36}{Caso con covariata}}\headcommand {\beamer@subsectionpages {35}{35}}
+\headcommand {\slideentry {5}{1}{1}{36/36}{Caso con covariata}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\sectionentry {6}{Sviluppi futuri}{37}{Sviluppi futuri}{0}}
+\headcommand {\beamer@sectionpages {35}{36}}
+\headcommand {\beamer@subsectionpages {36}{36}}
+\headcommand {\slideentry {6}{0}{2}{37/39}{}{0}}
+\headcommand {\beamer@framepages {37}{39}}
+\headcommand {\sectionentry {7}{Bibliografia}{40}{Bibliografia}{0}}
+\headcommand {\beamer@sectionpages {37}{39}}
+\headcommand {\beamer@subsectionpages {37}{39}}
+\headcommand {\slideentry {7}{0}{3}{40/40}{}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {7}{0}{4}{41/41}{}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\beamer@partpages {1}{41}}
+\headcommand {\beamer@subsectionpages {40}{41}}
+\headcommand {\beamer@sectionpages {40}{41}}
+\headcommand {\beamer@documentpages {41}}
+\headcommand {\def \inserttotalframenumber {17}}

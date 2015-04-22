@@ -576,7 +576,7 @@ Il modello si estende facilmente se si prevede che il dato possa essere influenz
 z_{ij}= \bm w_{ij}^T\  \bm \beta   \ + \  f(\bm p_i,t_j)\ +\ \varepsilon_{ij}\ \ \ \ i = 1,\ldots,n\ \ j=1,\ldots,m \ \ ,
 \end{equation}
 dove $\bm w_{ij}$ è il vettore delle $p$ covariate associate a $z_{ij}$ e $\bm \beta$ è il vettore dei coefficienti di regressione. Di conseguenza il funzionale discreto di eq.~\eqref{eq:Jmatr} diventa:
-$$ J_{\bm \lambda }(\bm c) = (\bm z - W \bm \beta - B \bm c)^T (\bm z - W \bm \beta - B \bm c) + \bm c^t S \bm c  \ ,$$
+$$ J_{\bm \lambda }(\bm c) = (\bm z - W \bm \beta - B \bm c)^T (\bm z - W \bm \beta - B \bm c) + \bm c^T S \bm c  \ ,$$
 dove $W$ è la matrice $nm \times p$ con i vettori $ \{\bm w_{ij}; i=1,\ldots,n;j=1,\ldots,m\}$.
 
 Per trovare la soluzione occorre derivare questa espressione rispetto a $\bm \beta$ e $\bm c$:
