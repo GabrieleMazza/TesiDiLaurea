@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  22 APR 2015 17:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.5)  24 APR 2015 15:34
 entering extended mode
 **Presentazione.tex
 
@@ -1773,14 +1773,14 @@ one/Immagini/Logo.png>] <Immagini/CTQDA.png, id=103, 454.69875pt x 369.38pt>
 File: Immagini/CTQDA.png Graphic file (type png)
 
 <use Immagini/CTQDA.png>
-Package pdftex.def Info: Immagini/CTQDA.png used on input line 78.
+Package pdftex.def Info: Immagini/CTQDA.png used on input line 76.
 (pdftex.def)             Requested size: 138.27608pt x 112.33101pt.
 
 <Immagini/andamenti_temporali.png, id=104, 1038.88126pt x 750.805pt>
 File: Immagini/andamenti_temporali.png Graphic file (type png)
 
 <use Immagini/andamenti_temporali.png>
-Package pdftex.def Info: Immagini/andamenti_temporali.png used on input line 78
+Package pdftex.def Info: Immagini/andamenti_temporali.png used on input line 76
 .
 (pdftex.def)             Requested size: 148.64651pt x 107.42616pt.
  [2
@@ -1792,28 +1792,28 @@ mporali.png>]
 File: Immagini/CTQDA.png Graphic file (type png)
 
 <use Immagini/CTQDA.png>
-Package pdftex.def Info: Immagini/CTQDA.png used on input line 78.
+Package pdftex.def Info: Immagini/CTQDA.png used on input line 76.
 (pdftex.def)             Requested size: 138.27608pt x 112.33101pt.
 File: Immagini/andamenti_temporali.png Graphic file (type png)
  <use Immagini/andamenti_temporali.png>
-Package pdftex.def Info: Immagini/andamenti_temporali.png used on input line 78
+Package pdftex.def Info: Immagini/andamenti_temporali.png used on input line 76
 .
 (pdftex.def)             Requested size: 148.64651pt x 107.42616pt.
  [3
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 112.
+LaTeX Font Info:    Try loading font information for U+msa on input line 110.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 112.
+LaTeX Font Info:    Try loading font information for U+msb on input line 110.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 112.
+line 110.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sansmathaccent\ot1mathkerncmss.fd
 "
@@ -1826,7 +1826,7 @@ thkerncmss.
 ] [6
 
 ]
-Underfull \hbox (badness 10000) detected at line 134
+Underfull \hbox (badness 10000) detected at line 132
  []$[]  \OT1/mathkerncmss/m/sl/9 J[]\OT1/cmss/m/n/9 (\OT1/mathkerncmss/m/sl/9 f
 \OT1/cmss/m/n/9 ) = [] [][]\OT1/mathkerncmss/m/sl/9 z[] \OMS/cmsy/m/n/9   \OT1/
 mathkerncmss/m/sl/9 f\OT1/cmss/m/n/9 (\OT1/mathkerncmss/bx/sl/9 p[]\OML/cmm/m/i
@@ -1836,7 +1836,7 @@ t/9 ; \OT1/mathkerncmss/m/sl/9 t[]\OT1/cmss/m/n/9 )[][]  + [][]  $
 [7
 
 ]
-Underfull \hbox (badness 2875) detected at line 134
+Underfull \hbox (badness 2875) detected at line 132
  []$[]  \OT1/mathkerncmss/m/sl/9 J[]\OT1/cmss/m/n/9 (\OT1/mathkerncmss/m/sl/9 f
 \OT1/cmss/m/n/9 ) = [] [][]\OT1/mathkerncmss/m/sl/9 z[] \OMS/cmsy/m/n/9   \OT1/
 mathkerncmss/m/sl/9 f\OT1/cmss/m/n/9 (\OT1/mathkerncmss/bx/sl/9 p[]\OML/cmm/m/i
@@ -1847,7 +1847,7 @@ t/9 ; \OT1/mathkerncmss/m/sl/9 t[]\OT1/cmss/m/n/9 )[][]  + []\OML/cmm/m/it/9 [
 [8
 
 ]
-Overfull \hbox (6.85411pt too wide) detected at line 134
+Overfull \hbox (6.85411pt too wide) detected at line 132
  []$[]  \OT1/mathkerncmss/m/sl/9 J[]\OT1/cmss/m/n/9 (\OT1/mathkerncmss/m/sl/9 f
 \OT1/cmss/m/n/9 ) = [] [][]\OT1/mathkerncmss/m/sl/9 z[] \OMS/cmsy/m/n/9   \OT1/
 mathkerncmss/m/sl/9 f\OT1/cmss/m/n/9 (\OT1/mathkerncmss/bx/sl/9 p[]\OML/cmm/m/i
@@ -1860,7 +1860,7 @@ rncmss/m/sl/9 dt  $
 [9
 
 ]
-Overfull \hbox (6.85411pt too wide) detected at line 211
+Overfull \hbox (6.85411pt too wide) detected at line 219
  []$[]  \OT1/mathkerncmss/m/sl/9 J[]\OT1/cmss/m/n/9 (\OT1/mathkerncmss/m/sl/9 f
 \OT1/cmss/m/n/9 ) = [] [][]\OT1/mathkerncmss/m/sl/9 z[] \OMS/cmsy/m/n/9   \OT1/
 mathkerncmss/m/sl/9 f\OT1/cmss/m/n/9 (\OT1/mathkerncmss/bx/sl/9 p[]\OML/cmm/m/i
@@ -1871,46 +1871,59 @@ x/sl/9 p \OT1/cmss/m/n/9 + \OML/cmm/m/it/9 [] [] [][][][][][]\OT1/mathkerncmss
  []
 
 
-Overfull \hbox (1.13617pt too wide) detected at line 211
-\OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9   \OT1/cmss/m
-/n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/c
-mss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \OT1/cmss/m/n/9 = []
+Overfull \hbox (2.67783pt too wide) detected at line 219
+\OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \
+OT1/cmss/m/n/9 = [] [][][][][][] \OML/cmm/b/it/9   \OT1/cmss/m/n/9 = []  \OML/c
+mm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = [] []
+[][][]
+ []
+
+
+Overfull \vbox (6.35265pt too high) detected at line 219
  []
 
 [10
 
 ]
-Overfull \hbox (1.13617pt too wide) detected at line 211
-\OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9   \OT1/cmss/m
-/n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/c
-mss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \OT1/cmss/m/n/9 = []
+Overfull \hbox (2.67783pt too wide) detected at line 219
+\OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \
+OT1/cmss/m/n/9 = [] [][][][][][] \OML/cmm/b/it/9   \OT1/cmss/m/n/9 = []  \OML/c
+mm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = [] []
+[][][]
+ []
+
+
+Overfull \vbox (2.24103pt too high) detected at line 219
  []
 
 [11
 
 ]
-Overfull \hbox (1.13617pt too wide) detected at line 211
-\OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9   \OT1/cmss/m
-/n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/c
-mss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \OT1/cmss/m/n/9 = []
+Overfull \hbox (2.67783pt too wide) detected at line 219
+\OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \
+OT1/cmss/m/n/9 = [] [][][][][][][][] \OML/cmm/b/it/9   \OT1/cmss/m/n/9 = []  \O
+ML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = [
+] [][][][][][][]
  []
 
 [12
 
 ]
-Overfull \hbox (1.13617pt too wide) detected at line 211
-\OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9   \OT1/cmss/m
-/n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/c
-mss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \OT1/cmss/m/n/9 = []
+Overfull \hbox (2.67783pt too wide) detected at line 219
+\OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \
+OT1/cmss/m/n/9 = [] [][][][][][][][] \OML/cmm/b/it/9   \OT1/cmss/m/n/9 = []  \O
+ML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = [
+] [][][][][][][]
  []
 
 [13
 
 ]
-Overfull \hbox (1.13617pt too wide) detected at line 211
-\OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9   \OT1/cmss/m
-/n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/c
-mss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \OT1/cmss/m/n/9 = []
+Overfull \hbox (2.67783pt too wide) detected at line 219
+\OT1/mathkerncmss/bx/sl/9 c \OT1/cmss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \
+OT1/cmss/m/n/9 = [] [][][][][][][][] \OML/cmm/b/it/9   \OT1/cmss/m/n/9 = []  \O
+ML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = []  \OML/cmm/b/it/9  [] \OT1/cmss/m/n/9 = [
+] [][][][][][][]
  []
 
 [14
@@ -1928,14 +1941,14 @@ mss/m/n/9 = []  \OT1/mathkerncmss/bx/sl/9 z \OT1/cmss/m/n/9 = []
 File: Immagini/elementofinito.jpg Graphic file (type jpg)
 
 <use Immagini/elementofinito.jpg>
-Package pdftex.def Info: Immagini/elementofinito.jpg used on input line 269.
+Package pdftex.def Info: Immagini/elementofinito.jpg used on input line 277.
 (pdftex.def)             Requested size: 159.02223pt x 122.34882pt.
 
 <Immagini/Bsplines.png, id=583, 491.8375pt x 354.32375pt>
 File: Immagini/Bsplines.png Graphic file (type png)
 
 <use Immagini/Bsplines.png>
-Package pdftex.def Info: Immagini/Bsplines.png used on input line 269.
+Package pdftex.def Info: Immagini/Bsplines.png used on input line 277.
 (pdftex.def)             Requested size: 159.02223pt x 114.55913pt.
  [19
 
@@ -1944,12 +1957,12 @@ Presentazione/Immagini/elementofinito.jpg> <C:/Users/Gabriele/Desktop/Universit
 à/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Bsplines.png>]
 File: Immagini/elementofinito.jpg Graphic file (type jpg)
  <use Immagini/elementofinito.jpg>
-Package pdftex.def Info: Immagini/elementofinito.jpg used on input line 269.
+Package pdftex.def Info: Immagini/elementofinito.jpg used on input line 277.
 (pdftex.def)             Requested size: 159.02223pt x 122.34882pt.
 File: Immagini/Bsplines.png Graphic file (type png)
 
 <use Immagini/Bsplines.png>
-Package pdftex.def Info: Immagini/Bsplines.png used on input line 269.
+Package pdftex.def Info: Immagini/Bsplines.png used on input line 277.
 (pdftex.def)             Requested size: 159.02223pt x 114.55913pt.
  [20
 
@@ -1958,15 +1971,15 @@ Package pdftex.def Info: Immagini/Bsplines.png used on input line 269.
 File: Immagini/DomC_fstest.png Graphic file (type png)
 
 <use Immagini/DomC_fstest.png>
-Package pdftex.def Info: Immagini/DomC_fstest.png used on input line 296.
+Package pdftex.def Info: Immagini/DomC_fstest.png used on input line 304.
 (pdftex.def)             Requested size: 110.62128pt x 100.82962pt.
 
 <Immagini/DomC_Triangolazione.png, id=639, 313.9228pt x 281.55188pt>
 File: Immagini/DomC_Triangolazione.png Graphic file (type png)
 
 <use Immagini/DomC_Triangolazione.png>
-Package pdftex.def Info: Immagini/DomC_Triangolazione.png used on input line 29
-6.
+Package pdftex.def Info: Immagini/DomC_Triangolazione.png used on input line 30
+4.
 (pdftex.def)             Requested size: 110.62128pt x 99.21053pt.
  [21
 
@@ -2150,7 +2163,7 @@ sktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini
 File: Immagini/Confronto_metodi.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi.png>
-Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 343.
+Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 349.
 (pdftex.def)             Requested size: 138.27608pt x 124.66267pt.
  [23
 
@@ -2158,7 +2171,7 @@ Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 343.
 Presentazione/Immagini/Confronto_metodi.png>]
 File: Immagini/Confronto_metodi.png Graphic file (type png)
  <use Immagini/Confronto_metodi.png>
-Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 343.
+Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 349.
 (pdftex.def)             Requested size: 138.27608pt x 124.66267pt.
  [24
 
@@ -2166,14 +2179,14 @@ Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 343.
 File: Immagini/Confronto_metodi.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi.png>
-Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 343.
+Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 349.
 (pdftex.def)             Requested size: 138.27608pt x 124.66267pt.
  [25
 
 ]
 File: Immagini/Confronto_metodi.png Graphic file (type png)
  <use Immagini/Confronto_metodi.png>
-Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 343.
+Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 349.
 (pdftex.def)             Requested size: 138.27608pt x 124.66267pt.
 
 [26
@@ -2181,196 +2194,188 @@ Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 343.
 ]
 File: Immagini/Confronto_metodi.png Graphic file (type png)
  <use Immagini/Confronto_metodi.png>
-Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 343.
+Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 349.
 (pdftex.def)             Requested size: 138.27608pt x 124.66267pt.
  [27
 
 ]
-File: Immagini/Confronto_metodi.png Graphic file (type png)
-
-<use Immagini/Confronto_metodi.png>
-Package pdftex.def Info: Immagini/Confronto_metodi.png used on input line 343.
-(pdftex.def)             Requested size: 138.27608pt x 124.66267pt.
- [28
-
-]
-<Immagini/simulazioni/REALEtempo1.png, id=1417, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/REALEtempo1.png, id=1391, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/REALEtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo1.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/KRIGtempo1.png, id=1418, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/KRIGtempo1.png, id=1392, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/KRIGtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/TPStempo1.png, id=1419, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/TPStempo1.png, id=1393, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/TPStempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo1.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/SOAPtempo1.png, id=1420, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/SOAPtempo1.png, id=1394, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/SOAPtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/STSRtempo1.png, id=1421, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/STSRtempo1.png, id=1395, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/STSRtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 376--376
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
-<Immagini/simulazioni/REALEtempo2.png, id=1422, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/REALEtempo2.png, id=1396, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/REALEtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo2.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/KRIGtempo2.png, id=1423, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/KRIGtempo2.png, id=1397, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/KRIGtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/TPStempo2.png, id=1424, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/TPStempo2.png, id=1398, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/TPStempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo2.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/SOAPtempo2.png, id=1425, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/SOAPtempo2.png, id=1399, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/SOAPtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/STSRtempo2.png, id=1426, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/STSRtempo2.png, id=1400, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/STSRtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 376--376
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
-<Immagini/simulazioni/REALEtempo3.png, id=1427, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/REALEtempo3.png, id=1401, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/REALEtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo3.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/KRIGtempo3.png, id=1428, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/KRIGtempo3.png, id=1402, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/KRIGtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/TPStempo3.png, id=1429, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/TPStempo3.png, id=1403, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/TPStempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo3.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/SOAPtempo3.png, id=1430, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/SOAPtempo3.png, id=1404, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/SOAPtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/STSRtempo3.png, id=1431, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/STSRtempo3.png, id=1405, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/STSRtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (4.9883pt too wide) in paragraph at lines 376--376
+Overfull \hbox (4.9883pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
-<Immagini/simulazioni/REALEtempo4.png, id=1432, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/REALEtempo4.png, id=1406, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/REALEtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo4.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/KRIGtempo4.png, id=1433, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/KRIGtempo4.png, id=1407, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/KRIGtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/TPStempo4.png, id=1434, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/TPStempo4.png, id=1408, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/TPStempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo4.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/SOAPtempo4.png, id=1435, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/SOAPtempo4.png, id=1409, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/SOAPtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-<Immagini/simulazioni/STSRtempo4.png, id=1436, 419.5675pt x 382.42876pt>
+<Immagini/simulazioni/STSRtempo4.png, id=1410, 419.5675pt x 382.42876pt>
 File: Immagini/simulazioni/STSRtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (8.55772pt too wide) in paragraph at lines 376--376
+Overfull \hbox (8.55772pt too wide) in paragraph at lines 382--382
  [] 
  []
 
-[29
+[28
 
  <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
 Presentazione/Immagini/simulazioni/REALEtempo1.png (PNG copy)> <C:/Users/Gabrie
@@ -2410,136 +2415,275 @@ File: Immagini/simulazioni/REALEtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/REALEtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo1.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo1.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 376--376
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
 File: Immagini/simulazioni/REALEtempo2.png Graphic file (type png)
 <use Immagini/simulazioni/REALEtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo2.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo2.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 376--376
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
 File: Immagini/simulazioni/REALEtempo3.png Graphic file (type png)
 <use Immagini/simulazioni/REALEtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo3.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo3.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (4.9883pt too wide) in paragraph at lines 376--376
+Overfull \hbox (4.9883pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
 File: Immagini/simulazioni/REALEtempo4.png Graphic file (type png)
 <use Immagini/simulazioni/REALEtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo4.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo4.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (8.55772pt too wide) in paragraph at lines 376--376
+Overfull \hbox (8.55772pt too wide) in paragraph at lines 382--382
+ [] 
+ []
+
+[29
+
+]
+File: Immagini/simulazioni/REALEtempo1.png Graphic file (type png)
+ <use Immagini/simulazioni/REALEtempo1.png>
+Package pdftex.def Info: Immagini/simulazioni/REALEtempo1.png used on input lin
+e 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/KRIGtempo1.png Graphic file (type png)
+
+<use Immagini/simulazioni/KRIGtempo1.png>
+Package pdftex.def Info: Immagini/simulazioni/KRIGtempo1.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/TPStempo1.png Graphic file (type png)
+
+<use Immagini/simulazioni/TPStempo1.png>
+Package pdftex.def Info: Immagini/simulazioni/TPStempo1.png used on input line 
+382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/SOAPtempo1.png Graphic file (type png)
+
+<use Immagini/simulazioni/SOAPtempo1.png>
+Package pdftex.def Info: Immagini/simulazioni/SOAPtempo1.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/STSRtempo1.png Graphic file (type png)
+
+<use Immagini/simulazioni/STSRtempo1.png>
+Package pdftex.def Info: Immagini/simulazioni/STSRtempo1.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 382--382
+[][] 
+ []
+
+File: Immagini/simulazioni/REALEtempo2.png Graphic file (type png)
+<use Immagini/simulazioni/REALEtempo2.png>
+Package pdftex.def Info: Immagini/simulazioni/REALEtempo2.png used on input lin
+e 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/KRIGtempo2.png Graphic file (type png)
+
+<use Immagini/simulazioni/KRIGtempo2.png>
+Package pdftex.def Info: Immagini/simulazioni/KRIGtempo2.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/TPStempo2.png Graphic file (type png)
+
+<use Immagini/simulazioni/TPStempo2.png>
+Package pdftex.def Info: Immagini/simulazioni/TPStempo2.png used on input line 
+382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/SOAPtempo2.png Graphic file (type png)
+
+<use Immagini/simulazioni/SOAPtempo2.png>
+Package pdftex.def Info: Immagini/simulazioni/SOAPtempo2.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/STSRtempo2.png Graphic file (type png)
+
+<use Immagini/simulazioni/STSRtempo2.png>
+Package pdftex.def Info: Immagini/simulazioni/STSRtempo2.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 382--382
+[][] 
+ []
+
+File: Immagini/simulazioni/REALEtempo3.png Graphic file (type png)
+<use Immagini/simulazioni/REALEtempo3.png>
+Package pdftex.def Info: Immagini/simulazioni/REALEtempo3.png used on input lin
+e 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/KRIGtempo3.png Graphic file (type png)
+
+<use Immagini/simulazioni/KRIGtempo3.png>
+Package pdftex.def Info: Immagini/simulazioni/KRIGtempo3.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/TPStempo3.png Graphic file (type png)
+
+<use Immagini/simulazioni/TPStempo3.png>
+Package pdftex.def Info: Immagini/simulazioni/TPStempo3.png used on input line 
+382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/SOAPtempo3.png Graphic file (type png)
+
+<use Immagini/simulazioni/SOAPtempo3.png>
+Package pdftex.def Info: Immagini/simulazioni/SOAPtempo3.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/STSRtempo3.png Graphic file (type png)
+
+<use Immagini/simulazioni/STSRtempo3.png>
+Package pdftex.def Info: Immagini/simulazioni/STSRtempo3.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+
+Overfull \hbox (4.9883pt too wide) in paragraph at lines 382--382
+[][] 
+ []
+
+File: Immagini/simulazioni/REALEtempo4.png Graphic file (type png)
+<use Immagini/simulazioni/REALEtempo4.png>
+Package pdftex.def Info: Immagini/simulazioni/REALEtempo4.png used on input lin
+e 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/KRIGtempo4.png Graphic file (type png)
+
+<use Immagini/simulazioni/KRIGtempo4.png>
+Package pdftex.def Info: Immagini/simulazioni/KRIGtempo4.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/TPStempo4.png Graphic file (type png)
+
+<use Immagini/simulazioni/TPStempo4.png>
+Package pdftex.def Info: Immagini/simulazioni/TPStempo4.png used on input line 
+382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/SOAPtempo4.png Graphic file (type png)
+
+<use Immagini/simulazioni/SOAPtempo4.png>
+Package pdftex.def Info: Immagini/simulazioni/SOAPtempo4.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+File: Immagini/simulazioni/STSRtempo4.png Graphic file (type png)
+
+<use Immagini/simulazioni/STSRtempo4.png>
+Package pdftex.def Info: Immagini/simulazioni/STSRtempo4.png used on input line
+ 382.
+(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
+
+Overfull \hbox (8.55772pt too wide) in paragraph at lines 382--382
  [] 
  []
 
@@ -2549,136 +2693,136 @@ Overfull \hbox (8.55772pt too wide) in paragraph at lines 376--376
 File: Immagini/simulazioni/REALEtempo1.png Graphic file (type png)
  <use Immagini/simulazioni/REALEtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo1.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo1.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 376--376
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
 File: Immagini/simulazioni/REALEtempo2.png Graphic file (type png)
 <use Immagini/simulazioni/REALEtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo2.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo2.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 376--376
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
 File: Immagini/simulazioni/REALEtempo3.png Graphic file (type png)
 <use Immagini/simulazioni/REALEtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo3.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo3.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (4.9883pt too wide) in paragraph at lines 376--376
+Overfull \hbox (4.9883pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
 File: Immagini/simulazioni/REALEtempo4.png Graphic file (type png)
 <use Immagini/simulazioni/REALEtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo4.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo4.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (8.55772pt too wide) in paragraph at lines 376--376
+Overfull \hbox (8.55772pt too wide) in paragraph at lines 382--382
  [] 
  []
 
@@ -2688,349 +2832,210 @@ Overfull \hbox (8.55772pt too wide) in paragraph at lines 376--376
 File: Immagini/simulazioni/REALEtempo1.png Graphic file (type png)
  <use Immagini/simulazioni/REALEtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo1.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo1.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo1.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo1.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo1.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 376--376
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
 File: Immagini/simulazioni/REALEtempo2.png Graphic file (type png)
 <use Immagini/simulazioni/REALEtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo2.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo2.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo2.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo2.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo2.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 376--376
+Overfull \hbox (3.63411pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
 File: Immagini/simulazioni/REALEtempo3.png Graphic file (type png)
 <use Immagini/simulazioni/REALEtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo3.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo3.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo3.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo3.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo3.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (4.9883pt too wide) in paragraph at lines 376--376
+Overfull \hbox (4.9883pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
 File: Immagini/simulazioni/REALEtempo4.png Graphic file (type png)
 <use Immagini/simulazioni/REALEtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/REALEtempo4.png used on input lin
-e 376.
+e 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/KRIGtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/KRIGtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/KRIGtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/TPStempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/TPStempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/TPStempo4.png used on input line 
-376.
+382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/SOAPtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/SOAPtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/SOAPtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 File: Immagini/simulazioni/STSRtempo4.png Graphic file (type png)
 
 <use Immagini/simulazioni/STSRtempo4.png>
 Package pdftex.def Info: Immagini/simulazioni/STSRtempo4.png used on input line
- 376.
+ 382.
 (pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
 
-Overfull \hbox (8.55772pt too wide) in paragraph at lines 376--376
+Overfull \hbox (8.55772pt too wide) in paragraph at lines 382--382
  [] 
  []
 
 [32
 
-]
-File: Immagini/simulazioni/REALEtempo1.png Graphic file (type png)
- <use Immagini/simulazioni/REALEtempo1.png>
-Package pdftex.def Info: Immagini/simulazioni/REALEtempo1.png used on input lin
-e 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/KRIGtempo1.png Graphic file (type png)
-
-<use Immagini/simulazioni/KRIGtempo1.png>
-Package pdftex.def Info: Immagini/simulazioni/KRIGtempo1.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/TPStempo1.png Graphic file (type png)
-
-<use Immagini/simulazioni/TPStempo1.png>
-Package pdftex.def Info: Immagini/simulazioni/TPStempo1.png used on input line 
-376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/SOAPtempo1.png Graphic file (type png)
-
-<use Immagini/simulazioni/SOAPtempo1.png>
-Package pdftex.def Info: Immagini/simulazioni/SOAPtempo1.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/STSRtempo1.png Graphic file (type png)
-
-<use Immagini/simulazioni/STSRtempo1.png>
-Package pdftex.def Info: Immagini/simulazioni/STSRtempo1.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 376--376
-[][] 
- []
-
-File: Immagini/simulazioni/REALEtempo2.png Graphic file (type png)
-<use Immagini/simulazioni/REALEtempo2.png>
-Package pdftex.def Info: Immagini/simulazioni/REALEtempo2.png used on input lin
-e 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/KRIGtempo2.png Graphic file (type png)
-
-<use Immagini/simulazioni/KRIGtempo2.png>
-Package pdftex.def Info: Immagini/simulazioni/KRIGtempo2.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/TPStempo2.png Graphic file (type png)
-
-<use Immagini/simulazioni/TPStempo2.png>
-Package pdftex.def Info: Immagini/simulazioni/TPStempo2.png used on input line 
-376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/SOAPtempo2.png Graphic file (type png)
-
-<use Immagini/simulazioni/SOAPtempo2.png>
-Package pdftex.def Info: Immagini/simulazioni/SOAPtempo2.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/STSRtempo2.png Graphic file (type png)
-
-<use Immagini/simulazioni/STSRtempo2.png>
-Package pdftex.def Info: Immagini/simulazioni/STSRtempo2.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-
-Overfull \hbox (3.63411pt too wide) in paragraph at lines 376--376
-[][] 
- []
-
-File: Immagini/simulazioni/REALEtempo3.png Graphic file (type png)
-<use Immagini/simulazioni/REALEtempo3.png>
-Package pdftex.def Info: Immagini/simulazioni/REALEtempo3.png used on input lin
-e 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/KRIGtempo3.png Graphic file (type png)
-
-<use Immagini/simulazioni/KRIGtempo3.png>
-Package pdftex.def Info: Immagini/simulazioni/KRIGtempo3.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/TPStempo3.png Graphic file (type png)
-
-<use Immagini/simulazioni/TPStempo3.png>
-Package pdftex.def Info: Immagini/simulazioni/TPStempo3.png used on input line 
-376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/SOAPtempo3.png Graphic file (type png)
-
-<use Immagini/simulazioni/SOAPtempo3.png>
-Package pdftex.def Info: Immagini/simulazioni/SOAPtempo3.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/STSRtempo3.png Graphic file (type png)
-
-<use Immagini/simulazioni/STSRtempo3.png>
-Package pdftex.def Info: Immagini/simulazioni/STSRtempo3.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-
-Overfull \hbox (4.9883pt too wide) in paragraph at lines 376--376
-[][] 
- []
-
-File: Immagini/simulazioni/REALEtempo4.png Graphic file (type png)
-<use Immagini/simulazioni/REALEtempo4.png>
-Package pdftex.def Info: Immagini/simulazioni/REALEtempo4.png used on input lin
-e 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/KRIGtempo4.png Graphic file (type png)
-
-<use Immagini/simulazioni/KRIGtempo4.png>
-Package pdftex.def Info: Immagini/simulazioni/KRIGtempo4.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/TPStempo4.png Graphic file (type png)
-
-<use Immagini/simulazioni/TPStempo4.png>
-Package pdftex.def Info: Immagini/simulazioni/TPStempo4.png used on input line 
-376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/SOAPtempo4.png Graphic file (type png)
-
-<use Immagini/simulazioni/SOAPtempo4.png>
-Package pdftex.def Info: Immagini/simulazioni/SOAPtempo4.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-File: Immagini/simulazioni/STSRtempo4.png Graphic file (type png)
-
-<use Immagini/simulazioni/STSRtempo4.png>
-Package pdftex.def Info: Immagini/simulazioni/STSRtempo4.png used on input line
- 376.
-(pdftex.def)             Requested size: 55.31253pt x 50.41188pt.
-
-Overfull \hbox (8.55772pt too wide) in paragraph at lines 376--376
- [] 
- []
-
-[33
-
-] <Immagini/Confronto_metodi_covar.png, id=1585, 448.67625pt x 404.51125pt>
+] <Immagini/Confronto_metodi_covar.png, id=1559, 448.67625pt x 404.51125pt>
 File: Immagini/Confronto_metodi_covar.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi_covar.png>
 Package pdftex.def Info: Immagini/Confronto_metodi_covar.png used on input line
- 393.
+ 399.
 (pdftex.def)             Requested size: 138.27608pt x 124.66267pt.
 
-<Immagini/Confronto_metodi_beta.png, id=1586, 448.67625pt x 404.51125pt>
+<Immagini/Confronto_metodi_beta.png, id=1560, 448.67625pt x 404.51125pt>
 File: Immagini/Confronto_metodi_beta.png Graphic file (type png)
 
 <use Immagini/Confronto_metodi_beta.png>
 Package pdftex.def Info: Immagini/Confronto_metodi_beta.png used on input line 
-393.
+399.
 (pdftex.def)             Requested size: 148.64651pt x 134.01376pt.
- [34
+ [33
 
  <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
 Presentazione/Immagini/Confronto_metodi_covar.png> <C:/Users/Gabriele/Desktop/U
 niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Confro
 nto_metodi_beta.png>]
-<Immagini/Dati.png, id=1615, 487.8225pt x 394.47375pt>
+<Immagini/Dati.png, id=1590, 487.8225pt x 394.47375pt>
 File: Immagini/Dati.png Graphic file (type png)
  <use Immagini/Dati.png>
-Package pdftex.def Info: Immagini/Dati.png used on input line 418.
+Package pdftex.def Info: Immagini/Dati.png used on input line 424.
 (pdftex.def)             Requested size: 110.62128pt x 89.45097pt.
 
-<Immagini/PL.png, id=1616, 471.7625pt x 395.4775pt>
+<Immagini/PL.png, id=1591, 471.7625pt x 395.4775pt>
 File: Immagini/PL.png Graphic file (type png)
  <use Immagini/PL.png>
-Package pdftex.def Info: Immagini/PL.png used on input line 418.
+Package pdftex.def Info: Immagini/PL.png used on input line 424.
 (pdftex.def)             Requested size: 110.62128pt x 92.73204pt.
 
-[35
+[34
 
  <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
 Presentazione/Immagini/Dati.png (PNG copy)> <C:/Users/Gabriele/Desktop/Universi
 tà/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/PL.png (PNG c
 opy)>]
-<Immagini/VeneziaCovar/Cavarzere.png, id=1644, 419.5675pt x 375.4025pt>
+<Immagini/VeneziaCovar/Cavarzere.png, id=1617, 419.5675pt x 375.4025pt>
 File: Immagini/VeneziaCovar/Cavarzere.png Graphic file (type png)
 
 <use Immagini/VeneziaCovar/Cavarzere.png>
 Package pdftex.def Info: Immagini/VeneziaCovar/Cavarzere.png used on input line
- 452.
+ 458.
 (pdftex.def)             Requested size: 70.00238pt x 62.63184pt.
 
-<Immagini/VeneziaCovar/Venezia.png, id=1645, 313.9228pt x 281.55188pt>
+<Immagini/VeneziaCovar/Venezia.png, id=1618, 313.9228pt x 281.55188pt>
 File: Immagini/VeneziaCovar/Venezia.png Graphic file (type png)
 
 <use Immagini/VeneziaCovar/Venezia.png>
 Package pdftex.def Info: Immagini/VeneziaCovar/Venezia.png used on input line 4
-52.
+58.
 (pdftex.def)             Requested size: 70.00238pt x 62.78363pt.
 
-<Immagini/VeneziaCovar/Cavallino-Treporti.png, id=1646, 419.5675pt x 375.4025pt
+<Immagini/VeneziaCovar/Cavallino-Treporti.png, id=1619, 419.5675pt x 375.4025pt
 >
 File: Immagini/VeneziaCovar/Cavallino-Treporti.png Graphic file (type png)
  <use Immagini/VeneziaCovar/Cavallino-Treporti.png>
 Package pdftex.def Info: Immagini/VeneziaCovar/Cavallino-Treporti.png used on i
-nput line 452.
+nput line 458.
 (pdftex.def)             Requested size: 70.00238pt x 62.63184pt.
 
-<Immagini/VeneziaCovar/Bibione.png, id=1647, 419.5675pt x 375.4025pt>
+<Immagini/VeneziaCovar/Bibione.png, id=1620, 419.5675pt x 375.4025pt>
 File: Immagini/VeneziaCovar/Bibione.png Graphic file (type png)
 
 <use Immagini/VeneziaCovar/Bibione.png>
 Package pdftex.def Info: Immagini/VeneziaCovar/Bibione.png used on input line 4
-52.
+58.
 (pdftex.def)             Requested size: 70.00238pt x 62.63184pt.
  <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
 Presentazione/Immagini/VeneziaCovar/image1.png (PNG copy)> <C:/Users/Gabriele/D
@@ -3206,7 +3211,7 @@ RALE/TESI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/image98.png (PNG
 copy)> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/
 Latex/Presentazione/Immagini/VeneziaCovar/image99.png (PNG copy)> <C:/Users/Gab
 riele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/
-Immagini/VeneziaCovar/image100.png (PNG copy)> [36
+Immagini/VeneziaCovar/image100.png (PNG copy)> [35
 
  <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/
 Presentazione/Immagini/VeneziaCovar/Cavarzere.png> <C:/Users/Gabriele/Desktop/U
@@ -3214,62 +3219,83 @@ niversità/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/Presentazione/Immagini/Venezi
 aCovar/Venezia.png> <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TE
 SI DI LAUREA/Latex/Presentazione/Immagini/VeneziaCovar/Cavallino-Treporti.png> 
 <C:/Users/Gabriele/Desktop/Università/LAUREA MAGISTRALE/TESI DI LAUREA/Latex/P
-resentazione/Immagini/VeneziaCovar/Bibione.png>] [37
+resentazione/Immagini/VeneziaCovar/Bibione.png>] [36
+
+] [37
 
 ] [38
 
-] [39
-
 ]
-[40
+[39
 
-]
-Package atenddvi Info: Last page = 41.
- [41
+] [40
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 495.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 495.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 501.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 501.
 
 ("C:\Users\Gabriele\Desktop\Università\LAUREA MAGISTRALE\TESI DI LAUREA\Latex\
-Presentazione\Presentazione.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 495.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 495.
-Package rerunfilecheck Info: File `Presentazione.out' has not changed.
-(rerunfilecheck)             Checksum: AEDC64B240F5B49B7F5171F61BF27E6B;849.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 495.
+Presentazione\Presentazione.aux"
+
+Package atenddvi Warning: Rerun LaTeX, last page not yet found.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 501.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 501.
+
+
+Package rerunfilecheck Warning: File `Presentazione.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Presentazione.out':
+(rerunfilecheck)             Before: AEDC64B240F5B49B7F5171F61BF27E6B;849
+(rerunfilecheck)             After:  753095CDDF878AEFCE53D9CF3833FE5B;849.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 501.
  ) 
 Here is how much of TeX's memory you used:
- 21011 strings out of 493921
- 389823 string characters out of 3144868
- 478010 words of memory out of 3000000
- 23536 multiletter control sequences out of 15000+200000
+ 21013 strings out of 493921
+ 389861 string characters out of 3144868
+ 480138 words of memory out of 3000000
+ 23537 multiletter control sequences out of 15000+200000
  16206 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 56i,17n,64p,473b,726s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Gabriele/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/cm-super/cm-sup
-er-t1.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextr
-a/cmex9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
-9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cm
-mib6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra
-/cmmib9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/G
-abriele/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/cm-super/sfso0900.pfb>
-Output written on Presentazione.pdf (41 pages, 4246274 bytes).
+ 56i,17n,64p,793b,726s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Navigation41} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.5.1.36} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.4.2.34} has been referenced but does not e
+xist, replaced by a fixed one
+
+{C:/Users/Gabriele/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/cm-super/cm-super
+-t1.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/
+cmex9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmi
+b6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/c
+mmib9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Gab
+riele/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/cm-super/sfso0900.pfb>
+Output written on Presentazione.pdf (40 pages, 4236200 bytes).
 PDF statistics:
- 2387 PDF objects out of 2487 (max. 8388607)
- 96 named destinations out of 1000 (max. 500000)
- 3767 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2362 PDF objects out of 2487 (max. 8388607)
+ 97 named destinations out of 1000 (max. 500000)
+ 3759 words of extra memory for PDF output out of 10000 (max. 10000000)
 

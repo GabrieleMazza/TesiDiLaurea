@@ -8,8 +8,8 @@
 \beamer@subsectionintoc {3}{1}{Caso con covariata}{22}{0}{3}
 \beamer@sectionintoc {4}{Confronto con altri metodi}{23}{0}{4}
 \beamer@subsectionintoc {4}{1}{Caso senza covariata}{23}{0}{4}
-\beamer@subsectionintoc {4}{2}{Caso con covariata}{34}{0}{4}
-\beamer@sectionintoc {5}{Applicazione allo studio dei rifiuti nella provincia di Venezia}{35}{0}{5}
-\beamer@subsectionintoc {5}{1}{Caso con covariata}{36}{0}{5}
-\beamer@sectionintoc {6}{Sviluppi futuri}{37}{0}{6}
-\beamer@sectionintoc {7}{Bibliografia}{40}{0}{7}
+\beamer@subsectionintoc {4}{2}{Caso con covariata}{33}{0}{4}
+\beamer@sectionintoc {5}{Applicazione allo studio dei rifiuti nella provincia di Venezia}{34}{0}{5}
+\beamer@subsectionintoc {5}{1}{Caso con covariata}{35}{0}{5}
+\beamer@sectionintoc {6}{Sviluppi futuri}{36}{0}{6}
+\beamer@sectionintoc {7}{Bibliografia}{39}{0}{7}
